@@ -6,8 +6,8 @@
 # so a model may only reference tables defined earlier in this file. Controls run after every
 # model has been built; any row returned by a control query is a violation and fails the build.
 #
-# Phase 3 scope only. Loads the four raw tables the ARR engine needs -- dim_customer,
-# dim_product, dim_date, fact_subscription_monthly -- not all thirteen source tables.
+# Phase 3 + Phase 4 scope. Loads five of the thirteen raw tables: dim_customer, dim_product,
+# dim_date, fact_subscription_monthly (the ARR engine) and fact_contract (retention/renewals).
 
 models:
   # 01_staging -- typed pass-throughs, no business logic
@@ -19,6 +19,8 @@ models:
     path: 01_staging/stg_dim_date.sql
   - name: stg_fact_subscription_monthly
     path: 01_staging/stg_fact_subscription_monthly.sql
+  - name: stg_fact_contract
+    path: 01_staging/stg_fact_contract.sql
 
   # 02_core -- conformed dimensions and the mandatory customer-month aggregation
   - name: dim_customer
@@ -44,9 +46,32 @@ models:
   - name: fct_arr_concentration
     path: 03_arr/fct_arr_concentration.sql
 
+  # 04_retention_renewals -- TTM cohorts, NRR/GRR/logo retention, acquisition cohorts,
+  # renewal base (ATR) and renewal outcomes, churn detail
+  - name: int_retention_cohort_customer_month
+    path: 04_retention_renewals/int_retention_cohort_customer_month.sql
+  - name: int_cohort_quarterly
+    path: 04_retention_renewals/int_cohort_quarterly.sql
+  - name: int_contract_renewal_event
+    path: 04_retention_renewals/int_contract_renewal_event.sql
+  - name: fct_retention_ttm
+    path: 04_retention_renewals/fct_retention_ttm.sql
+  - name: fct_cohort_arr
+    path: 04_retention_renewals/fct_cohort_arr.sql
+  - name: fct_cohort_logo
+    path: 04_retention_renewals/fct_cohort_logo.sql
+  - name: fct_renewal_base
+    path: 04_retention_renewals/fct_renewal_base.sql
+  - name: fct_renewal_outcomes
+    path: 04_retention_renewals/fct_renewal_outcomes.sql
+  - name: fct_churn_detail
+    path: 04_retention_renewals/fct_churn_detail.sql
+
 controls:
   - name: ctl_arr_reconciliation
     path: 08_controls/ctl_arr_reconciliation.sql
+  - name: ctl_retention_bounds
+    path: 08_controls/ctl_retention_bounds.sql
 
 # Models exported to data/marts/<name>.csv for the "readable without running" convention.
 marts:
@@ -55,3 +80,11 @@ marts:
   - fct_arr_waterfall
   - fct_arr_snapshot
   - fct_arr_concentration
+  - fct_retention_ttm
+  - fct_cohort_arr
+  - fct_cohort_logo
+  - fct_renewal_base
+  - fct_renewal_outcomes
+  - fct_churn_detail
+  - int_retention_cohort_customer_month
+  - int_cohort_quarterly

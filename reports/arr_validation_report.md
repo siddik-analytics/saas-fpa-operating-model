@@ -89,6 +89,7 @@ Customer-month record counts and dollar movement by classification (`fct_arr_mov
 | Grain group | Violations | Result |
 |---|---:|---|
 | `ctl_arr_reconciliation` | 0 | PASS |
+| `ctl_retention_bounds` | 0 | PASS |
 
 ## Largest monthly churn periods
 

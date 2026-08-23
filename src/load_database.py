@@ -1,8 +1,10 @@
 """Loads the committed raw CSVs into a DuckDB database.
 
-Phase 3 (the ARR engine) only needs four of the thirteen source tables: dim_customer,
-dim_product, dim_date and fact_subscription_monthly. Loading the rest here would be premature
-for what this phase builds; later phases add the tables they need.
+Phase 3 (the ARR engine) needed four of the thirteen source tables: dim_customer, dim_product,
+dim_date and fact_subscription_monthly. Phase 4 (retention and renewals) adds a fifth --
+fact_contract -- which is what fct_renewal_base and fct_renewal_outcomes are built from.
+Loading the rest here would be premature for what these phases build; later phases add the
+tables they need.
 
 Raw tables are loaded byte-for-byte as ``raw_<name>`` -- no typing, no filtering. Typing happens
 in 01_staging, per the layering convention (PHASE1_SPEC section 5).
@@ -23,6 +25,7 @@ RAW_TABLES = (
     "dim_product",
     "dim_date",
     "fact_subscription_monthly",
+    "fact_contract",
 )
 
 
