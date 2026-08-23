@@ -1,11 +1,12 @@
-"""Phase 2 build entry point.
+"""Build entry point.
 
     python -m src.build
 
-Loads configuration, generates every source table, writes the raw CSVs,
-re-reads them, validates them and writes the source validation report. A
-critical validation failure exits non-zero and names what failed; the build
-never reports success over a broken dataset.
+Loads configuration, generates every source table, writes the raw CSVs, re-reads them,
+validates them and writes the source validation report (Phase 2). If that passes, builds the
+DuckDB analytical layer from sql/manifest.yml, runs the reconciliation control, and writes the
+ARR validation report (Phase 3). A critical source-data failure or a control violation exits
+non-zero; the build never reports success over a broken dataset or a waterfall that doesn't tie.
 """
 
 from __future__ import annotations
@@ -18,6 +19,7 @@ from pathlib import Path
 from .config import DATA_RAW_DIR, REPORTS_DIR, load_config
 from .generate_data import generate, write_tables
 from .report import write_report
+from .run_sql import build_and_validate as build_arr_engine
 from .validate_sources import load_tables, validate
 
 REPORT_PATH = REPORTS_DIR / "source_validation_report.md"
@@ -46,6 +48,11 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument(
         "--skip-tests", action="store_true",
         help="Do not run the pytest suite after validation.",
+    )
+    parser.add_argument(
+        "--skip-sql", action="store_true",
+        help="Do not build the DuckDB analytical layer (sql/manifest.yml) after source "
+             "validation. The ARR engine and its controls are skipped along with it.",
     )
     return parser.parse_args(argv)
 
@@ -92,6 +99,16 @@ def main(argv: list[str] | None = None) -> int:
         print()
         print(f"BUILD FAILED - {len(critical)} critical validation failures listed above.")
         return 1
+
+    if not args.skip_sql:
+        print()
+        print("Building the DuckDB analytical layer (sql/manifest.yml)")
+        sql_code, con = build_arr_engine(verbose=True)
+        con.close()
+        if sql_code:
+            print()
+            print("BUILD FAILED - ctl_arr_reconciliation returned violation rows. See above.")
+            return sql_code
 
     if not args.skip_tests:
         print()

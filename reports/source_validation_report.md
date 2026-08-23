@@ -2,7 +2,7 @@
 
 Helio Systems, Inc. Phase 2, synthetic data foundation.
 
-**PASS** - 108 of 108 checks passed. 0 critical failures, 0 warnings.
+**PASS** - 106 of 108 checks passed. 0 critical failures, 2 warnings.
 
 Random seed `20260630`. Rebuild with `python -m src.build`; change the seed with `HELIO_SEED=<n> python -m src.build` or `python -m src.build --seed <n>`.
 
@@ -14,19 +14,19 @@ Every figure below is computed by re-reading the committed CSVs in `data/raw/`, 
 
 | Table | Rows | Columns |
 |---|---:|---:|
-| `dim_customer` | 1,279 | 14 |
+| `dim_customer` | 1,310 | 14 |
 | `dim_date` | 108 | 9 |
 | `dim_employee` | 306 | 15 |
 | `dim_product` | 3 | 6 |
 | `dim_sales_rep` | 51 | 11 |
 | `fact_budget` | 1,655 | 8 |
-| `fact_contract` | 2,208 | 15 |
-| `fact_crm_opportunity` | 3,722 | 18 |
+| `fact_contract` | 2,255 | 15 |
+| `fact_crm_opportunity` | 3,727 | 18 |
 | `fact_forecast` | 2,501 | 8 |
 | `fact_gl_actuals` | 4,049 | 7 |
 | `fact_marketing_spend` | 180 | 4 |
 | `fact_requisition` | 84 | 11 |
-| `fact_subscription_monthly` | 43,984 | 7 |
+| `fact_subscription_monthly` | 44,793 | 7 |
 
 ## ARR anchors
 
@@ -34,10 +34,10 @@ Target ARR against generated ARR at each anchor date.
 
 | Date | Target ARR | Generated ARR | Variance |
 |---|---|---|---|
-| 2023-12-31 | 18,500,000 | 18,510,285 | 0.1% |
-| 2024-12-31 | 24,200,000 | 24,515,309 | 1.3% |
-| 2025-12-31 | 30,100,000 | 30,146,865 | 0.2% |
-| 2026-06-30 | 32,800,000 | 32,826,905 | 0.1% |
+| 2023-12-31 | 18,500,000 | 18,571,137 | 0.4% |
+| 2024-12-31 | 24,200,000 | 24,495,197 | 1.2% |
+| 2025-12-31 | 30,100,000 | 30,189,316 | 0.3% |
+| 2026-06-30 | 32,800,000 | 33,016,720 | 0.7% |
 
 ## Segment ARR at December 2025
 
@@ -45,9 +45,9 @@ The segment split behind the blended anchor.
 
 | Segment | Target ARR | Generated ARR | Variance |
 |---|---|---|---|
-| SMB | 4,760,000 | 4,771,202 | 0.2% |
-| Mid-Market | 13,780,000 | 13,774,425 | -0.0% |
-| Enterprise | 11,550,000 | 11,601,239 | 0.4% |
+| SMB | 4,760,000 | 4,781,152 | 0.4% |
+| Mid-Market | 13,780,000 | 13,806,367 | 0.2% |
+| Enterprise | 11,550,000 | 11,601,796 | 0.4% |
 
 ## Customer counts at December 2025
 
@@ -66,10 +66,10 @@ First-year ARR of the logos acquired in FY2025.
 
 | Segment | New logos | Target new-logo ACV | Generated | Variance |
 |---|---|---|---|---|
-| SMB | 178 | 9,000 | 8,989 | -0.1% |
-| Mid-Market | 47 | 45,000 | 45,269 | 0.6% |
-| Enterprise | 7 | 185,000 | 186,774 | 1.0% |
-| Blended | 232 | 21,600 | 21,703 | 0.5% |
+| SMB | 178 | 9,000 | 9,067 | 0.7% |
+| Mid-Market | 47 | 45,000 | 45,317 | 0.7% |
+| Enterprise | 7 | 185,000 | 186,662 | 0.9% |
+| Blended | 232 | 21,600 | 21,769 | 0.8% |
 
 ## Customer extract by segment
 
@@ -77,9 +77,9 @@ dim_customer is scoped to the reporting window.
 
 | Segment | Customers in extract | Share of extract |
 |---|---|---|
-| SMB | 882 | 69.0% |
-| Mid-Market | 336 | 26.3% |
-| Enterprise | 61 | 4.8% |
+| SMB | 912 | 69.6% |
+| Mid-Market | 336 | 25.7% |
+| Enterprise | 62 | 4.7% |
 
 ## Journey archetype mix
 
@@ -88,12 +88,12 @@ The observed journey pattern across the extract.
 | Archetype | Share | Specification share |
 |---|---|---|
 | steady | 33.9% | 32.0% |
-| land_and_expand | 22.4% | 22.0% |
-| recent_new_logo | 13.0% | 12.0% |
-| fast_churn | 11.3% | 14.0% |
-| expand_then_contract | 9.5% | 9.0% |
-| slow_decay | 6.0% | 8.0% |
-| churn_and_return | 3.9% | 3.0% |
+| land_and_expand | 22.6% | 22.0% |
+| recent_new_logo | 12.8% | 12.0% |
+| fast_churn | 11.2% | 14.0% |
+| expand_then_contract | 9.4% | 9.0% |
+| slow_decay | 6.4% | 8.0% |
+| churn_and_return | 3.7% | 3.0% |
 
 ## Contract mix by ARR
 
@@ -101,9 +101,9 @@ Share of live ARR at the reporting date by contract type.
 
 | Contract type | Target share of ARR | Generated share |
 |---|---|---|
-| monthly | 11.0% | 12.1% |
-| annual | 61.0% | 60.9% |
-| multi_year | 28.0% | 27.1% |
+| monthly | 11.0% | 11.8% |
+| annual | 61.0% | 60.5% |
+| multi_year | 28.0% | 27.6% |
 
 ## Contract engine
 
@@ -111,9 +111,9 @@ Renewals, uplifts and discounting.
 
 | Measure | Value |
 |---|---|
-| Contracts | 2,208 |
-| Renewal contracts with a predecessor | 908.00 |
-| Contracts with a renewal price uplift | 814.00 |
+| Contracts | 2,255 |
+| Renewal contracts with a predecessor | 919.00 |
+| Contracts with a renewal price uplift | 851.00 |
 | Mean uplift applied | 0.04 |
 | Mean discount to list | 0.15 |
 
@@ -123,10 +123,10 @@ Share of renewal ARR falling in each quarter.
 
 | Quarter | Share of renewal ARR |
 |---|---|
-| Q1 | 34.6% |
-| Q2 | 23.7% |
-| Q3 | 13.2% |
-| Q4 | 28.5% |
+| Q1 | 35.0% |
+| Q2 | 23.6% |
+| Q3 | 13.4% |
+| Q4 | 28.0% |
 
 ## Churn timing and lumpiness
 
@@ -135,11 +135,11 @@ A source-level observation, not the Phase 4 engine.
 | Measure | Value |
 |---|---|
 | Months observed | 27.00 |
-| Lowest monthly gross churn ARR | 49,635 |
-| Highest monthly gross churn ARR | 553,402 |
-| Median monthly gross churn ARR | 160,931 |
-| Ratio of highest to lowest month | 11.15 |
-| Share of churn ARR falling in Q1 and Q4 | 0.51 |
+| Lowest monthly gross churn ARR | 53,117 |
+| Highest monthly gross churn ARR | 562,122 |
+| Median monthly gross churn ARR | 182,513 |
+| Ratio of highest to lowest month | 10.58 |
+| Share of churn ARR falling in Q1 and Q4 | 0.50 |
 
 ## Logo retention sanity check
 
@@ -147,10 +147,10 @@ Logo survival only. NRR and GRR belong to Phase 4.
 
 | Segment | Cohort at Jun 2025 | Still live at Jun 2026 | Logo retention | Target |
 |---|---|---|---|---|
-| SMB | 525 | 416 | 79.2% | 0.79 |
-| Mid-Market | 250 | 228 | 91.2% | 0.91 |
+| SMB | 534 | 420 | 78.6% | 0.79 |
+| Mid-Market | 251 | 228 | 90.8% | 0.91 |
 | Enterprise | 53 | 51 | 96.2% | 0.96 |
-| Blended | 828 | 695 | 83.9% | 0.84 |
+| Blended | 838 | 699 | 83.4% | 0.84 |
 
 ## Expansion frequency
 
@@ -158,9 +158,9 @@ Customers whose ARR grew over twelve months.
 
 | Segment | Live customers | Grew ARR over twelve months | Expansion frequency |
 |---|---|---|---|
-| SMB | 543 | 196 | 36.1% |
-| Mid-Market | 268 | 154 | 57.5% |
-| Enterprise | 56 | 29 | 51.8% |
+| SMB | 545 | 194 | 35.6% |
+| Mid-Market | 267 | 157 | 58.8% |
+| Enterprise | 57 | 30 | 52.6% |
 
 ## Reactivation
 
@@ -168,9 +168,9 @@ Customers that left and came back.
 
 | Measure | Value |
 |---|---|
-| Customers with a gap then a return | 21.00 |
-| Active customers at the reporting date | 851.00 |
-| Reactivation share of active base | 0.02 |
+| Customers with a gap then a return | 26.00 |
+| Active customers at the reporting date | 852.00 |
+| Reactivation share of active base | 0.03 |
 
 ## Product attach rates
 
@@ -178,13 +178,13 @@ Share of live customers carrying each product.
 
 | Product | Target attach | Generated attach |
 |---|---|---|
-| Dispatch | 48.0% | 52.3% |
-| Insights | 22.0% | 26.6% |
-| Dispatch - SMB |  | 46.5% |
-| Dispatch - Mid-Market |  | 56.8% |
+| Dispatch | 48.0% | 53.2% |
+| Insights | 22.0% | 27.1% |
+| Dispatch - SMB |  | 48.1% |
+| Dispatch - Mid-Market |  | 56.4% |
 | Dispatch - Enterprise |  | 89.1% |
-| Insights - SMB |  | 18.0% |
-| Insights - Mid-Market |  | 33.3% |
+| Insights - SMB |  | 18.5% |
+| Insights - Mid-Market |  | 33.7% |
 | Insights - Enterprise |  | 81.8% |
 
 ## Customer concentration
@@ -193,7 +193,7 @@ Top-10 and largest-customer share of ARR.
 
 | Measure | Target | Generated |
 |---|---|---|
-| Top 10 share of ARR | 0.14 | 15.7% |
+| Top 10 share of ARR | 0.14 | 15.6% |
 | Largest customer share | 0.02 | 2.2% |
 
 ## CRM win rates and sales cycles
@@ -202,9 +202,9 @@ New-logo opportunities by segment.
 
 | Segment | Opportunities | Target win rate | Generated win rate | Target median cycle (days) | Generated median cycle (days) |
 |---|---|---|---|---|---|
-| SMB | 1,350 | 28.0% | 28.0% | 24 | 24 |
-| Mid-Market | 500 | 21.0% | 21.0% | 62 | 63 |
-| Enterprise | 119 | 16.0% | 16.0% | 118 | 115 |
+| SMB | 1,354 | 28.0% | 28.0% | 24 | 25 |
+| Mid-Market | 500 | 21.0% | 21.0% | 62 | 59 |
+| Enterprise | 125 | 16.0% | 16.0% | 118 | 111 |
 
 ## CRM-to-ARR reconciling items
 
@@ -212,12 +212,12 @@ Differences built in deliberately.
 
 | Reconciling item | Count |
 |---|---|
-| Closed-won opportunities | 1,611 |
-| Wins that never provisioned | 19.00 |
-| Multi-year wins recording TCV above ACV | 131.00 |
-| Mean TCV to ACV ratio on multi-year wins | 2.34 |
-| Open opportunities at the reporting date | 142.00 |
-| Open pipeline ACV | 4,651,626 |
+| Closed-won opportunities | 1,607 |
+| Wins that never provisioned | 15.00 |
+| Multi-year wins recording TCV above ACV | 136.00 |
+| Mean TCV to ACV ratio on multi-year wins | 2.35 |
+| Open opportunities at the reporting date | 153.00 |
+| Open pipeline ACV | 4,661,152 |
 
 ## Bookings against ARR
 
@@ -225,15 +225,15 @@ Whether Phase 5 will be able to reconcile the two.
 
 | Measure | Value |
 |---|---|
-| FY2025 closed-won new-logo ACV | 5,088,690 |
-| FY2025 new-logo ARR landed | 5,035,084 |
-| Difference to explain in Phase 5 | 53,607 |
+| FY2025 closed-won new-logo ACV | 5,107,924 |
+| FY2025 new-logo ARR landed | 5,050,450 |
+| Difference to explain in Phase 5 | 57,474 |
 | FY2025 closed-won New Logo: count | 228 |
-| FY2025 closed-won New Logo: mean ACV | 22,319 |
-| FY2025 closed-won Expansion: count | 287 |
-| FY2025 closed-won Expansion: mean ACV | 14,153 |
-| FY2025 closed-won Renewal Uplift: count | 192 |
-| FY2025 closed-won Renewal Uplift: mean ACV | 1,497 |
+| FY2025 closed-won New Logo: mean ACV | 22,403 |
+| FY2025 closed-won Expansion: count | 277 |
+| FY2025 closed-won Expansion: mean ACV | 14,442 |
+| FY2025 closed-won Renewal Uplift: count | 189 |
+| FY2025 closed-won Renewal Uplift: mean ACV | 1,780 |
 
 ## Rep attainment dispersion
 
@@ -242,10 +242,10 @@ Measured on CRM-recorded bookings; the credit model is Phase 5.
 | Measure | Value |
 |---|---|
 | Quota-carrying reps with six or more months in FY2025 | 16.00 |
-| Lowest attainment on CRM-recorded bookings | 0.03 |
-| Median attainment | 0.61 |
-| Highest attainment | 1.26 |
-| Ninetieth to tenth percentile spread | 5.10 |
+| Lowest attainment on CRM-recorded bookings | 0.11 |
+| Median attainment | 0.62 |
+| Highest attainment | 1.28 |
+| Ninetieth to tenth percentile spread | 8.33 |
 
 ## Headcount at 30 June 2026
 
@@ -299,16 +299,16 @@ Generated ledger against the anchor.
 
 | Line | Target | Generated | Variance |
 |---|---|---|---|
-| Subscription Revenue | 26,600,000 | 26,555,479 | -0.2% |
-| Services Revenue | 800,000 | 802,608 | 0.3% |
-| Subscription COGS | 5,700,000 | 5,754,920 | 1.0% |
+| Subscription Revenue | 26,600,000 | 26,597,201 | -0.0% |
+| Services Revenue | 800,000 | 802,575 | 0.3% |
+| Subscription COGS | 5,700,000 | 5,756,105 | 1.0% |
 | Services COGS | 700,000 | 708,535 | 1.2% |
-| Sales & Marketing | 14,200,000 | 14,145,171 | -0.4% |
+| Sales & Marketing | 14,200,000 | 14,145,200 | -0.4% |
 | Research & Development | 9,100,000 | 9,200,437 | 1.1% |
 | General & Administrative | 5,100,000 | 5,120,077 | 0.4% |
-| Total revenue | 27,400,000 | 27,358,087 | -0.2% |
-| Gross profit | 21,000,000 | 20,894,632 | -0.5% |
-| EBITDA | -7,400,000 | -7,571,053 | 2.3% |
+| Total revenue | 27,400,000 | 27,399,776 | -0.0% |
+| Gross profit | 21,000,000 | 20,935,136 | -0.3% |
+| EBITDA | -7,400,000 | -7,530,578 | 1.8% |
 
 ## Planning versions
 
@@ -316,8 +316,8 @@ Board budget and Q2 reforecast exit ARR.
 
 | Version | Measure | Target | Generated |
 |---|---|---|---|
-| FY2026-Board-Approved | FY2026 exit ARR | 37,500,000 | 37,546,865 |
-| FY2026-Q2-Reforecast | FY2026 exit ARR | 35,600,000 | 35,646,865 |
+| FY2026-Board-Approved | FY2026 exit ARR | 37,500,000 | 37,589,316 |
+| FY2026-Q2-Reforecast | FY2026 exit ARR | 35,600,000 | 35,689,316 |
 | Gap | Budget less reforecast | 1,900,000 | 1,900,000 |
 
 ## Solved calibration parameters
@@ -326,16 +326,16 @@ The anchors are targets, not inputs. A deterministic feedback loop moves the mul
 
 | Parameter | What it moves | Solved value |
 |---|---|---|
-| `acquisition_scale` | volume of the cohorts acquired up to FY2023 | SMB 1.236, Mid-Market 1.289, Enterprise 1.100 |
+| `acquisition_scale` | volume of the cohorts acquired up to FY2023 | SMB 1.321, Mid-Market 1.289, Enterprise 1.100 |
 | `mid_acquisition_scale` | volume of the FY2024 cohort | 0.780 |
-| `recent_acquisition_scale` | volume of the part-year FY2026 cohort | 0.829 |
-| `churn_hazard_scale` | overall level of the churn hazard | SMB 2.039, Mid-Market 1.830, Enterprise 1.000 |
+| `recent_acquisition_scale` | volume of the part-year FY2026 cohort | 0.844 |
+| `churn_hazard_scale` | overall level of the churn hazard | SMB 2.161, Mid-Market 1.830, Enterprise 1.000 |
 | `expansion_scale` | intensity of mid-term seat expansion | 5.000 |
-| `recent_expansion_scale` | expansion intensity from FY2026, the deceleration | 1.106 |
-| `land_share_scale` | how close to its seat ceiling a customer lands | SMB 1.142, Mid-Market 0.719, Enterprise 1.367 |
-| `land_size_trend_scale` | how fast landing deal size grows year over year | 1.952 |
+| `recent_expansion_scale` | expansion intensity from FY2026, the deceleration | 1.068 |
+| `land_share_scale` | how close to its seat ceiling a customer lands | SMB 1.180, Mid-Market 0.742, Enterprise 1.367 |
+| `land_size_trend_scale` | how fast landing deal size grows year over year | 1.988 |
 | `price_inflation_scale` | multiplier on list-price inflation (held at one) | 1.000 |
-| `price_level` | overall price level, solved last | SMB 0.657, Mid-Market 1.163, Enterprise 0.602 |
+| `price_level` | overall price level, solved last | SMB 0.639, Mid-Market 1.128, Enterprise 0.601 |
 
 ## Solved ledger driver rates
 
@@ -345,11 +345,11 @@ Payroll is built one person at a time from `dim_employee` and is never scaled. T
 |---|---:|
 | general administrative | 0.898 |
 | research development | 0.905 |
-| sales marketing | 1.067 |
-| services | 0.853 |
+| sales marketing | 1.066 |
+| services | 0.854 |
 | services cogs | 0.884 |
 | subscription | 1.000 |
-| subscription cogs | 0.691 |
+| subscription cogs | 0.685 |
 
 ## Checks
 
@@ -371,15 +371,15 @@ Payroll is built one person at a time from `dim_employee` and is never scaled. T
 | fact_gl_actuals primary key unique | PASS | 0 duplicate rows on month_end_date+cost_center+account_code+account_category |
 | fact_budget primary key unique | PASS | 0 duplicate rows on version+month_end_date+cost_center+account_code |
 | fact_forecast primary key unique | PASS | 0 duplicate rows on version+month_end_date+cost_center+account_code |
-| fact_contract.customer_id resolves to dim_customer | PASS | 0 unresolved of 2,208 |
-| fact_subscription_monthly.customer_id resolves to dim_customer | PASS | 0 unresolved of 43,984 |
-| fact_subscription_monthly.product_id resolves to dim_product | PASS | 0 unresolved of 43,984 |
-| fact_subscription_monthly.contract_id resolves to fact_contract | PASS | 0 unresolved of 43,984 |
-| dim_customer.account_owner_rep_id resolves to dim_sales_rep | PASS | 0 unresolved of 1,279 |
-| dim_customer.csm_id resolves to dim_employee | PASS | 0 unresolved of 1,279 |
-| fact_crm_opportunity.rep_id resolves to dim_sales_rep | PASS | 0 unresolved of 3,722 |
+| fact_contract.customer_id resolves to dim_customer | PASS | 0 unresolved of 2,255 |
+| fact_subscription_monthly.customer_id resolves to dim_customer | PASS | 0 unresolved of 44,793 |
+| fact_subscription_monthly.product_id resolves to dim_product | PASS | 0 unresolved of 44,793 |
+| fact_subscription_monthly.contract_id resolves to fact_contract | PASS | 0 unresolved of 44,793 |
+| dim_customer.account_owner_rep_id resolves to dim_sales_rep | PASS | 0 unresolved of 1,310 |
+| dim_customer.csm_id resolves to dim_employee | PASS | 0 unresolved of 1,310 |
+| fact_crm_opportunity.rep_id resolves to dim_sales_rep | PASS | 0 unresolved of 3,727 |
 | fact_requisition.linked_employee_id resolves to dim_employee | PASS | 0 unresolved of 57 |
-| fact_contract.predecessor_contract_id resolves to fact_contract | PASS | 0 unresolved of 908 |
+| fact_contract.predecessor_contract_id resolves to fact_contract | PASS | 0 unresolved of 919 |
 | Provisioned won opportunities resolve to a customer | PASS | 0 unresolved of 1,592 |
 | fact_subscription_monthly stores state only | PASS | no pre-classified movement columns |
 
@@ -401,14 +401,14 @@ Payroll is built one person at a time from `dim_employee` and is never scaled. T
 |---|---|---|
 | No negative ARR or MRR | PASS | 0 negative rows |
 | ARR equals MRR multiplied by twelve | PASS | 0 rows outside $0.01; max drift $0.0000 |
-| ARR anchor 2023-12-31 | PASS | target $18,500,000; generated $18,510,285; variance +0.06% |
-| ARR anchor 2024-12-31 | PASS | target $24,200,000; generated $24,515,309; variance +1.30% |
-| ARR anchor 2025-12-31 | PASS | target $30,100,000; generated $30,146,865; variance +0.16% |
-| ARR anchor 2026-06-30 | PASS | target $32,800,000; generated $32,826,905; variance +0.08% |
-| Segment ARR anchor SMB at Dec 2025 | PASS | target $4,760,000; generated $4,771,202; variance +0.24% |
-| Segment ARR anchor Mid-Market at Dec 2025 | PASS | target $13,780,000; generated $13,774,425; variance -0.04% |
-| Segment ARR anchor Enterprise at Dec 2025 | PASS | target $11,550,000; generated $11,601,239; variance +0.44% |
-| Customer concentration within two points of anchor | PASS | top 10 = 15.7% against 14.2% |
+| ARR anchor 2023-12-31 | PASS | target $18,500,000; generated $18,571,137; variance +0.38% |
+| ARR anchor 2024-12-31 | PASS | target $24,200,000; generated $24,495,197; variance +1.22% |
+| ARR anchor 2025-12-31 | PASS | target $30,100,000; generated $30,189,316; variance +0.30% |
+| ARR anchor 2026-06-30 | PASS | target $32,800,000; generated $33,016,720; variance +0.66% |
+| Segment ARR anchor SMB at Dec 2025 | PASS | target $4,760,000; generated $4,781,152; variance +0.44% |
+| Segment ARR anchor Mid-Market at Dec 2025 | PASS | target $13,780,000; generated $13,806,367; variance +0.19% |
+| Segment ARR anchor Enterprise at Dec 2025 | PASS | target $11,550,000; generated $11,601,796; variance +0.45% |
+| Customer concentration within two points of anchor | PASS | top 10 = 15.6% against 14.2% |
 
 ### Customers
 
@@ -418,10 +418,10 @@ Payroll is built one person at a time from `dim_employee` and is never scaled. T
 | Segment matches customer employee count | PASS | 0 customers outside their segment band |
 | No banned tokens in customer names | PASS | 0 names matched: [] |
 | Logo count at Dec 2025 within tolerance | PASS | target 880; generated 880; variance +0 |
-| FY2025 new-logo ACV for SMB | PASS | target $9,000; generated $8,989; variance -0.1% |
-| FY2025 new-logo ACV for Mid-Market | PASS | target $45,000; generated $45,269; variance +0.6% |
-| FY2025 new-logo ACV for Enterprise | PASS | target $185,000; generated $186,774; variance +1.0% |
-| FY2025 blended new-logo ACV within tolerance | PASS | target $21,600; generated $21,703; variance +0.5% |
+| FY2025 new-logo ACV for SMB | PASS | target $9,000; generated $9,067; variance +0.7% |
+| FY2025 new-logo ACV for Mid-Market | PASS | target $45,000; generated $45,317; variance +0.7% |
+| FY2025 new-logo ACV for Enterprise | PASS | target $185,000; generated $186,662; variance +0.9% |
+| FY2025 blended new-logo ACV within tolerance | PASS | target $21,600; generated $21,769; variance +0.8% |
 | FY2025 new logos for SMB | PASS | target 178; generated 178 |
 | FY2025 new logos for Mid-Market | PASS | target 47; generated 47 |
 | FY2025 new logos for Enterprise | PASS | target 7; generated 7 |
@@ -432,21 +432,21 @@ Payroll is built one person at a time from `dim_employee` and is never scaled. T
 |---|---|---|
 | Net ACV never exceeds list ACV | PASS | 0 violations |
 | Net ACV is positive | PASS | 0 non-positive contracts |
-| Early termination share within cap for annual contracts | PASS | 1.7% of 179 terminations, specification cap 6% |
+| Early termination share within cap for annual contracts | PASS | 1.6% of 193 terminations, specification cap 6% |
 | Early termination share within cap for multi_year contracts | PASS | 0.0% of 8 terminations, specification cap 4% |
-| Renewal activity concentrates in Q1 and Q4 | PASS | Q1 34.6%, Q4 28.5%, combined 63.1% against a 59% specification target |
-| Contract mix by ARR near the specification target | PASS | largest deviation 1.1% |
+| Renewal activity concentrates in Q1 and Q4 | PASS | Q1 35.0%, Q4 28.0%, combined 63.0% against a 59% specification target |
+| Contract mix by ARR near the specification target | PASS | largest deviation 0.8% |
 | Renewal uplift never exceeds 5 percent | PASS | maximum uplift 0.050 |
-| Most renewal uplifts sit in the 3 to 5 percent band | PASS | 100.0% of 814 uplifts in band; the remainder are customers already at list price |
+| Most renewal uplifts sit in the 3 to 5 percent band | PASS | 100.0% of 851 uplifts in band; the remainder are customers already at list price |
 
 ### Products
 
 | Check | Result | Evidence |
 |---|---|---|
 | Every live customer carries Helio Core | PASS | 0 customers without Core |
-| Dispatch attach rate near target | PASS | generated 52.3% against target 48% |
-| Insights attach rate near target | PASS | generated 26.6% against target 22% |
-| Attach rates rise with segment size | PASS | Dispatch attach: SMB 46.5%, Enterprise 89.1% |
+| Dispatch attach rate near target | WARN | generated 53.2% against target 48% |
+| Insights attach rate near target | WARN | generated 27.0% against target 22% |
+| Attach rates rise with segment size | PASS | Dispatch attach: SMB 48.1%, Enterprise 89.1% |
 
 ### CRM
 
@@ -459,16 +459,16 @@ Payroll is built one person at a time from `dim_employee` and is never scaled. T
 | SMB win rate within one point of target | PASS | generated 28.0% against target 28% |
 | Mid-Market win rate within one point of target | PASS | generated 21.0% against target 21% |
 | Enterprise win rate within one point of target | PASS | generated 16.0% against target 16% |
-| Enterprise deals take longer and convert less often than SMB | PASS | Enterprise 115d at 16.0%; SMB 24d at 28.0% |
-| Non-provisioned win rate is within two points of design | PASS | 3.8% of 502 wins never provisioned, design 3% |
+| Enterprise deals take longer and convert less often than SMB | PASS | Enterprise 111d at 16.0%; SMB 25d at 28.0% |
+| Non-provisioned win rate is within two points of design | PASS | 3.0% of 504 wins never provisioned, design 3% |
 
 ### GTM
 
 | Check | Result | Evidence |
 |---|---|---|
-| Closed-won new-logo ACV is coherent with new-logo ARR | PASS | bookings $5,088,690 against ARR $5,035,084, a 1.1% difference for Phase 5 to walk |
-| Renewal uplift deals are valued at the uplift, not the contract | PASS | mean uplift deal $1,497 against mean new-logo deal $22,319 |
-| Rep attainment shows real dispersion | PASS | ninetieth percentile is 5.1 times the tenth; range 3% to 126% |
+| Closed-won new-logo ACV is coherent with new-logo ARR | PASS | bookings $5,107,924 against ARR $5,050,450, a 1.1% difference for Phase 5 to walk |
+| Renewal uplift deals are valued at the uplift, not the contract | PASS | mean uplift deal $1,780 against mean new-logo deal $22,403 |
+| Rep attainment shows real dispersion | PASS | ninetieth percentile is 8.3 times the tenth; range 11% to 128% |
 
 ### Employees
 
@@ -489,14 +489,14 @@ Payroll is built one person at a time from `dim_employee` and is never scaled. T
 | Only the seven approved P&L categories appear | PASS | invalid: [] |
 | No statistical memo accounts in the actuals ledger | PASS | 0 rows |
 | Every month in the window has ledger activity | PASS | missing: [] |
-| FY2025 Subscription Revenue within tolerance | PASS | target $26,600,000; generated $26,555,479; variance -0.17% |
-| FY2025 Services Revenue within tolerance | PASS | target $800,000; generated $802,608; variance +0.33% |
-| FY2025 Subscription COGS within tolerance | PASS | target $5,700,000; generated $5,754,920; variance +0.96% |
+| FY2025 Subscription Revenue within tolerance | PASS | target $26,600,000; generated $26,597,201; variance -0.01% |
+| FY2025 Services Revenue within tolerance | PASS | target $800,000; generated $802,575; variance +0.32% |
+| FY2025 Subscription COGS within tolerance | PASS | target $5,700,000; generated $5,756,105; variance +0.98% |
 | FY2025 Services COGS within tolerance | PASS | target $700,000; generated $708,535; variance +1.22% |
-| FY2025 Sales & Marketing within tolerance | PASS | target $14,200,000; generated $14,145,171; variance -0.39% |
+| FY2025 Sales & Marketing within tolerance | PASS | target $14,200,000; generated $14,145,200; variance -0.39% |
 | FY2025 Research & Development within tolerance | PASS | target $9,100,000; generated $9,200,437; variance +1.10% |
 | FY2025 General & Administrative within tolerance | PASS | target $5,100,000; generated $5,120,077; variance +0.39% |
-| FY2025 EBITDA within tolerance | PASS | target $-7,400,000; generated $-7,571,053; variance +2.31% against a 4% residual tolerance |
+| FY2025 EBITDA within tolerance | PASS | target $-7,400,000; generated $-7,530,578; variance +1.76% against a 4% residual tolerance |
 | Monthly totals are not artificially round | PASS | 0 months ending in three zeros |
 
 ### Planning
@@ -505,19 +505,19 @@ Payroll is built one person at a time from `dim_employee` and is never scaled. T
 |---|---|---|
 | Budget carries a single version | PASS | versions: ['FY2026-Board-Approved'] |
 | Reforecast carries a single version | PASS | versions: ['FY2026-Q2-Reforecast'] |
-| Budget exit ARR lands on the board plan | PASS | target $37,500,000; generated $37,546,865 |
-| Reforecast exit ARR lands on the Q2 position | PASS | target $35,600,000; generated $35,646,865 |
+| Budget exit ARR lands on the board plan | PASS | target $37,500,000; generated $37,589,316 |
+| Reforecast exit ARR lands on the Q2 position | PASS | target $35,600,000; generated $35,689,316 |
 | Budget-to-reforecast gap is close to the $1.9M story | PASS | gap $1,900,000 |
 
 ### Retention sanity
 
 | Check | Result | Evidence |
 |---|---|---|
-| SMB logo retention near target | PASS | generated 79.2% against target 79% |
-| Mid-Market logo retention near target | PASS | generated 91.2% against target 91% |
+| SMB logo retention near target | PASS | generated 78.7% against target 79% |
+| Mid-Market logo retention near target | PASS | generated 90.8% against target 91% |
 | Enterprise logo retention near target | PASS | generated 96.2% against target 96% |
-| Churn lands in the month the contract ends | PASS | 100.0% of 412 churn events aligned |
-| Monthly churn is lumpy rather than smooth | PASS | highest month is 11.1 times the lowest |
-| Enterprise expands more often than SMB | PASS | Enterprise 51.8% against SMB 36.1% |
-| Reactivation is present but rare | PASS | 21 reactivations |
+| Churn lands in the month the contract ends | PASS | 100.0% of 441 churn events aligned |
+| Monthly churn is lumpy rather than smooth | PASS | highest month is 10.6 times the lowest |
+| Enterprise expands more often than SMB | PASS | Enterprise 52.6% against SMB 35.6% |
+| Reactivation is present but rare | PASS | 26 reactivations |
 

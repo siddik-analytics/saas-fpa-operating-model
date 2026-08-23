@@ -1,77 +1,77 @@
 version,month_end_date,cost_center,department,account_code,account_name,account_category,budget_amount
 FY2026-Board-Approved,2026-01-31,CC-1000,Sales - SMB,6000,Salaries & Wages,Sales & Marketing,62445.00
 FY2026-Board-Approved,2026-01-31,CC-1000,Sales - SMB,6020,Payroll Taxes & Benefits,Sales & Marketing,12801.22
-FY2026-Board-Approved,2026-01-31,CC-1000,Sales - SMB,6030,Sales Commissions,Sales & Marketing,7663.99
-FY2026-Board-Approved,2026-01-31,CC-1000,Sales - SMB,6040,Commission Amortisation,Sales & Marketing,3024.92
-FY2026-Board-Approved,2026-01-31,CC-1000,Sales - SMB,6200,Software & Subscriptions,Sales & Marketing,3287.36
-FY2026-Board-Approved,2026-01-31,CC-1000,Sales - SMB,6300,Travel & Entertainment,Sales & Marketing,4487.79
-FY2026-Board-Approved,2026-01-31,CC-1000,Sales - SMB,6450,Training & Enablement,Sales & Marketing,394.64
+FY2026-Board-Approved,2026-01-31,CC-1000,Sales - SMB,6030,Sales Commissions,Sales & Marketing,8890.77
+FY2026-Board-Approved,2026-01-31,CC-1000,Sales - SMB,6040,Commission Amortisation,Sales & Marketing,3096.30
+FY2026-Board-Approved,2026-01-31,CC-1000,Sales - SMB,6200,Software & Subscriptions,Sales & Marketing,3287.01
+FY2026-Board-Approved,2026-01-31,CC-1000,Sales - SMB,6300,Travel & Entertainment,Sales & Marketing,4487.31
+FY2026-Board-Approved,2026-01-31,CC-1000,Sales - SMB,6450,Training & Enablement,Sales & Marketing,394.59
 FY2026-Board-Approved,2026-01-31,CC-1010,Sales - Mid-Market,6000,Salaries & Wages,Sales & Marketing,96194.63
 FY2026-Board-Approved,2026-01-31,CC-1010,Sales - Mid-Market,6020,Payroll Taxes & Benefits,Sales & Marketing,19719.90
-FY2026-Board-Approved,2026-01-31,CC-1010,Sales - Mid-Market,6030,Sales Commissions,Sales & Marketing,14631.25
-FY2026-Board-Approved,2026-01-31,CC-1010,Sales - Mid-Market,6040,Commission Amortisation,Sales & Marketing,5774.85
-FY2026-Board-Approved,2026-01-31,CC-1010,Sales - Mid-Market,6200,Software & Subscriptions,Sales & Marketing,4359.81
-FY2026-Board-Approved,2026-01-31,CC-1010,Sales - Mid-Market,6300,Travel & Entertainment,Sales & Marketing,6207.30
-FY2026-Board-Approved,2026-01-31,CC-1010,Sales - Mid-Market,6450,Training & Enablement,Sales & Marketing,613.36
+FY2026-Board-Approved,2026-01-31,CC-1010,Sales - Mid-Market,6030,Sales Commissions,Sales & Marketing,16973.29
+FY2026-Board-Approved,2026-01-31,CC-1010,Sales - Mid-Market,6040,Commission Amortisation,Sales & Marketing,5911.12
+FY2026-Board-Approved,2026-01-31,CC-1010,Sales - Mid-Market,6200,Software & Subscriptions,Sales & Marketing,4359.35
+FY2026-Board-Approved,2026-01-31,CC-1010,Sales - Mid-Market,6300,Travel & Entertainment,Sales & Marketing,6206.65
+FY2026-Board-Approved,2026-01-31,CC-1010,Sales - Mid-Market,6450,Training & Enablement,Sales & Marketing,613.29
 FY2026-Board-Approved,2026-01-31,CC-1020,Sales - Enterprise,6000,Salaries & Wages,Sales & Marketing,60254.25
 FY2026-Board-Approved,2026-01-31,CC-1020,Sales - Enterprise,6020,Payroll Taxes & Benefits,Sales & Marketing,12352.12
-FY2026-Board-Approved,2026-01-31,CC-1020,Sales - Enterprise,6030,Sales Commissions,Sales & Marketing,12541.07
-FY2026-Board-Approved,2026-01-31,CC-1020,Sales - Enterprise,6040,Commission Amortisation,Sales & Marketing,4949.87
-FY2026-Board-Approved,2026-01-31,CC-1020,Sales - Enterprise,6200,Software & Subscriptions,Sales & Marketing,2569.37
-FY2026-Board-Approved,2026-01-31,CC-1020,Sales - Enterprise,6300,Travel & Entertainment,Sales & Marketing,3571.48
-FY2026-Board-Approved,2026-01-31,CC-1020,Sales - Enterprise,6450,Training & Enablement,Sales & Marketing,306.49
+FY2026-Board-Approved,2026-01-31,CC-1020,Sales - Enterprise,6030,Sales Commissions,Sales & Marketing,14548.54
+FY2026-Board-Approved,2026-01-31,CC-1020,Sales - Enterprise,6040,Commission Amortisation,Sales & Marketing,5066.67
+FY2026-Board-Approved,2026-01-31,CC-1020,Sales - Enterprise,6200,Software & Subscriptions,Sales & Marketing,2569.10
+FY2026-Board-Approved,2026-01-31,CC-1020,Sales - Enterprise,6300,Travel & Entertainment,Sales & Marketing,3571.10
+FY2026-Board-Approved,2026-01-31,CC-1020,Sales - Enterprise,6450,Training & Enablement,Sales & Marketing,306.47
 FY2026-Board-Approved,2026-01-31,CC-1030,Sales Development,6000,Salaries & Wages,Sales & Marketing,67835.63
 FY2026-Board-Approved,2026-01-31,CC-1030,Sales Development,6020,Payroll Taxes & Benefits,Sales & Marketing,13906.30
-FY2026-Board-Approved,2026-01-31,CC-1030,Sales Development,6200,Software & Subscriptions,Sales & Marketing,2787.29
-FY2026-Board-Approved,2026-01-31,CC-1030,Sales Development,6300,Travel & Entertainment,Sales & Marketing,3904.52
-FY2026-Board-Approved,2026-01-31,CC-1030,Sales Development,6450,Training & Enablement,Sales & Marketing,338.95
+FY2026-Board-Approved,2026-01-31,CC-1030,Sales Development,6200,Software & Subscriptions,Sales & Marketing,2786.99
+FY2026-Board-Approved,2026-01-31,CC-1030,Sales Development,6300,Travel & Entertainment,Sales & Marketing,3904.11
+FY2026-Board-Approved,2026-01-31,CC-1030,Sales Development,6450,Training & Enablement,Sales & Marketing,338.91
 FY2026-Board-Approved,2026-01-31,CC-1040,Sales Operations,6000,Salaries & Wages,Sales & Marketing,39373.13
 FY2026-Board-Approved,2026-01-31,CC-1040,Sales Operations,6020,Payroll Taxes & Benefits,Sales & Marketing,8071.49
-FY2026-Board-Approved,2026-01-31,CC-1040,Sales Operations,6200,Software & Subscriptions,Sales & Marketing,1796.76
-FY2026-Board-Approved,2026-01-31,CC-1040,Sales Operations,6300,Travel & Entertainment,Sales & Marketing,2321.69
+FY2026-Board-Approved,2026-01-31,CC-1040,Sales Operations,6200,Software & Subscriptions,Sales & Marketing,1796.58
+FY2026-Board-Approved,2026-01-31,CC-1040,Sales Operations,6300,Travel & Entertainment,Sales & Marketing,2321.45
 FY2026-Board-Approved,2026-01-31,CC-1050,Solutions Engineering,6000,Salaries & Wages,Sales & Marketing,38346.75
 FY2026-Board-Approved,2026-01-31,CC-1050,Solutions Engineering,6020,Payroll Taxes & Benefits,Sales & Marketing,7861.08
-FY2026-Board-Approved,2026-01-31,CC-1050,Solutions Engineering,6200,Software & Subscriptions,Sales & Marketing,1802.34
-FY2026-Board-Approved,2026-01-31,CC-1050,Solutions Engineering,6300,Travel & Entertainment,Sales & Marketing,2588.85
+FY2026-Board-Approved,2026-01-31,CC-1050,Solutions Engineering,6200,Software & Subscriptions,Sales & Marketing,1802.15
+FY2026-Board-Approved,2026-01-31,CC-1050,Solutions Engineering,6300,Travel & Entertainment,Sales & Marketing,2588.57
 FY2026-Board-Approved,2026-01-31,CC-1060,Sales Leadership,6000,Salaries & Wages,Sales & Marketing,16939.50
 FY2026-Board-Approved,2026-01-31,CC-1060,Sales Leadership,6020,Payroll Taxes & Benefits,Sales & Marketing,3472.60
-FY2026-Board-Approved,2026-01-31,CC-1060,Sales Leadership,6200,Software & Subscriptions,Sales & Marketing,835.57
-FY2026-Board-Approved,2026-01-31,CC-1060,Sales Leadership,6300,Travel & Entertainment,Sales & Marketing,1096.63
-FY2026-Board-Approved,2026-01-31,CC-1060,Sales Leadership,6450,Training & Enablement,Sales & Marketing,106.54
+FY2026-Board-Approved,2026-01-31,CC-1060,Sales Leadership,6200,Software & Subscriptions,Sales & Marketing,835.48
+FY2026-Board-Approved,2026-01-31,CC-1060,Sales Leadership,6300,Travel & Entertainment,Sales & Marketing,1096.51
+FY2026-Board-Approved,2026-01-31,CC-1060,Sales Leadership,6450,Training & Enablement,Sales & Marketing,106.53
 FY2026-Board-Approved,2026-01-31,CC-1100,Demand Generation,6000,Salaries & Wages,Sales & Marketing,63885.37
 FY2026-Board-Approved,2026-01-31,CC-1100,Demand Generation,6010,Bonus,Sales & Marketing,6068.38
 FY2026-Board-Approved,2026-01-31,CC-1100,Demand Generation,6020,Payroll Taxes & Benefits,Sales & Marketing,14340.51
-FY2026-Board-Approved,2026-01-31,CC-1100,Demand Generation,6050,Contractor & Temp Labor,Sales & Marketing,18229.30
-FY2026-Board-Approved,2026-01-31,CC-1100,Demand Generation,6100,Demand Generation,Sales & Marketing,174550.16
-FY2026-Board-Approved,2026-01-31,CC-1100,Demand Generation,6110,Events & Field Marketing,Sales & Marketing,68853.75
-FY2026-Board-Approved,2026-01-31,CC-1100,Demand Generation,6200,Software & Subscriptions,Sales & Marketing,2591.54
-FY2026-Board-Approved,2026-01-31,CC-1100,Demand Generation,6300,Travel & Entertainment,Sales & Marketing,2211.21
-FY2026-Board-Approved,2026-01-31,CC-1100,Demand Generation,6450,Training & Enablement,Sales & Marketing,413.47
+FY2026-Board-Approved,2026-01-31,CC-1100,Demand Generation,6050,Contractor & Temp Labor,Sales & Marketing,18227.38
+FY2026-Board-Approved,2026-01-31,CC-1100,Demand Generation,6100,Demand Generation,Sales & Marketing,174531.81
+FY2026-Board-Approved,2026-01-31,CC-1100,Demand Generation,6110,Events & Field Marketing,Sales & Marketing,68846.51
+FY2026-Board-Approved,2026-01-31,CC-1100,Demand Generation,6200,Software & Subscriptions,Sales & Marketing,2591.28
+FY2026-Board-Approved,2026-01-31,CC-1100,Demand Generation,6300,Travel & Entertainment,Sales & Marketing,2210.98
+FY2026-Board-Approved,2026-01-31,CC-1100,Demand Generation,6450,Training & Enablement,Sales & Marketing,413.42
 FY2026-Board-Approved,2026-01-31,CC-1110,Product Marketing,6000,Salaries & Wages,Sales & Marketing,86922.75
 FY2026-Board-Approved,2026-01-31,CC-1110,Product Marketing,6010,Bonus,Sales & Marketing,7833.91
 FY2026-Board-Approved,2026-01-31,CC-1110,Product Marketing,6020,Payroll Taxes & Benefits,Sales & Marketing,19425.12
-FY2026-Board-Approved,2026-01-31,CC-1110,Product Marketing,6120,Brand & Content,Sales & Marketing,54643.48
-FY2026-Board-Approved,2026-01-31,CC-1110,Product Marketing,6200,Software & Subscriptions,Sales & Marketing,3745.79
-FY2026-Board-Approved,2026-01-31,CC-1110,Product Marketing,6300,Travel & Entertainment,Sales & Marketing,3024.75
+FY2026-Board-Approved,2026-01-31,CC-1110,Product Marketing,6120,Brand & Content,Sales & Marketing,54637.74
+FY2026-Board-Approved,2026-01-31,CC-1110,Product Marketing,6200,Software & Subscriptions,Sales & Marketing,3745.40
+FY2026-Board-Approved,2026-01-31,CC-1110,Product Marketing,6300,Travel & Entertainment,Sales & Marketing,3024.43
 FY2026-Board-Approved,2026-01-31,CC-1200,Customer Success,6000,Salaries & Wages,Subscription COGS,175329.00
 FY2026-Board-Approved,2026-01-31,CC-1200,Customer Success,6010,Bonus,Subscription COGS,16969.00
 FY2026-Board-Approved,2026-01-31,CC-1200,Customer Success,6020,Payroll Taxes & Benefits,Subscription COGS,39421.09
-FY2026-Board-Approved,2026-01-31,CC-1200,Customer Success,6200,Software & Subscriptions,Subscription COGS,3552.83
-FY2026-Board-Approved,2026-01-31,CC-1200,Customer Success,6300,Travel & Entertainment,Subscription COGS,2924.14
-FY2026-Board-Approved,2026-01-31,CC-2000,Support,5010,Third-Party Data & APIs,Subscription COGS,1284.09
+FY2026-Board-Approved,2026-01-31,CC-1200,Customer Success,6200,Software & Subscriptions,Subscription COGS,3521.65
+FY2026-Board-Approved,2026-01-31,CC-1200,Customer Success,6300,Travel & Entertainment,Subscription COGS,2898.50
+FY2026-Board-Approved,2026-01-31,CC-2000,Support,5010,Third-Party Data & APIs,Subscription COGS,1295.02
 FY2026-Board-Approved,2026-01-31,CC-2000,Support,6000,Salaries & Wages,Subscription COGS,56959.50
 FY2026-Board-Approved,2026-01-31,CC-2000,Support,6010,Bonus,Subscription COGS,5970.91
 FY2026-Board-Approved,2026-01-31,CC-2000,Support,6020,Payroll Taxes & Benefits,Subscription COGS,12900.74
-FY2026-Board-Approved,2026-01-31,CC-2000,Support,6200,Software & Subscriptions,Subscription COGS,900.75
-FY2026-Board-Approved,2026-01-31,CC-2010,Cloud Operations,5000,Cloud Hosting,Subscription COGS,140386.05
-FY2026-Board-Approved,2026-01-31,CC-2010,Cloud Operations,5010,Third-Party Data & APIs,Subscription COGS,849.12
-FY2026-Board-Approved,2026-01-31,CC-2010,Cloud Operations,5020,Payment Processing Fees,Subscription COGS,15353.65
+FY2026-Board-Approved,2026-01-31,CC-2000,Support,6200,Software & Subscriptions,Subscription COGS,892.85
+FY2026-Board-Approved,2026-01-31,CC-2010,Cloud Operations,5000,Cloud Hosting,Subscription COGS,140352.83
+FY2026-Board-Approved,2026-01-31,CC-2010,Cloud Operations,5010,Third-Party Data & APIs,Subscription COGS,856.35
+FY2026-Board-Approved,2026-01-31,CC-2010,Cloud Operations,5020,Payment Processing Fees,Subscription COGS,15204.97
 FY2026-Board-Approved,2026-01-31,CC-2010,Cloud Operations,6000,Salaries & Wages,Subscription COGS,53742.37
 FY2026-Board-Approved,2026-01-31,CC-2010,Cloud Operations,6010,Bonus,Subscription COGS,4735.12
 FY2026-Board-Approved,2026-01-31,CC-2010,Cloud Operations,6020,Payroll Taxes & Benefits,Subscription COGS,11987.89
-FY2026-Board-Approved,2026-01-31,CC-2010,Cloud Operations,6050,Contractor & Temp Labor,Subscription COGS,15853.90
-FY2026-Board-Approved,2026-01-31,CC-2010,Cloud Operations,6200,Software & Subscriptions,Subscription COGS,935.65
-FY2026-Board-Approved,2026-01-31,CC-2010,Cloud Operations,6900,Other Operating Expense,Subscription COGS,145.78
+FY2026-Board-Approved,2026-01-31,CC-2010,Cloud Operations,6050,Contractor & Temp Labor,Subscription COGS,15714.85
+FY2026-Board-Approved,2026-01-31,CC-2010,Cloud Operations,6200,Software & Subscriptions,Subscription COGS,927.44
+FY2026-Board-Approved,2026-01-31,CC-2010,Cloud Operations,6900,Other Operating Expense,Subscription COGS,144.50
 FY2026-Board-Approved,2026-01-31,CC-2100,Professional Services,5030,Services Subcontractors,Services COGS,3886.54
 FY2026-Board-Approved,2026-01-31,CC-2100,Professional Services,6000,Salaries & Wages,Services COGS,35457.37
 FY2026-Board-Approved,2026-01-31,CC-2100,Professional Services,6010,Bonus,Services COGS,3201.95
@@ -124,11 +124,11 @@ FY2026-Board-Approved,2026-01-31,CC-4030,IT & Corporate Systems,6050,Contractor 
 FY2026-Board-Approved,2026-01-31,CC-4030,IT & Corporate Systems,6200,Software & Subscriptions,General & Administrative,651.06
 FY2026-Board-Approved,2026-01-31,CC-4030,IT & Corporate Systems,6420,Facilities & Rent,General & Administrative,35985.98
 FY2026-Board-Approved,2026-01-31,CC-4030,IT & Corporate Systems,6900,Other Operating Expense,General & Administrative,75.32
-FY2026-Board-Approved,2026-01-31,CC-9000,Revenue,4000,Subscription Revenue,Subscription Revenue,-2431014.89
-FY2026-Board-Approved,2026-01-31,CC-9000,Revenue,4010,Usage Revenue Above Commitment,Subscription Revenue,-52146.39
-FY2026-Board-Approved,2026-01-31,CC-9000,Revenue,4100,Professional Services Revenue,Services Revenue,-40911.56
-FY2026-Board-Approved,2026-01-31,CC-9000,Revenue,4110,Implementation Fee Revenue,Services Revenue,-60245.35
-FY2026-Board-Approved,2026-01-31,CC-9000,Corporate,9000,Ending ARR,Memo - ARR,30331865.48
+FY2026-Board-Approved,2026-01-31,CC-9000,Revenue,4000,Subscription Revenue,Subscription Revenue,-2433542.71
+FY2026-Board-Approved,2026-01-31,CC-9000,Revenue,4010,Usage Revenue Above Commitment,Subscription Revenue,-52200.61
+FY2026-Board-Approved,2026-01-31,CC-9000,Revenue,4100,Professional Services Revenue,Services Revenue,-40832.14
+FY2026-Board-Approved,2026-01-31,CC-9000,Revenue,4110,Implementation Fee Revenue,Services Revenue,-60042.57
+FY2026-Board-Approved,2026-01-31,CC-9000,Corporate,9000,Ending ARR,Memo - ARR,30374315.84
 FY2026-Board-Approved,2026-01-31,CC-9000,Corporate,9010,New Logo ARR,Memo - ARR,330000.00
 FY2026-Board-Approved,2026-01-31,CC-9000,Corporate,9020,Expansion ARR,Memo - ARR,269500.00
 FY2026-Board-Approved,2026-01-31,CC-9000,Corporate,9030,Reactivation ARR,Memo - ARR,11000.00
@@ -138,77 +138,77 @@ FY2026-Board-Approved,2026-01-31,CC-9000,Corporate,9100,New Logos Added,Memo - S
 FY2026-Board-Approved,2026-01-31,CC-9000,Corporate,9200,Ending Headcount,Memo - Statistical,200.00
 FY2026-Board-Approved,2026-02-28,CC-1000,Sales - SMB,6000,Salaries & Wages,Sales & Marketing,63031.33
 FY2026-Board-Approved,2026-02-28,CC-1000,Sales - SMB,6020,Payroll Taxes & Benefits,Sales & Marketing,12921.42
-FY2026-Board-Approved,2026-02-28,CC-1000,Sales - SMB,6030,Sales Commissions,Sales & Marketing,7017.13
-FY2026-Board-Approved,2026-02-28,CC-1000,Sales - SMB,6040,Commission Amortisation,Sales & Marketing,3341.96
-FY2026-Board-Approved,2026-02-28,CC-1000,Sales - SMB,6200,Software & Subscriptions,Sales & Marketing,3081.62
-FY2026-Board-Approved,2026-02-28,CC-1000,Sales - SMB,6300,Travel & Entertainment,Sales & Marketing,4781.43
-FY2026-Board-Approved,2026-02-28,CC-1000,Sales - SMB,6450,Training & Enablement,Sales & Marketing,437.06
+FY2026-Board-Approved,2026-02-28,CC-1000,Sales - SMB,6030,Sales Commissions,Sales & Marketing,6010.22
+FY2026-Board-Approved,2026-02-28,CC-1000,Sales - SMB,6040,Commission Amortisation,Sales & Marketing,3373.95
+FY2026-Board-Approved,2026-02-28,CC-1000,Sales - SMB,6200,Software & Subscriptions,Sales & Marketing,3081.29
+FY2026-Board-Approved,2026-02-28,CC-1000,Sales - SMB,6300,Travel & Entertainment,Sales & Marketing,4780.93
+FY2026-Board-Approved,2026-02-28,CC-1000,Sales - SMB,6450,Training & Enablement,Sales & Marketing,437.01
 FY2026-Board-Approved,2026-02-28,CC-1010,Sales - Mid-Market,6000,Salaries & Wages,Sales & Marketing,115676.42
 FY2026-Board-Approved,2026-02-28,CC-1010,Sales - Mid-Market,6020,Payroll Taxes & Benefits,Sales & Marketing,23713.66
-FY2026-Board-Approved,2026-02-28,CC-1010,Sales - Mid-Market,6030,Sales Commissions,Sales & Marketing,13396.34
-FY2026-Board-Approved,2026-02-28,CC-1010,Sales - Mid-Market,6040,Commission Amortisation,Sales & Marketing,6380.10
-FY2026-Board-Approved,2026-02-28,CC-1010,Sales - Mid-Market,6200,Software & Subscriptions,Sales & Marketing,5491.58
-FY2026-Board-Approved,2026-02-28,CC-1010,Sales - Mid-Market,6300,Travel & Entertainment,Sales & Marketing,8375.99
-FY2026-Board-Approved,2026-02-28,CC-1010,Sales - Mid-Market,6450,Training & Enablement,Sales & Marketing,675.62
+FY2026-Board-Approved,2026-02-28,CC-1010,Sales - Mid-Market,6030,Sales Commissions,Sales & Marketing,11474.05
+FY2026-Board-Approved,2026-02-28,CC-1010,Sales - Mid-Market,6040,Commission Amortisation,Sales & Marketing,6441.18
+FY2026-Board-Approved,2026-02-28,CC-1010,Sales - Mid-Market,6200,Software & Subscriptions,Sales & Marketing,5491.01
+FY2026-Board-Approved,2026-02-28,CC-1010,Sales - Mid-Market,6300,Travel & Entertainment,Sales & Marketing,8375.12
+FY2026-Board-Approved,2026-02-28,CC-1010,Sales - Mid-Market,6450,Training & Enablement,Sales & Marketing,675.55
 FY2026-Board-Approved,2026-02-28,CC-1020,Sales - Enterprise,6000,Salaries & Wages,Sales & Marketing,60820.01
 FY2026-Board-Approved,2026-02-28,CC-1020,Sales - Enterprise,6020,Payroll Taxes & Benefits,Sales & Marketing,12468.11
-FY2026-Board-Approved,2026-02-28,CC-1020,Sales - Enterprise,6030,Sales Commissions,Sales & Marketing,11482.58
-FY2026-Board-Approved,2026-02-28,CC-1020,Sales - Enterprise,6040,Commission Amortisation,Sales & Marketing,5468.66
-FY2026-Board-Approved,2026-02-28,CC-1020,Sales - Enterprise,6200,Software & Subscriptions,Sales & Marketing,2520.96
-FY2026-Board-Approved,2026-02-28,CC-1020,Sales - Enterprise,6300,Travel & Entertainment,Sales & Marketing,3714.17
-FY2026-Board-Approved,2026-02-28,CC-1020,Sales - Enterprise,6450,Training & Enablement,Sales & Marketing,315.14
+FY2026-Board-Approved,2026-02-28,CC-1020,Sales - Enterprise,6030,Sales Commissions,Sales & Marketing,9834.91
+FY2026-Board-Approved,2026-02-28,CC-1020,Sales - Enterprise,6040,Commission Amortisation,Sales & Marketing,5521.00
+FY2026-Board-Approved,2026-02-28,CC-1020,Sales - Enterprise,6200,Software & Subscriptions,Sales & Marketing,2520.70
+FY2026-Board-Approved,2026-02-28,CC-1020,Sales - Enterprise,6300,Travel & Entertainment,Sales & Marketing,3713.78
+FY2026-Board-Approved,2026-02-28,CC-1020,Sales - Enterprise,6450,Training & Enablement,Sales & Marketing,315.10
 FY2026-Board-Approved,2026-02-28,CC-1030,Sales Development,6000,Salaries & Wages,Sales & Marketing,68472.58
 FY2026-Board-Approved,2026-02-28,CC-1030,Sales Development,6020,Payroll Taxes & Benefits,Sales & Marketing,14036.88
-FY2026-Board-Approved,2026-02-28,CC-1030,Sales Development,6200,Software & Subscriptions,Sales & Marketing,3081.02
-FY2026-Board-Approved,2026-02-28,CC-1030,Sales Development,6300,Travel & Entertainment,Sales & Marketing,4010.56
-FY2026-Board-Approved,2026-02-28,CC-1030,Sales Development,6450,Training & Enablement,Sales & Marketing,366.13
+FY2026-Board-Approved,2026-02-28,CC-1030,Sales Development,6200,Software & Subscriptions,Sales & Marketing,3080.71
+FY2026-Board-Approved,2026-02-28,CC-1030,Sales Development,6300,Travel & Entertainment,Sales & Marketing,4010.14
+FY2026-Board-Approved,2026-02-28,CC-1030,Sales Development,6450,Training & Enablement,Sales & Marketing,366.08
 FY2026-Board-Approved,2026-02-28,CC-1040,Sales Operations,6000,Salaries & Wages,Sales & Marketing,50938.71
 FY2026-Board-Approved,2026-02-28,CC-1040,Sales Operations,6020,Payroll Taxes & Benefits,Sales & Marketing,10442.44
-FY2026-Board-Approved,2026-02-28,CC-1040,Sales Operations,6200,Software & Subscriptions,Sales & Marketing,2263.58
-FY2026-Board-Approved,2026-02-28,CC-1040,Sales Operations,6300,Travel & Entertainment,Sales & Marketing,2845.89
+FY2026-Board-Approved,2026-02-28,CC-1040,Sales Operations,6200,Software & Subscriptions,Sales & Marketing,2263.34
+FY2026-Board-Approved,2026-02-28,CC-1040,Sales Operations,6300,Travel & Entertainment,Sales & Marketing,2845.58
 FY2026-Board-Approved,2026-02-28,CC-1050,Solutions Engineering,6000,Salaries & Wages,Sales & Marketing,38706.81
 FY2026-Board-Approved,2026-02-28,CC-1050,Solutions Engineering,6020,Payroll Taxes & Benefits,Sales & Marketing,7934.90
-FY2026-Board-Approved,2026-02-28,CC-1050,Solutions Engineering,6200,Software & Subscriptions,Sales & Marketing,1807.47
-FY2026-Board-Approved,2026-02-28,CC-1050,Solutions Engineering,6300,Travel & Entertainment,Sales & Marketing,2423.17
+FY2026-Board-Approved,2026-02-28,CC-1050,Solutions Engineering,6200,Software & Subscriptions,Sales & Marketing,1807.27
+FY2026-Board-Approved,2026-02-28,CC-1050,Solutions Engineering,6300,Travel & Entertainment,Sales & Marketing,2422.91
 FY2026-Board-Approved,2026-02-28,CC-1060,Sales Leadership,6000,Salaries & Wages,Sales & Marketing,17098.56
 FY2026-Board-Approved,2026-02-28,CC-1060,Sales Leadership,6020,Payroll Taxes & Benefits,Sales & Marketing,3505.21
-FY2026-Board-Approved,2026-02-28,CC-1060,Sales Leadership,6200,Software & Subscriptions,Sales & Marketing,922.06
-FY2026-Board-Approved,2026-02-28,CC-1060,Sales Leadership,6300,Travel & Entertainment,Sales & Marketing,1291.86
-FY2026-Board-Approved,2026-02-28,CC-1060,Sales Leadership,6450,Training & Enablement,Sales & Marketing,107.57
+FY2026-Board-Approved,2026-02-28,CC-1060,Sales Leadership,6200,Software & Subscriptions,Sales & Marketing,921.97
+FY2026-Board-Approved,2026-02-28,CC-1060,Sales Leadership,6300,Travel & Entertainment,Sales & Marketing,1291.73
+FY2026-Board-Approved,2026-02-28,CC-1060,Sales Leadership,6450,Training & Enablement,Sales & Marketing,107.56
 FY2026-Board-Approved,2026-02-28,CC-1100,Demand Generation,6000,Salaries & Wages,Sales & Marketing,74906.29
 FY2026-Board-Approved,2026-02-28,CC-1100,Demand Generation,6010,Bonus,Sales & Marketing,6959.05
 FY2026-Board-Approved,2026-02-28,CC-1100,Demand Generation,6020,Payroll Taxes & Benefits,Sales & Marketing,16782.39
-FY2026-Board-Approved,2026-02-28,CC-1100,Demand Generation,6050,Contractor & Temp Labor,Sales & Marketing,18148.69
-FY2026-Board-Approved,2026-02-28,CC-1100,Demand Generation,6100,Demand Generation,Sales & Marketing,178301.83
-FY2026-Board-Approved,2026-02-28,CC-1100,Demand Generation,6110,Events & Field Marketing,Sales & Marketing,68741.43
-FY2026-Board-Approved,2026-02-28,CC-1100,Demand Generation,6200,Software & Subscriptions,Sales & Marketing,2855.11
-FY2026-Board-Approved,2026-02-28,CC-1100,Demand Generation,6300,Travel & Entertainment,Sales & Marketing,2518.17
-FY2026-Board-Approved,2026-02-28,CC-1100,Demand Generation,6450,Training & Enablement,Sales & Marketing,384.62
+FY2026-Board-Approved,2026-02-28,CC-1100,Demand Generation,6050,Contractor & Temp Labor,Sales & Marketing,18146.77
+FY2026-Board-Approved,2026-02-28,CC-1100,Demand Generation,6100,Demand Generation,Sales & Marketing,178283.09
+FY2026-Board-Approved,2026-02-28,CC-1100,Demand Generation,6110,Events & Field Marketing,Sales & Marketing,68734.21
+FY2026-Board-Approved,2026-02-28,CC-1100,Demand Generation,6200,Software & Subscriptions,Sales & Marketing,2854.81
+FY2026-Board-Approved,2026-02-28,CC-1100,Demand Generation,6300,Travel & Entertainment,Sales & Marketing,2517.90
+FY2026-Board-Approved,2026-02-28,CC-1100,Demand Generation,6450,Training & Enablement,Sales & Marketing,384.57
 FY2026-Board-Approved,2026-02-28,CC-1110,Product Marketing,6000,Salaries & Wages,Sales & Marketing,87738.91
 FY2026-Board-Approved,2026-02-28,CC-1110,Product Marketing,6010,Bonus,Sales & Marketing,7907.47
 FY2026-Board-Approved,2026-02-28,CC-1110,Product Marketing,6020,Payroll Taxes & Benefits,Sales & Marketing,19607.51
-FY2026-Board-Approved,2026-02-28,CC-1110,Product Marketing,6120,Brand & Content,Sales & Marketing,48735.49
-FY2026-Board-Approved,2026-02-28,CC-1110,Product Marketing,6200,Software & Subscriptions,Sales & Marketing,3544.70
-FY2026-Board-Approved,2026-02-28,CC-1110,Product Marketing,6300,Travel & Entertainment,Sales & Marketing,2762.55
+FY2026-Board-Approved,2026-02-28,CC-1110,Product Marketing,6120,Brand & Content,Sales & Marketing,48730.37
+FY2026-Board-Approved,2026-02-28,CC-1110,Product Marketing,6200,Software & Subscriptions,Sales & Marketing,3544.32
+FY2026-Board-Approved,2026-02-28,CC-1110,Product Marketing,6300,Travel & Entertainment,Sales & Marketing,2762.26
 FY2026-Board-Approved,2026-02-28,CC-1200,Customer Success,6000,Salaries & Wages,Subscription COGS,176975.26
 FY2026-Board-Approved,2026-02-28,CC-1200,Customer Success,6010,Bonus,Subscription COGS,17128.33
 FY2026-Board-Approved,2026-02-28,CC-1200,Customer Success,6020,Payroll Taxes & Benefits,Subscription COGS,39791.24
-FY2026-Board-Approved,2026-02-28,CC-1200,Customer Success,6200,Software & Subscriptions,Subscription COGS,3483.39
-FY2026-Board-Approved,2026-02-28,CC-1200,Customer Success,6300,Travel & Entertainment,Subscription COGS,2540.17
-FY2026-Board-Approved,2026-02-28,CC-2000,Support,5010,Third-Party Data & APIs,Subscription COGS,1369.09
+FY2026-Board-Approved,2026-02-28,CC-1200,Customer Success,6200,Software & Subscriptions,Subscription COGS,3452.83
+FY2026-Board-Approved,2026-02-28,CC-1200,Customer Success,6300,Travel & Entertainment,Subscription COGS,2517.89
+FY2026-Board-Approved,2026-02-28,CC-2000,Support,5010,Third-Party Data & APIs,Subscription COGS,1372.15
 FY2026-Board-Approved,2026-02-28,CC-2000,Support,6000,Salaries & Wages,Subscription COGS,57494.32
 FY2026-Board-Approved,2026-02-28,CC-2000,Support,6010,Bonus,Subscription COGS,6026.98
 FY2026-Board-Approved,2026-02-28,CC-2000,Support,6020,Payroll Taxes & Benefits,Subscription COGS,13021.87
-FY2026-Board-Approved,2026-02-28,CC-2000,Support,6200,Software & Subscriptions,Subscription COGS,891.01
-FY2026-Board-Approved,2026-02-28,CC-2010,Cloud Operations,5000,Cloud Hosting,Subscription COGS,145464.08
-FY2026-Board-Approved,2026-02-28,CC-2010,Cloud Operations,5010,Third-Party Data & APIs,Subscription COGS,843.94
-FY2026-Board-Approved,2026-02-28,CC-2010,Cloud Operations,5020,Payment Processing Fees,Subscription COGS,16105.38
+FY2026-Board-Approved,2026-02-28,CC-2000,Support,6200,Software & Subscriptions,Subscription COGS,883.20
+FY2026-Board-Approved,2026-02-28,CC-2010,Cloud Operations,5000,Cloud Hosting,Subscription COGS,145332.62
+FY2026-Board-Approved,2026-02-28,CC-2010,Cloud Operations,5010,Third-Party Data & APIs,Subscription COGS,845.83
+FY2026-Board-Approved,2026-02-28,CC-2010,Cloud Operations,5020,Payment Processing Fees,Subscription COGS,16444.19
 FY2026-Board-Approved,2026-02-28,CC-2010,Cloud Operations,6000,Salaries & Wages,Subscription COGS,54246.99
 FY2026-Board-Approved,2026-02-28,CC-2010,Cloud Operations,6010,Bonus,Subscription COGS,4779.59
 FY2026-Board-Approved,2026-02-28,CC-2010,Cloud Operations,6020,Payroll Taxes & Benefits,Subscription COGS,12100.45
-FY2026-Board-Approved,2026-02-28,CC-2010,Cloud Operations,6050,Contractor & Temp Labor,Subscription COGS,15957.54
-FY2026-Board-Approved,2026-02-28,CC-2010,Cloud Operations,6200,Software & Subscriptions,Subscription COGS,962.61
-FY2026-Board-Approved,2026-02-28,CC-2010,Cloud Operations,6900,Other Operating Expense,Subscription COGS,143.51
+FY2026-Board-Approved,2026-02-28,CC-2010,Cloud Operations,6050,Contractor & Temp Labor,Subscription COGS,15817.57
+FY2026-Board-Approved,2026-02-28,CC-2010,Cloud Operations,6200,Software & Subscriptions,Subscription COGS,954.17
+FY2026-Board-Approved,2026-02-28,CC-2010,Cloud Operations,6900,Other Operating Expense,Subscription COGS,142.25
 FY2026-Board-Approved,2026-02-28,CC-2100,Professional Services,5030,Services Subcontractors,Services COGS,3188.78
 FY2026-Board-Approved,2026-02-28,CC-2100,Professional Services,6000,Salaries & Wages,Services COGS,35790.30
 FY2026-Board-Approved,2026-02-28,CC-2100,Professional Services,6010,Bonus,Services COGS,3232.01
@@ -262,11 +262,11 @@ FY2026-Board-Approved,2026-02-28,CC-4030,IT & Corporate Systems,6050,Contractor 
 FY2026-Board-Approved,2026-02-28,CC-4030,IT & Corporate Systems,6200,Software & Subscriptions,General & Administrative,636.19
 FY2026-Board-Approved,2026-02-28,CC-4030,IT & Corporate Systems,6420,Facilities & Rent,General & Administrative,42602.55
 FY2026-Board-Approved,2026-02-28,CC-4030,IT & Corporate Systems,6900,Other Operating Expense,General & Administrative,88.95
-FY2026-Board-Approved,2026-02-28,CC-9000,Revenue,4000,Subscription Revenue,Subscription Revenue,-2467782.88
-FY2026-Board-Approved,2026-02-28,CC-9000,Revenue,4010,Usage Revenue Above Commitment,Subscription Revenue,-52935.08
-FY2026-Board-Approved,2026-02-28,CC-9000,Revenue,4100,Professional Services Revenue,Services Revenue,-40099.09
-FY2026-Board-Approved,2026-02-28,CC-9000,Revenue,4110,Implementation Fee Revenue,Services Revenue,-60119.29
-FY2026-Board-Approved,2026-02-28,CC-9000,Corporate,9000,Ending ARR,Memo - ARR,30720365.48
+FY2026-Board-Approved,2026-02-28,CC-9000,Revenue,4000,Subscription Revenue,Subscription Revenue,-2471246.12
+FY2026-Board-Approved,2026-02-28,CC-9000,Revenue,4010,Usage Revenue Above Commitment,Subscription Revenue,-53009.37
+FY2026-Board-Approved,2026-02-28,CC-9000,Revenue,4100,Professional Services Revenue,Services Revenue,-40074.02
+FY2026-Board-Approved,2026-02-28,CC-9000,Revenue,4110,Implementation Fee Revenue,Services Revenue,-59951.18
+FY2026-Board-Approved,2026-02-28,CC-9000,Corporate,9000,Ending ARR,Memo - ARR,30762815.84
 FY2026-Board-Approved,2026-02-28,CC-9000,Corporate,9010,New Logo ARR,Memo - ARR,390000.00
 FY2026-Board-Approved,2026-02-28,CC-9000,Corporate,9020,Expansion ARR,Memo - ARR,318500.00
 FY2026-Board-Approved,2026-02-28,CC-9000,Corporate,9030,Reactivation ARR,Memo - ARR,13000.00
@@ -276,77 +276,77 @@ FY2026-Board-Approved,2026-02-28,CC-9000,Corporate,9100,New Logos Added,Memo - S
 FY2026-Board-Approved,2026-02-28,CC-9000,Corporate,9200,Ending Headcount,Memo - Statistical,201.30
 FY2026-Board-Approved,2026-03-31,CC-1000,Sales - SMB,6000,Salaries & Wages,Sales & Marketing,63589.11
 FY2026-Board-Approved,2026-03-31,CC-1000,Sales - SMB,6020,Payroll Taxes & Benefits,Sales & Marketing,13035.76
-FY2026-Board-Approved,2026-03-31,CC-1000,Sales - SMB,6030,Sales Commissions,Sales & Marketing,6901.42
-FY2026-Board-Approved,2026-03-31,CC-1000,Sales - SMB,6040,Commission Amortisation,Sales & Marketing,3658.20
-FY2026-Board-Approved,2026-03-31,CC-1000,Sales - SMB,6200,Software & Subscriptions,Sales & Marketing,3677.80
-FY2026-Board-Approved,2026-03-31,CC-1000,Sales - SMB,6300,Travel & Entertainment,Sales & Marketing,4620.48
-FY2026-Board-Approved,2026-03-31,CC-1000,Sales - SMB,6450,Training & Enablement,Sales & Marketing,424.85
+FY2026-Board-Approved,2026-03-31,CC-1000,Sales - SMB,6030,Sales Commissions,Sales & Marketing,6098.29
+FY2026-Board-Approved,2026-03-31,CC-1000,Sales - SMB,6040,Commission Amortisation,Sales & Marketing,3658.47
+FY2026-Board-Approved,2026-03-31,CC-1000,Sales - SMB,6200,Software & Subscriptions,Sales & Marketing,3677.41
+FY2026-Board-Approved,2026-03-31,CC-1000,Sales - SMB,6300,Travel & Entertainment,Sales & Marketing,4619.99
+FY2026-Board-Approved,2026-03-31,CC-1000,Sales - SMB,6450,Training & Enablement,Sales & Marketing,424.81
 FY2026-Board-Approved,2026-03-31,CC-1010,Sales - Mid-Market,6000,Salaries & Wages,Sales & Marketing,99819.09
 FY2026-Board-Approved,2026-03-31,CC-1010,Sales - Mid-Market,6020,Payroll Taxes & Benefits,Sales & Marketing,20462.92
-FY2026-Board-Approved,2026-03-31,CC-1010,Sales - Mid-Market,6030,Sales Commissions,Sales & Marketing,13175.45
-FY2026-Board-Approved,2026-03-31,CC-1010,Sales - Mid-Market,6040,Commission Amortisation,Sales & Marketing,6983.85
-FY2026-Board-Approved,2026-03-31,CC-1010,Sales - Mid-Market,6200,Software & Subscriptions,Sales & Marketing,4716.92
-FY2026-Board-Approved,2026-03-31,CC-1010,Sales - Mid-Market,6300,Travel & Entertainment,Sales & Marketing,6561.09
-FY2026-Board-Approved,2026-03-31,CC-1010,Sales - Mid-Market,6450,Training & Enablement,Sales & Marketing,525.37
+FY2026-Board-Approved,2026-03-31,CC-1010,Sales - Mid-Market,6030,Sales Commissions,Sales & Marketing,11642.19
+FY2026-Board-Approved,2026-03-31,CC-1010,Sales - Mid-Market,6040,Commission Amortisation,Sales & Marketing,6984.35
+FY2026-Board-Approved,2026-03-31,CC-1010,Sales - Mid-Market,6200,Software & Subscriptions,Sales & Marketing,4716.42
+FY2026-Board-Approved,2026-03-31,CC-1010,Sales - Mid-Market,6300,Travel & Entertainment,Sales & Marketing,6560.40
+FY2026-Board-Approved,2026-03-31,CC-1010,Sales - Mid-Market,6450,Training & Enablement,Sales & Marketing,525.31
 FY2026-Board-Approved,2026-03-31,CC-1020,Sales - Enterprise,6000,Salaries & Wages,Sales & Marketing,61358.23
 FY2026-Board-Approved,2026-03-31,CC-1020,Sales - Enterprise,6020,Payroll Taxes & Benefits,Sales & Marketing,12578.44
-FY2026-Board-Approved,2026-03-31,CC-1020,Sales - Enterprise,6030,Sales Commissions,Sales & Marketing,11293.24
-FY2026-Board-Approved,2026-03-31,CC-1020,Sales - Enterprise,6040,Commission Amortisation,Sales & Marketing,5986.15
-FY2026-Board-Approved,2026-03-31,CC-1020,Sales - Enterprise,6200,Software & Subscriptions,Sales & Marketing,2612.66
-FY2026-Board-Approved,2026-03-31,CC-1020,Sales - Enterprise,6300,Travel & Entertainment,Sales & Marketing,3622.72
-FY2026-Board-Approved,2026-03-31,CC-1020,Sales - Enterprise,6450,Training & Enablement,Sales & Marketing,314.28
+FY2026-Board-Approved,2026-03-31,CC-1020,Sales - Enterprise,6030,Sales Commissions,Sales & Marketing,9979.03
+FY2026-Board-Approved,2026-03-31,CC-1020,Sales - Enterprise,6040,Commission Amortisation,Sales & Marketing,5986.60
+FY2026-Board-Approved,2026-03-31,CC-1020,Sales - Enterprise,6200,Software & Subscriptions,Sales & Marketing,2612.38
+FY2026-Board-Approved,2026-03-31,CC-1020,Sales - Enterprise,6300,Travel & Entertainment,Sales & Marketing,3622.34
+FY2026-Board-Approved,2026-03-31,CC-1020,Sales - Enterprise,6450,Training & Enablement,Sales & Marketing,314.25
 FY2026-Board-Approved,2026-03-31,CC-1030,Sales Development,6000,Salaries & Wages,Sales & Marketing,55359.42
 FY2026-Board-Approved,2026-03-31,CC-1030,Sales Development,6020,Payroll Taxes & Benefits,Sales & Marketing,11348.68
-FY2026-Board-Approved,2026-03-31,CC-1030,Sales Development,6200,Software & Subscriptions,Sales & Marketing,2597.56
-FY2026-Board-Approved,2026-03-31,CC-1030,Sales Development,6300,Travel & Entertainment,Sales & Marketing,3384.14
-FY2026-Board-Approved,2026-03-31,CC-1030,Sales Development,6450,Training & Enablement,Sales & Marketing,338.94
+FY2026-Board-Approved,2026-03-31,CC-1030,Sales Development,6200,Software & Subscriptions,Sales & Marketing,2597.29
+FY2026-Board-Approved,2026-03-31,CC-1030,Sales Development,6300,Travel & Entertainment,Sales & Marketing,3383.78
+FY2026-Board-Approved,2026-03-31,CC-1030,Sales Development,6450,Training & Enablement,Sales & Marketing,338.90
 FY2026-Board-Approved,2026-03-31,CC-1040,Sales Operations,6000,Salaries & Wages,Sales & Marketing,51389.48
 FY2026-Board-Approved,2026-03-31,CC-1040,Sales Operations,6020,Payroll Taxes & Benefits,Sales & Marketing,10534.85
-FY2026-Board-Approved,2026-03-31,CC-1040,Sales Operations,6200,Software & Subscriptions,Sales & Marketing,2111.75
-FY2026-Board-Approved,2026-03-31,CC-1040,Sales Operations,6300,Travel & Entertainment,Sales & Marketing,2739.22
+FY2026-Board-Approved,2026-03-31,CC-1040,Sales Operations,6200,Software & Subscriptions,Sales & Marketing,2111.54
+FY2026-Board-Approved,2026-03-31,CC-1040,Sales Operations,6300,Travel & Entertainment,Sales & Marketing,2738.94
 FY2026-Board-Approved,2026-03-31,CC-1050,Solutions Engineering,6000,Salaries & Wages,Sales & Marketing,39049.34
 FY2026-Board-Approved,2026-03-31,CC-1050,Solutions Engineering,6020,Payroll Taxes & Benefits,Sales & Marketing,8005.11
-FY2026-Board-Approved,2026-03-31,CC-1050,Solutions Engineering,6200,Software & Subscriptions,Sales & Marketing,1694.45
-FY2026-Board-Approved,2026-03-31,CC-1050,Solutions Engineering,6300,Travel & Entertainment,Sales & Marketing,2430.95
+FY2026-Board-Approved,2026-03-31,CC-1050,Solutions Engineering,6200,Software & Subscriptions,Sales & Marketing,1694.26
+FY2026-Board-Approved,2026-03-31,CC-1050,Solutions Engineering,6300,Travel & Entertainment,Sales & Marketing,2430.69
 FY2026-Board-Approved,2026-03-31,CC-1060,Sales Leadership,6000,Salaries & Wages,Sales & Marketing,17249.87
 FY2026-Board-Approved,2026-03-31,CC-1060,Sales Leadership,6020,Payroll Taxes & Benefits,Sales & Marketing,3536.23
-FY2026-Board-Approved,2026-03-31,CC-1060,Sales Leadership,6200,Software & Subscriptions,Sales & Marketing,858.84
-FY2026-Board-Approved,2026-03-31,CC-1060,Sales Leadership,6300,Travel & Entertainment,Sales & Marketing,1140.43
+FY2026-Board-Approved,2026-03-31,CC-1060,Sales Leadership,6200,Software & Subscriptions,Sales & Marketing,858.75
+FY2026-Board-Approved,2026-03-31,CC-1060,Sales Leadership,6300,Travel & Entertainment,Sales & Marketing,1140.31
 FY2026-Board-Approved,2026-03-31,CC-1060,Sales Leadership,6450,Training & Enablement,Sales & Marketing,98.53
 FY2026-Board-Approved,2026-03-31,CC-1100,Demand Generation,6000,Salaries & Wages,Sales & Marketing,75569.16
 FY2026-Board-Approved,2026-03-31,CC-1100,Demand Generation,6010,Bonus,Sales & Marketing,7020.63
 FY2026-Board-Approved,2026-03-31,CC-1100,Demand Generation,6020,Payroll Taxes & Benefits,Sales & Marketing,16930.91
-FY2026-Board-Approved,2026-03-31,CC-1100,Demand Generation,6050,Contractor & Temp Labor,Sales & Marketing,18172.32
-FY2026-Board-Approved,2026-03-31,CC-1100,Demand Generation,6100,Demand Generation,Sales & Marketing,222107.50
-FY2026-Board-Approved,2026-03-31,CC-1100,Demand Generation,6110,Events & Field Marketing,Sales & Marketing,100709.22
-FY2026-Board-Approved,2026-03-31,CC-1100,Demand Generation,6200,Software & Subscriptions,Sales & Marketing,3183.89
-FY2026-Board-Approved,2026-03-31,CC-1100,Demand Generation,6300,Travel & Entertainment,Sales & Marketing,2475.61
-FY2026-Board-Approved,2026-03-31,CC-1100,Demand Generation,6450,Training & Enablement,Sales & Marketing,389.18
+FY2026-Board-Approved,2026-03-31,CC-1100,Demand Generation,6050,Contractor & Temp Labor,Sales & Marketing,18170.40
+FY2026-Board-Approved,2026-03-31,CC-1100,Demand Generation,6100,Demand Generation,Sales & Marketing,222084.15
+FY2026-Board-Approved,2026-03-31,CC-1100,Demand Generation,6110,Events & Field Marketing,Sales & Marketing,100698.63
+FY2026-Board-Approved,2026-03-31,CC-1100,Demand Generation,6200,Software & Subscriptions,Sales & Marketing,3183.56
+FY2026-Board-Approved,2026-03-31,CC-1100,Demand Generation,6300,Travel & Entertainment,Sales & Marketing,2475.35
+FY2026-Board-Approved,2026-03-31,CC-1100,Demand Generation,6450,Training & Enablement,Sales & Marketing,389.15
 FY2026-Board-Approved,2026-03-31,CC-1110,Product Marketing,6000,Salaries & Wages,Sales & Marketing,79697.19
 FY2026-Board-Approved,2026-03-31,CC-1110,Product Marketing,6010,Bonus,Sales & Marketing,7272.00
 FY2026-Board-Approved,2026-03-31,CC-1110,Product Marketing,6020,Payroll Taxes & Benefits,Sales & Marketing,17828.68
-FY2026-Board-Approved,2026-03-31,CC-1110,Product Marketing,6120,Brand & Content,Sales & Marketing,69622.89
-FY2026-Board-Approved,2026-03-31,CC-1110,Product Marketing,6200,Software & Subscriptions,Sales & Marketing,3473.05
-FY2026-Board-Approved,2026-03-31,CC-1110,Product Marketing,6300,Travel & Entertainment,Sales & Marketing,2859.69
+FY2026-Board-Approved,2026-03-31,CC-1110,Product Marketing,6120,Brand & Content,Sales & Marketing,69615.57
+FY2026-Board-Approved,2026-03-31,CC-1110,Product Marketing,6200,Software & Subscriptions,Sales & Marketing,3472.68
+FY2026-Board-Approved,2026-03-31,CC-1110,Product Marketing,6300,Travel & Entertainment,Sales & Marketing,2859.40
 FY2026-Board-Approved,2026-03-31,CC-1200,Customer Success,6000,Salaries & Wages,Subscription COGS,196871.54
 FY2026-Board-Approved,2026-03-31,CC-1200,Customer Success,6010,Bonus,Subscription COGS,18746.32
 FY2026-Board-Approved,2026-03-31,CC-1200,Customer Success,6020,Payroll Taxes & Benefits,Subscription COGS,44201.66
-FY2026-Board-Approved,2026-03-31,CC-1200,Customer Success,6200,Software & Subscriptions,Subscription COGS,4170.01
-FY2026-Board-Approved,2026-03-31,CC-1200,Customer Success,6300,Travel & Entertainment,Subscription COGS,3162.86
-FY2026-Board-Approved,2026-03-31,CC-2000,Support,5010,Third-Party Data & APIs,Subscription COGS,1394.22
+FY2026-Board-Approved,2026-03-31,CC-1200,Customer Success,6200,Software & Subscriptions,Subscription COGS,4133.43
+FY2026-Board-Approved,2026-03-31,CC-1200,Customer Success,6300,Travel & Entertainment,Subscription COGS,3135.11
+FY2026-Board-Approved,2026-03-31,CC-2000,Support,5010,Third-Party Data & APIs,Subscription COGS,1395.34
 FY2026-Board-Approved,2026-03-31,CC-2000,Support,6000,Salaries & Wages,Subscription COGS,58003.10
 FY2026-Board-Approved,2026-03-31,CC-2000,Support,6010,Bonus,Subscription COGS,6080.31
 FY2026-Board-Approved,2026-03-31,CC-2000,Support,6020,Payroll Taxes & Benefits,Subscription COGS,13137.10
-FY2026-Board-Approved,2026-03-31,CC-2000,Support,6200,Software & Subscriptions,Subscription COGS,1019.60
-FY2026-Board-Approved,2026-03-31,CC-2010,Cloud Operations,5000,Cloud Hosting,Subscription COGS,162921.46
-FY2026-Board-Approved,2026-03-31,CC-2010,Cloud Operations,5010,Third-Party Data & APIs,Subscription COGS,996.81
-FY2026-Board-Approved,2026-03-31,CC-2010,Cloud Operations,5020,Payment Processing Fees,Subscription COGS,24704.92
+FY2026-Board-Approved,2026-03-31,CC-2000,Support,6200,Software & Subscriptions,Subscription COGS,1010.67
+FY2026-Board-Approved,2026-03-31,CC-2010,Cloud Operations,5000,Cloud Hosting,Subscription COGS,163097.82
+FY2026-Board-Approved,2026-03-31,CC-2010,Cloud Operations,5010,Third-Party Data & APIs,Subscription COGS,997.62
+FY2026-Board-Approved,2026-03-31,CC-2010,Cloud Operations,5020,Payment Processing Fees,Subscription COGS,24637.55
 FY2026-Board-Approved,2026-03-31,CC-2010,Cloud Operations,6000,Salaries & Wages,Subscription COGS,54727.04
 FY2026-Board-Approved,2026-03-31,CC-2010,Cloud Operations,6010,Bonus,Subscription COGS,4821.88
 FY2026-Board-Approved,2026-03-31,CC-2010,Cloud Operations,6020,Payroll Taxes & Benefits,Subscription COGS,12207.53
-FY2026-Board-Approved,2026-03-31,CC-2010,Cloud Operations,6050,Contractor & Temp Labor,Subscription COGS,18289.22
-FY2026-Board-Approved,2026-03-31,CC-2010,Cloud Operations,6200,Software & Subscriptions,Subscription COGS,908.99
-FY2026-Board-Approved,2026-03-31,CC-2010,Cloud Operations,6900,Other Operating Expense,Subscription COGS,157.31
+FY2026-Board-Approved,2026-03-31,CC-2010,Cloud Operations,6050,Contractor & Temp Labor,Subscription COGS,18128.79
+FY2026-Board-Approved,2026-03-31,CC-2010,Cloud Operations,6200,Software & Subscriptions,Subscription COGS,901.02
+FY2026-Board-Approved,2026-03-31,CC-2010,Cloud Operations,6900,Other Operating Expense,Subscription COGS,155.93
 FY2026-Board-Approved,2026-03-31,CC-2100,Professional Services,5030,Services Subcontractors,Services COGS,3784.80
 FY2026-Board-Approved,2026-03-31,CC-2100,Professional Services,6000,Salaries & Wages,Services COGS,36107.02
 FY2026-Board-Approved,2026-03-31,CC-2100,Professional Services,6010,Bonus,Services COGS,3260.61
@@ -400,11 +400,11 @@ FY2026-Board-Approved,2026-03-31,CC-4030,IT & Corporate Systems,6050,Contractor 
 FY2026-Board-Approved,2026-03-31,CC-4030,IT & Corporate Systems,6200,Software & Subscriptions,General & Administrative,859.86
 FY2026-Board-Approved,2026-03-31,CC-4030,IT & Corporate Systems,6420,Facilities & Rent,General & Administrative,42290.46
 FY2026-Board-Approved,2026-03-31,CC-4030,IT & Corporate Systems,6900,Other Operating Expense,General & Administrative,109.49
-FY2026-Board-Approved,2026-03-31,CC-9000,Revenue,4000,Subscription Revenue,Subscription Revenue,-2492007.01
-FY2026-Board-Approved,2026-03-31,CC-9000,Revenue,4010,Usage Revenue Above Commitment,Subscription Revenue,-53454.70
-FY2026-Board-Approved,2026-03-31,CC-9000,Revenue,4100,Professional Services Revenue,Services Revenue,-22865.43
-FY2026-Board-Approved,2026-03-31,CC-9000,Revenue,4110,Implementation Fee Revenue,Services Revenue,-62073.64
-FY2026-Board-Approved,2026-03-31,CC-9000,Corporate,9000,Ending ARR,Memo - ARR,31497365.48
+FY2026-Board-Approved,2026-03-31,CC-9000,Revenue,4000,Subscription Revenue,Subscription Revenue,-2495470.25
+FY2026-Board-Approved,2026-03-31,CC-9000,Revenue,4010,Usage Revenue Above Commitment,Subscription Revenue,-53528.98
+FY2026-Board-Approved,2026-03-31,CC-9000,Revenue,4100,Professional Services Revenue,Services Revenue,-22950.42
+FY2026-Board-Approved,2026-03-31,CC-9000,Revenue,4110,Implementation Fee Revenue,Services Revenue,-61971.04
+FY2026-Board-Approved,2026-03-31,CC-9000,Corporate,9000,Ending ARR,Memo - ARR,31539815.84
 FY2026-Board-Approved,2026-03-31,CC-9000,Corporate,9010,New Logo ARR,Memo - ARR,630000.00
 FY2026-Board-Approved,2026-03-31,CC-9000,Corporate,9020,Expansion ARR,Memo - ARR,514500.00
 FY2026-Board-Approved,2026-03-31,CC-9000,Corporate,9030,Reactivation ARR,Memo - ARR,21000.00
@@ -414,77 +414,77 @@ FY2026-Board-Approved,2026-03-31,CC-9000,Corporate,9100,New Logos Added,Memo - S
 FY2026-Board-Approved,2026-03-31,CC-9000,Corporate,9200,Ending Headcount,Memo - Statistical,202.50
 FY2026-Board-Approved,2026-04-30,CC-1000,Sales - SMB,6000,Salaries & Wages,Sales & Marketing,81573.78
 FY2026-Board-Approved,2026-04-30,CC-1000,Sales - SMB,6020,Payroll Taxes & Benefits,Sales & Marketing,16722.62
-FY2026-Board-Approved,2026-04-30,CC-1000,Sales - SMB,6030,Sales Commissions,Sales & Marketing,5484.35
-FY2026-Board-Approved,2026-04-30,CC-1000,Sales - SMB,6040,Commission Amortisation,Sales & Marketing,3921.62
-FY2026-Board-Approved,2026-04-30,CC-1000,Sales - SMB,6200,Software & Subscriptions,Sales & Marketing,4292.98
-FY2026-Board-Approved,2026-04-30,CC-1000,Sales - SMB,6300,Travel & Entertainment,Sales & Marketing,5704.80
-FY2026-Board-Approved,2026-04-30,CC-1000,Sales - SMB,6450,Training & Enablement,Sales & Marketing,536.22
+FY2026-Board-Approved,2026-04-30,CC-1000,Sales - SMB,6030,Sales Commissions,Sales & Marketing,6325.18
+FY2026-Board-Approved,2026-04-30,CC-1000,Sales - SMB,6040,Commission Amortisation,Sales & Marketing,3955.50
+FY2026-Board-Approved,2026-04-30,CC-1000,Sales - SMB,6200,Software & Subscriptions,Sales & Marketing,4292.53
+FY2026-Board-Approved,2026-04-30,CC-1000,Sales - SMB,6300,Travel & Entertainment,Sales & Marketing,5704.20
+FY2026-Board-Approved,2026-04-30,CC-1000,Sales - SMB,6450,Training & Enablement,Sales & Marketing,536.16
 FY2026-Board-Approved,2026-04-30,CC-1010,Sales - Mid-Market,6000,Salaries & Wages,Sales & Marketing,109808.13
 FY2026-Board-Approved,2026-04-30,CC-1010,Sales - Mid-Market,6020,Payroll Taxes & Benefits,Sales & Marketing,22510.66
-FY2026-Board-Approved,2026-04-30,CC-1010,Sales - Mid-Market,6030,Sales Commissions,Sales & Marketing,10470.13
-FY2026-Board-Approved,2026-04-30,CC-1010,Sales - Mid-Market,6040,Commission Amortisation,Sales & Marketing,7486.73
-FY2026-Board-Approved,2026-04-30,CC-1010,Sales - Mid-Market,6200,Software & Subscriptions,Sales & Marketing,5451.70
-FY2026-Board-Approved,2026-04-30,CC-1010,Sales - Mid-Market,6300,Travel & Entertainment,Sales & Marketing,7068.65
-FY2026-Board-Approved,2026-04-30,CC-1010,Sales - Mid-Market,6450,Training & Enablement,Sales & Marketing,639.55
+FY2026-Board-Approved,2026-04-30,CC-1010,Sales - Mid-Market,6030,Sales Commissions,Sales & Marketing,12075.34
+FY2026-Board-Approved,2026-04-30,CC-1010,Sales - Mid-Market,6040,Commission Amortisation,Sales & Marketing,7551.43
+FY2026-Board-Approved,2026-04-30,CC-1010,Sales - Mid-Market,6200,Software & Subscriptions,Sales & Marketing,5451.12
+FY2026-Board-Approved,2026-04-30,CC-1010,Sales - Mid-Market,6300,Travel & Entertainment,Sales & Marketing,7067.90
+FY2026-Board-Approved,2026-04-30,CC-1010,Sales - Mid-Market,6450,Training & Enablement,Sales & Marketing,639.49
 FY2026-Board-Approved,2026-04-30,CC-1020,Sales - Enterprise,6000,Salaries & Wages,Sales & Marketing,71122.19
 FY2026-Board-Approved,2026-04-30,CC-1020,Sales - Enterprise,6020,Payroll Taxes & Benefits,Sales & Marketing,14580.05
-FY2026-Board-Approved,2026-04-30,CC-1020,Sales - Enterprise,6030,Sales Commissions,Sales & Marketing,8974.40
-FY2026-Board-Approved,2026-04-30,CC-1020,Sales - Enterprise,6040,Commission Amortisation,Sales & Marketing,6417.20
-FY2026-Board-Approved,2026-04-30,CC-1020,Sales - Enterprise,6200,Software & Subscriptions,Sales & Marketing,2797.58
-FY2026-Board-Approved,2026-04-30,CC-1020,Sales - Enterprise,6300,Travel & Entertainment,Sales & Marketing,4290.36
-FY2026-Board-Approved,2026-04-30,CC-1020,Sales - Enterprise,6450,Training & Enablement,Sales & Marketing,336.59
+FY2026-Board-Approved,2026-04-30,CC-1020,Sales - Enterprise,6030,Sales Commissions,Sales & Marketing,10350.30
+FY2026-Board-Approved,2026-04-30,CC-1020,Sales - Enterprise,6040,Commission Amortisation,Sales & Marketing,6472.65
+FY2026-Board-Approved,2026-04-30,CC-1020,Sales - Enterprise,6200,Software & Subscriptions,Sales & Marketing,2797.28
+FY2026-Board-Approved,2026-04-30,CC-1020,Sales - Enterprise,6300,Travel & Entertainment,Sales & Marketing,4289.90
+FY2026-Board-Approved,2026-04-30,CC-1020,Sales - Enterprise,6450,Training & Enablement,Sales & Marketing,336.56
 FY2026-Board-Approved,2026-04-30,CC-1030,Sales Development,6000,Salaries & Wages,Sales & Marketing,55874.76
 FY2026-Board-Approved,2026-04-30,CC-1030,Sales Development,6020,Payroll Taxes & Benefits,Sales & Marketing,11454.32
-FY2026-Board-Approved,2026-04-30,CC-1030,Sales Development,6200,Software & Subscriptions,Sales & Marketing,2689.97
-FY2026-Board-Approved,2026-04-30,CC-1030,Sales Development,6300,Travel & Entertainment,Sales & Marketing,3590.26
-FY2026-Board-Approved,2026-04-30,CC-1030,Sales Development,6450,Training & Enablement,Sales & Marketing,325.01
+FY2026-Board-Approved,2026-04-30,CC-1030,Sales Development,6200,Software & Subscriptions,Sales & Marketing,2689.68
+FY2026-Board-Approved,2026-04-30,CC-1030,Sales Development,6300,Travel & Entertainment,Sales & Marketing,3589.88
+FY2026-Board-Approved,2026-04-30,CC-1030,Sales Development,6450,Training & Enablement,Sales & Marketing,324.98
 FY2026-Board-Approved,2026-04-30,CC-1040,Sales Operations,6000,Salaries & Wages,Sales & Marketing,51867.87
 FY2026-Board-Approved,2026-04-30,CC-1040,Sales Operations,6020,Payroll Taxes & Benefits,Sales & Marketing,10632.92
-FY2026-Board-Approved,2026-04-30,CC-1040,Sales Operations,6200,Software & Subscriptions,Sales & Marketing,2182.67
-FY2026-Board-Approved,2026-04-30,CC-1040,Sales Operations,6300,Travel & Entertainment,Sales & Marketing,2862.26
+FY2026-Board-Approved,2026-04-30,CC-1040,Sales Operations,6200,Software & Subscriptions,Sales & Marketing,2182.44
+FY2026-Board-Approved,2026-04-30,CC-1040,Sales Operations,6300,Travel & Entertainment,Sales & Marketing,2861.96
 FY2026-Board-Approved,2026-04-30,CC-1050,Solutions Engineering,6000,Salaries & Wages,Sales & Marketing,39412.85
 FY2026-Board-Approved,2026-04-30,CC-1050,Solutions Engineering,6020,Payroll Taxes & Benefits,Sales & Marketing,8079.63
-FY2026-Board-Approved,2026-04-30,CC-1050,Solutions Engineering,6200,Software & Subscriptions,Sales & Marketing,1485.13
-FY2026-Board-Approved,2026-04-30,CC-1050,Solutions Engineering,6300,Travel & Entertainment,Sales & Marketing,2565.40
+FY2026-Board-Approved,2026-04-30,CC-1050,Solutions Engineering,6200,Software & Subscriptions,Sales & Marketing,1484.98
+FY2026-Board-Approved,2026-04-30,CC-1050,Solutions Engineering,6300,Travel & Entertainment,Sales & Marketing,2565.12
 FY2026-Board-Approved,2026-04-30,CC-1060,Sales Leadership,6000,Salaries & Wages,Sales & Marketing,17410.45
 FY2026-Board-Approved,2026-04-30,CC-1060,Sales Leadership,6020,Payroll Taxes & Benefits,Sales & Marketing,3569.14
-FY2026-Board-Approved,2026-04-30,CC-1060,Sales Leadership,6200,Software & Subscriptions,Sales & Marketing,859.81
-FY2026-Board-Approved,2026-04-30,CC-1060,Sales Leadership,6300,Travel & Entertainment,Sales & Marketing,1248.71
-FY2026-Board-Approved,2026-04-30,CC-1060,Sales Leadership,6450,Training & Enablement,Sales & Marketing,111.52
+FY2026-Board-Approved,2026-04-30,CC-1060,Sales Leadership,6200,Software & Subscriptions,Sales & Marketing,859.72
+FY2026-Board-Approved,2026-04-30,CC-1060,Sales Leadership,6300,Travel & Entertainment,Sales & Marketing,1248.58
+FY2026-Board-Approved,2026-04-30,CC-1060,Sales Leadership,6450,Training & Enablement,Sales & Marketing,111.51
 FY2026-Board-Approved,2026-04-30,CC-1100,Demand Generation,6000,Salaries & Wages,Sales & Marketing,84268.68
 FY2026-Board-Approved,2026-04-30,CC-1100,Demand Generation,6010,Bonus,Sales & Marketing,7725.66
 FY2026-Board-Approved,2026-04-30,CC-1100,Demand Generation,6020,Payroll Taxes & Benefits,Sales & Marketing,18858.84
-FY2026-Board-Approved,2026-04-30,CC-1100,Demand Generation,6050,Contractor & Temp Labor,Sales & Marketing,17539.37
-FY2026-Board-Approved,2026-04-30,CC-1100,Demand Generation,6100,Demand Generation,Sales & Marketing,217615.99
-FY2026-Board-Approved,2026-04-30,CC-1100,Demand Generation,6110,Events & Field Marketing,Sales & Marketing,89298.25
-FY2026-Board-Approved,2026-04-30,CC-1100,Demand Generation,6200,Software & Subscriptions,Sales & Marketing,3495.07
-FY2026-Board-Approved,2026-04-30,CC-1100,Demand Generation,6300,Travel & Entertainment,Sales & Marketing,2966.78
-FY2026-Board-Approved,2026-04-30,CC-1100,Demand Generation,6450,Training & Enablement,Sales & Marketing,511.86
+FY2026-Board-Approved,2026-04-30,CC-1100,Demand Generation,6050,Contractor & Temp Labor,Sales & Marketing,17537.53
+FY2026-Board-Approved,2026-04-30,CC-1100,Demand Generation,6100,Demand Generation,Sales & Marketing,217593.11
+FY2026-Board-Approved,2026-04-30,CC-1100,Demand Generation,6110,Events & Field Marketing,Sales & Marketing,89288.86
+FY2026-Board-Approved,2026-04-30,CC-1100,Demand Generation,6200,Software & Subscriptions,Sales & Marketing,3494.71
+FY2026-Board-Approved,2026-04-30,CC-1100,Demand Generation,6300,Travel & Entertainment,Sales & Marketing,2966.47
+FY2026-Board-Approved,2026-04-30,CC-1100,Demand Generation,6450,Training & Enablement,Sales & Marketing,511.81
 FY2026-Board-Approved,2026-04-30,CC-1110,Product Marketing,6000,Salaries & Wages,Sales & Marketing,80439.09
 FY2026-Board-Approved,2026-04-30,CC-1110,Product Marketing,6010,Bonus,Sales & Marketing,7339.69
 FY2026-Board-Approved,2026-04-30,CC-1110,Product Marketing,6020,Payroll Taxes & Benefits,Sales & Marketing,17994.65
-FY2026-Board-Approved,2026-04-30,CC-1110,Product Marketing,6120,Brand & Content,Sales & Marketing,57074.56
-FY2026-Board-Approved,2026-04-30,CC-1110,Product Marketing,6200,Software & Subscriptions,Sales & Marketing,3559.93
-FY2026-Board-Approved,2026-04-30,CC-1110,Product Marketing,6300,Travel & Entertainment,Sales & Marketing,2910.25
+FY2026-Board-Approved,2026-04-30,CC-1110,Product Marketing,6120,Brand & Content,Sales & Marketing,57068.56
+FY2026-Board-Approved,2026-04-30,CC-1110,Product Marketing,6200,Software & Subscriptions,Sales & Marketing,3559.56
+FY2026-Board-Approved,2026-04-30,CC-1110,Product Marketing,6300,Travel & Entertainment,Sales & Marketing,2909.94
 FY2026-Board-Approved,2026-04-30,CC-1200,Customer Success,6000,Salaries & Wages,Subscription COGS,200991.35
 FY2026-Board-Approved,2026-04-30,CC-1200,Customer Success,6010,Bonus,Subscription COGS,19103.80
 FY2026-Board-Approved,2026-04-30,CC-1200,Customer Success,6020,Payroll Taxes & Benefits,Subscription COGS,45119.50
-FY2026-Board-Approved,2026-04-30,CC-1200,Customer Success,6200,Software & Subscriptions,Subscription COGS,3755.93
-FY2026-Board-Approved,2026-04-30,CC-1200,Customer Success,6300,Travel & Entertainment,Subscription COGS,2923.31
-FY2026-Board-Approved,2026-04-30,CC-2000,Support,5010,Third-Party Data & APIs,Subscription COGS,1293.97
+FY2026-Board-Approved,2026-04-30,CC-1200,Customer Success,6200,Software & Subscriptions,Subscription COGS,3722.97
+FY2026-Board-Approved,2026-04-30,CC-1200,Customer Success,6300,Travel & Entertainment,Subscription COGS,2897.67
+FY2026-Board-Approved,2026-04-30,CC-2000,Support,5010,Third-Party Data & APIs,Subscription COGS,1295.05
 FY2026-Board-Approved,2026-04-30,CC-2000,Support,6000,Salaries & Wages,Subscription COGS,58543.06
 FY2026-Board-Approved,2026-04-30,CC-2000,Support,6010,Bonus,Subscription COGS,6136.92
 FY2026-Board-Approved,2026-04-30,CC-2000,Support,6020,Payroll Taxes & Benefits,Subscription COGS,13259.40
-FY2026-Board-Approved,2026-04-30,CC-2000,Support,6200,Software & Subscriptions,Subscription COGS,886.93
-FY2026-Board-Approved,2026-04-30,CC-2010,Cloud Operations,5000,Cloud Hosting,Subscription COGS,165445.95
-FY2026-Board-Approved,2026-04-30,CC-2010,Cloud Operations,5010,Third-Party Data & APIs,Subscription COGS,959.56
-FY2026-Board-Approved,2026-04-30,CC-2010,Cloud Operations,5020,Payment Processing Fees,Subscription COGS,9470.71
+FY2026-Board-Approved,2026-04-30,CC-2000,Support,6200,Software & Subscriptions,Subscription COGS,879.16
+FY2026-Board-Approved,2026-04-30,CC-2010,Cloud Operations,5000,Cloud Hosting,Subscription COGS,165913.53
+FY2026-Board-Approved,2026-04-30,CC-2010,Cloud Operations,5010,Third-Party Data & APIs,Subscription COGS,960.36
+FY2026-Board-Approved,2026-04-30,CC-2010,Cloud Operations,5020,Payment Processing Fees,Subscription COGS,9478.28
 FY2026-Board-Approved,2026-04-30,CC-2010,Cloud Operations,6000,Salaries & Wages,Subscription COGS,69393.56
 FY2026-Board-Approved,2026-04-30,CC-2010,Cloud Operations,6010,Bonus,Subscription COGS,6990.33
 FY2026-Board-Approved,2026-04-30,CC-2010,Cloud Operations,6020,Payroll Taxes & Benefits,Subscription COGS,15658.70
-FY2026-Board-Approved,2026-04-30,CC-2010,Cloud Operations,6050,Contractor & Temp Labor,Subscription COGS,17699.95
-FY2026-Board-Approved,2026-04-30,CC-2010,Cloud Operations,6200,Software & Subscriptions,Subscription COGS,1168.58
-FY2026-Board-Approved,2026-04-30,CC-2010,Cloud Operations,6900,Other Operating Expense,Subscription COGS,173.97
+FY2026-Board-Approved,2026-04-30,CC-2010,Cloud Operations,6050,Contractor & Temp Labor,Subscription COGS,17544.72
+FY2026-Board-Approved,2026-04-30,CC-2010,Cloud Operations,6200,Software & Subscriptions,Subscription COGS,1158.33
+FY2026-Board-Approved,2026-04-30,CC-2010,Cloud Operations,6900,Other Operating Expense,Subscription COGS,172.43
 FY2026-Board-Approved,2026-04-30,CC-2100,Professional Services,5030,Services Subcontractors,Services COGS,3706.07
 FY2026-Board-Approved,2026-04-30,CC-2100,Professional Services,6000,Salaries & Wages,Services COGS,36443.14
 FY2026-Board-Approved,2026-04-30,CC-2100,Professional Services,6010,Bonus,Services COGS,3290.97
@@ -538,11 +538,11 @@ FY2026-Board-Approved,2026-04-30,CC-4030,IT & Corporate Systems,6050,Contractor 
 FY2026-Board-Approved,2026-04-30,CC-4030,IT & Corporate Systems,6200,Software & Subscriptions,General & Administrative,881.65
 FY2026-Board-Approved,2026-04-30,CC-4030,IT & Corporate Systems,6420,Facilities & Rent,General & Administrative,46625.12
 FY2026-Board-Approved,2026-04-30,CC-4030,IT & Corporate Systems,6900,Other Operating Expense,General & Administrative,108.04
-FY2026-Board-Approved,2026-04-30,CC-9000,Revenue,4000,Subscription Revenue,Subscription Revenue,-2541134.45
-FY2026-Board-Approved,2026-04-30,CC-9000,Revenue,4010,Usage Revenue Above Commitment,Subscription Revenue,-54508.50
-FY2026-Board-Approved,2026-04-30,CC-9000,Revenue,4100,Professional Services Revenue,Services Revenue,-15755.03
-FY2026-Board-Approved,2026-04-30,CC-9000,Revenue,4110,Implementation Fee Revenue,Services Revenue,-62642.04
-FY2026-Board-Approved,2026-04-30,CC-9000,Corporate,9000,Ending ARR,Memo - ARR,31959865.48
+FY2026-Board-Approved,2026-04-30,CC-9000,Revenue,4000,Subscription Revenue,Subscription Revenue,-2544597.70
+FY2026-Board-Approved,2026-04-30,CC-9000,Revenue,4010,Usage Revenue Above Commitment,Subscription Revenue,-54582.79
+FY2026-Board-Approved,2026-04-30,CC-9000,Revenue,4100,Professional Services Revenue,Services Revenue,-15858.00
+FY2026-Board-Approved,2026-04-30,CC-9000,Revenue,4110,Implementation Fee Revenue,Services Revenue,-62538.09
+FY2026-Board-Approved,2026-04-30,CC-9000,Corporate,9000,Ending ARR,Memo - ARR,32002315.84
 FY2026-Board-Approved,2026-04-30,CC-9000,Corporate,9010,New Logo ARR,Memo - ARR,390000.00
 FY2026-Board-Approved,2026-04-30,CC-9000,Corporate,9020,Expansion ARR,Memo - ARR,318500.00
 FY2026-Board-Approved,2026-04-30,CC-9000,Corporate,9030,Reactivation ARR,Memo - ARR,13000.00
@@ -552,77 +552,77 @@ FY2026-Board-Approved,2026-04-30,CC-9000,Corporate,9100,New Logos Added,Memo - S
 FY2026-Board-Approved,2026-04-30,CC-9000,Corporate,9200,Ending Headcount,Memo - Statistical,203.80
 FY2026-Board-Approved,2026-05-31,CC-1000,Sales - SMB,6000,Salaries & Wages,Sales & Marketing,74545.96
 FY2026-Board-Approved,2026-05-31,CC-1000,Sales - SMB,6020,Payroll Taxes & Benefits,Sales & Marketing,15281.92
-FY2026-Board-Approved,2026-05-31,CC-1000,Sales - SMB,6030,Sales Commissions,Sales & Marketing,5002.48
-FY2026-Board-Approved,2026-05-31,CC-1000,Sales - SMB,6040,Commission Amortisation,Sales & Marketing,4168.96
-FY2026-Board-Approved,2026-05-31,CC-1000,Sales - SMB,6200,Software & Subscriptions,Sales & Marketing,4438.35
-FY2026-Board-Approved,2026-05-31,CC-1000,Sales - SMB,6300,Travel & Entertainment,Sales & Marketing,5535.66
-FY2026-Board-Approved,2026-05-31,CC-1000,Sales - SMB,6450,Training & Enablement,Sales & Marketing,455.90
+FY2026-Board-Approved,2026-05-31,CC-1000,Sales - SMB,6030,Sales Commissions,Sales & Marketing,3914.69
+FY2026-Board-Approved,2026-05-31,CC-1000,Sales - SMB,6040,Commission Amortisation,Sales & Marketing,4159.77
+FY2026-Board-Approved,2026-05-31,CC-1000,Sales - SMB,6200,Software & Subscriptions,Sales & Marketing,4437.89
+FY2026-Board-Approved,2026-05-31,CC-1000,Sales - SMB,6300,Travel & Entertainment,Sales & Marketing,5535.08
+FY2026-Board-Approved,2026-05-31,CC-1000,Sales - SMB,6450,Training & Enablement,Sales & Marketing,455.86
 FY2026-Board-Approved,2026-05-31,CC-1010,Sales - Mid-Market,6000,Salaries & Wages,Sales & Marketing,93916.11
 FY2026-Board-Approved,2026-05-31,CC-1010,Sales - Mid-Market,6020,Payroll Taxes & Benefits,Sales & Marketing,19252.81
-FY2026-Board-Approved,2026-05-31,CC-1010,Sales - Mid-Market,6030,Sales Commissions,Sales & Marketing,9550.19
-FY2026-Board-Approved,2026-05-31,CC-1010,Sales - Mid-Market,6040,Commission Amortisation,Sales & Marketing,7958.93
-FY2026-Board-Approved,2026-05-31,CC-1010,Sales - Mid-Market,6200,Software & Subscriptions,Sales & Marketing,4468.06
-FY2026-Board-Approved,2026-05-31,CC-1010,Sales - Mid-Market,6300,Travel & Entertainment,Sales & Marketing,5903.14
-FY2026-Board-Approved,2026-05-31,CC-1010,Sales - Mid-Market,6450,Training & Enablement,Sales & Marketing,516.25
+FY2026-Board-Approved,2026-05-31,CC-1010,Sales - Mid-Market,6030,Sales Commissions,Sales & Marketing,7473.51
+FY2026-Board-Approved,2026-05-31,CC-1010,Sales - Mid-Market,6040,Commission Amortisation,Sales & Marketing,7941.39
+FY2026-Board-Approved,2026-05-31,CC-1010,Sales - Mid-Market,6200,Software & Subscriptions,Sales & Marketing,4467.59
+FY2026-Board-Approved,2026-05-31,CC-1010,Sales - Mid-Market,6300,Travel & Entertainment,Sales & Marketing,5902.52
+FY2026-Board-Approved,2026-05-31,CC-1010,Sales - Mid-Market,6450,Training & Enablement,Sales & Marketing,516.20
 FY2026-Board-Approved,2026-05-31,CC-1020,Sales - Enterprise,6000,Salaries & Wages,Sales & Marketing,71781.36
 FY2026-Board-Approved,2026-05-31,CC-1020,Sales - Enterprise,6020,Payroll Taxes & Benefits,Sales & Marketing,14715.18
-FY2026-Board-Approved,2026-05-31,CC-1020,Sales - Enterprise,6030,Sales Commissions,Sales & Marketing,8185.87
-FY2026-Board-Approved,2026-05-31,CC-1020,Sales - Enterprise,6040,Commission Amortisation,Sales & Marketing,6821.94
-FY2026-Board-Approved,2026-05-31,CC-1020,Sales - Enterprise,6200,Software & Subscriptions,Sales & Marketing,3107.99
-FY2026-Board-Approved,2026-05-31,CC-1020,Sales - Enterprise,6300,Travel & Entertainment,Sales & Marketing,4542.40
-FY2026-Board-Approved,2026-05-31,CC-1020,Sales - Enterprise,6450,Training & Enablement,Sales & Marketing,406.79
+FY2026-Board-Approved,2026-05-31,CC-1020,Sales - Enterprise,6030,Sales Commissions,Sales & Marketing,6405.86
+FY2026-Board-Approved,2026-05-31,CC-1020,Sales - Enterprise,6040,Commission Amortisation,Sales & Marketing,6806.90
+FY2026-Board-Approved,2026-05-31,CC-1020,Sales - Enterprise,6200,Software & Subscriptions,Sales & Marketing,3107.66
+FY2026-Board-Approved,2026-05-31,CC-1020,Sales - Enterprise,6300,Travel & Entertainment,Sales & Marketing,4541.91
+FY2026-Board-Approved,2026-05-31,CC-1020,Sales - Enterprise,6450,Training & Enablement,Sales & Marketing,406.75
 FY2026-Board-Approved,2026-05-31,CC-1030,Sales Development,6000,Salaries & Wages,Sales & Marketing,44868.94
 FY2026-Board-Approved,2026-05-31,CC-1030,Sales Development,6020,Payroll Taxes & Benefits,Sales & Marketing,9198.13
-FY2026-Board-Approved,2026-05-31,CC-1030,Sales Development,6200,Software & Subscriptions,Sales & Marketing,2061.65
-FY2026-Board-Approved,2026-05-31,CC-1030,Sales Development,6300,Travel & Entertainment,Sales & Marketing,3055.71
-FY2026-Board-Approved,2026-05-31,CC-1030,Sales Development,6450,Training & Enablement,Sales & Marketing,253.81
+FY2026-Board-Approved,2026-05-31,CC-1030,Sales Development,6200,Software & Subscriptions,Sales & Marketing,2061.44
+FY2026-Board-Approved,2026-05-31,CC-1030,Sales Development,6300,Travel & Entertainment,Sales & Marketing,3055.39
+FY2026-Board-Approved,2026-05-31,CC-1030,Sales Development,6450,Training & Enablement,Sales & Marketing,253.78
 FY2026-Board-Approved,2026-05-31,CC-1040,Sales Operations,6000,Salaries & Wages,Sales & Marketing,64704.33
 FY2026-Board-Approved,2026-05-31,CC-1040,Sales Operations,6020,Payroll Taxes & Benefits,Sales & Marketing,13264.39
-FY2026-Board-Approved,2026-05-31,CC-1040,Sales Operations,6200,Software & Subscriptions,Sales & Marketing,2649.04
-FY2026-Board-Approved,2026-05-31,CC-1040,Sales Operations,6300,Travel & Entertainment,Sales & Marketing,3589.35
+FY2026-Board-Approved,2026-05-31,CC-1040,Sales Operations,6200,Software & Subscriptions,Sales & Marketing,2648.76
+FY2026-Board-Approved,2026-05-31,CC-1040,Sales Operations,6300,Travel & Entertainment,Sales & Marketing,3588.96
 FY2026-Board-Approved,2026-05-31,CC-1050,Solutions Engineering,6000,Salaries & Wages,Sales & Marketing,39778.13
 FY2026-Board-Approved,2026-05-31,CC-1050,Solutions Engineering,6020,Payroll Taxes & Benefits,Sales & Marketing,8154.52
-FY2026-Board-Approved,2026-05-31,CC-1050,Solutions Engineering,6200,Software & Subscriptions,Sales & Marketing,1628.93
-FY2026-Board-Approved,2026-05-31,CC-1050,Solutions Engineering,6300,Travel & Entertainment,Sales & Marketing,2482.27
+FY2026-Board-Approved,2026-05-31,CC-1050,Solutions Engineering,6200,Software & Subscriptions,Sales & Marketing,1628.76
+FY2026-Board-Approved,2026-05-31,CC-1050,Solutions Engineering,6300,Travel & Entertainment,Sales & Marketing,2482.02
 FY2026-Board-Approved,2026-05-31,CC-1060,Sales Leadership,6000,Salaries & Wages,Sales & Marketing,17571.81
 FY2026-Board-Approved,2026-05-31,CC-1060,Sales Leadership,6020,Payroll Taxes & Benefits,Sales & Marketing,3602.22
-FY2026-Board-Approved,2026-05-31,CC-1060,Sales Leadership,6200,Software & Subscriptions,Sales & Marketing,842.89
-FY2026-Board-Approved,2026-05-31,CC-1060,Sales Leadership,6300,Travel & Entertainment,Sales & Marketing,1260.98
-FY2026-Board-Approved,2026-05-31,CC-1060,Sales Leadership,6450,Training & Enablement,Sales & Marketing,104.71
+FY2026-Board-Approved,2026-05-31,CC-1060,Sales Leadership,6200,Software & Subscriptions,Sales & Marketing,842.81
+FY2026-Board-Approved,2026-05-31,CC-1060,Sales Leadership,6300,Travel & Entertainment,Sales & Marketing,1260.85
+FY2026-Board-Approved,2026-05-31,CC-1060,Sales Leadership,6450,Training & Enablement,Sales & Marketing,104.70
 FY2026-Board-Approved,2026-05-31,CC-1100,Demand Generation,6000,Salaries & Wages,Sales & Marketing,98693.78
 FY2026-Board-Approved,2026-05-31,CC-1100,Demand Generation,6010,Bonus,Sales & Marketing,9434.56
 FY2026-Board-Approved,2026-05-31,CC-1100,Demand Generation,6020,Payroll Taxes & Benefits,Sales & Marketing,22166.31
-FY2026-Board-Approved,2026-05-31,CC-1100,Demand Generation,6050,Contractor & Temp Labor,Sales & Marketing,18612.65
-FY2026-Board-Approved,2026-05-31,CC-1100,Demand Generation,6100,Demand Generation,Sales & Marketing,217785.21
-FY2026-Board-Approved,2026-05-31,CC-1100,Demand Generation,6110,Events & Field Marketing,Sales & Marketing,94605.47
-FY2026-Board-Approved,2026-05-31,CC-1100,Demand Generation,6200,Software & Subscriptions,Sales & Marketing,3493.01
-FY2026-Board-Approved,2026-05-31,CC-1100,Demand Generation,6300,Travel & Entertainment,Sales & Marketing,3364.46
-FY2026-Board-Approved,2026-05-31,CC-1100,Demand Generation,6450,Training & Enablement,Sales & Marketing,537.81
+FY2026-Board-Approved,2026-05-31,CC-1100,Demand Generation,6050,Contractor & Temp Labor,Sales & Marketing,18610.68
+FY2026-Board-Approved,2026-05-31,CC-1100,Demand Generation,6100,Demand Generation,Sales & Marketing,217762.30
+FY2026-Board-Approved,2026-05-31,CC-1100,Demand Generation,6110,Events & Field Marketing,Sales & Marketing,94595.53
+FY2026-Board-Approved,2026-05-31,CC-1100,Demand Generation,6200,Software & Subscriptions,Sales & Marketing,3492.63
+FY2026-Board-Approved,2026-05-31,CC-1100,Demand Generation,6300,Travel & Entertainment,Sales & Marketing,3364.11
+FY2026-Board-Approved,2026-05-31,CC-1100,Demand Generation,6450,Training & Enablement,Sales & Marketing,537.75
 FY2026-Board-Approved,2026-05-31,CC-1110,Product Marketing,6000,Salaries & Wages,Sales & Marketing,72917.63
 FY2026-Board-Approved,2026-05-31,CC-1110,Product Marketing,6010,Bonus,Sales & Marketing,6746.36
 FY2026-Board-Approved,2026-05-31,CC-1110,Product Marketing,6020,Payroll Taxes & Benefits,Sales & Marketing,16331.12
-FY2026-Board-Approved,2026-05-31,CC-1110,Product Marketing,6120,Brand & Content,Sales & Marketing,54264.11
-FY2026-Board-Approved,2026-05-31,CC-1110,Product Marketing,6200,Software & Subscriptions,Sales & Marketing,3109.45
-FY2026-Board-Approved,2026-05-31,CC-1110,Product Marketing,6300,Travel & Entertainment,Sales & Marketing,2769.38
+FY2026-Board-Approved,2026-05-31,CC-1110,Product Marketing,6120,Brand & Content,Sales & Marketing,54258.40
+FY2026-Board-Approved,2026-05-31,CC-1110,Product Marketing,6200,Software & Subscriptions,Sales & Marketing,3109.13
+FY2026-Board-Approved,2026-05-31,CC-1110,Product Marketing,6300,Travel & Entertainment,Sales & Marketing,2769.09
 FY2026-Board-Approved,2026-05-31,CC-1200,Customer Success,6000,Salaries & Wages,Subscription COGS,195356.59
 FY2026-Board-Approved,2026-05-31,CC-1200,Customer Success,6010,Bonus,Subscription COGS,18681.04
 FY2026-Board-Approved,2026-05-31,CC-1200,Customer Success,6020,Payroll Taxes & Benefits,Subscription COGS,43877.71
-FY2026-Board-Approved,2026-05-31,CC-1200,Customer Success,6200,Software & Subscriptions,Subscription COGS,3602.51
-FY2026-Board-Approved,2026-05-31,CC-1200,Customer Success,6300,Travel & Entertainment,Subscription COGS,3018.15
-FY2026-Board-Approved,2026-05-31,CC-2000,Support,5010,Third-Party Data & APIs,Subscription COGS,1238.86
+FY2026-Board-Approved,2026-05-31,CC-1200,Customer Success,6200,Software & Subscriptions,Subscription COGS,3570.92
+FY2026-Board-Approved,2026-05-31,CC-1200,Customer Success,6300,Travel & Entertainment,Subscription COGS,2991.68
+FY2026-Board-Approved,2026-05-31,CC-2000,Support,5010,Third-Party Data & APIs,Subscription COGS,1244.50
 FY2026-Board-Approved,2026-05-31,CC-2000,Support,6000,Salaries & Wages,Subscription COGS,67862.59
 FY2026-Board-Approved,2026-05-31,CC-2000,Support,6010,Bonus,Subscription COGS,6895.95
 FY2026-Board-Approved,2026-05-31,CC-2000,Support,6020,Payroll Taxes & Benefits,Subscription COGS,15325.50
-FY2026-Board-Approved,2026-05-31,CC-2000,Support,6200,Software & Subscriptions,Subscription COGS,1115.49
-FY2026-Board-Approved,2026-05-31,CC-2010,Cloud Operations,5000,Cloud Hosting,Subscription COGS,152784.89
-FY2026-Board-Approved,2026-05-31,CC-2010,Cloud Operations,5010,Third-Party Data & APIs,Subscription COGS,909.65
-FY2026-Board-Approved,2026-05-31,CC-2010,Cloud Operations,5020,Payment Processing Fees,Subscription COGS,12959.13
+FY2026-Board-Approved,2026-05-31,CC-2000,Support,6200,Software & Subscriptions,Subscription COGS,1105.71
+FY2026-Board-Approved,2026-05-31,CC-2010,Cloud Operations,5000,Cloud Hosting,Subscription COGS,153333.96
+FY2026-Board-Approved,2026-05-31,CC-2010,Cloud Operations,5010,Third-Party Data & APIs,Subscription COGS,913.79
+FY2026-Board-Approved,2026-05-31,CC-2010,Cloud Operations,5020,Payment Processing Fees,Subscription COGS,12853.41
 FY2026-Board-Approved,2026-05-31,CC-2010,Cloud Operations,6000,Salaries & Wages,Subscription COGS,70036.70
 FY2026-Board-Approved,2026-05-31,CC-2010,Cloud Operations,6010,Bonus,Subscription COGS,7055.12
 FY2026-Board-Approved,2026-05-31,CC-2010,Cloud Operations,6020,Payroll Taxes & Benefits,Subscription COGS,15803.82
-FY2026-Board-Approved,2026-05-31,CC-2010,Cloud Operations,6050,Contractor & Temp Labor,Subscription COGS,19041.11
-FY2026-Board-Approved,2026-05-31,CC-2010,Cloud Operations,6200,Software & Subscriptions,Subscription COGS,1063.14
-FY2026-Board-Approved,2026-05-31,CC-2010,Cloud Operations,6900,Other Operating Expense,Subscription COGS,168.31
+FY2026-Board-Approved,2026-05-31,CC-2010,Cloud Operations,6050,Contractor & Temp Labor,Subscription COGS,18874.10
+FY2026-Board-Approved,2026-05-31,CC-2010,Cloud Operations,6200,Software & Subscriptions,Subscription COGS,1053.81
+FY2026-Board-Approved,2026-05-31,CC-2010,Cloud Operations,6900,Other Operating Expense,Subscription COGS,166.83
 FY2026-Board-Approved,2026-05-31,CC-2100,Professional Services,5030,Services Subcontractors,Services COGS,4672.79
 FY2026-Board-Approved,2026-05-31,CC-2100,Professional Services,6000,Salaries & Wages,Services COGS,43571.63
 FY2026-Board-Approved,2026-05-31,CC-2100,Professional Services,6010,Bonus,Services COGS,3864.73
@@ -676,11 +676,11 @@ FY2026-Board-Approved,2026-05-31,CC-4030,IT & Corporate Systems,6050,Contractor 
 FY2026-Board-Approved,2026-05-31,CC-4030,IT & Corporate Systems,6200,Software & Subscriptions,General & Administrative,907.00
 FY2026-Board-Approved,2026-05-31,CC-4030,IT & Corporate Systems,6420,Facilities & Rent,General & Administrative,43853.42
 FY2026-Board-Approved,2026-05-31,CC-4030,IT & Corporate Systems,6900,Other Operating Expense,General & Administrative,121.78
-FY2026-Board-Approved,2026-05-31,CC-9000,Revenue,4000,Subscription Revenue,Subscription Revenue,-2590412.83
-FY2026-Board-Approved,2026-05-31,CC-9000,Revenue,4010,Usage Revenue Above Commitment,Subscription Revenue,-55565.55
-FY2026-Board-Approved,2026-05-31,CC-9000,Revenue,4100,Professional Services Revenue,Services Revenue,-13783.97
-FY2026-Board-Approved,2026-05-31,CC-9000,Revenue,4110,Implementation Fee Revenue,Services Revenue,-59145.33
-FY2026-Board-Approved,2026-05-31,CC-9000,Corporate,9000,Ending ARR,Memo - ARR,32514865.48
+FY2026-Board-Approved,2026-05-31,CC-9000,Revenue,4000,Subscription Revenue,Subscription Revenue,-2593876.07
+FY2026-Board-Approved,2026-05-31,CC-9000,Revenue,4010,Usage Revenue Above Commitment,Subscription Revenue,-55639.83
+FY2026-Board-Approved,2026-05-31,CC-9000,Revenue,4100,Professional Services Revenue,Services Revenue,-13847.34
+FY2026-Board-Approved,2026-05-31,CC-9000,Revenue,4110,Implementation Fee Revenue,Services Revenue,-59055.10
+FY2026-Board-Approved,2026-05-31,CC-9000,Corporate,9000,Ending ARR,Memo - ARR,32557315.84
 FY2026-Board-Approved,2026-05-31,CC-9000,Corporate,9010,New Logo ARR,Memo - ARR,420000.00
 FY2026-Board-Approved,2026-05-31,CC-9000,Corporate,9020,Expansion ARR,Memo - ARR,343000.00
 FY2026-Board-Approved,2026-05-31,CC-9000,Corporate,9030,Reactivation ARR,Memo - ARR,14000.00
@@ -690,77 +690,77 @@ FY2026-Board-Approved,2026-05-31,CC-9000,Corporate,9100,New Logos Added,Memo - S
 FY2026-Board-Approved,2026-05-31,CC-9000,Corporate,9200,Ending Headcount,Memo - Statistical,205.10
 FY2026-Board-Approved,2026-06-30,CC-1000,Sales - SMB,6000,Salaries & Wages,Sales & Marketing,75233.83
 FY2026-Board-Approved,2026-06-30,CC-1000,Sales - SMB,6020,Payroll Taxes & Benefits,Sales & Marketing,15422.93
-FY2026-Board-Approved,2026-06-30,CC-1000,Sales - SMB,6030,Sales Commissions,Sales & Marketing,5499.00
-FY2026-Board-Approved,2026-06-30,CC-1000,Sales - SMB,6040,Commission Amortisation,Sales & Marketing,4439.13
-FY2026-Board-Approved,2026-06-30,CC-1000,Sales - SMB,6200,Software & Subscriptions,Sales & Marketing,3948.48
-FY2026-Board-Approved,2026-06-30,CC-1000,Sales - SMB,6300,Travel & Entertainment,Sales & Marketing,5558.16
-FY2026-Board-Approved,2026-06-30,CC-1000,Sales - SMB,6450,Training & Enablement,Sales & Marketing,489.53
+FY2026-Board-Approved,2026-06-30,CC-1000,Sales - SMB,6030,Sales Commissions,Sales & Marketing,6585.10
+FY2026-Board-Approved,2026-06-30,CC-1000,Sales - SMB,6040,Commission Amortisation,Sales & Marketing,4473.25
+FY2026-Board-Approved,2026-06-30,CC-1000,Sales - SMB,6200,Software & Subscriptions,Sales & Marketing,3948.08
+FY2026-Board-Approved,2026-06-30,CC-1000,Sales - SMB,6300,Travel & Entertainment,Sales & Marketing,5557.58
+FY2026-Board-Approved,2026-06-30,CC-1000,Sales - SMB,6450,Training & Enablement,Sales & Marketing,489.49
 FY2026-Board-Approved,2026-06-30,CC-1010,Sales - Mid-Market,6000,Salaries & Wages,Sales & Marketing,94782.71
 FY2026-Board-Approved,2026-06-30,CC-1010,Sales - Mid-Market,6020,Payroll Taxes & Benefits,Sales & Marketing,19430.46
-FY2026-Board-Approved,2026-06-30,CC-1010,Sales - Mid-Market,6030,Sales Commissions,Sales & Marketing,10498.09
-FY2026-Board-Approved,2026-06-30,CC-1010,Sales - Mid-Market,6040,Commission Amortisation,Sales & Marketing,8474.72
-FY2026-Board-Approved,2026-06-30,CC-1010,Sales - Mid-Market,6200,Software & Subscriptions,Sales & Marketing,4407.91
-FY2026-Board-Approved,2026-06-30,CC-1010,Sales - Mid-Market,6300,Travel & Entertainment,Sales & Marketing,6441.59
-FY2026-Board-Approved,2026-06-30,CC-1010,Sales - Mid-Market,6450,Training & Enablement,Sales & Marketing,567.22
+FY2026-Board-Approved,2026-06-30,CC-1010,Sales - Mid-Market,6030,Sales Commissions,Sales & Marketing,12571.56
+FY2026-Board-Approved,2026-06-30,CC-1010,Sales - Mid-Market,6040,Commission Amortisation,Sales & Marketing,8539.85
+FY2026-Board-Approved,2026-06-30,CC-1010,Sales - Mid-Market,6200,Software & Subscriptions,Sales & Marketing,4407.44
+FY2026-Board-Approved,2026-06-30,CC-1010,Sales - Mid-Market,6300,Travel & Entertainment,Sales & Marketing,6440.91
+FY2026-Board-Approved,2026-06-30,CC-1010,Sales - Mid-Market,6450,Training & Enablement,Sales & Marketing,567.16
 FY2026-Board-Approved,2026-06-30,CC-1020,Sales - Enterprise,6000,Salaries & Wages,Sales & Marketing,72443.72
 FY2026-Board-Approved,2026-06-30,CC-1020,Sales - Enterprise,6020,Payroll Taxes & Benefits,Sales & Marketing,14850.96
-FY2026-Board-Approved,2026-06-30,CC-1020,Sales - Enterprise,6030,Sales Commissions,Sales & Marketing,8998.36
-FY2026-Board-Approved,2026-06-30,CC-1020,Sales - Enterprise,6040,Commission Amortisation,Sales & Marketing,7264.04
-FY2026-Board-Approved,2026-06-30,CC-1020,Sales - Enterprise,6200,Software & Subscriptions,Sales & Marketing,3055.30
-FY2026-Board-Approved,2026-06-30,CC-1020,Sales - Enterprise,6300,Travel & Entertainment,Sales & Marketing,4693.49
-FY2026-Board-Approved,2026-06-30,CC-1020,Sales - Enterprise,6450,Training & Enablement,Sales & Marketing,361.42
+FY2026-Board-Approved,2026-06-30,CC-1020,Sales - Enterprise,6030,Sales Commissions,Sales & Marketing,10775.63
+FY2026-Board-Approved,2026-06-30,CC-1020,Sales - Enterprise,6040,Commission Amortisation,Sales & Marketing,7319.87
+FY2026-Board-Approved,2026-06-30,CC-1020,Sales - Enterprise,6200,Software & Subscriptions,Sales & Marketing,3054.98
+FY2026-Board-Approved,2026-06-30,CC-1020,Sales - Enterprise,6300,Travel & Entertainment,Sales & Marketing,4693.00
+FY2026-Board-Approved,2026-06-30,CC-1020,Sales - Enterprise,6450,Training & Enablement,Sales & Marketing,361.38
 FY2026-Board-Approved,2026-06-30,CC-1030,Sales Development,6000,Salaries & Wages,Sales & Marketing,45282.97
 FY2026-Board-Approved,2026-06-30,CC-1030,Sales Development,6020,Payroll Taxes & Benefits,Sales & Marketing,9283.01
-FY2026-Board-Approved,2026-06-30,CC-1030,Sales Development,6200,Software & Subscriptions,Sales & Marketing,2419.18
-FY2026-Board-Approved,2026-06-30,CC-1030,Sales Development,6300,Travel & Entertainment,Sales & Marketing,3222.47
-FY2026-Board-Approved,2026-06-30,CC-1030,Sales Development,6450,Training & Enablement,Sales & Marketing,293.90
+FY2026-Board-Approved,2026-06-30,CC-1030,Sales Development,6200,Software & Subscriptions,Sales & Marketing,2418.92
+FY2026-Board-Approved,2026-06-30,CC-1030,Sales Development,6300,Travel & Entertainment,Sales & Marketing,3222.13
+FY2026-Board-Approved,2026-06-30,CC-1030,Sales Development,6450,Training & Enablement,Sales & Marketing,293.86
 FY2026-Board-Approved,2026-06-30,CC-1040,Sales Operations,6000,Salaries & Wages,Sales & Marketing,50402.70
 FY2026-Board-Approved,2026-06-30,CC-1040,Sales Operations,6020,Payroll Taxes & Benefits,Sales & Marketing,10332.56
-FY2026-Board-Approved,2026-06-30,CC-1040,Sales Operations,6200,Software & Subscriptions,Sales & Marketing,2007.16
-FY2026-Board-Approved,2026-06-30,CC-1040,Sales Operations,6300,Travel & Entertainment,Sales & Marketing,3418.67
+FY2026-Board-Approved,2026-06-30,CC-1040,Sales Operations,6200,Software & Subscriptions,Sales & Marketing,2006.95
+FY2026-Board-Approved,2026-06-30,CC-1040,Sales Operations,6300,Travel & Entertainment,Sales & Marketing,3418.31
 FY2026-Board-Approved,2026-06-30,CC-1050,Solutions Engineering,6000,Salaries & Wages,Sales & Marketing,40145.18
 FY2026-Board-Approved,2026-06-30,CC-1050,Solutions Engineering,6020,Payroll Taxes & Benefits,Sales & Marketing,8229.76
-FY2026-Board-Approved,2026-06-30,CC-1050,Solutions Engineering,6200,Software & Subscriptions,Sales & Marketing,1716.89
-FY2026-Board-Approved,2026-06-30,CC-1050,Solutions Engineering,6300,Travel & Entertainment,Sales & Marketing,2349.60
+FY2026-Board-Approved,2026-06-30,CC-1050,Solutions Engineering,6200,Software & Subscriptions,Sales & Marketing,1716.71
+FY2026-Board-Approved,2026-06-30,CC-1050,Solutions Engineering,6300,Travel & Entertainment,Sales & Marketing,2349.36
 FY2026-Board-Approved,2026-06-30,CC-1060,Sales Leadership,6000,Salaries & Wages,Sales & Marketing,17733.95
 FY2026-Board-Approved,2026-06-30,CC-1060,Sales Leadership,6020,Payroll Taxes & Benefits,Sales & Marketing,3635.46
-FY2026-Board-Approved,2026-06-30,CC-1060,Sales Leadership,6200,Software & Subscriptions,Sales & Marketing,834.00
-FY2026-Board-Approved,2026-06-30,CC-1060,Sales Leadership,6300,Travel & Entertainment,Sales & Marketing,1183.28
-FY2026-Board-Approved,2026-06-30,CC-1060,Sales Leadership,6450,Training & Enablement,Sales & Marketing,111.34
+FY2026-Board-Approved,2026-06-30,CC-1060,Sales Leadership,6200,Software & Subscriptions,Sales & Marketing,833.92
+FY2026-Board-Approved,2026-06-30,CC-1060,Sales Leadership,6300,Travel & Entertainment,Sales & Marketing,1183.15
+FY2026-Board-Approved,2026-06-30,CC-1060,Sales Leadership,6450,Training & Enablement,Sales & Marketing,111.33
 FY2026-Board-Approved,2026-06-30,CC-1100,Demand Generation,6000,Salaries & Wages,Sales & Marketing,91071.59
 FY2026-Board-Approved,2026-06-30,CC-1100,Demand Generation,6010,Bonus,Sales & Marketing,8838.98
 FY2026-Board-Approved,2026-06-30,CC-1100,Demand Generation,6020,Payroll Taxes & Benefits,Sales & Marketing,20481.67
-FY2026-Board-Approved,2026-06-30,CC-1100,Demand Generation,6050,Contractor & Temp Labor,Sales & Marketing,19296.68
-FY2026-Board-Approved,2026-06-30,CC-1100,Demand Generation,6100,Demand Generation,Sales & Marketing,233082.48
-FY2026-Board-Approved,2026-06-30,CC-1100,Demand Generation,6110,Events & Field Marketing,Sales & Marketing,84244.66
-FY2026-Board-Approved,2026-06-30,CC-1100,Demand Generation,6200,Software & Subscriptions,Sales & Marketing,3099.65
-FY2026-Board-Approved,2026-06-30,CC-1100,Demand Generation,6300,Travel & Entertainment,Sales & Marketing,3165.68
-FY2026-Board-Approved,2026-06-30,CC-1100,Demand Generation,6450,Training & Enablement,Sales & Marketing,495.07
+FY2026-Board-Approved,2026-06-30,CC-1100,Demand Generation,6050,Contractor & Temp Labor,Sales & Marketing,19294.66
+FY2026-Board-Approved,2026-06-30,CC-1100,Demand Generation,6100,Demand Generation,Sales & Marketing,233057.97
+FY2026-Board-Approved,2026-06-30,CC-1100,Demand Generation,6110,Events & Field Marketing,Sales & Marketing,84235.80
+FY2026-Board-Approved,2026-06-30,CC-1100,Demand Generation,6200,Software & Subscriptions,Sales & Marketing,3099.33
+FY2026-Board-Approved,2026-06-30,CC-1100,Demand Generation,6300,Travel & Entertainment,Sales & Marketing,3165.35
+FY2026-Board-Approved,2026-06-30,CC-1100,Demand Generation,6450,Training & Enablement,Sales & Marketing,495.00
 FY2026-Board-Approved,2026-06-30,CC-1110,Product Marketing,6000,Salaries & Wages,Sales & Marketing,73590.47
 FY2026-Board-Approved,2026-06-30,CC-1110,Product Marketing,6010,Bonus,Sales & Marketing,6808.61
 FY2026-Board-Approved,2026-06-30,CC-1110,Product Marketing,6020,Payroll Taxes & Benefits,Sales & Marketing,16481.81
-FY2026-Board-Approved,2026-06-30,CC-1110,Product Marketing,6120,Brand & Content,Sales & Marketing,62163.52
-FY2026-Board-Approved,2026-06-30,CC-1110,Product Marketing,6200,Software & Subscriptions,Sales & Marketing,3083.22
-FY2026-Board-Approved,2026-06-30,CC-1110,Product Marketing,6300,Travel & Entertainment,Sales & Marketing,2549.30
+FY2026-Board-Approved,2026-06-30,CC-1110,Product Marketing,6120,Brand & Content,Sales & Marketing,62156.98
+FY2026-Board-Approved,2026-06-30,CC-1110,Product Marketing,6200,Software & Subscriptions,Sales & Marketing,3082.90
+FY2026-Board-Approved,2026-06-30,CC-1110,Product Marketing,6300,Travel & Entertainment,Sales & Marketing,2549.03
 FY2026-Board-Approved,2026-06-30,CC-1200,Customer Success,6000,Salaries & Wages,Subscription COGS,208157.18
 FY2026-Board-Approved,2026-06-30,CC-1200,Customer Success,6010,Bonus,Subscription COGS,20173.17
 FY2026-Board-Approved,2026-06-30,CC-1200,Customer Success,6020,Payroll Taxes & Benefits,Subscription COGS,46807.73
-FY2026-Board-Approved,2026-06-30,CC-1200,Customer Success,6200,Software & Subscriptions,Subscription COGS,3906.89
-FY2026-Board-Approved,2026-06-30,CC-1200,Customer Success,6300,Travel & Entertainment,Subscription COGS,3480.10
-FY2026-Board-Approved,2026-06-30,CC-2000,Support,5010,Third-Party Data & APIs,Subscription COGS,1295.18
+FY2026-Board-Approved,2026-06-30,CC-1200,Customer Success,6200,Software & Subscriptions,Subscription COGS,3872.62
+FY2026-Board-Approved,2026-06-30,CC-1200,Customer Success,6300,Travel & Entertainment,Subscription COGS,3449.58
+FY2026-Board-Approved,2026-06-30,CC-2000,Support,5010,Third-Party Data & APIs,Subscription COGS,1299.32
 FY2026-Board-Approved,2026-06-30,CC-2000,Support,6000,Salaries & Wages,Subscription COGS,68488.79
 FY2026-Board-Approved,2026-06-30,CC-2000,Support,6010,Bonus,Subscription COGS,6959.58
 FY2026-Board-Approved,2026-06-30,CC-2000,Support,6020,Payroll Taxes & Benefits,Subscription COGS,15466.91
-FY2026-Board-Approved,2026-06-30,CC-2000,Support,6200,Software & Subscriptions,Subscription COGS,1072.28
-FY2026-Board-Approved,2026-06-30,CC-2010,Cloud Operations,5000,Cloud Hosting,Subscription COGS,172398.60
-FY2026-Board-Approved,2026-06-30,CC-2010,Cloud Operations,5010,Third-Party Data & APIs,Subscription COGS,928.33
-FY2026-Board-Approved,2026-06-30,CC-2010,Cloud Operations,5020,Payment Processing Fees,Subscription COGS,18707.52
+FY2026-Board-Approved,2026-06-30,CC-2000,Support,6200,Software & Subscriptions,Subscription COGS,1062.87
+FY2026-Board-Approved,2026-06-30,CC-2010,Cloud Operations,5000,Cloud Hosting,Subscription COGS,173089.11
+FY2026-Board-Approved,2026-06-30,CC-2010,Cloud Operations,5010,Third-Party Data & APIs,Subscription COGS,931.31
+FY2026-Board-Approved,2026-06-30,CC-2010,Cloud Operations,5020,Payment Processing Fees,Subscription COGS,18506.98
 FY2026-Board-Approved,2026-06-30,CC-2010,Cloud Operations,6000,Salaries & Wages,Subscription COGS,59278.70
 FY2026-Board-Approved,2026-06-30,CC-2010,Cloud Operations,6010,Bonus,Subscription COGS,5751.70
 FY2026-Board-Approved,2026-06-30,CC-2010,Cloud Operations,6020,Payroll Taxes & Benefits,Subscription COGS,13331.23
-FY2026-Board-Approved,2026-06-30,CC-2010,Cloud Operations,6050,Contractor & Temp Labor,Subscription COGS,18410.69
-FY2026-Board-Approved,2026-06-30,CC-2010,Cloud Operations,6200,Software & Subscriptions,Subscription COGS,943.89
-FY2026-Board-Approved,2026-06-30,CC-2010,Cloud Operations,6900,Other Operating Expense,Subscription COGS,166.06
+FY2026-Board-Approved,2026-06-30,CC-2010,Cloud Operations,6050,Contractor & Temp Labor,Subscription COGS,18249.21
+FY2026-Board-Approved,2026-06-30,CC-2010,Cloud Operations,6200,Software & Subscriptions,Subscription COGS,935.61
+FY2026-Board-Approved,2026-06-30,CC-2010,Cloud Operations,6900,Other Operating Expense,Subscription COGS,164.62
 FY2026-Board-Approved,2026-06-30,CC-2100,Professional Services,5030,Services Subcontractors,Services COGS,4144.91
 FY2026-Board-Approved,2026-06-30,CC-2100,Professional Services,6000,Salaries & Wages,Services COGS,43395.80
 FY2026-Board-Approved,2026-06-30,CC-2100,Professional Services,6010,Bonus,Services COGS,3854.15
@@ -814,11 +814,11 @@ FY2026-Board-Approved,2026-06-30,CC-4030,IT & Corporate Systems,6050,Contractor 
 FY2026-Board-Approved,2026-06-30,CC-4030,IT & Corporate Systems,6200,Software & Subscriptions,General & Administrative,941.85
 FY2026-Board-Approved,2026-06-30,CC-4030,IT & Corporate Systems,6420,Facilities & Rent,General & Administrative,39431.29
 FY2026-Board-Approved,2026-06-30,CC-4030,IT & Corporate Systems,6900,Other Operating Expense,General & Administrative,113.72
-FY2026-Board-Approved,2026-06-30,CC-9000,Revenue,4000,Subscription Revenue,Subscription Revenue,-2632295.67
-FY2026-Board-Approved,2026-06-30,CC-9000,Revenue,4010,Usage Revenue Above Commitment,Subscription Revenue,-56463.95
-FY2026-Board-Approved,2026-06-30,CC-9000,Revenue,4100,Professional Services Revenue,Services Revenue,-12017.17
-FY2026-Board-Approved,2026-06-30,CC-9000,Revenue,4110,Implementation Fee Revenue,Services Revenue,-56403.07
-FY2026-Board-Approved,2026-06-30,CC-9000,Corporate,9000,Ending ARR,Memo - ARR,33347365.48
+FY2026-Board-Approved,2026-06-30,CC-9000,Revenue,4000,Subscription Revenue,Subscription Revenue,-2635758.91
+FY2026-Board-Approved,2026-06-30,CC-9000,Revenue,4010,Usage Revenue Above Commitment,Subscription Revenue,-56538.24
+FY2026-Board-Approved,2026-06-30,CC-9000,Revenue,4100,Professional Services Revenue,Services Revenue,-12068.94
+FY2026-Board-Approved,2026-06-30,CC-9000,Revenue,4110,Implementation Fee Revenue,Services Revenue,-56357.47
+FY2026-Board-Approved,2026-06-30,CC-9000,Corporate,9000,Ending ARR,Memo - ARR,33389815.84
 FY2026-Board-Approved,2026-06-30,CC-9000,Corporate,9010,New Logo ARR,Memo - ARR,600000.00
 FY2026-Board-Approved,2026-06-30,CC-9000,Corporate,9020,Expansion ARR,Memo - ARR,490000.00
 FY2026-Board-Approved,2026-06-30,CC-9000,Corporate,9030,Reactivation ARR,Memo - ARR,20000.00
@@ -828,77 +828,77 @@ FY2026-Board-Approved,2026-06-30,CC-9000,Corporate,9100,New Logos Added,Memo - S
 FY2026-Board-Approved,2026-06-30,CC-9000,Corporate,9200,Ending Headcount,Memo - Statistical,206.40
 FY2026-Board-Approved,2026-07-31,CC-1000,Sales - SMB,6000,Salaries & Wages,Sales & Marketing,75888.48
 FY2026-Board-Approved,2026-07-31,CC-1000,Sales - SMB,6020,Payroll Taxes & Benefits,Sales & Marketing,15557.14
-FY2026-Board-Approved,2026-07-31,CC-1000,Sales - SMB,6030,Sales Commissions,Sales & Marketing,3986.67
-FY2026-Board-Approved,2026-07-31,CC-1000,Sales - SMB,6040,Commission Amortisation,Sales & Marketing,4652.13
-FY2026-Board-Approved,2026-07-31,CC-1000,Sales - SMB,6200,Software & Subscriptions,Sales & Marketing,4201.19
-FY2026-Board-Approved,2026-07-31,CC-1000,Sales - SMB,6300,Travel & Entertainment,Sales & Marketing,5176.90
-FY2026-Board-Approved,2026-07-31,CC-1000,Sales - SMB,6450,Training & Enablement,Sales & Marketing,491.46
+FY2026-Board-Approved,2026-07-31,CC-1000,Sales - SMB,6030,Sales Commissions,Sales & Marketing,3348.41
+FY2026-Board-Approved,2026-07-31,CC-1000,Sales - SMB,6040,Commission Amortisation,Sales & Marketing,4661.14
+FY2026-Board-Approved,2026-07-31,CC-1000,Sales - SMB,6200,Software & Subscriptions,Sales & Marketing,4200.75
+FY2026-Board-Approved,2026-07-31,CC-1000,Sales - SMB,6300,Travel & Entertainment,Sales & Marketing,5176.35
+FY2026-Board-Approved,2026-07-31,CC-1000,Sales - SMB,6450,Training & Enablement,Sales & Marketing,491.41
 FY2026-Board-Approved,2026-07-31,CC-1010,Sales - Mid-Market,6000,Salaries & Wages,Sales & Marketing,95607.47
 FY2026-Board-Approved,2026-07-31,CC-1010,Sales - Mid-Market,6020,Payroll Taxes & Benefits,Sales & Marketing,19599.54
-FY2026-Board-Approved,2026-07-31,CC-1010,Sales - Mid-Market,6030,Sales Commissions,Sales & Marketing,7610.93
-FY2026-Board-Approved,2026-07-31,CC-1010,Sales - Mid-Market,6040,Commission Amortisation,Sales & Marketing,8881.32
-FY2026-Board-Approved,2026-07-31,CC-1010,Sales - Mid-Market,6200,Software & Subscriptions,Sales & Marketing,4667.83
-FY2026-Board-Approved,2026-07-31,CC-1010,Sales - Mid-Market,6300,Travel & Entertainment,Sales & Marketing,6088.88
-FY2026-Board-Approved,2026-07-31,CC-1010,Sales - Mid-Market,6450,Training & Enablement,Sales & Marketing,595.26
+FY2026-Board-Approved,2026-07-31,CC-1010,Sales - Mid-Market,6030,Sales Commissions,Sales & Marketing,6392.44
+FY2026-Board-Approved,2026-07-31,CC-1010,Sales - Mid-Market,6040,Commission Amortisation,Sales & Marketing,8898.54
+FY2026-Board-Approved,2026-07-31,CC-1010,Sales - Mid-Market,6200,Software & Subscriptions,Sales & Marketing,4667.35
+FY2026-Board-Approved,2026-07-31,CC-1010,Sales - Mid-Market,6300,Travel & Entertainment,Sales & Marketing,6088.24
+FY2026-Board-Approved,2026-07-31,CC-1010,Sales - Mid-Market,6450,Training & Enablement,Sales & Marketing,595.20
 FY2026-Board-Approved,2026-07-31,CC-1020,Sales - Enterprise,6000,Salaries & Wages,Sales & Marketing,73074.09
 FY2026-Board-Approved,2026-07-31,CC-1020,Sales - Enterprise,6020,Payroll Taxes & Benefits,Sales & Marketing,14980.19
-FY2026-Board-Approved,2026-07-31,CC-1020,Sales - Enterprise,6030,Sales Commissions,Sales & Marketing,6523.65
-FY2026-Board-Approved,2026-07-31,CC-1020,Sales - Enterprise,6040,Commission Amortisation,Sales & Marketing,7612.57
-FY2026-Board-Approved,2026-07-31,CC-1020,Sales - Enterprise,6200,Software & Subscriptions,Sales & Marketing,3068.32
-FY2026-Board-Approved,2026-07-31,CC-1020,Sales - Enterprise,6300,Travel & Entertainment,Sales & Marketing,4520.54
-FY2026-Board-Approved,2026-07-31,CC-1020,Sales - Enterprise,6450,Training & Enablement,Sales & Marketing,372.08
+FY2026-Board-Approved,2026-07-31,CC-1020,Sales - Enterprise,6030,Sales Commissions,Sales & Marketing,5479.24
+FY2026-Board-Approved,2026-07-31,CC-1020,Sales - Enterprise,6040,Commission Amortisation,Sales & Marketing,7627.32
+FY2026-Board-Approved,2026-07-31,CC-1020,Sales - Enterprise,6200,Software & Subscriptions,Sales & Marketing,3068.00
+FY2026-Board-Approved,2026-07-31,CC-1020,Sales - Enterprise,6300,Travel & Entertainment,Sales & Marketing,4520.07
+FY2026-Board-Approved,2026-07-31,CC-1020,Sales - Enterprise,6450,Training & Enablement,Sales & Marketing,372.04
 FY2026-Board-Approved,2026-07-31,CC-1030,Sales Development,6000,Salaries & Wages,Sales & Marketing,45677.00
 FY2026-Board-Approved,2026-07-31,CC-1030,Sales Development,6020,Payroll Taxes & Benefits,Sales & Marketing,9363.78
-FY2026-Board-Approved,2026-07-31,CC-1030,Sales Development,6200,Software & Subscriptions,Sales & Marketing,2206.02
-FY2026-Board-Approved,2026-07-31,CC-1030,Sales Development,6300,Travel & Entertainment,Sales & Marketing,3043.94
-FY2026-Board-Approved,2026-07-31,CC-1030,Sales Development,6450,Training & Enablement,Sales & Marketing,279.46
+FY2026-Board-Approved,2026-07-31,CC-1030,Sales Development,6200,Software & Subscriptions,Sales & Marketing,2205.78
+FY2026-Board-Approved,2026-07-31,CC-1030,Sales Development,6300,Travel & Entertainment,Sales & Marketing,3043.62
+FY2026-Board-Approved,2026-07-31,CC-1030,Sales Development,6450,Training & Enablement,Sales & Marketing,279.44
 FY2026-Board-Approved,2026-07-31,CC-1040,Sales Operations,6000,Salaries & Wages,Sales & Marketing,57025.66
 FY2026-Board-Approved,2026-07-31,CC-1040,Sales Operations,6020,Payroll Taxes & Benefits,Sales & Marketing,11690.27
-FY2026-Board-Approved,2026-07-31,CC-1040,Sales Operations,6200,Software & Subscriptions,Sales & Marketing,2689.36
-FY2026-Board-Approved,2026-07-31,CC-1040,Sales Operations,6300,Travel & Entertainment,Sales & Marketing,3917.09
+FY2026-Board-Approved,2026-07-31,CC-1040,Sales Operations,6200,Software & Subscriptions,Sales & Marketing,2689.09
+FY2026-Board-Approved,2026-07-31,CC-1040,Sales Operations,6300,Travel & Entertainment,Sales & Marketing,3916.68
 FY2026-Board-Approved,2026-07-31,CC-1050,Solutions Engineering,6000,Salaries & Wages,Sales & Marketing,40494.50
 FY2026-Board-Approved,2026-07-31,CC-1050,Solutions Engineering,6020,Payroll Taxes & Benefits,Sales & Marketing,8301.37
-FY2026-Board-Approved,2026-07-31,CC-1050,Solutions Engineering,6200,Software & Subscriptions,Sales & Marketing,1901.00
-FY2026-Board-Approved,2026-07-31,CC-1050,Solutions Engineering,6300,Travel & Entertainment,Sales & Marketing,2392.93
+FY2026-Board-Approved,2026-07-31,CC-1050,Solutions Engineering,6200,Software & Subscriptions,Sales & Marketing,1900.80
+FY2026-Board-Approved,2026-07-31,CC-1050,Solutions Engineering,6300,Travel & Entertainment,Sales & Marketing,2392.68
 FY2026-Board-Approved,2026-07-31,CC-1060,Sales Leadership,6000,Salaries & Wages,Sales & Marketing,30493.84
 FY2026-Board-Approved,2026-07-31,CC-1060,Sales Leadership,6020,Payroll Taxes & Benefits,Sales & Marketing,6251.24
-FY2026-Board-Approved,2026-07-31,CC-1060,Sales Leadership,6200,Software & Subscriptions,Sales & Marketing,1350.85
-FY2026-Board-Approved,2026-07-31,CC-1060,Sales Leadership,6300,Travel & Entertainment,Sales & Marketing,1984.51
-FY2026-Board-Approved,2026-07-31,CC-1060,Sales Leadership,6450,Training & Enablement,Sales & Marketing,161.08
+FY2026-Board-Approved,2026-07-31,CC-1060,Sales Leadership,6200,Software & Subscriptions,Sales & Marketing,1350.70
+FY2026-Board-Approved,2026-07-31,CC-1060,Sales Leadership,6300,Travel & Entertainment,Sales & Marketing,1984.30
+FY2026-Board-Approved,2026-07-31,CC-1060,Sales Leadership,6450,Training & Enablement,Sales & Marketing,161.07
 FY2026-Board-Approved,2026-07-31,CC-1100,Demand Generation,6000,Salaries & Wages,Sales & Marketing,91864.05
 FY2026-Board-Approved,2026-07-31,CC-1100,Demand Generation,6010,Bonus,Sales & Marketing,8915.90
 FY2026-Board-Approved,2026-07-31,CC-1100,Demand Generation,6020,Payroll Taxes & Benefits,Sales & Marketing,20659.89
-FY2026-Board-Approved,2026-07-31,CC-1100,Demand Generation,6050,Contractor & Temp Labor,Sales & Marketing,18299.84
-FY2026-Board-Approved,2026-07-31,CC-1100,Demand Generation,6100,Demand Generation,Sales & Marketing,194067.89
-FY2026-Board-Approved,2026-07-31,CC-1100,Demand Generation,6110,Events & Field Marketing,Sales & Marketing,74667.48
-FY2026-Board-Approved,2026-07-31,CC-1100,Demand Generation,6200,Software & Subscriptions,Sales & Marketing,3398.91
-FY2026-Board-Approved,2026-07-31,CC-1100,Demand Generation,6300,Travel & Entertainment,Sales & Marketing,3052.39
-FY2026-Board-Approved,2026-07-31,CC-1100,Demand Generation,6450,Training & Enablement,Sales & Marketing,498.68
+FY2026-Board-Approved,2026-07-31,CC-1100,Demand Generation,6050,Contractor & Temp Labor,Sales & Marketing,18297.92
+FY2026-Board-Approved,2026-07-31,CC-1100,Demand Generation,6100,Demand Generation,Sales & Marketing,194047.48
+FY2026-Board-Approved,2026-07-31,CC-1100,Demand Generation,6110,Events & Field Marketing,Sales & Marketing,74659.63
+FY2026-Board-Approved,2026-07-31,CC-1100,Demand Generation,6200,Software & Subscriptions,Sales & Marketing,3398.55
+FY2026-Board-Approved,2026-07-31,CC-1100,Demand Generation,6300,Travel & Entertainment,Sales & Marketing,3052.07
+FY2026-Board-Approved,2026-07-31,CC-1100,Demand Generation,6450,Training & Enablement,Sales & Marketing,498.63
 FY2026-Board-Approved,2026-07-31,CC-1110,Product Marketing,6000,Salaries & Wages,Sales & Marketing,74230.82
 FY2026-Board-Approved,2026-07-31,CC-1110,Product Marketing,6010,Bonus,Sales & Marketing,6867.86
 FY2026-Board-Approved,2026-07-31,CC-1110,Product Marketing,6020,Payroll Taxes & Benefits,Sales & Marketing,16625.23
-FY2026-Board-Approved,2026-07-31,CC-1110,Product Marketing,6120,Brand & Content,Sales & Marketing,49312.29
-FY2026-Board-Approved,2026-07-31,CC-1110,Product Marketing,6200,Software & Subscriptions,Sales & Marketing,3063.03
-FY2026-Board-Approved,2026-07-31,CC-1110,Product Marketing,6300,Travel & Entertainment,Sales & Marketing,2717.28
+FY2026-Board-Approved,2026-07-31,CC-1110,Product Marketing,6120,Brand & Content,Sales & Marketing,49307.10
+FY2026-Board-Approved,2026-07-31,CC-1110,Product Marketing,6200,Software & Subscriptions,Sales & Marketing,3062.71
+FY2026-Board-Approved,2026-07-31,CC-1110,Product Marketing,6300,Travel & Entertainment,Sales & Marketing,2717.00
 FY2026-Board-Approved,2026-07-31,CC-1200,Customer Success,6000,Salaries & Wages,Subscription COGS,215415.10
 FY2026-Board-Approved,2026-07-31,CC-1200,Customer Success,6010,Bonus,Subscription COGS,21248.60
 FY2026-Board-Approved,2026-07-31,CC-1200,Customer Success,6020,Payroll Taxes & Benefits,Subscription COGS,48516.06
-FY2026-Board-Approved,2026-07-31,CC-1200,Customer Success,6200,Software & Subscriptions,Subscription COGS,4386.23
-FY2026-Board-Approved,2026-07-31,CC-1200,Customer Success,6300,Travel & Entertainment,Subscription COGS,3529.56
-FY2026-Board-Approved,2026-07-31,CC-2000,Support,5010,Third-Party Data & APIs,Subscription COGS,1391.57
+FY2026-Board-Approved,2026-07-31,CC-1200,Customer Success,6200,Software & Subscriptions,Subscription COGS,4347.76
+FY2026-Board-Approved,2026-07-31,CC-1200,Customer Success,6300,Travel & Entertainment,Subscription COGS,3498.60
+FY2026-Board-Approved,2026-07-31,CC-2000,Support,5010,Third-Party Data & APIs,Subscription COGS,1397.63
 FY2026-Board-Approved,2026-07-31,CC-2000,Support,6000,Salaries & Wages,Subscription COGS,69084.75
 FY2026-Board-Approved,2026-07-31,CC-2000,Support,6010,Bonus,Subscription COGS,7020.14
 FY2026-Board-Approved,2026-07-31,CC-2000,Support,6020,Payroll Taxes & Benefits,Subscription COGS,15601.50
-FY2026-Board-Approved,2026-07-31,CC-2000,Support,6200,Software & Subscriptions,Subscription COGS,1337.56
-FY2026-Board-Approved,2026-07-31,CC-2010,Cloud Operations,5000,Cloud Hosting,Subscription COGS,168822.37
-FY2026-Board-Approved,2026-07-31,CC-2010,Cloud Operations,5010,Third-Party Data & APIs,Subscription COGS,970.07
-FY2026-Board-Approved,2026-07-31,CC-2010,Cloud Operations,5020,Payment Processing Fees,Subscription COGS,14194.87
+FY2026-Board-Approved,2026-07-31,CC-2000,Support,6200,Software & Subscriptions,Subscription COGS,1325.83
+FY2026-Board-Approved,2026-07-31,CC-2010,Cloud Operations,5000,Cloud Hosting,Subscription COGS,169556.37
+FY2026-Board-Approved,2026-07-31,CC-2010,Cloud Operations,5010,Third-Party Data & APIs,Subscription COGS,974.29
+FY2026-Board-Approved,2026-07-31,CC-2010,Cloud Operations,5020,Payment Processing Fees,Subscription COGS,14155.87
 FY2026-Board-Approved,2026-07-31,CC-2010,Cloud Operations,6000,Salaries & Wages,Subscription COGS,59794.51
 FY2026-Board-Approved,2026-07-31,CC-2010,Cloud Operations,6010,Bonus,Subscription COGS,5801.75
 FY2026-Board-Approved,2026-07-31,CC-2010,Cloud Operations,6020,Payroll Taxes & Benefits,Subscription COGS,13447.24
-FY2026-Board-Approved,2026-07-31,CC-2010,Cloud Operations,6050,Contractor & Temp Labor,Subscription COGS,17455.99
-FY2026-Board-Approved,2026-07-31,CC-2010,Cloud Operations,6200,Software & Subscriptions,Subscription COGS,972.08
-FY2026-Board-Approved,2026-07-31,CC-2010,Cloud Operations,6900,Other Operating Expense,Subscription COGS,140.55
+FY2026-Board-Approved,2026-07-31,CC-2010,Cloud Operations,6050,Contractor & Temp Labor,Subscription COGS,17302.88
+FY2026-Board-Approved,2026-07-31,CC-2010,Cloud Operations,6200,Software & Subscriptions,Subscription COGS,963.55
+FY2026-Board-Approved,2026-07-31,CC-2010,Cloud Operations,6900,Other Operating Expense,Subscription COGS,139.32
 FY2026-Board-Approved,2026-07-31,CC-2100,Professional Services,5030,Services Subcontractors,Services COGS,4710.21
 FY2026-Board-Approved,2026-07-31,CC-2100,Professional Services,6000,Salaries & Wages,Services COGS,46241.70
 FY2026-Board-Approved,2026-07-31,CC-2100,Professional Services,6010,Bonus,Services COGS,4085.16
@@ -952,11 +952,11 @@ FY2026-Board-Approved,2026-07-31,CC-4030,IT & Corporate Systems,6050,Contractor 
 FY2026-Board-Approved,2026-07-31,CC-4030,IT & Corporate Systems,6200,Software & Subscriptions,General & Administrative,949.25
 FY2026-Board-Approved,2026-07-31,CC-4030,IT & Corporate Systems,6420,Facilities & Rent,General & Administrative,45392.28
 FY2026-Board-Approved,2026-07-31,CC-4030,IT & Corporate Systems,6900,Other Operating Expense,General & Administrative,125.56
-FY2026-Board-Approved,2026-07-31,CC-9000,Revenue,4000,Subscription Revenue,Subscription Revenue,-2690026.08
-FY2026-Board-Approved,2026-07-31,CC-9000,Revenue,4010,Usage Revenue Above Commitment,Subscription Revenue,-57702.30
-FY2026-Board-Approved,2026-07-31,CC-9000,Revenue,4100,Professional Services Revenue,Services Revenue,-10346.43
-FY2026-Board-Approved,2026-07-31,CC-9000,Revenue,4110,Implementation Fee Revenue,Services Revenue,-55956.69
-FY2026-Board-Approved,2026-07-31,CC-9000,Corporate,9000,Ending ARR,Memo - ARR,33754365.48
+FY2026-Board-Approved,2026-07-31,CC-9000,Revenue,4000,Subscription Revenue,Subscription Revenue,-2693489.32
+FY2026-Board-Approved,2026-07-31,CC-9000,Revenue,4010,Usage Revenue Above Commitment,Subscription Revenue,-57776.58
+FY2026-Board-Approved,2026-07-31,CC-9000,Revenue,4100,Professional Services Revenue,Services Revenue,-10425.50
+FY2026-Board-Approved,2026-07-31,CC-9000,Revenue,4110,Implementation Fee Revenue,Services Revenue,-55932.33
+FY2026-Board-Approved,2026-07-31,CC-9000,Corporate,9000,Ending ARR,Memo - ARR,33796815.84
 FY2026-Board-Approved,2026-07-31,CC-9000,Corporate,9010,New Logo ARR,Memo - ARR,330000.00
 FY2026-Board-Approved,2026-07-31,CC-9000,Corporate,9020,Expansion ARR,Memo - ARR,269500.00
 FY2026-Board-Approved,2026-07-31,CC-9000,Corporate,9030,Reactivation ARR,Memo - ARR,11000.00
@@ -966,77 +966,77 @@ FY2026-Board-Approved,2026-07-31,CC-9000,Corporate,9100,New Logos Added,Memo - S
 FY2026-Board-Approved,2026-07-31,CC-9000,Corporate,9200,Ending Headcount,Memo - Statistical,207.60
 FY2026-Board-Approved,2026-08-31,CC-1000,Sales - SMB,6000,Salaries & Wages,Sales & Marketing,76582.93
 FY2026-Board-Approved,2026-08-31,CC-1000,Sales - SMB,6020,Payroll Taxes & Benefits,Sales & Marketing,15699.50
-FY2026-Board-Approved,2026-08-31,CC-1000,Sales - SMB,6030,Sales Commissions,Sales & Marketing,3840.35
-FY2026-Board-Approved,2026-08-31,CC-1000,Sales - SMB,6040,Commission Amortisation,Sales & Marketing,4861.84
-FY2026-Board-Approved,2026-08-31,CC-1000,Sales - SMB,6200,Software & Subscriptions,Sales & Marketing,3938.05
-FY2026-Board-Approved,2026-08-31,CC-1000,Sales - SMB,6300,Travel & Entertainment,Sales & Marketing,5186.99
-FY2026-Board-Approved,2026-08-31,CC-1000,Sales - SMB,6450,Training & Enablement,Sales & Marketing,571.02
+FY2026-Board-Approved,2026-08-31,CC-1000,Sales - SMB,6030,Sales Commissions,Sales & Marketing,4393.89
+FY2026-Board-Approved,2026-08-31,CC-1000,Sales - SMB,6040,Commission Amortisation,Sales & Marketing,4893.09
+FY2026-Board-Approved,2026-08-31,CC-1000,Sales - SMB,6200,Software & Subscriptions,Sales & Marketing,3937.64
+FY2026-Board-Approved,2026-08-31,CC-1000,Sales - SMB,6300,Travel & Entertainment,Sales & Marketing,5186.45
+FY2026-Board-Approved,2026-08-31,CC-1000,Sales - SMB,6450,Training & Enablement,Sales & Marketing,570.97
 FY2026-Board-Approved,2026-08-31,CC-1010,Sales - Mid-Market,6000,Salaries & Wages,Sales & Marketing,107714.28
 FY2026-Board-Approved,2026-08-31,CC-1010,Sales - Mid-Market,6020,Payroll Taxes & Benefits,Sales & Marketing,22081.43
-FY2026-Board-Approved,2026-08-31,CC-1010,Sales - Mid-Market,6030,Sales Commissions,Sales & Marketing,7331.59
-FY2026-Board-Approved,2026-08-31,CC-1010,Sales - Mid-Market,6040,Commission Amortisation,Sales & Marketing,9281.68
-FY2026-Board-Approved,2026-08-31,CC-1010,Sales - Mid-Market,6200,Software & Subscriptions,Sales & Marketing,4860.06
-FY2026-Board-Approved,2026-08-31,CC-1010,Sales - Mid-Market,6300,Travel & Entertainment,Sales & Marketing,6547.32
-FY2026-Board-Approved,2026-08-31,CC-1010,Sales - Mid-Market,6450,Training & Enablement,Sales & Marketing,591.22
+FY2026-Board-Approved,2026-08-31,CC-1010,Sales - Mid-Market,6030,Sales Commissions,Sales & Marketing,8388.34
+FY2026-Board-Approved,2026-08-31,CC-1010,Sales - Mid-Market,6040,Commission Amortisation,Sales & Marketing,9341.35
+FY2026-Board-Approved,2026-08-31,CC-1010,Sales - Mid-Market,6200,Software & Subscriptions,Sales & Marketing,4859.55
+FY2026-Board-Approved,2026-08-31,CC-1010,Sales - Mid-Market,6300,Travel & Entertainment,Sales & Marketing,6546.63
+FY2026-Board-Approved,2026-08-31,CC-1010,Sales - Mid-Market,6450,Training & Enablement,Sales & Marketing,591.16
 FY2026-Board-Approved,2026-08-31,CC-1020,Sales - Enterprise,6000,Salaries & Wages,Sales & Marketing,74965.25
 FY2026-Board-Approved,2026-08-31,CC-1020,Sales - Enterprise,6020,Payroll Taxes & Benefits,Sales & Marketing,15367.88
-FY2026-Board-Approved,2026-08-31,CC-1020,Sales - Enterprise,6030,Sales Commissions,Sales & Marketing,6284.21
-FY2026-Board-Approved,2026-08-31,CC-1020,Sales - Enterprise,6040,Commission Amortisation,Sales & Marketing,7955.73
-FY2026-Board-Approved,2026-08-31,CC-1020,Sales - Enterprise,6200,Software & Subscriptions,Sales & Marketing,3174.13
-FY2026-Board-Approved,2026-08-31,CC-1020,Sales - Enterprise,6300,Travel & Entertainment,Sales & Marketing,4509.07
-FY2026-Board-Approved,2026-08-31,CC-1020,Sales - Enterprise,6450,Training & Enablement,Sales & Marketing,417.75
+FY2026-Board-Approved,2026-08-31,CC-1020,Sales - Enterprise,6030,Sales Commissions,Sales & Marketing,7190.01
+FY2026-Board-Approved,2026-08-31,CC-1020,Sales - Enterprise,6040,Commission Amortisation,Sales & Marketing,8006.87
+FY2026-Board-Approved,2026-08-31,CC-1020,Sales - Enterprise,6200,Software & Subscriptions,Sales & Marketing,3173.79
+FY2026-Board-Approved,2026-08-31,CC-1020,Sales - Enterprise,6300,Travel & Entertainment,Sales & Marketing,4508.59
+FY2026-Board-Approved,2026-08-31,CC-1020,Sales - Enterprise,6450,Training & Enablement,Sales & Marketing,417.71
 FY2026-Board-Approved,2026-08-31,CC-1030,Sales Development,6000,Salaries & Wages,Sales & Marketing,46094.99
 FY2026-Board-Approved,2026-08-31,CC-1030,Sales Development,6020,Payroll Taxes & Benefits,Sales & Marketing,9449.47
-FY2026-Board-Approved,2026-08-31,CC-1030,Sales Development,6200,Software & Subscriptions,Sales & Marketing,2464.89
-FY2026-Board-Approved,2026-08-31,CC-1030,Sales Development,6300,Travel & Entertainment,Sales & Marketing,3562.10
-FY2026-Board-Approved,2026-08-31,CC-1030,Sales Development,6450,Training & Enablement,Sales & Marketing,271.42
+FY2026-Board-Approved,2026-08-31,CC-1030,Sales Development,6200,Software & Subscriptions,Sales & Marketing,2464.64
+FY2026-Board-Approved,2026-08-31,CC-1030,Sales Development,6300,Travel & Entertainment,Sales & Marketing,3561.72
+FY2026-Board-Approved,2026-08-31,CC-1030,Sales Development,6450,Training & Enablement,Sales & Marketing,271.40
 FY2026-Board-Approved,2026-08-31,CC-1040,Sales Operations,6000,Salaries & Wages,Sales & Marketing,44854.15
 FY2026-Board-Approved,2026-08-31,CC-1040,Sales Operations,6020,Payroll Taxes & Benefits,Sales & Marketing,9195.10
-FY2026-Board-Approved,2026-08-31,CC-1040,Sales Operations,6200,Software & Subscriptions,Sales & Marketing,2338.93
-FY2026-Board-Approved,2026-08-31,CC-1040,Sales Operations,6300,Travel & Entertainment,Sales & Marketing,3268.14
+FY2026-Board-Approved,2026-08-31,CC-1040,Sales Operations,6200,Software & Subscriptions,Sales & Marketing,2338.69
+FY2026-Board-Approved,2026-08-31,CC-1040,Sales Operations,6300,Travel & Entertainment,Sales & Marketing,3267.80
 FY2026-Board-Approved,2026-08-31,CC-1050,Solutions Engineering,6000,Salaries & Wages,Sales & Marketing,40865.07
 FY2026-Board-Approved,2026-08-31,CC-1050,Solutions Engineering,6020,Payroll Taxes & Benefits,Sales & Marketing,8377.34
-FY2026-Board-Approved,2026-08-31,CC-1050,Solutions Engineering,6200,Software & Subscriptions,Sales & Marketing,1761.91
-FY2026-Board-Approved,2026-08-31,CC-1050,Solutions Engineering,6300,Travel & Entertainment,Sales & Marketing,2509.94
+FY2026-Board-Approved,2026-08-31,CC-1050,Solutions Engineering,6200,Software & Subscriptions,Sales & Marketing,1761.73
+FY2026-Board-Approved,2026-08-31,CC-1050,Solutions Engineering,6300,Travel & Entertainment,Sales & Marketing,2509.68
 FY2026-Board-Approved,2026-08-31,CC-1060,Sales Leadership,6000,Salaries & Wages,Sales & Marketing,30772.88
 FY2026-Board-Approved,2026-08-31,CC-1060,Sales Leadership,6020,Payroll Taxes & Benefits,Sales & Marketing,6308.44
-FY2026-Board-Approved,2026-08-31,CC-1060,Sales Leadership,6200,Software & Subscriptions,Sales & Marketing,1351.10
-FY2026-Board-Approved,2026-08-31,CC-1060,Sales Leadership,6300,Travel & Entertainment,Sales & Marketing,1818.59
-FY2026-Board-Approved,2026-08-31,CC-1060,Sales Leadership,6450,Training & Enablement,Sales & Marketing,168.56
+FY2026-Board-Approved,2026-08-31,CC-1060,Sales Leadership,6200,Software & Subscriptions,Sales & Marketing,1350.96
+FY2026-Board-Approved,2026-08-31,CC-1060,Sales Leadership,6300,Travel & Entertainment,Sales & Marketing,1818.38
+FY2026-Board-Approved,2026-08-31,CC-1060,Sales Leadership,6450,Training & Enablement,Sales & Marketing,168.53
 FY2026-Board-Approved,2026-08-31,CC-1100,Demand Generation,6000,Salaries & Wages,Sales & Marketing,92704.69
 FY2026-Board-Approved,2026-08-31,CC-1100,Demand Generation,6010,Bonus,Sales & Marketing,8997.48
 FY2026-Board-Approved,2026-08-31,CC-1100,Demand Generation,6020,Payroll Taxes & Benefits,Sales & Marketing,20848.95
-FY2026-Board-Approved,2026-08-31,CC-1100,Demand Generation,6050,Contractor & Temp Labor,Sales & Marketing,17206.58
-FY2026-Board-Approved,2026-08-31,CC-1100,Demand Generation,6100,Demand Generation,Sales & Marketing,178525.14
-FY2026-Board-Approved,2026-08-31,CC-1100,Demand Generation,6110,Events & Field Marketing,Sales & Marketing,78881.49
-FY2026-Board-Approved,2026-08-31,CC-1100,Demand Generation,6200,Software & Subscriptions,Sales & Marketing,3951.49
-FY2026-Board-Approved,2026-08-31,CC-1100,Demand Generation,6300,Travel & Entertainment,Sales & Marketing,2781.78
-FY2026-Board-Approved,2026-08-31,CC-1100,Demand Generation,6450,Training & Enablement,Sales & Marketing,469.57
+FY2026-Board-Approved,2026-08-31,CC-1100,Demand Generation,6050,Contractor & Temp Labor,Sales & Marketing,17204.77
+FY2026-Board-Approved,2026-08-31,CC-1100,Demand Generation,6100,Demand Generation,Sales & Marketing,178506.37
+FY2026-Board-Approved,2026-08-31,CC-1100,Demand Generation,6110,Events & Field Marketing,Sales & Marketing,78873.19
+FY2026-Board-Approved,2026-08-31,CC-1100,Demand Generation,6200,Software & Subscriptions,Sales & Marketing,3951.08
+FY2026-Board-Approved,2026-08-31,CC-1100,Demand Generation,6300,Travel & Entertainment,Sales & Marketing,2781.48
+FY2026-Board-Approved,2026-08-31,CC-1100,Demand Generation,6450,Training & Enablement,Sales & Marketing,469.52
 FY2026-Board-Approved,2026-08-31,CC-1110,Product Marketing,6000,Salaries & Wages,Sales & Marketing,84266.97
 FY2026-Board-Approved,2026-08-31,CC-1110,Product Marketing,6010,Bonus,Sales & Marketing,7679.25
 FY2026-Board-Approved,2026-08-31,CC-1110,Product Marketing,6020,Payroll Taxes & Benefits,Sales & Marketing,18848.98
-FY2026-Board-Approved,2026-08-31,CC-1110,Product Marketing,6120,Brand & Content,Sales & Marketing,47003.12
-FY2026-Board-Approved,2026-08-31,CC-1110,Product Marketing,6200,Software & Subscriptions,Sales & Marketing,3874.24
-FY2026-Board-Approved,2026-08-31,CC-1110,Product Marketing,6300,Travel & Entertainment,Sales & Marketing,2626.50
+FY2026-Board-Approved,2026-08-31,CC-1110,Product Marketing,6120,Brand & Content,Sales & Marketing,46998.17
+FY2026-Board-Approved,2026-08-31,CC-1110,Product Marketing,6200,Software & Subscriptions,Sales & Marketing,3873.83
+FY2026-Board-Approved,2026-08-31,CC-1110,Product Marketing,6300,Travel & Entertainment,Sales & Marketing,2626.23
 FY2026-Board-Approved,2026-08-31,CC-1200,Customer Success,6000,Salaries & Wages,Subscription COGS,210649.03
 FY2026-Board-Approved,2026-08-31,CC-1200,Customer Success,6010,Bonus,Subscription COGS,20904.05
 FY2026-Board-Approved,2026-08-31,CC-1200,Customer Success,6020,Payroll Taxes & Benefits,Subscription COGS,47468.39
-FY2026-Board-Approved,2026-08-31,CC-1200,Customer Success,6200,Software & Subscriptions,Subscription COGS,4017.45
-FY2026-Board-Approved,2026-08-31,CC-1200,Customer Success,6300,Travel & Entertainment,Subscription COGS,3000.13
-FY2026-Board-Approved,2026-08-31,CC-2000,Support,5010,Third-Party Data & APIs,Subscription COGS,1598.41
+FY2026-Board-Approved,2026-08-31,CC-1200,Customer Success,6200,Software & Subscriptions,Subscription COGS,3982.22
+FY2026-Board-Approved,2026-08-31,CC-1200,Customer Success,6300,Travel & Entertainment,Subscription COGS,2973.83
+FY2026-Board-Approved,2026-08-31,CC-2000,Support,5010,Third-Party Data & APIs,Subscription COGS,1605.33
 FY2026-Board-Approved,2026-08-31,CC-2000,Support,6000,Salaries & Wages,Subscription COGS,76206.09
 FY2026-Board-Approved,2026-08-31,CC-2000,Support,6010,Bonus,Subscription COGS,7603.52
 FY2026-Board-Approved,2026-08-31,CC-2000,Support,6020,Payroll Taxes & Benefits,Subscription COGS,17180.96
-FY2026-Board-Approved,2026-08-31,CC-2000,Support,6200,Software & Subscriptions,Subscription COGS,1274.21
-FY2026-Board-Approved,2026-08-31,CC-2010,Cloud Operations,5000,Cloud Hosting,Subscription COGS,163086.42
-FY2026-Board-Approved,2026-08-31,CC-2010,Cloud Operations,5010,Third-Party Data & APIs,Subscription COGS,995.47
-FY2026-Board-Approved,2026-08-31,CC-2010,Cloud Operations,5020,Payment Processing Fees,Subscription COGS,9542.41
+FY2026-Board-Approved,2026-08-31,CC-2000,Support,6200,Software & Subscriptions,Subscription COGS,1263.03
+FY2026-Board-Approved,2026-08-31,CC-2010,Cloud Operations,5000,Cloud Hosting,Subscription COGS,163792.37
+FY2026-Board-Approved,2026-08-31,CC-2010,Cloud Operations,5010,Third-Party Data & APIs,Subscription COGS,999.78
+FY2026-Board-Approved,2026-08-31,CC-2010,Cloud Operations,5020,Payment Processing Fees,Subscription COGS,9442.41
 FY2026-Board-Approved,2026-08-31,CC-2010,Cloud Operations,6000,Salaries & Wages,Subscription COGS,60341.69
 FY2026-Board-Approved,2026-08-31,CC-2010,Cloud Operations,6010,Bonus,Subscription COGS,5854.84
 FY2026-Board-Approved,2026-08-31,CC-2010,Cloud Operations,6020,Payroll Taxes & Benefits,Subscription COGS,13570.29
-FY2026-Board-Approved,2026-08-31,CC-2010,Cloud Operations,6050,Contractor & Temp Labor,Subscription COGS,19444.59
-FY2026-Board-Approved,2026-08-31,CC-2010,Cloud Operations,6200,Software & Subscriptions,Subscription COGS,1039.10
-FY2026-Board-Approved,2026-08-31,CC-2010,Cloud Operations,6900,Other Operating Expense,Subscription COGS,150.34
+FY2026-Board-Approved,2026-08-31,CC-2010,Cloud Operations,6050,Contractor & Temp Labor,Subscription COGS,19274.04
+FY2026-Board-Approved,2026-08-31,CC-2010,Cloud Operations,6200,Software & Subscriptions,Subscription COGS,1029.99
+FY2026-Board-Approved,2026-08-31,CC-2010,Cloud Operations,6900,Other Operating Expense,Subscription COGS,149.02
 FY2026-Board-Approved,2026-08-31,CC-2100,Professional Services,5030,Services Subcontractors,Services COGS,4627.94
 FY2026-Board-Approved,2026-08-31,CC-2100,Professional Services,6000,Salaries & Wages,Services COGS,46664.85
 FY2026-Board-Approved,2026-08-31,CC-2100,Professional Services,6010,Bonus,Services COGS,4122.54
@@ -1090,11 +1090,11 @@ FY2026-Board-Approved,2026-08-31,CC-4030,IT & Corporate Systems,6050,Contractor 
 FY2026-Board-Approved,2026-08-31,CC-4030,IT & Corporate Systems,6200,Software & Subscriptions,General & Administrative,919.56
 FY2026-Board-Approved,2026-08-31,CC-4030,IT & Corporate Systems,6420,Facilities & Rent,General & Administrative,48699.70
 FY2026-Board-Approved,2026-08-31,CC-4030,IT & Corporate Systems,6900,Other Operating Expense,General & Administrative,112.46
-FY2026-Board-Approved,2026-08-31,CC-9000,Revenue,4000,Subscription Revenue,Subscription Revenue,-2738851.66
-FY2026-Board-Approved,2026-08-31,CC-9000,Revenue,4010,Usage Revenue Above Commitment,Subscription Revenue,-58749.63
-FY2026-Board-Approved,2026-08-31,CC-9000,Revenue,4100,Professional Services Revenue,Services Revenue,-9590.48
-FY2026-Board-Approved,2026-08-31,CC-9000,Revenue,4110,Implementation Fee Revenue,Services Revenue,-55703.74
-FY2026-Board-Approved,2026-08-31,CC-9000,Corporate,9000,Ending ARR,Memo - ARR,34216865.48
+FY2026-Board-Approved,2026-08-31,CC-9000,Revenue,4000,Subscription Revenue,Subscription Revenue,-2742314.90
+FY2026-Board-Approved,2026-08-31,CC-9000,Revenue,4010,Usage Revenue Above Commitment,Subscription Revenue,-58823.92
+FY2026-Board-Approved,2026-08-31,CC-9000,Revenue,4100,Professional Services Revenue,Services Revenue,-9672.06
+FY2026-Board-Approved,2026-08-31,CC-9000,Revenue,4110,Implementation Fee Revenue,Services Revenue,-55700.34
+FY2026-Board-Approved,2026-08-31,CC-9000,Corporate,9000,Ending ARR,Memo - ARR,34259315.84
 FY2026-Board-Approved,2026-08-31,CC-9000,Corporate,9010,New Logo ARR,Memo - ARR,360000.00
 FY2026-Board-Approved,2026-08-31,CC-9000,Corporate,9020,Expansion ARR,Memo - ARR,294000.00
 FY2026-Board-Approved,2026-08-31,CC-9000,Corporate,9030,Reactivation ARR,Memo - ARR,12000.00
@@ -1104,77 +1104,77 @@ FY2026-Board-Approved,2026-08-31,CC-9000,Corporate,9100,New Logos Added,Memo - S
 FY2026-Board-Approved,2026-08-31,CC-9000,Corporate,9200,Ending Headcount,Memo - Statistical,208.90
 FY2026-Board-Approved,2026-09-30,CC-1000,Sales - SMB,6000,Salaries & Wages,Sales & Marketing,89338.48
 FY2026-Board-Approved,2026-09-30,CC-1000,Sales - SMB,6020,Payroll Taxes & Benefits,Sales & Marketing,18314.39
-FY2026-Board-Approved,2026-09-30,CC-1000,Sales - SMB,6030,Sales Commissions,Sales & Marketing,5123.79
-FY2026-Board-Approved,2026-09-30,CC-1000,Sales - SMB,6040,Commission Amortisation,Sales & Marketing,5125.38
-FY2026-Board-Approved,2026-09-30,CC-1000,Sales - SMB,6200,Software & Subscriptions,Sales & Marketing,4419.60
-FY2026-Board-Approved,2026-09-30,CC-1000,Sales - SMB,6300,Travel & Entertainment,Sales & Marketing,6096.18
-FY2026-Board-Approved,2026-09-30,CC-1000,Sales - SMB,6450,Training & Enablement,Sales & Marketing,588.88
+FY2026-Board-Approved,2026-09-30,CC-1000,Sales - SMB,6030,Sales Commissions,Sales & Marketing,7702.74
+FY2026-Board-Approved,2026-09-30,CC-1000,Sales - SMB,6040,Commission Amortisation,Sales & Marketing,5260.10
+FY2026-Board-Approved,2026-09-30,CC-1000,Sales - SMB,6200,Software & Subscriptions,Sales & Marketing,4419.13
+FY2026-Board-Approved,2026-09-30,CC-1000,Sales - SMB,6300,Travel & Entertainment,Sales & Marketing,6095.53
+FY2026-Board-Approved,2026-09-30,CC-1000,Sales - SMB,6450,Training & Enablement,Sales & Marketing,588.81
 FY2026-Board-Approved,2026-09-30,CC-1010,Sales - Mid-Market,6000,Salaries & Wages,Sales & Marketing,108695.76
 FY2026-Board-Approved,2026-09-30,CC-1010,Sales - Mid-Market,6020,Payroll Taxes & Benefits,Sales & Marketing,22282.63
-FY2026-Board-Approved,2026-09-30,CC-1010,Sales - Mid-Market,6030,Sales Commissions,Sales & Marketing,9781.77
-FY2026-Board-Approved,2026-09-30,CC-1010,Sales - Mid-Market,6040,Commission Amortisation,Sales & Marketing,9784.83
-FY2026-Board-Approved,2026-09-30,CC-1010,Sales - Mid-Market,6200,Software & Subscriptions,Sales & Marketing,5547.60
-FY2026-Board-Approved,2026-09-30,CC-1010,Sales - Mid-Market,6300,Travel & Entertainment,Sales & Marketing,7224.99
-FY2026-Board-Approved,2026-09-30,CC-1010,Sales - Mid-Market,6450,Training & Enablement,Sales & Marketing,595.85
+FY2026-Board-Approved,2026-09-30,CC-1010,Sales - Mid-Market,6030,Sales Commissions,Sales & Marketing,14705.23
+FY2026-Board-Approved,2026-09-30,CC-1010,Sales - Mid-Market,6040,Commission Amortisation,Sales & Marketing,10042.01
+FY2026-Board-Approved,2026-09-30,CC-1010,Sales - Mid-Market,6200,Software & Subscriptions,Sales & Marketing,5547.02
+FY2026-Board-Approved,2026-09-30,CC-1010,Sales - Mid-Market,6300,Travel & Entertainment,Sales & Marketing,7224.23
+FY2026-Board-Approved,2026-09-30,CC-1010,Sales - Mid-Market,6450,Training & Enablement,Sales & Marketing,595.78
 FY2026-Board-Approved,2026-09-30,CC-1020,Sales - Enterprise,6000,Salaries & Wages,Sales & Marketing,75648.32
 FY2026-Board-Approved,2026-09-30,CC-1020,Sales - Enterprise,6020,Payroll Taxes & Benefits,Sales & Marketing,15507.91
-FY2026-Board-Approved,2026-09-30,CC-1020,Sales - Enterprise,6030,Sales Commissions,Sales & Marketing,8384.37
-FY2026-Board-Approved,2026-09-30,CC-1020,Sales - Enterprise,6040,Commission Amortisation,Sales & Marketing,8386.99
-FY2026-Board-Approved,2026-09-30,CC-1020,Sales - Enterprise,6200,Software & Subscriptions,Sales & Marketing,3310.96
-FY2026-Board-Approved,2026-09-30,CC-1020,Sales - Enterprise,6300,Travel & Entertainment,Sales & Marketing,4403.90
-FY2026-Board-Approved,2026-09-30,CC-1020,Sales - Enterprise,6450,Training & Enablement,Sales & Marketing,417.41
+FY2026-Board-Approved,2026-09-30,CC-1020,Sales - Enterprise,6030,Sales Commissions,Sales & Marketing,12604.48
+FY2026-Board-Approved,2026-09-30,CC-1020,Sales - Enterprise,6040,Commission Amortisation,Sales & Marketing,8607.44
+FY2026-Board-Approved,2026-09-30,CC-1020,Sales - Enterprise,6200,Software & Subscriptions,Sales & Marketing,3310.62
+FY2026-Board-Approved,2026-09-30,CC-1020,Sales - Enterprise,6300,Travel & Entertainment,Sales & Marketing,4403.43
+FY2026-Board-Approved,2026-09-30,CC-1020,Sales - Enterprise,6450,Training & Enablement,Sales & Marketing,417.37
 FY2026-Board-Approved,2026-09-30,CC-1030,Sales Development,6000,Salaries & Wages,Sales & Marketing,46515.00
 FY2026-Board-Approved,2026-09-30,CC-1030,Sales Development,6020,Payroll Taxes & Benefits,Sales & Marketing,9535.57
-FY2026-Board-Approved,2026-09-30,CC-1030,Sales Development,6200,Software & Subscriptions,Sales & Marketing,2093.59
-FY2026-Board-Approved,2026-09-30,CC-1030,Sales Development,6300,Travel & Entertainment,Sales & Marketing,3131.06
-FY2026-Board-Approved,2026-09-30,CC-1030,Sales Development,6450,Training & Enablement,Sales & Marketing,282.90
+FY2026-Board-Approved,2026-09-30,CC-1030,Sales Development,6200,Software & Subscriptions,Sales & Marketing,2093.37
+FY2026-Board-Approved,2026-09-30,CC-1030,Sales Development,6300,Travel & Entertainment,Sales & Marketing,3130.75
+FY2026-Board-Approved,2026-09-30,CC-1030,Sales Development,6450,Training & Enablement,Sales & Marketing,282.87
 FY2026-Board-Approved,2026-09-30,CC-1040,Sales Operations,6000,Salaries & Wages,Sales & Marketing,45262.85
 FY2026-Board-Approved,2026-09-30,CC-1040,Sales Operations,6020,Payroll Taxes & Benefits,Sales & Marketing,9278.89
-FY2026-Board-Approved,2026-09-30,CC-1040,Sales Operations,6200,Software & Subscriptions,Sales & Marketing,2497.46
-FY2026-Board-Approved,2026-09-30,CC-1040,Sales Operations,6300,Travel & Entertainment,Sales & Marketing,3133.09
+FY2026-Board-Approved,2026-09-30,CC-1040,Sales Operations,6200,Software & Subscriptions,Sales & Marketing,2497.19
+FY2026-Board-Approved,2026-09-30,CC-1040,Sales Operations,6300,Travel & Entertainment,Sales & Marketing,3132.75
 FY2026-Board-Approved,2026-09-30,CC-1050,Solutions Engineering,6000,Salaries & Wages,Sales & Marketing,32481.65
 FY2026-Board-Approved,2026-09-30,CC-1050,Solutions Engineering,6020,Payroll Taxes & Benefits,Sales & Marketing,6658.74
-FY2026-Board-Approved,2026-09-30,CC-1050,Solutions Engineering,6200,Software & Subscriptions,Sales & Marketing,1492.77
-FY2026-Board-Approved,2026-09-30,CC-1050,Solutions Engineering,6300,Travel & Entertainment,Sales & Marketing,2047.89
+FY2026-Board-Approved,2026-09-30,CC-1050,Solutions Engineering,6200,Software & Subscriptions,Sales & Marketing,1492.61
+FY2026-Board-Approved,2026-09-30,CC-1050,Solutions Engineering,6300,Travel & Entertainment,Sales & Marketing,2047.68
 FY2026-Board-Approved,2026-09-30,CC-1060,Sales Leadership,6000,Salaries & Wages,Sales & Marketing,31053.28
 FY2026-Board-Approved,2026-09-30,CC-1060,Sales Leadership,6020,Payroll Taxes & Benefits,Sales & Marketing,6365.92
-FY2026-Board-Approved,2026-09-30,CC-1060,Sales Leadership,6200,Software & Subscriptions,Sales & Marketing,1354.84
-FY2026-Board-Approved,2026-09-30,CC-1060,Sales Leadership,6300,Travel & Entertainment,Sales & Marketing,2024.45
-FY2026-Board-Approved,2026-09-30,CC-1060,Sales Leadership,6450,Training & Enablement,Sales & Marketing,163.12
+FY2026-Board-Approved,2026-09-30,CC-1060,Sales Leadership,6200,Software & Subscriptions,Sales & Marketing,1354.69
+FY2026-Board-Approved,2026-09-30,CC-1060,Sales Leadership,6300,Travel & Entertainment,Sales & Marketing,2024.23
+FY2026-Board-Approved,2026-09-30,CC-1060,Sales Leadership,6450,Training & Enablement,Sales & Marketing,163.10
 FY2026-Board-Approved,2026-09-30,CC-1100,Demand Generation,6000,Salaries & Wages,Sales & Marketing,93549.40
 FY2026-Board-Approved,2026-09-30,CC-1100,Demand Generation,6010,Bonus,Sales & Marketing,9079.47
 FY2026-Board-Approved,2026-09-30,CC-1100,Demand Generation,6020,Payroll Taxes & Benefits,Sales & Marketing,21038.92
-FY2026-Board-Approved,2026-09-30,CC-1100,Demand Generation,6050,Contractor & Temp Labor,Sales & Marketing,18891.15
-FY2026-Board-Approved,2026-09-30,CC-1100,Demand Generation,6100,Demand Generation,Sales & Marketing,232969.98
-FY2026-Board-Approved,2026-09-30,CC-1100,Demand Generation,6110,Events & Field Marketing,Sales & Marketing,85870.54
-FY2026-Board-Approved,2026-09-30,CC-1100,Demand Generation,6200,Software & Subscriptions,Sales & Marketing,3791.66
-FY2026-Board-Approved,2026-09-30,CC-1100,Demand Generation,6300,Travel & Entertainment,Sales & Marketing,2943.32
-FY2026-Board-Approved,2026-09-30,CC-1100,Demand Generation,6450,Training & Enablement,Sales & Marketing,503.98
+FY2026-Board-Approved,2026-09-30,CC-1100,Demand Generation,6050,Contractor & Temp Labor,Sales & Marketing,18889.15
+FY2026-Board-Approved,2026-09-30,CC-1100,Demand Generation,6100,Demand Generation,Sales & Marketing,232945.48
+FY2026-Board-Approved,2026-09-30,CC-1100,Demand Generation,6110,Events & Field Marketing,Sales & Marketing,85861.52
+FY2026-Board-Approved,2026-09-30,CC-1100,Demand Generation,6200,Software & Subscriptions,Sales & Marketing,3791.27
+FY2026-Board-Approved,2026-09-30,CC-1100,Demand Generation,6300,Travel & Entertainment,Sales & Marketing,2943.01
+FY2026-Board-Approved,2026-09-30,CC-1100,Demand Generation,6450,Training & Enablement,Sales & Marketing,503.92
 FY2026-Board-Approved,2026-09-30,CC-1110,Product Marketing,6000,Salaries & Wages,Sales & Marketing,77549.73
 FY2026-Board-Approved,2026-09-30,CC-1110,Product Marketing,6010,Bonus,Sales & Marketing,7150.41
 FY2026-Board-Approved,2026-09-30,CC-1110,Product Marketing,6020,Payroll Taxes & Benefits,Sales & Marketing,17363.53
-FY2026-Board-Approved,2026-09-30,CC-1110,Product Marketing,6120,Brand & Content,Sales & Marketing,60734.52
-FY2026-Board-Approved,2026-09-30,CC-1110,Product Marketing,6200,Software & Subscriptions,Sales & Marketing,3383.72
-FY2026-Board-Approved,2026-09-30,CC-1110,Product Marketing,6300,Travel & Entertainment,Sales & Marketing,2903.61
+FY2026-Board-Approved,2026-09-30,CC-1110,Product Marketing,6120,Brand & Content,Sales & Marketing,60728.13
+FY2026-Board-Approved,2026-09-30,CC-1110,Product Marketing,6200,Software & Subscriptions,Sales & Marketing,3383.36
+FY2026-Board-Approved,2026-09-30,CC-1110,Product Marketing,6300,Travel & Entertainment,Sales & Marketing,2903.31
 FY2026-Board-Approved,2026-09-30,CC-1200,Customer Success,6000,Salaries & Wages,Subscription COGS,224487.03
 FY2026-Board-Approved,2026-09-30,CC-1200,Customer Success,6010,Bonus,Subscription COGS,22524.76
 FY2026-Board-Approved,2026-09-30,CC-1200,Customer Success,6020,Payroll Taxes & Benefits,Subscription COGS,50637.42
-FY2026-Board-Approved,2026-09-30,CC-1200,Customer Success,6200,Software & Subscriptions,Subscription COGS,4333.46
-FY2026-Board-Approved,2026-09-30,CC-1200,Customer Success,6300,Travel & Entertainment,Subscription COGS,3324.01
-FY2026-Board-Approved,2026-09-30,CC-2000,Support,5010,Third-Party Data & APIs,Subscription COGS,1650.94
+FY2026-Board-Approved,2026-09-30,CC-1200,Customer Success,6200,Software & Subscriptions,Subscription COGS,4295.44
+FY2026-Board-Approved,2026-09-30,CC-1200,Customer Success,6300,Travel & Entertainment,Subscription COGS,3294.87
+FY2026-Board-Approved,2026-09-30,CC-2000,Support,5010,Third-Party Data & APIs,Subscription COGS,1650.10
 FY2026-Board-Approved,2026-09-30,CC-2000,Support,6000,Salaries & Wages,Subscription COGS,69693.66
 FY2026-Board-Approved,2026-09-30,CC-2000,Support,6010,Bonus,Subscription COGS,7096.25
 FY2026-Board-Approved,2026-09-30,CC-2000,Support,6020,Payroll Taxes & Benefits,Subscription COGS,15741.93
-FY2026-Board-Approved,2026-09-30,CC-2000,Support,6200,Software & Subscriptions,Subscription COGS,1269.61
-FY2026-Board-Approved,2026-09-30,CC-2010,Cloud Operations,5000,Cloud Hosting,Subscription COGS,169132.88
-FY2026-Board-Approved,2026-09-30,CC-2010,Cloud Operations,5010,Third-Party Data & APIs,Subscription COGS,980.13
-FY2026-Board-Approved,2026-09-30,CC-2010,Cloud Operations,5020,Payment Processing Fees,Subscription COGS,14344.81
+FY2026-Board-Approved,2026-09-30,CC-2000,Support,6200,Software & Subscriptions,Subscription COGS,1258.47
+FY2026-Board-Approved,2026-09-30,CC-2010,Cloud Operations,5000,Cloud Hosting,Subscription COGS,169610.69
+FY2026-Board-Approved,2026-09-30,CC-2010,Cloud Operations,5010,Third-Party Data & APIs,Subscription COGS,979.64
+FY2026-Board-Approved,2026-09-30,CC-2010,Cloud Operations,5020,Payment Processing Fees,Subscription COGS,14239.62
 FY2026-Board-Approved,2026-09-30,CC-2010,Cloud Operations,6000,Salaries & Wages,Subscription COGS,60891.51
 FY2026-Board-Approved,2026-09-30,CC-2010,Cloud Operations,6010,Bonus,Subscription COGS,5908.19
 FY2026-Board-Approved,2026-09-30,CC-2010,Cloud Operations,6020,Payroll Taxes & Benefits,Subscription COGS,13693.94
-FY2026-Board-Approved,2026-09-30,CC-2010,Cloud Operations,6050,Contractor & Temp Labor,Subscription COGS,18860.83
-FY2026-Board-Approved,2026-09-30,CC-2010,Cloud Operations,6200,Software & Subscriptions,Subscription COGS,1028.28
-FY2026-Board-Approved,2026-09-30,CC-2010,Cloud Operations,6900,Other Operating Expense,Subscription COGS,161.51
+FY2026-Board-Approved,2026-09-30,CC-2010,Cloud Operations,6050,Contractor & Temp Labor,Subscription COGS,18695.40
+FY2026-Board-Approved,2026-09-30,CC-2010,Cloud Operations,6200,Software & Subscriptions,Subscription COGS,1019.27
+FY2026-Board-Approved,2026-09-30,CC-2010,Cloud Operations,6900,Other Operating Expense,Subscription COGS,160.10
 FY2026-Board-Approved,2026-09-30,CC-2100,Professional Services,5030,Services Subcontractors,Services COGS,4486.37
 FY2026-Board-Approved,2026-09-30,CC-2100,Professional Services,6000,Salaries & Wages,Services COGS,47090.05
 FY2026-Board-Approved,2026-09-30,CC-2100,Professional Services,6010,Bonus,Services COGS,4160.10
@@ -1228,11 +1228,11 @@ FY2026-Board-Approved,2026-09-30,CC-4030,IT & Corporate Systems,6050,Contractor 
 FY2026-Board-Approved,2026-09-30,CC-4030,IT & Corporate Systems,6200,Software & Subscriptions,General & Administrative,895.54
 FY2026-Board-Approved,2026-09-30,CC-4030,IT & Corporate Systems,6420,Facilities & Rent,General & Administrative,43456.45
 FY2026-Board-Approved,2026-09-30,CC-4030,IT & Corporate Systems,6900,Other Operating Expense,General & Administrative,121.07
-FY2026-Board-Approved,2026-09-30,CC-9000,Revenue,4000,Subscription Revenue,Subscription Revenue,-2774546.41
-FY2026-Board-Approved,2026-09-30,CC-9000,Revenue,4010,Usage Revenue Above Commitment,Subscription Revenue,-59515.30
-FY2026-Board-Approved,2026-09-30,CC-9000,Revenue,4100,Professional Services Revenue,Services Revenue,-7675.70
-FY2026-Board-Approved,2026-09-30,CC-9000,Revenue,4110,Implementation Fee Revenue,Services Revenue,-53959.09
-FY2026-Board-Approved,2026-09-30,CC-9000,Corporate,9000,Ending ARR,Memo - ARR,35030865.48
+FY2026-Board-Approved,2026-09-30,CC-9000,Revenue,4000,Subscription Revenue,Subscription Revenue,-2778009.65
+FY2026-Board-Approved,2026-09-30,CC-9000,Revenue,4010,Usage Revenue Above Commitment,Subscription Revenue,-59589.58
+FY2026-Board-Approved,2026-09-30,CC-9000,Revenue,4100,Professional Services Revenue,Services Revenue,-7718.25
+FY2026-Board-Approved,2026-09-30,CC-9000,Revenue,4110,Implementation Fee Revenue,Services Revenue,-53971.76
+FY2026-Board-Approved,2026-09-30,CC-9000,Corporate,9000,Ending ARR,Memo - ARR,35073315.84
 FY2026-Board-Approved,2026-09-30,CC-9000,Corporate,9010,New Logo ARR,Memo - ARR,570000.00
 FY2026-Board-Approved,2026-09-30,CC-9000,Corporate,9020,Expansion ARR,Memo - ARR,465500.00
 FY2026-Board-Approved,2026-09-30,CC-9000,Corporate,9030,Reactivation ARR,Memo - ARR,19000.00
@@ -1242,77 +1242,77 @@ FY2026-Board-Approved,2026-09-30,CC-9000,Corporate,9100,New Logos Added,Memo - S
 FY2026-Board-Approved,2026-09-30,CC-9000,Corporate,9200,Ending Headcount,Memo - Statistical,210.20
 FY2026-Board-Approved,2026-10-31,CC-1000,Sales - SMB,6000,Salaries & Wages,Sales & Marketing,90149.07
 FY2026-Board-Approved,2026-10-31,CC-1000,Sales - SMB,6020,Payroll Taxes & Benefits,Sales & Marketing,18480.56
-FY2026-Board-Approved,2026-10-31,CC-1000,Sales - SMB,6030,Sales Commissions,Sales & Marketing,13270.76
-FY2026-Board-Approved,2026-10-31,CC-1000,Sales - SMB,6040,Commission Amortisation,Sales & Marketing,5717.77
-FY2026-Board-Approved,2026-10-31,CC-1000,Sales - SMB,6200,Software & Subscriptions,Sales & Marketing,4808.25
-FY2026-Board-Approved,2026-10-31,CC-1000,Sales - SMB,6300,Travel & Entertainment,Sales & Marketing,6981.34
-FY2026-Board-Approved,2026-10-31,CC-1000,Sales - SMB,6450,Training & Enablement,Sales & Marketing,564.79
+FY2026-Board-Approved,2026-10-31,CC-1000,Sales - SMB,6030,Sales Commissions,Sales & Marketing,5039.43
+FY2026-Board-Approved,2026-10-31,CC-1000,Sales - SMB,6040,Commission Amortisation,Sales & Marketing,5525.09
+FY2026-Board-Approved,2026-10-31,CC-1000,Sales - SMB,6200,Software & Subscriptions,Sales & Marketing,4807.73
+FY2026-Board-Approved,2026-10-31,CC-1000,Sales - SMB,6300,Travel & Entertainment,Sales & Marketing,6980.61
+FY2026-Board-Approved,2026-10-31,CC-1000,Sales - SMB,6450,Training & Enablement,Sales & Marketing,564.72
 FY2026-Board-Approved,2026-10-31,CC-1010,Sales - Mid-Market,6000,Salaries & Wages,Sales & Marketing,119958.52
 FY2026-Board-Approved,2026-10-31,CC-1010,Sales - Mid-Market,6020,Payroll Taxes & Benefits,Sales & Marketing,24591.50
-FY2026-Board-Approved,2026-10-31,CC-1010,Sales - Mid-Market,6030,Sales Commissions,Sales & Marketing,25335.09
-FY2026-Board-Approved,2026-10-31,CC-1010,Sales - Mid-Market,6040,Commission Amortisation,Sales & Marketing,10915.75
-FY2026-Board-Approved,2026-10-31,CC-1010,Sales - Mid-Market,6200,Software & Subscriptions,Sales & Marketing,5750.97
-FY2026-Board-Approved,2026-10-31,CC-1010,Sales - Mid-Market,6300,Travel & Entertainment,Sales & Marketing,7969.75
-FY2026-Board-Approved,2026-10-31,CC-1010,Sales - Mid-Market,6450,Training & Enablement,Sales & Marketing,658.69
+FY2026-Board-Approved,2026-10-31,CC-1010,Sales - Mid-Market,6030,Sales Commissions,Sales & Marketing,9620.73
+FY2026-Board-Approved,2026-10-31,CC-1010,Sales - Mid-Market,6040,Commission Amortisation,Sales & Marketing,10547.89
+FY2026-Board-Approved,2026-10-31,CC-1010,Sales - Mid-Market,6200,Software & Subscriptions,Sales & Marketing,5750.37
+FY2026-Board-Approved,2026-10-31,CC-1010,Sales - Mid-Market,6300,Travel & Entertainment,Sales & Marketing,7968.92
+FY2026-Board-Approved,2026-10-31,CC-1010,Sales - Mid-Market,6450,Training & Enablement,Sales & Marketing,658.61
 FY2026-Board-Approved,2026-10-31,CC-1020,Sales - Enterprise,6000,Salaries & Wages,Sales & Marketing,76334.70
 FY2026-Board-Approved,2026-10-31,CC-1020,Sales - Enterprise,6020,Payroll Taxes & Benefits,Sales & Marketing,15648.62
-FY2026-Board-Approved,2026-10-31,CC-1020,Sales - Enterprise,6030,Sales Commissions,Sales & Marketing,21715.80
-FY2026-Board-Approved,2026-10-31,CC-1020,Sales - Enterprise,6040,Commission Amortisation,Sales & Marketing,9356.35
-FY2026-Board-Approved,2026-10-31,CC-1020,Sales - Enterprise,6200,Software & Subscriptions,Sales & Marketing,3122.59
-FY2026-Board-Approved,2026-10-31,CC-1020,Sales - Enterprise,6300,Travel & Entertainment,Sales & Marketing,4266.73
-FY2026-Board-Approved,2026-10-31,CC-1020,Sales - Enterprise,6450,Training & Enablement,Sales & Marketing,412.16
+FY2026-Board-Approved,2026-10-31,CC-1020,Sales - Enterprise,6030,Sales Commissions,Sales & Marketing,8246.34
+FY2026-Board-Approved,2026-10-31,CC-1020,Sales - Enterprise,6040,Commission Amortisation,Sales & Marketing,9041.06
+FY2026-Board-Approved,2026-10-31,CC-1020,Sales - Enterprise,6200,Software & Subscriptions,Sales & Marketing,3122.27
+FY2026-Board-Approved,2026-10-31,CC-1020,Sales - Enterprise,6300,Travel & Entertainment,Sales & Marketing,4266.28
+FY2026-Board-Approved,2026-10-31,CC-1020,Sales - Enterprise,6450,Training & Enablement,Sales & Marketing,412.12
 FY2026-Board-Approved,2026-10-31,CC-1030,Sales Development,6000,Salaries & Wages,Sales & Marketing,60891.80
 FY2026-Board-Approved,2026-10-31,CC-1030,Sales Development,6020,Payroll Taxes & Benefits,Sales & Marketing,12482.82
-FY2026-Board-Approved,2026-10-31,CC-1030,Sales Development,6200,Software & Subscriptions,Sales & Marketing,2968.52
-FY2026-Board-Approved,2026-10-31,CC-1030,Sales Development,6300,Travel & Entertainment,Sales & Marketing,3637.61
-FY2026-Board-Approved,2026-10-31,CC-1030,Sales Development,6450,Training & Enablement,Sales & Marketing,314.64
+FY2026-Board-Approved,2026-10-31,CC-1030,Sales Development,6200,Software & Subscriptions,Sales & Marketing,2968.21
+FY2026-Board-Approved,2026-10-31,CC-1030,Sales Development,6300,Travel & Entertainment,Sales & Marketing,3637.23
+FY2026-Board-Approved,2026-10-31,CC-1030,Sales Development,6450,Training & Enablement,Sales & Marketing,314.60
 FY2026-Board-Approved,2026-10-31,CC-1040,Sales Operations,6000,Salaries & Wages,Sales & Marketing,39318.54
 FY2026-Board-Approved,2026-10-31,CC-1040,Sales Operations,6020,Payroll Taxes & Benefits,Sales & Marketing,8060.30
-FY2026-Board-Approved,2026-10-31,CC-1040,Sales Operations,6200,Software & Subscriptions,Sales & Marketing,1829.22
-FY2026-Board-Approved,2026-10-31,CC-1040,Sales Operations,6300,Travel & Entertainment,Sales & Marketing,2984.01
+FY2026-Board-Approved,2026-10-31,CC-1040,Sales Operations,6200,Software & Subscriptions,Sales & Marketing,1829.02
+FY2026-Board-Approved,2026-10-31,CC-1040,Sales Operations,6300,Travel & Entertainment,Sales & Marketing,2983.69
 FY2026-Board-Approved,2026-10-31,CC-1050,Solutions Engineering,6000,Salaries & Wages,Sales & Marketing,32776.37
 FY2026-Board-Approved,2026-10-31,CC-1050,Solutions Engineering,6020,Payroll Taxes & Benefits,Sales & Marketing,6719.15
-FY2026-Board-Approved,2026-10-31,CC-1050,Solutions Engineering,6200,Software & Subscriptions,Sales & Marketing,1555.70
-FY2026-Board-Approved,2026-10-31,CC-1050,Solutions Engineering,6300,Travel & Entertainment,Sales & Marketing,1970.18
+FY2026-Board-Approved,2026-10-31,CC-1050,Solutions Engineering,6200,Software & Subscriptions,Sales & Marketing,1555.54
+FY2026-Board-Approved,2026-10-31,CC-1050,Solutions Engineering,6300,Travel & Entertainment,Sales & Marketing,1969.97
 FY2026-Board-Approved,2026-10-31,CC-1060,Sales Leadership,6000,Salaries & Wages,Sales & Marketing,31335.04
 FY2026-Board-Approved,2026-10-31,CC-1060,Sales Leadership,6020,Payroll Taxes & Benefits,Sales & Marketing,6423.68
-FY2026-Board-Approved,2026-10-31,CC-1060,Sales Leadership,6200,Software & Subscriptions,Sales & Marketing,1369.77
-FY2026-Board-Approved,2026-10-31,CC-1060,Sales Leadership,6300,Travel & Entertainment,Sales & Marketing,2044.71
-FY2026-Board-Approved,2026-10-31,CC-1060,Sales Leadership,6450,Training & Enablement,Sales & Marketing,165.34
+FY2026-Board-Approved,2026-10-31,CC-1060,Sales Leadership,6200,Software & Subscriptions,Sales & Marketing,1369.62
+FY2026-Board-Approved,2026-10-31,CC-1060,Sales Leadership,6300,Travel & Entertainment,Sales & Marketing,2044.49
+FY2026-Board-Approved,2026-10-31,CC-1060,Sales Leadership,6450,Training & Enablement,Sales & Marketing,165.33
 FY2026-Board-Approved,2026-10-31,CC-1100,Demand Generation,6000,Salaries & Wages,Sales & Marketing,94398.20
 FY2026-Board-Approved,2026-10-31,CC-1100,Demand Generation,6010,Bonus,Sales & Marketing,9161.85
 FY2026-Board-Approved,2026-10-31,CC-1100,Demand Generation,6020,Payroll Taxes & Benefits,Sales & Marketing,21229.81
-FY2026-Board-Approved,2026-10-31,CC-1100,Demand Generation,6050,Contractor & Temp Labor,Sales & Marketing,19083.52
-FY2026-Board-Approved,2026-10-31,CC-1100,Demand Generation,6100,Demand Generation,Sales & Marketing,221861.70
-FY2026-Board-Approved,2026-10-31,CC-1100,Demand Generation,6110,Events & Field Marketing,Sales & Marketing,90664.47
-FY2026-Board-Approved,2026-10-31,CC-1100,Demand Generation,6200,Software & Subscriptions,Sales & Marketing,3348.49
-FY2026-Board-Approved,2026-10-31,CC-1100,Demand Generation,6300,Travel & Entertainment,Sales & Marketing,3026.75
-FY2026-Board-Approved,2026-10-31,CC-1100,Demand Generation,6450,Training & Enablement,Sales & Marketing,511.73
+FY2026-Board-Approved,2026-10-31,CC-1100,Demand Generation,6050,Contractor & Temp Labor,Sales & Marketing,19081.51
+FY2026-Board-Approved,2026-10-31,CC-1100,Demand Generation,6100,Demand Generation,Sales & Marketing,221838.37
+FY2026-Board-Approved,2026-10-31,CC-1100,Demand Generation,6110,Events & Field Marketing,Sales & Marketing,90654.95
+FY2026-Board-Approved,2026-10-31,CC-1100,Demand Generation,6200,Software & Subscriptions,Sales & Marketing,3348.14
+FY2026-Board-Approved,2026-10-31,CC-1100,Demand Generation,6300,Travel & Entertainment,Sales & Marketing,3026.44
+FY2026-Board-Approved,2026-10-31,CC-1100,Demand Generation,6450,Training & Enablement,Sales & Marketing,511.68
 FY2026-Board-Approved,2026-10-31,CC-1110,Product Marketing,6000,Salaries & Wages,Sales & Marketing,78253.35
 FY2026-Board-Approved,2026-10-31,CC-1110,Product Marketing,6010,Bonus,Sales & Marketing,7215.29
 FY2026-Board-Approved,2026-10-31,CC-1110,Product Marketing,6020,Payroll Taxes & Benefits,Sales & Marketing,17521.07
-FY2026-Board-Approved,2026-10-31,CC-1110,Product Marketing,6120,Brand & Content,Sales & Marketing,67632.48
-FY2026-Board-Approved,2026-10-31,CC-1110,Product Marketing,6200,Software & Subscriptions,Sales & Marketing,3443.92
-FY2026-Board-Approved,2026-10-31,CC-1110,Product Marketing,6300,Travel & Entertainment,Sales & Marketing,2657.12
+FY2026-Board-Approved,2026-10-31,CC-1110,Product Marketing,6120,Brand & Content,Sales & Marketing,67625.37
+FY2026-Board-Approved,2026-10-31,CC-1110,Product Marketing,6200,Software & Subscriptions,Sales & Marketing,3443.56
+FY2026-Board-Approved,2026-10-31,CC-1110,Product Marketing,6300,Travel & Entertainment,Sales & Marketing,2656.85
 FY2026-Board-Approved,2026-10-31,CC-1200,Customer Success,6000,Salaries & Wages,Subscription COGS,226523.86
 FY2026-Board-Approved,2026-10-31,CC-1200,Customer Success,6010,Bonus,Subscription COGS,22729.13
 FY2026-Board-Approved,2026-10-31,CC-1200,Customer Success,6020,Payroll Taxes & Benefits,Subscription COGS,51096.86
-FY2026-Board-Approved,2026-10-31,CC-1200,Customer Success,6200,Software & Subscriptions,Subscription COGS,4048.05
-FY2026-Board-Approved,2026-10-31,CC-1200,Customer Success,6300,Travel & Entertainment,Subscription COGS,3536.15
-FY2026-Board-Approved,2026-10-31,CC-2000,Support,5010,Third-Party Data & APIs,Subscription COGS,1623.44
+FY2026-Board-Approved,2026-10-31,CC-1200,Customer Success,6200,Software & Subscriptions,Subscription COGS,4012.53
+FY2026-Board-Approved,2026-10-31,CC-1200,Customer Success,6300,Travel & Entertainment,Subscription COGS,3505.14
+FY2026-Board-Approved,2026-10-31,CC-2000,Support,5010,Third-Party Data & APIs,Subscription COGS,1614.90
 FY2026-Board-Approved,2026-10-31,CC-2000,Support,6000,Salaries & Wages,Subscription COGS,70326.01
 FY2026-Board-Approved,2026-10-31,CC-2000,Support,6010,Bonus,Subscription COGS,7160.64
 FY2026-Board-Approved,2026-10-31,CC-2000,Support,6020,Payroll Taxes & Benefits,Subscription COGS,15884.76
-FY2026-Board-Approved,2026-10-31,CC-2000,Support,6200,Software & Subscriptions,Subscription COGS,1217.59
-FY2026-Board-Approved,2026-10-31,CC-2010,Cloud Operations,5000,Cloud Hosting,Subscription COGS,189033.45
-FY2026-Board-Approved,2026-10-31,CC-2010,Cloud Operations,5010,Third-Party Data & APIs,Subscription COGS,1012.68
-FY2026-Board-Approved,2026-10-31,CC-2010,Cloud Operations,5020,Payment Processing Fees,Subscription COGS,20403.31
+FY2026-Board-Approved,2026-10-31,CC-2000,Support,6200,Software & Subscriptions,Subscription COGS,1206.92
+FY2026-Board-Approved,2026-10-31,CC-2010,Cloud Operations,5000,Cloud Hosting,Subscription COGS,189411.33
+FY2026-Board-Approved,2026-10-31,CC-2010,Cloud Operations,5010,Third-Party Data & APIs,Subscription COGS,1007.34
+FY2026-Board-Approved,2026-10-31,CC-2010,Cloud Operations,5020,Payment Processing Fees,Subscription COGS,20270.30
 FY2026-Board-Approved,2026-10-31,CC-2010,Cloud Operations,6000,Salaries & Wages,Subscription COGS,61444.00
 FY2026-Board-Approved,2026-10-31,CC-2010,Cloud Operations,6010,Bonus,Subscription COGS,5961.80
 FY2026-Board-Approved,2026-10-31,CC-2010,Cloud Operations,6020,Payroll Taxes & Benefits,Subscription COGS,13818.19
-FY2026-Board-Approved,2026-10-31,CC-2010,Cloud Operations,6050,Contractor & Temp Labor,Subscription COGS,18406.64
-FY2026-Board-Approved,2026-10-31,CC-2010,Cloud Operations,6200,Software & Subscriptions,Subscription COGS,1121.12
-FY2026-Board-Approved,2026-10-31,CC-2010,Cloud Operations,6900,Other Operating Expense,Subscription COGS,154.68
+FY2026-Board-Approved,2026-10-31,CC-2010,Cloud Operations,6050,Contractor & Temp Labor,Subscription COGS,18245.19
+FY2026-Board-Approved,2026-10-31,CC-2010,Cloud Operations,6200,Software & Subscriptions,Subscription COGS,1111.29
+FY2026-Board-Approved,2026-10-31,CC-2010,Cloud Operations,6900,Other Operating Expense,Subscription COGS,153.32
 FY2026-Board-Approved,2026-10-31,CC-2100,Professional Services,5030,Services Subcontractors,Services COGS,4512.41
 FY2026-Board-Approved,2026-10-31,CC-2100,Professional Services,6000,Salaries & Wages,Services COGS,47517.31
 FY2026-Board-Approved,2026-10-31,CC-2100,Professional Services,6010,Bonus,Services COGS,4197.85
@@ -1366,11 +1366,11 @@ FY2026-Board-Approved,2026-10-31,CC-4030,IT & Corporate Systems,6050,Contractor 
 FY2026-Board-Approved,2026-10-31,CC-4030,IT & Corporate Systems,6200,Software & Subscriptions,General & Administrative,933.59
 FY2026-Board-Approved,2026-10-31,CC-4030,IT & Corporate Systems,6420,Facilities & Rent,General & Administrative,48873.01
 FY2026-Board-Approved,2026-10-31,CC-4030,IT & Corporate Systems,6900,Other Operating Expense,General & Administrative,119.20
-FY2026-Board-Approved,2026-10-31,CC-9000,Revenue,4000,Subscription Revenue,Subscription Revenue,-2828050.80
-FY2026-Board-Approved,2026-10-31,CC-9000,Revenue,4010,Usage Revenue Above Commitment,Subscription Revenue,-60662.99
-FY2026-Board-Approved,2026-10-31,CC-9000,Revenue,4100,Professional Services Revenue,Services Revenue,-10969.51
-FY2026-Board-Approved,2026-10-31,CC-9000,Revenue,4110,Implementation Fee Revenue,Services Revenue,-47675.25
-FY2026-Board-Approved,2026-10-31,CC-9000,Corporate,9000,Ending ARR,Memo - ARR,35456365.48
+FY2026-Board-Approved,2026-10-31,CC-9000,Revenue,4000,Subscription Revenue,Subscription Revenue,-2831514.04
+FY2026-Board-Approved,2026-10-31,CC-9000,Revenue,4010,Usage Revenue Above Commitment,Subscription Revenue,-60737.28
+FY2026-Board-Approved,2026-10-31,CC-9000,Revenue,4100,Professional Services Revenue,Services Revenue,-10986.49
+FY2026-Board-Approved,2026-10-31,CC-9000,Revenue,4110,Implementation Fee Revenue,Services Revenue,-47716.33
+FY2026-Board-Approved,2026-10-31,CC-9000,Corporate,9000,Ending ARR,Memo - ARR,35498815.84
 FY2026-Board-Approved,2026-10-31,CC-9000,Corporate,9010,New Logo ARR,Memo - ARR,390000.00
 FY2026-Board-Approved,2026-10-31,CC-9000,Corporate,9020,Expansion ARR,Memo - ARR,318500.00
 FY2026-Board-Approved,2026-10-31,CC-9000,Corporate,9030,Reactivation ARR,Memo - ARR,13000.00
@@ -1380,77 +1380,77 @@ FY2026-Board-Approved,2026-10-31,CC-9000,Corporate,9100,New Logos Added,Memo - S
 FY2026-Board-Approved,2026-10-31,CC-9000,Corporate,9200,Ending Headcount,Memo - Statistical,211.50
 FY2026-Board-Approved,2026-11-30,CC-1000,Sales - SMB,6000,Salaries & Wages,Sales & Marketing,80509.11
 FY2026-Board-Approved,2026-11-30,CC-1000,Sales - SMB,6020,Payroll Taxes & Benefits,Sales & Marketing,16504.37
-FY2026-Board-Approved,2026-11-30,CC-1000,Sales - SMB,6030,Sales Commissions,Sales & Marketing,5267.99
-FY2026-Board-Approved,2026-11-30,CC-1000,Sales - SMB,6040,Commission Amortisation,Sales & Marketing,5997.43
-FY2026-Board-Approved,2026-11-30,CC-1000,Sales - SMB,6200,Software & Subscriptions,Sales & Marketing,3942.97
-FY2026-Board-Approved,2026-11-30,CC-1000,Sales - SMB,6300,Travel & Entertainment,Sales & Marketing,6496.74
-FY2026-Board-Approved,2026-11-30,CC-1000,Sales - SMB,6450,Training & Enablement,Sales & Marketing,532.75
+FY2026-Board-Approved,2026-11-30,CC-1000,Sales - SMB,6030,Sales Commissions,Sales & Marketing,12197.48
+FY2026-Board-Approved,2026-11-30,CC-1000,Sales - SMB,6040,Commission Amortisation,Sales & Marketing,6079.40
+FY2026-Board-Approved,2026-11-30,CC-1000,Sales - SMB,6200,Software & Subscriptions,Sales & Marketing,3942.55
+FY2026-Board-Approved,2026-11-30,CC-1000,Sales - SMB,6300,Travel & Entertainment,Sales & Marketing,6496.05
+FY2026-Board-Approved,2026-11-30,CC-1000,Sales - SMB,6450,Training & Enablement,Sales & Marketing,532.69
 FY2026-Board-Approved,2026-11-30,CC-1010,Sales - Mid-Market,6000,Salaries & Wages,Sales & Marketing,111432.76
 FY2026-Board-Approved,2026-11-30,CC-1010,Sales - Mid-Market,6020,Payroll Taxes & Benefits,Sales & Marketing,22843.72
-FY2026-Board-Approved,2026-11-30,CC-1010,Sales - Mid-Market,6030,Sales Commissions,Sales & Marketing,10057.07
-FY2026-Board-Approved,2026-11-30,CC-1010,Sales - Mid-Market,6040,Commission Amortisation,Sales & Marketing,11449.62
-FY2026-Board-Approved,2026-11-30,CC-1010,Sales - Mid-Market,6200,Software & Subscriptions,Sales & Marketing,5557.67
-FY2026-Board-Approved,2026-11-30,CC-1010,Sales - Mid-Market,6300,Travel & Entertainment,Sales & Marketing,7627.19
-FY2026-Board-Approved,2026-11-30,CC-1010,Sales - Mid-Market,6450,Training & Enablement,Sales & Marketing,659.18
+FY2026-Board-Approved,2026-11-30,CC-1010,Sales - Mid-Market,6030,Sales Commissions,Sales & Marketing,23286.10
+FY2026-Board-Approved,2026-11-30,CC-1010,Sales - Mid-Market,6040,Commission Amortisation,Sales & Marketing,11606.13
+FY2026-Board-Approved,2026-11-30,CC-1010,Sales - Mid-Market,6200,Software & Subscriptions,Sales & Marketing,5557.09
+FY2026-Board-Approved,2026-11-30,CC-1010,Sales - Mid-Market,6300,Travel & Entertainment,Sales & Marketing,7626.38
+FY2026-Board-Approved,2026-11-30,CC-1010,Sales - Mid-Market,6450,Training & Enablement,Sales & Marketing,659.12
 FY2026-Board-Approved,2026-11-30,CC-1020,Sales - Enterprise,6000,Salaries & Wages,Sales & Marketing,76988.19
 FY2026-Board-Approved,2026-11-30,CC-1020,Sales - Enterprise,6020,Payroll Taxes & Benefits,Sales & Marketing,15782.58
-FY2026-Board-Approved,2026-11-30,CC-1020,Sales - Enterprise,6030,Sales Commissions,Sales & Marketing,8620.35
-FY2026-Board-Approved,2026-11-30,CC-1020,Sales - Enterprise,6040,Commission Amortisation,Sales & Marketing,9813.97
-FY2026-Board-Approved,2026-11-30,CC-1020,Sales - Enterprise,6200,Software & Subscriptions,Sales & Marketing,3535.33
-FY2026-Board-Approved,2026-11-30,CC-1020,Sales - Enterprise,6300,Travel & Entertainment,Sales & Marketing,4707.34
-FY2026-Board-Approved,2026-11-30,CC-1020,Sales - Enterprise,6450,Training & Enablement,Sales & Marketing,426.90
+FY2026-Board-Approved,2026-11-30,CC-1020,Sales - Enterprise,6030,Sales Commissions,Sales & Marketing,19959.52
+FY2026-Board-Approved,2026-11-30,CC-1020,Sales - Enterprise,6040,Commission Amortisation,Sales & Marketing,9948.11
+FY2026-Board-Approved,2026-11-30,CC-1020,Sales - Enterprise,6200,Software & Subscriptions,Sales & Marketing,3534.96
+FY2026-Board-Approved,2026-11-30,CC-1020,Sales - Enterprise,6300,Travel & Entertainment,Sales & Marketing,4706.85
+FY2026-Board-Approved,2026-11-30,CC-1020,Sales - Enterprise,6450,Training & Enablement,Sales & Marketing,426.85
 FY2026-Board-Approved,2026-11-30,CC-1030,Sales Development,6000,Salaries & Wages,Sales & Marketing,61413.09
 FY2026-Board-Approved,2026-11-30,CC-1030,Sales Development,6020,Payroll Taxes & Benefits,Sales & Marketing,12589.69
-FY2026-Board-Approved,2026-11-30,CC-1030,Sales Development,6200,Software & Subscriptions,Sales & Marketing,2913.36
-FY2026-Board-Approved,2026-11-30,CC-1030,Sales Development,6300,Travel & Entertainment,Sales & Marketing,4117.25
-FY2026-Board-Approved,2026-11-30,CC-1030,Sales Development,6450,Training & Enablement,Sales & Marketing,372.01
+FY2026-Board-Approved,2026-11-30,CC-1030,Sales Development,6200,Software & Subscriptions,Sales & Marketing,2913.06
+FY2026-Board-Approved,2026-11-30,CC-1030,Sales Development,6300,Travel & Entertainment,Sales & Marketing,4116.82
+FY2026-Board-Approved,2026-11-30,CC-1030,Sales Development,6450,Training & Enablement,Sales & Marketing,371.97
 FY2026-Board-Approved,2026-11-30,CC-1040,Sales Operations,6000,Salaries & Wages,Sales & Marketing,39655.14
 FY2026-Board-Approved,2026-11-30,CC-1040,Sales Operations,6020,Payroll Taxes & Benefits,Sales & Marketing,8129.31
-FY2026-Board-Approved,2026-11-30,CC-1040,Sales Operations,6200,Software & Subscriptions,Sales & Marketing,1871.84
-FY2026-Board-Approved,2026-11-30,CC-1040,Sales Operations,6300,Travel & Entertainment,Sales & Marketing,2674.36
+FY2026-Board-Approved,2026-11-30,CC-1040,Sales Operations,6200,Software & Subscriptions,Sales & Marketing,1871.65
+FY2026-Board-Approved,2026-11-30,CC-1040,Sales Operations,6300,Travel & Entertainment,Sales & Marketing,2674.07
 FY2026-Board-Approved,2026-11-30,CC-1050,Solutions Engineering,6000,Salaries & Wages,Sales & Marketing,33056.97
 FY2026-Board-Approved,2026-11-30,CC-1050,Solutions Engineering,6020,Payroll Taxes & Benefits,Sales & Marketing,6776.67
-FY2026-Board-Approved,2026-11-30,CC-1050,Solutions Engineering,6200,Software & Subscriptions,Sales & Marketing,1335.89
-FY2026-Board-Approved,2026-11-30,CC-1050,Solutions Engineering,6300,Travel & Entertainment,Sales & Marketing,1929.51
+FY2026-Board-Approved,2026-11-30,CC-1050,Solutions Engineering,6200,Software & Subscriptions,Sales & Marketing,1335.75
+FY2026-Board-Approved,2026-11-30,CC-1050,Solutions Engineering,6300,Travel & Entertainment,Sales & Marketing,1929.31
 FY2026-Board-Approved,2026-11-30,CC-1060,Sales Leadership,6000,Salaries & Wages,Sales & Marketing,31603.29
 FY2026-Board-Approved,2026-11-30,CC-1060,Sales Leadership,6020,Payroll Taxes & Benefits,Sales & Marketing,6478.68
-FY2026-Board-Approved,2026-11-30,CC-1060,Sales Leadership,6200,Software & Subscriptions,Sales & Marketing,1513.69
-FY2026-Board-Approved,2026-11-30,CC-1060,Sales Leadership,6300,Travel & Entertainment,Sales & Marketing,1887.72
-FY2026-Board-Approved,2026-11-30,CC-1060,Sales Leadership,6450,Training & Enablement,Sales & Marketing,181.28
+FY2026-Board-Approved,2026-11-30,CC-1060,Sales Leadership,6200,Software & Subscriptions,Sales & Marketing,1513.53
+FY2026-Board-Approved,2026-11-30,CC-1060,Sales Leadership,6300,Travel & Entertainment,Sales & Marketing,1887.52
+FY2026-Board-Approved,2026-11-30,CC-1060,Sales Leadership,6450,Training & Enablement,Sales & Marketing,181.26
 FY2026-Board-Approved,2026-11-30,CC-1100,Demand Generation,6000,Salaries & Wages,Sales & Marketing,111168.46
 FY2026-Board-Approved,2026-11-30,CC-1100,Demand Generation,6010,Bonus,Sales & Marketing,11155.74
 FY2026-Board-Approved,2026-11-30,CC-1100,Demand Generation,6020,Payroll Taxes & Benefits,Sales & Marketing,25076.45
-FY2026-Board-Approved,2026-11-30,CC-1100,Demand Generation,6050,Contractor & Temp Labor,Sales & Marketing,16865.95
-FY2026-Board-Approved,2026-11-30,CC-1100,Demand Generation,6100,Demand Generation,Sales & Marketing,214379.46
-FY2026-Board-Approved,2026-11-30,CC-1100,Demand Generation,6110,Events & Field Marketing,Sales & Marketing,84600.99
-FY2026-Board-Approved,2026-11-30,CC-1100,Demand Generation,6200,Software & Subscriptions,Sales & Marketing,4203.21
-FY2026-Board-Approved,2026-11-30,CC-1100,Demand Generation,6300,Travel & Entertainment,Sales & Marketing,3375.79
-FY2026-Board-Approved,2026-11-30,CC-1100,Demand Generation,6450,Training & Enablement,Sales & Marketing,564.07
+FY2026-Board-Approved,2026-11-30,CC-1100,Demand Generation,6050,Contractor & Temp Labor,Sales & Marketing,16864.18
+FY2026-Board-Approved,2026-11-30,CC-1100,Demand Generation,6100,Demand Generation,Sales & Marketing,214356.91
+FY2026-Board-Approved,2026-11-30,CC-1100,Demand Generation,6110,Events & Field Marketing,Sales & Marketing,84592.10
+FY2026-Board-Approved,2026-11-30,CC-1100,Demand Generation,6200,Software & Subscriptions,Sales & Marketing,4202.77
+FY2026-Board-Approved,2026-11-30,CC-1100,Demand Generation,6300,Travel & Entertainment,Sales & Marketing,3375.44
+FY2026-Board-Approved,2026-11-30,CC-1100,Demand Generation,6450,Training & Enablement,Sales & Marketing,564.02
 FY2026-Board-Approved,2026-11-30,CC-1110,Product Marketing,6000,Salaries & Wages,Sales & Marketing,78923.28
 FY2026-Board-Approved,2026-11-30,CC-1110,Product Marketing,6010,Bonus,Sales & Marketing,7277.06
 FY2026-Board-Approved,2026-11-30,CC-1110,Product Marketing,6020,Payroll Taxes & Benefits,Sales & Marketing,17671.07
-FY2026-Board-Approved,2026-11-30,CC-1110,Product Marketing,6120,Brand & Content,Sales & Marketing,59168.26
-FY2026-Board-Approved,2026-11-30,CC-1110,Product Marketing,6200,Software & Subscriptions,Sales & Marketing,3528.99
-FY2026-Board-Approved,2026-11-30,CC-1110,Product Marketing,6300,Travel & Entertainment,Sales & Marketing,2662.27
+FY2026-Board-Approved,2026-11-30,CC-1110,Product Marketing,6120,Brand & Content,Sales & Marketing,59162.03
+FY2026-Board-Approved,2026-11-30,CC-1110,Product Marketing,6200,Software & Subscriptions,Sales & Marketing,3528.62
+FY2026-Board-Approved,2026-11-30,CC-1110,Product Marketing,6300,Travel & Entertainment,Sales & Marketing,2662.00
 FY2026-Board-Approved,2026-11-30,CC-1200,Customer Success,6000,Salaries & Wages,Subscription COGS,238714.36
 FY2026-Board-Approved,2026-11-30,CC-1200,Customer Success,6010,Bonus,Subscription COGS,23743.81
 FY2026-Board-Approved,2026-11-30,CC-1200,Customer Success,6020,Payroll Taxes & Benefits,Subscription COGS,53803.93
-FY2026-Board-Approved,2026-11-30,CC-1200,Customer Success,6200,Software & Subscriptions,Subscription COGS,4064.49
-FY2026-Board-Approved,2026-11-30,CC-1200,Customer Success,6300,Travel & Entertainment,Subscription COGS,3537.05
-FY2026-Board-Approved,2026-11-30,CC-2000,Support,5010,Third-Party Data & APIs,Subscription COGS,1369.97
+FY2026-Board-Approved,2026-11-30,CC-1200,Customer Success,6200,Software & Subscriptions,Subscription COGS,4028.84
+FY2026-Board-Approved,2026-11-30,CC-1200,Customer Success,6300,Travel & Entertainment,Subscription COGS,3506.03
+FY2026-Board-Approved,2026-11-30,CC-2000,Support,5010,Third-Party Data & APIs,Subscription COGS,1357.95
 FY2026-Board-Approved,2026-11-30,CC-2000,Support,6000,Salaries & Wages,Subscription COGS,80140.97
 FY2026-Board-Approved,2026-11-30,CC-2000,Support,6010,Bonus,Subscription COGS,7958.97
 FY2026-Board-Approved,2026-11-30,CC-2000,Support,6020,Payroll Taxes & Benefits,Subscription COGS,18060.49
-FY2026-Board-Approved,2026-11-30,CC-2000,Support,6200,Software & Subscriptions,Subscription COGS,1393.23
-FY2026-Board-Approved,2026-11-30,CC-2010,Cloud Operations,5000,Cloud Hosting,Subscription COGS,192488.11
-FY2026-Board-Approved,2026-11-30,CC-2010,Cloud Operations,5010,Third-Party Data & APIs,Subscription COGS,1046.80
-FY2026-Board-Approved,2026-11-30,CC-2010,Cloud Operations,5020,Payment Processing Fees,Subscription COGS,16499.91
+FY2026-Board-Approved,2026-11-30,CC-2000,Support,6200,Software & Subscriptions,Subscription COGS,1381.02
+FY2026-Board-Approved,2026-11-30,CC-2010,Cloud Operations,5000,Cloud Hosting,Subscription COGS,192974.92
+FY2026-Board-Approved,2026-11-30,CC-2010,Cloud Operations,5010,Third-Party Data & APIs,Subscription COGS,1037.62
+FY2026-Board-Approved,2026-11-30,CC-2010,Cloud Operations,5020,Payment Processing Fees,Subscription COGS,16443.67
 FY2026-Board-Approved,2026-11-30,CC-2010,Cloud Operations,6000,Salaries & Wages,Subscription COGS,61970.01
 FY2026-Board-Approved,2026-11-30,CC-2010,Cloud Operations,6010,Bonus,Subscription COGS,6012.84
 FY2026-Board-Approved,2026-11-30,CC-2010,Cloud Operations,6020,Payroll Taxes & Benefits,Subscription COGS,13936.49
-FY2026-Board-Approved,2026-11-30,CC-2010,Cloud Operations,6050,Contractor & Temp Labor,Subscription COGS,19941.74
-FY2026-Board-Approved,2026-11-30,CC-2010,Cloud Operations,6200,Software & Subscriptions,Subscription COGS,1042.95
-FY2026-Board-Approved,2026-11-30,CC-2010,Cloud Operations,6900,Other Operating Expense,Subscription COGS,159.19
+FY2026-Board-Approved,2026-11-30,CC-2010,Cloud Operations,6050,Contractor & Temp Labor,Subscription COGS,19766.83
+FY2026-Board-Approved,2026-11-30,CC-2010,Cloud Operations,6200,Software & Subscriptions,Subscription COGS,1033.81
+FY2026-Board-Approved,2026-11-30,CC-2010,Cloud Operations,6900,Other Operating Expense,Subscription COGS,157.79
 FY2026-Board-Approved,2026-11-30,CC-2100,Professional Services,5030,Services Subcontractors,Services COGS,5954.02
 FY2026-Board-Approved,2026-11-30,CC-2100,Professional Services,6000,Salaries & Wages,Services COGS,57986.57
 FY2026-Board-Approved,2026-11-30,CC-2100,Professional Services,6010,Bonus,Services COGS,5441.28
@@ -1504,11 +1504,11 @@ FY2026-Board-Approved,2026-11-30,CC-4030,IT & Corporate Systems,6050,Contractor 
 FY2026-Board-Approved,2026-11-30,CC-4030,IT & Corporate Systems,6200,Software & Subscriptions,General & Administrative,972.50
 FY2026-Board-Approved,2026-11-30,CC-4030,IT & Corporate Systems,6420,Facilities & Rent,General & Administrative,46774.47
 FY2026-Board-Approved,2026-11-30,CC-4030,IT & Corporate Systems,6900,Other Operating Expense,General & Administrative,120.86
-FY2026-Board-Approved,2026-11-30,CC-9000,Revenue,4000,Subscription Revenue,Subscription Revenue,-2877027.31
-FY2026-Board-Approved,2026-11-30,CC-9000,Revenue,4010,Usage Revenue Above Commitment,Subscription Revenue,-61713.56
-FY2026-Board-Approved,2026-11-30,CC-9000,Revenue,4100,Professional Services Revenue,Services Revenue,-24960.81
-FY2026-Board-Approved,2026-11-30,CC-9000,Revenue,4110,Implementation Fee Revenue,Services Revenue,-56000.23
-FY2026-Board-Approved,2026-11-30,CC-9000,Corporate,9000,Ending ARR,Memo - ARR,35955865.48
+FY2026-Board-Approved,2026-11-30,CC-9000,Revenue,4000,Subscription Revenue,Subscription Revenue,-2880490.56
+FY2026-Board-Approved,2026-11-30,CC-9000,Revenue,4010,Usage Revenue Above Commitment,Subscription Revenue,-61787.85
+FY2026-Board-Approved,2026-11-30,CC-9000,Revenue,4100,Professional Services Revenue,Services Revenue,-25004.24
+FY2026-Board-Approved,2026-11-30,CC-9000,Revenue,4110,Implementation Fee Revenue,Services Revenue,-56063.70
+FY2026-Board-Approved,2026-11-30,CC-9000,Corporate,9000,Ending ARR,Memo - ARR,35998315.84
 FY2026-Board-Approved,2026-11-30,CC-9000,Corporate,9010,New Logo ARR,Memo - ARR,450000.00
 FY2026-Board-Approved,2026-11-30,CC-9000,Corporate,9020,Expansion ARR,Memo - ARR,367500.00
 FY2026-Board-Approved,2026-11-30,CC-9000,Corporate,9030,Reactivation ARR,Memo - ARR,15000.00
@@ -1518,77 +1518,77 @@ FY2026-Board-Approved,2026-11-30,CC-9000,Corporate,9100,New Logos Added,Memo - S
 FY2026-Board-Approved,2026-11-30,CC-9000,Corporate,9200,Ending Headcount,Memo - Statistical,212.70
 FY2026-Board-Approved,2026-12-31,CC-1000,Sales - SMB,6000,Salaries & Wages,Sales & Marketing,81233.72
 FY2026-Board-Approved,2026-12-31,CC-1000,Sales - SMB,6020,Payroll Taxes & Benefits,Sales & Marketing,16652.92
-FY2026-Board-Approved,2026-12-31,CC-1000,Sales - SMB,6030,Sales Commissions,Sales & Marketing,10217.18
-FY2026-Board-Approved,2026-12-31,CC-1000,Sales - SMB,6040,Commission Amortisation,Sales & Marketing,6478.28
-FY2026-Board-Approved,2026-12-31,CC-1000,Sales - SMB,6200,Software & Subscriptions,Sales & Marketing,4422.35
-FY2026-Board-Approved,2026-12-31,CC-1000,Sales - SMB,6300,Travel & Entertainment,Sales & Marketing,8041.14
-FY2026-Board-Approved,2026-12-31,CC-1000,Sales - SMB,6450,Training & Enablement,Sales & Marketing,533.99
+FY2026-Board-Approved,2026-12-31,CC-1000,Sales - SMB,6030,Sales Commissions,Sales & Marketing,8720.93
+FY2026-Board-Approved,2026-12-31,CC-1000,Sales - SMB,6040,Commission Amortisation,Sales & Marketing,6501.44
+FY2026-Board-Approved,2026-12-31,CC-1000,Sales - SMB,6200,Software & Subscriptions,Sales & Marketing,4421.89
+FY2026-Board-Approved,2026-12-31,CC-1000,Sales - SMB,6300,Travel & Entertainment,Sales & Marketing,8040.30
+FY2026-Board-Approved,2026-12-31,CC-1000,Sales - SMB,6450,Training & Enablement,Sales & Marketing,533.94
 FY2026-Board-Approved,2026-12-31,CC-1010,Sales - Mid-Market,6000,Salaries & Wages,Sales & Marketing,112435.69
 FY2026-Board-Approved,2026-12-31,CC-1010,Sales - Mid-Market,6020,Payroll Taxes & Benefits,Sales & Marketing,23049.32
-FY2026-Board-Approved,2026-12-31,CC-1010,Sales - Mid-Market,6030,Sales Commissions,Sales & Marketing,19505.53
-FY2026-Board-Approved,2026-12-31,CC-1010,Sales - Mid-Market,6040,Commission Amortisation,Sales & Marketing,12367.64
-FY2026-Board-Approved,2026-12-31,CC-1010,Sales - Mid-Market,6200,Software & Subscriptions,Sales & Marketing,5023.27
-FY2026-Board-Approved,2026-12-31,CC-1010,Sales - Mid-Market,6300,Travel & Entertainment,Sales & Marketing,9334.12
-FY2026-Board-Approved,2026-12-31,CC-1010,Sales - Mid-Market,6450,Training & Enablement,Sales & Marketing,688.22
+FY2026-Board-Approved,2026-12-31,CC-1010,Sales - Mid-Market,6030,Sales Commissions,Sales & Marketing,16649.04
+FY2026-Board-Approved,2026-12-31,CC-1010,Sales - Mid-Market,6040,Commission Amortisation,Sales & Marketing,12411.85
+FY2026-Board-Approved,2026-12-31,CC-1010,Sales - Mid-Market,6200,Software & Subscriptions,Sales & Marketing,5022.74
+FY2026-Board-Approved,2026-12-31,CC-1010,Sales - Mid-Market,6300,Travel & Entertainment,Sales & Marketing,9333.13
+FY2026-Board-Approved,2026-12-31,CC-1010,Sales - Mid-Market,6450,Training & Enablement,Sales & Marketing,688.14
 FY2026-Board-Approved,2026-12-31,CC-1020,Sales - Enterprise,6000,Salaries & Wages,Sales & Marketing,77681.11
 FY2026-Board-Approved,2026-12-31,CC-1020,Sales - Enterprise,6020,Payroll Taxes & Benefits,Sales & Marketing,15924.63
-FY2026-Board-Approved,2026-12-31,CC-1020,Sales - Enterprise,6030,Sales Commissions,Sales & Marketing,16719.02
-FY2026-Board-Approved,2026-12-31,CC-1020,Sales - Enterprise,6040,Commission Amortisation,Sales & Marketing,10600.83
-FY2026-Board-Approved,2026-12-31,CC-1020,Sales - Enterprise,6200,Software & Subscriptions,Sales & Marketing,3457.76
-FY2026-Board-Approved,2026-12-31,CC-1020,Sales - Enterprise,6300,Travel & Entertainment,Sales & Marketing,6673.32
-FY2026-Board-Approved,2026-12-31,CC-1020,Sales - Enterprise,6450,Training & Enablement,Sales & Marketing,401.18
+FY2026-Board-Approved,2026-12-31,CC-1020,Sales - Enterprise,6030,Sales Commissions,Sales & Marketing,14270.61
+FY2026-Board-Approved,2026-12-31,CC-1020,Sales - Enterprise,6040,Commission Amortisation,Sales & Marketing,10638.73
+FY2026-Board-Approved,2026-12-31,CC-1020,Sales - Enterprise,6200,Software & Subscriptions,Sales & Marketing,3457.39
+FY2026-Board-Approved,2026-12-31,CC-1020,Sales - Enterprise,6300,Travel & Entertainment,Sales & Marketing,6672.61
+FY2026-Board-Approved,2026-12-31,CC-1020,Sales - Enterprise,6450,Training & Enablement,Sales & Marketing,401.14
 FY2026-Board-Approved,2026-12-31,CC-1030,Sales Development,6000,Salaries & Wages,Sales & Marketing,61965.83
 FY2026-Board-Approved,2026-12-31,CC-1030,Sales Development,6020,Payroll Taxes & Benefits,Sales & Marketing,12703.00
-FY2026-Board-Approved,2026-12-31,CC-1030,Sales Development,6200,Software & Subscriptions,Sales & Marketing,2850.58
-FY2026-Board-Approved,2026-12-31,CC-1030,Sales Development,6300,Travel & Entertainment,Sales & Marketing,5351.74
-FY2026-Board-Approved,2026-12-31,CC-1030,Sales Development,6450,Training & Enablement,Sales & Marketing,378.39
+FY2026-Board-Approved,2026-12-31,CC-1030,Sales Development,6200,Software & Subscriptions,Sales & Marketing,2850.29
+FY2026-Board-Approved,2026-12-31,CC-1030,Sales Development,6300,Travel & Entertainment,Sales & Marketing,5351.18
+FY2026-Board-Approved,2026-12-31,CC-1030,Sales Development,6450,Training & Enablement,Sales & Marketing,378.35
 FY2026-Board-Approved,2026-12-31,CC-1040,Sales Operations,6000,Salaries & Wages,Sales & Marketing,40012.05
 FY2026-Board-Approved,2026-12-31,CC-1040,Sales Operations,6020,Payroll Taxes & Benefits,Sales & Marketing,8202.47
-FY2026-Board-Approved,2026-12-31,CC-1040,Sales Operations,6200,Software & Subscriptions,Sales & Marketing,1985.83
-FY2026-Board-Approved,2026-12-31,CC-1040,Sales Operations,6300,Travel & Entertainment,Sales & Marketing,3808.40
+FY2026-Board-Approved,2026-12-31,CC-1040,Sales Operations,6200,Software & Subscriptions,Sales & Marketing,1985.61
+FY2026-Board-Approved,2026-12-31,CC-1040,Sales Operations,6300,Travel & Entertainment,Sales & Marketing,3808.01
 FY2026-Board-Approved,2026-12-31,CC-1050,Solutions Engineering,6000,Salaries & Wages,Sales & Marketing,33354.49
 FY2026-Board-Approved,2026-12-31,CC-1050,Solutions Engineering,6020,Payroll Taxes & Benefits,Sales & Marketing,6837.67
-FY2026-Board-Approved,2026-12-31,CC-1050,Solutions Engineering,6200,Software & Subscriptions,Sales & Marketing,1386.14
-FY2026-Board-Approved,2026-12-31,CC-1050,Solutions Engineering,6300,Travel & Entertainment,Sales & Marketing,2951.91
+FY2026-Board-Approved,2026-12-31,CC-1050,Solutions Engineering,6200,Software & Subscriptions,Sales & Marketing,1386.00
+FY2026-Board-Approved,2026-12-31,CC-1050,Solutions Engineering,6300,Travel & Entertainment,Sales & Marketing,2951.60
 FY2026-Board-Approved,2026-12-31,CC-1060,Sales Leadership,6000,Salaries & Wages,Sales & Marketing,31887.73
 FY2026-Board-Approved,2026-12-31,CC-1060,Sales Leadership,6020,Payroll Taxes & Benefits,Sales & Marketing,6536.99
-FY2026-Board-Approved,2026-12-31,CC-1060,Sales Leadership,6200,Software & Subscriptions,Sales & Marketing,1425.58
-FY2026-Board-Approved,2026-12-31,CC-1060,Sales Leadership,6300,Travel & Entertainment,Sales & Marketing,2748.64
-FY2026-Board-Approved,2026-12-31,CC-1060,Sales Leadership,6450,Training & Enablement,Sales & Marketing,174.13
+FY2026-Board-Approved,2026-12-31,CC-1060,Sales Leadership,6200,Software & Subscriptions,Sales & Marketing,1425.43
+FY2026-Board-Approved,2026-12-31,CC-1060,Sales Leadership,6300,Travel & Entertainment,Sales & Marketing,2748.35
+FY2026-Board-Approved,2026-12-31,CC-1060,Sales Leadership,6450,Training & Enablement,Sales & Marketing,174.12
 FY2026-Board-Approved,2026-12-31,CC-1100,Demand Generation,6000,Salaries & Wages,Sales & Marketing,112169.01
 FY2026-Board-Approved,2026-12-31,CC-1100,Demand Generation,6010,Bonus,Sales & Marketing,11256.14
 FY2026-Board-Approved,2026-12-31,CC-1100,Demand Generation,6020,Payroll Taxes & Benefits,Sales & Marketing,25302.15
-FY2026-Board-Approved,2026-12-31,CC-1100,Demand Generation,6050,Contractor & Temp Labor,Sales & Marketing,18611.63
-FY2026-Board-Approved,2026-12-31,CC-1100,Demand Generation,6100,Demand Generation,Sales & Marketing,202656.28
-FY2026-Board-Approved,2026-12-31,CC-1100,Demand Generation,6110,Events & Field Marketing,Sales & Marketing,79590.66
-FY2026-Board-Approved,2026-12-31,CC-1100,Demand Generation,6200,Software & Subscriptions,Sales & Marketing,4037.53
-FY2026-Board-Approved,2026-12-31,CC-1100,Demand Generation,6300,Travel & Entertainment,Sales & Marketing,4313.33
-FY2026-Board-Approved,2026-12-31,CC-1100,Demand Generation,6450,Training & Enablement,Sales & Marketing,591.51
+FY2026-Board-Approved,2026-12-31,CC-1100,Demand Generation,6050,Contractor & Temp Labor,Sales & Marketing,18609.68
+FY2026-Board-Approved,2026-12-31,CC-1100,Demand Generation,6100,Demand Generation,Sales & Marketing,202634.97
+FY2026-Board-Approved,2026-12-31,CC-1100,Demand Generation,6110,Events & Field Marketing,Sales & Marketing,79582.30
+FY2026-Board-Approved,2026-12-31,CC-1100,Demand Generation,6200,Software & Subscriptions,Sales & Marketing,4037.11
+FY2026-Board-Approved,2026-12-31,CC-1100,Demand Generation,6300,Travel & Entertainment,Sales & Marketing,4312.87
+FY2026-Board-Approved,2026-12-31,CC-1100,Demand Generation,6450,Training & Enablement,Sales & Marketing,591.45
 FY2026-Board-Approved,2026-12-31,CC-1110,Product Marketing,6000,Salaries & Wages,Sales & Marketing,79633.61
 FY2026-Board-Approved,2026-12-31,CC-1110,Product Marketing,6010,Bonus,Sales & Marketing,7342.56
 FY2026-Board-Approved,2026-12-31,CC-1110,Product Marketing,6020,Payroll Taxes & Benefits,Sales & Marketing,17830.11
-FY2026-Board-Approved,2026-12-31,CC-1110,Product Marketing,6120,Brand & Content,Sales & Marketing,55726.54
-FY2026-Board-Approved,2026-12-31,CC-1110,Product Marketing,6200,Software & Subscriptions,Sales & Marketing,3320.05
-FY2026-Board-Approved,2026-12-31,CC-1110,Product Marketing,6300,Travel & Entertainment,Sales & Marketing,3684.01
+FY2026-Board-Approved,2026-12-31,CC-1110,Product Marketing,6120,Brand & Content,Sales & Marketing,55720.69
+FY2026-Board-Approved,2026-12-31,CC-1110,Product Marketing,6200,Software & Subscriptions,Sales & Marketing,3319.70
+FY2026-Board-Approved,2026-12-31,CC-1110,Product Marketing,6300,Travel & Entertainment,Sales & Marketing,3683.63
 FY2026-Board-Approved,2026-12-31,CC-1200,Customer Success,6000,Salaries & Wages,Subscription COGS,228728.77
 FY2026-Board-Approved,2026-12-31,CC-1200,Customer Success,6010,Bonus,Subscription COGS,22501.42
 FY2026-Board-Approved,2026-12-31,CC-1200,Customer Success,6020,Payroll Taxes & Benefits,Subscription COGS,51502.19
-FY2026-Board-Approved,2026-12-31,CC-1200,Customer Success,6200,Software & Subscriptions,Subscription COGS,4236.44
-FY2026-Board-Approved,2026-12-31,CC-1200,Customer Success,6300,Travel & Entertainment,Subscription COGS,4519.72
-FY2026-Board-Approved,2026-12-31,CC-2000,Support,5010,Third-Party Data & APIs,Subscription COGS,1760.55
+FY2026-Board-Approved,2026-12-31,CC-1200,Customer Success,6200,Software & Subscriptions,Subscription COGS,4199.30
+FY2026-Board-Approved,2026-12-31,CC-1200,Customer Success,6300,Travel & Entertainment,Subscription COGS,4480.07
+FY2026-Board-Approved,2026-12-31,CC-2000,Support,5010,Third-Party Data & APIs,Subscription COGS,1745.11
 FY2026-Board-Approved,2026-12-31,CC-2000,Support,6000,Salaries & Wages,Subscription COGS,88167.49
 FY2026-Board-Approved,2026-12-31,CC-2000,Support,6010,Bonus,Subscription COGS,8615.03
 FY2026-Board-Approved,2026-12-31,CC-2000,Support,6020,Payroll Taxes & Benefits,Subscription COGS,19840.41
-FY2026-Board-Approved,2026-12-31,CC-2000,Support,6200,Software & Subscriptions,Subscription COGS,1456.87
-FY2026-Board-Approved,2026-12-31,CC-2010,Cloud Operations,5000,Cloud Hosting,Subscription COGS,190638.14
-FY2026-Board-Approved,2026-12-31,CC-2010,Cloud Operations,5010,Third-Party Data & APIs,Subscription COGS,1060.33
-FY2026-Board-Approved,2026-12-31,CC-2010,Cloud Operations,5020,Payment Processing Fees,Subscription COGS,41736.95
+FY2026-Board-Approved,2026-12-31,CC-2000,Support,6200,Software & Subscriptions,Subscription COGS,1444.09
+FY2026-Board-Approved,2026-12-31,CC-2010,Cloud Operations,5000,Cloud Hosting,Subscription COGS,191161.89
+FY2026-Board-Approved,2026-12-31,CC-2010,Cloud Operations,5010,Third-Party Data & APIs,Subscription COGS,1051.04
+FY2026-Board-Approved,2026-12-31,CC-2010,Cloud Operations,5020,Payment Processing Fees,Subscription COGS,41426.71
 FY2026-Board-Approved,2026-12-31,CC-2010,Cloud Operations,6000,Salaries & Wages,Subscription COGS,54879.67
 FY2026-Board-Approved,2026-12-31,CC-2010,Cloud Operations,6010,Bonus,Subscription COGS,5455.11
 FY2026-Board-Approved,2026-12-31,CC-2010,Cloud Operations,6020,Payroll Taxes & Benefits,Subscription COGS,12368.62
-FY2026-Board-Approved,2026-12-31,CC-2010,Cloud Operations,6050,Contractor & Temp Labor,Subscription COGS,18365.09
-FY2026-Board-Approved,2026-12-31,CC-2010,Cloud Operations,6200,Software & Subscriptions,Subscription COGS,1007.39
-FY2026-Board-Approved,2026-12-31,CC-2010,Cloud Operations,6900,Other Operating Expense,Subscription COGS,176.10
+FY2026-Board-Approved,2026-12-31,CC-2010,Cloud Operations,6050,Contractor & Temp Labor,Subscription COGS,18204.01
+FY2026-Board-Approved,2026-12-31,CC-2010,Cloud Operations,6200,Software & Subscriptions,Subscription COGS,998.55
+FY2026-Board-Approved,2026-12-31,CC-2010,Cloud Operations,6900,Other Operating Expense,Subscription COGS,174.56
 FY2026-Board-Approved,2026-12-31,CC-2100,Professional Services,5030,Services Subcontractors,Services COGS,4808.95
 FY2026-Board-Approved,2026-12-31,CC-2100,Professional Services,6000,Salaries & Wages,Services COGS,48422.12
 FY2026-Board-Approved,2026-12-31,CC-2100,Professional Services,6010,Bonus,Services COGS,4279.89
@@ -1642,11 +1642,11 @@ FY2026-Board-Approved,2026-12-31,CC-4030,IT & Corporate Systems,6050,Contractor 
 FY2026-Board-Approved,2026-12-31,CC-4030,IT & Corporate Systems,6200,Software & Subscriptions,General & Administrative,1013.03
 FY2026-Board-Approved,2026-12-31,CC-4030,IT & Corporate Systems,6420,Facilities & Rent,General & Administrative,46137.78
 FY2026-Board-Approved,2026-12-31,CC-4030,IT & Corporate Systems,6900,Other Operating Expense,General & Administrative,171.79
-FY2026-Board-Approved,2026-12-31,CC-9000,Revenue,4000,Subscription Revenue,Subscription Revenue,-2915061.46
-FY2026-Board-Approved,2026-12-31,CC-9000,Revenue,4010,Usage Revenue Above Commitment,Subscription Revenue,-62529.41
-FY2026-Board-Approved,2026-12-31,CC-9000,Revenue,4100,Professional Services Revenue,Services Revenue,-30847.43
-FY2026-Board-Approved,2026-12-31,CC-9000,Revenue,4110,Implementation Fee Revenue,Services Revenue,-57265.71
-FY2026-Board-Approved,2026-12-31,CC-9000,Corporate,9000,Ending ARR,Memo - ARR,37546865.48
+FY2026-Board-Approved,2026-12-31,CC-9000,Revenue,4000,Subscription Revenue,Subscription Revenue,-2918524.71
+FY2026-Board-Approved,2026-12-31,CC-9000,Revenue,4010,Usage Revenue Above Commitment,Subscription Revenue,-62603.70
+FY2026-Board-Approved,2026-12-31,CC-9000,Revenue,4100,Professional Services Revenue,Services Revenue,-30879.72
+FY2026-Board-Approved,2026-12-31,CC-9000,Revenue,4110,Implementation Fee Revenue,Services Revenue,-57356.56
+FY2026-Board-Approved,2026-12-31,CC-9000,Corporate,9000,Ending ARR,Memo - ARR,37589315.84
 FY2026-Board-Approved,2026-12-31,CC-9000,Corporate,9010,New Logo ARR,Memo - ARR,1140000.00
 FY2026-Board-Approved,2026-12-31,CC-9000,Corporate,9020,Expansion ARR,Memo - ARR,931000.00
 FY2026-Board-Approved,2026-12-31,CC-9000,Corporate,9030,Reactivation ARR,Memo - ARR,38000.00

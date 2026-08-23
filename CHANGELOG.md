@@ -3,6 +3,65 @@
 All notable changes to this project are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [v0.2] — ARR engine, customer-grain classification, waterfall
+
+Phase 3 of the build described in `docs/PHASE1_SPEC.md`. Turns `fact_subscription_monthly`
+into a customer-level ARR movement engine and reconciles it. No retention, NRR, GRR, GTM
+capacity, forecast, scenarios, Excel or Power BI — those are later phases.
+
+### Added
+
+**DuckDB analytical layer**
+- `sql/manifest.yml` and `sql/01_staging/`, `02_core/`, `03_arr/`, `08_controls/` — one SELECT
+  statement per model, executed in manifest order by `src/run_sql.py`. No dbt, no
+  orchestration framework, per `docs/decisions.md`.
+- `src/load_database.py` loads the four raw tables the ARR engine needs (`dim_customer`,
+  `dim_product`, `dim_date`, `fact_subscription_monthly`) into a DuckDB database.
+- `int_arr_customer_month` and `int_arr_customer_product_month` — dense customer-month and
+  customer-product-month spines built from the sparse source table before any `LAG()` runs,
+  so a churn followed by a reactivation can never be read as a single expansion.
+- `fct_arr_movement` — the customer-grain ARR movement engine, classifying every
+  customer-month against the six binding rules (PHASE1_SPEC 8.2).
+- `fct_arr_product_movement` — the same six rules at customer × product grain, explicitly
+  separate and non-tying on categories, for product-mix analysis only.
+- `fct_arr_waterfall`, `fct_arr_snapshot`, `fct_arr_concentration`.
+- `ctl_arr_reconciliation` — the build gate. Checks `Beginning + New Logo + Expansion +
+  Reactivation − Contraction − Churn = Ending` at company-month, segment-month and full-period
+  grain, plus the customer/product ARR tie, tolerance $1.00. `python -m src.build` and
+  `python -m src.run_sql` both exit non-zero on a violation.
+- `src/arr_report.py` — generates `reports/arr_validation_report.md`: monthly ARR trend, the
+  FY2025 waterfall against the PHASE1_SPEC anchors, movement totals and movement by segment,
+  reconciliation results, largest churn/expansion months, and the anchor variance discussion.
+- `data/marts/` — curated CSV exports of the five 03_arr models, committed per the
+  "readable without running" convention.
+
+**Tests**
+- `tests/test_arr_engine.py` — 14 pytest tests covering classification validity, each of the
+  six binding rules re-derived independently of the classifying SQL, no duplicate
+  customer-months, no negative ARR, company and segment waterfall reconciliation, and that a
+  same-month product substitution nets correctly at customer grain instead of inflating
+  expansion and contraction.
+
+**Documentation**
+- `docs/arr_engine.md` — movement grain, the dense-spine rationale, classification
+  methodology, the customer-vs-product distinction, reconciliation logic, the FY2025 result
+  against the Phase 1 anchors with cause analysis, and known limitations.
+- `README.md` updated: Phase 3 marked complete, "What Phase 3 produces" section, repository
+  structure and documentation index extended.
+
+### Notes
+
+- FY2025 waterfall: beginning $24.52M (target $24.2M, +1.3%), new logo +$5.28M (+5.6%),
+  expansion +$4.26M (-3.3%), reactivation +$0.08M (-62.1%), contraction -$1.62M (-80.1%), churn
+  -$2.36M (+15.7%), ending $30.15M (+0.2%). ARR level ties tightly at both ends; the
+  movement-category composition diverges further because the Phase 2 calibration loop was
+  solved against total ARR, logo counts and retention, never against the dollar split across
+  movement categories. Full analysis in `docs/arr_engine.md`.
+- The expansion sub-type split (seat/module vs. renewal price uplift) is deferred: it needs
+  `fact_contract.uplift_pct_at_renewal`, which is outside this phase's minimal four-table load
+  and isn't required by any of the six binding classification rules.
+- `data/helio.duckdb` is the analytical-layer database file, gitignored and rebuilt on demand.
+
 ## [v0.1] — Synthetic data foundation with renewal mechanics
 
 Phase 2 of the build described in `docs/PHASE1_SPEC.md`. Produces the raw source dataset that

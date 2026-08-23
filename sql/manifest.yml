@@ -1,0 +1,57 @@
+# Model execution order for the DuckDB analytical layer (PHASE1_SPEC section 5, "no
+# orchestration framework: src/build.py executes SQL per sql/manifest.yml").
+#
+# Each model's `path` holds a single SELECT statement. The runner wraps it in
+# `CREATE OR REPLACE TABLE <name> AS (<select>)` and executes models in the order listed here,
+# so a model may only reference tables defined earlier in this file. Controls run after every
+# model has been built; any row returned by a control query is a violation and fails the build.
+#
+# Phase 3 scope only. Loads the four raw tables the ARR engine needs -- dim_customer,
+# dim_product, dim_date, fact_subscription_monthly -- not all thirteen source tables.
+
+models:
+  # 01_staging -- typed pass-throughs, no business logic
+  - name: stg_dim_customer
+    path: 01_staging/stg_dim_customer.sql
+  - name: stg_dim_product
+    path: 01_staging/stg_dim_product.sql
+  - name: stg_dim_date
+    path: 01_staging/stg_dim_date.sql
+  - name: stg_fact_subscription_monthly
+    path: 01_staging/stg_fact_subscription_monthly.sql
+
+  # 02_core -- conformed dimensions and the mandatory customer-month aggregation
+  - name: dim_customer
+    path: 02_core/dim_customer.sql
+  - name: dim_product
+    path: 02_core/dim_product.sql
+  - name: dim_date
+    path: 02_core/dim_date.sql
+  - name: int_arr_customer_product_month
+    path: 02_core/int_arr_customer_product_month.sql
+  - name: int_arr_customer_month
+    path: 02_core/int_arr_customer_month.sql
+
+  # 03_arr -- the ARR engine
+  - name: fct_arr_movement
+    path: 03_arr/fct_arr_movement.sql
+  - name: fct_arr_product_movement
+    path: 03_arr/fct_arr_product_movement.sql
+  - name: fct_arr_waterfall
+    path: 03_arr/fct_arr_waterfall.sql
+  - name: fct_arr_snapshot
+    path: 03_arr/fct_arr_snapshot.sql
+  - name: fct_arr_concentration
+    path: 03_arr/fct_arr_concentration.sql
+
+controls:
+  - name: ctl_arr_reconciliation
+    path: 08_controls/ctl_arr_reconciliation.sql
+
+# Models exported to data/marts/<name>.csv for the "readable without running" convention.
+marts:
+  - fct_arr_movement
+  - fct_arr_product_movement
+  - fct_arr_waterfall
+  - fct_arr_snapshot
+  - fct_arr_concentration

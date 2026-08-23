@@ -491,19 +491,45 @@ retention:
     renewal_3: 0.78
     renewal_4_plus: 0.62
 
+  # FY2025 second-pass remediation (docs/generation_methodology.md section 5 addendum 2):
+  # `churn_and_return` raised again, from 2.60 to 2.70. This is a second, smaller move on
+  # the same knob as the first pass - it governs how many of the archetype's fixed ~3%
+  # population share (a PHASE1_SPEC 6.1 anchor, not touched) actually reach a churn event
+  # inside the observation window, and therefore a later reactivation. Bisected by hand: a
+  # discontinuity was found between 2.70 (Dec-2025 logos exactly on target) and 2.72 (logos
+  # 846, a 34-logo miss) - the coordinate-descent calibration re-equilibrates smoothly up to
+  # that point and then jumps once one of its own bounds saturates. 2.70 is the value at
+  # the edge of the smooth region, confirmed stable on repeat runs.
   archetype_nonrenewal_multiplier:
     steady: 0.35
     land_and_expand: 0.20
     expand_then_contract: 0.85
     slow_decay: 1.90
     fast_churn: 5.20
-    churn_and_return: 2.60
+    churn_and_return: 2.70
     recent_new_logo: 0.55
 
   # Churn-and-return: gap before reactivation, and the share of prior ARR they return at.
+  # FY2025 remediation (docs/arr_engine.md): reactivation ran 62% below the PHASE1_SPEC
+  # 2.3 waterfall target because these two drivers were solved against total ARR and
+  # logo retention only, never against the movement-category split. `churn_and_return`'s
+  # own population share (3%) is a PHASE1_SPEC 6.1 anchor and is not touched - archetype
+  # volume/segment-mix changes there were tried and broke the Dec-2025 logo-count anchor
+  # (see docs/generation_methodology.md section 5 addendum). Two changes that don't touch
+  # population counts:
+  #  - `arr_recovery` raised, band narrowed toward its own realistic ceiling in two passes
+  #    (55-95% -> 75-100% -> 90-98%). Tightening the band further plateaus - 90-100% and
+  #    95-100% both landed within noise of each other - so this is close to the practical
+  #    limit of the lever, not an arbitrary stopping point. Kept strictly below 1.0 - a
+  #    returning customer still comes back smaller, on a fresh contract.
+  #  - `gap_months` shortened: this only changes how long a churned-and-returning
+  #    customer waits before its (already-decided) reactivation, not whether or how
+  #    often reactivation happens, so it does not touch retention or logo counts. A
+  #    shorter gap means more of the reactivations that already occur land inside the
+  #    calendar year of the churn instead of spilling into the next one.
   reactivation:
-    gap_months: {min: 5, max: 11}
-    arr_recovery: {min: 0.55, max: 0.95}
+    gap_months: {min: 2, max: 6}
+    arr_recovery: {min: 0.90, max: 0.98}
 
 expansion:
   # Annualised seat growth by archetype, applied mid-term and co-termed.
@@ -544,10 +570,40 @@ expansion:
   module_attach_min_tenure_months: 4
 
   # Downgrades. Only permitted at a renewal event for termed contracts.
+  # FY2025 remediation (docs/arr_engine.md): contraction ran 80% above the PHASE1_SPEC
+  # 2.3 waterfall target while the ARR level and NRR-ratio anchors already held, because
+  # these probabilities were solved against total ARR only, never against the
+  # movement-category split. Querying the generated FY2025 movement by archetype located
+  # the excess: `land_and_expand` alone was ~60% of it ($981k of $1.62M on just a 4%
+  # per-renewal probability, because those accounts carry a much larger ARR base by the
+  # time they reach a renewal than the rest of the book, mostly from mid-term module
+  # attaches that a bug in the renewal contract-rebuild silently drops at the very next
+  # renewal - see docs/generation_methodology.md section 5 addendum. That reversion is
+  # not gated by this table at all (verified: its own probability barely moves the
+  # dollars it produces), and fixing the underlying renewal mechanics turned out to
+  # require re-solving the module-attach hazards and the CRM coherence check together,
+  # which is a second calibration axis, not this one targeted remediation - recorded as
+  # a known limitation instead of patched here.
+  # `steady`, `expand_then_contract` and `slow_decay` respond properly to their own
+  # probability, and are cut as far as the calibration loop's own bounds allow before the
+  # Dec-2025 logo-count anchor (PHASE1_SPEC 2.3, +/-3) starts to miss - `land_and_expand`
+  # could not be moved at all without breaking it (mid_acquisition_scale is already pinned
+  # at its floor in the unmodified baseline, so any large enough change to the FY2025
+  # movement mix has nowhere left to absorb the correction). See docs/generation_methodology.md
+  # section 5 addendum for the full search.
+  #  - `steady` is defined in PHASE1_SPEC 6.1 as "Flat seats, 3-5% uplift at each
+  #    renewal"; a 7% chance of a seat cut at every renewal contradicts that outright,
+  #    so it is also the best-justified cut on its own terms, not just a volume lever.
+  #  - `expand_then_contract` and `slow_decay` are archetypes defined to contract, so
+  #    they keep the behaviour at a reduced incidence rather than losing it.
+  # Second-pass remediation: `expand_then_contract` and `slow_decay` severity (seat_reduction)
+  # also cut, on top of the probability cut above - a second, independent dimension of the
+  # same two archetypes rather than a new lever, confirmed safe up to this point and unsafe
+  # a further notch down (0.10-0.24 / 0.06-0.16 pushed Dec-2025 logos to 868, -12).
   contraction_at_renewal:
-    expand_then_contract: {probability: 0.52, seat_reduction: {min: 0.18, max: 0.42}}
-    slow_decay:           {probability: 0.62, seat_reduction: {min: 0.10, max: 0.26}}
-    steady:               {probability: 0.070, seat_reduction: {min: 0.05, max: 0.16}}
+    expand_then_contract: {probability: 0.35, seat_reduction: {min: 0.14, max: 0.32}}
+    slow_decay:           {probability: 0.30, seat_reduction: {min: 0.08, max: 0.20}}
+    steady:               {probability: 0.050, seat_reduction: {min: 0.05, max: 0.16}}
     land_and_expand:      {probability: 0.040, seat_reduction: {min: 0.05, max: 0.14}}
     fast_churn:           {probability: 0.12, seat_reduction: {min: 0.10, max: 0.30}}
     churn_and_return:     {probability: 0.15, seat_reduction: {min: 0.10, max: 0.25}}

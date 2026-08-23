@@ -194,6 +194,91 @@ its anchor to the dollar. A synthetic dataset that matches its own targets to th
 itself, so the final step is damped and the result settles a few tenths of a percent away — well
 inside the 2% tolerance.
 
+### Addendum — FY2025 movement-composition remediation
+
+Phase 3's `fct_arr_movement` (`docs/arr_engine.md`) showed the FY2025 waterfall tying almost
+exactly on beginning and ending ARR while the movement-category split departed much further from
+PHASE1_SPEC 2.3: contraction $1.62M generated against a $0.90M target, reactivation $0.08M
+against $0.20M. Expected, per the table above — none of the nine calibration stages targets the
+dollar split across new logo, expansion, reactivation, contraction and churn, only the level and
+retention/ratio anchors. This addendum records the remediation and, as importantly, its limits.
+
+**Locating the excess.** Querying the generated FY2025 movement by `journey_archetype` (joining
+`fct_arr_movement` to `dim_customer`) rather than guessing showed the contraction excess was not
+spread evenly: `land_and_expand` alone was $981k of the $1.62M (60%), on a per-renewal
+contraction probability of only 4%. Isolated testing (`contraction_at_renewal.land_and_expand.
+probability` swept from 0.04 to 0.0 with every other driver held fixed) moved that archetype's
+contraction dollars by about 2% — i.e., that dial is not where the excess comes from.
+
+**The actual mechanism.** Tracing individual `land_and_expand` customer-months against
+`fact_contract` found the pattern: a customer attaches a module mid-term (a genuine, correctly-
+recorded expansion), and the very next time that customer's contract renews, the module is gone
+from the successor contract with no Module Drop event and without the archetype's own
+`contraction_at_renewal` probability having fired. The cause is in `_renewal_contract`
+(`src/gen_journeys.py`): the successor contract's product set is rebuilt from `prior.products`,
+which is the product set frozen at the *prior* contract's own creation and is never updated for a
+mid-term attach, instead of the live product set actually carried into the renewal. Because
+`land_and_expand` has the highest module-attach-archetype multiplier (2.20, PHASE1_SPEC-consistent
+with its land-and-expand behaviour), it is disproportionately exposed to this defect. This is a
+Phase 2 generator bug, not a Phase 3 classification defect: the module was never behaviourally
+dropped, so booking it as Contraction is a misclassification of what the generator actually did,
+not of what `fct_arr_movement` did with it.
+
+**Why it was not fixed directly.** A trial fix (threading the live product set into
+`_renewal_contract` instead of `prior.products`) was built and run end to end. It is very likely
+the more correct long-run answer, but it raised the Dispatch/Insights attach-rate checks
+materially above their PHASE1_SPEC 2.4 targets (module attach hazards were implicitly solved
+assuming the old, buggy reset-at-renewal behaviour) and pushed the GTM new-logo bookings-to-ARR
+coherence check outside its tolerance. Both are consequences of the changed cohort/calibration
+equilibrium the fix produces, not of the fix being wrong, but closing them requires re-solving
+the module-attach hazards as a second calibration axis and re-verifying CRM coherence — separate,
+larger scope than "add calibration parameters to the existing drivers." Reverted; recorded as a
+known limitation in `docs/arr_engine.md` rather than silently left as a surprise for whoever
+touches renewal mechanics next.
+
+**What was changed instead**, entirely within `config/assumptions.yml`, no source change:
+
+| Driver | Before | After | Why |
+|---|---|---|---|
+| `contraction_at_renewal.steady.probability` | 0.070 | 0.050 | `steady` is defined in PHASE1_SPEC 6.1 as "Flat seats"; any renewal-time seat cut already contradicts that, so this is also the best-justified cut on its own terms |
+| `contraction_at_renewal.expand_then_contract.probability` | 0.52 | 0.35 | Archetype is defined to contract; incidence reduced, not removed |
+| `contraction_at_renewal.slow_decay.probability` | 0.62 | 0.30 | Same reasoning as `expand_then_contract` |
+| `reactivation.arr_recovery` | 0.55–0.95 | 0.75–1.00 | A returning account plausibly recovers more of its prior book once it has decided to return at all; kept below 1.0 (still comes back smaller, per section 3) |
+| `reactivation.gap_months` | 5–11 | 2–6 | Only changes *when* an already-decided reactivation lands, not whether it happens — more of the fixed number of reactivations fall inside the calendar year of the churn instead of spilling into the next one |
+
+**Why the values stop where they do.** Every candidate driver was swept empirically (holding
+everything else fixed, re-running `calibrate()` and reading the resulting Dec-2025 logo count and
+FY2025 waterfall) rather than reasoned about in the abstract, because the nine calibration stages
+are coupled by design (section 5 above) and the response is not always monotonic once a knob
+moves far enough. Two findings shaped the stopping point:
+
+- `mid_acquisition_scale` is pinned at its own lower bound (0.78) in the *unmodified* baseline
+  already — the loop already wants the FY2024 cohort as small as its bound allows. Any driver
+  change large enough to want it smaller still has nowhere to go, and the Dec-2025 logo-count
+  anchor (PHASE1_SPEC 2.3, ±3) misses as a result. `land_and_expand`'s own `contraction_at_renewal`
+  probability and `module_attach_archetype_multiplier`, and `churn_and_return`'s or `steady`'s
+  `archetype_nonrenewal_multiplier`, all hit this wall at even small changes (tested down to a
+  7% relative move) — logo count swung as far as 858–913 against an 877–883 tolerance band.
+  Loosening that bound would remove a different, deliberate constraint (section 5 above: "new-logo
+  volume does not swing threefold") for this remediation's benefit, which is not a trade this
+  change makes.
+- `contraction_at_renewal.{steady,expand_then_contract,slow_decay}.probability` and
+  `reactivation.{arr_recovery,gap_months}` do not touch acquisition volume or the archetype
+  population mix, and empirically hold the logo count exactly on 880 (or within one logo) across
+  the ranges used above. Pushed further (e.g. `slow_decay` below ~0.20, or `expand_then_contract`
+  below ~0.20), the reduction in contraction dollars plateaus without further logo-count risk, so
+  the chosen values are close to the effective floor this set of levers can reach.
+
+**Result.** Contraction improved from +80.1% to +65.5% variance against the $0.90M target;
+reactivation from -62.1% to -46.4% against the $0.20M target; churn improved from +15.7% to
++13.6% as a side effect of the same re-equilibration, though it was not a lever targeted directly
+and remains outside its ±10% band. New Logo and Expansion stayed inside ±8% throughout. Neither
+contraction nor reactivation reached its stated tolerance band (±15% / ±25%); closing the rest of
+the gap is the renewal-mechanics fix above, deferred for the reasons given. The Dec-2025 logo
+count, all four ARR-level anchors, and segment logo retention are unaffected (`python -m src.build`
+and `pytest` both green; see `reports/source_validation_report.md` and
+`reports/arr_validation_report.md` for the exact post-remediation figures).
+
 ---
 
 ## 6. The general ledger

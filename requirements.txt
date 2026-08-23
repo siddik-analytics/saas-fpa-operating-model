@@ -1,8 +1,9 @@
-# Phase 2 - Synthetic Data Foundation
+# Phase 2 - Synthetic Data Foundation, Phase 3 - ARR engine
 # Lower bounds only: the generator uses stable APIs (numpy.random.Generator,
 # pandas IO) and pinning exact builds breaks installation on newer interpreters.
-# Later phases add duckdb and openpyxl per docs/PHASE1_SPEC.md.
+# Later phases add openpyxl per docs/PHASE1_SPEC.md.
 numpy>=1.26
 pandas>=2.1
 PyYAML>=6.0
 pytest>=8.0
+duckdb>=1.1
