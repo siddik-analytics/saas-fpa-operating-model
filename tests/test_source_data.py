@@ -56,7 +56,6 @@ def test_a_customer_journey_does_not_depend_on_how_many_others_exist(cfg):
     knob change would reshuffle the whole population and the search could not
     converge.
     """
-    knobs = _knobs(cfg)
     small = build_customers(cfg, {s: 0.6 for s in SEGMENTS}, 1.0, 1.0, 1.0)
     large = build_customers(cfg, {s: 1.4 for s in SEGMENTS}, 1.0, 1.0, 1.0)
 

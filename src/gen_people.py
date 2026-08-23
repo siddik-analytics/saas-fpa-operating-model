@@ -9,7 +9,8 @@ show up later as favourable compensation variance.
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field
+from collections import defaultdict
+from dataclasses import dataclass
 from datetime import date, timedelta
 from typing import Any
 
@@ -19,7 +20,6 @@ from .config import (
     Config,
     as_date,
     from_month_index,
-    month_end,
     month_index,
     normalise,
     stream,
@@ -479,11 +479,14 @@ def build_requisitions(cfg: Config, events: list[dict[str, Any]], people: list[P
         (e for e in events if e["type"] == "hire"), key=lambda e: (e["date"], e["person"].employee_name)
     )
 
-    backfill_needed: list[dict[str, Any]] = []
+    # A requisition is a backfill when it replaces someone who left. Rather than
+    # drawing the type at random, terminations are queued by function and a hire
+    # consumes the oldest one still waiting to be replaced. Not every departure
+    # is backfilled, and what is left over is genuine growth hiring.
+    pending_backfills: dict[str, list[date]] = defaultdict(list)
     for event in terminations:
         if rng.random() < req_cfg["backfill_rate"]:
-            backfill_needed.append(event)
-    backfill_dates = {id(e["person"]): e["date"] for e in backfill_needed}
+            pending_backfills[event["function"]].append(event["date"])
 
     rows: list[dict[str, Any]] = []
     counter = 0
@@ -502,7 +505,10 @@ def build_requisitions(cfg: Config, events: list[dict[str, Any]], people: list[P
         if rng.random() >= req_cfg["req_coverage_of_hires"]:
             continue
         counter += 1
-        is_backfill = rng.random() < req_cfg["backfill_rate"]
+        queue = pending_backfills.get(person.function, [])
+        is_backfill = bool(queue) and queue[0] <= actual_start
+        if is_backfill:
+            queue.pop(0)
         rows.append(
             {
                 "req_id": f"REQ-{counter:04d}",

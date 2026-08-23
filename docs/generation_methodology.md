@@ -225,6 +225,10 @@ reconciling items the Phase 5 walk has to explain, and each is explainable:
 
 - **Timing.** About 27% of wins are signed in one month and activate in the next, or the one
   after.
+- **Expansion that never reaches the CRM.** A material expansion goes through a rep and is
+  booked as an opportunity; a handful of seats added under an existing contract is self-serve.
+  The split is on deal size rather than a coin flip, which makes the resulting difference a
+  quantity Phase 5 can derive and explain rather than an unexplained residual.
 - **TCV against ACV.** Multi-year deals record total contract value in the CRM and year-one ACV
   in ARR. Structural, not noise.
 - **Wins that never provision.** Roughly 3% of closed-won new-logo deals never activate. They
@@ -232,6 +236,14 @@ reconciling items the Phase 5 walk has to explain, and each is explainable:
 - **Post-close amendments.** About 4% of wins have an ACV that moved after the CRM record was
   frozen.
 - **Renewal uplift.** Booked in the CRM as an opportunity, classified in ARR as expansion.
+
+**Opportunity values are the ARR they actually represent.** New business books the first
+contract, an expansion books the ARR that expansion added, and a renewal uplift books the price
+rise rather than the value of the renewed contract. An earlier version invented expansion values
+and booked renewal uplifts at full contract value, which inflated FY2025 closed-won ACV to
+$17.8M against $9.4M of real ARR movement and would have made the Phase 5 reconciliation
+impossible to close. It now sits at $9.44M against $9.44M, with the remaining difference made
+up of the reconciling items above.
 
 Win rates and sales cycles are generated to the segment targets, and losses are sized so the
 realised rates land on them. Enterprise deals are larger, slower and convert less often.
@@ -278,9 +290,11 @@ books and 8 of them are part-time or contractor, giving 198 FTE.
 
 **D7 — Row counts differ from the estimates.** Several "~" row-count estimates in 6.1 do not
 follow from the grains and rates stated elsewhere. `fact_subscription_monthly` comes out at
-~44,000 against an estimate of 78,000; `fact_gl_actuals` at ~4,050 against 7,500. Grain, attach
+~44,000 against an estimate of 78,000; `fact_gl_actuals` at ~4,050 against 7,500; and
+`fact_crm_opportunity` at ~3,720 against 4,200, because an expansion worth nothing does not get
+an opportunity and small self-serve seat adds never reach the CRM. Grain, attach rates, win
 rates and the chart of accounts are honoured; the row counts follow from them. Inventing cost
-centres to reach a row count would be padding.
+centres or opportunities to reach a row count would be padding.
 
 **D8 — Implied compensation is at the low end.** FY2025 R&D of $9.1M across roughly 70 average
 R&D FTE implies about $118k fully loaded per head, which is low for the role mix. The anchors

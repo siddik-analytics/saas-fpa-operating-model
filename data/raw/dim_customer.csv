@@ -766,515 +766,515 @@ CUST-01071,Susquehanna Air Systems,SMB,29,South Central,2024-01-09,Outbound - SD
 CUST-01072,Granite Peak Controls LLC,SMB,21,Southeast,2024-01-31,Inbound - Organic,monthly,fast_churn,REP-028,EMP-0240,Churned,2024-05-31,14259.76
 CUST-01073,Panhandle Sheet Metal Corp.,SMB,10,Great Lakes,2024-01-19,Outbound - SDR,monthly,fast_churn,REP-031,EMP-0104,Churned,2024-05-31,3069.17
 CUST-01074,Hutchins Utility Services Services,SMB,16,Great Lakes,2024-01-26,Trade Show / Event,monthly,steady,REP-028,EMP-0104,Active,,4756.18
-CUST-01075,Uphoff Facilities Group Inc.,SMB,14,Midwest,2024-01-31,Trade Show / Event,annual,steady,REP-030,EMP-0315,Churned,2025-01-30,8431.36
+CUST-01075,Uphoff Facilities Group Inc.,SMB,14,Midwest,2024-01-31,Trade Show / Event,annual,steady,REP-005,EMP-0315,Churned,2025-01-30,8431.36
 CUST-01076,Whitcomb Plumbing & Heating,SMB,20,Great Lakes,2024-01-10,Inbound - Organic,annual,steady,REP-030,EMP-0139,Active,,6616.85
 CUST-01077,Northgate Facilities Group,SMB,39,Southwest,2024-01-27,Partner / Referral,monthly,expand_then_contract,REP-030,EMP-0199,Active,,11920.48
-CUST-01078,Draeger Electric LLC,SMB,36,Great Lakes,2024-01-31,Outbound - SDR,monthly,fast_churn,REP-028,EMP-0081,Churned,2024-02-29,14239.73
+CUST-01078,Draeger Electric LLC,SMB,36,Great Lakes,2024-01-31,Outbound - SDR,monthly,fast_churn,REP-016,EMP-0081,Churned,2024-02-29,14239.73
 CUST-01079,Cumberland Utility Services Inc.,SMB,29,West,2024-01-04,Partner / Referral,annual,expand_then_contract,REP-028,EMP-0263,Active,,12183.76
 CUST-01080,Iverson Heating & Air,SMB,11,Southwest,2024-01-21,Inbound - Paid,annual,land_and_expand,REP-028,EMP-0104,Active,,5530.21
 CUST-01081,Quintero Mechanical Systems Partners,SMB,11,Southeast,2024-01-30,Outbound - SDR,monthly,fast_churn,REP-031,EMP-0245,Churned,2024-02-29,4318.05
 CUST-01082,Kearney Utility Services Corp.,SMB,16,West,2024-01-30,Inbound - Paid,monthly,steady,REP-031,EMP-0104,Active,,4559.78
-CUST-01083,Draeger Air Systems Services,SMB,22,Midwest,2024-02-24,Inbound - Paid,monthly,land_and_expand,REP-035,EMP-0172,Active,,10907.82
-CUST-01084,Danforth Electric Co.,SMB,34,Midwest,2024-02-24,Inbound - Organic,monthly,steady,REP-030,EMP-0042,Active,,12795.43
-CUST-01085,Draeger Mechanical & Sons,SMB,12,Mid-Atlantic,2024-02-06,Inbound - Paid,monthly,steady,REP-034,EMP-0131,Churned,2025-02-28,3293.18
-CUST-01086,Mahoney Boiler Works Inc.,SMB,25,Canada,2024-02-03,Inbound - Organic,annual,fast_churn,REP-005,EMP-0312,Churned,2025-02-02,8418.70
-CUST-01087,Hutchins Landscape Services,SMB,7,Mid-Atlantic,2024-02-25,Inbound - Organic,annual,steady,REP-034,EMP-0153,Churned,2026-02-24,2858.78
-CUST-01088,Northgate Plumbing & Heating,SMB,11,South Central,2024-02-22,Inbound - Paid,annual,fast_churn,REP-005,EMP-0284,Churned,2025-02-21,6039.82
+CUST-01083,Draeger Air Systems Services,SMB,22,Midwest,2024-02-24,Inbound - Paid,monthly,land_and_expand,REP-030,EMP-0172,Active,,10907.82
+CUST-01084,Danforth Electric Co.,SMB,34,Midwest,2024-02-24,Inbound - Organic,monthly,steady,REP-028,EMP-0042,Active,,12795.43
+CUST-01085,Draeger Mechanical & Sons,SMB,12,Mid-Atlantic,2024-02-06,Inbound - Paid,monthly,steady,REP-028,EMP-0131,Churned,2025-02-28,3293.18
+CUST-01086,Mahoney Boiler Works Inc.,SMB,25,Canada,2024-02-03,Inbound - Organic,annual,fast_churn,REP-028,EMP-0312,Churned,2025-02-02,8418.70
+CUST-01087,Hutchins Landscape Services,SMB,7,Mid-Atlantic,2024-02-25,Inbound - Organic,annual,steady,REP-028,EMP-0153,Churned,2026-02-24,2858.78
+CUST-01088,Northgate Plumbing & Heating,SMB,11,South Central,2024-02-22,Inbound - Paid,annual,fast_churn,REP-031,EMP-0284,Churned,2025-02-21,6039.82
 CUST-01089,Yarborough Elevator Services Co.,SMB,7,Southeast,2024-02-15,Inbound - Organic,monthly,expand_then_contract,REP-030,EMP-0272,Churned,2025-10-31,2711.32
 CUST-01090,Castellano Mechanical Holdings,SMB,29,Mountain,2024-02-25,Inbound - Paid,monthly,expand_then_contract,REP-028,EMP-0141,Churned,2026-06-30,6999.12
-CUST-01091,Wabash Roofing Group,SMB,18,Canada,2024-02-20,Inbound - Paid,monthly,steady,REP-028,EMP-0104,Active,,7360.30
-CUST-01092,Chaudhry Utility Services Inc.,SMB,11,Mountain,2024-02-27,Trade Show / Event,monthly,fast_churn,REP-016,EMP-0104,Churned,2024-10-31,3246.43
+CUST-01091,Wabash Roofing Group,SMB,18,Canada,2024-02-20,Inbound - Paid,monthly,steady,REP-030,EMP-0104,Active,,7360.30
+CUST-01092,Chaudhry Utility Services Inc.,SMB,11,Mountain,2024-02-27,Trade Show / Event,monthly,fast_churn,REP-030,EMP-0104,Churned,2024-10-31,3246.43
 CUST-01093,Draeger Utility Services Services,SMB,18,Canada,2024-02-24,Inbound - Paid,monthly,steady,REP-030,EMP-0219,Churned,2024-06-30,8359.57
 CUST-01094,Copperfield Mechanical Co.,SMB,5,Mountain,2024-03-28,Inbound - Organic,monthly,expand_then_contract,REP-031,EMP-0225,Churned,2025-10-31,1301.68
 CUST-01095,Ozark Glass & Glazing Partners,SMB,11,Midwest,2024-03-29,Partner / Referral,monthly,fast_churn,REP-005,EMP-0103,Churned,2024-04-30,4748.22
-CUST-01096,Clearwater Plumbing & Heating Co.,SMB,24,West,2024-03-25,Inbound - Organic,annual,fast_churn,REP-034,EMP-0080,Churned,2025-03-24,10018.88
+CUST-01096,Clearwater Plumbing & Heating Co.,SMB,24,West,2024-03-25,Inbound - Organic,annual,fast_churn,REP-030,EMP-0080,Churned,2025-03-24,10018.88
 CUST-01097,Brightline Security Systems Co.,SMB,11,Canada,2024-03-27,Partner / Referral,monthly,fast_churn,REP-030,EMP-0104,Churned,2025-01-31,4412.87
-CUST-01098,Pemberton Elevator Services Services,SMB,35,Mountain,2024-03-27,Inbound - Organic,monthly,fast_churn,REP-031,EMP-0225,Churned,2024-05-31,10172.00
+CUST-01098,Pemberton Elevator Services Services,SMB,35,Mountain,2024-03-27,Inbound - Organic,monthly,fast_churn,REP-005,EMP-0225,Churned,2024-05-31,10172.00
 CUST-01099,Adirondack Heating & Air Partners,SMB,21,Southeast,2024-03-17,Inbound - Organic,monthly,fast_churn,REP-031,EMP-0119,Churned,2024-10-31,7007.41
 CUST-01100,Harborview Plumbing LLC,SMB,36,West,2024-03-29,Inbound - Organic,monthly,land_and_expand,REP-030,EMP-0096,Active,,10729.80
-CUST-01101,Okanagan Mechanical LLC,SMB,5,Northeast,2024-03-28,Inbound - Organic,annual,fast_churn,REP-030,EMP-0178,Churned,2026-03-27,2887.50
-CUST-01102,Ferreira Pipefitting LLC,SMB,47,South Central,2024-03-30,Inbound - Paid,monthly,slow_decay,REP-031,EMP-0033,Churned,2024-04-30,18682.40
-CUST-01103,Teton Air Systems Inc.,SMB,43,Northeast,2024-03-26,Inbound - Paid,monthly,land_and_expand,REP-030,EMP-0199,Active,,18984.93
+CUST-01101,Okanagan Mechanical LLC,SMB,5,Northeast,2024-03-28,Inbound - Organic,annual,fast_churn,REP-034,EMP-0178,Churned,2026-03-27,2887.50
+CUST-01102,Ferreira Pipefitting LLC,SMB,47,South Central,2024-03-30,Inbound - Paid,monthly,slow_decay,REP-030,EMP-0033,Churned,2024-04-30,18682.40
+CUST-01103,Teton Air Systems Inc.,SMB,43,Northeast,2024-03-26,Inbound - Paid,monthly,land_and_expand,REP-028,EMP-0199,Active,,18984.93
 CUST-01104,Ingersoll Building Services Group,SMB,14,Mountain,2024-03-04,Partner / Referral,monthly,fast_churn,REP-030,EMP-0081,Churned,2024-09-30,6889.96
-CUST-01105,Danforth Energy Services Holdings,SMB,8,South Central,2024-03-31,Partner / Referral,monthly,slow_decay,REP-030,EMP-0238,Active,,3932.80
-CUST-01106,Granite Peak Fire & Life Safety,SMB,15,Midwest,2024-03-27,Trade Show / Event,annual,steady,REP-005,EMP-0022,Active,,5534.68
-CUST-01107,Northgate Utility Services,SMB,16,South Central,2024-03-03,Inbound - Organic,monthly,steady,REP-005,EMP-0322,Churned,2026-02-28,8282.47
+CUST-01105,Danforth Energy Services Holdings,SMB,8,South Central,2024-03-31,Partner / Referral,monthly,slow_decay,REP-031,EMP-0238,Active,,3932.80
+CUST-01106,Granite Peak Fire & Life Safety,SMB,15,Midwest,2024-03-27,Trade Show / Event,annual,steady,REP-031,EMP-0022,Active,,5534.68
+CUST-01107,Northgate Utility Services,SMB,16,South Central,2024-03-03,Inbound - Organic,monthly,steady,REP-030,EMP-0322,Churned,2026-02-28,8282.47
 CUST-01108,Granite Peak Refrigeration LLC,SMB,10,Mountain,2024-03-27,Inbound - Organic,monthly,slow_decay,REP-030,EMP-0245,Churned,2024-07-31,2599.66
-CUST-01109,Kowalczyk Energy Services Inc.,SMB,13,South Central,2024-03-26,Inbound - Organic,monthly,steady,REP-005,EMP-0104,Active,,2720.96
+CUST-01109,Kowalczyk Energy Services Inc.,SMB,13,South Central,2024-03-26,Inbound - Organic,monthly,steady,REP-030,EMP-0104,Active,,2720.96
 CUST-01110,Chesapeake Facility Services Inc.,SMB,19,West,2024-03-18,Inbound - Organic,monthly,slow_decay,REP-030,EMP-0272,Churned,2025-11-30,10224.66
 CUST-01111,Gulf Coast Energy Services,SMB,23,Northeast,2024-03-19,Outbound - SDR,monthly,land_and_expand,REP-030,EMP-0284,Active,,5258.55
 CUST-01112,Lindqvist Restoration,SMB,6,South Central,2024-04-17,Inbound - Paid,annual,fast_churn,REP-030,EMP-0080,Churned,2025-04-16,3746.36
-CUST-01113,Danforth Glass & Glazing,SMB,14,Mountain,2024-04-02,Outbound - SDR,monthly,land_and_expand,REP-034,EMP-0312,Active,,5426.92
-CUST-01114,Lomeli Elevator Services Partners,SMB,13,Mid-Atlantic,2024-04-30,Outbound - SDR,monthly,steady,REP-030,EMP-0070,Active,,3794.61
+CUST-01113,Danforth Glass & Glazing,SMB,14,Mountain,2024-04-02,Outbound - SDR,monthly,land_and_expand,REP-030,EMP-0312,Active,,5426.92
+CUST-01114,Lomeli Elevator Services Partners,SMB,13,Mid-Atlantic,2024-04-30,Outbound - SDR,monthly,steady,REP-005,EMP-0070,Active,,3794.61
 CUST-01115,Sonoran Refrigeration,SMB,10,Southeast,2024-04-26,Partner / Referral,monthly,fast_churn,REP-030,EMP-0154,Churned,2024-06-30,3241.23
-CUST-01116,Redstone Utility Services,SMB,12,Great Lakes,2024-04-30,Inbound - Paid,monthly,steady,REP-005,EMP-0139,Active,,4807.64
-CUST-01117,Kearney Plumbing,SMB,9,Mountain,2024-04-07,Inbound - Paid,monthly,slow_decay,REP-034,EMP-0096,Churned,2024-12-31,3115.31
+CUST-01116,Redstone Utility Services,SMB,12,Great Lakes,2024-04-30,Inbound - Paid,monthly,steady,REP-034,EMP-0139,Active,,4807.64
+CUST-01117,Kearney Plumbing,SMB,9,Mountain,2024-04-07,Inbound - Paid,monthly,slow_decay,REP-005,EMP-0096,Churned,2024-12-31,3115.31
 CUST-01118,Mahoney Electric,SMB,15,Great Lakes,2024-04-19,Inbound - Organic,annual,steady,REP-031,EMP-0272,Churned,2025-04-18,3975.75
-CUST-01119,Rasmussen Facility Services Inc.,SMB,17,Canada,2024-04-01,Inbound - Organic,annual,slow_decay,REP-005,EMP-0042,Churned,2025-03-31,7642.44
-CUST-01120,Cumberland Mechanical Systems,SMB,12,Canada,2024-04-28,Partner / Referral,monthly,steady,REP-031,EMP-0032,Active,,3843.97
-CUST-01121,Blackhawk Roofing Group,SMB,17,Great Lakes,2024-04-30,Inbound - Organic,monthly,expand_then_contract,REP-005,EMP-0106,Churned,2025-12-31,8471.47
-CUST-01122,Mohawk Valley Landscape Services,SMB,9,South Central,2024-04-26,Partner / Referral,monthly,fast_churn,REP-030,EMP-0238,Churned,2024-05-31,1374.19
-CUST-01123,Mahoney Security Systems,SMB,22,South Central,2024-05-01,Partner / Referral,monthly,steady,REP-031,EMP-0315,Churned,2024-08-31,8805.10
-CUST-01124,Kearney Mechanical Systems,SMB,15,Mid-Atlantic,2024-05-18,Inbound - Paid,annual,steady,REP-031,EMP-0033,Active,,3272.25
+CUST-01119,Rasmussen Facility Services Inc.,SMB,17,Canada,2024-04-01,Inbound - Organic,annual,slow_decay,REP-030,EMP-0042,Churned,2025-03-31,7642.44
+CUST-01120,Cumberland Mechanical Systems,SMB,12,Canada,2024-04-28,Partner / Referral,monthly,steady,REP-034,EMP-0032,Active,,3843.97
+CUST-01121,Blackhawk Roofing Group,SMB,17,Great Lakes,2024-04-30,Inbound - Organic,monthly,expand_then_contract,REP-030,EMP-0106,Churned,2025-12-31,8471.47
+CUST-01122,Mohawk Valley Landscape Services,SMB,9,South Central,2024-04-26,Partner / Referral,monthly,fast_churn,REP-005,EMP-0238,Churned,2024-05-31,1374.19
+CUST-01123,Mahoney Security Systems,SMB,22,South Central,2024-05-01,Partner / Referral,monthly,steady,REP-030,EMP-0315,Churned,2024-08-31,8805.10
+CUST-01124,Kearney Mechanical Systems,SMB,15,Mid-Atlantic,2024-05-18,Inbound - Paid,annual,steady,REP-030,EMP-0033,Active,,3272.25
 CUST-01125,Saskatoon Energy Services,SMB,21,Southwest,2024-05-28,Inbound - Paid,monthly,land_and_expand,REP-030,EMP-0154,Active,,7098.52
-CUST-01126,Lomeli Security Systems Holdings,SMB,8,Mid-Atlantic,2024-05-10,Partner / Referral,monthly,steady,REP-031,EMP-0172,Churned,2024-10-31,2157.06
-CUST-01127,Danforth Security Systems Partners,SMB,23,Southwest,2024-05-30,Inbound - Organic,annual,fast_churn,REP-031,EMP-0303,Churned,2025-05-29,6502.40
+CUST-01126,Lomeli Security Systems Holdings,SMB,8,Mid-Atlantic,2024-05-10,Partner / Referral,monthly,steady,REP-030,EMP-0172,Churned,2024-10-31,2157.06
+CUST-01127,Danforth Security Systems Partners,SMB,23,Southwest,2024-05-30,Inbound - Organic,annual,fast_churn,REP-030,EMP-0303,Churned,2025-05-29,6502.40
 CUST-01128,Bellamy Energy Services,SMB,23,Southeast,2024-05-03,Outbound - SDR,monthly,churn_and_return,REP-030,EMP-0317,Churned,2025-04-30,7735.20
 CUST-01129,Ferreira Electrical Contractors,SMB,18,South Central,2024-05-26,Inbound - Organic,monthly,slow_decay,REP-031,EMP-0240,Churned,2025-02-28,12632.05
-CUST-01130,Brightline Fire Protection Services,SMB,15,Canada,2024-05-29,Inbound - Organic,annual,expand_then_contract,REP-005,EMP-0172,Active,,8307.69
-CUST-01131,Zamora Building Services & Sons,SMB,42,South Central,2024-05-17,Outbound - SDR,annual,fast_churn,REP-031,EMP-0199,Churned,2025-05-16,21717.82
+CUST-01130,Brightline Fire Protection Services,SMB,15,Canada,2024-05-29,Inbound - Organic,annual,expand_then_contract,REP-031,EMP-0172,Active,,8307.69
+CUST-01131,Zamora Building Services & Sons,SMB,42,South Central,2024-05-17,Outbound - SDR,annual,fast_churn,REP-005,EMP-0199,Churned,2025-05-16,21717.82
 CUST-01132,Cornerstone Plumbing & Heating Group,SMB,31,Canada,2024-05-08,Partner / Referral,monthly,fast_churn,REP-030,EMP-0032,Churned,2024-09-30,12753.95
-CUST-01133,Ironbridge Industrial Services Group,SMB,19,South Central,2024-05-31,Inbound - Paid,monthly,fast_churn,REP-030,EMP-0312,Churned,2024-06-30,11553.75
-CUST-01134,Granite Peak Mechanical,SMB,24,Mid-Atlantic,2024-06-13,Inbound - Organic,annual,expand_then_contract,REP-035,EMP-0291,Churned,2025-06-12,9176.99
+CUST-01133,Ironbridge Industrial Services Group,SMB,19,South Central,2024-05-31,Inbound - Paid,monthly,fast_churn,REP-031,EMP-0312,Churned,2024-06-30,11553.75
+CUST-01134,Granite Peak Mechanical,SMB,24,Mid-Atlantic,2024-06-13,Inbound - Organic,annual,expand_then_contract,REP-031,EMP-0291,Churned,2025-06-12,9176.99
 CUST-01135,Rasmussen Pipefitting Partners,SMB,10,South Central,2024-06-25,Inbound - Paid,monthly,expand_then_contract,REP-030,EMP-0139,Active,,3219.33
-CUST-01136,Gallardo Property Services Services,SMB,49,Great Lakes,2024-06-26,Inbound - Organic,annual,steady,REP-037,EMP-0171,Active,,24892.61
-CUST-01137,Prentice Elevator Services Group,SMB,7,Great Lakes,2024-06-11,Inbound - Paid,monthly,fast_churn,REP-031,EMP-0033,Churned,2024-11-30,5597.09
-CUST-01138,Chaudhry Refrigeration Corp.,SMB,21,Mid-Atlantic,2024-06-28,Inbound - Paid,monthly,expand_then_contract,REP-030,EMP-0284,Active,,9588.59
+CUST-01136,Gallardo Property Services Services,SMB,49,Great Lakes,2024-06-26,Inbound - Organic,annual,steady,REP-038,EMP-0171,Active,,24892.61
+CUST-01137,Prentice Elevator Services Group,SMB,7,Great Lakes,2024-06-11,Inbound - Paid,monthly,fast_churn,REP-030,EMP-0033,Churned,2024-11-30,5597.09
+CUST-01138,Chaudhry Refrigeration Corp.,SMB,21,Mid-Atlantic,2024-06-28,Inbound - Paid,monthly,expand_then_contract,REP-031,EMP-0284,Active,,9588.59
 CUST-01139,Cascade Mechanical Co.,SMB,7,Southwest,2024-06-20,Inbound - Paid,annual,slow_decay,REP-030,EMP-0154,Churned,2025-06-19,1273.71
-CUST-01140,Clearwater Mechanical,SMB,32,Northeast,2024-06-26,Partner / Referral,monthly,expand_then_contract,REP-038,EMP-0312,Active,,13934.51
+CUST-01140,Clearwater Mechanical,SMB,32,Northeast,2024-06-26,Partner / Referral,monthly,expand_then_contract,REP-030,EMP-0312,Active,,13934.51
 CUST-01141,Granite Peak Fire & Life Safety Holdings,SMB,40,Great Lakes,2024-06-26,Inbound - Paid,annual,steady,REP-030,EMP-0240,Active,,9661.23
 CUST-01142,Wabash Restoration LLC,SMB,22,Southwest,2024-06-29,Outbound - SDR,monthly,steady,REP-030,EMP-0303,Active,,6216.08
-CUST-01143,Piedmont HVAC Co.,SMB,15,West,2024-06-07,Inbound - Organic,monthly,steady,REP-037,EMP-0238,Active,,8142.74
-CUST-01144,Fontaine Heating & Air Services,SMB,13,Mid-Atlantic,2024-06-08,Partner / Referral,annual,expand_then_contract,REP-031,EMP-0033,Active,,3311.10
-CUST-01145,Shenandoah Facility Services LLC,SMB,24,West,2024-06-30,Outbound - SDR,monthly,steady,REP-037,EMP-0096,Active,,10552.74
-CUST-01146,Rasmussen Landscape Services,SMB,30,Mid-Atlantic,2024-06-25,Inbound - Paid,annual,land_and_expand,REP-038,EMP-0154,Active,,11430.32
-CUST-01147,Great Lakes Facility Services Corp.,SMB,29,Canada,2024-07-15,Trade Show / Event,monthly,land_and_expand,REP-030,EMP-0153,Active,,9787.42
-CUST-01148,Meridian Glass & Glazing & Sons,SMB,9,Northeast,2024-07-27,Trade Show / Event,annual,expand_then_contract,REP-030,EMP-0033,Active,,2653.18
-CUST-01149,Allegheny Landscape Services Co.,SMB,12,Midwest,2024-07-30,Partner / Referral,monthly,fast_churn,REP-031,EMP-0141,Churned,2024-08-31,5345.88
+CUST-01143,Piedmont HVAC Co.,SMB,15,West,2024-06-07,Inbound - Organic,monthly,steady,REP-030,EMP-0238,Active,,8142.74
+CUST-01144,Fontaine Heating & Air Services,SMB,13,Mid-Atlantic,2024-06-08,Partner / Referral,annual,expand_then_contract,REP-030,EMP-0033,Active,,3311.10
+CUST-01145,Shenandoah Facility Services LLC,SMB,24,West,2024-06-30,Outbound - SDR,monthly,steady,REP-031,EMP-0096,Active,,10552.74
+CUST-01146,Rasmussen Landscape Services,SMB,30,Mid-Atlantic,2024-06-25,Inbound - Paid,annual,land_and_expand,REP-031,EMP-0154,Active,,11430.32
+CUST-01147,Great Lakes Facility Services Corp.,SMB,29,Canada,2024-07-15,Trade Show / Event,monthly,land_and_expand,REP-031,EMP-0153,Active,,9787.42
+CUST-01148,Meridian Glass & Glazing & Sons,SMB,9,Northeast,2024-07-27,Trade Show / Event,annual,expand_then_contract,REP-031,EMP-0033,Active,,2653.18
+CUST-01149,Allegheny Landscape Services Co.,SMB,12,Midwest,2024-07-30,Partner / Referral,monthly,fast_churn,REP-030,EMP-0141,Churned,2024-08-31,5345.88
 CUST-01150,Bitterroot Facility Services,SMB,13,Southeast,2024-07-26,Inbound - Organic,monthly,fast_churn,REP-031,EMP-0315,Churned,2024-10-31,5724.12
-CUST-01151,Sonoran Elevator Services,SMB,26,Great Lakes,2024-07-25,Outbound - SDR,monthly,steady,REP-030,EMP-0225,Active,,7464.83
-CUST-01152,Harrow Electric LLC,SMB,16,South Central,2024-07-16,Inbound - Paid,monthly,fast_churn,REP-035,EMP-0225,Churned,2024-09-30,8639.49
+CUST-01151,Sonoran Elevator Services,SMB,26,Great Lakes,2024-07-25,Outbound - SDR,monthly,steady,REP-031,EMP-0225,Active,,7464.83
+CUST-01152,Harrow Electric LLC,SMB,16,South Central,2024-07-16,Inbound - Paid,monthly,fast_churn,REP-030,EMP-0225,Churned,2024-09-30,8639.49
 CUST-01153,Yarborough Controls LLC,SMB,24,Southeast,2024-07-13,Inbound - Paid,monthly,churn_and_return,REP-037,EMP-0032,Active,,6916.79
-CUST-01154,Blue Ridge Energy Services,SMB,22,Northeast,2024-07-27,Outbound - SDR,monthly,fast_churn,REP-030,EMP-0080,Churned,2025-04-30,6935.96
-CUST-01155,Mahoney Heating & Air,SMB,25,West,2024-08-29,Inbound - Organic,monthly,steady,REP-037,EMP-0171,Active,,6631.26
+CUST-01154,Blue Ridge Energy Services,SMB,22,Northeast,2024-07-27,Outbound - SDR,monthly,fast_churn,REP-035,EMP-0080,Churned,2025-04-30,6935.96
+CUST-01155,Mahoney Heating & Air,SMB,25,West,2024-08-29,Inbound - Organic,monthly,steady,REP-030,EMP-0171,Active,,6631.26
 CUST-01156,Stavros Electric & Sons,SMB,16,Southeast,2024-08-22,Outbound - SDR,annual,land_and_expand,REP-030,EMP-0080,Active,,5998.35
 CUST-01157,Lomeli Air Systems,SMB,18,Southeast,2024-08-23,Inbound - Organic,annual,steady,REP-030,EMP-0317,Churned,2025-08-22,11410.30
-CUST-01158,Halvorsen Industrial Services,SMB,6,Mountain,2024-08-14,Inbound - Paid,monthly,expand_then_contract,REP-037,EMP-0141,Churned,2026-02-28,1319.54
-CUST-01159,Piedmont Electric & Sons,SMB,26,Canada,2024-08-31,Inbound - Paid,monthly,fast_churn,REP-030,EMP-0081,Churned,2025-05-31,10861.11
-CUST-01160,Thibodeaux Fire & Life Safety Group,SMB,16,Great Lakes,2024-08-20,Outbound - SDR,monthly,land_and_expand,REP-038,EMP-0154,Active,,5807.85
-CUST-01161,Castellano Air Systems,SMB,6,South Central,2024-08-15,Inbound - Paid,monthly,steady,REP-038,EMP-0213,Active,,2148.35
+CUST-01158,Halvorsen Industrial Services,SMB,6,Mountain,2024-08-14,Inbound - Paid,monthly,expand_then_contract,REP-038,EMP-0141,Churned,2026-02-28,1319.54
+CUST-01159,Piedmont Electric & Sons,SMB,26,Canada,2024-08-31,Inbound - Paid,monthly,fast_churn,REP-037,EMP-0081,Churned,2025-05-31,10861.11
+CUST-01160,Thibodeaux Fire & Life Safety Group,SMB,16,Great Lakes,2024-08-20,Outbound - SDR,monthly,land_and_expand,REP-030,EMP-0154,Active,,5807.85
+CUST-01161,Castellano Air Systems,SMB,6,South Central,2024-08-15,Inbound - Paid,monthly,steady,REP-030,EMP-0213,Active,,2148.35
 CUST-01162,Villanueva Facilities Group,SMB,20,Northeast,2024-08-18,Partner / Referral,annual,slow_decay,REP-030,EMP-0289,Churned,2025-08-17,9465.07
-CUST-01163,Great Lakes Controls Partners,SMB,15,Mountain,2024-09-01,Partner / Referral,monthly,slow_decay,REP-038,EMP-0106,Churned,2025-04-30,7023.03
-CUST-01164,Copperfield Landscape Services Group,SMB,8,Northeast,2024-09-30,Inbound - Organic,annual,fast_churn,REP-030,EMP-0033,Churned,2025-09-29,4944.56
-CUST-01165,Thibodeaux Controls Group,SMB,6,Great Lakes,2024-09-03,Partner / Referral,annual,land_and_expand,REP-035,EMP-0131,Churned,2025-09-02,2762.67
-CUST-01166,Hudson Valley Sheet Metal Holdings,SMB,26,South Central,2024-09-23,Inbound - Organic,monthly,land_and_expand,REP-030,EMP-0103,Active,,8605.79
-CUST-01167,Pemberton HVAC Group,SMB,11,South Central,2024-09-29,Outbound - SDR,monthly,steady,REP-037,EMP-0080,Churned,2025-03-31,3942.41
-CUST-01168,Coastal Bend Plumbing & Heating Holdings,SMB,13,West,2024-09-15,Inbound - Paid,monthly,steady,REP-038,EMP-0213,Active,,3303.32
+CUST-01163,Great Lakes Controls Partners,SMB,15,Mountain,2024-09-01,Partner / Referral,monthly,slow_decay,REP-030,EMP-0106,Churned,2025-04-30,7023.03
+CUST-01164,Copperfield Landscape Services Group,SMB,8,Northeast,2024-09-30,Inbound - Organic,annual,fast_churn,REP-035,EMP-0033,Churned,2025-09-29,4944.56
+CUST-01165,Thibodeaux Controls Group,SMB,6,Great Lakes,2024-09-03,Partner / Referral,annual,land_and_expand,REP-038,EMP-0131,Churned,2025-09-02,2762.67
+CUST-01166,Hudson Valley Sheet Metal Holdings,SMB,26,South Central,2024-09-23,Inbound - Organic,monthly,land_and_expand,REP-038,EMP-0103,Active,,8605.79
+CUST-01167,Pemberton HVAC Group,SMB,11,South Central,2024-09-29,Outbound - SDR,monthly,steady,REP-031,EMP-0080,Churned,2025-03-31,3942.41
+CUST-01168,Coastal Bend Plumbing & Heating Holdings,SMB,13,West,2024-09-15,Inbound - Paid,monthly,steady,REP-030,EMP-0213,Active,,3303.32
 CUST-01169,Red River Electrical Contractors & Sons,SMB,17,Great Lakes,2024-09-28,Inbound - Paid,monthly,fast_churn,REP-031,EMP-0042,Churned,2024-11-30,7451.87
-CUST-01170,Teton Energy Services Partners,SMB,18,Midwest,2024-09-25,Inbound - Organic,monthly,land_and_expand,REP-038,EMP-0284,Active,,7172.89
-CUST-01171,Ozark Restoration Inc.,SMB,6,Mountain,2024-09-26,Outbound - SDR,monthly,expand_then_contract,REP-031,EMP-0070,Churned,2026-06-30,1407.45
-CUST-01172,Wasatch Refrigeration,SMB,24,Northeast,2024-09-21,Inbound - Paid,monthly,steady,REP-030,EMP-0022,Churned,2024-11-30,10000.30
+CUST-01170,Teton Energy Services Partners,SMB,18,Midwest,2024-09-25,Inbound - Organic,monthly,land_and_expand,REP-030,EMP-0284,Active,,7172.89
+CUST-01171,Ozark Restoration Inc.,SMB,6,Mountain,2024-09-26,Outbound - SDR,monthly,expand_then_contract,REP-037,EMP-0070,Churned,2026-06-30,1407.45
+CUST-01172,Wasatch Refrigeration,SMB,24,Northeast,2024-09-21,Inbound - Paid,monthly,steady,REP-031,EMP-0022,Churned,2024-11-30,10000.30
 CUST-01173,Mohawk Valley Plumbing & Sons,SMB,9,Great Lakes,2024-09-30,Partner / Referral,monthly,expand_then_contract,REP-031,EMP-0315,Churned,2025-03-31,4862.91
-CUST-01174,Brazos Roofing,SMB,22,Southeast,2024-09-20,Inbound - Paid,monthly,steady,REP-030,EMP-0080,Active,,6410.77
-CUST-01175,Keystone Sheet Metal Co.,SMB,24,West,2024-10-27,Inbound - Paid,monthly,churn_and_return,REP-030,EMP-0178,Churned,2025-09-30,7526.84
-CUST-01176,Ironbridge Landscape Services,SMB,19,West,2024-10-11,Partner / Referral,monthly,fast_churn,REP-031,EMP-0322,Churned,2025-03-31,8109.95
+CUST-01174,Brazos Roofing,SMB,22,Southeast,2024-09-20,Inbound - Paid,monthly,steady,REP-038,EMP-0080,Active,,6410.77
+CUST-01175,Keystone Sheet Metal Co.,SMB,24,West,2024-10-27,Inbound - Paid,monthly,churn_and_return,REP-038,EMP-0178,Churned,2025-09-30,7526.84
+CUST-01176,Ironbridge Landscape Services,SMB,19,West,2024-10-11,Partner / Referral,monthly,fast_churn,REP-038,EMP-0322,Churned,2025-03-31,8109.95
 CUST-01177,Uphoff Mechanical Systems Inc.,SMB,36,Mid-Atlantic,2024-10-24,Outbound - SDR,monthly,land_and_expand,REP-038,EMP-0070,Active,,15083.18
-CUST-01178,Sierra Nevada Controls LLC,SMB,17,West,2024-10-30,Partner / Referral,monthly,fast_churn,REP-038,EMP-0225,Churned,2024-12-31,5571.38
-CUST-01179,Ozark Boiler Works LLC,SMB,17,Midwest,2024-10-29,Trade Show / Event,annual,fast_churn,REP-030,EMP-0103,Churned,2025-10-28,11112.09
-CUST-01180,Blue Ridge HVAC Co.,SMB,31,Northeast,2024-10-03,Outbound - SDR,annual,land_and_expand,REP-030,EMP-0284,Active,,14388.52
-CUST-01181,Jessup Boiler Works Group,SMB,25,Mountain,2024-10-28,Inbound - Organic,monthly,land_and_expand,REP-030,EMP-0289,Active,,10466.26
+CUST-01178,Sierra Nevada Controls LLC,SMB,17,West,2024-10-30,Partner / Referral,monthly,fast_churn,REP-030,EMP-0225,Churned,2024-12-31,5571.38
+CUST-01179,Ozark Boiler Works LLC,SMB,17,Midwest,2024-10-29,Trade Show / Event,annual,fast_churn,REP-038,EMP-0103,Churned,2025-10-28,11112.09
+CUST-01180,Blue Ridge HVAC Co.,SMB,31,Northeast,2024-10-03,Outbound - SDR,annual,land_and_expand,REP-031,EMP-0284,Active,,14388.52
+CUST-01181,Jessup Boiler Works Group,SMB,25,Mountain,2024-10-28,Inbound - Organic,monthly,land_and_expand,REP-037,EMP-0289,Active,,10466.26
 CUST-01182,Ferreira Mechanical Contractors LLC,SMB,19,Midwest,2024-10-26,Inbound - Paid,monthly,steady,REP-038,EMP-0272,Active,,8444.23
-CUST-01183,Zamora Fire & Life Safety Inc.,SMB,9,Canada,2024-10-29,Partner / Referral,annual,fast_churn,REP-030,EMP-0315,Churned,2025-10-28,2763.65
+CUST-01183,Zamora Fire & Life Safety Inc.,SMB,9,Canada,2024-10-29,Partner / Referral,annual,fast_churn,REP-043,EMP-0315,Churned,2025-10-28,2763.65
 CUST-01184,Willamette Industrial Services,SMB,13,Canada,2024-10-01,Inbound - Paid,monthly,steady,REP-038,EMP-0070,Churned,2025-05-31,5514.29
 CUST-01185,Mulcahy Electric Services,SMB,13,Great Lakes,2024-10-17,Inbound - Paid,annual,steady,REP-038,EMP-0258,Active,,6591.91
-CUST-01186,Iverson Mechanical Contractors Group,SMB,20,Southwest,2024-10-26,Inbound - Organic,monthly,land_and_expand,REP-037,EMP-0291,Active,,8226.15
+CUST-01186,Iverson Mechanical Contractors Group,SMB,20,Southwest,2024-10-26,Inbound - Organic,monthly,land_and_expand,REP-038,EMP-0291,Active,,8226.15
 CUST-01187,Lindqvist Fire & Life Safety Corp.,SMB,25,Midwest,2024-11-06,Partner / Referral,monthly,fast_churn,REP-038,EMP-0081,Churned,2025-02-28,10373.62
-CUST-01188,Gallardo Controls Corp.,SMB,16,Great Lakes,2024-11-27,Inbound - Organic,monthly,land_and_expand,REP-038,EMP-0070,Active,,5511.50
+CUST-01188,Gallardo Controls Corp.,SMB,16,Great Lakes,2024-11-27,Inbound - Organic,monthly,land_and_expand,REP-030,EMP-0070,Active,,5511.50
 CUST-01189,Mulcahy Mechanical Contractors LLC,SMB,18,Southwest,2024-11-24,Partner / Referral,monthly,land_and_expand,REP-038,EMP-0317,Churned,2025-07-31,8639.52
 CUST-01190,Fontaine Controls Holdings,SMB,21,South Central,2024-11-26,Partner / Referral,annual,expand_then_contract,REP-030,EMP-0080,Active,,10228.81
-CUST-01191,Silverpoint Security Systems Services,SMB,41,Great Lakes,2024-11-03,Partner / Referral,annual,fast_churn,REP-038,EMP-0291,Churned,2025-11-02,23859.34
-CUST-01192,Rasmussen Facility Services Holdings,SMB,18,Midwest,2024-11-28,Inbound - Paid,annual,fast_churn,REP-030,EMP-0096,Active,,10712.64
-CUST-01193,Gulf Coast Plumbing & Heating Inc.,SMB,20,South Central,2024-11-16,Partner / Referral,annual,steady,REP-030,EMP-0104,Active,,10386.90
-CUST-01194,Brightline Fire & Life Safety Partners,SMB,15,Great Lakes,2024-11-07,Inbound - Paid,monthly,expand_then_contract,REP-030,EMP-0033,Churned,2025-06-30,4052.83
-CUST-01195,Fieldstone Sheet Metal LLC,SMB,25,Great Lakes,2024-11-27,Inbound - Organic,monthly,expand_then_contract,REP-038,EMP-0272,Active,,10742.33
-CUST-01196,Kearney HVAC & Sons,SMB,17,Great Lakes,2024-11-26,Partner / Referral,monthly,fast_churn,REP-037,EMP-0258,Churned,2025-01-31,7263.76
+CUST-01191,Silverpoint Security Systems Services,SMB,41,Great Lakes,2024-11-03,Partner / Referral,annual,fast_churn,REP-030,EMP-0291,Churned,2025-11-02,23859.34
+CUST-01192,Rasmussen Facility Services Holdings,SMB,18,Midwest,2024-11-28,Inbound - Paid,annual,fast_churn,REP-038,EMP-0096,Active,,10712.64
+CUST-01193,Gulf Coast Plumbing & Heating Inc.,SMB,20,South Central,2024-11-16,Partner / Referral,annual,steady,REP-043,EMP-0104,Active,,10386.90
+CUST-01194,Brightline Fire & Life Safety Partners,SMB,15,Great Lakes,2024-11-07,Inbound - Paid,monthly,expand_then_contract,REP-043,EMP-0033,Churned,2025-06-30,4052.83
+CUST-01195,Fieldstone Sheet Metal LLC,SMB,25,Great Lakes,2024-11-27,Inbound - Organic,monthly,expand_then_contract,REP-030,EMP-0272,Active,,10742.33
+CUST-01196,Kearney HVAC & Sons,SMB,17,Great Lakes,2024-11-26,Partner / Referral,monthly,fast_churn,REP-038,EMP-0258,Churned,2025-01-31,7263.76
 CUST-01197,Villanueva Energy Services LLC,SMB,20,Southeast,2024-11-18,Inbound - Organic,monthly,land_and_expand,REP-037,EMP-0303,Active,,4661.90
-CUST-01198,Ashworth Utility Services Inc.,SMB,16,Great Lakes,2024-12-30,Inbound - Organic,annual,steady,REP-038,EMP-0317,Churned,2025-12-29,4431.99
+CUST-01198,Ashworth Utility Services Inc.,SMB,16,Great Lakes,2024-12-30,Inbound - Organic,annual,steady,REP-043,EMP-0317,Churned,2025-12-29,4431.99
 CUST-01199,Redstone Electric,SMB,27,Great Lakes,2024-12-19,Inbound - Paid,monthly,fast_churn,REP-038,EMP-0070,Churned,2025-01-31,5712.34
-CUST-01200,Northrup Plumbing Partners,SMB,13,Midwest,2024-12-31,Inbound - Paid,monthly,expand_then_contract,REP-038,EMP-0317,Churned,2026-01-31,6401.10
-CUST-01201,Adirondack Mechanical Contractors LLC,SMB,26,South Central,2024-12-28,Inbound - Organic,monthly,slow_decay,REP-030,EMP-0289,Active,,10433.20
-CUST-01202,Brannigan Fire Protection & Sons,SMB,7,Canada,2024-12-24,Outbound - SDR,annual,steady,REP-037,EMP-0033,Active,,1312.75
+CUST-01200,Northrup Plumbing Partners,SMB,13,Midwest,2024-12-31,Inbound - Paid,monthly,expand_then_contract,REP-037,EMP-0317,Churned,2026-01-31,6401.10
+CUST-01201,Adirondack Mechanical Contractors LLC,SMB,26,South Central,2024-12-28,Inbound - Organic,monthly,slow_decay,REP-038,EMP-0289,Active,,10433.20
+CUST-01202,Brannigan Fire Protection & Sons,SMB,7,Canada,2024-12-24,Outbound - SDR,annual,steady,REP-038,EMP-0033,Active,,1312.75
 CUST-01203,Laurentian Plumbing Partners,SMB,18,Mountain,2024-12-25,Inbound - Organic,monthly,fast_churn,REP-030,EMP-0289,Churned,2025-04-30,11830.83
-CUST-01204,Piedmont Building Services,SMB,25,Midwest,2024-12-30,Inbound - Organic,monthly,steady,REP-043,EMP-0199,Active,,10047.30
+CUST-01204,Piedmont Building Services,SMB,25,Midwest,2024-12-30,Inbound - Organic,monthly,steady,REP-038,EMP-0199,Active,,10047.30
 CUST-01205,Lomeli Mechanical Contractors Holdings,SMB,11,West,2024-12-15,Trade Show / Event,annual,expand_then_contract,REP-038,EMP-0032,Churned,2025-12-14,4670.46
-CUST-01206,Gallardo Security Systems & Sons,SMB,16,Mountain,2024-12-29,Inbound - Paid,monthly,land_and_expand,REP-043,EMP-0263,Churned,2025-10-31,5790.16
-CUST-01207,Lindqvist Roofing Co.,SMB,22,Mid-Atlantic,2024-12-17,Inbound - Organic,monthly,steady,REP-030,EMP-0141,Active,,11351.40
+CUST-01206,Gallardo Security Systems & Sons,SMB,16,Mountain,2024-12-29,Inbound - Paid,monthly,land_and_expand,REP-038,EMP-0263,Churned,2025-10-31,5790.16
+CUST-01207,Lindqvist Roofing Co.,SMB,22,Mid-Atlantic,2024-12-17,Inbound - Organic,monthly,steady,REP-038,EMP-0141,Active,,11351.40
 CUST-01208,Eskildsen Fire Protection & Sons,SMB,22,Midwest,2024-12-27,Inbound - Organic,annual,expand_then_contract,REP-030,EMP-0103,Churned,2025-12-26,12942.08
-CUST-01209,Gulf Coast Refrigeration Co.,SMB,18,Mid-Atlantic,2024-12-09,Outbound - SDR,monthly,fast_churn,REP-037,EMP-0312,Churned,2025-03-31,7176.72
-CUST-01210,Lomeli Boiler Works,SMB,22,Southwest,2024-12-23,Partner / Referral,annual,steady,REP-038,EMP-0289,Active,,8115.11
-CUST-01211,Annapolis Valley Building Services Holdings,SMB,21,West,2024-12-14,Inbound - Organic,monthly,land_and_expand,REP-038,EMP-0033,Active,,7446.97
+CUST-01209,Gulf Coast Refrigeration Co.,SMB,18,Mid-Atlantic,2024-12-09,Outbound - SDR,monthly,fast_churn,REP-035,EMP-0312,Churned,2025-03-31,7176.72
+CUST-01210,Lomeli Boiler Works,SMB,22,Southwest,2024-12-23,Partner / Referral,annual,steady,REP-037,EMP-0289,Active,,8115.11
+CUST-01211,Annapolis Valley Building Services Holdings,SMB,21,West,2024-12-14,Inbound - Organic,monthly,land_and_expand,REP-030,EMP-0033,Active,,7446.97
 CUST-01212,Great Lakes Facilities Group,SMB,26,Northeast,2024-12-12,Partner / Referral,annual,land_and_expand,REP-038,EMP-0148,Churned,2025-12-11,10592.57
 CUST-01213,Mulcahy Security Systems Services,SMB,15,Mid-Atlantic,2024-12-11,Partner / Referral,monthly,expand_then_contract,REP-038,EMP-0106,Churned,2025-09-30,6274.67
-CUST-01214,Ozark Electrical Contractors Holdings,SMB,21,West,2024-12-14,Inbound - Paid,monthly,land_and_expand,REP-038,EMP-0154,Active,,9220.54
-CUST-01215,Marchetti Plumbing Inc.,SMB,9,Mid-Atlantic,2024-12-22,Trade Show / Event,monthly,steady,REP-038,EMP-0081,Active,,6767.46
+CUST-01214,Ozark Electrical Contractors Holdings,SMB,21,West,2024-12-14,Inbound - Paid,monthly,land_and_expand,REP-037,EMP-0154,Active,,9220.54
+CUST-01215,Marchetti Plumbing Inc.,SMB,9,Mid-Atlantic,2024-12-22,Trade Show / Event,monthly,steady,REP-035,EMP-0081,Active,,6767.46
 CUST-01216,Brightline Air Systems LLC,SMB,32,Southwest,2024-12-01,Outbound - SDR,annual,slow_decay,REP-038,EMP-0106,Churned,2025-11-30,15638.63
-CUST-01217,Northgate Pipefitting,SMB,13,Southwest,2024-12-08,Inbound - Organic,annual,fast_churn,REP-038,EMP-0141,Churned,2025-12-07,5625.22
-CUST-01218,Front Range Elevator Services & Sons,SMB,13,Great Lakes,2024-12-31,Partner / Referral,monthly,steady,REP-030,EMP-0238,Active,,2874.53
+CUST-01217,Northgate Pipefitting,SMB,13,Southwest,2024-12-08,Inbound - Organic,annual,fast_churn,REP-035,EMP-0141,Churned,2025-12-07,5625.22
+CUST-01218,Front Range Elevator Services & Sons,SMB,13,Great Lakes,2024-12-31,Partner / Referral,monthly,steady,REP-037,EMP-0238,Active,,2874.53
 CUST-01219,Willamette Electrical Contractors,SMB,13,West,2024-12-26,Outbound - SDR,monthly,fast_churn,REP-030,EMP-0315,Churned,2026-04-30,5447.01
-CUST-01220,Teton HVAC Inc.,SMB,21,Southwest,2024-12-22,Outbound - SDR,annual,steady,REP-037,EMP-0103,Active,,7655.12
-CUST-01221,Petrosian Boiler Works,SMB,9,Mid-Atlantic,2024-12-31,Inbound - Paid,monthly,steady,REP-037,EMP-0240,Active,,3607.68
-CUST-01222,Silverpoint Pipefitting,SMB,9,Canada,2024-12-28,Partner / Referral,annual,slow_decay,REP-043,EMP-0154,Active,,6348.56
-CUST-01223,Keystone Mechanical Contractors,SMB,8,Southwest,2024-12-19,Partner / Referral,monthly,expand_then_contract,REP-037,EMP-0080,Churned,2026-01-31,2790.53
-CUST-01224,Allegheny Fire Protection Co.,SMB,10,Mountain,2024-12-14,Inbound - Paid,monthly,slow_decay,REP-030,EMP-0106,Churned,2025-04-30,4026.72
+CUST-01220,Teton HVAC Inc.,SMB,21,Southwest,2024-12-22,Outbound - SDR,annual,steady,REP-038,EMP-0103,Active,,7655.12
+CUST-01221,Petrosian Boiler Works,SMB,9,Mid-Atlantic,2024-12-31,Inbound - Paid,monthly,steady,REP-030,EMP-0240,Active,,3607.68
+CUST-01222,Silverpoint Pipefitting,SMB,9,Canada,2024-12-28,Partner / Referral,annual,slow_decay,REP-030,EMP-0154,Active,,6348.56
+CUST-01223,Keystone Mechanical Contractors,SMB,8,Southwest,2024-12-19,Partner / Referral,monthly,expand_then_contract,REP-038,EMP-0080,Churned,2026-01-31,2790.53
+CUST-01224,Allegheny Fire Protection Co.,SMB,10,Mountain,2024-12-14,Inbound - Paid,monthly,slow_decay,REP-038,EMP-0106,Churned,2025-04-30,4026.72
 CUST-01225,Gallardo Facility Services Partners,Mid-Market,242,Southeast,2024-01-30,Outbound - SDR,annual,land_and_expand,REP-032,EMP-0172,Active,,39920.83
 CUST-01226,Riverworks Energy Services Co.,Mid-Market,84,Mid-Atlantic,2024-01-27,Partner / Referral,annual,fast_churn,REP-007,EMP-0291,Churned,2025-01-26,32112.47
 CUST-01227,Great Lakes Elevator Services Holdings,Mid-Market,102,Mid-Atlantic,2024-01-18,Trade Show / Event,annual,land_and_expand,REP-023,EMP-0238,Active,,49476.67
 CUST-01228,Klamath Plumbing,Mid-Market,107,Southwest,2024-01-20,Partner / Referral,annual,steady,REP-032,EMP-0245,Churned,2025-01-19,33268.00
-CUST-01229,Castellano Fire & Life Safety,Mid-Market,234,Southeast,2024-02-20,Outbound - SDR,annual,land_and_expand,REP-010,EMP-0070,Active,,31939.42
-CUST-01230,Kilbride Roofing,Mid-Market,63,Canada,2024-02-07,Partner / Referral,annual,steady,REP-026,EMP-0291,Active,,14561.63
-CUST-01231,Oyelaran Utility Services,Mid-Market,167,Mountain,2024-02-10,Trade Show / Event,annual,expand_then_contract,REP-023,EMP-0022,Active,,44949.91
+CUST-01229,Castellano Fire & Life Safety,Mid-Market,234,Southeast,2024-02-20,Outbound - SDR,annual,land_and_expand,REP-026,EMP-0070,Active,,31939.42
+CUST-01230,Kilbride Roofing,Mid-Market,63,Canada,2024-02-07,Partner / Referral,annual,steady,REP-010,EMP-0291,Active,,14561.63
+CUST-01231,Oyelaran Utility Services,Mid-Market,167,Mountain,2024-02-10,Trade Show / Event,annual,expand_then_contract,REP-010,EMP-0022,Active,,44949.91
 CUST-01232,Brannigan Restoration Group,Mid-Market,242,South Central,2024-02-05,Outbound - SDR,annual,expand_then_contract,REP-023,EMP-0182,Active,,42747.45
-CUST-01233,Susquehanna Fire & Life Safety Corp.,Mid-Market,78,West,2024-03-28,Outbound - SDR,annual,expand_then_contract,REP-007,EMP-0240,Active,,16135.73
-CUST-01234,Castellano Plumbing LLC,Mid-Market,82,Mid-Atlantic,2024-03-31,Inbound - Paid,annual,steady,REP-007,EMP-0148,Active,,16307.01
-CUST-01235,Rasmussen Plumbing Group,Mid-Market,90,Northeast,2024-03-09,Outbound - SDR,annual,land_and_expand,REP-018,EMP-0171,Active,,32466.20
-CUST-01236,Blackhawk Air Systems Inc.,Mid-Market,125,West,2024-03-29,Outbound - SDR,annual,steady,REP-026,EMP-0315,Active,,22300.37
-CUST-01237,Keystone Restoration Partners,Mid-Market,133,South Central,2024-03-30,Inbound - Paid,annual,steady,REP-023,EMP-0238,Active,,17211.27
-CUST-01238,Thibodeaux Mechanical Corp.,Mid-Market,61,Mid-Atlantic,2024-04-28,Inbound - Organic,annual,slow_decay,REP-010,EMP-0096,Churned,2025-04-27,10395.43
-CUST-01239,Sandhills Controls LLC,Mid-Market,68,Midwest,2024-04-25,Inbound - Organic,annual,expand_then_contract,REP-023,EMP-0022,Churned,2025-04-24,11150.53
-CUST-01240,Stonebridge Heating & Air Co.,Mid-Market,152,Northeast,2024-04-25,Outbound - SDR,multi_year,fast_churn,REP-023,EMP-0225,Active,,44318.87
-CUST-01241,Panhandle Refrigeration,Mid-Market,87,Mid-Atlantic,2024-05-27,Inbound - Paid,annual,steady,REP-023,EMP-0032,Active,,14017.12
-CUST-01242,Clearwater Air Systems Corp.,Mid-Market,113,South Central,2024-05-20,Inbound - Paid,annual,steady,REP-026,EMP-0080,Active,,46090.62
-CUST-01243,Whitcomb Electric Corp.,Mid-Market,219,Southwest,2024-05-05,Trade Show / Event,multi_year,steady,REP-007,EMP-0178,Active,,40338.74
-CUST-01244,Zamora Sheet Metal Co.,Mid-Market,171,Southeast,2024-06-25,Inbound - Organic,annual,land_and_expand,REP-026,EMP-0178,Active,,23515.04
-CUST-01245,Yarborough Controls Services,Mid-Market,146,Southwest,2024-06-04,Outbound - SDR,annual,steady,REP-023,EMP-0154,Active,,25446.88
-CUST-01246,Bellamy Landscape Services & Sons,Mid-Market,152,West,2024-06-25,Outbound - SDR,monthly,land_and_expand,REP-007,EMP-0182,Active,,15451.69
-CUST-01247,Ackerley Utility Services Partners,Mid-Market,199,Mountain,2024-06-29,Partner / Referral,annual,churn_and_return,REP-007,EMP-0240,Active,,28674.22
-CUST-01248,Sandhills Glass & Glazing Services,Mid-Market,248,West,2024-07-26,Partner / Referral,annual,land_and_expand,REP-039,EMP-0315,Active,,79067.37
+CUST-01233,Susquehanna Fire & Life Safety Corp.,Mid-Market,78,West,2024-03-28,Outbound - SDR,annual,expand_then_contract,REP-010,EMP-0240,Active,,16135.73
+CUST-01234,Castellano Plumbing LLC,Mid-Market,82,Mid-Atlantic,2024-03-31,Inbound - Paid,annual,steady,REP-010,EMP-0148,Active,,16307.01
+CUST-01235,Rasmussen Plumbing Group,Mid-Market,90,Northeast,2024-03-09,Outbound - SDR,annual,land_and_expand,REP-010,EMP-0171,Active,,32466.20
+CUST-01236,Blackhawk Air Systems Inc.,Mid-Market,125,West,2024-03-29,Outbound - SDR,annual,steady,REP-023,EMP-0315,Active,,22300.37
+CUST-01237,Keystone Restoration Partners,Mid-Market,133,South Central,2024-03-30,Inbound - Paid,annual,steady,REP-018,EMP-0238,Active,,17211.27
+CUST-01238,Thibodeaux Mechanical Corp.,Mid-Market,61,Mid-Atlantic,2024-04-28,Inbound - Organic,annual,slow_decay,REP-026,EMP-0096,Churned,2025-04-27,10395.43
+CUST-01239,Sandhills Controls LLC,Mid-Market,68,Midwest,2024-04-25,Inbound - Organic,annual,expand_then_contract,REP-026,EMP-0022,Churned,2025-04-24,11150.53
+CUST-01240,Stonebridge Heating & Air Co.,Mid-Market,152,Northeast,2024-04-25,Outbound - SDR,multi_year,fast_churn,REP-026,EMP-0225,Active,,44318.87
+CUST-01241,Panhandle Refrigeration,Mid-Market,87,Mid-Atlantic,2024-05-27,Inbound - Paid,annual,steady,REP-032,EMP-0032,Active,,14017.12
+CUST-01242,Clearwater Air Systems Corp.,Mid-Market,113,South Central,2024-05-20,Inbound - Paid,annual,steady,REP-010,EMP-0080,Active,,46090.62
+CUST-01243,Whitcomb Electric Corp.,Mid-Market,219,Southwest,2024-05-05,Trade Show / Event,multi_year,steady,REP-010,EMP-0178,Active,,40338.74
+CUST-01244,Zamora Sheet Metal Co.,Mid-Market,171,Southeast,2024-06-25,Inbound - Organic,annual,land_and_expand,REP-010,EMP-0178,Active,,23515.04
+CUST-01245,Yarborough Controls Services,Mid-Market,146,Southwest,2024-06-04,Outbound - SDR,annual,steady,REP-026,EMP-0154,Active,,25446.88
+CUST-01246,Bellamy Landscape Services & Sons,Mid-Market,152,West,2024-06-25,Outbound - SDR,monthly,land_and_expand,REP-032,EMP-0182,Active,,15451.69
+CUST-01247,Ackerley Utility Services Partners,Mid-Market,199,Mountain,2024-06-29,Partner / Referral,annual,churn_and_return,REP-018,EMP-0240,Active,,28674.22
+CUST-01248,Sandhills Glass & Glazing Services,Mid-Market,248,West,2024-07-26,Partner / Referral,annual,land_and_expand,REP-032,EMP-0315,Active,,79067.37
 CUST-01249,Ostrowski Security Systems,Mid-Market,141,South Central,2024-07-26,Trade Show / Event,annual,steady,REP-010,EMP-0240,Active,,25800.21
-CUST-01250,Riverworks Landscape Services Partners,Mid-Market,82,Southwest,2024-07-31,Partner / Referral,annual,steady,REP-023,EMP-0103,Active,,15563.56
-CUST-01251,Wabash Heating & Air,Mid-Market,272,Mid-Atlantic,2024-08-29,Partner / Referral,annual,land_and_expand,REP-026,EMP-0022,Active,,60249.54
-CUST-01252,Northgate Mechanical Contractors,Mid-Market,88,Mid-Atlantic,2024-08-26,Inbound - Organic,annual,fast_churn,REP-039,EMP-0106,Churned,2025-08-25,25916.21
-CUST-01253,Grimaldi Fire Protection Corp.,Mid-Market,53,Northeast,2024-08-28,Outbound - SDR,annual,expand_then_contract,REP-026,EMP-0289,Active,,9752.80
-CUST-01254,Petrosian Air Systems,Mid-Market,106,Mid-Atlantic,2024-09-27,Inbound - Paid,annual,expand_then_contract,REP-026,EMP-0096,Active,,20204.91
-CUST-01255,Gallardo Fire & Life Safety,Mid-Market,85,Canada,2024-09-25,Inbound - Organic,multi_year,land_and_expand,REP-039,EMP-0119,Active,,22672.00
-CUST-01256,Chesapeake Electrical Contractors,Mid-Market,100,Southeast,2024-09-28,Inbound - Paid,annual,land_and_expand,REP-026,EMP-0139,Active,,18437.19
-CUST-01257,Lantern Heating & Air Group,Mid-Market,97,Mid-Atlantic,2024-10-29,Outbound - SDR,annual,steady,REP-010,EMP-0171,Active,,35486.89
-CUST-01258,Mulcahy Energy Services Partners,Mid-Market,60,West,2024-10-02,Inbound - Paid,annual,land_and_expand,REP-026,EMP-0148,Churned,2025-10-01,13352.03
+CUST-01250,Riverworks Landscape Services Partners,Mid-Market,82,Southwest,2024-07-31,Partner / Referral,annual,steady,REP-026,EMP-0103,Active,,15563.56
+CUST-01251,Wabash Heating & Air,Mid-Market,272,Mid-Atlantic,2024-08-29,Partner / Referral,annual,land_and_expand,REP-039,EMP-0022,Active,,60249.54
+CUST-01252,Northgate Mechanical Contractors,Mid-Market,88,Mid-Atlantic,2024-08-26,Inbound - Organic,annual,fast_churn,REP-018,EMP-0106,Churned,2025-08-25,25916.21
+CUST-01253,Grimaldi Fire Protection Corp.,Mid-Market,53,Northeast,2024-08-28,Outbound - SDR,annual,expand_then_contract,REP-023,EMP-0289,Active,,9752.80
+CUST-01254,Petrosian Air Systems,Mid-Market,106,Mid-Atlantic,2024-09-27,Inbound - Paid,annual,expand_then_contract,REP-010,EMP-0096,Active,,20204.91
+CUST-01255,Gallardo Fire & Life Safety,Mid-Market,85,Canada,2024-09-25,Inbound - Organic,multi_year,land_and_expand,REP-041,EMP-0119,Active,,22672.00
+CUST-01256,Chesapeake Electrical Contractors,Mid-Market,100,Southeast,2024-09-28,Inbound - Paid,annual,land_and_expand,REP-010,EMP-0139,Active,,18437.19
+CUST-01257,Lantern Heating & Air Group,Mid-Market,97,Mid-Atlantic,2024-10-29,Outbound - SDR,annual,steady,REP-041,EMP-0171,Active,,35486.89
+CUST-01258,Mulcahy Energy Services Partners,Mid-Market,60,West,2024-10-02,Inbound - Paid,annual,land_and_expand,REP-018,EMP-0148,Churned,2025-10-01,13352.03
 CUST-01259,Pinnacle Point Facility Services,Mid-Market,188,Great Lakes,2024-10-20,Trade Show / Event,annual,land_and_expand,REP-041,EMP-0103,Active,,27727.84
-CUST-01260,Eskildsen HVAC LLC,Mid-Market,127,Great Lakes,2024-11-09,Inbound - Paid,annual,steady,REP-026,EMP-0154,Active,,32069.78
+CUST-01260,Eskildsen HVAC LLC,Mid-Market,127,Great Lakes,2024-11-09,Inbound - Paid,annual,steady,REP-018,EMP-0154,Active,,32069.78
 CUST-01261,Ashworth Plumbing & Heating Holdings,Mid-Market,70,South Central,2024-11-23,Outbound - SDR,annual,fast_churn,REP-026,EMP-0119,Churned,2025-11-22,17319.80
-CUST-01262,Brannigan Glass & Glazing Partners,Mid-Market,55,Great Lakes,2024-11-30,Trade Show / Event,annual,land_and_expand,REP-032,EMP-0263,Active,,14949.40
-CUST-01263,Ozark Boiler Works Partners,Mid-Market,112,Northeast,2024-11-04,Outbound - SDR,annual,fast_churn,REP-032,EMP-0182,Churned,2025-11-03,19855.51
-CUST-01264,Ingersoll Pipefitting Inc.,Mid-Market,142,Southeast,2024-12-31,Partner / Referral,annual,steady,REP-010,EMP-0070,Active,,44652.99
+CUST-01262,Brannigan Glass & Glazing Partners,Mid-Market,55,Great Lakes,2024-11-30,Trade Show / Event,annual,land_and_expand,REP-039,EMP-0263,Active,,14949.40
+CUST-01263,Ozark Boiler Works Partners,Mid-Market,112,Northeast,2024-11-04,Outbound - SDR,annual,fast_churn,REP-039,EMP-0182,Churned,2025-11-03,19855.51
+CUST-01264,Ingersoll Pipefitting Inc.,Mid-Market,142,Southeast,2024-12-31,Partner / Referral,annual,steady,REP-040,EMP-0070,Active,,44652.99
 CUST-01265,Delgado Roofing LLC,Mid-Market,362,Midwest,2024-12-25,Inbound - Paid,annual,steady,REP-026,EMP-0042,Active,,49468.23
-CUST-01266,Wasatch Fire & Life Safety Group,Mid-Market,84,Mountain,2024-12-30,Inbound - Organic,annual,land_and_expand,REP-010,EMP-0289,Active,,13319.75
-CUST-01267,Rasmussen Refrigeration Corp.,Mid-Market,396,Southwest,2024-12-28,Trade Show / Event,monthly,land_and_expand,REP-039,EMP-0238,Active,,101415.22
-CUST-01268,Boyington Electrical Contractors Partners,Mid-Market,88,South Central,2024-12-29,Inbound - Paid,annual,expand_then_contract,REP-026,EMP-0131,Active,,19696.80
-CUST-01269,Thibodeaux Mechanical Systems,Mid-Market,181,Canada,2024-12-30,Inbound - Paid,annual,steady,REP-039,EMP-0096,Active,,52379.13
+CUST-01266,Wasatch Fire & Life Safety Group,Mid-Market,84,Mountain,2024-12-30,Inbound - Organic,annual,land_and_expand,REP-041,EMP-0289,Active,,13319.75
+CUST-01267,Rasmussen Refrigeration Corp.,Mid-Market,396,Southwest,2024-12-28,Trade Show / Event,monthly,land_and_expand,REP-041,EMP-0238,Active,,101415.22
+CUST-01268,Boyington Electrical Contractors Partners,Mid-Market,88,South Central,2024-12-29,Inbound - Paid,annual,expand_then_contract,REP-010,EMP-0131,Active,,19696.80
+CUST-01269,Thibodeaux Mechanical Systems,Mid-Market,181,Canada,2024-12-30,Inbound - Paid,annual,steady,REP-026,EMP-0096,Active,,52379.13
 CUST-01270,Nakashima Elevator Services,Mid-Market,78,South Central,2024-12-29,Outbound - SDR,annual,steady,REP-039,EMP-0131,Active,,13294.44
-CUST-01271,Rasmussen Electrical Contractors Partners,Mid-Market,154,Southwest,2024-12-09,Inbound - Paid,annual,land_and_expand,REP-018,EMP-0153,Active,,28368.46
+CUST-01271,Rasmussen Electrical Contractors Partners,Mid-Market,154,Southwest,2024-12-09,Inbound - Paid,annual,land_and_expand,REP-026,EMP-0153,Active,,28368.46
 CUST-01272,Silverpoint Energy Services Co.,Enterprise,1568,South Central,2024-01-24,Trade Show / Event,multi_year,expand_then_contract,REP-014,EMP-0172,Active,,253478.68
 CUST-01273,Harborview Fire Protection LLC,Enterprise,709,Southwest,2024-02-28,Trade Show / Event,multi_year,land_and_expand,REP-029,EMP-0103,Active,,149815.78
-CUST-01274,Palouse Glass & Glazing Holdings,Enterprise,2311,Great Lakes,2024-03-21,Partner / Referral,multi_year,land_and_expand,REP-029,EMP-0258,Active,,434307.46
+CUST-01274,Palouse Glass & Glazing Holdings,Enterprise,2311,Great Lakes,2024-03-21,Partner / Referral,multi_year,land_and_expand,REP-014,EMP-0258,Active,,434307.46
 CUST-01275,Front Range Heating & Air Holdings,Enterprise,728,Midwest,2024-04-15,Inbound - Organic,multi_year,expand_then_contract,REP-033,EMP-0289,Active,,99971.86
 CUST-01276,Meridian HVAC Group,Enterprise,955,Canada,2024-05-14,Trade Show / Event,multi_year,land_and_expand,REP-014,EMP-0042,Active,,181482.55
-CUST-01277,Chesapeake Industrial Services,Enterprise,964,South Central,2024-06-06,Outbound - SDR,annual,steady,REP-014,EMP-0303,Active,,226473.14
+CUST-01277,Chesapeake Industrial Services,Enterprise,964,South Central,2024-06-06,Outbound - SDR,annual,steady,REP-029,EMP-0303,Active,,226473.14
 CUST-01278,Blackhawk Heating & Air,Enterprise,738,West,2024-09-25,Outbound - SDR,annual,expand_then_contract,REP-033,EMP-0317,Active,,174195.88
 CUST-01279,Stavros Security Systems,Enterprise,1262,Canada,2024-10-26,Outbound - SDR,annual,slow_decay,REP-029,EMP-0322,Churned,2025-10-25,253609.07
-CUST-01280,Marchetti Glass & Glazing Holdings,Enterprise,1380,Mountain,2024-11-25,Partner / Referral,multi_year,slow_decay,REP-029,EMP-0096,Active,,228854.83
+CUST-01280,Marchetti Glass & Glazing Holdings,Enterprise,1380,Mountain,2024-11-25,Partner / Referral,multi_year,slow_decay,REP-014,EMP-0096,Active,,228854.83
 CUST-01281,Rasmussen Facility Services Partners,Enterprise,1790,Canada,2024-12-27,Outbound - SDR,multi_year,land_and_expand,REP-029,EMP-0022,Active,,596022.52
-CUST-01282,Summit Line Pipefitting,Enterprise,698,West,2024-12-27,Trade Show / Event,multi_year,land_and_expand,REP-044,EMP-0301,Active,,111160.89
+CUST-01282,Summit Line Pipefitting,Enterprise,698,West,2024-12-27,Trade Show / Event,multi_year,land_and_expand,REP-029,EMP-0301,Active,,111160.89
 CUST-01283,Lomeli Energy Services & Sons,SMB,22,Northeast,2025-01-28,Partner / Referral,annual,expand_then_contract,REP-038,EMP-0022,Active,,7165.86
-CUST-01284,Sierra Nevada Restoration & Sons,SMB,42,Southwest,2025-01-14,Inbound - Paid,monthly,slow_decay,REP-035,EMP-0022,Churned,2025-06-30,18170.91
-CUST-01285,Fieldstone Controls,SMB,21,Southeast,2025-01-07,Trade Show / Event,annual,fast_churn,REP-043,EMP-0080,Churned,2026-01-06,9347.71
-CUST-01286,Kettle Moraine Plumbing & Heating Co.,SMB,14,Canada,2025-01-29,Inbound - Organic,annual,land_and_expand,REP-038,EMP-0301,Active,,5518.09
+CUST-01284,Sierra Nevada Restoration & Sons,SMB,42,Southwest,2025-01-14,Inbound - Paid,monthly,slow_decay,REP-030,EMP-0022,Churned,2025-06-30,18170.91
+CUST-01285,Fieldstone Controls,SMB,21,Southeast,2025-01-07,Trade Show / Event,annual,fast_churn,REP-030,EMP-0080,Churned,2026-01-06,9347.71
+CUST-01286,Kettle Moraine Plumbing & Heating Co.,SMB,14,Canada,2025-01-29,Inbound - Organic,annual,land_and_expand,REP-030,EMP-0301,Active,,5518.09
 CUST-01287,Fraser Valley Fire & Life Safety,SMB,7,West,2025-01-27,Outbound - SDR,monthly,steady,REP-038,EMP-0080,Churned,2025-03-31,3844.44
-CUST-01288,Bitterroot Pipefitting Corp.,SMB,21,Great Lakes,2025-01-10,Inbound - Organic,annual,expand_then_contract,REP-043,EMP-0022,Churned,2026-01-09,14393.63
-CUST-01289,Holloway Industrial Services Inc.,SMB,12,West,2025-01-29,Inbound - Paid,monthly,churn_and_return,REP-035,EMP-0171,Churned,2026-04-30,8654.78
-CUST-01290,Ackerley Plumbing & Heating & Sons,SMB,10,Great Lakes,2025-01-17,Partner / Referral,monthly,steady,REP-030,EMP-0238,Active,,7916.45
+CUST-01288,Bitterroot Pipefitting Corp.,SMB,21,Great Lakes,2025-01-10,Inbound - Organic,annual,expand_then_contract,REP-038,EMP-0022,Churned,2026-01-09,14393.63
+CUST-01289,Holloway Industrial Services Inc.,SMB,12,West,2025-01-29,Inbound - Paid,monthly,churn_and_return,REP-038,EMP-0171,Churned,2026-04-30,8654.78
+CUST-01290,Ackerley Plumbing & Heating & Sons,SMB,10,Great Lakes,2025-01-17,Partner / Referral,monthly,steady,REP-037,EMP-0238,Active,,7916.45
 CUST-01291,Anchor Bay Mechanical,SMB,24,Canada,2025-01-28,Outbound - SDR,monthly,steady,REP-030,EMP-0153,Churned,2025-03-31,10320.60
-CUST-01292,Ruzicka Property Services Holdings,SMB,15,Midwest,2025-01-28,Partner / Referral,monthly,fast_churn,REP-037,EMP-0153,Churned,2025-03-31,9398.13
-CUST-01293,Copperfield HVAC Co.,SMB,8,West,2025-01-28,Inbound - Organic,monthly,land_and_expand,REP-043,EMP-0080,Active,,3568.86
-CUST-01294,Stonebridge Mechanical Systems,SMB,26,West,2025-01-27,Inbound - Paid,monthly,land_and_expand,REP-030,EMP-0238,Active,,8769.31
-CUST-01295,Adirondack Energy Services,SMB,44,Midwest,2025-01-31,Inbound - Organic,monthly,churn_and_return,REP-038,EMP-0301,Active,,9681.81
-CUST-01296,Silverpoint Elevator Services,SMB,21,Midwest,2025-02-14,Inbound - Organic,monthly,steady,REP-038,EMP-0225,Churned,2026-06-30,5464.85
+CUST-01292,Ruzicka Property Services Holdings,SMB,15,Midwest,2025-01-28,Partner / Referral,monthly,fast_churn,REP-038,EMP-0153,Churned,2025-03-31,9398.13
+CUST-01293,Copperfield HVAC Co.,SMB,8,West,2025-01-28,Inbound - Organic,monthly,land_and_expand,REP-037,EMP-0080,Active,,3568.86
+CUST-01294,Stonebridge Mechanical Systems,SMB,26,West,2025-01-27,Inbound - Paid,monthly,land_and_expand,REP-035,EMP-0238,Active,,8769.31
+CUST-01295,Adirondack Energy Services,SMB,44,Midwest,2025-01-31,Inbound - Organic,monthly,churn_and_return,REP-030,EMP-0301,Active,,9681.81
+CUST-01296,Silverpoint Elevator Services,SMB,21,Midwest,2025-02-14,Inbound - Organic,monthly,steady,REP-037,EMP-0225,Churned,2026-06-30,5464.85
 CUST-01297,Gallardo Heating & Air,SMB,5,Great Lakes,2025-02-27,Inbound - Organic,monthly,fast_churn,REP-038,EMP-0225,Churned,2025-03-31,1384.20
 CUST-01298,Fieldstone Utility Services Co.,SMB,29,South Central,2025-02-25,Inbound - Paid,monthly,fast_churn,REP-043,EMP-0178,Churned,2025-03-31,8359.73
-CUST-01299,Summit Line Boiler Works Group,SMB,17,Mountain,2025-02-25,Partner / Referral,monthly,steady,REP-037,EMP-0240,Active,,9849.47
-CUST-01300,Silverpoint Controls & Sons,SMB,34,Midwest,2025-02-02,Inbound - Paid,annual,slow_decay,REP-037,EMP-0172,Churned,2026-02-01,16913.08
+CUST-01299,Summit Line Boiler Works Group,SMB,17,Mountain,2025-02-25,Partner / Referral,monthly,steady,REP-030,EMP-0240,Active,,9849.47
+CUST-01300,Silverpoint Controls & Sons,SMB,34,Midwest,2025-02-02,Inbound - Paid,annual,slow_decay,REP-030,EMP-0172,Churned,2026-02-01,16913.08
 CUST-01301,Chesapeake Refrigeration Co.,SMB,15,Northeast,2025-02-07,Inbound - Paid,monthly,steady,REP-038,EMP-0042,Active,,9068.68
 CUST-01302,Blackhawk Industrial Services,SMB,13,West,2025-02-26,Inbound - Organic,monthly,steady,REP-038,EMP-0042,Active,,2663.99
-CUST-01303,Northrup Glass & Glazing Inc.,SMB,19,Mid-Atlantic,2025-02-25,Trade Show / Event,annual,steady,REP-043,EMP-0182,Active,,7976.34
-CUST-01304,Bitterroot Plumbing & Heating,SMB,8,Southwest,2025-02-28,Inbound - Paid,monthly,fast_churn,REP-043,EMP-0070,Churned,2025-03-31,3008.80
-CUST-01305,Sierra Nevada Elevator Services Corp.,SMB,14,South Central,2025-02-03,Inbound - Paid,annual,steady,REP-030,EMP-0154,Active,,5669.78
-CUST-01306,Harborview Roofing,SMB,46,Northeast,2025-02-20,Inbound - Paid,monthly,fast_churn,REP-038,EMP-0119,Churned,2025-08-31,21613.28
-CUST-01307,Okonkwo Mechanical Holdings,SMB,9,Southeast,2025-02-25,Partner / Referral,monthly,land_and_expand,REP-038,EMP-0219,Active,,3551.14
-CUST-01308,Jessup Mechanical Systems LLC,SMB,48,Midwest,2025-02-09,Outbound - SDR,annual,expand_then_contract,REP-043,EMP-0213,Active,,29165.07
+CUST-01303,Northrup Glass & Glazing Inc.,SMB,19,Mid-Atlantic,2025-02-25,Trade Show / Event,annual,steady,REP-038,EMP-0182,Active,,7976.34
+CUST-01304,Bitterroot Plumbing & Heating,SMB,8,Southwest,2025-02-28,Inbound - Paid,monthly,fast_churn,REP-038,EMP-0070,Churned,2025-03-31,3008.80
+CUST-01305,Sierra Nevada Elevator Services Corp.,SMB,14,South Central,2025-02-03,Inbound - Paid,annual,steady,REP-038,EMP-0154,Active,,5669.78
+CUST-01306,Harborview Roofing,SMB,46,Northeast,2025-02-20,Inbound - Paid,monthly,fast_churn,REP-043,EMP-0119,Churned,2025-08-31,21613.28
+CUST-01307,Okonkwo Mechanical Holdings,SMB,9,Southeast,2025-02-25,Partner / Referral,monthly,land_and_expand,REP-030,EMP-0219,Active,,3551.14
+CUST-01308,Jessup Mechanical Systems LLC,SMB,48,Midwest,2025-02-09,Outbound - SDR,annual,expand_then_contract,REP-038,EMP-0213,Active,,29165.07
 CUST-01309,Fontaine HVAC,SMB,26,Canada,2025-03-29,Partner / Referral,annual,fast_churn,REP-038,EMP-0301,Churned,2026-03-28,12983.06
-CUST-01310,Brazos Boiler Works Holdings,SMB,17,South Central,2025-03-17,Inbound - Organic,monthly,steady,REP-030,EMP-0199,Active,,6496.90
-CUST-01311,Whitcomb Mechanical Contractors Services,SMB,15,Southwest,2025-03-16,Inbound - Paid,monthly,slow_decay,REP-030,EMP-0182,Churned,2026-06-30,8545.61
-CUST-01312,Delgado Fire Protection,SMB,24,Canada,2025-03-30,Partner / Referral,monthly,steady,REP-035,EMP-0154,Active,,8786.99
-CUST-01313,Mahoney Boiler Works Group,SMB,5,Northeast,2025-03-30,Outbound - SDR,monthly,fast_churn,REP-030,EMP-0103,Churned,2025-06-30,2252.52
+CUST-01310,Brazos Boiler Works Holdings,SMB,17,South Central,2025-03-17,Inbound - Organic,monthly,steady,REP-038,EMP-0199,Active,,6496.90
+CUST-01311,Whitcomb Mechanical Contractors Services,SMB,15,Southwest,2025-03-16,Inbound - Paid,monthly,slow_decay,REP-038,EMP-0182,Churned,2026-06-30,8545.61
+CUST-01312,Delgado Fire Protection,SMB,24,Canada,2025-03-30,Partner / Referral,monthly,steady,REP-038,EMP-0154,Active,,8786.99
+CUST-01313,Mahoney Boiler Works Group,SMB,5,Northeast,2025-03-30,Outbound - SDR,monthly,fast_churn,REP-035,EMP-0103,Churned,2025-06-30,2252.52
 CUST-01314,Copperfield Building Services LLC,SMB,13,Southwest,2025-03-16,Inbound - Organic,monthly,fast_churn,REP-038,EMP-0199,Churned,2025-04-30,6482.69
-CUST-01315,Uphoff Landscape Services Holdings,SMB,11,Southeast,2025-03-28,Trade Show / Event,monthly,expand_then_contract,REP-030,EMP-0033,Churned,2026-06-30,4967.47
+CUST-01315,Uphoff Landscape Services Holdings,SMB,11,Southeast,2025-03-28,Trade Show / Event,monthly,expand_then_contract,REP-038,EMP-0033,Churned,2026-06-30,4967.47
 CUST-01316,Rio Grande Plumbing Services,SMB,21,Southwest,2025-03-04,Inbound - Paid,monthly,fast_churn,REP-038,EMP-0219,Churned,2026-01-31,9108.36
 CUST-01317,Adirondack Building Services Partners,SMB,33,Canada,2025-03-12,Inbound - Paid,monthly,steady,REP-030,EMP-0225,Active,,12991.49
-CUST-01318,Draeger Property Services,SMB,11,Southwest,2025-03-30,Outbound - SDR,monthly,steady,REP-030,EMP-0263,Active,,7203.45
+CUST-01318,Draeger Property Services,SMB,11,Southwest,2025-03-30,Outbound - SDR,monthly,steady,REP-038,EMP-0263,Active,,7203.45
 CUST-01319,Harborview Property Services,SMB,10,Northeast,2025-03-21,Inbound - Organic,monthly,land_and_expand,REP-035,EMP-0153,Active,,6208.22
-CUST-01320,Wasatch Restoration,SMB,23,South Central,2025-03-23,Partner / Referral,annual,steady,REP-043,EMP-0213,Active,,7062.37
-CUST-01321,Whitcomb Electric Holdings,SMB,5,South Central,2025-03-26,Inbound - Paid,annual,land_and_expand,REP-037,EMP-0096,Active,,2806.81
-CUST-01322,Rasmussen Security Systems Holdings,SMB,22,Mountain,2025-03-01,Outbound - SDR,monthly,expand_then_contract,REP-043,EMP-0199,Active,,10347.49
+CUST-01320,Wasatch Restoration,SMB,23,South Central,2025-03-23,Partner / Referral,annual,steady,REP-038,EMP-0213,Active,,7062.37
+CUST-01321,Whitcomb Electric Holdings,SMB,5,South Central,2025-03-26,Inbound - Paid,annual,land_and_expand,REP-035,EMP-0096,Active,,2806.81
+CUST-01322,Rasmussen Security Systems Holdings,SMB,22,Mountain,2025-03-01,Outbound - SDR,monthly,expand_then_contract,REP-038,EMP-0199,Active,,10347.49
 CUST-01323,Lantern Plumbing Corp.,SMB,14,Southeast,2025-03-28,Inbound - Organic,monthly,steady,REP-038,EMP-0258,Active,,5096.06
-CUST-01324,Sierra Nevada Energy Services Group,SMB,6,Mid-Atlantic,2025-03-26,Outbound - SDR,monthly,steady,REP-038,EMP-0153,Churned,2025-04-30,2015.29
-CUST-01325,Gulf Coast Mechanical Systems,SMB,15,West,2025-03-30,Trade Show / Event,monthly,steady,REP-030,EMP-0131,Churned,2025-11-30,11901.80
+CUST-01324,Sierra Nevada Energy Services Group,SMB,6,Mid-Atlantic,2025-03-26,Outbound - SDR,monthly,steady,REP-030,EMP-0153,Churned,2025-04-30,2015.29
+CUST-01325,Gulf Coast Mechanical Systems,SMB,15,West,2025-03-30,Trade Show / Event,monthly,steady,REP-035,EMP-0131,Churned,2025-11-30,11901.80
 CUST-01326,Kowalczyk Plumbing,SMB,21,Mountain,2025-03-14,Partner / Referral,monthly,expand_then_contract,REP-038,EMP-0258,Churned,2026-04-30,10161.72
-CUST-01327,Allegheny Glass & Glazing Holdings,SMB,26,Midwest,2025-03-24,Outbound - SDR,monthly,fast_churn,REP-030,EMP-0141,Churned,2025-07-31,8890.18
+CUST-01327,Allegheny Glass & Glazing Holdings,SMB,26,Midwest,2025-03-24,Outbound - SDR,monthly,fast_churn,REP-038,EMP-0141,Churned,2025-07-31,8890.18
 CUST-01328,Marchetti Electrical Contractors,SMB,20,Southeast,2025-03-20,Inbound - Organic,monthly,land_and_expand,REP-038,EMP-0301,Churned,2025-04-30,10467.69
-CUST-01329,Ostrowski Mechanical,SMB,24,Mountain,2025-03-28,Inbound - Organic,annual,fast_churn,REP-037,EMP-0317,Active,,12853.52
-CUST-01330,Okanagan Elevator Services Partners,SMB,19,West,2025-04-27,Partner / Referral,monthly,steady,REP-038,EMP-0317,Active,,9851.92
-CUST-01331,Ferreira Mechanical Contractors Co.,SMB,19,Southeast,2025-04-21,Inbound - Paid,monthly,land_and_expand,REP-038,EMP-0148,Active,,8908.57
+CUST-01329,Ostrowski Mechanical,SMB,24,Mountain,2025-03-28,Inbound - Organic,annual,fast_churn,REP-038,EMP-0317,Active,,12853.52
+CUST-01330,Okanagan Elevator Services Partners,SMB,19,West,2025-04-27,Partner / Referral,monthly,steady,REP-043,EMP-0317,Active,,9851.92
+CUST-01331,Ferreira Mechanical Contractors Co.,SMB,19,Southeast,2025-04-21,Inbound - Paid,monthly,land_and_expand,REP-030,EMP-0148,Active,,8908.57
 CUST-01332,Ostrowski Mechanical Contractors Group,SMB,18,Mountain,2025-04-27,Inbound - Paid,monthly,steady,REP-038,EMP-0178,Active,,11932.07
 CUST-01333,Pemberton HVAC,SMB,5,Mid-Atlantic,2025-04-29,Outbound - SDR,monthly,fast_churn,REP-038,EMP-0154,Churned,2025-10-31,1953.17
-CUST-01334,Coastal Bend Mechanical,SMB,27,Midwest,2025-04-29,Trade Show / Event,annual,steady,REP-030,EMP-0322,Active,,11901.75
-CUST-01335,Kowalczyk Elevator Services Group,SMB,27,Midwest,2025-04-17,Inbound - Organic,monthly,steady,REP-038,EMP-0033,Active,,8554.82
-CUST-01336,Blackhawk Mechanical Holdings,SMB,8,Northeast,2025-04-26,Inbound - Paid,monthly,steady,REP-030,EMP-0219,Active,,4497.66
-CUST-01337,Puget Sound Refrigeration Group,SMB,18,Southeast,2025-04-25,Inbound - Paid,monthly,slow_decay,REP-037,EMP-0131,Churned,2025-12-31,10636.92
+CUST-01334,Coastal Bend Mechanical,SMB,27,Midwest,2025-04-29,Trade Show / Event,annual,steady,REP-038,EMP-0322,Active,,11901.75
+CUST-01335,Kowalczyk Elevator Services Group,SMB,27,Midwest,2025-04-17,Inbound - Organic,monthly,steady,REP-043,EMP-0033,Active,,8554.82
+CUST-01336,Blackhawk Mechanical Holdings,SMB,8,Northeast,2025-04-26,Inbound - Paid,monthly,steady,REP-038,EMP-0219,Active,,4497.66
+CUST-01337,Puget Sound Refrigeration Group,SMB,18,Southeast,2025-04-25,Inbound - Paid,monthly,slow_decay,REP-043,EMP-0131,Churned,2025-12-31,10636.92
 CUST-01338,Jankowski Building Services,SMB,8,South Central,2025-04-30,Partner / Referral,monthly,churn_and_return,REP-038,EMP-0171,Churned,2026-02-28,3800.06
 CUST-01339,Rio Grande Facilities Group Inc.,SMB,6,South Central,2025-04-29,Inbound - Paid,annual,steady,REP-038,EMP-0322,Churned,2026-04-28,2837.50
-CUST-01340,Vandermeer Energy Services Partners,SMB,33,Southwest,2025-04-28,Partner / Referral,monthly,fast_churn,REP-038,EMP-0154,Active,,19788.81
+CUST-01340,Vandermeer Energy Services Partners,SMB,33,Southwest,2025-04-28,Partner / Referral,monthly,fast_churn,REP-030,EMP-0154,Active,,19788.81
 CUST-01341,Cascade Controls Co.,SMB,10,Mid-Atlantic,2025-04-23,Partner / Referral,monthly,expand_then_contract,REP-043,EMP-0213,Active,,5206.24
-CUST-01342,Delgado Fire Protection Group,SMB,16,Midwest,2025-04-25,Inbound - Paid,monthly,expand_then_contract,REP-035,EMP-0119,Active,,6202.77
+CUST-01342,Delgado Fire Protection Group,SMB,16,Midwest,2025-04-25,Inbound - Paid,monthly,expand_then_contract,REP-030,EMP-0119,Active,,6202.77
 CUST-01343,Brazos Boiler Works Services,SMB,17,Canada,2025-05-27,Inbound - Organic,annual,fast_churn,REP-030,EMP-0301,Churned,2026-05-26,12529.97
 CUST-01344,Jankowski Facility Services,SMB,13,Southwest,2025-05-31,Inbound - Organic,monthly,steady,REP-038,EMP-0315,Active,,4686.66
-CUST-01345,Eskildsen Facilities Group,SMB,11,Northeast,2025-05-12,Inbound - Paid,annual,steady,REP-038,EMP-0119,Active,,8214.48
-CUST-01346,Gallardo Refrigeration Services,SMB,35,Northeast,2025-05-28,Inbound - Paid,monthly,expand_then_contract,REP-037,EMP-0154,Active,,20348.48
+CUST-01345,Eskildsen Facilities Group,SMB,11,Northeast,2025-05-12,Inbound - Paid,annual,steady,REP-030,EMP-0119,Active,,8214.48
+CUST-01346,Gallardo Refrigeration Services,SMB,35,Northeast,2025-05-28,Inbound - Paid,monthly,expand_then_contract,REP-038,EMP-0154,Active,,20348.48
 CUST-01347,Silverpoint Security Systems Group,SMB,8,Midwest,2025-05-26,Partner / Referral,monthly,churn_and_return,REP-038,EMP-0291,Active,,3089.41
-CUST-01348,Red River Boiler Works Co.,SMB,8,Mid-Atlantic,2025-05-28,Inbound - Paid,monthly,steady,REP-037,EMP-0154,Active,,3832.50
-CUST-01349,Keystone Mechanical Systems,SMB,13,Southwest,2025-05-29,Partner / Referral,monthly,expand_then_contract,REP-038,EMP-0238,Churned,2026-06-30,4388.94
-CUST-01350,Nakashima Property Services Group,SMB,16,Southwest,2025-05-11,Inbound - Organic,monthly,fast_churn,REP-030,EMP-0284,Churned,2025-08-31,7472.27
-CUST-01351,Teton Boiler Works Co.,SMB,23,Midwest,2025-05-01,Inbound - Paid,monthly,steady,REP-038,EMP-0301,Churned,2025-09-30,9547.57
-CUST-01352,Grimaldi HVAC LLC,SMB,9,Midwest,2025-05-19,Inbound - Organic,annual,steady,REP-038,EMP-0154,Active,,3693.91
-CUST-01353,Chaudhry Glass & Glazing,SMB,24,Southeast,2025-05-07,Inbound - Organic,monthly,expand_then_contract,REP-038,EMP-0148,Churned,2026-01-31,11115.77
-CUST-01354,Marchetti HVAC Group,SMB,31,Southeast,2025-05-28,Outbound - SDR,monthly,slow_decay,REP-030,EMP-0148,Churned,2025-09-30,16146.73
+CUST-01348,Red River Boiler Works Co.,SMB,8,Mid-Atlantic,2025-05-28,Inbound - Paid,monthly,steady,REP-038,EMP-0154,Active,,3832.50
+CUST-01349,Keystone Mechanical Systems,SMB,13,Southwest,2025-05-29,Partner / Referral,monthly,expand_then_contract,REP-030,EMP-0238,Churned,2026-06-30,4388.94
+CUST-01350,Nakashima Property Services Group,SMB,16,Southwest,2025-05-11,Inbound - Organic,monthly,fast_churn,REP-038,EMP-0284,Churned,2025-08-31,7472.27
+CUST-01351,Teton Boiler Works Co.,SMB,23,Midwest,2025-05-01,Inbound - Paid,monthly,steady,REP-037,EMP-0301,Churned,2025-09-30,9547.57
+CUST-01352,Grimaldi HVAC LLC,SMB,9,Midwest,2025-05-19,Inbound - Organic,annual,steady,REP-030,EMP-0154,Active,,3693.91
+CUST-01353,Chaudhry Glass & Glazing,SMB,24,Southeast,2025-05-07,Inbound - Organic,monthly,expand_then_contract,REP-030,EMP-0148,Churned,2026-01-31,11115.77
+CUST-01354,Marchetti HVAC Group,SMB,31,Southeast,2025-05-28,Outbound - SDR,monthly,slow_decay,REP-038,EMP-0148,Churned,2025-09-30,16146.73
 CUST-01355,Okanagan Utility Services Partners,SMB,15,Midwest,2025-05-30,Inbound - Paid,annual,land_and_expand,REP-038,EMP-0303,Active,,5255.93
-CUST-01356,Kettle Moraine Property Services,SMB,45,Great Lakes,2025-06-24,Outbound - SDR,monthly,recent_new_logo,REP-038,EMP-0245,Active,,14354.42
-CUST-01357,Lowcountry Mechanical Co.,SMB,16,Great Lakes,2025-06-29,Partner / Referral,monthly,fast_churn,REP-038,EMP-0033,Churned,2026-04-30,8012.51
-CUST-01358,Sandhills Electrical Contractors Co.,SMB,37,West,2025-06-17,Trade Show / Event,monthly,fast_churn,REP-048,EMP-0291,Churned,2025-07-31,15950.14
+CUST-01356,Kettle Moraine Property Services,SMB,45,Great Lakes,2025-06-24,Outbound - SDR,monthly,recent_new_logo,REP-030,EMP-0245,Active,,14354.42
+CUST-01357,Lowcountry Mechanical Co.,SMB,16,Great Lakes,2025-06-29,Partner / Referral,monthly,fast_churn,REP-030,EMP-0033,Churned,2026-04-30,8012.51
+CUST-01358,Sandhills Electrical Contractors Co.,SMB,37,West,2025-06-17,Trade Show / Event,monthly,fast_churn,REP-037,EMP-0291,Churned,2025-07-31,15950.14
 CUST-01359,Allegheny Mechanical Inc.,SMB,32,Great Lakes,2025-06-30,Outbound - SDR,monthly,fast_churn,REP-038,EMP-0032,Churned,2025-07-31,18341.70
-CUST-01360,Ironbridge Roofing LLC,SMB,30,Mid-Atlantic,2025-06-01,Inbound - Paid,monthly,fast_churn,REP-030,EMP-0272,Churned,2025-07-31,15482.78
-CUST-01361,Ironbridge Refrigeration Inc.,SMB,14,South Central,2025-06-27,Inbound - Organic,annual,slow_decay,REP-037,EMP-0032,Churned,2026-06-26,7632.22
-CUST-01362,Palouse Air Systems Services,SMB,23,West,2025-06-01,Inbound - Organic,annual,land_and_expand,REP-048,EMP-0080,Active,,10279.80
-CUST-01363,Ferreira Electric Group,SMB,26,Mid-Atlantic,2025-06-14,Inbound - Organic,annual,steady,REP-048,EMP-0312,Active,,10744.09
-CUST-01364,Cornerstone Mechanical Contractors,SMB,46,Southeast,2025-06-29,Inbound - Organic,monthly,recent_new_logo,REP-038,EMP-0153,Active,,21155.20
-CUST-01365,Uphoff Plumbing & Heating Corp.,SMB,13,Northeast,2025-06-15,Outbound - SDR,annual,steady,REP-038,EMP-0103,Churned,2026-06-14,7366.15
-CUST-01366,Holloway Plumbing & Heating,SMB,20,Midwest,2025-06-30,Trade Show / Event,monthly,recent_new_logo,REP-035,EMP-0080,Active,,11136.29
+CUST-01360,Ironbridge Roofing LLC,SMB,30,Mid-Atlantic,2025-06-01,Inbound - Paid,monthly,fast_churn,REP-038,EMP-0272,Churned,2025-07-31,15482.78
+CUST-01361,Ironbridge Refrigeration Inc.,SMB,14,South Central,2025-06-27,Inbound - Organic,annual,slow_decay,REP-038,EMP-0032,Churned,2026-06-26,7632.22
+CUST-01362,Palouse Air Systems Services,SMB,23,West,2025-06-01,Inbound - Organic,annual,land_and_expand,REP-038,EMP-0080,Active,,10279.80
+CUST-01363,Ferreira Electric Group,SMB,26,Mid-Atlantic,2025-06-14,Inbound - Organic,annual,steady,REP-038,EMP-0312,Active,,10744.09
+CUST-01364,Cornerstone Mechanical Contractors,SMB,46,Southeast,2025-06-29,Inbound - Organic,monthly,recent_new_logo,REP-043,EMP-0153,Active,,21155.20
+CUST-01365,Uphoff Plumbing & Heating Corp.,SMB,13,Northeast,2025-06-15,Outbound - SDR,annual,steady,REP-043,EMP-0103,Churned,2026-06-14,7366.15
+CUST-01366,Holloway Plumbing & Heating,SMB,20,Midwest,2025-06-30,Trade Show / Event,monthly,recent_new_logo,REP-038,EMP-0080,Active,,11136.29
 CUST-01367,Redstone Refrigeration Services,SMB,29,Northeast,2025-06-27,Outbound - SDR,annual,land_and_expand,REP-038,EMP-0199,Active,,10251.70
-CUST-01368,Granite Peak Electrical Contractors LLC,SMB,28,Southeast,2025-06-27,Inbound - Organic,monthly,fast_churn,REP-038,EMP-0272,Churned,2025-11-30,17171.43
-CUST-01369,Copperfield Fire Protection Corp.,SMB,20,South Central,2025-06-28,Trade Show / Event,monthly,recent_new_logo,REP-048,EMP-0240,Active,,13967.32
-CUST-01370,Oyelaran Building Services Inc.,SMB,30,Mid-Atlantic,2025-06-01,Inbound - Paid,monthly,land_and_expand,REP-030,EMP-0103,Churned,2026-05-31,10906.02
-CUST-01371,Coastal Bend Energy Services Corp.,SMB,29,South Central,2025-07-29,Inbound - Paid,monthly,fast_churn,REP-037,EMP-0289,Churned,2025-12-31,11796.45
+CUST-01368,Granite Peak Electrical Contractors LLC,SMB,28,Southeast,2025-06-27,Inbound - Organic,monthly,fast_churn,REP-035,EMP-0272,Churned,2025-11-30,17171.43
+CUST-01369,Copperfield Fire Protection Corp.,SMB,20,South Central,2025-06-28,Trade Show / Event,monthly,recent_new_logo,REP-038,EMP-0240,Active,,13967.32
+CUST-01370,Oyelaran Building Services Inc.,SMB,30,Mid-Atlantic,2025-06-01,Inbound - Paid,monthly,land_and_expand,REP-038,EMP-0103,Churned,2026-05-31,10906.02
+CUST-01371,Coastal Bend Energy Services Corp.,SMB,29,South Central,2025-07-29,Inbound - Paid,monthly,fast_churn,REP-030,EMP-0289,Churned,2025-12-31,11796.45
 CUST-01372,Jessup Air Systems Group,SMB,17,West,2025-07-27,Partner / Referral,multi_year,recent_new_logo,REP-038,EMP-0104,Active,,8836.21
 CUST-01373,Hudson Valley Facilities Group,SMB,13,South Central,2025-07-23,Inbound - Paid,monthly,recent_new_logo,REP-038,EMP-0022,Active,,5812.23
-CUST-01374,Jessup Utility Services Group,SMB,19,Mountain,2025-07-04,Partner / Referral,monthly,recent_new_logo,REP-030,EMP-0032,Active,,6800.71
-CUST-01375,Keystone Pipefitting,SMB,22,Northeast,2025-07-08,Partner / Referral,monthly,recent_new_logo,REP-030,EMP-0272,Active,,7304.91
-CUST-01376,Marchetti Mechanical,SMB,12,Canada,2025-07-27,Inbound - Organic,monthly,recent_new_logo,REP-030,EMP-0032,Active,,7361.55
+CUST-01374,Jessup Utility Services Group,SMB,19,Mountain,2025-07-04,Partner / Referral,monthly,recent_new_logo,REP-038,EMP-0032,Active,,6800.71
+CUST-01375,Keystone Pipefitting,SMB,22,Northeast,2025-07-08,Partner / Referral,monthly,recent_new_logo,REP-038,EMP-0272,Active,,7304.91
+CUST-01376,Marchetti Mechanical,SMB,12,Canada,2025-07-27,Inbound - Organic,monthly,recent_new_logo,REP-038,EMP-0032,Active,,7361.55
 CUST-01377,Sonoran Electric Corp.,SMB,11,Canada,2025-07-12,Inbound - Paid,annual,recent_new_logo,REP-038,EMP-0096,Active,,4528.17
-CUST-01378,Ostrowski Fire & Life Safety Partners,SMB,12,Great Lakes,2025-07-22,Outbound - SDR,monthly,recent_new_logo,REP-037,EMP-0032,Active,,3430.32
+CUST-01378,Ostrowski Fire & Life Safety Partners,SMB,12,Great Lakes,2025-07-22,Outbound - SDR,monthly,recent_new_logo,REP-038,EMP-0032,Active,,3430.32
 CUST-01379,Riverworks Roofing,SMB,5,Mid-Atlantic,2025-07-01,Partner / Referral,annual,expand_then_contract,REP-038,EMP-0199,Churned,2026-06-30,2880.83
 CUST-01380,Lindqvist Fire & Life Safety Holdings,SMB,15,Southwest,2025-07-31,Inbound - Paid,annual,recent_new_logo,REP-038,EMP-0154,Active,,5956.23
-CUST-01381,Thibodeaux Roofing & Sons,SMB,17,Mountain,2025-08-01,Outbound - SDR,annual,recent_new_logo,REP-048,EMP-0322,Active,,8016.94
+CUST-01381,Thibodeaux Roofing & Sons,SMB,17,Mountain,2025-08-01,Outbound - SDR,annual,recent_new_logo,REP-037,EMP-0322,Active,,8016.94
 CUST-01382,Copperfield Fire & Life Safety & Sons,SMB,34,South Central,2025-08-27,Inbound - Paid,monthly,recent_new_logo,REP-038,EMP-0213,Active,,22083.16
-CUST-01383,Mulcahy Sheet Metal Group,SMB,18,Canada,2025-08-01,Inbound - Organic,monthly,fast_churn,REP-035,EMP-0291,Churned,2026-01-31,8521.58
+CUST-01383,Mulcahy Sheet Metal Group,SMB,18,Canada,2025-08-01,Inbound - Organic,monthly,fast_churn,REP-038,EMP-0291,Churned,2026-01-31,8521.58
 CUST-01384,Klamath Boiler Works Group,SMB,32,Great Lakes,2025-08-27,Inbound - Paid,monthly,recent_new_logo,REP-030,EMP-0081,Active,,13712.21
-CUST-01385,Bellamy Electric,SMB,5,Southwest,2025-08-28,Inbound - Paid,annual,recent_new_logo,REP-030,EMP-0263,Active,,2207.60
-CUST-01386,Delgado Fire & Life Safety LLC,SMB,23,Northeast,2025-08-06,Outbound - SDR,monthly,steady,REP-035,EMP-0178,Churned,2026-05-31,8977.38
+CUST-01385,Bellamy Electric,SMB,5,Southwest,2025-08-28,Inbound - Paid,annual,recent_new_logo,REP-038,EMP-0263,Active,,2207.60
+CUST-01386,Delgado Fire & Life Safety LLC,SMB,23,Northeast,2025-08-06,Outbound - SDR,monthly,steady,REP-048,EMP-0178,Churned,2026-05-31,8977.38
 CUST-01387,Prentice Air Systems,SMB,46,Southeast,2025-08-16,Outbound - SDR,annual,recent_new_logo,REP-037,EMP-0312,Active,,15731.57
 CUST-01388,Zamora Fire Protection Inc.,SMB,23,South Central,2025-08-28,Inbound - Organic,annual,recent_new_logo,REP-038,EMP-0042,Active,,9467.59
 CUST-01389,Clearwater Facilities Group Corp.,SMB,19,Midwest,2025-08-05,Outbound - SDR,annual,recent_new_logo,REP-038,EMP-0178,Active,,8394.14
 CUST-01390,Rio Grande HVAC Holdings,SMB,7,Midwest,2025-08-30,Inbound - Organic,annual,recent_new_logo,REP-038,EMP-0022,Active,,4149.50
-CUST-01391,Chaudhry Roofing,SMB,18,West,2025-09-26,Outbound - SDR,monthly,expand_then_contract,REP-030,EMP-0172,Churned,2025-11-30,7833.56
-CUST-01392,Granite Peak Sheet Metal LLC,SMB,8,Mountain,2025-09-26,Inbound - Organic,monthly,recent_new_logo,REP-030,EMP-0240,Active,,4426.64
+CUST-01391,Chaudhry Roofing,SMB,18,West,2025-09-26,Outbound - SDR,monthly,expand_then_contract,REP-038,EMP-0172,Churned,2025-11-30,7833.56
+CUST-01392,Granite Peak Sheet Metal LLC,SMB,8,Mountain,2025-09-26,Inbound - Organic,monthly,recent_new_logo,REP-038,EMP-0240,Active,,4426.64
 CUST-01393,Delgado Utility Services,SMB,10,Southwest,2025-09-27,Outbound - SDR,annual,recent_new_logo,REP-038,EMP-0258,Active,,2206.77
-CUST-01394,Castellano Fire Protection Holdings,SMB,35,Southwest,2025-09-26,Inbound - Organic,monthly,churn_and_return,REP-030,EMP-0315,Churned,2026-03-31,17016.70
+CUST-01394,Castellano Fire Protection Holdings,SMB,35,Southwest,2025-09-26,Inbound - Organic,monthly,churn_and_return,REP-038,EMP-0315,Churned,2026-03-31,17016.70
 CUST-01395,Okonkwo Restoration Holdings,SMB,20,Northeast,2025-09-03,Partner / Referral,annual,recent_new_logo,REP-038,EMP-0289,Active,,9910.00
 CUST-01396,Hutchins Pipefitting Holdings,SMB,11,Southwest,2025-09-07,Outbound - SDR,monthly,churn_and_return,REP-030,EMP-0317,Churned,2025-10-31,3611.74
-CUST-01397,Mohawk Valley Sheet Metal LLC,SMB,8,West,2025-09-26,Outbound - SDR,monthly,steady,REP-038,EMP-0153,Churned,2025-11-30,2014.89
+CUST-01397,Mohawk Valley Sheet Metal LLC,SMB,8,West,2025-09-26,Outbound - SDR,monthly,steady,REP-037,EMP-0153,Churned,2025-11-30,2014.89
 CUST-01398,Summit Line Electric Co.,SMB,16,Mid-Atlantic,2025-09-27,Inbound - Organic,annual,recent_new_logo,REP-038,EMP-0042,Active,,8476.52
-CUST-01399,Riverworks Facility Services Services,SMB,9,South Central,2025-09-16,Partner / Referral,monthly,recent_new_logo,REP-038,EMP-0301,Active,,2099.03
-CUST-01400,Coastal Bend Pipefitting Corp.,SMB,13,Great Lakes,2025-09-12,Inbound - Paid,monthly,recent_new_logo,REP-038,EMP-0171,Active,,9813.19
+CUST-01399,Riverworks Facility Services Services,SMB,9,South Central,2025-09-16,Partner / Referral,monthly,recent_new_logo,REP-030,EMP-0301,Active,,2099.03
+CUST-01400,Coastal Bend Pipefitting Corp.,SMB,13,Great Lakes,2025-09-12,Inbound - Paid,monthly,recent_new_logo,REP-030,EMP-0171,Active,,9813.19
 CUST-01401,Fontaine Electrical Contractors,SMB,10,South Central,2025-09-28,Partner / Referral,annual,recent_new_logo,REP-038,EMP-0258,Active,,3820.91
 CUST-01402,Ashworth Utility Services Partners,SMB,14,Southeast,2025-09-24,Inbound - Organic,annual,recent_new_logo,REP-038,EMP-0103,Active,,6946.91
-CUST-01403,Palouse Utility Services & Sons,SMB,10,Canada,2025-09-30,Inbound - Paid,monthly,slow_decay,REP-038,EMP-0258,Churned,2025-11-30,6046.78
-CUST-01404,Prentice Electric Partners,SMB,15,West,2025-10-28,Inbound - Organic,annual,recent_new_logo,REP-030,EMP-0182,Active,,7906.45
-CUST-01405,Brannigan Mechanical Contractors,SMB,43,Great Lakes,2025-10-03,Inbound - Paid,multi_year,recent_new_logo,REP-038,EMP-0042,Active,,20718.87
-CUST-01406,Yarborough Mechanical,SMB,13,Southwest,2025-10-02,Partner / Referral,annual,recent_new_logo,REP-030,EMP-0301,Active,,3397.73
-CUST-01407,Adirondack Fire & Life Safety Inc.,SMB,19,Mountain,2025-10-30,Trade Show / Event,monthly,fast_churn,REP-038,EMP-0219,Churned,2025-11-30,6607.79
-CUST-01408,Marchetti Air Systems Partners,SMB,12,Southwest,2025-10-28,Outbound - SDR,annual,recent_new_logo,REP-038,EMP-0080,Active,,5668.73
-CUST-01409,Puget Sound Fire Protection,SMB,19,Great Lakes,2025-10-02,Outbound - SDR,annual,recent_new_logo,REP-030,EMP-0104,Active,,12034.63
-CUST-01410,Cornerstone Pipefitting & Sons,SMB,31,South Central,2025-10-27,Trade Show / Event,monthly,recent_new_logo,REP-035,EMP-0154,Active,,19229.89
+CUST-01403,Palouse Utility Services & Sons,SMB,10,Canada,2025-09-30,Inbound - Paid,monthly,slow_decay,REP-030,EMP-0258,Churned,2025-11-30,6046.78
+CUST-01404,Prentice Electric Partners,SMB,15,West,2025-10-28,Inbound - Organic,annual,recent_new_logo,REP-038,EMP-0182,Active,,7906.45
+CUST-01405,Brannigan Mechanical Contractors,SMB,43,Great Lakes,2025-10-03,Inbound - Paid,multi_year,recent_new_logo,REP-035,EMP-0042,Active,,20718.87
+CUST-01406,Yarborough Mechanical,SMB,13,Southwest,2025-10-02,Partner / Referral,annual,recent_new_logo,REP-038,EMP-0301,Active,,3397.73
+CUST-01407,Adirondack Fire & Life Safety Inc.,SMB,19,Mountain,2025-10-30,Trade Show / Event,monthly,fast_churn,REP-037,EMP-0219,Churned,2025-11-30,6607.79
+CUST-01408,Marchetti Air Systems Partners,SMB,12,Southwest,2025-10-28,Outbound - SDR,annual,recent_new_logo,REP-030,EMP-0080,Active,,5668.73
+CUST-01409,Puget Sound Fire Protection,SMB,19,Great Lakes,2025-10-02,Outbound - SDR,annual,recent_new_logo,REP-037,EMP-0104,Active,,12034.63
+CUST-01410,Cornerstone Pipefitting & Sons,SMB,31,South Central,2025-10-27,Trade Show / Event,monthly,recent_new_logo,REP-038,EMP-0154,Active,,19229.89
 CUST-01411,Meridian Mechanical Group,SMB,20,Midwest,2025-10-13,Partner / Referral,monthly,recent_new_logo,REP-038,EMP-0284,Active,,10068.79
-CUST-01412,Ferreira Controls,SMB,6,West,2025-10-29,Partner / Referral,monthly,slow_decay,REP-030,EMP-0213,Churned,2026-04-30,2242.06
-CUST-01413,Annapolis Valley Heating & Air Partners,SMB,27,Great Lakes,2025-10-31,Inbound - Organic,monthly,recent_new_logo,REP-038,EMP-0291,Active,,15628.72
-CUST-01414,Chaudhry Boiler Works Co.,SMB,17,West,2025-10-07,Inbound - Organic,monthly,recent_new_logo,REP-048,EMP-0153,Active,,7189.08
-CUST-01415,Sandhills Energy Services,SMB,7,South Central,2025-10-26,Inbound - Paid,annual,recent_new_logo,REP-038,EMP-0172,Active,,3670.60
-CUST-01416,Fraser Valley Mechanical Systems & Sons,SMB,36,South Central,2025-10-31,Inbound - Paid,monthly,fast_churn,REP-038,EMP-0131,Churned,2026-02-28,12104.70
-CUST-01417,Holloway Mechanical Contractors Partners,SMB,13,Northeast,2025-11-05,Partner / Referral,monthly,slow_decay,REP-030,EMP-0070,Churned,2026-06-30,5811.20
-CUST-01418,Klamath Property Services & Sons,SMB,34,Southwest,2025-11-19,Partner / Referral,annual,recent_new_logo,REP-030,EMP-0022,Active,,16108.75
-CUST-01419,Mahoney Building Services,SMB,13,Southeast,2025-11-25,Inbound - Paid,annual,recent_new_logo,REP-038,EMP-0225,Active,,6171.45
-CUST-01420,Teton Controls Holdings,SMB,17,Northeast,2025-11-27,Outbound - SDR,monthly,recent_new_logo,REP-038,EMP-0263,Active,,7082.22
-CUST-01421,Coastal Bend Plumbing & Heating Services,SMB,30,Mid-Atlantic,2025-11-04,Inbound - Organic,annual,recent_new_logo,REP-037,EMP-0317,Active,,21275.19
-CUST-01422,Blackhawk Facility Services & Sons,SMB,7,Northeast,2025-11-03,Outbound - SDR,annual,recent_new_logo,REP-048,EMP-0106,Active,,2661.34
-CUST-01423,Allegheny Heating & Air & Sons,SMB,6,Mountain,2025-11-24,Inbound - Organic,annual,recent_new_logo,REP-048,EMP-0219,Active,,2146.62
-CUST-01424,Oyelaran Fire & Life Safety,SMB,34,Mid-Atlantic,2025-11-30,Inbound - Paid,monthly,recent_new_logo,REP-030,EMP-0219,Active,,22268.01
-CUST-01425,Puget Sound Energy Services Partners,SMB,7,Great Lakes,2025-11-28,Inbound - Paid,monthly,recent_new_logo,REP-038,EMP-0219,Active,,2713.59
-CUST-01426,Brightline Plumbing & Heating Partners,SMB,8,Canada,2025-11-27,Partner / Referral,monthly,recent_new_logo,REP-035,EMP-0213,Active,,3384.52
-CUST-01427,Redstone Building Services,SMB,42,South Central,2025-11-27,Inbound - Paid,monthly,recent_new_logo,REP-038,EMP-0081,Active,,20490.52
-CUST-01428,Mohawk Valley Facility Services Corp.,SMB,12,South Central,2025-11-28,Inbound - Paid,monthly,recent_new_logo,REP-038,EMP-0171,Active,,4407.03
-CUST-01429,Wabash Building Services,SMB,14,Southeast,2025-11-25,Outbound - SDR,annual,recent_new_logo,REP-048,EMP-0131,Active,,7531.30
-CUST-01430,Silverpoint Restoration Co.,SMB,10,South Central,2025-12-10,Inbound - Paid,annual,recent_new_logo,REP-038,EMP-0119,Active,,4273.06
-CUST-01431,Mulcahy Energy Services Holdings,SMB,13,Southeast,2025-12-11,Outbound - SDR,monthly,recent_new_logo,REP-035,EMP-0172,Active,,5207.79
-CUST-01432,Yarborough Building Services Services,SMB,40,Great Lakes,2025-12-31,Inbound - Paid,annual,recent_new_logo,REP-035,EMP-0245,Active,,25957.78
-CUST-01433,Keystone Electric Inc.,SMB,8,Canada,2025-12-30,Outbound - SDR,monthly,fast_churn,REP-035,EMP-0258,Churned,2026-01-31,2233.57
+CUST-01412,Ferreira Controls,SMB,6,West,2025-10-29,Partner / Referral,monthly,slow_decay,REP-038,EMP-0213,Churned,2026-04-30,2242.06
+CUST-01413,Annapolis Valley Heating & Air Partners,SMB,27,Great Lakes,2025-10-31,Inbound - Organic,monthly,recent_new_logo,REP-035,EMP-0291,Active,,15628.72
+CUST-01414,Chaudhry Boiler Works Co.,SMB,17,West,2025-10-07,Inbound - Organic,monthly,recent_new_logo,REP-030,EMP-0153,Active,,7189.08
+CUST-01415,Sandhills Energy Services,SMB,7,South Central,2025-10-26,Inbound - Paid,annual,recent_new_logo,REP-030,EMP-0172,Active,,3670.60
+CUST-01416,Fraser Valley Mechanical Systems & Sons,SMB,36,South Central,2025-10-31,Inbound - Paid,monthly,fast_churn,REP-035,EMP-0131,Churned,2026-02-28,12104.70
+CUST-01417,Holloway Mechanical Contractors Partners,SMB,13,Northeast,2025-11-05,Partner / Referral,monthly,slow_decay,REP-038,EMP-0070,Churned,2026-06-30,5811.20
+CUST-01418,Klamath Property Services & Sons,SMB,34,Southwest,2025-11-19,Partner / Referral,annual,recent_new_logo,REP-038,EMP-0022,Active,,16108.75
+CUST-01419,Mahoney Building Services,SMB,13,Southeast,2025-11-25,Inbound - Paid,annual,recent_new_logo,REP-048,EMP-0225,Active,,6171.45
+CUST-01420,Teton Controls Holdings,SMB,17,Northeast,2025-11-27,Outbound - SDR,monthly,recent_new_logo,REP-048,EMP-0263,Active,,7082.22
+CUST-01421,Coastal Bend Plumbing & Heating Services,SMB,30,Mid-Atlantic,2025-11-04,Inbound - Organic,annual,recent_new_logo,REP-035,EMP-0317,Active,,21275.19
+CUST-01422,Blackhawk Facility Services & Sons,SMB,7,Northeast,2025-11-03,Outbound - SDR,annual,recent_new_logo,REP-038,EMP-0106,Active,,2661.34
+CUST-01423,Allegheny Heating & Air & Sons,SMB,6,Mountain,2025-11-24,Inbound - Organic,annual,recent_new_logo,REP-038,EMP-0219,Active,,2146.62
+CUST-01424,Oyelaran Fire & Life Safety,SMB,34,Mid-Atlantic,2025-11-30,Inbound - Paid,monthly,recent_new_logo,REP-048,EMP-0219,Active,,22268.01
+CUST-01425,Puget Sound Energy Services Partners,SMB,7,Great Lakes,2025-11-28,Inbound - Paid,monthly,recent_new_logo,REP-030,EMP-0219,Active,,2713.59
+CUST-01426,Brightline Plumbing & Heating Partners,SMB,8,Canada,2025-11-27,Partner / Referral,monthly,recent_new_logo,REP-030,EMP-0213,Active,,3384.52
+CUST-01427,Redstone Building Services,SMB,42,South Central,2025-11-27,Inbound - Paid,monthly,recent_new_logo,REP-030,EMP-0081,Active,,20490.52
+CUST-01428,Mohawk Valley Facility Services Corp.,SMB,12,South Central,2025-11-28,Inbound - Paid,monthly,recent_new_logo,REP-048,EMP-0171,Active,,4407.03
+CUST-01429,Wabash Building Services,SMB,14,Southeast,2025-11-25,Outbound - SDR,annual,recent_new_logo,REP-030,EMP-0131,Active,,7531.30
+CUST-01430,Silverpoint Restoration Co.,SMB,10,South Central,2025-12-10,Inbound - Paid,annual,recent_new_logo,REP-030,EMP-0119,Active,,4273.06
+CUST-01431,Mulcahy Energy Services Holdings,SMB,13,Southeast,2025-12-11,Outbound - SDR,monthly,recent_new_logo,REP-038,EMP-0172,Active,,5207.79
+CUST-01432,Yarborough Building Services Services,SMB,40,Great Lakes,2025-12-31,Inbound - Paid,annual,recent_new_logo,REP-038,EMP-0245,Active,,25957.78
+CUST-01433,Keystone Electric Inc.,SMB,8,Canada,2025-12-30,Outbound - SDR,monthly,fast_churn,REP-038,EMP-0258,Churned,2026-01-31,2233.57
 CUST-01434,Kowalczyk Pipefitting Holdings,SMB,17,Mid-Atlantic,2025-12-24,Trade Show / Event,multi_year,recent_new_logo,REP-038,EMP-0032,Active,,4279.23
-CUST-01435,Panhandle Utility Services Co.,SMB,23,West,2025-12-29,Inbound - Organic,monthly,recent_new_logo,REP-037,EMP-0106,Active,,9490.42
+CUST-01435,Panhandle Utility Services Co.,SMB,23,West,2025-12-29,Inbound - Organic,monthly,recent_new_logo,REP-030,EMP-0106,Active,,9490.42
 CUST-01436,Chaudhry Sheet Metal Group,SMB,16,Canada,2025-12-06,Inbound - Paid,monthly,recent_new_logo,REP-038,EMP-0301,Active,,7117.81
-CUST-01437,Thibodeaux Fire Protection Holdings,SMB,22,Midwest,2025-12-31,Trade Show / Event,monthly,recent_new_logo,REP-037,EMP-0312,Active,,9680.85
-CUST-01438,Chesapeake Fire Protection Corp.,SMB,17,South Central,2025-12-17,Inbound - Paid,monthly,recent_new_logo,REP-038,EMP-0178,Active,,5062.19
+CUST-01437,Thibodeaux Fire Protection Holdings,SMB,22,Midwest,2025-12-31,Trade Show / Event,monthly,recent_new_logo,REP-038,EMP-0312,Active,,9680.85
+CUST-01438,Chesapeake Fire Protection Corp.,SMB,17,South Central,2025-12-17,Inbound - Paid,monthly,recent_new_logo,REP-048,EMP-0178,Active,,5062.19
 CUST-01439,Rio Grande Elevator Services Corp.,SMB,20,Northeast,2025-12-29,Inbound - Paid,monthly,recent_new_logo,REP-038,EMP-0213,Active,,13142.98
-CUST-01440,Brannigan Boiler Works,SMB,38,Canada,2025-12-28,Inbound - Organic,monthly,steady,REP-038,EMP-0032,Churned,2026-04-30,26409.85
-CUST-01441,Kearney Refrigeration Services,SMB,15,Northeast,2025-12-29,Inbound - Organic,annual,recent_new_logo,REP-038,EMP-0284,Active,,13286.58
-CUST-01442,Jankowski Roofing Group,SMB,21,Southeast,2025-12-31,Inbound - Organic,monthly,expand_then_contract,REP-030,EMP-0317,Churned,2026-05-31,7887.01
-CUST-01443,Petrosian Utility Services Corp.,SMB,26,Southeast,2025-12-27,Partner / Referral,monthly,recent_new_logo,REP-030,EMP-0303,Active,,14618.40
-CUST-01444,Hutchins HVAC Holdings,SMB,16,Mid-Atlantic,2025-12-29,Partner / Referral,annual,recent_new_logo,REP-030,EMP-0291,Active,,8355.05
+CUST-01440,Brannigan Boiler Works,SMB,38,Canada,2025-12-28,Inbound - Organic,monthly,steady,REP-037,EMP-0032,Churned,2026-04-30,26409.85
+CUST-01441,Kearney Refrigeration Services,SMB,15,Northeast,2025-12-29,Inbound - Organic,annual,recent_new_logo,REP-048,EMP-0284,Active,,13286.58
+CUST-01442,Jankowski Roofing Group,SMB,21,Southeast,2025-12-31,Inbound - Organic,monthly,expand_then_contract,REP-038,EMP-0317,Churned,2026-05-31,7887.01
+CUST-01443,Petrosian Utility Services Corp.,SMB,26,Southeast,2025-12-27,Partner / Referral,monthly,recent_new_logo,REP-038,EMP-0303,Active,,14618.40
+CUST-01444,Hutchins HVAC Holdings,SMB,16,Mid-Atlantic,2025-12-29,Partner / Referral,annual,recent_new_logo,REP-038,EMP-0291,Active,,8355.05
 CUST-01445,Kettle Moraine HVAC Group,SMB,25,South Central,2025-12-18,Trade Show / Event,annual,recent_new_logo,REP-038,EMP-0213,Active,,11665.62
-CUST-01446,Eskildsen Mechanical,SMB,13,Southeast,2025-12-29,Partner / Referral,annual,recent_new_logo,REP-038,EMP-0033,Active,,4873.41
-CUST-01447,Fraser Valley Mechanical Contractors LLC,SMB,39,Mountain,2025-12-18,Inbound - Organic,annual,recent_new_logo,REP-048,EMP-0171,Active,,18482.59
-CUST-01448,Rio Grande Controls Group,SMB,28,West,2025-12-19,Partner / Referral,monthly,recent_new_logo,REP-048,EMP-0096,Active,,8435.79
-CUST-01449,Halvorsen Security Systems,SMB,17,Great Lakes,2025-12-30,Inbound - Organic,monthly,churn_and_return,REP-038,EMP-0258,Churned,2026-01-31,14393.80
-CUST-01450,Shenandoah Restoration Co.,SMB,23,Northeast,2025-12-03,Inbound - Paid,monthly,fast_churn,REP-038,EMP-0032,Churned,2026-01-31,6218.12
+CUST-01446,Eskildsen Mechanical,SMB,13,Southeast,2025-12-29,Partner / Referral,annual,recent_new_logo,REP-030,EMP-0033,Active,,4873.41
+CUST-01447,Fraser Valley Mechanical Contractors LLC,SMB,39,Mountain,2025-12-18,Inbound - Organic,annual,recent_new_logo,REP-030,EMP-0171,Active,,18482.59
+CUST-01448,Rio Grande Controls Group,SMB,28,West,2025-12-19,Partner / Referral,monthly,recent_new_logo,REP-030,EMP-0096,Active,,8435.79
+CUST-01449,Halvorsen Security Systems,SMB,17,Great Lakes,2025-12-30,Inbound - Organic,monthly,churn_and_return,REP-048,EMP-0258,Churned,2026-01-31,14393.80
+CUST-01450,Shenandoah Restoration Co.,SMB,23,Northeast,2025-12-03,Inbound - Paid,monthly,fast_churn,REP-035,EMP-0032,Churned,2026-01-31,6218.12
 CUST-01451,Northgate Electrical Contractors Holdings,SMB,7,Great Lakes,2025-12-07,Outbound - SDR,annual,recent_new_logo,REP-030,EMP-0154,Active,,2068.43
 CUST-01452,Northrup Roofing Partners,SMB,12,Great Lakes,2025-12-20,Inbound - Paid,monthly,fast_churn,REP-038,EMP-0315,Churned,2026-02-28,5769.54
 CUST-01453,Stonebridge Restoration Co.,SMB,18,Great Lakes,2025-12-28,Inbound - Paid,monthly,recent_new_logo,REP-038,EMP-0272,Active,,6528.46
 CUST-01454,Ironbridge Mechanical Systems,SMB,24,West,2025-12-14,Inbound - Paid,annual,recent_new_logo,REP-030,EMP-0178,Active,,10891.44
-CUST-01455,Stavros Facilities Group Services,SMB,11,Southeast,2025-12-22,Inbound - Paid,monthly,recent_new_logo,REP-030,EMP-0289,Active,,4437.72
-CUST-01456,Mulcahy Fire Protection Group,SMB,20,Canada,2025-12-30,Inbound - Organic,monthly,fast_churn,REP-038,EMP-0148,Churned,2026-06-30,8327.21
+CUST-01455,Stavros Facilities Group Services,SMB,11,Southeast,2025-12-22,Inbound - Paid,monthly,recent_new_logo,REP-037,EMP-0289,Active,,4437.72
+CUST-01456,Mulcahy Fire Protection Group,SMB,20,Canada,2025-12-30,Inbound - Organic,monthly,fast_churn,REP-037,EMP-0148,Churned,2026-06-30,8327.21
 CUST-01457,Jankowski Mechanical,SMB,7,Southeast,2025-12-29,Inbound - Paid,monthly,recent_new_logo,REP-038,EMP-0301,Active,,3733.69
-CUST-01458,Allegheny Plumbing Corp.,SMB,20,Northeast,2025-12-27,Inbound - Organic,annual,recent_new_logo,REP-038,EMP-0245,Active,,8460.89
+CUST-01458,Allegheny Plumbing Corp.,SMB,20,Northeast,2025-12-27,Inbound - Organic,annual,recent_new_logo,REP-035,EMP-0245,Active,,8460.89
 CUST-01459,Halvorsen Mechanical Systems,SMB,6,Mountain,2025-12-15,Inbound - Paid,monthly,recent_new_logo,REP-038,EMP-0171,Active,,5623.32
 CUST-01460,Marchetti Elevator Services Inc.,SMB,15,Northeast,2025-12-02,Inbound - Paid,monthly,recent_new_logo,REP-030,EMP-0070,Active,,6173.99
-CUST-01461,Silverpoint Sheet Metal Partners,Mid-Market,171,Mid-Atlantic,2025-01-27,Partner / Referral,annual,expand_then_contract,REP-039,EMP-0096,Active,,50955.20
-CUST-01462,Bitterroot Fire & Life Safety Holdings,Mid-Market,127,Mid-Atlantic,2025-01-30,Trade Show / Event,annual,steady,REP-039,EMP-0081,Active,,48789.90
-CUST-01463,Ozark Landscape Services & Sons,Mid-Market,75,Southwest,2025-01-26,Outbound - SDR,annual,expand_then_contract,REP-026,EMP-0033,Active,,27258.08
-CUST-01464,Sandhills Elevator Services,Mid-Market,119,Southeast,2025-01-26,Inbound - Paid,annual,land_and_expand,REP-032,EMP-0182,Active,,36738.17
-CUST-01465,Kilbride Roofing Services,Mid-Market,100,Mountain,2025-02-26,Partner / Referral,multi_year,steady,REP-039,EMP-0032,Active,,31357.13
+CUST-01461,Silverpoint Sheet Metal Partners,Mid-Market,171,Mid-Atlantic,2025-01-27,Partner / Referral,annual,expand_then_contract,REP-041,EMP-0096,Active,,50955.20
+CUST-01462,Bitterroot Fire & Life Safety Holdings,Mid-Market,127,Mid-Atlantic,2025-01-30,Trade Show / Event,annual,steady,REP-032,EMP-0081,Active,,48789.90
+CUST-01463,Ozark Landscape Services & Sons,Mid-Market,75,Southwest,2025-01-26,Outbound - SDR,annual,expand_then_contract,REP-018,EMP-0033,Active,,27258.08
+CUST-01464,Sandhills Elevator Services,Mid-Market,119,Southeast,2025-01-26,Inbound - Paid,annual,land_and_expand,REP-039,EMP-0182,Active,,36738.17
+CUST-01465,Kilbride Roofing Services,Mid-Market,100,Mountain,2025-02-26,Partner / Referral,multi_year,steady,REP-041,EMP-0032,Active,,31357.13
 CUST-01466,Wasatch Boiler Works Services,Mid-Market,348,West,2025-02-23,Partner / Referral,annual,fast_churn,REP-040,EMP-0171,Churned,2026-02-22,67866.35
-CUST-01467,Castellano Fire & Life Safety Corp.,Mid-Market,88,Midwest,2025-02-26,Outbound - SDR,multi_year,steady,REP-039,EMP-0213,Active,,9571.99
+CUST-01467,Castellano Fire & Life Safety Corp.,Mid-Market,88,Midwest,2025-02-26,Outbound - SDR,multi_year,steady,REP-040,EMP-0213,Active,,9571.99
 CUST-01468,Lindqvist Heating & Air,Mid-Market,86,Mid-Atlantic,2025-02-05,Outbound - SDR,annual,slow_decay,REP-032,EMP-0258,Active,,36899.19
-CUST-01469,Summit Line Air Systems Group,Mid-Market,129,South Central,2025-03-28,Trade Show / Event,multi_year,land_and_expand,REP-026,EMP-0141,Active,,28038.92
-CUST-01470,Annapolis Valley Boiler Works Co.,Mid-Market,312,Southeast,2025-03-01,Partner / Referral,annual,land_and_expand,REP-032,EMP-0148,Active,,57632.80
-CUST-01471,Prentice Landscape Services LLC,Mid-Market,245,Mountain,2025-03-05,Inbound - Paid,multi_year,steady,REP-039,EMP-0182,Active,,53012.99
-CUST-01472,Nakashima Property Services Inc.,Mid-Market,163,South Central,2025-03-20,Outbound - SDR,annual,steady,REP-010,EMP-0178,Active,,77320.80
-CUST-01473,Ferreira Electrical Contractors Holdings,Mid-Market,120,Northeast,2025-03-26,Inbound - Paid,annual,expand_then_contract,REP-026,EMP-0139,Churned,2026-03-25,35739.41
-CUST-01474,Clearwater Controls & Sons,Mid-Market,210,South Central,2025-04-28,Inbound - Organic,annual,expand_then_contract,REP-039,EMP-0240,Active,,71731.90
-CUST-01475,Ironbridge Plumbing Partners,Mid-Market,150,Southeast,2025-04-22,Outbound - SDR,annual,steady,REP-010,EMP-0317,Active,,17917.03
-CUST-01476,Cumberland Industrial Services Co.,Mid-Market,313,Southwest,2025-04-30,Inbound - Organic,annual,land_and_expand,REP-032,EMP-0070,Active,,94539.08
-CUST-01477,Rio Grande Controls Holdings,Mid-Market,197,West,2025-05-26,Outbound - SDR,annual,steady,REP-026,EMP-0148,Active,,50105.72
+CUST-01469,Summit Line Air Systems Group,Mid-Market,129,South Central,2025-03-28,Trade Show / Event,multi_year,land_and_expand,REP-032,EMP-0141,Active,,28038.92
+CUST-01470,Annapolis Valley Boiler Works Co.,Mid-Market,312,Southeast,2025-03-01,Partner / Referral,annual,land_and_expand,REP-010,EMP-0148,Active,,57632.80
+CUST-01471,Prentice Landscape Services LLC,Mid-Market,245,Mountain,2025-03-05,Inbound - Paid,multi_year,steady,REP-026,EMP-0182,Active,,53012.99
+CUST-01472,Nakashima Property Services Inc.,Mid-Market,163,South Central,2025-03-20,Outbound - SDR,annual,steady,REP-039,EMP-0178,Active,,77320.80
+CUST-01473,Ferreira Electrical Contractors Holdings,Mid-Market,120,Northeast,2025-03-26,Inbound - Paid,annual,expand_then_contract,REP-039,EMP-0139,Churned,2026-03-25,35739.41
+CUST-01474,Clearwater Controls & Sons,Mid-Market,210,South Central,2025-04-28,Inbound - Organic,annual,expand_then_contract,REP-010,EMP-0240,Active,,71731.90
+CUST-01475,Ironbridge Plumbing Partners,Mid-Market,150,Southeast,2025-04-22,Outbound - SDR,annual,steady,REP-039,EMP-0317,Active,,17917.03
+CUST-01476,Cumberland Industrial Services Co.,Mid-Market,313,Southwest,2025-04-30,Inbound - Organic,annual,land_and_expand,REP-039,EMP-0070,Active,,94539.08
+CUST-01477,Rio Grande Controls Holdings,Mid-Market,197,West,2025-05-26,Outbound - SDR,annual,steady,REP-032,EMP-0148,Active,,50105.72
 CUST-01478,Saskatoon Air Systems Holdings,Mid-Market,94,Midwest,2025-05-11,Outbound - SDR,multi_year,steady,REP-010,EMP-0032,Active,,30384.26
 CUST-01479,Ashworth Mechanical,Mid-Market,212,Great Lakes,2025-05-18,Partner / Referral,annual,steady,REP-046,EMP-0104,Active,,75084.39
-CUST-01480,Lomeli Mechanical,Mid-Market,184,Southeast,2025-06-30,Outbound - SDR,annual,steady,REP-047,EMP-0199,Active,,38585.34
-CUST-01481,Brannigan Roofing Partners,Mid-Market,141,Great Lakes,2025-06-19,Partner / Referral,annual,land_and_expand,REP-010,EMP-0171,Active,,23899.02
-CUST-01482,Harborview Landscape Services,Mid-Market,81,Southeast,2025-06-25,Outbound - SDR,annual,land_and_expand,REP-032,EMP-0080,Active,,40417.28
-CUST-01483,Ironbridge Security Systems Partners,Mid-Market,75,Midwest,2025-06-01,Inbound - Organic,annual,land_and_expand,REP-026,EMP-0172,Active,,32737.33
-CUST-01484,Fontaine Refrigeration Corp.,Mid-Market,117,Northeast,2025-07-28,Partner / Referral,annual,recent_new_logo,REP-049,EMP-0317,Active,,27335.45
-CUST-01485,Mahoney Mechanical,Mid-Market,76,Northeast,2025-07-14,Inbound - Organic,annual,recent_new_logo,REP-026,EMP-0104,Active,,32877.17
-CUST-01486,Riverworks Mechanical Contractors,Mid-Market,142,Mountain,2025-07-19,Inbound - Paid,annual,recent_new_logo,REP-026,EMP-0096,Active,,22660.45
-CUST-01487,Annapolis Valley HVAC Holdings,Mid-Market,287,Mountain,2025-08-06,Inbound - Organic,multi_year,recent_new_logo,REP-039,EMP-0245,Active,,60540.60
-CUST-01488,Iverson Refrigeration & Sons,Mid-Market,219,Mid-Atlantic,2025-08-01,Outbound - SDR,annual,recent_new_logo,REP-032,EMP-0033,Active,,56326.08
-CUST-01489,Boyington Electrical Contractors Co.,Mid-Market,151,West,2025-08-29,Outbound - SDR,annual,recent_new_logo,REP-026,EMP-0033,Active,,36212.79
-CUST-01490,Ostrowski Refrigeration,Mid-Market,93,Southwest,2025-09-22,Inbound - Organic,annual,recent_new_logo,REP-049,EMP-0238,Active,,14632.22
-CUST-01491,Wabash Plumbing & Heating,Mid-Market,357,Southwest,2025-09-02,Outbound - SDR,annual,recent_new_logo,REP-026,EMP-0096,Active,,109344.10
-CUST-01492,Fieldstone Restoration & Sons,Mid-Market,143,South Central,2025-09-25,Outbound - SDR,annual,recent_new_logo,REP-047,EMP-0042,Active,,38891.98
-CUST-01493,Cascade Fire Protection Group,Mid-Market,355,West,2025-10-31,Outbound - SDR,annual,recent_new_logo,REP-026,EMP-0171,Active,,140357.00
+CUST-01480,Lomeli Mechanical,Mid-Market,184,Southeast,2025-06-30,Outbound - SDR,annual,steady,REP-039,EMP-0199,Active,,38585.34
+CUST-01481,Brannigan Roofing Partners,Mid-Market,141,Great Lakes,2025-06-19,Partner / Referral,annual,land_and_expand,REP-026,EMP-0171,Active,,23899.02
+CUST-01482,Harborview Landscape Services,Mid-Market,81,Southeast,2025-06-25,Outbound - SDR,annual,land_and_expand,REP-047,EMP-0080,Active,,40417.28
+CUST-01483,Ironbridge Security Systems Partners,Mid-Market,75,Midwest,2025-06-01,Inbound - Organic,annual,land_and_expand,REP-049,EMP-0172,Active,,32737.33
+CUST-01484,Fontaine Refrigeration Corp.,Mid-Market,117,Northeast,2025-07-28,Partner / Referral,annual,recent_new_logo,REP-047,EMP-0317,Active,,27335.45
+CUST-01485,Mahoney Mechanical,Mid-Market,76,Northeast,2025-07-14,Inbound - Organic,annual,recent_new_logo,REP-046,EMP-0104,Active,,32877.17
+CUST-01486,Riverworks Mechanical Contractors,Mid-Market,142,Mountain,2025-07-19,Inbound - Paid,annual,recent_new_logo,REP-032,EMP-0096,Active,,22660.45
+CUST-01487,Annapolis Valley HVAC Holdings,Mid-Market,287,Mountain,2025-08-06,Inbound - Organic,multi_year,recent_new_logo,REP-026,EMP-0245,Active,,60540.60
+CUST-01488,Iverson Refrigeration & Sons,Mid-Market,219,Mid-Atlantic,2025-08-01,Outbound - SDR,annual,recent_new_logo,REP-049,EMP-0033,Active,,56326.08
+CUST-01489,Boyington Electrical Contractors Co.,Mid-Market,151,West,2025-08-29,Outbound - SDR,annual,recent_new_logo,REP-047,EMP-0033,Active,,36212.79
+CUST-01490,Ostrowski Refrigeration,Mid-Market,93,Southwest,2025-09-22,Inbound - Organic,annual,recent_new_logo,REP-010,EMP-0238,Active,,14632.22
+CUST-01491,Wabash Plumbing & Heating,Mid-Market,357,Southwest,2025-09-02,Outbound - SDR,annual,recent_new_logo,REP-047,EMP-0096,Active,,109344.10
+CUST-01492,Fieldstone Restoration & Sons,Mid-Market,143,South Central,2025-09-25,Outbound - SDR,annual,recent_new_logo,REP-039,EMP-0042,Active,,38891.98
+CUST-01493,Cascade Fire Protection Group,Mid-Market,355,West,2025-10-31,Outbound - SDR,annual,recent_new_logo,REP-039,EMP-0171,Active,,140357.00
 CUST-01494,Keystone Plumbing & Heating Partners,Mid-Market,135,Mountain,2025-10-08,Partner / Referral,multi_year,recent_new_logo,REP-047,EMP-0139,Active,,46199.16
-CUST-01495,Meridian Plumbing & Sons,Mid-Market,121,West,2025-10-29,Outbound - SDR,annual,recent_new_logo,REP-039,EMP-0154,Active,,47149.64
-CUST-01496,Kowalczyk Pipefitting Partners,Mid-Market,71,Mountain,2025-11-11,Outbound - SDR,annual,recent_new_logo,REP-032,EMP-0182,Active,,34001.45
-CUST-01497,Jessup Facilities Group,Mid-Market,309,Northeast,2025-11-29,Inbound - Paid,annual,recent_new_logo,REP-049,EMP-0213,Active,,83307.16
-CUST-01498,Holloway Fire & Life Safety & Sons,Mid-Market,195,Northeast,2025-11-30,Trade Show / Event,annual,recent_new_logo,REP-032,EMP-0172,Active,,60563.44
-CUST-01499,Lowcountry Heating & Air LLC,Mid-Market,177,Midwest,2025-11-25,Partner / Referral,annual,recent_new_logo,REP-026,EMP-0022,Active,,32360.15
+CUST-01495,Meridian Plumbing & Sons,Mid-Market,121,West,2025-10-29,Outbound - SDR,annual,recent_new_logo,REP-049,EMP-0154,Active,,47149.64
+CUST-01496,Kowalczyk Pipefitting Partners,Mid-Market,71,Mountain,2025-11-11,Outbound - SDR,annual,recent_new_logo,REP-026,EMP-0182,Active,,34001.45
+CUST-01497,Jessup Facilities Group,Mid-Market,309,Northeast,2025-11-29,Inbound - Paid,annual,recent_new_logo,REP-047,EMP-0213,Active,,83307.16
+CUST-01498,Holloway Fire & Life Safety & Sons,Mid-Market,195,Northeast,2025-11-30,Trade Show / Event,annual,recent_new_logo,REP-026,EMP-0172,Active,,60563.44
+CUST-01499,Lowcountry Heating & Air LLC,Mid-Market,177,Midwest,2025-11-25,Partner / Referral,annual,recent_new_logo,REP-039,EMP-0022,Active,,32360.15
 CUST-01500,Cornerstone Heating & Air Co.,Mid-Market,122,Canada,2025-12-29,Partner / Referral,annual,recent_new_logo,REP-026,EMP-0258,Active,,18634.89
-CUST-01501,Susquehanna Electrical Contractors LLC,Mid-Market,98,Great Lakes,2025-12-31,Trade Show / Event,annual,recent_new_logo,REP-010,EMP-0096,Active,,42982.32
-CUST-01502,Fieldstone Building Services Group,Mid-Market,181,Mid-Atlantic,2025-12-26,Partner / Referral,annual,recent_new_logo,REP-010,EMP-0119,Active,,53174.66
-CUST-01503,Klamath Fire Protection,Mid-Market,52,Northeast,2025-12-16,Partner / Referral,annual,recent_new_logo,REP-050,EMP-0219,Active,,19675.17
-CUST-01504,Fieldstone Sheet Metal Partners,Mid-Market,114,Northeast,2025-12-22,Partner / Referral,multi_year,recent_new_logo,REP-039,EMP-0284,Active,,31195.02
-CUST-01505,Rasmussen Industrial Services Group,Mid-Market,61,Mountain,2025-12-28,Outbound - SDR,multi_year,recent_new_logo,REP-046,EMP-0148,Active,,33534.42
-CUST-01506,Coastal Bend Utility Services,Mid-Market,89,West,2025-12-26,Partner / Referral,annual,recent_new_logo,REP-010,EMP-0042,Active,,36865.61
-CUST-01507,Annapolis Valley Landscape Services LLC,Mid-Market,71,Southwest,2025-12-04,Outbound - SDR,multi_year,recent_new_logo,REP-032,EMP-0225,Active,,12247.93
-CUST-01508,Brazos Utility Services LLC,Enterprise,2330,Midwest,2025-01-31,Partner / Referral,annual,steady,REP-029,EMP-0317,Active,,339699.42
-CUST-01509,Kowalczyk Industrial Services Partners,Enterprise,679,Northeast,2025-02-02,Inbound - Paid,annual,land_and_expand,REP-014,EMP-0240,Active,,126525.98
-CUST-01510,Fieldstone Utility Services Group,Enterprise,537,Canada,2025-03-15,Outbound - SDR,annual,land_and_expand,REP-029,EMP-0182,Active,,60133.29
-CUST-01511,Brazos Controls Services,Enterprise,763,Canada,2025-06-02,Outbound - SDR,annual,land_and_expand,REP-045,EMP-0081,Active,,77321.27
-CUST-01512,Delgado Glass & Glazing & Sons,Enterprise,519,West,2025-10-02,Trade Show / Event,multi_year,recent_new_logo,REP-045,EMP-0148,Active,,65710.92
-CUST-01513,Lantern Elevator Services Inc.,Enterprise,2018,Southwest,2025-11-28,Outbound - SDR,annual,recent_new_logo,REP-014,EMP-0022,Active,,437824.88
-CUST-01514,Mulcahy Mechanical Contractors & Sons,Enterprise,592,Canada,2025-12-14,Trade Show / Event,annual,recent_new_logo,REP-044,EMP-0263,Active,,200202.35
+CUST-01501,Susquehanna Electrical Contractors LLC,Mid-Market,98,Great Lakes,2025-12-31,Trade Show / Event,annual,recent_new_logo,REP-049,EMP-0096,Active,,42982.32
+CUST-01502,Fieldstone Building Services Group,Mid-Market,181,Mid-Atlantic,2025-12-26,Partner / Referral,annual,recent_new_logo,REP-049,EMP-0119,Active,,53174.66
+CUST-01503,Klamath Fire Protection,Mid-Market,52,Northeast,2025-12-16,Partner / Referral,annual,recent_new_logo,REP-026,EMP-0219,Active,,19675.17
+CUST-01504,Fieldstone Sheet Metal Partners,Mid-Market,114,Northeast,2025-12-22,Partner / Referral,multi_year,recent_new_logo,REP-049,EMP-0284,Active,,31195.02
+CUST-01505,Rasmussen Industrial Services Group,Mid-Market,61,Mountain,2025-12-28,Outbound - SDR,multi_year,recent_new_logo,REP-026,EMP-0148,Active,,33534.42
+CUST-01506,Coastal Bend Utility Services,Mid-Market,89,West,2025-12-26,Partner / Referral,annual,recent_new_logo,REP-026,EMP-0042,Active,,36865.61
+CUST-01507,Annapolis Valley Landscape Services LLC,Mid-Market,71,Southwest,2025-12-04,Outbound - SDR,multi_year,recent_new_logo,REP-010,EMP-0225,Active,,12247.93
+CUST-01508,Brazos Utility Services LLC,Enterprise,2330,Midwest,2025-01-31,Partner / Referral,annual,steady,REP-044,EMP-0317,Active,,339699.42
+CUST-01509,Kowalczyk Industrial Services Partners,Enterprise,679,Northeast,2025-02-02,Inbound - Paid,annual,land_and_expand,REP-029,EMP-0240,Active,,126525.98
+CUST-01510,Fieldstone Utility Services Group,Enterprise,537,Canada,2025-03-15,Outbound - SDR,annual,land_and_expand,REP-044,EMP-0182,Active,,60133.29
+CUST-01511,Brazos Controls Services,Enterprise,763,Canada,2025-06-02,Outbound - SDR,annual,land_and_expand,REP-044,EMP-0081,Active,,77321.27
+CUST-01512,Delgado Glass & Glazing & Sons,Enterprise,519,West,2025-10-02,Trade Show / Event,multi_year,recent_new_logo,REP-044,EMP-0148,Active,,65710.92
+CUST-01513,Lantern Elevator Services Inc.,Enterprise,2018,Southwest,2025-11-28,Outbound - SDR,annual,recent_new_logo,REP-044,EMP-0022,Active,,437824.88
+CUST-01514,Mulcahy Mechanical Contractors & Sons,Enterprise,592,Canada,2025-12-14,Trade Show / Event,annual,recent_new_logo,REP-045,EMP-0263,Active,,200202.35
 CUST-01515,Castellano Heating & Air,SMB,24,Northeast,2026-01-03,Inbound - Organic,annual,recent_new_logo,REP-038,EMP-0178,Active,,13512.32
-CUST-01516,Stavros Plumbing,SMB,13,Northeast,2026-01-14,Partner / Referral,monthly,fast_churn,REP-038,EMP-0148,Churned,2026-02-28,5849.40
-CUST-01517,Cornerstone Industrial Services Partners,SMB,26,West,2026-01-31,Inbound - Organic,monthly,recent_new_logo,REP-038,EMP-0182,Active,,13597.52
+CUST-01516,Stavros Plumbing,SMB,13,Northeast,2026-01-14,Partner / Referral,monthly,fast_churn,REP-037,EMP-0148,Churned,2026-02-28,5849.40
+CUST-01517,Cornerstone Industrial Services Partners,SMB,26,West,2026-01-31,Inbound - Organic,monthly,recent_new_logo,REP-048,EMP-0182,Active,,13597.52
 CUST-01518,Zamora Boiler Works Corp.,SMB,24,West,2026-01-30,Outbound - SDR,annual,recent_new_logo,REP-048,EMP-0258,Active,,11109.52
 CUST-01519,Whitcomb Building Services,SMB,22,West,2026-01-31,Outbound - SDR,monthly,recent_new_logo,REP-038,EMP-0303,Active,,7063.76
-CUST-01520,Mahoney Facilities Group,SMB,8,Mid-Atlantic,2026-01-26,Inbound - Paid,monthly,recent_new_logo,REP-035,EMP-0289,Active,,3722.64
-CUST-01521,Lowcountry Property Services,SMB,13,Midwest,2026-01-30,Partner / Referral,monthly,fast_churn,REP-030,EMP-0119,Churned,2026-02-28,7549.99
-CUST-01522,Wasatch Mechanical Contractors Holdings,SMB,6,West,2026-01-19,Outbound - SDR,monthly,recent_new_logo,REP-030,EMP-0081,Active,,3600.24
+CUST-01520,Mahoney Facilities Group,SMB,8,Mid-Atlantic,2026-01-26,Inbound - Paid,monthly,recent_new_logo,REP-038,EMP-0289,Active,,3722.64
+CUST-01521,Lowcountry Property Services,SMB,13,Midwest,2026-01-30,Partner / Referral,monthly,fast_churn,REP-038,EMP-0119,Churned,2026-02-28,7549.99
+CUST-01522,Wasatch Mechanical Contractors Holdings,SMB,6,West,2026-01-19,Outbound - SDR,monthly,recent_new_logo,REP-038,EMP-0081,Active,,3600.24
 CUST-01523,Zamora Mechanical Contractors Holdings,SMB,9,West,2026-02-25,Outbound - SDR,annual,recent_new_logo,REP-038,EMP-0315,Active,,4031.51
 CUST-01524,Mulcahy Sheet Metal Holdings,SMB,7,Southwest,2026-02-16,Inbound - Paid,monthly,recent_new_logo,REP-030,EMP-0303,Active,,3787.68
 CUST-01525,Pemberton Mechanical Contractors,SMB,12,Southwest,2026-02-02,Inbound - Organic,monthly,recent_new_logo,REP-038,EMP-0119,Active,,8681.36
-CUST-01526,Brightline Fire Protection & Sons,SMB,10,Southwest,2026-02-28,Trade Show / Event,annual,recent_new_logo,REP-038,EMP-0291,Active,,4793.02
+CUST-01526,Brightline Fire Protection & Sons,SMB,10,Southwest,2026-02-28,Trade Show / Event,annual,recent_new_logo,REP-037,EMP-0291,Active,,4793.02
 CUST-01527,Vandermeer Energy Services Co.,SMB,7,Mid-Atlantic,2026-02-26,Inbound - Paid,annual,recent_new_logo,REP-035,EMP-0104,Active,,3782.89
-CUST-01528,Petrosian Mechanical Inc.,SMB,19,South Central,2026-02-04,Partner / Referral,annual,recent_new_logo,REP-030,EMP-0245,Active,,10797.88
-CUST-01529,Halvorsen Pipefitting LLC,SMB,7,Mid-Atlantic,2026-02-04,Inbound - Paid,monthly,fast_churn,REP-038,EMP-0291,Churned,2026-03-31,3764.89
-CUST-01530,Blue Ridge Mechanical,SMB,29,West,2026-02-26,Partner / Referral,annual,recent_new_logo,REP-038,EMP-0240,Active,,9837.60
-CUST-01531,Vandermeer Refrigeration,SMB,10,Canada,2026-03-27,Trade Show / Event,monthly,recent_new_logo,REP-038,EMP-0171,Active,,3940.40
-CUST-01532,Willamette Pipefitting Corp.,SMB,16,Mid-Atlantic,2026-03-14,Inbound - Organic,monthly,recent_new_logo,REP-030,EMP-0080,Active,,7541.54
-CUST-01533,Gallardo Facility Services Group,SMB,20,Mid-Atlantic,2026-03-06,Inbound - Organic,annual,recent_new_logo,REP-035,EMP-0301,Active,,9902.37
-CUST-01534,Sierra Nevada Controls Corp.,SMB,22,Great Lakes,2026-03-28,Partner / Referral,monthly,recent_new_logo,REP-038,EMP-0219,Active,,11732.11
+CUST-01528,Petrosian Mechanical Inc.,SMB,19,South Central,2026-02-04,Partner / Referral,annual,recent_new_logo,REP-035,EMP-0245,Active,,10797.88
+CUST-01529,Halvorsen Pipefitting LLC,SMB,7,Mid-Atlantic,2026-02-04,Inbound - Paid,monthly,fast_churn,REP-030,EMP-0291,Churned,2026-03-31,3764.89
+CUST-01530,Blue Ridge Mechanical,SMB,29,West,2026-02-26,Partner / Referral,annual,recent_new_logo,REP-030,EMP-0240,Active,,9837.60
+CUST-01531,Vandermeer Refrigeration,SMB,10,Canada,2026-03-27,Trade Show / Event,monthly,recent_new_logo,REP-035,EMP-0171,Active,,3940.40
+CUST-01532,Willamette Pipefitting Corp.,SMB,16,Mid-Atlantic,2026-03-14,Inbound - Organic,monthly,recent_new_logo,REP-037,EMP-0080,Active,,7541.54
+CUST-01533,Gallardo Facility Services Group,SMB,20,Mid-Atlantic,2026-03-06,Inbound - Organic,annual,recent_new_logo,REP-030,EMP-0301,Active,,9902.37
+CUST-01534,Sierra Nevada Controls Corp.,SMB,22,Great Lakes,2026-03-28,Partner / Referral,monthly,recent_new_logo,REP-048,EMP-0219,Active,,11732.11
 CUST-01535,Ashworth Building Services,SMB,34,Mid-Atlantic,2026-03-07,Partner / Referral,monthly,fast_churn,REP-038,EMP-0238,Churned,2026-06-30,15833.11
-CUST-01536,Quintero Security Systems Services,SMB,5,West,2026-03-26,Outbound - SDR,monthly,fast_churn,REP-038,EMP-0119,Churned,2026-06-30,3102.90
+CUST-01536,Quintero Security Systems Services,SMB,5,West,2026-03-26,Outbound - SDR,monthly,fast_churn,REP-037,EMP-0119,Churned,2026-06-30,3102.90
 CUST-01537,Ashworth Sheet Metal Holdings,SMB,11,Midwest,2026-03-10,Inbound - Paid,annual,recent_new_logo,REP-038,EMP-0219,Active,,3444.64
-CUST-01538,Iverson Electrical Contractors Group,SMB,21,South Central,2026-03-25,Inbound - Paid,annual,recent_new_logo,REP-048,EMP-0301,Active,,7744.23
-CUST-01539,Draeger Utility Services,SMB,47,Great Lakes,2026-03-28,Inbound - Organic,monthly,recent_new_logo,REP-038,EMP-0070,Active,,20442.85
-CUST-01540,Meridian Pipefitting Holdings,SMB,6,West,2026-03-06,Inbound - Organic,annual,recent_new_logo,REP-048,EMP-0096,Active,,4280.16
+CUST-01538,Iverson Electrical Contractors Group,SMB,21,South Central,2026-03-25,Inbound - Paid,annual,recent_new_logo,REP-030,EMP-0301,Active,,7744.23
+CUST-01539,Draeger Utility Services,SMB,47,Great Lakes,2026-03-28,Inbound - Organic,monthly,recent_new_logo,REP-035,EMP-0070,Active,,20442.85
+CUST-01540,Meridian Pipefitting Holdings,SMB,6,West,2026-03-06,Inbound - Organic,annual,recent_new_logo,REP-038,EMP-0096,Active,,4280.16
 CUST-01541,Lantern Landscape Services & Sons,SMB,30,Mid-Atlantic,2026-03-29,Inbound - Organic,monthly,recent_new_logo,REP-038,EMP-0070,Active,,19268.43
 CUST-01542,Klamath Landscape Services,SMB,20,Northeast,2026-03-22,Inbound - Paid,annual,recent_new_logo,REP-048,EMP-0238,Active,,8024.18
-CUST-01543,Nakashima Building Services Holdings,SMB,17,Midwest,2026-03-01,Inbound - Paid,monthly,recent_new_logo,REP-030,EMP-0154,Active,,6580.41
-CUST-01544,Yarborough Property Services,SMB,20,Mid-Atlantic,2026-04-13,Inbound - Paid,monthly,recent_new_logo,REP-035,EMP-0289,Active,,7717.86
-CUST-01545,Wasatch Plumbing & Heating Corp.,SMB,9,Mountain,2026-04-27,Partner / Referral,monthly,recent_new_logo,REP-035,EMP-0070,Active,,10549.27
-CUST-01546,Brightline Mechanical Systems Inc.,SMB,13,South Central,2026-04-28,Trade Show / Event,monthly,slow_decay,REP-048,EMP-0070,Churned,2026-05-31,5656.60
-CUST-01547,Allegheny Pipefitting Services,SMB,18,South Central,2026-04-28,Partner / Referral,monthly,recent_new_logo,REP-048,EMP-0070,Active,,6871.28
-CUST-01548,Copperfield HVAC & Sons,SMB,13,West,2026-04-27,Partner / Referral,monthly,recent_new_logo,REP-048,EMP-0119,Active,,5273.72
-CUST-01549,Red River Pipefitting & Sons,SMB,36,Mid-Atlantic,2026-04-15,Partner / Referral,annual,recent_new_logo,REP-030,EMP-0303,Active,,14699.85
-CUST-01550,Klamath Restoration,SMB,8,Southeast,2026-04-01,Trade Show / Event,monthly,fast_churn,REP-030,EMP-0322,Churned,2026-05-31,4503.40
+CUST-01543,Nakashima Building Services Holdings,SMB,17,Midwest,2026-03-01,Inbound - Paid,monthly,recent_new_logo,REP-037,EMP-0154,Active,,6580.41
+CUST-01544,Yarborough Property Services,SMB,20,Mid-Atlantic,2026-04-13,Inbound - Paid,monthly,recent_new_logo,REP-038,EMP-0289,Active,,7717.86
+CUST-01545,Wasatch Plumbing & Heating Corp.,SMB,9,Mountain,2026-04-27,Partner / Referral,monthly,recent_new_logo,REP-038,EMP-0070,Active,,10549.27
+CUST-01546,Brightline Mechanical Systems Inc.,SMB,13,South Central,2026-04-28,Trade Show / Event,monthly,slow_decay,REP-038,EMP-0070,Churned,2026-05-31,5656.60
+CUST-01547,Allegheny Pipefitting Services,SMB,18,South Central,2026-04-28,Partner / Referral,monthly,recent_new_logo,REP-030,EMP-0070,Active,,6871.28
+CUST-01548,Copperfield HVAC & Sons,SMB,13,West,2026-04-27,Partner / Referral,monthly,recent_new_logo,REP-038,EMP-0119,Active,,5273.72
+CUST-01549,Red River Pipefitting & Sons,SMB,36,Mid-Atlantic,2026-04-15,Partner / Referral,annual,recent_new_logo,REP-038,EMP-0303,Active,,14699.85
+CUST-01550,Klamath Restoration,SMB,8,Southeast,2026-04-01,Trade Show / Event,monthly,fast_churn,REP-038,EMP-0322,Churned,2026-05-31,4503.40
 CUST-01551,Panhandle Landscape Services,SMB,45,Southeast,2026-04-10,Partner / Referral,annual,recent_new_logo,REP-030,EMP-0103,Active,,18109.27
-CUST-01552,Cascade HVAC LLC,SMB,34,Midwest,2026-05-25,Inbound - Paid,annual,recent_new_logo,REP-037,EMP-0033,Active,,18416.47
+CUST-01552,Cascade HVAC LLC,SMB,34,Midwest,2026-05-25,Inbound - Paid,annual,recent_new_logo,REP-038,EMP-0033,Active,,18416.47
 CUST-01553,Bellamy Electrical Contractors Corp.,SMB,16,West,2026-05-27,Partner / Referral,monthly,recent_new_logo,REP-038,EMP-0032,Active,,10117.95
-CUST-01554,Hutchins Sheet Metal & Sons,SMB,7,Northeast,2026-05-17,Inbound - Paid,monthly,recent_new_logo,REP-030,EMP-0022,Active,,3826.42
-CUST-01555,Stonebridge Boiler Works Services,SMB,32,South Central,2026-05-01,Inbound - Paid,annual,recent_new_logo,REP-035,EMP-0238,Active,,15781.48
-CUST-01556,Halvorsen Restoration Co.,SMB,32,Midwest,2026-05-29,Inbound - Paid,annual,recent_new_logo,REP-048,EMP-0141,Active,,12270.92
-CUST-01557,Keystone Plumbing,SMB,7,Mountain,2026-05-17,Inbound - Organic,annual,recent_new_logo,REP-048,EMP-0119,Active,,4602.90
-CUST-01558,Whitcomb Sheet Metal LLC,SMB,9,Great Lakes,2026-05-28,Inbound - Paid,monthly,recent_new_logo,REP-038,EMP-0213,Active,,5074.30
-CUST-01559,Stavros Mechanical Contractors,SMB,34,Canada,2026-05-24,Inbound - Organic,monthly,recent_new_logo,REP-038,EMP-0219,Active,,16405.01
-CUST-01560,Granite Peak Glass & Glazing & Sons,SMB,14,Mid-Atlantic,2026-06-13,Inbound - Organic,monthly,recent_new_logo,REP-030,EMP-0225,Active,,8384.23
+CUST-01554,Hutchins Sheet Metal & Sons,SMB,7,Northeast,2026-05-17,Inbound - Paid,monthly,recent_new_logo,REP-038,EMP-0022,Active,,3826.42
+CUST-01555,Stonebridge Boiler Works Services,SMB,32,South Central,2026-05-01,Inbound - Paid,annual,recent_new_logo,REP-038,EMP-0238,Active,,15781.48
+CUST-01556,Halvorsen Restoration Co.,SMB,32,Midwest,2026-05-29,Inbound - Paid,annual,recent_new_logo,REP-030,EMP-0141,Active,,12270.92
+CUST-01557,Keystone Plumbing,SMB,7,Mountain,2026-05-17,Inbound - Organic,annual,recent_new_logo,REP-030,EMP-0119,Active,,4602.90
+CUST-01558,Whitcomb Sheet Metal LLC,SMB,9,Great Lakes,2026-05-28,Inbound - Paid,monthly,recent_new_logo,REP-035,EMP-0213,Active,,5074.30
+CUST-01559,Stavros Mechanical Contractors,SMB,34,Canada,2026-05-24,Inbound - Organic,monthly,recent_new_logo,REP-048,EMP-0219,Active,,16405.01
+CUST-01560,Granite Peak Glass & Glazing & Sons,SMB,14,Mid-Atlantic,2026-06-13,Inbound - Organic,monthly,recent_new_logo,REP-038,EMP-0225,Active,,8384.23
 CUST-01561,Cascade Refrigeration Inc.,SMB,21,Southeast,2026-06-30,Partner / Referral,monthly,recent_new_logo,REP-038,EMP-0284,Active,,16470.32
 CUST-01562,Allegheny Electrical Contractors Co.,SMB,6,Southwest,2026-06-29,Inbound - Organic,monthly,recent_new_logo,REP-038,EMP-0322,Active,,2023.95
-CUST-01563,Shenandoah Mechanical Contractors Partners,SMB,6,Mid-Atlantic,2026-06-26,Inbound - Organic,annual,recent_new_logo,REP-030,EMP-0131,Active,,3065.77
-CUST-01564,Clearwater Utility Services,SMB,26,Great Lakes,2026-06-14,Partner / Referral,monthly,recent_new_logo,REP-038,EMP-0119,Active,,15626.31
-CUST-01565,Draeger Landscape Services Holdings,SMB,11,Southeast,2026-06-26,Outbound - SDR,monthly,recent_new_logo,REP-037,EMP-0245,Active,,5091.81
+CUST-01563,Shenandoah Mechanical Contractors Partners,SMB,6,Mid-Atlantic,2026-06-26,Inbound - Organic,annual,recent_new_logo,REP-038,EMP-0131,Active,,3065.77
+CUST-01564,Clearwater Utility Services,SMB,26,Great Lakes,2026-06-14,Partner / Referral,monthly,recent_new_logo,REP-035,EMP-0119,Active,,15626.31
+CUST-01565,Draeger Landscape Services Holdings,SMB,11,Southeast,2026-06-26,Outbound - SDR,monthly,recent_new_logo,REP-038,EMP-0245,Active,,5091.81
 CUST-01566,Harrow Plumbing Holdings,SMB,12,Mid-Atlantic,2026-06-08,Inbound - Organic,monthly,recent_new_logo,REP-038,EMP-0080,Active,,4564.09
-CUST-01567,Ferreira Plumbing & Sons,SMB,38,Canada,2026-06-20,Partner / Referral,monthly,recent_new_logo,REP-030,EMP-0104,Active,,17236.62
-CUST-01568,Hudson Valley Industrial Services Co.,SMB,5,Mid-Atlantic,2026-06-28,Inbound - Organic,annual,recent_new_logo,REP-038,EMP-0315,Active,,1991.25
+CUST-01567,Ferreira Plumbing & Sons,SMB,38,Canada,2026-06-20,Partner / Referral,monthly,recent_new_logo,REP-038,EMP-0104,Active,,17236.62
+CUST-01568,Hudson Valley Industrial Services Co.,SMB,5,Mid-Atlantic,2026-06-28,Inbound - Organic,annual,recent_new_logo,REP-030,EMP-0315,Active,,1991.25
 CUST-01569,Okonkwo Facility Services,SMB,9,Mid-Atlantic,2026-06-04,Inbound - Organic,monthly,recent_new_logo,REP-038,EMP-0131,Active,,3081.42
-CUST-01570,Wabash Roofing LLC,Mid-Market,372,Northeast,2026-01-26,Inbound - Organic,multi_year,recent_new_logo,REP-049,EMP-0080,Active,,143962.44
-CUST-01571,Ostrowski Industrial Services Partners,Mid-Market,183,Southeast,2026-01-22,Inbound - Organic,multi_year,recent_new_logo,REP-049,EMP-0301,Active,,52589.57
-CUST-01572,Harborview Pipefitting LLC,Mid-Market,194,Mountain,2026-02-25,Inbound - Paid,annual,recent_new_logo,REP-039,EMP-0070,Active,,98107.93
-CUST-01573,Lowcountry HVAC & Sons,Mid-Market,165,Great Lakes,2026-02-13,Partner / Referral,annual,recent_new_logo,REP-026,EMP-0154,Active,,32204.48
-CUST-01574,Summit Line Roofing & Sons,Mid-Market,111,Midwest,2026-03-04,Partner / Referral,multi_year,recent_new_logo,REP-026,EMP-0042,Active,,36413.10
-CUST-01575,Cornerstone Heating & Air,Mid-Market,150,Midwest,2026-03-30,Trade Show / Event,annual,recent_new_logo,REP-010,EMP-0289,Active,,56050.57
-CUST-01576,Panhandle Glass & Glazing Co.,Mid-Market,111,Southwest,2026-03-29,Inbound - Paid,annual,recent_new_logo,REP-026,EMP-0139,Active,,34153.52
+CUST-01570,Wabash Roofing LLC,Mid-Market,372,Northeast,2026-01-26,Inbound - Organic,multi_year,recent_new_logo,REP-010,EMP-0080,Active,,143962.44
+CUST-01571,Ostrowski Industrial Services Partners,Mid-Market,183,Southeast,2026-01-22,Inbound - Organic,multi_year,recent_new_logo,REP-032,EMP-0301,Active,,52589.57
+CUST-01572,Harborview Pipefitting LLC,Mid-Market,194,Mountain,2026-02-25,Inbound - Paid,annual,recent_new_logo,REP-049,EMP-0070,Active,,98107.93
+CUST-01573,Lowcountry HVAC & Sons,Mid-Market,165,Great Lakes,2026-02-13,Partner / Referral,annual,recent_new_logo,REP-049,EMP-0154,Active,,32204.48
+CUST-01574,Summit Line Roofing & Sons,Mid-Market,111,Midwest,2026-03-04,Partner / Referral,multi_year,recent_new_logo,REP-039,EMP-0042,Active,,36413.10
+CUST-01575,Cornerstone Heating & Air,Mid-Market,150,Midwest,2026-03-30,Trade Show / Event,annual,recent_new_logo,REP-050,EMP-0289,Active,,56050.57
+CUST-01576,Panhandle Glass & Glazing Co.,Mid-Market,111,Southwest,2026-03-29,Inbound - Paid,annual,recent_new_logo,REP-039,EMP-0139,Active,,34153.52
 CUST-01577,Nakashima Facility Services,Mid-Market,108,Mid-Atlantic,2026-03-08,Outbound - SDR,annual,recent_new_logo,REP-010,EMP-0317,Active,,29708.62
-CUST-01578,Coastal Bend Building Services Partners,Mid-Market,89,Great Lakes,2026-04-23,Inbound - Paid,annual,recent_new_logo,REP-026,EMP-0178,Active,,24186.57
-CUST-01579,Zamora Facility Services,Mid-Market,136,Northeast,2026-04-09,Outbound - SDR,annual,recent_new_logo,REP-032,EMP-0096,Active,,38212.53
-CUST-01580,Marchetti Energy Services Corp.,Mid-Market,136,Canada,2026-05-15,Outbound - SDR,annual,recent_new_logo,REP-032,EMP-0317,Active,,44755.11
-CUST-01581,Holloway Glass & Glazing Partners,Mid-Market,99,Mountain,2026-05-24,Partner / Referral,annual,recent_new_logo,REP-010,EMP-0096,Active,,41582.08
+CUST-01578,Coastal Bend Building Services Partners,Mid-Market,89,Great Lakes,2026-04-23,Inbound - Paid,annual,recent_new_logo,REP-050,EMP-0178,Active,,24186.57
+CUST-01579,Zamora Facility Services,Mid-Market,136,Northeast,2026-04-09,Outbound - SDR,annual,recent_new_logo,REP-026,EMP-0096,Active,,38212.53
+CUST-01580,Marchetti Energy Services Corp.,Mid-Market,136,Canada,2026-05-15,Outbound - SDR,annual,recent_new_logo,REP-051,EMP-0317,Active,,44755.11
+CUST-01581,Holloway Glass & Glazing Partners,Mid-Market,99,Mountain,2026-05-24,Partner / Referral,annual,recent_new_logo,REP-032,EMP-0096,Active,,41582.08
 CUST-01582,Kilbride Fire & Life Safety & Sons,Mid-Market,139,Mid-Atlantic,2026-06-27,Inbound - Organic,annual,recent_new_logo,REP-026,EMP-0081,Active,,54414.02
-CUST-01583,Susquehanna Glass & Glazing Corp.,Mid-Market,90,Mid-Atlantic,2026-06-27,Outbound - SDR,annual,recent_new_logo,REP-051,EMP-0303,Active,,38423.93
-CUST-01584,Laurentian Sheet Metal Group,Mid-Market,169,Southwest,2026-06-10,Inbound - Organic,annual,recent_new_logo,REP-010,EMP-0272,Active,,40826.87
-CUST-01585,Ackerley Landscape Services LLC,Enterprise,869,Canada,2026-03-31,Trade Show / Event,annual,recent_new_logo,REP-029,EMP-0245,Active,,122367.46
-CUST-01586,Front Range Roofing,Enterprise,1900,Southwest,2026-06-01,Partner / Referral,multi_year,recent_new_logo,REP-029,EMP-0172,Active,,430567.22
+CUST-01583,Susquehanna Glass & Glazing Corp.,Mid-Market,90,Mid-Atlantic,2026-06-27,Outbound - SDR,annual,recent_new_logo,REP-026,EMP-0303,Active,,38423.93
+CUST-01584,Laurentian Sheet Metal Group,Mid-Market,169,Southwest,2026-06-10,Inbound - Organic,annual,recent_new_logo,REP-051,EMP-0272,Active,,40826.87
+CUST-01585,Ackerley Landscape Services LLC,Enterprise,869,Canada,2026-03-31,Trade Show / Event,annual,recent_new_logo,REP-014,EMP-0245,Active,,122367.46
+CUST-01586,Front Range Roofing,Enterprise,1900,Southwest,2026-06-01,Partner / Referral,multi_year,recent_new_logo,REP-044,EMP-0172,Active,,430567.22

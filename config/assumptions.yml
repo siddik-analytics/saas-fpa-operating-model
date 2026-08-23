@@ -175,6 +175,12 @@ tolerances:
   logos_abs_segment: 5   # see docs/generation_methodology.md, deviation D5
   rate_points: 1.0
   arr_mrr_identity_dollars: 0.01
+  # EBITDA is a small difference of large numbers: at Helio's scale it is $7.4M
+  # struck from $27.4M of revenue and $34.8M of cost. Holding each of the seven
+  # P&L lines to a few tenths of a percent still leaves EBITDA free to move
+  # several times that, so it carries its own tolerance. PHASE1_SPEC 2.3 states
+  # the +/-2% tolerance for ARR and revenue, not for a residual.
+  ebitda_pct: 0.04
 
 # ---------------------------------------------------------------------------
 # CUSTOMER BASE
@@ -572,6 +578,10 @@ calibration:
   # exactly would put segment ARR on its anchor to the dollar, which is not what
   # a real book looks like.
   price_level_damping: 0.93
+  # Same reasoning for the ledger driver rates. Stopping at half a percent leaves
+  # the FY2025 lines reading like actuals rather than like a plan that tied.
+  gl_scalar_damping: 0.55
+  gl_scalar_tolerance: 0.004
   # The acquisition multiplier may only move cohorts up to FY2023.
   #
   # FY2025 new-logo counts are anchors in their own right. FY2024 is excluded for
@@ -642,10 +652,16 @@ crm:
   # Distribution of open opportunities across live stages at the reporting date.
   open_stage_mix: {Discovery: 0.31, Qualification: 0.28, Proposal: 0.24, Negotiation: 0.17}
 
-  # Share of expansion and renewal-uplift events that are recorded as CRM
-  # opportunities. Seat auto-adds under an existing contract never are.
-  expansion_opportunity_share: 0.45
-  renewal_uplift_opportunity_share: 0.60
+  # Which expansion lands in the CRM, and which does not.
+  #
+  # A material expansion goes through a rep and is booked as an opportunity. A
+  # handful of seats added under an existing contract is self-serve and never
+  # touches the CRM. Splitting on deal size rather than on a coin flip matters:
+  # it makes the difference between closed-won ACV and expansion ARR a quantity
+  # Phase 5 can derive and explain, rather than an unexplained residual.
+  expansion_self_serve_threshold: 3500
+  expansion_opportunity_share: 0.16   # applies below the threshold only
+  renewal_uplift_opportunity_share: 0.72
   expansion_win_rate: 0.62
   renewal_uplift_win_rate: 0.83
 

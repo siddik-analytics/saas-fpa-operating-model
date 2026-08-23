@@ -35,6 +35,8 @@ REPORT_SECTIONS: list[tuple[str, str, str]] = [
     ("concentration", "Customer concentration", "Top-10 and largest-customer share of ARR."),
     ("crm", "CRM win rates and sales cycles", "New-logo opportunities by segment."),
     ("crm_messiness", "CRM-to-ARR reconciling items", "Differences built in deliberately."),
+    ("bookings", "Bookings against ARR", "Whether Phase 5 will be able to reconcile the two."),
+    ("attainment", "Rep attainment dispersion", "Measured on CRM-recorded bookings; the credit model is Phase 5."),
     ("headcount", "Headcount at 30 June 2026", "By function, with the FTE reconciliation."),
     ("attrition", "Attrition by function", "Trailing twelve months to the reporting date."),
     ("requisitions", "Requisitions and hiring slippage", "The conditions a variance analysis needs."),

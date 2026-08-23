@@ -19,9 +19,8 @@ import re
 from dataclasses import dataclass, field
 from datetime import date
 from pathlib import Path
-from typing import Any
 
-import numpy as np
+
 import pandas as pd
 
 from .config import Config, DATA_RAW_DIR, as_date, month_ends
@@ -130,6 +129,7 @@ def validate(cfg: Config, directory: Path = DATA_RAW_DIR) -> ValidationResult:
     _check_contracts(cfg, result, tables)
     _check_products(cfg, result, tables)
     _check_crm(cfg, result, tables)
+    _check_gtm(cfg, result, tables)
     _check_employees(cfg, result, tables)
     _check_gl(cfg, result, tables)
     _check_planning(cfg, result, tables)
@@ -574,6 +574,102 @@ def _check_crm(cfg: Config, result: ValidationResult, tables: dict[str, pd.DataF
     ])
 
 
+def _check_gtm(cfg: Config, result: ValidationResult, tables: dict[str, pd.DataFrame]) -> None:
+    """Bookings coherence and rep attainment dispersion.
+
+    Not the Phase 5 CRM-to-ARR reconciliation, which walks the difference item by
+    item and has to close to half a percent. This is the weaker source-level
+    question that has to be true first: are closed-won values the right order of
+    magnitude against the ARR that actually landed? If new-logo bookings were
+    double new-logo ARR, no reconciliation could ever close, and the fault would
+    be in the source data rather than in the walk.
+    """
+    opportunities = tables["fact_crm_opportunity"]
+    customers = tables["dim_customer"]
+    reps = tables["dim_sales_rep"]
+
+    won = opportunities[opportunities["status"] == "Won"].copy()
+    won["close_year"] = won["actual_close_date"].map(lambda d: d.year if d else 0)
+    fy2025 = won[won["close_year"] == 2025]
+
+    new_logo_bookings = float(fy2025[fy2025["deal_type"] == "New Logo"]["acv"].sum())
+    acquired = customers[customers["acquisition_date"].map(lambda d: d.year) == 2025]
+    new_logo_arr = float(acquired["first_arr"].sum())
+
+    rows = [
+        {"Measure": "FY2025 closed-won new-logo ACV", "Value": round(new_logo_bookings)},
+        {"Measure": "FY2025 new-logo ARR landed", "Value": round(new_logo_arr)},
+        {"Measure": "Difference to explain in Phase 5",
+         "Value": round(new_logo_bookings - new_logo_arr)},
+    ]
+    for deal_type in ("New Logo", "Expansion", "Renewal Uplift"):
+        subset = fy2025[fy2025["deal_type"] == deal_type]
+        rows.append({
+            "Measure": f"FY2025 closed-won {deal_type}: count",
+            "Value": len(subset),
+        })
+        rows.append({
+            "Measure": f"FY2025 closed-won {deal_type}: mean ACV",
+            "Value": round(float(subset["acv"].mean())) if len(subset) else 0,
+        })
+    result.evidence["bookings"] = pd.DataFrame(rows)
+
+    gap = abs(new_logo_bookings / new_logo_arr - 1) if new_logo_arr else 1.0
+    result.add("GTM", "Closed-won new-logo ACV is coherent with new-logo ARR",
+               gap <= 0.08,
+               f"bookings ${new_logo_bookings:,.0f} against ARR ${new_logo_arr:,.0f}, "
+               f"a {gap:.1%} difference for Phase 5 to walk")
+
+    # Renewal uplift is booked at the price rise, never at the renewed contract.
+    uplifts = fy2025[fy2025["deal_type"] == "Renewal Uplift"]["acv"]
+    new_logo_mean = float(fy2025[fy2025["deal_type"] == "New Logo"]["acv"].mean())
+    result.add("GTM", "Renewal uplift deals are valued at the uplift, not the contract",
+               float(uplifts.mean()) < new_logo_mean * 0.35 if len(uplifts) else True,
+               f"mean uplift deal ${uplifts.mean():,.0f} against mean new-logo deal "
+               f"${new_logo_mean:,.0f}")
+
+    # Attainment dispersion. The level belongs to Phase 5, which credits a rep
+    # with ARR movement rather than only with deals that passed through the CRM;
+    # what has to be true here is that the spread is not artificially tight.
+    quota = reps.set_index("rep_id")
+    bookings = fy2025.groupby("rep_id")["acv"].sum()
+    attainment = []
+    for rep_id, booked in bookings.items():
+        if rep_id not in quota.index:
+            continue
+        rep = quota.loc[rep_id]
+        months = _months_carried(rep, 2025)
+        if months < 6:
+            continue
+        target = float(rep["annual_quota"]) * months / 12.0
+        attainment.append(booked / target if target else 0.0)
+
+    if attainment:
+        series = pd.Series(sorted(attainment))
+        spread = float(series.quantile(0.9) / max(0.01, series.quantile(0.1)))
+        result.evidence["attainment"] = pd.DataFrame([
+            {"Measure": "Quota-carrying reps with six or more months in FY2025", "Value": len(series)},
+            {"Measure": "Lowest attainment on CRM-recorded bookings", "Value": round(float(series.min()), 3)},
+            {"Measure": "Median attainment", "Value": round(float(series.median()), 3)},
+            {"Measure": "Highest attainment", "Value": round(float(series.max()), 3)},
+            {"Measure": "Ninetieth to tenth percentile spread", "Value": round(spread, 2)},
+        ])
+        result.add("GTM", "Rep attainment shows real dispersion", spread >= 2.5,
+                   f"ninetieth percentile is {spread:.1f} times the tenth; "
+                   f"range {series.min():.0%} to {series.max():.0%}")
+
+
+def _months_carried(rep: pd.Series, year: int) -> int:
+    """Months a rep carried quota in a calendar year."""
+    hire, termination = rep["hire_date"], rep["termination_date"]
+    if hire.year > year or (termination is not None and not pd.isna(termination) and termination.year < year):
+        return 0
+    start = hire.month if hire.year == year else 1
+    end = termination.month if (termination is not None and not pd.isna(termination)
+                                and termination.year == year) else 12
+    return max(0, end - start + 1)
+
+
 def _check_employees(cfg: Config, result: ValidationResult, tables: dict[str, pd.DataFrame]) -> None:
     employees = tables["dim_employee"]
     reporting = as_date(cfg["periods"]["reporting_date"])
@@ -707,8 +803,10 @@ def _check_gl(cfg: Config, result: ValidationResult, tables: dict[str, pd.DataFr
 
     ebitda = revenue - cogs - opex
     result.add("GL", "FY2025 EBITDA within tolerance",
-               abs(ebitda / anchors["ebitda"] - 1) <= cfg["tolerances"]["revenue_pct"],
-               f"target ${anchors['ebitda']:,.0f}; generated ${ebitda:,.0f}")
+               abs(ebitda / anchors["ebitda"] - 1) <= cfg["tolerances"]["ebitda_pct"],
+               f"target ${anchors['ebitda']:,.0f}; generated ${ebitda:,.0f}; "
+               f"variance {ebitda / anchors['ebitda'] - 1:+.2%} against a "
+               f"{cfg['tolerances']['ebitda_pct']:.0%} residual tolerance")
 
     # Monthly totals must not look mechanically spread.
     monthly = ledger.groupby("month_end_date")["actual_amount"].sum()

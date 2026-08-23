@@ -12,7 +12,7 @@ from __future__ import annotations
 from collections import defaultdict
 from dataclasses import dataclass, field
 from datetime import date
-from typing import Any, Iterable
+from typing import Any
 
 import numpy as np
 
@@ -235,7 +235,6 @@ def _revenue_rows(cfg: Config, inputs: LedgerInputs, scalars: dict[str, float]) 
     weights = gl["subscription_revenue_lag_weights"]
     usage_share = gl["usage_revenue_share_of_subscription"]
     tilt = gl["usage_revenue_month_tilt"]
-    rng = stream(cfg.seed, "revenue_noise")
 
     rows = []
     for me in inputs.months:

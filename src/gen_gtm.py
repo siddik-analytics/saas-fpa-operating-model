@@ -19,7 +19,6 @@ import numpy as np
 from .config import (
     Config,
     as_date,
-    from_month_index,
     month_end,
     month_index,
     month_ends,
@@ -136,10 +135,15 @@ def build_opportunities(
             include = event["event_date"] >= window_start
         elif kind in ("Seat Expansion", "Module Attach"):
             deal_type = "Expansion"
-            include = (
-                event["event_date"] >= window_start
-                and rng.random() < crm["expansion_opportunity_share"]
+            value = float(event.get("expansion_acv") or 0.0)
+            # Material expansions go through a rep. Small seat adds are
+            # self-serve and never reach the CRM, which is the difference
+            # Phase 5 has to walk.
+            reaches_crm = (
+                value >= crm["expansion_self_serve_threshold"]
+                or rng.random() < crm["expansion_opportunity_share"]
             )
+            include = event["event_date"] >= window_start and reaches_crm
         elif kind == "Renewal" and event.get("uplift_pct"):
             deal_type = "Renewal Uplift"
             include = (
@@ -149,6 +153,9 @@ def build_opportunities(
         else:
             continue
         if not include or event["event_date"] > reporting:
+            continue
+
+        if _opportunity_value(event, deal_type) <= 0:
             continue
 
         counter += 1
@@ -230,7 +237,7 @@ def _won_opportunity(
     forecast_cycle = int(cycle * float(np.clip(rng.normal(0.86, 0.22), 0.4, 1.4)))
     expected_close = created + timedelta(days=max(7, forecast_cycle))
 
-    acv = float(event.get("acv") or _expansion_value(cfg, rng, customer, event))
+    acv = _opportunity_value(event, deal_type)
     term = int(event.get("term_months") or 12)
     tcv = round(acv * max(term, 1) / 12.0, 2)
 
@@ -445,6 +452,22 @@ def _shift_back_months(when: date, months: int) -> date:
     return date(year, month, min(when.day, last))
 
 
+def _opportunity_value(event: dict[str, Any], deal_type: str) -> float:
+    """The ARR an opportunity actually represents.
+
+    New business books the first contract, an expansion books the ARR that
+    expansion added, and a renewal uplift books the price rise rather than the
+    renewed contract. Getting this wrong is not cosmetic: Phase 5 has to
+    reconcile closed-won ACV to new-logo plus expansion ARR to within half a
+    percent, and it cannot do that against invented deal values.
+    """
+    if deal_type == "Expansion":
+        return float(event.get("expansion_acv") or 0.0)
+    if deal_type == "Renewal Uplift":
+        return float(event.get("uplift_acv") or 0.0)
+    return float(event.get("acv") or 0.0)
+
+
 def _sales_cycle_days(cfg: Config, rng: np.random.Generator, segment: str) -> int:
     """Lognormal around the segment median. Enterprise takes materially longer."""
     median = cfg["crm"]["median_sales_cycle_days"][segment]
@@ -455,15 +478,6 @@ def _sales_cycle_days(cfg: Config, rng: np.random.Generator, segment: str) -> in
 def _new_logo_acv(cfg: Config, rng: np.random.Generator, segment: str) -> float:
     anchor = cfg["anchors"]["new_logo_acv_fy2025"][segment]
     return float(anchor * np.exp(rng.normal(0.0, 0.45)))
-
-
-def _expansion_value(cfg: Config, rng: np.random.Generator, customer: Customer, event: dict) -> float:
-    """Approximate deal value for an expansion event recorded in the CRM."""
-    base = cfg["anchors"]["new_logo_acv_fy2025"][customer.segment]
-    if event["event_type"] == "Module Attach":
-        return float(base * np.clip(rng.normal(0.30, 0.10), 0.05, 0.9))
-    seats = int(event.get("seats_added", 1))
-    return float(base * np.clip(rng.normal(0.10 * max(1, seats) / 3.0, 0.06), 0.03, 1.2))
 
 
 def _draw_crm_term(cfg: Config, rng: np.random.Generator, segment: str) -> int:

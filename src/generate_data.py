@@ -340,7 +340,6 @@ def calibrate(cfg: Config, verbose: bool = True) -> tuple[Knobs, list[dict[str, 
     arr_target = anchors["segment_arr"]["2025-12-31"]
     dec_2023, dec_2024 = date(2023, 12, 31), date(2024, 12, 31)
     dec_2025, jun_2026 = date(2025, 12, 31), date(2026, 6, 30)
-    jun_2025 = date(2025, 6, 30)
 
     trace: list[dict[str, Any]] = []
 
@@ -541,20 +540,35 @@ def solve_gl_scalars(cfg: Config, build: Callable[[dict[str, float]], list[dict[
         "general_administrative": "General & Administrative",
     }
 
+    # Damped, and stopped well short of machine precision. The revenue lines are
+    # exactly linear in their scalar, so an undamped loop drives them onto the
+    # anchor to the cent - FY2025 total revenue reading 27,400,000.00 against a
+    # target of 27,400,000. A ledger that reconciles to its own plan perfectly is
+    # a synthetic-data tell. The expense lines never had the problem, because
+    # payroll is derived from dim_employee and carries no scalar at all.
+    damping = float(cfg["calibration"]["gl_scalar_damping"])
+    tolerance = float(cfg["calibration"]["gl_scalar_tolerance"])
     scalars = {key: 1.0 for key in targets}
     for _ in range(12):
-        rows = build(scalars)
-        totals = category_totals(rows, 2025)
-        worst = 0.0
-        for key, target in targets.items():
-            actual = totals.get(category_for[key], 0.0)
-            if actual <= 0:
-                continue
-            ratio = target / actual
-            worst = max(worst, abs(ratio - 1.0))
-            scalars[key] = float(np.clip(scalars[key] * ratio, 0.4, 2.5))
-        if worst < 0.002:
+        totals = category_totals(build(scalars), 2025)
+        ratios = {
+            key: targets[key] / totals[category_for[key]]
+            for key in targets
+            if totals.get(category_for[key], 0.0) > 0
+        }
+        # Each line stops on its own, and is tested before the update rather than
+        # after, so the loop leaves a real residual on the table. A single shared
+        # stopping rule would not do it: the revenue lines are exactly linear in
+        # their scalar and converge in two or three passes, while the payroll-
+        # heavy expense lines take many more, and the loop would go on driving
+        # revenue toward the cent long after it had arrived.
+        outstanding = {k: r for k, r in ratios.items() if abs(r - 1.0) >= tolerance}
+        if not outstanding:
             break
+        for key, ratio in outstanding.items():
+            scalars[key] = float(
+                np.clip(scalars[key] * (1.0 + damping * (ratio - 1.0)), 0.4, 2.5)
+            )
     return scalars
 
 

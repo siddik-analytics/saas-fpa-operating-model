@@ -244,7 +244,8 @@ def _simulate_customer(
         months_served += 1
 
         seats, products = _apply_mid_term_expansion(
-            cfg, customer, knobs, expansion_rng, seats, products, months_served, me, out, contract
+            cfg, customer, knobs, expansion_rng, seats, products, months_served, me, out,
+            contract, pricing, insights_factor,
         )
 
         for row in _state_rows(cfg, customer, contract, pricing, seats, products, mi, insights_factor, knobs):
@@ -300,6 +301,16 @@ def _simulate_customer(
                         "uplift_pct": successor.uplift_pct,
                         "seats_before": seats,
                         "seats_after": successor.seats,
+                        # A renewal uplift opportunity is worth the price rise it
+                        # secured, not the value of the whole renewed contract.
+                        # Booking the contract would have credited a rep with the
+                        # entire installed base every time it renewed.
+                        "uplift_acv": round(
+                            successor.net_acv
+                            * (successor.uplift_pct or 0.0)
+                            / (1.0 + (successor.uplift_pct or 0.0)),
+                            2,
+                        ),
                     }
                 )
                 contract = successor
@@ -703,6 +714,8 @@ def _apply_mid_term_expansion(
     month_end_date: date,
     out: JourneyResult,
     contract: _Contract,
+    pricing: _Pricing,
+    insights_factor: float,
 ) -> tuple[int, set[str]]:
     """Seat growth and module attach, co-termed with the existing contract.
 
@@ -731,19 +744,26 @@ def _apply_mid_term_expansion(
         if delta > 0:
             # A customer cannot license more people than it has decided to put on
             # the system. Expansion saturates rather than compounding forever.
+            before = _book_arr(cfg, customer, contract, pricing, seats, products, insights_factor, knobs)
             seats = min(seats + delta, customer.seat_ceiling)
-            out.events.append(
-                {
-                    "event_type": "Seat Expansion",
-                    "customer_id": customer.customer_id,
-                    "segment": customer.segment,
-                    "event_date": month_end_date,
-                    "contract_id": contract.contract_id,
-                    "contract_type": contract.contract_type,
-                    "term_months": contract.term_months,
-                    "seats_added": delta,
-                }
-            )
+            after = _book_arr(cfg, customer, contract, pricing, seats, products, insights_factor, knobs)
+            if after > before:
+                out.events.append(
+                    {
+                        "event_type": "Seat Expansion",
+                        "customer_id": customer.customer_id,
+                        "segment": customer.segment,
+                        "event_date": month_end_date,
+                        "contract_id": contract.contract_id,
+                        "contract_type": contract.contract_type,
+                        "term_months": contract.term_months,
+                        "seats_added": seats - (seats - delta),
+                        # The ARR this expansion actually added. The CRM books
+                        # this figure, so closed-won ACV can be reconciled to ARR
+                        # movement in Phase 5 instead of to an invented number.
+                        "expansion_acv": round(after - before, 2),
+                    }
+                )
         elif delta < 0 and contract.contract_type == "monthly":
             # Only month-to-month customers may shrink outside a renewal.
             seats = max(1, seats + delta)
@@ -759,7 +779,9 @@ def _apply_mid_term_expansion(
                 continue
             hazard = expansion["module_attach_hazard_monthly"][key][customer.segment] * multiplier
             if rng.random() < hazard:
+                before = _book_arr(cfg, customer, contract, pricing, seats, products, insights_factor, knobs)
                 products = products | {product}
+                after = _book_arr(cfg, customer, contract, pricing, seats, products, insights_factor, knobs)
                 out.events.append(
                     {
                         "event_type": "Module Attach",
@@ -770,6 +792,7 @@ def _apply_mid_term_expansion(
                         "contract_type": contract.contract_type,
                         "term_months": contract.term_months,
                         "product_id": product,
+                        "expansion_acv": round(after - before, 2),
                     }
                 )
     return seats, products
@@ -793,6 +816,26 @@ def _discrete_seat_step(rng: np.random.Generator, step: float, minimum: int) -> 
     if whole == 0:
         return 0
     return int(np.sign(step)) * max(int(minimum), whole)
+
+
+def _book_arr(
+    cfg: Config,
+    customer: Customer,
+    contract: _Contract,
+    pricing: _Pricing,
+    seats: int,
+    products: Iterable[str],
+    insights_factor: float,
+    knobs: Knobs,
+) -> float:
+    """Annualised ARR for a customer at a given seat count and product set."""
+    level = knobs.price_level.get(customer.segment, 1.0)
+    net_factor = (1.0 - contract.discount_pct) * contract.price_multiplier * level
+    monthly = sum(
+        pricing.monthly_list(product, customer.segment, seats, contract.start_date, insights_factor)
+        for product in products
+    )
+    return round(monthly * net_factor * 12.0, 2)
 
 
 def _state_rows(

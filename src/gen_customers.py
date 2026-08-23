@@ -8,7 +8,7 @@ because those are outcomes of the contract history rather than inputs to it.
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from datetime import date, timedelta
+from datetime import date
 from typing import Any
 
 import numpy as np

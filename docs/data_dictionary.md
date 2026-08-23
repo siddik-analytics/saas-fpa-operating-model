@@ -159,10 +159,15 @@ items the Phase 5 CRM-to-ARR walk has to explain, and none of it is arbitrary no
 | `lead_source` | text | Attribution channel. |
 | `provisioned_flag` | boolean | False on roughly 3% of closed-won deals that never activated, and on all losses and open deals. |
 
+`acv` is the ARR the opportunity actually represents: the first contract on a new logo, the ARR
+an expansion added, and the price rise on a renewal uplift — not the value of the renewed
+contract.
+
 **Built-in reconciling items.** Signature in one month and activation in the next on about
 27% of wins; TCV against ACV on multi-year deals; wins that never provision; post-close
-amendments that move ACV after the CRM record was frozen; and renewal uplift booked as an
-opportunity but classified as expansion in ARR.
+amendments that move ACV after the CRM record was frozen; renewal uplift booked as an
+opportunity but classified as expansion in ARR; and small self-serve seat adds that never reach
+the CRM at all.
 
 ## dim_sales_rep
 

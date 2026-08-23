@@ -77,9 +77,9 @@ Thirteen source tables in `data/raw/`, sized as a real extract would be:
 | `dim_employee` | ~306 | employee |
 | `fact_contract` | ~2,210 | contract |
 | `fact_subscription_monthly` | ~44,000 | customer × product × month |
-| `fact_crm_opportunity` | ~4,180 | opportunity |
+| `fact_crm_opportunity` | ~3,720 | opportunity |
 | `fact_marketing_spend` | 180 | month × channel |
-| `fact_requisition` | ~93 | requisition |
+| `fact_requisition` | ~84 | requisition |
 | `fact_gl_actuals` | ~4,050 | month × cost centre × account |
 | `fact_budget` | ~1,660 | month × cost centre × account |
 | `fact_forecast` | ~2,500 | month × cost centre × account |

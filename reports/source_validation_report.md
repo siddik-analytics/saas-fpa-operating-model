@@ -2,7 +2,7 @@
 
 Helio Systems, Inc. Phase 2, synthetic data foundation.
 
-**PASS** - 105 of 105 checks passed. 0 critical failures, 0 warnings.
+**PASS** - 108 of 108 checks passed. 0 critical failures, 0 warnings.
 
 Random seed `20260630`. Rebuild with `python -m src.build`; change the seed with `HELIO_SEED=<n> python -m src.build` or `python -m src.build --seed <n>`.
 
@@ -21,11 +21,11 @@ Every figure below is computed by re-reading the committed CSVs in `data/raw/`, 
 | `dim_sales_rep` | 51 | 11 |
 | `fact_budget` | 1,655 | 8 |
 | `fact_contract` | 2,208 | 15 |
-| `fact_crm_opportunity` | 4,169 | 18 |
+| `fact_crm_opportunity` | 3,722 | 18 |
 | `fact_forecast` | 2,501 | 8 |
 | `fact_gl_actuals` | 4,049 | 7 |
 | `fact_marketing_spend` | 180 | 4 |
-| `fact_requisition` | 93 | 11 |
+| `fact_requisition` | 84 | 11 |
 | `fact_subscription_monthly` | 43,984 | 7 |
 
 ## ARR anchors
@@ -203,8 +203,8 @@ New-logo opportunities by segment.
 | Segment | Opportunities | Target win rate | Generated win rate | Target median cycle (days) | Generated median cycle (days) |
 |---|---|---|---|---|---|
 | SMB | 1,350 | 28.0% | 28.0% | 24 | 24 |
-| Mid-Market | 500 | 21.0% | 21.0% | 62 | 61 |
-| Enterprise | 119 | 16.0% | 16.0% | 118 | 120 |
+| Mid-Market | 500 | 21.0% | 21.0% | 62 | 63 |
+| Enterprise | 119 | 16.0% | 16.0% | 118 | 115 |
 
 ## CRM-to-ARR reconciling items
 
@@ -212,12 +212,40 @@ Differences built in deliberately.
 
 | Reconciling item | Count |
 |---|---|
-| Closed-won opportunities | 1,828 |
-| Wins that never provisioned | 15.00 |
-| Multi-year wins recording TCV above ACV | 133.00 |
-| Mean TCV to ACV ratio on multi-year wins | 2.42 |
-| Open opportunities at the reporting date | 212.00 |
-| Open pipeline ACV | 4,727,776 |
+| Closed-won opportunities | 1,611 |
+| Wins that never provisioned | 19.00 |
+| Multi-year wins recording TCV above ACV | 131.00 |
+| Mean TCV to ACV ratio on multi-year wins | 2.34 |
+| Open opportunities at the reporting date | 142.00 |
+| Open pipeline ACV | 4,651,626 |
+
+## Bookings against ARR
+
+Whether Phase 5 will be able to reconcile the two.
+
+| Measure | Value |
+|---|---|
+| FY2025 closed-won new-logo ACV | 5,088,690 |
+| FY2025 new-logo ARR landed | 5,035,084 |
+| Difference to explain in Phase 5 | 53,607 |
+| FY2025 closed-won New Logo: count | 228 |
+| FY2025 closed-won New Logo: mean ACV | 22,319 |
+| FY2025 closed-won Expansion: count | 287 |
+| FY2025 closed-won Expansion: mean ACV | 14,153 |
+| FY2025 closed-won Renewal Uplift: count | 192 |
+| FY2025 closed-won Renewal Uplift: mean ACV | 1,497 |
+
+## Rep attainment dispersion
+
+Measured on CRM-recorded bookings; the credit model is Phase 5.
+
+| Measure | Value |
+|---|---|
+| Quota-carrying reps with six or more months in FY2025 | 16.00 |
+| Lowest attainment on CRM-recorded bookings | 0.03 |
+| Median attainment | 0.61 |
+| Highest attainment | 1.26 |
+| Ninetieth to tenth percentile spread | 5.10 |
 
 ## Headcount at 30 June 2026
 
@@ -257,13 +285,13 @@ The conditions a variance analysis needs.
 
 | Measure | Value |
 |---|---|
-| Requisitions | 93 |
-| Filled | 63 |
-| Open at reporting date | 18 |
-| Cancelled | 12 |
-| Median slippage on filled reqs (days) | 29 |
-| Mean slippage on filled reqs (days) | 29 |
-| Filled reqs starting late | 47 |
+| Requisitions | 84 |
+| Filled | 57 |
+| Open at reporting date | 16 |
+| Cancelled | 11 |
+| Median slippage on filled reqs (days) | 31 |
+| Mean slippage on filled reqs (days) | 33 |
+| Filled reqs starting late | 43 |
 
 ## FY2025 profit and loss
 
@@ -271,16 +299,16 @@ Generated ledger against the anchor.
 
 | Line | Target | Generated | Variance |
 |---|---|---|---|
-| Subscription Revenue | 26,600,000 | 26,600,000 | 0.0% |
-| Services Revenue | 800,000 | 800,000 | 0.0% |
-| Subscription COGS | 5,700,000 | 5,703,591 | 0.1% |
-| Services COGS | 700,000 | 704,513 | 0.6% |
-| Sales & Marketing | 14,200,000 | 14,198,949 | -0.0% |
-| Research & Development | 9,100,000 | 9,162,546 | 0.7% |
-| General & Administrative | 5,100,000 | 5,100,189 | 0.0% |
-| Total revenue | 27,400,000 | 27,400,000 | 0.0% |
-| Gross profit | 21,000,000 | 20,991,896 | -0.0% |
-| EBITDA | -7,400,000 | -7,469,788 | 0.9% |
+| Subscription Revenue | 26,600,000 | 26,555,479 | -0.2% |
+| Services Revenue | 800,000 | 802,608 | 0.3% |
+| Subscription COGS | 5,700,000 | 5,754,920 | 1.0% |
+| Services COGS | 700,000 | 708,535 | 1.2% |
+| Sales & Marketing | 14,200,000 | 14,145,171 | -0.4% |
+| Research & Development | 9,100,000 | 9,200,437 | 1.1% |
+| General & Administrative | 5,100,000 | 5,120,077 | 0.4% |
+| Total revenue | 27,400,000 | 27,358,087 | -0.2% |
+| Gross profit | 21,000,000 | 20,894,632 | -0.5% |
+| EBITDA | -7,400,000 | -7,571,053 | 2.3% |
 
 ## Planning versions
 
@@ -315,13 +343,13 @@ Payroll is built one person at a time from `dim_employee` and is never scaled. T
 
 | Driver group | Multiplier |
 |---|---:|
-| general administrative | 0.891 |
-| research development | 0.860 |
-| sales marketing | 1.009 |
-| services | 0.850 |
-| services cogs | 0.838 |
-| subscription | 1.002 |
-| subscription cogs | 0.673 |
+| general administrative | 0.898 |
+| research development | 0.905 |
+| sales marketing | 1.067 |
+| services | 0.853 |
+| services cogs | 0.884 |
+| subscription | 1.000 |
+| subscription cogs | 0.691 |
 
 ## Checks
 
@@ -349,10 +377,10 @@ Payroll is built one person at a time from `dim_employee` and is never scaled. T
 | fact_subscription_monthly.contract_id resolves to fact_contract | PASS | 0 unresolved of 43,984 |
 | dim_customer.account_owner_rep_id resolves to dim_sales_rep | PASS | 0 unresolved of 1,279 |
 | dim_customer.csm_id resolves to dim_employee | PASS | 0 unresolved of 1,279 |
-| fact_crm_opportunity.rep_id resolves to dim_sales_rep | PASS | 0 unresolved of 4,169 |
-| fact_requisition.linked_employee_id resolves to dim_employee | PASS | 0 unresolved of 63 |
+| fact_crm_opportunity.rep_id resolves to dim_sales_rep | PASS | 0 unresolved of 3,722 |
+| fact_requisition.linked_employee_id resolves to dim_employee | PASS | 0 unresolved of 57 |
 | fact_contract.predecessor_contract_id resolves to fact_contract | PASS | 0 unresolved of 908 |
-| Provisioned won opportunities resolve to a customer | PASS | 0 unresolved of 1,813 |
+| Provisioned won opportunities resolve to a customer | PASS | 0 unresolved of 1,592 |
 | fact_subscription_monthly stores state only | PASS | no pre-classified movement columns |
 
 ### Dates
@@ -431,8 +459,16 @@ Payroll is built one person at a time from `dim_employee` and is never scaled. T
 | SMB win rate within one point of target | PASS | generated 28.0% against target 28% |
 | Mid-Market win rate within one point of target | PASS | generated 21.0% against target 21% |
 | Enterprise win rate within one point of target | PASS | generated 16.0% against target 16% |
-| Enterprise deals take longer and convert less often than SMB | PASS | Enterprise 120d at 16.0%; SMB 24d at 28.0% |
-| Non-provisioned win rate is within two points of design | PASS | 3.0% of 502 wins never provisioned, design 3% |
+| Enterprise deals take longer and convert less often than SMB | PASS | Enterprise 115d at 16.0%; SMB 24d at 28.0% |
+| Non-provisioned win rate is within two points of design | PASS | 3.8% of 502 wins never provisioned, design 3% |
+
+### GTM
+
+| Check | Result | Evidence |
+|---|---|---|
+| Closed-won new-logo ACV is coherent with new-logo ARR | PASS | bookings $5,088,690 against ARR $5,035,084, a 1.1% difference for Phase 5 to walk |
+| Renewal uplift deals are valued at the uplift, not the contract | PASS | mean uplift deal $1,497 against mean new-logo deal $22,319 |
+| Rep attainment shows real dispersion | PASS | ninetieth percentile is 5.1 times the tenth; range 3% to 126% |
 
 ### Employees
 
@@ -443,7 +479,7 @@ Payroll is built one person at a time from `dim_employee` and is never scaled. T
 | Salaries are positive | PASS | 0 non-positive salaries |
 | Cost centres are valid | PASS | 0 invalid |
 | Sales attrition is visibly higher than G&A | PASS | Sales 47.7% against G&A 4.8% |
-| Hiring slippage is present and positive on average | PASS | mean slippage 29 days |
+| Hiring slippage is present and positive on average | PASS | mean slippage 33 days |
 
 ### GL
 
@@ -453,14 +489,14 @@ Payroll is built one person at a time from `dim_employee` and is never scaled. T
 | Only the seven approved P&L categories appear | PASS | invalid: [] |
 | No statistical memo accounts in the actuals ledger | PASS | 0 rows |
 | Every month in the window has ledger activity | PASS | missing: [] |
-| FY2025 Subscription Revenue within tolerance | PASS | target $26,600,000; generated $26,600,000; variance +0.00% |
-| FY2025 Services Revenue within tolerance | PASS | target $800,000; generated $800,000; variance +0.00% |
-| FY2025 Subscription COGS within tolerance | PASS | target $5,700,000; generated $5,703,591; variance +0.06% |
-| FY2025 Services COGS within tolerance | PASS | target $700,000; generated $704,513; variance +0.64% |
-| FY2025 Sales & Marketing within tolerance | PASS | target $14,200,000; generated $14,198,949; variance -0.01% |
-| FY2025 Research & Development within tolerance | PASS | target $9,100,000; generated $9,162,546; variance +0.69% |
-| FY2025 General & Administrative within tolerance | PASS | target $5,100,000; generated $5,100,189; variance +0.00% |
-| FY2025 EBITDA within tolerance | PASS | target $-7,400,000; generated $-7,469,788 |
+| FY2025 Subscription Revenue within tolerance | PASS | target $26,600,000; generated $26,555,479; variance -0.17% |
+| FY2025 Services Revenue within tolerance | PASS | target $800,000; generated $802,608; variance +0.33% |
+| FY2025 Subscription COGS within tolerance | PASS | target $5,700,000; generated $5,754,920; variance +0.96% |
+| FY2025 Services COGS within tolerance | PASS | target $700,000; generated $708,535; variance +1.22% |
+| FY2025 Sales & Marketing within tolerance | PASS | target $14,200,000; generated $14,145,171; variance -0.39% |
+| FY2025 Research & Development within tolerance | PASS | target $9,100,000; generated $9,200,437; variance +1.10% |
+| FY2025 General & Administrative within tolerance | PASS | target $5,100,000; generated $5,120,077; variance +0.39% |
+| FY2025 EBITDA within tolerance | PASS | target $-7,400,000; generated $-7,571,053; variance +2.31% against a 4% residual tolerance |
 | Monthly totals are not artificially round | PASS | 0 months ending in three zeros |
 
 ### Planning
