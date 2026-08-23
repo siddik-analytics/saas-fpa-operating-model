@@ -96,7 +96,7 @@ validation suite fails the build if one appears.
 
 ## Validation
 
-The build runs 105 checks against the written CSVs and publishes the numbers behind each one
+The build runs 108 checks against the written CSVs and publishes the numbers behind each one
 in [the validation report](reports/source_validation_report.md): primary and foreign keys,
 date ordering, the ARR and MRR identity, ARR and logo anchors, contract mechanics, renewal
 seasonality, product attach, CRM win rates and sales cycles, headcount and attrition, and the
