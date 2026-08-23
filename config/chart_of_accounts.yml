@@ -1,0 +1,114 @@
+# Chart of accounts for Helio Systems, Inc.
+#
+# A natural-account chart crossed with cost centres, which is how a general ledger is
+# actually organised. One natural account such as Salaries & Wages posts under every
+# cost centre; the P&L category is a function of (account, cost centre), not of the
+# account alone. This is why Customer Success payroll lands 60% in Subscription COGS
+# and 40% in Sales & Marketing without needing a duplicate account code.
+#
+# Cost centres are finer than the eight reporting functions in PHASE1_SPEC 2.3. Each
+# carries a `function` that rolls it up to those eight, so headcount and payroll
+# reconcile to the anchor table while the ledger stays at operating granularity.
+#
+# fact_gl_actuals uses the 26 operating accounts below and only the seven approved P&L
+# categories. The memo accounts are statistical and appear only in fact_budget and
+# fact_forecast. src/validate_sources.py enforces both rules.
+
+cost_centers:
+  CC-9000: {department: Revenue,                function: Revenue,               category: Subscription Revenue}
+  CC-1000: {department: Sales - SMB,            function: Sales,                 category: Sales & Marketing, sales_segment: SMB}
+  CC-1010: {department: Sales - Mid-Market,     function: Sales,                 category: Sales & Marketing, sales_segment: Mid-Market}
+  CC-1020: {department: Sales - Enterprise,     function: Sales,                 category: Sales & Marketing, sales_segment: Enterprise}
+  CC-1030: {department: Sales Development,      function: Sales,                 category: Sales & Marketing}
+  CC-1040: {department: Sales Operations,       function: Sales,                 category: Sales & Marketing}
+  CC-1050: {department: Solutions Engineering,  function: Sales,                 category: Sales & Marketing}
+  CC-1060: {department: Sales Leadership,       function: Sales,                 category: Sales & Marketing}
+  CC-1100: {department: Demand Generation,      function: Marketing,             category: Sales & Marketing}
+  CC-1110: {department: Product Marketing,      function: Marketing,             category: Sales & Marketing}
+  CC-1200: {department: Customer Success,       function: Customer Success,      category: Subscription COGS,
+            split: {Subscription COGS: 0.60, Sales & Marketing: 0.40}}
+  CC-2000: {department: Support,                function: Support & Cloud Ops,   category: Subscription COGS}
+  CC-2010: {department: Cloud Operations,       function: Support & Cloud Ops,   category: Subscription COGS}
+  CC-2100: {department: Professional Services,  function: Professional Services, category: Services COGS}
+  CC-3000: {department: Engineering,            function: Engineering,           category: Research & Development}
+  CC-3010: {department: Quality & Release,      function: Engineering,           category: Research & Development}
+  CC-3100: {department: Product & Design,       function: Product & Design,      category: Research & Development}
+  CC-4000: {department: Finance & Accounting,   function: G&A,                   category: General & Administrative}
+  CC-4010: {department: People Operations,      function: G&A,                   category: General & Administrative}
+  CC-4020: {department: Legal & Corporate,      function: G&A,                   category: General & Administrative}
+  CC-4030: {department: IT & Corporate Systems, function: G&A,                   category: General & Administrative}
+
+# Cost-centre groups referenced by the account definitions below.
+cost_center_groups:
+  revenue: [CC-9000]
+  payroll: [CC-1000, CC-1010, CC-1020, CC-1030, CC-1040, CC-1050, CC-1060, CC-1100, CC-1110,
+            CC-1200, CC-2000, CC-2010, CC-2100, CC-3000, CC-3010, CC-3100,
+            CC-4000, CC-4010, CC-4020, CC-4030]
+  quota_carrying: [CC-1000, CC-1010, CC-1020]
+  hosting: [CC-2010]
+  support: [CC-2000, CC-2010]
+  services: [CC-2100]
+  travel: [CC-1000, CC-1010, CC-1020, CC-1030, CC-1040, CC-1050, CC-1060, CC-1100, CC-1110,
+           CC-1200, CC-2100, CC-3000, CC-3100, CC-4000, CC-4020]
+  software: [CC-1000, CC-1010, CC-1020, CC-1030, CC-1040, CC-1050, CC-1100, CC-1110,
+             CC-1200, CC-2000, CC-2010, CC-2100, CC-3000, CC-3010, CC-3100,
+             CC-4000, CC-4010, CC-4020, CC-4030]
+  contractors: [CC-1100, CC-2010, CC-3000, CC-3010, CC-3100, CC-4030]
+  training: [CC-1000, CC-1010, CC-1020, CC-1030, CC-1060, CC-1100, CC-3000, CC-4010]
+  other_opex: [CC-2010, CC-3000, CC-4000, CC-4030]
+
+# 26 operating accounts.
+accounts:
+  - {code: "4000", name: Subscription Revenue,           group: revenue, category: Subscription Revenue}
+  - {code: "4010", name: Usage Revenue Above Commitment, group: revenue, category: Subscription Revenue}
+  - {code: "4100", name: Professional Services Revenue,  group: revenue, category: Services Revenue}
+  - {code: "4110", name: Implementation Fee Revenue,     group: revenue, category: Services Revenue}
+
+  - {code: "5000", name: Cloud Hosting,                  group: hosting}
+  - {code: "5010", name: Third-Party Data & APIs,        group: support}
+  - {code: "5020", name: Payment Processing Fees,        group: hosting}
+  - {code: "5030", name: Services Subcontractors,        group: services}
+
+  - {code: "6000", name: Salaries & Wages,               group: payroll}
+  - {code: "6010", name: Bonus,                          group: payroll}
+  - {code: "6020", name: Payroll Taxes & Benefits,       group: payroll}
+  - {code: "6030", name: Sales Commissions,              group: quota_carrying}
+  - {code: "6040", name: Commission Amortisation,        group: quota_carrying}
+  - {code: "6050", name: Contractor & Temp Labor,        group: contractors}
+
+  - {code: "6100", name: Demand Generation,              group: [CC-1100]}
+  - {code: "6110", name: Events & Field Marketing,       group: [CC-1100]}
+  - {code: "6120", name: Brand & Content,                group: [CC-1110]}
+
+  - {code: "6200", name: Software & Subscriptions,       group: software}
+  - {code: "6300", name: Travel & Entertainment,         group: travel}
+  - {code: "6400", name: Professional Fees,              group: [CC-4000, CC-4020]}
+  - {code: "6410", name: Recruiting Fees,                group: [CC-4010]}
+  - {code: "6420", name: Facilities & Rent,              group: [CC-4030]}
+  - {code: "6430", name: Insurance,                      group: [CC-4020]}
+  - {code: "6440", name: Depreciation & Amortisation,    group: [CC-4000]}
+  - {code: "6450", name: Training & Enablement,          group: training}
+  - {code: "6900", name: Other Operating Expense,        group: other_opex}
+
+# Statistical accounts. Planning tables only; never posted to fact_gl_actuals.
+memo_accounts:
+  - {code: "9000", name: Ending ARR,        category: Memo - ARR}
+  - {code: "9010", name: New Logo ARR,      category: Memo - ARR}
+  - {code: "9020", name: Expansion ARR,     category: Memo - ARR}
+  - {code: "9030", name: Reactivation ARR,  category: Memo - ARR}
+  - {code: "9040", name: Contraction ARR,   category: Memo - ARR}
+  - {code: "9050", name: Churn ARR,         category: Memo - ARR}
+  - {code: "9100", name: New Logos Added,   category: Memo - Statistical}
+  - {code: "9110", name: Ending Logo Count, category: Memo - Statistical}
+  - {code: "9200", name: Ending Headcount,  category: Memo - Statistical}
+  - {code: "9300", name: Ending Cash,       category: Memo - Statistical}
+
+# The seven P&L categories permitted in fact_gl_actuals (PHASE1_SPEC 6.1).
+gl_categories:
+  - Subscription Revenue
+  - Services Revenue
+  - Subscription COGS
+  - Services COGS
+  - Sales & Marketing
+  - Research & Development
+  - General & Administrative

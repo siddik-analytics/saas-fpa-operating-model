@@ -1,0 +1,94 @@
+req_id,department,function,title,approved_date,planned_start_date,actual_start_date,req_type,status,budgeted_salary,linked_employee_id
+REQ-0001,People Operations,G&A,Senior Financial Analyst,2025-01-16,2025-03-18,2025-03-15,Backfill,Filled,99200.00,EMP-0239
+REQ-0002,Customer Success,Customer Success,Senior Customer Success Manager,2025-01-13,2025-02-12,2025-03-15,Backfill,Filled,83200.00,EMP-0240
+REQ-0003,IT & Corporate Systems,G&A,Accounting Manager,2025-01-05,2025-02-14,2025-03-22,New,Filled,126900.00,EMP-0241
+REQ-0004,Sales - Mid-Market,Sales,Senior Account Executive,2025-02-15,2025-04-07,2025-04-02,Backfill,Filled,95600.00,EMP-0242
+REQ-0005,Customer Success,Customer Success,Senior Customer Success Manager,2025-01-31,2025-04-12,2025-04-09,Backfill,Filled,98200.00,EMP-0245
+REQ-0006,Sales - Enterprise,Sales,Senior Account Executive,2025-01-25,2025-03-12,2025-04-19,Backfill,Filled,102600.00,EMP-0248
+REQ-0007,Engineering,Engineering,"Director, Engineering",2025-02-09,2025-04-02,2025-04-19,Backfill,Filled,126900.00,EMP-0249
+REQ-0008,Product & Design,Product & Design,Product Manager,2025-03-12,2025-04-19,2025-04-19,Backfill,Filled,89000.00,EMP-0250
+REQ-0009,Professional Services,Professional Services,Implementation Consultant,2025-03-09,2025-04-17,2025-05-05,Backfill,Filled,73300.00,EMP-0252
+REQ-0010,Support,Support & Cloud Ops,Senior Support Engineer,2025-02-10,2025-03-23,2025-05-07,Backfill,Filled,95000.00,EMP-0253
+REQ-0011,Demand Generation,Marketing,"Manager, Demand Generation",2025-01-26,2025-03-17,2025-05-11,Backfill,Filled,162300.00,EMP-0254
+REQ-0012,Engineering,Engineering,Senior Software Engineer,2025-03-22,2025-05-09,2025-05-12,Backfill,Filled,99300.00,EMP-0255
+REQ-0013,Engineering,Engineering,Senior Software Engineer,2025-03-04,2025-04-06,2025-05-15,Backfill,Filled,87800.00,EMP-0256
+REQ-0014,Engineering,Engineering,Software Engineer,2025-04-11,2025-06-01,2025-05-26,Backfill,Filled,73900.00,EMP-0257
+REQ-0015,Customer Success,Customer Success,"Manager, Customer Success",2025-02-23,2025-04-19,2025-06-10,Backfill,Filled,130600.00,EMP-0258
+REQ-0016,Engineering,Engineering,Staff Software Engineer,2025-02-27,2025-04-12,2025-06-14,New,Filled,101400.00,EMP-0259
+REQ-0017,Professional Services,Professional Services,Senior Implementation Consultant,2025-05-06,2025-06-15,2025-07-03,Backfill,Filled,74800.00,EMP-0261
+REQ-0018,Sales Leadership,Sales,Enterprise Account Executive,2025-04-05,2025-06-08,2025-07-05,New,Filled,155400.00,EMP-0262
+REQ-0019,Customer Success,Customer Success,"Manager, Customer Success",2025-04-20,2025-06-06,2025-07-06,New,Filled,119200.00,EMP-0263
+REQ-0020,Legal & Corporate,G&A,Accounting Associate,2025-05-26,2025-07-15,2025-07-11,Backfill,Filled,75200.00,EMP-0264
+REQ-0021,Support,Support & Cloud Ops,Support Engineer,2025-06-30,2025-07-31,2025-08-03,Backfill,Filled,73100.00,EMP-0266
+REQ-0022,Sales - Enterprise,Sales,Account Executive,2025-05-25,2025-08-06,2025-08-09,Backfill,Filled,79400.00,EMP-0267
+REQ-0023,Product Marketing,Marketing,Marketing Manager,2025-05-19,2025-07-25,2025-08-11,Backfill,Filled,101700.00,EMP-0268
+REQ-0024,Customer Success,Customer Success,"Manager, Customer Success",2025-06-15,2025-08-12,2025-09-12,Backfill,Filled,122200.00,EMP-0272
+REQ-0025,Engineering,Engineering,Staff Software Engineer,2025-06-02,2025-08-15,2025-09-15,Backfill,Filled,110200.00,EMP-0273
+REQ-0026,Sales - SMB,Sales,Enterprise Account Executive,2025-06-26,2025-09-04,2025-09-22,Backfill,Filled,132900.00,EMP-0274
+REQ-0027,Sales Development,Sales,Enterprise Account Executive,2025-08-23,2025-10-08,2025-10-03,Backfill,Filled,156000.00,EMP-0275
+REQ-0028,Sales - Mid-Market,Sales,Senior Account Executive,2025-06-24,2025-08-10,2025-10-03,Backfill,Filled,106600.00,EMP-0276
+REQ-0029,Product & Design,Product & Design,Senior Product Manager,2025-07-29,2025-09-03,2025-10-04,Backfill,Filled,106500.00,EMP-0277
+REQ-0030,Finance & Accounting,G&A,Senior Financial Analyst,2025-08-12,2025-10-08,2025-10-11,New,Filled,129900.00,EMP-0278
+REQ-0031,Product & Design,Product & Design,"Manager, Design",2025-07-18,2025-09-26,2025-11-05,New,Filled,112600.00,EMP-0282
+REQ-0032,Demand Generation,Marketing,"Manager, Demand Generation",2025-07-25,2025-09-22,2025-11-10,New,Filled,179600.00,EMP-0283
+REQ-0033,Customer Success,Customer Success,Strategic CSM,2025-09-19,2025-11-18,2025-11-14,Backfill,Filled,109100.00,EMP-0284
+REQ-0034,Support,Support & Cloud Ops,Senior Support Engineer,2025-08-25,2025-10-10,2025-11-20,Backfill,Filled,96600.00,EMP-0285
+REQ-0035,Professional Services,Professional Services,"Manager, Professional Services",2025-07-05,2025-09-18,2025-11-22,New,Filled,106200.00,EMP-0286
+REQ-0036,Support,Support & Cloud Ops,Support Engineer,2025-10-18,2025-12-13,2025-12-15,Backfill,Filled,79000.00,EMP-0287
+REQ-0037,Quality & Release,Engineering,Associate Software Engineer,2025-09-18,2025-11-20,2025-12-26,New,Filled,58300.00,EMP-0288
+REQ-0038,Customer Success,Customer Success,Customer Success Manager,2025-07-22,2025-09-22,2026-01-07,Backfill,Filled,84900.00,EMP-0289
+REQ-0039,Sales Development,Sales,Senior Account Executive,2025-09-21,2025-11-03,2026-01-16,Backfill,Filled,112600.00,EMP-0290
+REQ-0040,Customer Success,Customer Success,Associate CSM,2025-10-25,2025-12-04,2026-01-18,Backfill,Filled,58400.00,EMP-0291
+REQ-0041,Sales - Mid-Market,Sales,Account Executive,2025-08-17,2025-10-15,2026-01-21,New,Filled,77900.00,EMP-0292
+REQ-0042,Sales Leadership,Sales,Senior Account Executive,2025-10-28,2025-12-23,2026-01-26,New,Filled,98900.00,EMP-0294
+REQ-0043,People Operations,G&A,Senior Financial Analyst,2026-01-07,2026-02-10,2026-02-04,Backfill,Filled,128100.00,EMP-0295
+REQ-0044,Sales - SMB,Sales,Senior Account Executive,2026-01-09,2026-02-22,2026-02-24,Backfill,Filled,103900.00,EMP-0300
+REQ-0045,Customer Success,Customer Success,"Manager, Customer Success",2026-01-01,2026-02-27,2026-02-24,Backfill,Filled,117500.00,EMP-0301
+REQ-0046,Product & Design,Product & Design,VP Product,2025-11-21,2026-01-24,2026-03-03,New,Filled,191300.00,EMP-0302
+REQ-0047,Customer Success,Customer Success,Senior Customer Success Manager,2025-10-04,2025-12-09,2026-03-08,New,Filled,96600.00,EMP-0303
+REQ-0048,Sales - Mid-Market,Sales,Senior Account Executive,2026-02-09,2026-03-15,2026-03-09,New,Filled,95400.00,EMP-0304
+REQ-0049,Sales - SMB,Sales,Senior Account Executive,2026-01-30,2026-03-13,2026-03-10,New,Filled,122800.00,EMP-0305
+REQ-0050,Sales - Mid-Market,Sales,"Director, Sales",2026-01-10,2026-03-08,2026-03-10,Backfill,Filled,176100.00,EMP-0306
+REQ-0051,Solutions Engineering,Sales,Sales Manager,2026-02-03,2026-03-21,2026-03-18,New,Filled,140300.00,EMP-0310
+REQ-0052,Sales - SMB,Sales,Account Executive,2026-01-12,2026-02-20,2026-03-22,Backfill,Filled,88000.00,EMP-0311
+REQ-0053,Customer Success,Customer Success,Customer Success Manager,2026-01-27,2026-03-29,2026-03-26,New,Filled,69200.00,EMP-0312
+REQ-0054,Finance & Accounting,G&A,"Director, Finance",2025-12-15,2026-02-25,2026-03-26,New,Filled,279700.00,EMP-0313
+REQ-0055,Sales Leadership,Sales,Senior Account Executive,2026-01-17,2026-03-29,2026-04-01,Backfill,Filled,118000.00,EMP-0314
+REQ-0056,Customer Success,Customer Success,Senior Customer Success Manager,2025-12-13,2026-01-31,2026-04-03,Backfill,Filled,117300.00,EMP-0315
+REQ-0057,Cloud Operations,Support & Cloud Ops,Support Specialist,2025-10-18,2025-12-21,2026-04-04,New,Filled,57700.00,EMP-0316
+REQ-0058,Customer Success,Customer Success,"Director, Customer Success",2026-01-27,2026-04-11,2026-04-09,Backfill,Filled,166900.00,EMP-0317
+REQ-0059,Product & Design,Product & Design,Product Manager,2026-01-31,2026-03-24,2026-04-15,Backfill,Filled,90400.00,EMP-0318
+REQ-0060,Demand Generation,Marketing,Marketing Manager,2026-02-25,2026-04-22,2026-04-20,New,Filled,106600.00,EMP-0320
+REQ-0061,Customer Success,Customer Success,"Manager, Customer Success",2026-03-01,2026-04-03,2026-05-21,Backfill,Filled,114400.00,EMP-0322
+REQ-0062,Engineering,Engineering,Senior Software Engineer,2025-11-15,2025-12-22,2026-05-21,Backfill,Filled,92800.00,EMP-0323
+REQ-0063,Sales Operations,Sales,Senior Account Executive,2026-02-09,2026-04-15,2026-06-05,Backfill,Filled,107500.00,EMP-0325
+REQ-0064,Sales - Enterprise,Sales,Enterprise Account Executive,2026-01-19,2026-02-20,,Backfill,Open,139400.00,
+REQ-0065,Legal & Corporate,G&A,Accounting Associate,2026-04-16,2026-05-19,,New,Open,72700.00,
+REQ-0066,Engineering,Engineering,Software Engineer,2026-06-23,2026-08-04,,Backfill,Open,84500.00,
+REQ-0067,Quality & Release,Engineering,Staff Software Engineer,2026-03-02,2026-04-30,,New,Open,117800.00,
+REQ-0068,Sales - Enterprise,Sales,Enterprise Account Executive,2026-02-20,2026-03-26,,New,Open,137800.00,
+REQ-0069,IT & Corporate Systems,G&A,Accounting Manager,2025-03-02,2025-05-07,,New,Open,133800.00,
+REQ-0070,Engineering,Engineering,Staff Software Engineer,2026-03-25,2026-06-08,,New,Open,114000.00,
+REQ-0071,Customer Success,Customer Success,"Director, Customer Success",2026-04-13,2026-05-23,,New,Open,191000.00,
+REQ-0072,Product Marketing,Marketing,Marketing Associate,2026-03-06,2026-04-21,,New,Open,75800.00,
+REQ-0073,People Operations,G&A,Senior Financial Analyst,2026-03-05,2026-04-25,,Backfill,Open,105300.00,
+REQ-0074,Engineering,Engineering,Senior Software Engineer,2026-03-02,2026-04-27,,New,Open,94000.00,
+REQ-0075,Engineering,Engineering,Senior Software Engineer,2026-04-13,2026-06-25,,New,Open,98300.00,
+REQ-0076,Engineering,Engineering,"Director, Engineering",2026-05-05,2026-06-16,,Backfill,Open,147500.00,
+REQ-0077,Sales - Enterprise,Sales,Account Executive,2026-05-21,2026-07-17,,New,Open,81600.00,
+REQ-0078,Sales Operations,Sales,Senior Account Executive,2025-10-05,2025-11-10,,Backfill,Open,118600.00,
+REQ-0079,Demand Generation,Marketing,Senior Marketing Manager,2026-05-06,2026-07-05,,New,Open,133200.00,
+REQ-0080,Engineering,Engineering,Senior Software Engineer,2026-03-05,2026-04-17,,New,Open,84100.00,
+REQ-0081,Finance & Accounting,G&A,Financial Analyst,2025-01-05,2025-02-25,,New,Open,89000.00,
+REQ-0082,Engineering,Engineering,Software Engineer,2026-02-27,2026-05-11,,New,Cancelled,79100.00,
+REQ-0083,Cloud Operations,Support & Cloud Ops,"Manager, Support",2025-04-02,2025-06-08,,Backfill,Cancelled,133800.00,
+REQ-0084,Product & Design,Product & Design,"Manager, Design",2026-01-23,2026-03-24,,Backfill,Cancelled,121400.00,
+REQ-0085,Engineering,Engineering,Staff Software Engineer,2026-03-10,2026-05-06,,New,Cancelled,117500.00,
+REQ-0086,Engineering,Engineering,Staff Software Engineer,2025-03-08,2025-05-03,,New,Cancelled,111200.00,
+REQ-0087,Support,Support & Cloud Ops,Senior Support Engineer,2025-04-02,2025-05-20,,Backfill,Cancelled,83200.00,
+REQ-0088,Finance & Accounting,G&A,"Manager, People Operations",2026-02-02,2026-04-10,,New,Cancelled,150200.00,
+REQ-0089,Product & Design,Product & Design,"Manager, Design",2026-03-14,2026-05-08,,Backfill,Cancelled,106900.00,
+REQ-0090,Sales Development,Sales,Enterprise Account Executive,2025-10-17,2025-12-12,,New,Cancelled,148200.00,
+REQ-0091,Product & Design,Product & Design,Product Manager,2026-03-10,2026-05-07,,New,Cancelled,75000.00,
+REQ-0092,People Operations,G&A,"Manager, People Operations",2026-06-03,2026-08-11,,Backfill,Cancelled,145000.00,
+REQ-0093,Engineering,Engineering,Senior Software Engineer,2026-02-19,2026-03-24,,Backfill,Cancelled,96700.00,

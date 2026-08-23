@@ -1,0 +1,350 @@
+# Curated word lists for synthetic entity names.
+#
+# Customer naming convention (PHASE1_SPEC 2.1, binding):
+#   [Surname or Place] [Trade] [Suffix]
+# Names must read as real commercial contracting firms operating in the US and Canada.
+# Explicitly banned tokens are listed at the bottom and enforced by the validation suite.
+
+customer_name:
+
+  # Family surnames used by owner-founded contracting firms.
+  surnames:
+    - Delgado
+    - Harrow
+    - Vandermeer
+    - Kowalczyk
+    - Brannigan
+    - Okonkwo
+    - Petrosian
+    - Ruzicka
+    - Halvorsen
+    - Marchetti
+    - Ashworth
+    - Bellamy
+    - Castellano
+    - Draeger
+    - Ferreira
+    - Gallardo
+    - Hutchins
+    - Ingersoll
+    - Jankowski
+    - Kilbride
+    - Lindqvist
+    - Mahoney
+    - Nakashima
+    - Oyelaran
+    - Prentice
+    - Quintero
+    - Rasmussen
+    - Stavros
+    - Thibodeaux
+    - Uphoff
+    - Villanueva
+    - Whitcomb
+    - Yarborough
+    - Zamora
+    - Ackerley
+    - Boyington
+    - Chaudhry
+    - Danforth
+    - Eskildsen
+    - Fontaine
+    - Grimaldi
+    - Holloway
+    - Iverson
+    - Jessup
+    - Kearney
+    - Lomeli
+    - Mulcahy
+    - Northrup
+    - Ostrowski
+    - Pemberton
+
+  # Place-derived names: regions, watersheds, ranges, corridors.
+  places:
+    - Cascade
+    - Tri-State
+    - Front Range
+    - Willamette
+    - Chesapeake
+    - Sandhills
+    - Piedmont
+    - Adirondack
+    - Sonoran
+    - Klamath
+    - Wabash
+    - Allegheny
+    - Bitterroot
+    - Coastal Bend
+    - Gulf Coast
+    - Great Lakes
+    - Puget Sound
+    - Rio Grande
+    - Shenandoah
+    - Susquehanna
+    - Laurentian
+    - Okanagan
+    - Saskatoon
+    - Annapolis Valley
+    - Mohawk Valley
+    - Hudson Valley
+    - Ozark
+    - Cumberland
+    - Blue Ridge
+    - Kettle Moraine
+    - Palouse
+    - Wasatch
+    - Teton
+    - Sierra Nevada
+    - Panhandle
+    - Lowcountry
+    - Brazos
+    - Chinook
+    - Fraser Valley
+    - Red River
+
+  # Coined-but-plausible operating names. These read as regional service brands,
+  # not as software startups.
+  brandables:
+    - Brightline
+    - Ironbridge
+    - Summit Line
+    - Keystone
+    - Northgate
+    - Silverpoint
+    - Copperfield
+    - Redstone
+    - Blackhawk
+    - Cornerstone
+    - Meridian
+    - Pinnacle Point
+    - Stonebridge
+    - Harborview
+    - Riverworks
+    - Fieldstone
+    - Anchor Bay
+    - Clearwater
+    - Granite Peak
+    - Lantern
+
+  # Trades. Weighted toward the trades a field-service management product actually serves.
+  trades:
+    - Electric
+    - Electrical Contractors
+    - Mechanical
+    - Mechanical Contractors
+    - Plumbing & Heating
+    - Plumbing
+    - HVAC
+    - Heating & Air
+    - Refrigeration
+    - Fire Protection
+    - Fire & Life Safety
+    - Roofing
+    - Sheet Metal
+    - Controls
+    - Building Services
+    - Facilities Group
+    - Facility Services
+    - Industrial Services
+    - Energy Services
+    - Air Systems
+    - Boiler Works
+    - Pipefitting
+    - Elevator Services
+    - Security Systems
+    - Landscape Services
+    - Glass & Glazing
+    - Utility Services
+    - Mechanical Systems
+    - Property Services
+    - Restoration
+
+  # Legal or descriptive suffixes. Blank entries are intentional -- most contractors
+  # trade under a bare name.
+  suffixes:
+    - ""
+    - ""
+    - ""
+    - ""
+    - "Inc."
+    - "LLC"
+    - "Co."
+    - "Group"
+    - "Corp."
+    - "Partners"
+    - "& Sons"
+    - "Services"
+    - "Holdings"
+
+  # Weighting across the three name construction patterns.
+  pattern_weights:
+    surname_trade: 0.46
+    place_trade: 0.34
+    brandable_trade: 0.20
+
+  # Tokens that must never appear. PHASE1_SPEC 2.1 bans these outright, plus the
+  # defaults a language model reaches for. Matched on whole words by
+  # src/validate_sources.py: "Rio Grande Air Systems" is a plausible contractor
+  # name and must not trip the "AI" token.
+  banned_tokens:
+    - Acme
+    - Global
+    - Innovate
+    - TechFlow
+    - NextGen
+    - Solutions Inc
+    - Synergy
+    - Dynamics
+    - Nexus
+    - Vertex
+    - Apex
+    - Quantum
+    - Cyber
+    - Digital
+    - Smart
+    - AI
+    - Cloud
+    - Data
+
+# Person names for sales reps and employees. Deliberately broad so a 265-person
+# workforce does not read as monocultural.
+person_name:
+  given:
+    - Amara
+    - Priya
+    - Devon
+    - Marisol
+    - Tobias
+    - Ingrid
+    - Rashid
+    - Colette
+    - Emeka
+    - Yuki
+    - Damaris
+    - Soren
+    - Nadia
+    - Cormac
+    - Leila
+    - Bastian
+    - Imani
+    - Rafael
+    - Solveig
+    - Kwame
+    - Beatriz
+    - Aleksei
+    - Noor
+    - Finnian
+    - Reyna
+    - Mateo
+    - Anouk
+    - Dashiell
+    - Xiomara
+    - Hendrik
+    - Talia
+    - Osric
+    - Rosalind
+    - Jian
+    - Marguerite
+    - Idris
+    - Camille
+    - Anders
+    - Zubeida
+    - Lorcan
+    - Esperanza
+    - Nikolai
+    - Fatima
+    - Gideon
+    - Wren
+    - Thaddeus
+    - Ilaria
+    - Bodhi
+    - Saoirse
+    - Malachi
+    - Juniper
+    - Ezra
+    - Odalys
+    - Kestrel
+    - Rohan
+    - Adaeze
+    - Linnea
+    - Salim
+    - Perpetua
+    - Elias
+  family:
+    - Abernathy
+    - Bhattacharya
+    - Cavanaugh
+    - Delacroix
+    - Eriksen
+    - Falkenrath
+    - Gutierrez
+    - Hollingsworth
+    - Ibarra
+    - Jorgensen
+    - Kaminski
+    - Lefebvre
+    - Montoya
+    - Nwachukwu
+    - Oyelowo
+    - Papadopoulos
+    - Quintanilla
+    - Ravenscroft
+    - Sandoval
+    - Tanaka
+    - Ulmer
+    - Vasquez
+    - Waverly
+    - Xiong
+    - Yamamoto
+    - Zielinski
+    - Ashcombe
+    - Beaumont
+    - Cortez
+    - Dunleavy
+    - Engebretsen
+    - Fairweather
+    - Ghorbani
+    - Hargreaves
+    - Ivanov
+    - Jamieson
+    - Krishnan
+    - Larkspur
+    - Marchand
+    - Nazarian
+    - Ostrander
+    - Pellegrino
+    - Quimby
+    - Reyes
+    - Stellenbosch
+    - Thornbury
+    - Underwood
+    - Vantongeren
+    - Whitfield
+    - Yerxa
+
+# Sales territories. Territory is a rep attribute and a customer descriptor only.
+# PHASE1_SPEC 6.1 states region is not an analytical dimension.
+territories:
+  - West
+  - Southwest
+  - Mountain
+  - Midwest
+  - Great Lakes
+  - Northeast
+  - Mid-Atlantic
+  - Southeast
+  - South Central
+  - Canada
+
+# Office locations used on employee records.
+locations:
+  - Denver, CO
+  - Remote - US
+  - Remote - US
+  - Remote - US
+  - Austin, TX
+  - Chicago, IL
+  - Atlanta, GA
+  - Toronto, ON
+  - Remote - Canada

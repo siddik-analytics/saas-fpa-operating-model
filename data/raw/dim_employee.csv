@@ -1,0 +1,307 @@
+employee_id,employee_name,department,function,title,level,hire_date,termination_date,termination_type,annual_salary,bonus_target_pct,commission_eligible,location,employee_type,cost_center
+EMP-0001,Anouk Reyes,Sales - Mid-Market,Sales,Senior Account Executive,IC3,2019-01-02,,,102800.00,0.00,true,Remote - US,Full-time,CC-1010
+EMP-0002,Zubeida Sandoval,Sales - Enterprise,Sales,Enterprise Account Executive,IC4,2019-01-02,2026-04-30,Voluntary,114300.00,0.00,true,"Chicago, IL",Full-time,CC-1020
+EMP-0010,Emeka Bhattacharya,Sales - Mid-Market,Sales,Senior Account Executive,IC3,2019-01-18,2024-06-30,Voluntary,94700.00,0.00,true,"Chicago, IL",Full-time,CC-1010
+EMP-0013,Priya Hollingsworth,Sales - SMB,Sales,Account Executive,IC2,2019-01-23,2024-04-30,Voluntary,64300.00,0.00,true,"Chicago, IL",Full-time,CC-1000
+EMP-0017,Jian Zielinski,Sales - SMB,Sales,Account Executive,IC2,2019-05-13,2024-01-31,Voluntary,77600.00,0.00,true,"Atlanta, GA",Full-time,CC-1000
+EMP-0018,Esperanza Kaminski,Sales - Mid-Market,Sales,Senior Account Executive,IC3,2019-10-25,2025-02-28,Voluntary,92600.00,0.00,true,"Atlanta, GA",Full-time,CC-1010
+EMP-0019,Finnian Bhattacharya,Product & Design,Product & Design,Product Designer,IC2,2019-11-25,,,54700.00,0.08,false,"Denver, CO",Full-time,CC-3100
+EMP-0020,Osric Dunleavy,Demand Generation,Marketing,"Director, Marketing",M2,2019-11-30,,,158600.00,0.15,false,"Austin, TX",Full-time,CC-1100
+EMP-0021,Tobias Larkspur,Support,Support & Cloud Ops,Senior Support Engineer,IC3,2019-12-03,2025-08-31,Voluntary,77700.00,0.08,false,Remote - US,Full-time,CC-2000
+EMP-0022,Rashid Nazarian,Customer Success,Customer Success,"Director, Customer Success",M2,2019-12-12,2024-01-31,Voluntary,144500.00,0.15,false,"Toronto, ON",Full-time,CC-1200
+EMP-0023,Amara Fairweather,Cloud Operations,Support & Cloud Ops,Senior Support Engineer,IC3,2019-12-16,2025-11-30,Involuntary,80300.00,0.08,false,Remote - US,Full-time,CC-2010
+EMP-0024,Zubeida Dunleavy,Sales Development,Sales,Account Executive,IC2,2019-12-20,2026-02-28,Voluntary,64100.00,0.00,true,Remote - US,Full-time,CC-1030
+EMP-0025,Ezra Vantongeren,Product Marketing,Marketing,Senior Marketing Manager,IC4,2019-12-26,2024-11-30,Involuntary,127300.00,0.08,false,"Atlanta, GA",Full-time,CC-1110
+EMP-0026,Talia Krishnan,Sales Development,Sales,Senior Account Executive,IC3,2020-01-15,,,85400.00,0.00,true,"Denver, CO",Full-time,CC-1030
+EMP-0027,Amara Thornbury,Sales Leadership,Sales,Senior Account Executive,IC3,2020-02-15,2026-01-31,Voluntary,100100.00,0.00,true,Remote - US,Full-time,CC-1060
+EMP-0028,Ilaria Ibarra,Product & Design,Product & Design,Senior Product Manager,IC4,2020-02-20,,,91100.00,0.08,false,"Chicago, IL",Full-time,CC-3100
+EMP-0029,Bodhi Pellegrino,Support,Support & Cloud Ops,Support Engineer,IC2,2020-03-01,,,65400.00,0.08,false,Remote - US,Full-time,CC-2000
+EMP-0030,Marguerite Lefebvre,Engineering,Engineering,"Director, Engineering",M2,2020-03-14,2025-12-31,Voluntary,153600.00,0.15,false,"Denver, CO",Full-time,CC-3000
+EMP-0031,Lorcan Reyes,Engineering,Engineering,Software Engineer,IC2,2020-04-09,2024-07-31,Voluntary,64400.00,0.08,false,"Chicago, IL",Full-time,CC-3000
+EMP-0032,Marguerite Larkspur,Customer Success,Customer Success,Senior Customer Success Manager,IC3,2020-04-12,2026-05-31,Voluntary,86100.00,0.08,false,Remote - US,Full-time,CC-1200
+EMP-0033,Anouk Zielinski,Customer Success,Customer Success,VP Customer Success,VP,2020-04-26,,,212700.00,0.22,false,"Austin, TX",Full-time,CC-1200
+EMP-0034,Juniper Quimby,Engineering,Engineering,Staff Software Engineer,IC4,2020-04-26,,,114600.00,0.08,false,Remote - US,Full-time,CC-3000
+EMP-0035,Hendrik Jamieson,People Operations,G&A,"Director, Finance",M2,2020-05-06,,,183500.00,0.15,false,"Toronto, ON",Full-time,CC-4010
+EMP-0036,Kwame Whitfield,Demand Generation,Marketing,Marketing Manager,IC3,2020-05-07,2024-03-31,Voluntary,95300.00,0.08,false,"Chicago, IL",Full-time,CC-1100
+EMP-0037,Malachi Jorgensen,Engineering,Engineering,Software Engineer,IC2,2020-05-08,,,79200.00,0.08,false,Remote - Canada,Full-time,CC-3000
+EMP-0038,Odalys Tanaka,Engineering,Engineering,Staff Software Engineer,IC4,2020-05-26,,,105500.00,0.08,false,Remote - Canada,Full-time,CC-3000
+EMP-0039,Beatriz Thornbury,Engineering,Engineering,Software Engineer,IC2,2020-06-09,,,69100.00,0.08,false,Remote - US,Full-time,CC-3000
+EMP-0042,Rosalind Xiong,Customer Success,Customer Success,Senior Customer Success Manager,IC3,2020-06-22,2025-07-31,Voluntary,73300.00,0.08,false,"Denver, CO",Full-time,CC-1200
+EMP-0043,Saoirse Kaminski,Sales - Mid-Market,Sales,Senior Account Executive,IC3,2020-06-23,2025-04-30,Voluntary,87200.00,0.00,true,"Austin, TX",Full-time,CC-1010
+EMP-0044,Bastian Zielinski,Engineering,Engineering,Staff Software Engineer,IC4,2020-08-03,,,108700.00,0.08,false,Remote - Canada,Full-time,CC-3000
+EMP-0045,Juniper Oyelowo,Product & Design,Product & Design,Product Manager,IC3,2020-08-10,,,85000.00,0.08,false,"Atlanta, GA",Full-time,CC-3100
+EMP-0046,Rohan Bhattacharya,Product & Design,Product & Design,Product Designer,IC2,2020-08-20,,,66000.00,0.08,false,Remote - US,Full-time,CC-3100
+EMP-0047,Emeka Papadopoulos,Product Marketing,Marketing,Marketing Associate,IC2,2020-08-30,2025-08-31,Voluntary,80700.00,0.08,false,Remote - US,Full-time,CC-1110
+EMP-0048,Lorcan Ghorbani,Cloud Operations,Support & Cloud Ops,Senior Support Engineer,IC3,2020-09-04,2024-02-29,Voluntary,70400.00,0.08,false,"Denver, CO",Full-time,CC-2010
+EMP-0049,Osric Pellegrino,Engineering,Engineering,Senior Software Engineer,IC3,2020-09-10,,,97700.00,0.08,false,Remote - US,Full-time,CC-3000
+EMP-0050,Priya Quimby,Sales - SMB,Sales,Account Executive,IC2,2020-09-17,,,71500.00,0.00,true,"Atlanta, GA",Full-time,CC-1000
+EMP-0052,Odalys Thornbury,Engineering,Engineering,Senior Software Engineer,IC3,2020-10-01,,,100600.00,0.08,false,Remote - US,Full-time,CC-3000
+EMP-0053,Xiomara Papadopoulos,Product & Design,Product & Design,Product Designer,IC2,2020-10-04,,,64900.00,0.08,false,Remote - US,Full-time,CC-3100
+EMP-0054,Fatima Ghorbani,Engineering,Engineering,Principal Engineer,IC5,2020-11-01,2024-10-31,Involuntary,123700.00,0.08,false,"Atlanta, GA",Full-time,CC-3000
+EMP-0055,Odalys Jorgensen,Professional Services,Professional Services,Senior Implementation Consultant,IC3,2020-11-14,,,69700.00,0.08,false,"Chicago, IL",Full-time,CC-2100
+EMP-0056,Dashiell Yamamoto,Engineering,Engineering,Associate Software Engineer,IC1,2020-11-16,,,46600.00,0.08,false,Remote - US,Full-time,CC-3000
+EMP-0057,Elias Ravenscroft,Sales - Mid-Market,Sales,Senior Account Executive,IC3,2020-11-17,2026-02-28,Voluntary,91300.00,0.00,true,Remote - US,Full-time,CC-1010
+EMP-0058,Leila Vantongeren,Engineering,Engineering,Senior Software Engineer,IC3,2020-11-17,2025-05-31,Voluntary,72400.00,0.08,false,Remote - US,Full-time,CC-3000
+EMP-0060,Rohan Marchand,Quality & Release,Engineering,Associate Software Engineer,IC1,2020-12-01,,,53600.00,0.08,false,"Austin, TX",Contractor,CC-3010
+EMP-0061,Beatriz Ashcombe,Sales - Enterprise,Sales,Account Executive,IC2,2020-12-05,2025-07-31,Voluntary,67800.00,0.00,true,"Austin, TX",Full-time,CC-1020
+EMP-0062,Esperanza Delacroix,Engineering,Engineering,Senior Software Engineer,IC3,2020-12-06,,,80700.00,0.08,false,Remote - US,Full-time,CC-3000
+EMP-0063,Emeka Krishnan,Product & Design,Product & Design,"Manager, Design",M1,2020-12-08,2025-02-28,Voluntary,109600.00,0.12,false,"Atlanta, GA",Full-time,CC-3100
+EMP-0064,Reyna Marchand,Engineering,Engineering,Staff Software Engineer,IC4,2021-01-02,2024-05-31,Involuntary,100400.00,0.08,false,Remote - US,Full-time,CC-3000
+EMP-0065,Anders Quintanilla,Demand Generation,Marketing,Marketing Manager,IC3,2021-01-04,2025-05-31,Voluntary,94500.00,0.08,false,"Austin, TX",Full-time,CC-1100
+EMP-0066,Amara Underwood,Finance & Accounting,G&A,"Manager, People Operations",M1,2021-01-11,2024-11-30,Involuntary,135300.00,0.12,false,"Austin, TX",Full-time,CC-4000
+EMP-0067,Bastian Quimby,Finance & Accounting,G&A,Senior Financial Analyst,IC3,2021-01-18,,,99600.00,0.08,false,Remote - US,Full-time,CC-4000
+EMP-0068,Elias Abernathy,Professional Services,Professional Services,Implementation Consultant,IC2,2021-01-29,,,56600.00,0.08,false,"Austin, TX",Full-time,CC-2100
+EMP-0069,Devon Ravenscroft,Engineering,Engineering,Software Engineer,IC2,2021-01-31,,,69700.00,0.08,false,"Denver, CO",Full-time,CC-3000
+EMP-0070,Marisol Beaumont,Customer Success,Customer Success,Customer Success Manager,IC2,2021-02-09,2026-02-28,Voluntary,65400.00,0.08,false,"Atlanta, GA",Full-time,CC-1200
+EMP-0071,Tobias Fairweather,Product & Design,Product & Design,Product Designer,IC2,2021-02-11,,,70400.00,0.08,false,Remote - US,Full-time,CC-3100
+EMP-0072,Esperanza Nwachukwu,Finance & Accounting,G&A,Financial Analyst,IC2,2021-02-14,,,52200.00,0.08,false,"Atlanta, GA",Part-time,CC-4000
+EMP-0073,Ingrid Yerxa,Engineering,Engineering,Senior Software Engineer,IC3,2021-03-01,,,75800.00,0.08,false,"Toronto, ON",Full-time,CC-3000
+EMP-0074,Dashiell Nwachukwu,Quality & Release,Engineering,Software Engineer,IC2,2021-03-03,,,67800.00,0.08,false,"Toronto, ON",Full-time,CC-3010
+EMP-0075,Perpetua Hargreaves,IT & Corporate Systems,G&A,"Director, Finance",M2,2021-03-03,,,181900.00,0.15,false,Remote - Canada,Full-time,CC-4030
+EMP-0076,Amara Waverly,Engineering,Engineering,Senior Software Engineer,IC3,2021-03-17,,,104000.00,0.08,false,Remote - Canada,Full-time,CC-3000
+EMP-0077,Hendrik Vasquez,Support,Support & Cloud Ops,Senior Support Engineer,IC3,2021-03-22,,,87000.00,0.08,false,Remote - US,Full-time,CC-2000
+EMP-0078,Talia Ravenscroft,Sales Development,Sales,Account Executive,IC2,2021-04-01,,,87500.00,0.00,true,"Denver, CO",Full-time,CC-1030
+EMP-0079,Lorcan Marchand,Product & Design,Product & Design,Product Designer,IC2,2021-04-13,,,66700.00,0.08,false,Remote - US,Full-time,CC-3100
+EMP-0080,Imani Cortez,Customer Success,Customer Success,Customer Success Manager,IC2,2021-04-20,,,69800.00,0.08,false,"Toronto, ON",Full-time,CC-1200
+EMP-0081,Nadia Pellegrino,Customer Success,Customer Success,Strategic CSM,IC4,2021-04-21,,,85800.00,0.08,false,Remote - US,Full-time,CC-1200
+EMP-0082,Odalys Beaumont,Product & Design,Product & Design,Senior Product Manager,IC4,2021-05-09,2025-08-31,Voluntary,105100.00,0.08,false,Remote - US,Full-time,CC-3100
+EMP-0083,Noor Ulmer,Engineering,Engineering,Principal Engineer,IC5,2021-05-14,2025-10-31,Voluntary,128300.00,0.08,false,"Austin, TX",Full-time,CC-3000
+EMP-0084,Saoirse Eriksen,Sales - Mid-Market,Sales,Senior Account Executive,IC3,2021-05-18,2024-07-31,Voluntary,81600.00,0.00,true,"Denver, CO",Full-time,CC-1010
+EMP-0085,Ingrid Tanaka,Solutions Engineering,Sales,"Director, Sales",M2,2021-06-22,2026-03-31,Voluntary,160600.00,0.00,true,"Chicago, IL",Full-time,CC-1050
+EMP-0086,Amara Papadopoulos,Professional Services,Professional Services,Senior Implementation Consultant,IC3,2021-06-27,2025-05-31,Voluntary,71700.00,0.08,false,"Toronto, ON",Full-time,CC-2100
+EMP-0087,Marguerite Quintanilla,Cloud Operations,Support & Cloud Ops,Site Reliability Engineer,IC4,2021-07-12,,,97800.00,0.08,false,"Atlanta, GA",Full-time,CC-2010
+EMP-0088,Adaeze Falkenrath,Engineering,Engineering,Engineering Manager,M1,2021-07-29,2024-10-31,Involuntary,106800.00,0.12,false,"Austin, TX",Full-time,CC-3000
+EMP-0089,Kestrel Jamieson,Solutions Engineering,Sales,Senior Account Executive,IC3,2021-08-01,2025-08-31,Voluntary,94400.00,0.00,true,"Atlanta, GA",Full-time,CC-1050
+EMP-0090,Malachi Ibarra,Sales Operations,Sales,Senior Account Executive,IC3,2021-08-19,,,100700.00,0.00,true,"Atlanta, GA",Full-time,CC-1040
+EMP-0091,Esperanza Tanaka,Demand Generation,Marketing,Marketing Associate,IC2,2021-08-26,,,77800.00,0.08,false,"Austin, TX",Full-time,CC-1100
+EMP-0092,Emeka Yamamoto,Engineering,Engineering,Associate Software Engineer,IC1,2021-09-02,,,55100.00,0.08,false,"Chicago, IL",Full-time,CC-3000
+EMP-0094,Beatriz Ostrander,Engineering,Engineering,Engineering Manager,M1,2021-09-10,,,111200.00,0.12,false,"Austin, TX",Full-time,CC-3000
+EMP-0095,Ingrid Larkspur,Cloud Operations,Support & Cloud Ops,Support Engineer,IC2,2021-09-17,,,75700.00,0.08,false,"Denver, CO",Full-time,CC-2010
+EMP-0096,Amara Ulmer,Customer Success,Customer Success,Senior Customer Success Manager,IC3,2021-09-21,2024-08-31,Voluntary,86900.00,0.08,false,"Austin, TX",Full-time,CC-1200
+EMP-0097,Zubeida Ashcombe,Engineering,Engineering,Senior Software Engineer,IC3,2021-10-19,,,82000.00,0.08,false,Remote - Canada,Full-time,CC-3000
+EMP-0099,Salim Pellegrino,Sales Leadership,Sales,Senior Account Executive,IC3,2021-11-04,,,96300.00,0.00,true,Remote - US,Full-time,CC-1060
+EMP-0100,Nadia Eriksen,Sales - Mid-Market,Sales,Senior Account Executive,IC3,2021-11-11,,,110200.00,0.00,true,Remote - US,Full-time,CC-1010
+EMP-0101,Fatima Yerxa,Engineering,Engineering,Associate Software Engineer,IC1,2021-11-12,2025-05-31,Voluntary,51100.00,0.08,false,"Austin, TX",Full-time,CC-3000
+EMP-0102,Rosalind Thornbury,Engineering,Engineering,Staff Software Engineer,IC4,2021-12-30,,,101400.00,0.08,false,"Atlanta, GA",Full-time,CC-3000
+EMP-0103,Marguerite Ravenscroft,Customer Success,Customer Success,Senior Customer Success Manager,IC3,2022-02-02,,,85200.00,0.08,false,Remote - US,Full-time,CC-1200
+EMP-0104,Saoirse Nazarian,Customer Success,Customer Success,Senior Customer Success Manager,IC3,2022-02-05,2025-04-30,Voluntary,83800.00,0.08,false,Remote - US,Full-time,CC-1200
+EMP-0105,Leila Whitfield,Engineering,Engineering,Software Engineer,IC2,2022-02-06,2025-08-31,Voluntary,69400.00,0.08,false,"Austin, TX",Full-time,CC-3000
+EMP-0106,Rohan Krishnan,Customer Success,Customer Success,Customer Success Manager,IC2,2022-02-15,2026-01-31,Involuntary,70200.00,0.08,false,Remote - Canada,Contractor,CC-1200
+EMP-0107,Osric Ostrander,Product & Design,Product & Design,"Manager, Design",M1,2022-03-06,2026-03-31,Voluntary,111300.00,0.12,false,Remote - Canada,Full-time,CC-3100
+EMP-0108,Jian Jamieson,People Operations,G&A,Accounting Manager,IC4,2022-03-31,,,127400.00,0.08,false,Remote - US,Full-time,CC-4010
+EMP-0109,Noor Beaumont,Engineering,Engineering,Software Engineer,IC2,2022-04-11,,,65800.00,0.08,false,"Austin, TX",Full-time,CC-3000
+EMP-0110,Reyna Ashcombe,Product Marketing,Marketing,Marketing Associate,IC2,2022-04-16,,,89100.00,0.08,false,"Denver, CO",Full-time,CC-1110
+EMP-0111,Juniper Abernathy,Product & Design,Product & Design,Product Designer,IC2,2022-04-19,,,66300.00,0.08,false,"Toronto, ON",Full-time,CC-3100
+EMP-0112,Kwame Quintanilla,Sales - Mid-Market,Sales,Enterprise Account Executive,IC4,2022-04-30,,,125200.00,0.00,true,Remote - Canada,Full-time,CC-1010
+EMP-0113,Kestrel Fairweather,IT & Corporate Systems,G&A,"Manager, People Operations",M1,2022-05-18,,,162700.00,0.12,false,Remote - US,Full-time,CC-4030
+EMP-0114,Rafael Ravenscroft,Product Marketing,Marketing,Marketing Manager,IC3,2022-05-22,2025-04-30,Voluntary,92400.00,0.08,false,"Atlanta, GA",Full-time,CC-1110
+EMP-0115,Ezra Tanaka,Cloud Operations,Support & Cloud Ops,Senior Support Engineer,IC3,2022-06-10,,,87600.00,0.08,false,Remote - US,Full-time,CC-2010
+EMP-0117,Anouk Sandoval,Quality & Release,Engineering,Staff Software Engineer,IC4,2022-07-17,2026-02-28,Voluntary,121500.00,0.08,false,"Toronto, ON",Full-time,CC-3010
+EMP-0118,Marguerite Falkenrath,Product & Design,Product & Design,Product Designer,IC2,2022-08-11,,,72000.00,0.08,false,Remote - US,Full-time,CC-3100
+EMP-0119,Dashiell Ibarra,Customer Success,Customer Success,Senior Customer Success Manager,IC3,2022-08-16,,,93600.00,0.08,false,"Atlanta, GA",Full-time,CC-1200
+EMP-0120,Xiomara Pellegrino,Sales - SMB,Sales,Account Executive,IC2,2022-08-21,2024-02-29,Voluntary,78500.00,0.00,true,Remote - US,Full-time,CC-1000
+EMP-0121,Cormac Jorgensen,Sales - Enterprise,Sales,Enterprise Account Executive,IC4,2022-08-22,,,133900.00,0.00,true,Remote - US,Full-time,CC-1020
+EMP-0122,Imani Ibarra,Cloud Operations,Support & Cloud Ops,"Manager, Support",M1,2022-08-27,2025-05-31,Voluntary,126300.00,0.12,false,"Denver, CO",Full-time,CC-2010
+EMP-0123,Rohan Larkspur,People Operations,G&A,Accounting Manager,IC4,2022-08-30,2024-10-31,Voluntary,136700.00,0.08,false,"Chicago, IL",Full-time,CC-4010
+EMP-0124,Osric Hargreaves,Cloud Operations,Support & Cloud Ops,Support Engineer,IC2,2022-09-07,,,76100.00,0.08,false,Remote - US,Full-time,CC-2010
+EMP-0125,Finnian Hollingsworth,Engineering,Engineering,Software Engineer,IC2,2022-09-10,,,65700.00,0.08,false,"Toronto, ON",Full-time,CC-3000
+EMP-0126,Yuki Sandoval,Legal & Corporate,G&A,Accounting Associate,IC1,2022-09-10,,,69900.00,0.08,false,Remote - US,Full-time,CC-4020
+EMP-0127,Wren Abernathy,Engineering,Engineering,Senior Software Engineer,IC3,2022-09-18,2025-02-28,Voluntary,73700.00,0.08,false,Remote - US,Full-time,CC-3000
+EMP-0128,Ilaria Thornbury,Sales - SMB,Sales,Account Executive,IC2,2022-09-22,,,80500.00,0.00,true,Remote - US,Full-time,CC-1000
+EMP-0129,Cormac Ostrander,Engineering,Engineering,Staff Software Engineer,IC4,2022-10-04,,,110500.00,0.08,false,"Denver, CO",Full-time,CC-3000
+EMP-0130,Mateo Nazarian,Sales - SMB,Sales,Account Executive,IC2,2022-10-07,2024-09-30,Voluntary,98400.00,0.00,true,Remote - US,Full-time,CC-1000
+EMP-0131,Rafael Stellenbosch,Customer Success,Customer Success,Customer Success Manager,IC2,2022-10-15,2025-03-31,Voluntary,66100.00,0.08,false,"Chicago, IL",Full-time,CC-1200
+EMP-0132,Amara Jorgensen,Legal & Corporate,G&A,Accounting Associate,IC1,2022-10-22,2026-03-31,Voluntary,65700.00,0.08,false,Remote - Canada,Full-time,CC-4020
+EMP-0133,Imani Ivanov,Sales Operations,Sales,Senior Account Executive,IC3,2022-10-29,,,106600.00,0.00,true,Remote - US,Full-time,CC-1040
+EMP-0134,Anouk Whitfield,Cloud Operations,Support & Cloud Ops,Senior Support Engineer,IC3,2022-10-30,,,79300.00,0.08,false,Remote - US,Full-time,CC-2010
+EMP-0135,Talia Tanaka,Engineering,Engineering,Staff Software Engineer,IC4,2022-11-04,,,113800.00,0.08,false,"Austin, TX",Full-time,CC-3000
+EMP-0136,Rafael Thornbury,Support,Support & Cloud Ops,Support Specialist,IC1,2022-11-26,,,45700.00,0.08,false,"Chicago, IL",Full-time,CC-2000
+EMP-0137,Adaeze Nazarian,Engineering,Engineering,Software Engineer,IC2,2022-11-27,,,64100.00,0.08,false,"Atlanta, GA",Full-time,CC-3000
+EMP-0138,Perpetua Ostrander,Product & Design,Product & Design,"Manager, Design",M1,2022-11-30,,,121000.00,0.12,false,Remote - US,Contractor,CC-3100
+EMP-0139,Ezra Quintanilla,Customer Success,Customer Success,Associate CSM,IC1,2022-12-05,,,51600.00,0.08,false,"Denver, CO",Full-time,CC-1200
+EMP-0140,Beatriz Quintanilla,Engineering,Engineering,Software Engineer,IC2,2022-12-07,2025-05-31,Voluntary,73800.00,0.08,false,Remote - US,Full-time,CC-3000
+EMP-0141,Idris Montoya,Customer Success,Customer Success,"Manager, Customer Success",M1,2023-01-21,,,108500.00,0.12,false,"Toronto, ON",Full-time,CC-1200
+EMP-0142,Marisol Larkspur,Sales Operations,Sales,"Director, Sales",M2,2023-03-06,2025-05-31,Voluntary,165000.00,0.00,true,"Denver, CO",Full-time,CC-1040
+EMP-0143,Aleksei Abernathy,Sales - SMB,Sales,Senior Account Executive,IC3,2023-03-08,,,105500.00,0.00,true,"Austin, TX",Contractor,CC-1000
+EMP-0144,Rohan Whitfield,Demand Generation,Marketing,Marketing Manager,IC3,2023-03-11,,,96700.00,0.08,false,Remote - US,Full-time,CC-1100
+EMP-0145,Linnea Larkspur,Engineering,Engineering,Software Engineer,IC2,2023-03-27,,,75300.00,0.08,false,"Atlanta, GA",Full-time,CC-3000
+EMP-0146,Idris Bhattacharya,Sales Development,Sales,Enterprise Account Executive,IC4,2023-04-25,,,143700.00,0.00,true,"Chicago, IL",Full-time,CC-1030
+EMP-0147,Rosalind Jorgensen,Product & Design,Product & Design,Product Manager,IC3,2023-04-28,,,77500.00,0.08,false,"Denver, CO",Full-time,CC-3100
+EMP-0148,Xiomara Eriksen,Customer Success,Customer Success,Senior Customer Success Manager,IC3,2023-05-05,,,95100.00,0.08,false,Remote - US,Full-time,CC-1200
+EMP-0149,Finnian Fairweather,Engineering,Engineering,Engineering Manager,M1,2023-05-11,2025-10-31,Involuntary,115100.00,0.12,false,"Toronto, ON",Full-time,CC-3000
+EMP-0150,Nadia Oyelowo,Finance & Accounting,G&A,Senior Financial Analyst,IC3,2023-05-25,2025-03-31,Voluntary,118300.00,0.08,false,"Chicago, IL",Full-time,CC-4000
+EMP-0151,Soren Tanaka,Sales Operations,Sales,Account Executive,IC2,2023-06-07,,,84200.00,0.00,true,Remote - US,Full-time,CC-1040
+EMP-0152,Linnea Krishnan,Product & Design,Product & Design,Product Manager,IC3,2023-06-11,2025-11-30,Involuntary,48100.00,0.08,false,Remote - Canada,Part-time,CC-3100
+EMP-0153,Nadia Montoya,Customer Success,Customer Success,Customer Success Manager,IC2,2023-06-17,,,71800.00,0.08,false,"Atlanta, GA",Full-time,CC-1200
+EMP-0154,Yuki Vasquez,Customer Success,Customer Success,Senior Customer Success Manager,IC3,2023-06-20,,,87000.00,0.08,false,"Chicago, IL",Full-time,CC-1200
+EMP-0155,Colette Fairweather,Quality & Release,Engineering,Software Engineer,IC2,2023-06-23,,,73500.00,0.08,false,Remote - US,Full-time,CC-3010
+EMP-0156,Talia Abernathy,Engineering,Engineering,Software Engineer,IC2,2023-06-28,,,68500.00,0.08,false,"Austin, TX",Full-time,CC-3000
+EMP-0157,Ezra Whitfield,Finance & Accounting,G&A,Financial Analyst,IC2,2023-07-03,,,88800.00,0.08,false,"Austin, TX",Full-time,CC-4000
+EMP-0158,Priya Dunleavy,Sales - Mid-Market,Sales,Senior Account Executive,IC3,2023-07-24,,,101400.00,0.00,true,Remote - US,Full-time,CC-1010
+EMP-0159,Aleksei Lefebvre,Sales Development,Sales,Sales Manager,M1,2023-07-29,2025-04-30,Voluntary,128800.00,0.00,true,"Denver, CO",Full-time,CC-1030
+EMP-0160,Tobias Ravenscroft,Product & Design,Product & Design,Product Manager,IC3,2023-07-29,,,74000.00,0.08,false,Remote - US,Full-time,CC-3100
+EMP-0161,Ilaria Yerxa,Product Marketing,Marketing,"Manager, Demand Generation",M1,2023-08-16,,,121000.00,0.12,false,Remote - US,Full-time,CC-1110
+EMP-0162,Rafael Fairweather,Product Marketing,Marketing,Marketing Manager,IC3,2023-08-16,2025-02-28,Voluntary,100400.00,0.08,false,Remote - US,Full-time,CC-1110
+EMP-0163,Lorcan Whitfield,Solutions Engineering,Sales,Senior Account Executive,IC3,2023-08-24,2026-04-30,Involuntary,92700.00,0.00,true,Remote - US,Full-time,CC-1050
+EMP-0164,Noor Ashcombe,Sales - SMB,Sales,Enterprise Account Executive,IC4,2023-08-31,2026-03-31,Voluntary,128200.00,0.00,true,"Denver, CO",Full-time,CC-1000
+EMP-0165,Marisol Thornbury,Sales - Mid-Market,Sales,Senior Account Executive,IC3,2023-09-06,2026-01-31,Voluntary,93300.00,0.00,true,"Chicago, IL",Full-time,CC-1010
+EMP-0166,Solveig Ulmer,Support,Support & Cloud Ops,Site Reliability Engineer,IC4,2023-09-09,,,98000.00,0.08,false,"Atlanta, GA",Full-time,CC-2000
+EMP-0167,Wren Ivanov,Sales - Enterprise,Sales,Enterprise Account Executive,IC4,2023-09-21,2024-09-30,Involuntary,126300.00,0.00,true,Remote - US,Full-time,CC-1020
+EMP-0168,Thaddeus Gutierrez,Engineering,Engineering,VP Engineering,VP,2023-09-24,,,212500.00,0.22,false,Remote - Canada,Full-time,CC-3000
+EMP-0169,Priya Yamamoto,Professional Services,Professional Services,Implementation Consultant,IC2,2023-09-30,2025-06-30,Voluntary,49400.00,0.08,false,Remote - US,Full-time,CC-2100
+EMP-0170,Wren Waverly,Product Marketing,Marketing,Senior Marketing Manager,IC4,2023-10-02,,,140200.00,0.08,false,"Atlanta, GA",Full-time,CC-1110
+EMP-0171,Rashid Stellenbosch,Customer Success,Customer Success,Senior Customer Success Manager,IC3,2023-10-10,2024-10-31,Voluntary,110500.00,0.08,false,"Chicago, IL",Full-time,CC-1200
+EMP-0172,Gideon Whitfield,Customer Success,Customer Success,Strategic CSM,IC4,2023-11-08,,,109400.00,0.08,false,Remote - US,Full-time,CC-1200
+EMP-0173,Nikolai Underwood,Product Marketing,Marketing,"Manager, Demand Generation",M1,2023-11-21,,,134100.00,0.12,false,Remote - US,Full-time,CC-1110
+EMP-0174,Dashiell Ghorbani,Demand Generation,Marketing,Senior Marketing Manager,IC4,2023-12-13,,,134400.00,0.08,false,"Atlanta, GA",Full-time,CC-1100
+EMP-0175,Ezra Bhattacharya,Engineering,Engineering,Engineering Manager,M1,2023-12-18,,,118700.00,0.12,false,"Atlanta, GA",Full-time,CC-3000
+EMP-0176,Gideon Gutierrez,Sales - Enterprise,Sales,Enterprise Account Executive,IC4,2023-12-19,,,117500.00,0.00,true,Remote - US,Full-time,CC-1020
+EMP-0177,Anders Falkenrath,Product Marketing,Marketing,Marketing Associate,IC2,2023-12-21,,,87100.00,0.08,false,"Atlanta, GA",Full-time,CC-1110
+EMP-0178,Yuki Kaminski,Customer Success,Customer Success,Senior Customer Success Manager,IC3,2024-01-10,,,97500.00,0.08,false,"Denver, CO",Full-time,CC-1200
+EMP-0179,Wren Whitfield,Engineering,Engineering,Senior Software Engineer,IC3,2024-01-15,2024-07-31,Voluntary,123100.00,0.08,false,"Denver, CO",Full-time,CC-3000
+EMP-0180,Fatima Reyes,Sales - SMB,Sales,Account Executive,IC2,2024-01-18,2024-04-30,Voluntary,83400.00,0.00,true,"Toronto, ON",Full-time,CC-1000
+EMP-0181,Noor Falkenrath,Sales - SMB,Sales,Account Executive,IC2,2024-02-11,,,85700.00,0.00,true,Remote - US,Full-time,CC-1000
+EMP-0182,Idris Cavanaugh,Customer Success,Customer Success,Customer Success Manager,IC2,2024-02-13,2025-06-30,Voluntary,67600.00,0.08,false,"Atlanta, GA",Full-time,CC-1200
+EMP-0183,Wren Montoya,People Operations,G&A,Senior Financial Analyst,IC3,2024-02-15,,,138900.00,0.08,false,"Austin, TX",Full-time,CC-4010
+EMP-0184,Ezra Pellegrino,Product & Design,Product & Design,Product Manager,IC3,2024-02-20,,,80600.00,0.08,false,Remote - Canada,Full-time,CC-3100
+EMP-0185,Thaddeus Krishnan,Support,Support & Cloud Ops,Senior Support Engineer,IC3,2024-02-21,2024-06-30,Voluntary,83600.00,0.08,false,Remote - US,Full-time,CC-2000
+EMP-0186,Hendrik Kaminski,Sales Development,Sales,Account Executive,IC2,2024-02-26,2024-05-31,Involuntary,83600.00,0.00,true,"Atlanta, GA",Full-time,CC-1030
+EMP-0187,Tobias Montoya,Demand Generation,Marketing,Marketing Manager,IC3,2024-03-01,2024-05-31,Voluntary,116400.00,0.08,false,"Toronto, ON",Full-time,CC-1100
+EMP-0188,Kestrel Yerxa,Product Marketing,Marketing,Marketing Associate,IC2,2024-03-13,,,84700.00,0.08,false,Remote - US,Full-time,CC-1110
+EMP-0189,Dashiell Fairweather,Engineering,Engineering,Staff Software Engineer,IC4,2024-03-25,,,120000.00,0.08,false,"Chicago, IL",Full-time,CC-3000
+EMP-0190,Solveig Zielinski,Sales - SMB,Sales,Account Executive,IC2,2024-04-06,,,84100.00,0.00,true,"Austin, TX",Full-time,CC-1000
+EMP-0191,Imani Fairweather,Support,Support & Cloud Ops,"Manager, Support",M1,2024-04-10,,,122200.00,0.12,false,Remote - Canada,Contractor,CC-2000
+EMP-0192,Lorcan Marchand,Sales - SMB,Sales,Account Executive,IC2,2024-04-16,2024-05-31,Voluntary,88200.00,0.00,true,Remote - Canada,Full-time,CC-1000
+EMP-0193,Marguerite Dunleavy,Sales Development,Sales,Enterprise Account Executive,IC4,2024-04-24,,,120800.00,0.00,true,Remote - US,Full-time,CC-1030
+EMP-0194,Priya Dunleavy,Professional Services,Professional Services,"Manager, Professional Services",M1,2024-04-25,2025-11-30,Voluntary,105900.00,0.12,false,"Chicago, IL",Full-time,CC-2100
+EMP-0195,Priya Ulmer,Engineering,Engineering,Staff Software Engineer,IC4,2024-05-04,,,112100.00,0.08,false,Remote - US,Full-time,CC-3000
+EMP-0196,Rafael Oyelowo,Finance & Accounting,G&A,Financial Analyst,IC2,2024-05-13,,,91000.00,0.08,false,"Austin, TX",Full-time,CC-4000
+EMP-0197,Ingrid Ulmer,Solutions Engineering,Sales,Senior Account Executive,IC3,2024-05-17,,,96900.00,0.00,true,"Toronto, ON",Full-time,CC-1050
+EMP-0198,Soren Underwood,Sales - SMB,Sales,Account Executive,IC2,2024-05-20,,,81500.00,0.00,true,"Atlanta, GA",Full-time,CC-1000
+EMP-0199,Marguerite Papadopoulos,Customer Success,Customer Success,Senior Customer Success Manager,IC3,2024-05-21,2026-03-31,Involuntary,103500.00,0.08,false,Remote - US,Full-time,CC-1200
+EMP-0200,Juniper Tanaka,Engineering,Engineering,Staff Software Engineer,IC4,2024-05-22,,,103700.00,0.08,false,"Toronto, ON",Full-time,CC-3000
+EMP-0201,Colette Hargreaves,Product Marketing,Marketing,Senior Marketing Manager,IC4,2024-05-26,,,78100.00,0.08,false,"Atlanta, GA",Part-time,CC-1110
+EMP-0202,Esperanza Falkenrath,Product & Design,Product & Design,Product Manager,IC3,2024-06-02,,,85900.00,0.08,false,"Denver, CO",Full-time,CC-3100
+EMP-0203,Mateo Ostrander,Engineering,Engineering,Principal Engineer,IC5,2024-06-11,,,149300.00,0.08,false,Remote - US,Full-time,CC-3000
+EMP-0204,Adaeze Lefebvre,Support,Support & Cloud Ops,"Director, Cloud Operations",M2,2024-06-14,,,164400.00,0.15,false,"Toronto, ON",Full-time,CC-2000
+EMP-0205,Osric Montoya,Sales - Mid-Market,Sales,Senior Account Executive,IC3,2024-06-14,,,109900.00,0.00,true,"Denver, CO",Full-time,CC-1010
+EMP-0206,Wren Oyelowo,Sales Development,Sales,"Director, Sales",M2,2024-06-26,2025-02-28,Voluntary,156200.00,0.00,true,Remote - Canada,Full-time,CC-1030
+EMP-0207,Leila Vasquez,Sales - Enterprise,Sales,Enterprise Account Executive,IC4,2024-07-03,2024-09-30,Voluntary,115900.00,0.00,true,"Atlanta, GA",Full-time,CC-1020
+EMP-0208,Jian Engebretsen,Sales - Mid-Market,Sales,Senior Account Executive,IC3,2024-07-12,2025-04-30,Voluntary,101800.00,0.00,true,Remote - US,Full-time,CC-1010
+EMP-0209,Noor Papadopoulos,Engineering,Engineering,"Director, Engineering",M2,2024-07-14,2024-09-30,Voluntary,178100.00,0.15,false,Remote - US,Full-time,CC-3000
+EMP-0210,Bastian Vasquez,Quality & Release,Engineering,Staff Software Engineer,IC4,2024-07-16,,,106000.00,0.08,false,Remote - US,Full-time,CC-3010
+EMP-0211,Leila Papadopoulos,Sales - Mid-Market,Sales,Senior Account Executive,IC3,2024-07-20,2025-02-28,Involuntary,99600.00,0.00,true,Remote - US,Full-time,CC-1010
+EMP-0212,Imani Hollingsworth,IT & Corporate Systems,G&A,Accounting Manager,IC4,2024-08-03,,,146900.00,0.08,false,"Toronto, ON",Full-time,CC-4030
+EMP-0213,Dashiell Cortez,Customer Success,Customer Success,Senior Customer Success Manager,IC3,2024-08-15,,,92300.00,0.08,false,"Denver, CO",Full-time,CC-1200
+EMP-0214,Damaris Montoya,Quality & Release,Engineering,Associate Software Engineer,IC1,2024-09-05,,,63600.00,0.08,false,Remote - US,Full-time,CC-3010
+EMP-0215,Lorcan Dunleavy,Engineering,Engineering,Staff Software Engineer,IC4,2024-09-08,2025-04-30,Voluntary,132500.00,0.08,false,"Chicago, IL",Full-time,CC-3000
+EMP-0216,Malachi Dunleavy,Sales - Enterprise,Sales,Enterprise Account Executive,IC4,2024-09-12,,,131200.00,0.00,true,"Austin, TX",Full-time,CC-1020
+EMP-0217,Nadia Abernathy,Sales - SMB,Sales,Account Executive,IC2,2024-09-14,2025-04-30,Voluntary,87000.00,0.00,true,Remote - US,Full-time,CC-1000
+EMP-0218,Rashid Pellegrino,Sales - Enterprise,Sales,Enterprise Account Executive,IC4,2024-09-14,,,133900.00,0.00,true,Remote - US,Full-time,CC-1020
+EMP-0219,Kwame Tanaka,Customer Success,Customer Success,Associate CSM,IC1,2024-09-15,,,50500.00,0.08,false,"Denver, CO",Full-time,CC-1200
+EMP-0220,Devon Jamieson,Product & Design,Product & Design,Senior Product Manager,IC4,2024-10-01,,,100300.00,0.08,false,"Austin, TX",Full-time,CC-3100
+EMP-0221,Gideon Dunleavy,Quality & Release,Engineering,Senior Software Engineer,IC3,2024-10-09,,,75700.00,0.08,false,Remote - US,Full-time,CC-3010
+EMP-0222,Emeka Waverly,Engineering,Engineering,Software Engineer,IC2,2024-10-15,,,80200.00,0.08,false,Remote - Canada,Full-time,CC-3000
+EMP-0223,Dashiell Lefebvre,Demand Generation,Marketing,Marketing Associate,IC2,2024-10-17,,,85300.00,0.08,false,"Austin, TX",Full-time,CC-1100
+EMP-0224,Noor Jorgensen,Finance & Accounting,G&A,"Manager, People Operations",M1,2024-10-18,,,155400.00,0.12,false,Remote - US,Contractor,CC-4000
+EMP-0225,Dashiell Beaumont,Customer Success,Customer Success,Senior Customer Success Manager,IC3,2024-10-24,,,106000.00,0.08,false,Remote - US,Full-time,CC-1200
+EMP-0226,Noor Thornbury,Demand Generation,Marketing,Marketing Manager,IC3,2024-11-02,,,93400.00,0.08,false,"Atlanta, GA",Full-time,CC-1100
+EMP-0227,Fatima Yamamoto,Engineering,Engineering,Senior Software Engineer,IC3,2024-11-15,,,81900.00,0.08,false,"Chicago, IL",Full-time,CC-3000
+EMP-0228,Lorcan Ashcombe,Finance & Accounting,G&A,Senior Financial Analyst,IC3,2024-11-21,,,107900.00,0.08,false,Remote - US,Full-time,CC-4000
+EMP-0229,Wren Ostrander,People Operations,G&A,"Manager, People Operations",M1,2024-11-24,,,150800.00,0.12,false,Remote - US,Full-time,CC-4010
+EMP-0230,Juniper Beaumont,Professional Services,Professional Services,Implementation Consultant,IC2,2024-12-08,,,57800.00,0.08,false,Remote - US,Full-time,CC-2100
+EMP-0231,Thaddeus Thornbury,Demand Generation,Marketing,Marketing Manager,IC3,2025-02-04,2026-04-30,Voluntary,119700.00,0.08,false,"Austin, TX",Full-time,CC-1100
+EMP-0232,Jian Ivanov,Sales - Mid-Market,Sales,Senior Account Executive,IC3,2025-02-09,2025-10-31,Involuntary,101200.00,0.00,true,Remote - US,Full-time,CC-1010
+EMP-0233,Idris Yamamoto,Sales Operations,Sales,Sales Manager,M1,2025-02-14,2026-01-31,Voluntary,128600.00,0.00,true,"Toronto, ON",Full-time,CC-1040
+EMP-0234,Salim Ghorbani,Sales - Mid-Market,Sales,Senior Account Executive,IC3,2025-02-19,2026-03-31,Involuntary,112200.00,0.00,true,Remote - US,Full-time,CC-1010
+EMP-0235,Soren Nazarian,Engineering,Engineering,Associate Software Engineer,IC1,2025-02-19,,,51100.00,0.08,false,"Chicago, IL",Full-time,CC-3000
+EMP-0236,Nadia Ravenscroft,Engineering,Engineering,Staff Software Engineer,IC4,2025-02-23,,,112000.00,0.08,false,Remote - Canada,Full-time,CC-3000
+EMP-0237,Juniper Reyes,Product & Design,Product & Design,"Manager, Design",M1,2025-02-26,2025-10-31,Involuntary,111300.00,0.12,false,Remote - US,Full-time,CC-3100
+EMP-0238,Aleksei Jorgensen,Customer Success,Customer Success,Strategic CSM,IC4,2025-03-12,,,119600.00,0.08,false,"Chicago, IL",Full-time,CC-1200
+EMP-0239,Elias Nwachukwu,People Operations,G&A,Senior Financial Analyst,IC3,2025-03-15,,,104400.00,0.08,false,"Atlanta, GA",Full-time,CC-4010
+EMP-0240,Jian Waverly,Customer Success,Customer Success,Senior Customer Success Manager,IC3,2025-03-15,2026-03-31,Voluntary,89100.00,0.08,false,"Chicago, IL",Full-time,CC-1200
+EMP-0241,Rohan Thornbury,IT & Corporate Systems,G&A,Accounting Manager,IC4,2025-03-22,,,123200.00,0.08,false,"Denver, CO",Full-time,CC-4030
+EMP-0242,Leila Ostrander,Sales - Mid-Market,Sales,Senior Account Executive,IC3,2025-04-02,2026-02-28,Involuntary,102200.00,0.00,true,"Toronto, ON",Full-time,CC-1010
+EMP-0243,Wren Yamamoto,Sales - SMB,Sales,Account Executive,IC2,2025-04-02,,,85900.00,0.00,true,Remote - US,Full-time,CC-1000
+EMP-0244,Gideon Jamieson,Sales - SMB,Sales,Enterprise Account Executive,IC4,2025-04-04,2025-10-31,Voluntary,110300.00,0.00,true,"Denver, CO",Full-time,CC-1000
+EMP-0245,Nadia Stellenbosch,Customer Success,Customer Success,Senior Customer Success Manager,IC3,2025-04-09,,,91900.00,0.08,false,"Chicago, IL",Contractor,CC-1200
+EMP-0246,Jian Zielinski,Cloud Operations,Support & Cloud Ops,"Director, Cloud Operations",M2,2025-04-11,2025-12-31,Voluntary,159700.00,0.15,false,"Denver, CO",Full-time,CC-2010
+EMP-0247,Emeka Nwachukwu,Demand Generation,Marketing,Marketing Associate,IC2,2025-04-13,,,90200.00,0.08,false,"Austin, TX",Full-time,CC-1100
+EMP-0248,Dashiell Falkenrath,Sales - Enterprise,Sales,Senior Account Executive,IC3,2025-04-19,,,103700.00,0.00,true,Remote - US,Full-time,CC-1020
+EMP-0249,Mateo Ibarra,Engineering,Engineering,"Director, Engineering",M2,2025-04-19,,,139700.00,0.15,false,"Denver, CO",Full-time,CC-3000
+EMP-0250,Salim Ivanov,Product & Design,Product & Design,Product Manager,IC3,2025-04-19,,,83700.00,0.08,false,Remote - US,Full-time,CC-3100
+EMP-0251,Marguerite Fairweather,Sales Operations,Sales,Enterprise Account Executive,IC4,2025-05-03,2025-07-31,Involuntary,138100.00,0.00,true,Remote - US,Full-time,CC-1040
+EMP-0252,Kestrel Quintanilla,Professional Services,Professional Services,Implementation Consultant,IC2,2025-05-05,,,75900.00,0.08,false,"Atlanta, GA",Full-time,CC-2100
+EMP-0253,Talia Cavanaugh,Support,Support & Cloud Ops,Senior Support Engineer,IC3,2025-05-07,2026-03-31,Voluntary,98100.00,0.08,false,"Austin, TX",Full-time,CC-2000
+EMP-0254,Marisol Jamieson,Demand Generation,Marketing,"Manager, Demand Generation",M1,2025-05-11,,,152500.00,0.12,false,Remote - Canada,Full-time,CC-1100
+EMP-0255,Finnian Underwood,Engineering,Engineering,Senior Software Engineer,IC3,2025-05-12,,,98200.00,0.08,false,"Toronto, ON",Full-time,CC-3000
+EMP-0256,Fatima Hargreaves,Engineering,Engineering,Senior Software Engineer,IC3,2025-05-15,,,86800.00,0.08,false,"Atlanta, GA",Full-time,CC-3000
+EMP-0257,Jian Thornbury,Engineering,Engineering,Software Engineer,IC2,2025-05-26,,,71000.00,0.08,false,Remote - Canada,Contractor,CC-3000
+EMP-0258,Odalys Nazarian,Customer Success,Customer Success,"Manager, Customer Success",M1,2025-06-10,,,121800.00,0.12,false,Remote - US,Full-time,CC-1200
+EMP-0259,Nadia Ivanov,Engineering,Engineering,Staff Software Engineer,IC4,2025-06-14,,,112900.00,0.08,false,"Atlanta, GA",Full-time,CC-3000
+EMP-0260,Rafael Dunleavy,Professional Services,Professional Services,Implementation Consultant,IC2,2025-06-26,,,65300.00,0.08,false,Remote - US,Full-time,CC-2100
+EMP-0261,Fatima Cortez,Professional Services,Professional Services,Senior Implementation Consultant,IC3,2025-07-03,,,76500.00,0.08,false,"Atlanta, GA",Contractor,CC-2100
+EMP-0262,Nikolai Beaumont,Sales Leadership,Sales,Enterprise Account Executive,IC4,2025-07-05,2026-03-31,Voluntary,138400.00,0.00,true,"Chicago, IL",Full-time,CC-1060
+EMP-0263,Colette Whitfield,Customer Success,Customer Success,"Manager, Customer Success",M1,2025-07-06,2025-11-30,Involuntary,127400.00,0.12,false,"Austin, TX",Full-time,CC-1200
+EMP-0264,Yuki Stellenbosch,Legal & Corporate,G&A,Accounting Associate,IC1,2025-07-11,,,73000.00,0.08,false,"Chicago, IL",Full-time,CC-4020
+EMP-0265,Osric Marchand,Sales Operations,Sales,Senior Account Executive,IC3,2025-07-13,2025-09-30,Voluntary,67900.00,0.00,true,Remote - US,Part-time,CC-1040
+EMP-0266,Saoirse Hollingsworth,Support,Support & Cloud Ops,Support Engineer,IC2,2025-08-03,,,70600.00,0.08,false,"Austin, TX",Full-time,CC-2000
+EMP-0267,Yuki Quimby,Sales - Enterprise,Sales,Account Executive,IC2,2025-08-09,,,81100.00,0.00,true,Remote - Canada,Full-time,CC-1020
+EMP-0268,Emeka Tanaka,Product Marketing,Marketing,Marketing Manager,IC3,2025-08-11,,,101800.00,0.08,false,"Atlanta, GA",Full-time,CC-1110
+EMP-0269,Lorcan Abernathy,Engineering,Engineering,Staff Software Engineer,IC4,2025-08-11,,,116600.00,0.08,false,Remote - US,Full-time,CC-3000
+EMP-0270,Fatima Jamieson,Product & Design,Product & Design,"Manager, Design",M1,2025-08-25,,,118200.00,0.12,false,"Chicago, IL",Full-time,CC-3100
+EMP-0271,Rafael Gutierrez,Sales - Mid-Market,Sales,Senior Account Executive,IC3,2025-08-25,2026-04-30,Involuntary,122200.00,0.00,true,"Austin, TX",Full-time,CC-1010
+EMP-0272,Solveig Yamamoto,Customer Success,Customer Success,"Manager, Customer Success",M1,2025-09-12,2026-01-31,Involuntary,128500.00,0.12,false,"Denver, CO",Full-time,CC-1200
+EMP-0273,Emeka Delacroix,Engineering,Engineering,Staff Software Engineer,IC4,2025-09-15,,,105000.00,0.08,false,"Denver, CO",Full-time,CC-3000
+EMP-0274,Soren Zielinski,Sales - SMB,Sales,Enterprise Account Executive,IC4,2025-09-22,,,130000.00,0.00,true,Remote - US,Full-time,CC-1000
+EMP-0275,Nadia Reyes,Sales Development,Sales,Enterprise Account Executive,IC4,2025-10-03,,,149100.00,0.00,true,Remote - US,Full-time,CC-1030
+EMP-0276,Rosalind Ashcombe,Sales - Mid-Market,Sales,Senior Account Executive,IC3,2025-10-03,2026-06-30,Voluntary,109800.00,0.00,true,Remote - US,Full-time,CC-1010
+EMP-0277,Gideon Beaumont,Product & Design,Product & Design,Senior Product Manager,IC4,2025-10-04,,,107400.00,0.08,false,"Austin, TX",Full-time,CC-3100
+EMP-0278,Xiomara Jamieson,Finance & Accounting,G&A,Senior Financial Analyst,IC3,2025-10-11,,,128800.00,0.08,false,Remote - US,Full-time,CC-4000
+EMP-0279,Xiomara Thornbury,Quality & Release,Engineering,VP Engineering,VP,2025-10-18,,,265800.00,0.22,false,Remote - Canada,Full-time,CC-3010
+EMP-0280,Marisol Waverly,Engineering,Engineering,Software Engineer,IC2,2025-10-19,,,72500.00,0.08,false,"Chicago, IL",Full-time,CC-3000
+EMP-0281,Priya Stellenbosch,Product & Design,Product & Design,Senior Product Manager,IC4,2025-10-24,,,111700.00,0.08,false,"Atlanta, GA",Full-time,CC-3100
+EMP-0282,Nadia Sandoval,Product & Design,Product & Design,"Manager, Design",M1,2025-11-05,,,114000.00,0.12,false,Remote - Canada,Full-time,CC-3100
+EMP-0283,Thaddeus Jamieson,Demand Generation,Marketing,"Manager, Demand Generation",M1,2025-11-10,,,169100.00,0.12,false,Remote - US,Full-time,CC-1100
+EMP-0284,Malachi Whitfield,Customer Success,Customer Success,Strategic CSM,IC4,2025-11-14,,,108600.00,0.08,false,Remote - US,Full-time,CC-1200
+EMP-0285,Aleksei Hollingsworth,Support,Support & Cloud Ops,Senior Support Engineer,IC3,2025-11-20,2026-02-28,Voluntary,97600.00,0.08,false,"Atlanta, GA",Full-time,CC-2000
+EMP-0286,Ilaria Krishnan,Professional Services,Professional Services,"Manager, Professional Services",M1,2025-11-22,,,106600.00,0.12,false,Remote - US,Full-time,CC-2100
+EMP-0287,Elias Ulmer,Support,Support & Cloud Ops,Support Engineer,IC2,2025-12-15,,,76700.00,0.08,false,Remote - US,Full-time,CC-2000
+EMP-0288,Cormac Gutierrez,Quality & Release,Engineering,Associate Software Engineer,IC1,2025-12-26,,,57900.00,0.08,false,Remote - Canada,Full-time,CC-3010
+EMP-0289,Beatriz Yerxa,Customer Success,Customer Success,Customer Success Manager,IC2,2026-01-07,,,75400.00,0.08,false,"Austin, TX",Full-time,CC-1200
+EMP-0290,Reyna Hollingsworth,Sales Development,Sales,Senior Account Executive,IC3,2026-01-16,,,106100.00,0.00,true,Remote - US,Full-time,CC-1030
+EMP-0291,Salim Yamamoto,Customer Success,Customer Success,Associate CSM,IC1,2026-01-18,,,57600.00,0.08,false,"Toronto, ON",Full-time,CC-1200
+EMP-0292,Anouk Eriksen,Sales - Mid-Market,Sales,Account Executive,IC2,2026-01-21,,,80600.00,0.00,true,"Denver, CO",Full-time,CC-1010
+EMP-0293,Linnea Vantongeren,Engineering,Engineering,Senior Software Engineer,IC3,2026-01-21,,,85700.00,0.08,false,Remote - US,Full-time,CC-3000
+EMP-0294,Mateo Fairweather,Sales Leadership,Sales,Senior Account Executive,IC3,2026-01-26,2026-03-31,Involuntary,105300.00,0.00,true,Remote - US,Full-time,CC-1060
+EMP-0295,Colette Kaminski,People Operations,G&A,Senior Financial Analyst,IC3,2026-02-04,,,127900.00,0.08,false,"Toronto, ON",Full-time,CC-4010
+EMP-0296,Malachi Quimby,Cloud Operations,Support & Cloud Ops,Support Engineer,IC2,2026-02-05,2026-04-30,Voluntary,79500.00,0.08,false,"Chicago, IL",Full-time,CC-2010
+EMP-0297,Damaris Stellenbosch,Engineering,Engineering,Senior Software Engineer,IC3,2026-02-06,,,94600.00,0.08,false,"Austin, TX",Full-time,CC-3000
+EMP-0298,Kwame Sandoval,Sales Development,Sales,Senior Account Executive,IC3,2026-02-10,,,102000.00,0.00,true,"Denver, CO",Full-time,CC-1030
+EMP-0299,Imani Thornbury,Sales - Mid-Market,Sales,Senior Account Executive,IC3,2026-02-23,,,107200.00,0.00,true,Remote - US,Full-time,CC-1010
+EMP-0300,Lorcan Vantongeren,Sales - SMB,Sales,Senior Account Executive,IC3,2026-02-24,,,107500.00,0.00,true,"Toronto, ON",Full-time,CC-1000
+EMP-0301,Rashid Zielinski,Customer Success,Customer Success,"Manager, Customer Success",M1,2026-02-24,,,122100.00,0.12,false,"Denver, CO",Full-time,CC-1200
+EMP-0302,Noor Fairweather,Product & Design,Product & Design,VP Product,VP,2026-03-03,,,192600.00,0.22,false,Remote - Canada,Full-time,CC-3100
+EMP-0303,Zubeida Ghorbani,Customer Success,Customer Success,Senior Customer Success Manager,IC3,2026-03-08,2026-04-30,Voluntary,91600.00,0.08,false,"Chicago, IL",Full-time,CC-1200
+EMP-0304,Yuki Abernathy,Sales - Mid-Market,Sales,Senior Account Executive,IC3,2026-03-09,,,98500.00,0.00,true,Remote - Canada,Full-time,CC-1010
+EMP-0305,Ezra Eriksen,Sales - SMB,Sales,Senior Account Executive,IC3,2026-03-10,,,113600.00,0.00,true,"Austin, TX",Full-time,CC-1000
+EMP-0306,Soren Quintanilla,Sales - Mid-Market,Sales,"Director, Sales",M2,2026-03-10,,,149700.00,0.00,true,"Toronto, ON",Full-time,CC-1010
+EMP-0307,Nadia Zielinski,Sales - SMB,Sales,"Director, Sales",M2,2026-03-11,,,170200.00,0.00,true,Remote - US,Full-time,CC-1000
+EMP-0308,Leila Nazarian,Professional Services,Professional Services,Implementation Consultant,IC2,2026-03-16,,,63000.00,0.08,false,"Chicago, IL",Full-time,CC-2100
+EMP-0309,Wren Hargreaves,Cloud Operations,Support & Cloud Ops,"Manager, Support",M1,2026-03-17,,,130200.00,0.12,false,"Denver, CO",Full-time,CC-2010
+EMP-0310,Kwame Reyes,Solutions Engineering,Sales,Sales Manager,M1,2026-03-18,,,130900.00,0.00,true,Remote - US,Full-time,CC-1050
+EMP-0311,Marguerite Waverly,Sales - SMB,Sales,Account Executive,IC2,2026-03-22,,,93300.00,0.00,true,Remote - US,Full-time,CC-1000
+EMP-0312,Esperanza Jorgensen,Customer Success,Customer Success,Customer Success Manager,IC2,2026-03-26,,,71300.00,0.08,false,"Toronto, ON",Full-time,CC-1200
+EMP-0313,Perpetua Ibarra,Finance & Accounting,G&A,"Director, Finance",M2,2026-03-26,,,254800.00,0.15,false,Remote - Canada,Full-time,CC-4000
+EMP-0314,Salim Vasquez,Sales Leadership,Sales,Senior Account Executive,IC3,2026-04-01,,,114200.00,0.00,true,"Atlanta, GA",Full-time,CC-1060
+EMP-0315,Tobias Hargreaves,Customer Success,Customer Success,Senior Customer Success Manager,IC3,2026-04-03,,,108800.00,0.08,false,"Atlanta, GA",Full-time,CC-1200
+EMP-0316,Lorcan Papadopoulos,Cloud Operations,Support & Cloud Ops,Support Specialist,IC1,2026-04-04,,,56800.00,0.08,false,"Denver, CO",Full-time,CC-2010
+EMP-0317,Camille Nazarian,Customer Success,Customer Success,"Director, Customer Success",M2,2026-04-09,,,166900.00,0.15,false,Remote - Canada,Full-time,CC-1200
+EMP-0318,Damaris Tanaka,Product & Design,Product & Design,Product Manager,IC3,2026-04-15,,,84200.00,0.08,false,Remote - US,Full-time,CC-3100
+EMP-0319,Finnian Ivanov,Sales - Enterprise,Sales,Enterprise Account Executive,IC4,2026-04-19,,,138900.00,0.00,true,"Atlanta, GA",Full-time,CC-1020
+EMP-0320,Noor Ostrander,Demand Generation,Marketing,Marketing Manager,IC3,2026-04-20,,,106200.00,0.08,false,"Chicago, IL",Full-time,CC-1100
+EMP-0321,Finnian Ulmer,Solutions Engineering,Sales,VP Sales,VP,2026-04-24,,,257500.00,0.00,true,"Toronto, ON",Full-time,CC-1050
+EMP-0322,Cormac Yamamoto,Customer Success,Customer Success,"Manager, Customer Success",M1,2026-05-21,,,120500.00,0.12,false,"Denver, CO",Full-time,CC-1200
+EMP-0323,Osric Beaumont,Engineering,Engineering,Senior Software Engineer,IC3,2026-05-21,,,96000.00,0.08,false,"Toronto, ON",Full-time,CC-3000
+EMP-0324,Dashiell Krishnan,Finance & Accounting,G&A,"Manager, People Operations",M1,2026-05-25,,,179100.00,0.12,false,Remote - Canada,Full-time,CC-4000
+EMP-0325,Zubeida Engebretsen,Sales Operations,Sales,Senior Account Executive,IC3,2026-06-05,,,104500.00,0.00,true,Remote - US,Full-time,CC-1040

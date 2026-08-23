@@ -1,0 +1,4 @@
+product_id,product_name,product_type,pricing_model,list_price_monthly,is_core
+PRD-CORE,Helio Core,Platform,Per seat,95.00,true
+PRD-DISPATCH,Helio Dispatch,Add-on,Per seat,38.00,false
+PRD-INSIGHTS,Helio Insights,Add-on,Usage-tiered with committed minimum,0.00,false

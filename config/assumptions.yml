@@ -1,0 +1,956 @@
+# Helio Systems, Inc. - generation assumptions
+#
+# Every financial driver used by the synthetic generator lives here. Nothing that a
+# reviewer would want to challenge is buried in Python.
+#
+# Two kinds of number appear below and they must not be confused:
+#   anchors      - taken directly from the frozen Phase 1 specification (PHASE1_SPEC 2.3).
+#                  These are targets. They are never edited to make a build pass.
+#   drivers      - generator parameters chosen so that the anchors emerge organically.
+#                  These are tuned freely.
+#
+# The `calibration` block holds solved multipliers on a small number of drivers. They are
+# re-solved on every build by a deterministic feedback loop; the stored values are the
+# loop's starting point so it converges in two or three passes rather than twelve.
+
+meta:
+  company: Helio Systems, Inc.
+  currency: USD
+  # Deterministic seed. Override without editing source:
+  #   HELIO_SEED=1234 python -m src.build
+  #   python -m src.build --seed 1234
+  seed: 20260630
+  seed_env_var: HELIO_SEED
+
+periods:
+  acquisition_start: 2019-01-01   # first customer cohort
+  fact_start: 2024-01-31          # first month in the monthly fact tables
+  fact_end: 2026-06-30            # last actual month
+  reporting_date: 2026-06-30      # FY2026 Q2 close
+  dim_date_start: 2019-01-31
+  dim_date_end: 2027-12-31
+  budget_year: 2026
+  budget_version: FY2026-Board-Approved
+  budget_locked_date: 2025-12-15
+  forecast_start: 2026-07-31
+  forecast_end: 2027-12-31
+  forecast_version: FY2026-Q2-Reforecast
+
+# ---------------------------------------------------------------------------
+# ANCHORS - from PHASE1_SPEC 2.3. Targets, never plugs.
+# ---------------------------------------------------------------------------
+anchors:
+  arr:
+    "2023-12-31": 18500000
+    "2024-12-31": 24200000
+    "2025-12-31": 30100000
+    "2026-06-30": 32800000
+
+  logos:
+    "2025-12-31":
+      SMB: 560
+      Mid-Market: 265
+      Enterprise: 55
+      total: 880
+
+  segment_arr:
+    "2025-12-31":
+      SMB: 4760000
+      Mid-Market: 13780000
+      Enterprise: 11550000
+
+  arpa:
+    "2025-12-31":
+      SMB: 8500
+      Mid-Market: 52000
+      Enterprise: 210000
+      blended: 34200
+
+  new_logo_acv_fy2025:
+    SMB: 9000
+    Mid-Market: 45000
+    Enterprise: 185000
+    blended: 21600
+
+  new_logos_fy2025:
+    SMB: 178
+    Mid-Market: 47
+    Enterprise: 7
+    total: 232
+
+  fy2025_arr_waterfall:
+    beginning_arr: 24200000
+    new_logo: 5000000
+    expansion: 4400000
+    reactivation: 200000
+    contraction: -900000
+    churn: -2800000
+    ending_arr: 30100000
+    # Splits that make the waterfall and the TTM retention cohort tie (PHASE1_SPEC 2.3).
+    churn_from_within_year_new_logos: 300000
+    expansion_on_within_year_new_logos: 200000
+
+  # TTM at 30 June 2026. Emergent, not imposed.
+  retention_ttm_2026_06:
+    SMB:         {logo: 0.79, grr: 0.75, nrr: 0.84}
+    Mid-Market:  {logo: 0.91, grr: 0.88, nrr: 1.02}
+    Enterprise:  {logo: 0.96, grr: 0.93, nrr: 1.18}
+    blended:     {logo: 0.84, grr: 0.875, nrr: 1.05}
+  nrr_blended_2025_12: 1.03
+
+  concentration_2026_06:
+    top_10_share: 0.142
+    largest_customer_share: 0.024
+
+  fy2025_pnl:
+    subscription_revenue: 26600000
+    services_revenue: 800000
+    total_revenue: 27400000
+    subscription_cogs: 5700000
+    services_cogs: 700000
+    total_cogs: 6400000
+    gross_profit: 21000000
+    sales_marketing: 14200000
+    research_development: 9100000
+    general_administrative: 5100000
+    total_opex: 28400000
+    ebitda: -7400000
+
+  quarterly:
+    # Required for Net Sales Efficiency and the classic Magic Number.
+    subscription_revenue:
+      "2024Q4": 5900000
+      "2025Q1": 6150000
+      "2025Q2": 6500000
+      "2025Q3": 6850000
+      "2025Q4": 7100000
+    sales_marketing:
+      "2024Q4": 3400000
+      "2025Q1": 3500000
+      "2025Q2": 3550000
+      "2025Q3": 3600000
+      "2025Q4": 3550000
+
+  headcount_2026_06:
+    total: 198
+    by_function:
+      Sales: 44
+      Marketing: 18
+      Customer Success: 26
+      Support & Cloud Ops: 15
+      Professional Services: 8
+      Engineering: 52
+      Product & Design: 22
+      G&A: 21
+    sales_detail:
+      quota_carrying_ae: {SMB: 4, Mid-Market: 6, Enterprise: 4}
+      sdr: 12
+      solutions_engineer: 5
+      sales_ops_enablement: 6
+      leadership: 7
+    attrition_voluntary_annual:
+      blended: 0.18
+      Sales: 0.26
+      G&A: 0.11
+
+  cash_2026_06:
+    cash_and_equivalents: 21800000
+    ttm_avg_monthly_net_burn: 680000
+    forecast_fy2027_avg_monthly_net_burn: 850000
+    forward_runway_months: 25.6
+    board_runway_floor_months: 24
+
+  plan:
+    fy2026_budget_exit_arr: 37500000
+    fy2026_reforecast_exit_arr: 35600000
+
+# Tolerances from PHASE1_SPEC 2.3.
+tolerances:
+  arr_pct: 0.02
+  # PHASE1_SPEC 2.5 caps off-anniversary termination. Held separately from the
+  # generation parameter so the validator tests the specification, not the dial.
+  early_termination_cap: {annual: 0.06, multi_year: 0.04}
+  revenue_pct: 0.02
+  logos_abs_total: 3
+  logos_abs_segment: 5   # see docs/generation_methodology.md, deviation D5
+  rate_points: 1.0
+  arr_mrr_identity_dollars: 0.01
+
+# ---------------------------------------------------------------------------
+# CUSTOMER BASE
+# ---------------------------------------------------------------------------
+customers:
+  # Segmentation is by customer employee count, never by ARR (PHASE1_SPEC 2.3).
+  segments:
+    SMB:         {employee_min: 5,   employee_max: 49,   lognormal_mu: 2.75, lognormal_sigma: 0.62}
+    Mid-Market:  {employee_min: 50,  employee_max: 499,  lognormal_mu: 4.85, lognormal_sigma: 0.60}
+    Enterprise:  {employee_min: 500, employee_max: 9000, lognormal_mu: 6.85, lognormal_sigma: 0.62}
+
+  # New logos acquired per calendar year, before the calibration multiplier.
+  # 2026 covers January to June only.
+  # Solved by rolling the segment logo anchors backwards through segment logo
+  # retention: D(t-1) = (D(t) - new(t) x within-year survival) / retention. FY2025
+  # matches the binding new-logo anchors exactly. The Mid-Market and Enterprise
+  # declines from FY2023 are the deceleration the Q2 reforecast has to explain.
+  # FY2024 sits below FY2023 because a FY2024 cohort large enough to close the
+  # installed logo gap on its own would push Dec-2024 ARR through its anchor.
+  acquisition_plan:
+    2019: {SMB: 32,  Mid-Market: 13, Enterprise: 0}
+    2020: {SMB: 72,  Mid-Market: 27, Enterprise: 2}
+    2021: {SMB: 122, Mid-Market: 43, Enterprise: 8}
+    2022: {SMB: 176, Mid-Market: 58, Enterprise: 13}
+    2023: {SMB: 210, Mid-Market: 66, Enterprise: 18}
+    2024: {SMB: 198, Mid-Market: 60, Enterprise: 14}
+    2025: {SMB: 178, Mid-Market: 47, Enterprise: 7}
+    # H1 FY2026 runs well below the FY2025 half-year rate. That is the
+    # deceleration the Q2 reforecast has to explain: the Q1 demand-generation
+    # delay and the Mid-Market AE ramp gap both land here.
+    2026: {SMB: 66,  Mid-Market: 18, Enterprise: 3}
+
+  # Share of the year's new logos landing in each month. Deliberately Q4-heavy and
+  # March-heavy: this is what later produces Q1 and Q4 renewal concentration, because
+  # anniversaries follow contract start dates.
+  acquisition_month_weights:
+    1: 0.075
+    2: 0.075
+    3: 0.115
+    4: 0.070
+    5: 0.070
+    6: 0.085
+    7: 0.055
+    8: 0.055
+    9: 0.075
+    10: 0.075
+    11: 0.075
+    12: 0.175
+
+  acquisition_channels:
+    Inbound - Organic:      {SMB: 0.28, Mid-Market: 0.17, Enterprise: 0.08}
+    Inbound - Paid:         {SMB: 0.31, Mid-Market: 0.19, Enterprise: 0.06}
+    Outbound - SDR:         {SMB: 0.16, Mid-Market: 0.31, Enterprise: 0.34}
+    Partner / Referral:     {SMB: 0.19, Mid-Market: 0.21, Enterprise: 0.24}
+    Trade Show / Event:     {SMB: 0.06, Mid-Market: 0.12, Enterprise: 0.28}
+
+  # Behavioural archetype weights (PHASE1_SPEC 6.1). `recent_new_logo` is not drawn:
+  # it is a state, assigned to customers acquired within 12 months of the reporting
+  # date that have not yet reached a renewal. See methodology deviation D4.
+  archetype_weights:
+    steady: 0.32
+    land_and_expand: 0.22
+    expand_then_contract: 0.09
+    slow_decay: 0.08
+    fast_churn: 0.14
+    churn_and_return: 0.03
+
+  # Archetype mix differs by segment. Enterprise buyers do not churn in month four.
+  archetype_segment_tilt:
+    SMB:         {fast_churn: 1.55, churn_and_return: 1.20, land_and_expand: 0.75, steady: 0.95, slow_decay: 1.15, expand_then_contract: 0.90}
+    Mid-Market:  {fast_churn: 0.55, churn_and_return: 0.90, land_and_expand: 1.30, steady: 1.05, slow_decay: 0.90, expand_then_contract: 1.10}
+    Enterprise:  {fast_churn: 0.25, churn_and_return: 0.40, land_and_expand: 1.45, steady: 1.10, slow_decay: 0.70, expand_then_contract: 1.20}
+
+# ---------------------------------------------------------------------------
+# PRODUCTS AND PRICING
+# ---------------------------------------------------------------------------
+products:
+  catalogue:
+    - product_id: PRD-CORE
+      product_name: Helio Core
+      product_type: Platform
+      pricing_model: Per seat
+      list_price_monthly: 95.0
+      is_core: true
+    - product_id: PRD-DISPATCH
+      product_name: Helio Dispatch
+      product_type: Add-on
+      pricing_model: Per seat
+      list_price_monthly: 38.0
+      is_core: false
+    - product_id: PRD-INSIGHTS
+      product_name: Helio Insights
+      product_type: Add-on
+      pricing_model: Usage-tiered with committed minimum
+      list_price_monthly: 0.0   # priced on a committed tier, see insights_committed_monthly
+      is_core: false
+
+  # Helio Insights is not per-seat. The committed monthly minimum is set by segment tier.
+  insights_committed_monthly:
+    SMB: 300.0
+    Mid-Market: 800.0
+    Enterprise: 3000.0
+
+  # List prices rise about 6% a year over the window. That is high for a mature
+  # vendor and ordinary for one still finding its pricing: Helio raised list
+  # twice between 2019 and 2023. Together with the landing-size trend below it is
+  # what allows Dec-2023 ARR of $18.5M to sit under a Dec-2025 base of $30.1M
+  # while the logo and retention anchors also hold. Held fixed rather than
+  # calibrated, so the loop cannot inflate it to an implausible rate.
+  annual_list_price_inflation: 0.062
+  price_base_year: 2025
+
+  # Attach at acquisition. Mid-term attach over the customer life takes these to the
+  # installed-base targets of 48% Dispatch and 22% Insights (PHASE1_SPEC 2.4).
+  # Enterprise lands with most of its modules already attached. A $185k first
+  # contract is not a single-product deal.
+  land_attach:
+    Dispatch:  {SMB: 0.24, Mid-Market: 0.46, Enterprise: 0.86}
+    Insights:  {SMB: 0.07, Mid-Market: 0.24, Enterprise: 0.74}
+
+  # Installed-base attach targets used by the validation suite.
+  target_attach_2025_12:
+    Dispatch: 0.48
+    Insights: 0.22
+
+  # Seats are a penetration of the customer's own workforce, not an independent
+  # draw. Only field technicians, dispatchers and supervisors need a licence, and
+  # no contractor can license more people than it employs. Modelling seats
+  # independently let a 126-employee firm reach 430 seats and produced a customer
+  # concentration far above the anchor.
+  #
+  # Each customer gets a ceiling - the share of its workforce that would ever be
+  # licensed - and lands at a fraction of that ceiling. The gap between the two is
+  # the room a land-and-expand journey has to grow into.
+  # The ceiling is set well above the landing position for the larger segments,
+  # because that headroom is what an 18%-a-year gross expansion rate has to grow
+  # into. Set them too close and expansion saturates before FY2025 growth can
+  # reach its anchor.
+  # Ceiling and landing share are solved together against two anchors: FY2025
+  # new-logo ACV (9.0k / 45k / 185k) and installed-base ARPA at Dec 2025
+  # (8.5k / 52k / 210k). The ratio between the two is close to one, and that is
+  # the real constraint - it says a customer's ARR does not multiply over its
+  # life.
+  #
+  # That reading is consistent with the retention anchors once the Enterprise
+  # figure is taken at face value: PHASE1_SPEC 2.3 attributes the 118% Enterprise
+  # NRR to two expansions in Q2 2026, so it is an elevated reading rather than a
+  # rate the base sustains year after year. Treating it as sustained growth
+  # compounded the installed base to nearly three times its landing value and
+  # pushed Enterprise new-logo ACV down to a third of its anchor.
+  # Solved from three constraints at once.
+  #
+  #   landing value   ceiling x landing share must give FY2025 new-logo ACV of
+  #                   9.0k / 45k / 185k at a price level near one.
+  #   headroom        net retention of 103% needs the surviving base to grow
+  #                   about 10% a year, so a customer must have room to roughly
+  #                   double over its life. Cut the headroom below that and
+  #                   expansion saturates, and no expansion multiplier can reach
+  #                   the retention anchor.
+  #   installed ARPA  base ARPA of 8.5k / 52k / 210k against those landing
+  #                   values. The gap is closed by the price book rising over
+  #                   time, not by customers multiplying.
+  # Headroom is set per segment from the retention anchors, not chosen freely.
+  # Netting churn and contraction out of each segment's NRR leaves the annual
+  # gross expansion the surviving base must produce, and over the average tenure
+  # of that base it implies lifetime growth of roughly 1.05x for SMB, 1.29x for
+  # Mid-Market and 1.28x for Enterprise. The remaining gap to installed-base ARPA
+  # is closed by the price book rising about 5% a year, which the calibration
+  # loop solves.
+  # Headroom is what gross expansion of roughly 15% of opening ARR a year has to
+  # grow into. It is no longer constrained by new-logo ACV: the landing-size
+  # trend below carries that anchor, which frees the ceiling and the landing
+  # share to be set by the retention anchors alone.
+  seat_penetration_ceiling:
+    SMB:         {mean: 0.84, sigma: 0.26}
+    Mid-Market:  {mean: 0.49, sigma: 0.28}
+    Enterprise:  {mean: 0.335, sigma: 0.24}
+  land_penetration_share:
+    SMB:         {mean: 0.66, sigma: 0.16}
+    Mid-Market:  {mean: 0.50, sigma: 0.18}
+    Enterprise:  {mean: 0.55, sigma: 0.16}
+  land_seats_floor: {SMB: 2, Mid-Market: 8, Enterprise: 35}
+
+  # Landing deals get bigger every year, within every segment. Helio moved
+  # upmarket as it matured: the SMB contractor it signs in 2025 is larger than
+  # the one it signed in 2021, and so are its Mid-Market and Enterprise logos.
+  #
+  # Without this the anchor set has no solution. PHASE1_SPEC 2.3 puts FY2025 SMB
+  # new-logo ACV at $9.0k and SMB installed-base ARPA at $8.5k, so the base is
+  # worth less per customer than a deal signed today - which cannot happen if
+  # every customer landed at today's size and then expanded. It happens readily
+  # if the base landed smaller. The growth rate is solved by the calibration
+  # loop; price-book inflation is left at a plain 3% a year.
+  land_size_annual_growth: 0.080
+
+  # Absolute bounds on seats per employee, applied after every draw.
+  seats_per_employee_bounds: {min: 0.04, max: 0.85}
+
+# ---------------------------------------------------------------------------
+# CONTRACTS
+# ---------------------------------------------------------------------------
+contracts:
+  # Share of new logos by contract type. Chosen so ARR-weighted mix lands on the
+  # PHASE1_SPEC 2.4 target of monthly 11% / annual 61% / multi-year 28%.
+  type_mix_by_logo:
+    SMB:         {monthly: 0.660, annual: 0.335, multi_year: 0.005}
+    Mid-Market:  {monthly: 0.040, annual: 0.860, multi_year: 0.100}
+    Enterprise:  {monthly: 0.000, annual: 0.380, multi_year: 0.620}
+
+  target_arr_mix:
+    monthly: 0.11
+    annual: 0.61
+    multi_year: 0.28
+
+  multi_year_term_mix:
+    Mid-Market:  {24: 0.75, 36: 0.25}
+    Enterprise:  {24: 0.45, 36: 0.55}
+
+  billing_frequency:
+    monthly:    {Monthly in arrears: 1.00}
+    annual:     {Annual in advance: 0.78, Quarterly in advance: 0.22}
+    multi_year: {Annual in advance: 0.88, Quarterly in advance: 0.12}
+
+  # Discount to list. Mean by segment per PHASE1_SPEC 2.4, with dispersion.
+  discount:
+    SMB:         {mean: 0.08, sigma: 0.045, min: 0.0, max: 0.30}
+    Mid-Market:  {mean: 0.14, sigma: 0.055, min: 0.0, max: 0.38}
+    Enterprise:  {mean: 0.22, sigma: 0.060, min: 0.02, max: 0.45}
+  # Longer terms buy a better price.
+  discount_uplift_multi_year: 0.035
+
+  # Renewal price uplift, tracked separately from seat and module expansion.
+  renewal_uplift:
+    applied_share: 0.82
+    min: 0.030
+    max: 0.050
+    # A renewal that is already contracting on seats does not also take a price rise.
+    suppress_when_contracting: true
+
+  # Off-anniversary termination. PHASE1_SPEC 2.5 caps these at 6% of annual
+  # churn and 4% of multi-year churn. Set below the cap so that sampling noise
+  # on a few hundred terminations cannot push the realised share through it.
+  early_termination_share_of_churn:
+    annual: 0.050
+    multi_year: 0.032
+
+  # Renewal paperwork is not always signed on the anniversary. Small, bounded drift.
+  renewal_date_jitter_days: {min: 0, max: 5}
+
+# ---------------------------------------------------------------------------
+# RETENTION AND EXPANSION BEHAVIOUR
+# ---------------------------------------------------------------------------
+retention:
+  # Base probability that a termed contract is not renewed at its renewal event,
+  # before archetype multipliers and the calibration scalar.
+  base_nonrenewal_per_event:
+    SMB:         {annual: 0.170, multi_year: 0.110}
+    Mid-Market:  {annual: 0.092, multi_year: 0.070}
+    Enterprise:  {annual: 0.135, multi_year: 0.105}
+
+  # Monthly churn hazard for month-to-month contracts.
+  base_monthly_churn_hazard:
+    SMB: 0.0217
+    Mid-Market: 0.0090
+    Enterprise: 0.0000
+
+  # Churn deteriorates through the window in every segment, and fastest in SMB.
+  # This is the deterioration the Q2 reforecast has to explain, so it is a driver
+  # rather than a narrative added later.
+  #
+  # It also does real work on the ARR path. A business that retained better in
+  # its early years needs fewer legacy logos to arrive at 880 in December 2025,
+  # and a smaller legacy base is what lets opening ARR sit at $18.5M rather than
+  # well above it.
+  hazard_year_drift:
+    "2019": 0.62
+    "2020": 0.66
+    "2021": 0.70
+    "2022": 0.76
+    "2023": 0.84
+    "2024": 0.92
+    "2025": 1.00
+    "2026": 1.12
+  smb_hazard_drift:
+    "2024": 0.90
+    "2025": 1.00
+    "2026": 1.16
+
+  # Churn risk falls with customer size. This is why GRR (87.5%) sits above logo
+  # retention (84%) in PHASE1_SPEC 2.3: the accounts that leave are smaller than
+  # the ones that stay, so the business loses a smaller share of ARR than it
+  # loses of logos. Without it, churn removes average-sized accounts, the
+  # surviving base has to grow implausibly fast to reach the retention anchors,
+  # and the installed base ends up far richer than new-logo ACV.
+  size_hazard:
+    # Mild. Within a single segment the specification's own numbers show ARR
+    # loss running slightly ahead of logo loss once contraction is included, so
+    # churn is close to size-neutral inside a segment. The blended picture, where
+    # ARR retention beats logo retention, is a segment-mix effect.
+    exponent: 0.35
+    reference_employees: {SMB: 15, Mid-Market: 128, Enterprise: 940}
+    bounds: {min: 0.55, max: 1.80}
+
+  # Churn risk falls with tenure. Multiplier applied to the per-event hazard.
+  tenure_hazard_multiplier:
+    renewal_1: 1.55
+    renewal_2: 1.00
+    renewal_3: 0.78
+    renewal_4_plus: 0.62
+
+  archetype_nonrenewal_multiplier:
+    steady: 0.35
+    land_and_expand: 0.20
+    expand_then_contract: 0.85
+    slow_decay: 1.90
+    fast_churn: 5.20
+    churn_and_return: 2.60
+    recent_new_logo: 0.55
+
+  # Churn-and-return: gap before reactivation, and the share of prior ARR they return at.
+  reactivation:
+    gap_months: {min: 5, max: 11}
+    arr_recovery: {min: 0.55, max: 0.95}
+
+expansion:
+  # Annualised seat growth by archetype, applied mid-term and co-termed.
+  # Sized against the FY2025 waterfall: $4.4M of gross expansion on a $24.2M
+  # opening base is roughly 18% a year, which cannot come out of low single
+  # digit seat growth across the majority of the book.
+  # Relative intensities, not absolute rates. The overall level is set by the
+  # solved expansion_scale; what matters here is that a land-and-expand account
+  # grows an order of magnitude faster than a steady one and that slow-decay
+  # shrinks. Growth is capped by each customer's seat ceiling regardless.
+  seat_growth_annual:
+    steady:               {mean: 0.030, sigma: 0.038}
+    land_and_expand:      {mean: 0.320, sigma: 0.150}
+    expand_then_contract: {mean: 0.100, sigma: 0.055}
+    slow_decay:           {mean: -0.055, sigma: 0.045}
+    fast_churn:           {mean: 0.008, sigma: 0.025}
+    churn_and_return:     {mean: 0.030, sigma: 0.045}
+    recent_new_logo:      {mean: 0.080, sigma: 0.055}
+
+  # Seat changes are lumpy. A customer adds a crew, not 0.3 of a seat per month.
+  seat_change_event_probability_monthly: 0.085
+  min_seat_change: 1
+
+  # Monthly hazard of attaching a module the customer does not yet have. Modulated by
+  # segment and by the archetype's appetite for expansion.
+  module_attach_hazard_monthly:
+    Dispatch:  {SMB: 0.0050, Mid-Market: 0.0090, Enterprise: 0.0120}
+    Insights:  {SMB: 0.0018, Mid-Market: 0.0044, Enterprise: 0.0075}
+  module_attach_archetype_multiplier:
+    steady: 0.55
+    land_and_expand: 2.20
+    expand_then_contract: 1.20
+    slow_decay: 0.20
+    fast_churn: 0.15
+    churn_and_return: 0.45
+    recent_new_logo: 1.10
+  # Attach rarely happens in the first months. Onboarding comes first.
+  module_attach_min_tenure_months: 4
+
+  # Downgrades. Only permitted at a renewal event for termed contracts.
+  contraction_at_renewal:
+    expand_then_contract: {probability: 0.52, seat_reduction: {min: 0.18, max: 0.42}}
+    slow_decay:           {probability: 0.62, seat_reduction: {min: 0.10, max: 0.26}}
+    steady:               {probability: 0.070, seat_reduction: {min: 0.05, max: 0.16}}
+    land_and_expand:      {probability: 0.040, seat_reduction: {min: 0.05, max: 0.14}}
+    fast_churn:           {probability: 0.12, seat_reduction: {min: 0.10, max: 0.30}}
+    churn_and_return:     {probability: 0.15, seat_reduction: {min: 0.10, max: 0.25}}
+    recent_new_logo:      {probability: 0.00, seat_reduction: {min: 0.0, max: 0.0}}
+  # Module drop at renewal, i.e. the customer stops paying for an add-on.
+  module_drop_at_renewal_probability: 0.030
+
+  # Expansion selling slows from this year, as the Mid-Market AE attrition and
+  # ramp gap bites. The size of the slowdown is solved by the calibration loop.
+  deceleration_from_year: 2026
+
+  # Two Enterprise expansions in Q2 2026 lift blended NRR from 103% to 105%
+  # (PHASE1_SPEC 2.3). Modelled as an elevated Enterprise expansion window, not as
+  # two hand-placed rows.
+  enterprise_q2_2026_boost:
+    months: ["2026-04-30", "2026-05-31", "2026-06-30"]
+    seat_growth_multiplier: 2.6
+    module_attach_multiplier: 2.2
+
+# ---------------------------------------------------------------------------
+# CALIBRATION - solved by src/generate_data.py, deterministic given the seed.
+# ---------------------------------------------------------------------------
+calibration:
+  enabled: true
+  max_iterations: 14
+  damping: 0.75
+  # Applied to the final price-level step. Below one on purpose: solving it
+  # exactly would put segment ARR on its anchor to the dollar, which is not what
+  # a real book looks like.
+  price_level_damping: 0.93
+  # The acquisition multiplier may only move cohorts up to FY2023.
+  #
+  # FY2025 new-logo counts are anchors in their own right. FY2024 is excluded for
+  # a subtler reason: it is the cohort with the highest surviving yield at Dec
+  # 2025, so a loop allowed to scale it will always reach for it first, and
+  # inflating the year immediately before the anchor is exactly what pushes
+  # Dec-2024 ARR through its own anchor. The free variable is the older base.
+  acquisition_scale_applies_through_year: 2023
+  # The values the loop last solved to, recorded so a reviewer can see them
+  # without running the build. The first round of each stage bisects its full
+  # range, so these do not bias the result; the build re-solves from scratch and
+  # reproduces them for a given seed.
+  solved:
+    acquisition_scale: {SMB: 1.236, Mid-Market: 1.359, Enterprise: 1.100}
+    price_level:       {SMB: 0.677, Mid-Market: 1.157, Enterprise: 0.637}
+    churn_hazard_scale: {SMB: 2.039, Mid-Market: 2.324, Enterprise: 1.000}
+    land_share_scale:  {SMB: 1.150, Mid-Market: 0.775, Enterprise: 1.310}
+    expansion_scale:   5.000
+    recent_expansion_scale: 1.292
+    recent_acquisition_scale: 0.740
+    mid_acquisition_scale: 0.780
+    price_inflation_scale: 1.000
+    land_size_trend_scale: 2.314
+  bounds:
+    acquisition_scale: {min: 0.45, max: 1.80}
+    # Wide, because it is a pure scaling term with no economic content of its
+    # own. If the solved value drifts far from one, the list prices in
+    # products.catalogue are simply mis-scaled and should be restated.
+    price_level: {min: 0.25, max: 3.00}
+    churn_hazard_scale: {min: 0.35, max: 4.50}
+    # The solved value sits at this ceiling, and that is the regime rather than a
+    # failure: once the rate is high enough that land-and-expand accounts reach
+    # their seat ceiling within a year or so, further rate increases do nothing,
+    # because the ceiling and not the rate is what bounds expansion. Raising the
+    # bound changes the answer only by letting other stages drift.
+    expansion_scale: {min: 0.30, max: 5.00}
+    recent_expansion_scale: {min: 0.15, max: 2.40}
+    recent_acquisition_scale: {min: 0.50, max: 1.70}
+    # Bounded near one. New-logo volume does not swing threefold from one year to
+    # the next, and an unbounded knob will collapse the FY2024 cohort to a third
+    # of FY2025's and rebuild the installed base out of legacy cohorts instead -
+    # a state that satisfies the logo anchor and wrecks opening ARR.
+    mid_acquisition_scale: {min: 0.78, max: 1.55}
+    # Capped so the solved book inflation stays credible. At the upper bound the
+    # annual list increase is about 5.7%, the top of what a SaaS price book moves
+    # in a year. Anything beyond that is the loop abusing the lever.
+    # Not calibrated. annual_list_price_inflation is a stated driver.
+    price_inflation_scale: {min: 1.00, max: 1.00}
+    land_size_trend_scale: {min: 0.00, max: 2.60}
+    land_share_scale: {min: 0.45, max: 1.70}
+
+# ---------------------------------------------------------------------------
+# CRM
+# ---------------------------------------------------------------------------
+crm:
+  win_rate: {SMB: 0.28, Mid-Market: 0.21, Enterprise: 0.16}
+  median_sales_cycle_days: {SMB: 24, Mid-Market: 62, Enterprise: 118}
+  sales_cycle_lognormal_sigma: {SMB: 0.62, Mid-Market: 0.55, Enterprise: 0.48}
+
+  stages:
+    - {name: Discovery,    probability: 0.10}
+    - {name: Qualification, probability: 0.25}
+    - {name: Proposal,     probability: 0.45}
+    - {name: Negotiation,  probability: 0.70}
+    - {name: Closed Won,   probability: 1.00}
+    - {name: Closed Lost,  probability: 0.00}
+
+  # Distribution of open opportunities across live stages at the reporting date.
+  open_stage_mix: {Discovery: 0.31, Qualification: 0.28, Proposal: 0.24, Negotiation: 0.17}
+
+  # Share of expansion and renewal-uplift events that are recorded as CRM
+  # opportunities. Seat auto-adds under an existing contract never are.
+  expansion_opportunity_share: 0.45
+  renewal_uplift_opportunity_share: 0.60
+  expansion_win_rate: 0.62
+  renewal_uplift_win_rate: 0.83
+
+  # Controlled operational messiness, each item explainable in the CRM-to-ARR walk
+  # (PHASE1_SPEC 8.8). Nothing here is arbitrary noise.
+  messiness:
+    non_provisioned_won_share: 0.030      # closed-won that never activates
+    provisioning_lag_next_month_share: 0.220
+    provisioning_lag_two_month_share: 0.045
+    post_close_amendment_share: 0.042     # ACV changes after close, not reflected in CRM
+    post_close_amendment_delta: {min: -0.18, max: 0.22}
+    # Multi-year deals record TCV in CRM and year-one ACV in ARR. Handled structurally.
+
+  loss_reasons:
+    Price: 0.24
+    No Decision: 0.21
+    Lost to Competitor: 0.19
+    Timing / Budget Deferred: 0.15
+    Product Gap: 0.13
+    Stayed on Incumbent: 0.08
+
+  lead_sources:
+    Inbound - Organic: 0.22
+    Inbound - Paid: 0.24
+    Outbound - SDR: 0.24
+    Partner / Referral: 0.17
+    Trade Show / Event: 0.13
+
+  # Open pipeline at the reporting date sized to roughly 3.1x Q3 new ARR target.
+  target_q3_pipeline_coverage: 3.1
+
+# ---------------------------------------------------------------------------
+# SALES REPS
+# ---------------------------------------------------------------------------
+sales_reps:
+  annual_quota: {SMB: 700000, Mid-Market: 1000000, Enterprise: 1400000}
+  commission_rate_new: 0.09
+  commission_rate_expansion: 0.06
+  commission_rate_renewal_uplift: 0.03
+
+  # PHASE1_SPEC 8.9.
+  ramp_profile:
+    standard:   {1: 0.00, 2: 0.25, 3: 0.50, 4: 0.75, 5: 1.00, 6: 1.00}   # SMB and Mid-Market
+    enterprise: {1: 0.00, 2: 0.15, 3: 0.35, 4: 0.60, 5: 0.85, 6: 1.00}
+
+  # Attainment is log-normal with a long left tail, mean around 68%.
+  # Uniform attainment is a generated-data tell (PHASE1_SPEC 6.1).
+  attainment: {lognormal_mu: -0.46, lognormal_sigma: 0.52, min: 0.08, max: 1.85}
+
+  headcount_ae_by_month:
+    # Quota-carrying AE count at each year end, driving hiring and the ramp gap.
+    "2023-12-31": {SMB: 5, Mid-Market: 6, Enterprise: 3}
+    "2024-12-31": {SMB: 5, Mid-Market: 7, Enterprise: 4}
+    "2025-12-31": {SMB: 4, Mid-Market: 7, Enterprise: 4}
+    "2026-06-30": {SMB: 4, Mid-Market: 6, Enterprise: 4}
+  annual_attrition: 0.26
+  territories_per_segment: {SMB: 4, Mid-Market: 4, Enterprise: 5}
+
+# ---------------------------------------------------------------------------
+# EMPLOYEES AND REQUISITIONS
+# ---------------------------------------------------------------------------
+employees:
+  # Active employee RECORDS at each period end, not FTE.
+  #
+  # PHASE1_SPEC 2.3 states 198 FTE at 30 Jun 2026 while its own function table sums to
+  # 206, and the Sales row of 44 is corroborated by its sub-detail (14 AE + 12 SDR +
+  # 5 SE + 6 ops + 7 leadership). Both numbers are kept: 206 people are on the books,
+  # 8 of whom are part-time or contractor and excluded from the FTE count, giving
+  # 198 FTE. See docs/generation_methodology.md, deviation D6.
+  headcount_path:
+    "2023-12-31": 158
+    "2024-06-30": 173
+    "2024-12-31": 183
+    "2025-06-30": 191
+    "2025-12-31": 198
+    "2026-06-30": 206
+  fte_2026_06: 198
+  non_fte_active_2026_06: 8
+
+  # Function shares are held close to the 30 Jun 2026 anchor mix, with Engineering and
+  # Customer Success growing slightly faster than Sales over the window.
+  function_mix_2026_06:
+    Sales: 44
+    Marketing: 18
+    Customer Success: 26
+    Support & Cloud Ops: 15
+    Professional Services: 8
+    Engineering: 52
+    Product & Design: 22
+    G&A: 21
+  # Professional Services was built out late, as the Enterprise mix grew. That is
+  # why FY2025 services cost of revenue supports the 12.5% services margin anchor.
+  function_mix_2023_12:
+    Sales: 37
+    Marketing: 15
+    Customer Success: 20
+    Support & Cloud Ops: 13
+    Professional Services: 4
+    Engineering: 41
+    Product & Design: 16
+    G&A: 12
+
+  # Voluntary attrition varies materially by function. Sales must be visibly higher
+  # than G&A (PHASE1_SPEC 2.3).
+  annual_attrition_by_function:
+    Sales: 0.26
+    Marketing: 0.20
+    Customer Success: 0.21
+    Support & Cloud Ops: 0.19
+    Professional Services: 0.17
+    Engineering: 0.13
+    Product & Design: 0.14
+    G&A: 0.11
+  involuntary_share_of_terminations: 0.22
+
+  levels:
+    - {level: IC1, weight: 0.10, salary_multiplier: 0.62}
+    - {level: IC2, weight: 0.24, salary_multiplier: 0.82}
+    - {level: IC3, weight: 0.29, salary_multiplier: 1.00}
+    - {level: IC4, weight: 0.16, salary_multiplier: 1.24}
+    - {level: IC5, weight: 0.07, salary_multiplier: 1.52}
+    - {level: M1,  weight: 0.08, salary_multiplier: 1.38}
+    - {level: M2,  weight: 0.04, salary_multiplier: 1.72}
+    - {level: VP,  weight: 0.018, salary_multiplier: 2.35}
+    - {level: C,   weight: 0.002, salary_multiplier: 3.30}
+
+  # Base salary at the IC3 reference level, by function.
+  # Base salary at the IC3 reference level. Solved against the FY2025 category
+  # anchors: R&D of $9.1M across ~70 average R&D FTE implies roughly $118k fully
+  # loaded per head, which is at the low end of market for the role mix. The
+  # anchors are binding, so the reference reflects them. See
+  # docs/generation_methodology.md, deviation D8.
+  salary_reference:
+    Sales: 105000
+    Marketing: 108000
+    Customer Success: 92000
+    Support & Cloud Ops: 92000
+    Professional Services: 78000
+    Engineering: 94000
+    Product & Design: 84000
+    G&A: 118000
+  salary_dispersion_sigma: 0.085
+  salary_annual_inflation: 0.035
+  salary_base_year: 2026
+
+  bonus_target_pct:
+    default: 0.08
+    by_level: {M1: 0.12, M2: 0.15, VP: 0.22, C: 0.35}
+    Sales: 0.00      # sales carry commission, not bonus
+  commission_eligible_functions: [Sales]
+
+  payroll_tax_benefit_rate: 0.205
+
+  # Sized so that exactly 8 of the 206 active records at 30 Jun 2026 are non-FTE.
+  employee_type_mix: {Full-time: 0.962, Part-time: 0.016, Contractor: 0.022}
+
+requisitions:
+  # Requisitions are opened for growth roles and to backfill terminations.
+  backfill_rate: 0.78              # share of terminations that get a backfill req
+  # Not every hire runs through the ATS. Contractors, part-time roles and some
+  # junior backfills are handled outside it, so the requisition table covers a
+  # subset of hires rather than all of them.
+  req_coverage_of_hires: 0.68
+  approval_to_planned_start_days: {min: 30, max: 75}
+  # Hiring slippage. This is the mechanism behind the favourable compensation variance
+  # the Q2 reforecast has to explain. It is a driver, never a typed conclusion.
+  slippage_days:
+    on_time_share: 0.30
+    slip: {mean: 34, sigma: 26, max: 165}
+  status_mix:
+    Filled: 0.68
+    Open: 0.19
+    Cancelled: 0.13
+  # 2026 slippage is worse than 2024-25: a hiring freeze soft-landed in Q2.
+  slippage_year_multiplier: {"2024": 0.85, "2025": 1.00, "2026": 1.45}
+  cancelled_share_year: {"2024": 0.07, "2025": 0.10, "2026": 0.24}
+
+# ---------------------------------------------------------------------------
+# MARKETING
+# ---------------------------------------------------------------------------
+marketing:
+  channels:
+    Paid Search:           {share: 0.27, cpo_base: 3200, account: "6100"}
+    Paid Social:           {share: 0.14, cpo_base: 3900, account: "6100"}
+    Content & SEO:         {share: 0.16, cpo_base: 2400, account: "6120"}
+    Trade Shows & Events:  {share: 0.24, cpo_base: 7600, account: "6110"}
+    Partner & Co-Marketing: {share: 0.12, cpo_base: 4100, account: "6100"}
+    Outbound Programs:     {share: 0.07, cpo_base: 2900, account: "6100"}
+  annual_spend:
+    2024: 3050000
+    2025: 3400000
+    2026: 3520000
+  month_weights:
+    1: 0.070
+    2: 0.075
+    3: 0.090
+    4: 0.085
+    5: 0.090
+    6: 0.090
+    7: 0.075
+    8: 0.075
+    9: 0.090
+    10: 0.090
+    11: 0.085
+    12: 0.085
+  # Q1 2026 demand-generation delay: a driver of the reforecast gap, spent later in H2.
+  q1_2026_demandgen_delay:
+    months: ["2026-01-31", "2026-02-28", "2026-03-31"]
+    spend_multiplier: 0.62
+  opportunity_yield_noise_sigma: 0.16
+
+# ---------------------------------------------------------------------------
+# GENERAL LEDGER
+# ---------------------------------------------------------------------------
+gl:
+  # Recognised subscription revenue trails point-in-time ARR: contracts start mid-month,
+  # provisioning lags signature, and revenue is recognised ratably. Modelled as a
+  # weighted average of prior month-end ARR balances, then scaled to the FY2025 anchor.
+  subscription_revenue_lag_weights: {1: 0.55, 2: 0.45}
+  subscription_revenue_scalar: 1.000   # solved against the FY2025 quarterly anchors
+
+  # Usage above committed tiers. Small, seasonal, and the reason 4010 exists.
+  usage_revenue_share_of_subscription: 0.021
+  usage_revenue_month_tilt: {6: 1.25, 7: 1.30, 8: 1.28, 12: 0.82, 1: 0.80, 2: 0.85}
+
+  services:
+    # Implementation fee charged at land, recognised over the initial contract term.
+    implementation_fee_pct_of_acv: {SMB: 0.09, Mid-Market: 0.15, Enterprise: 0.21}
+    implementation_fee_attach: {SMB: 0.22, Mid-Market: 0.68, Enterprise: 0.94}
+    # Delivered professional services beyond implementation.
+    ps_revenue_share_of_services: 0.55
+    fy2025_services_revenue: 800000
+
+  # Non-payroll cost drivers. Payroll is built from dim_employee, never assumed.
+  cost_drivers:
+    cloud_hosting_per_seat_month: 3.05
+    cloud_hosting_fixed_month: 42000
+    third_party_data_per_customer_month: 3.35
+    payment_processing_pct_of_billings: 0.0068
+    services_subcontractor_pct_of_services_cogs: 0.075
+    services_travel_pct_of_services_cogs: 0.055
+    software_per_fte_month: {Sales: 340, Marketing: 300, Customer Success: 190, "Support & Cloud Ops": 165, "Professional Services": 150, Engineering: 265, "Product & Design": 230, "G&A": 205}
+    travel_per_fte_month: {Sales: 480, Marketing: 250, Customer Success: 150, "Professional Services": 320, Engineering: 55, "Product & Design": 60, "G&A": 110}
+    training_per_fte_month: 42
+    contractor_temp_month: {Demand Generation: 14000, Cloud Operations: 21000, Engineering: 26000, "Quality & Release": 9000, "Product & Design": 11000, "IT & Corporate Systems": 6500}
+    professional_fees_month: 60000
+    professional_fees_audit_months: {3: 2.6, 4: 2.2, 9: 1.5}
+    recruiting_fee_per_hire: 8200
+    facilities_per_fte_month: 205
+    insurance_month: 20500
+    depreciation_month: 23500
+    other_opex_per_fte_month: 26
+  # Commission expense split between the portion expensed as incurred and the
+  # amortisation of capitalised contract costs. The full ASC 340-40 treatment is
+  # Phase 8; the ledger only needs to carry both accounts.
+  commission_expensed_share: 0.41
+  commission_amortisation_months: 36
+  # Seasonal and operational noise applied to non-payroll accounts.
+  account_noise_sigma: 0.055
+  december_true_up_accounts: ["6400", "6410", "6900", "6300"]
+  december_true_up_multiplier: 1.35
+
+# ---------------------------------------------------------------------------
+# CASH - source-level only. The cash-flow model is Phase 6.
+# ---------------------------------------------------------------------------
+cash:
+  dso_days: 42
+  collections_curve: {0: 0.18, 1: 0.46, 2: 0.28, 3: 0.08}
+  payroll_paid_in_month: 1.0
+  vendor_payment_lag_months: 1
+  cash_2026_06: 21800000
+
+# ---------------------------------------------------------------------------
+# PLANNING SOURCES - FY2026 budget and FY2026 Q2 reforecast
+# ---------------------------------------------------------------------------
+planning:
+  budget:
+    exit_arr: 37500000
+    # The budget was built in late 2025 on a plan that assumed the Mid-Market team
+    # would be at full strength and SMB churn would hold at the FY2025 rate.
+    #
+    # The five components sum to $7.40M of net new ARR. Applied to the Dec-2025
+    # ARR the generated data actually carried, that is what produces the $37.5M
+    # board exit position; the exit is never typed in.
+    assumed_new_logo_arr: 6000000
+    assumed_expansion_arr: 4900000
+    assumed_churn_arr: -2850000
+    assumed_contraction_arr: -850000
+    assumed_reactivation_arr: 200000
+    opex_growth_vs_fy2025: 0.155
+    planned_ending_headcount: 214
+    planned_sales_hires: 11
+
+  reforecast:
+    exit_arr: 35600000
+    # Ordered, additive drivers of the 37.5 -> 35.6 gap (PHASE1_SPEC 8.11).
+    # Recorded here as the intended source story; the bridge itself is Phase 7 and is
+    # derived from the planning tables, never typed.
+    gap_drivers:
+      mid_market_ae_attrition_and_ramp: -1100000
+      smb_churn_deterioration: -700000
+      q1_demandgen_delay_to_h2_bookings: -600000
+      enterprise_expansion_outperformance: 500000
+      other_net: 0
+    revised_ending_headcount: 205
+    revised_sales_hires: 6
+    fy2027_growth_rate: 0.165
+    fy2027_opex_growth: 0.095
