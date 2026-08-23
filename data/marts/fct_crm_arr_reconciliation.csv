@@ -1,0 +1,39 @@
+period,bridge_type,line_order,line_item,amount
+FY2025,Combined,1,Unexplained residual (New Logo + Expansion),-87628.84
+FY2025,Combined,2,"Period New ARR (New Logo + Expansion, tolerance base)",9510036.24
+FY2025,Expansion,1,Closed-Won CRM Expansion ACV,4000497.06
+FY2025,Expansion,2,"Renewal uplift ACV (booked in CRM, lands in ARR as Expansion)",336439.17
+FY2025,Expansion,3,Absorbed into a non-Expansion net movement (offset by a simultaneous contraction),-179325.54
+FY2025,Expansion,4,Recorded in the customer's own New-Logo month (already in New Logo ARR),-241221.72
+FY2025,Expansion,5,"Activation timing: signed this period, lands later",-63426.41
+FY2025,Expansion,6,"Activation timing: signed earlier period, lands this period",31608.12
+FY2025,Expansion,7,Self-serve / sub-threshold expansion (no matching CRM opportunity),421642.92
+FY2025,Expansion,8,Landed Expansion ARR (fct_arr_waterfall),4218584.76
+FY2025,Expansion,9,Unexplained residual,-87628.84
+FY2025,New Logo,1,Closed-Won CRM New Logo ACV,5107923.78
+FY2025,New Logo,2,Non-provisioned wins (never activated),-26539.29
+FY2025,New Logo,3,"Activation timing: signed this period, lands later",-155264.15
+FY2025,New Logo,4,"Activation timing: signed earlier, lands this period",115256.28
+FY2025,New Logo,5,"Post-close amendments (ACV vs. landed ARR, same-period signings)",223535.66
+FY2025,New Logo,6,New Logo ARR without a matching CRM opportunity (self-serve),26539.20
+FY2025,New Logo,7,Landed New Logo ARR (fct_arr_waterfall),5291451.48
+FY2025,New Logo,8,Unexplained residual,0.00
+TTM_2026_06,Combined,1,Unexplained residual (New Logo + Expansion),-126.62
+TTM_2026_06,Combined,2,"Period New ARR (New Logo + Expansion, tolerance base)",10165168.56
+TTM_2026_06,Expansion,1,Closed-Won CRM Expansion ACV,4881065.58
+TTM_2026_06,Expansion,2,"Renewal uplift ACV (booked in CRM, lands in ARR as Expansion)",363797.20
+TTM_2026_06,Expansion,3,Absorbed into a non-Expansion net movement (offset by a simultaneous contraction),-210824.99
+TTM_2026_06,Expansion,4,Recorded in the customer's own New-Logo month (already in New Logo ARR),-102546.21
+TTM_2026_06,Expansion,5,"Activation timing: signed this period, lands later",0.00
+TTM_2026_06,Expansion,6,"Activation timing: signed earlier period, lands this period",84094.20
+TTM_2026_06,Expansion,7,Self-serve / sub-threshold expansion (no matching CRM opportunity),443105.76
+TTM_2026_06,Expansion,8,Landed Expansion ARR (fct_arr_waterfall),5458564.92
+TTM_2026_06,Expansion,9,Unexplained residual,-126.62
+TTM_2026_06,New Logo,1,Closed-Won CRM New Logo ACV,4442352.20
+TTM_2026_06,New Logo,2,Non-provisioned wins (never activated),-88391.00
+TTM_2026_06,New Logo,3,"Activation timing: signed this period, lands later",0.00
+TTM_2026_06,New Logo,4,"Activation timing: signed earlier, lands this period",114875.40
+TTM_2026_06,New Logo,5,"Post-close amendments (ACV vs. landed ARR, same-period signings)",144479.76
+TTM_2026_06,New Logo,6,New Logo ARR without a matching CRM opportunity (self-serve),93287.28
+TTM_2026_06,New Logo,7,Landed New Logo ARR (fct_arr_waterfall),4706603.64
+TTM_2026_06,New Logo,8,Unexplained residual,0.00

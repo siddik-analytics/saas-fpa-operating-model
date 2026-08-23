@@ -6,8 +6,8 @@
 # so a model may only reference tables defined earlier in this file. Controls run after every
 # model has been built; any row returned by a control query is a violation and fails the build.
 #
-# Phase 3 + Phase 4 scope. Loads five of the thirteen raw tables: dim_customer, dim_product,
-# dim_date, fact_subscription_monthly (the ARR engine) and fact_contract (retention/renewals).
+# Phase 3 + Phase 4 + Phase 5 scope. Loads eleven of the thirteen raw tables -- everything
+# except fact_requisition and fact_forecast, which belong to Phase 6.
 
 models:
   # 01_staging -- typed pass-throughs, no business logic
@@ -21,6 +21,18 @@ models:
     path: 01_staging/stg_fact_subscription_monthly.sql
   - name: stg_fact_contract
     path: 01_staging/stg_fact_contract.sql
+  - name: stg_dim_sales_rep
+    path: 01_staging/stg_dim_sales_rep.sql
+  - name: stg_dim_employee
+    path: 01_staging/stg_dim_employee.sql
+  - name: stg_fact_crm_opportunity
+    path: 01_staging/stg_fact_crm_opportunity.sql
+  - name: stg_fact_marketing_spend
+    path: 01_staging/stg_fact_marketing_spend.sql
+  - name: stg_fact_gl_actuals
+    path: 01_staging/stg_fact_gl_actuals.sql
+  - name: stg_fact_budget
+    path: 01_staging/stg_fact_budget.sql
 
   # 02_core -- conformed dimensions and the mandatory customer-month aggregation
   - name: dim_customer
@@ -29,6 +41,10 @@ models:
     path: 02_core/dim_product.sql
   - name: dim_date
     path: 02_core/dim_date.sql
+  - name: dim_sales_rep
+    path: 02_core/dim_sales_rep.sql
+  - name: dim_employee
+    path: 02_core/dim_employee.sql
   - name: int_arr_customer_product_month
     path: 02_core/int_arr_customer_product_month.sql
   - name: int_arr_customer_month
@@ -67,11 +83,39 @@ models:
   - name: fct_churn_detail
     path: 04_retention_renewals/fct_churn_detail.sql
 
+  # 05_gtm -- sales capacity, pipeline, CRM bookings, CRM-to-ARR reconciliation, unit economics
+  - name: int_rep_month
+    path: 05_gtm/int_rep_month.sql
+  - name: int_crm_opportunity_normalized
+    path: 05_gtm/int_crm_opportunity_normalized.sql
+  - name: int_crm_closed_won
+    path: 05_gtm/int_crm_closed_won.sql
+  - name: int_gtm_new_logo_mix
+    path: 05_gtm/int_gtm_new_logo_mix.sql
+  - name: int_gtm_cost_allocation
+    path: 05_gtm/int_gtm_cost_allocation.sql
+  - name: fct_sales_capacity
+    path: 05_gtm/fct_sales_capacity.sql
+  - name: fct_rep_attainment
+    path: 05_gtm/fct_rep_attainment.sql
+  - name: fct_pipeline_snapshot
+    path: 05_gtm/fct_pipeline_snapshot.sql
+  - name: fct_crm_bookings
+    path: 05_gtm/fct_crm_bookings.sql
+  - name: fct_crm_arr_reconciliation
+    path: 05_gtm/fct_crm_arr_reconciliation.sql
+  - name: fct_unit_economics
+    path: 05_gtm/fct_unit_economics.sql
+  - name: fct_sales_efficiency
+    path: 05_gtm/fct_sales_efficiency.sql
+
 controls:
   - name: ctl_arr_reconciliation
     path: 08_controls/ctl_arr_reconciliation.sql
   - name: ctl_retention_bounds
     path: 08_controls/ctl_retention_bounds.sql
+  - name: ctl_gtm_controls
+    path: 08_controls/ctl_gtm_controls.sql
 
 # Models exported to data/marts/<name>.csv for the "readable without running" convention.
 marts:
@@ -88,3 +132,13 @@ marts:
   - fct_churn_detail
   - int_retention_cohort_customer_month
   - int_cohort_quarterly
+  - fct_sales_capacity
+  - fct_rep_attainment
+  - fct_pipeline_snapshot
+  - fct_crm_bookings
+  - fct_crm_arr_reconciliation
+  - fct_unit_economics
+  - fct_sales_efficiency
+  - int_gtm_cost_allocation
+  - int_gtm_new_logo_mix
+  - int_crm_opportunity_normalized

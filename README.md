@@ -1,6 +1,6 @@
 # Helio Systems — SaaS FP&A Operating Model
 
-### Work in progress — Retention, Cohorts and Renewal Forecasting
+### Work in progress — GTM Capacity, Pipeline and CRM-to-ARR Reconciliation
 
 **Disclaimer.** Helio Systems, Inc. is a fictional company. All data in this repository is
 synthetically generated for portfolio demonstration purposes. No confidential, proprietary or
@@ -22,13 +22,16 @@ of truth for the build.
 
 ## Current status
 
-**Phase 4 of 9 is complete: retention, cohorts, renewal base and renewal outcomes.**
+**Phase 5 of 9 is complete: GTM capacity, pipeline, CRM-to-ARR reconciliation, rep performance
+and unit economics.**
 
-The raw source dataset (Phase 2) and the customer-grain ARR engine (Phase 3) are now frozen as
-the analytical source of truth. A DuckDB SQL layer built from `sql/manifest.yml` turns
-`fct_arr_movement` into TTM NRR / GRR / logo retention, quarterly acquisition cohorts, a forward
-12-month renewal base (ATR) and backward-looking renewal outcomes — reconciling to the same
-customer history the ARR waterfall already ties to. GTM capacity, the forecast and the reporting
+The raw source dataset (Phase 2), the customer-grain ARR engine (Phase 3) and the retention /
+renewal layer (Phase 4) are now frozen as the analytical source of truth. Phase 5 loads six more
+raw tables — `dim_sales_rep`, `dim_employee`, `fact_crm_opportunity`, `fact_marketing_spend`,
+`fact_gl_actuals` and the FY2026 board budget — into the DuckDB layer for the first time and
+turns them into sales rep capacity with ramp, pipeline coverage, a customer-matched CRM-to-ARR
+bridge, unit economics (CAC / ARPA / payback) with a documented allocation methodology, and two
+separately-defined sales-efficiency metrics. The financial forecast, scenarios and reporting
 artifacts do not exist yet. Nothing in this repository should be read as a finished analysis.
 
 | Phase | Scope | Status |
@@ -36,8 +39,8 @@ artifacts do not exist yet. Nothing in this repository should be read as a finis
 | 1 | Specification and financial design | Complete, frozen |
 | 2 | Synthetic source data, 13 tables, validation suite | Complete |
 | 3 | ARR engine, customer-grain movement classification, waterfall | Complete |
-| **4** | **Retention cohorts, NRR / GRR, renewal base and outcomes** | **Complete** |
-| 5 | GTM capacity, pipeline, CRM-to-ARR reconciliation | Not started |
+| 4 | Retention cohorts, NRR / GRR, renewal base and outcomes | Complete |
+| **5** | **GTM capacity, pipeline, CRM-to-ARR reconciliation, unit economics** | **Complete** |
 | 6 | Financials, driver-based forecast, runway scenario | Not started |
 | 7–9 | Bridge and commentary, accounting depth, presentation | Not started |
 
@@ -55,12 +58,14 @@ The build generates every source table, writes `data/raw/*.csv`, re-reads those 
 validates them, and writes
 [reports/source_validation_report.md](reports/source_validation_report.md). If that passes, it
 builds the DuckDB analytical layer from [`sql/manifest.yml`](sql/manifest.yml), runs the
-reconciliation control, exports `data/marts/*.csv`, and writes
-[reports/arr_validation_report.md](reports/arr_validation_report.md). Then it runs the test
+reconciliation controls, exports `data/marts/*.csv`, and writes
+[reports/arr_validation_report.md](reports/arr_validation_report.md),
+[reports/retention_validation_report.md](reports/retention_validation_report.md) and
+[reports/gtm_validation_report.md](reports/gtm_validation_report.md). Then it runs the test
 suite. A critical source-data failure or a reconciliation violation names what broke and exits
 non-zero — nothing downstream runs over a broken dataset or a waterfall that doesn't tie.
 
-It takes roughly 75–85 seconds, most of which is the source-data calibration loop described
+It takes roughly 80–95 seconds, most of which is the source-data calibration loop described
 below.
 
 Generation is deterministic. Deleting `data/raw/` and rebuilding reproduces the committed CSVs
@@ -164,30 +169,62 @@ retention, the target-vs-generated comparison against the PHASE1_SPEC anchors, q
 retention, forward ATR by quarter, renewal outcomes and the largest churned accounts are in
 [reports/retention_validation_report.md](reports/retention_validation_report.md).
 
+## What Phase 5 produces
+
+A GTM finance layer, built from six raw tables loaded into the analytical layer for the first
+time in this phase — `dim_sales_rep`, `dim_employee`, `fact_crm_opportunity`,
+`fact_marketing_spend`, `fact_gl_actuals` and the FY2026 board budget — plus the approved ARR
+engine. CRM is treated as a commercial source and ARR as the financial source of truth; the two
+are reconciled through an explicit bridge, never forced to equality.
+
+| Model | Grain | Purpose |
+|---|---|---|
+| `fct_sales_capacity` | rep × actual month | Quota, ramp %, theoretical vs. expected productive capacity, actual bookings and attainment |
+| `fct_rep_attainment` | rep × period (FY2025, TTM) | Attainment rollup for the rep-performance distribution |
+| `fct_pipeline_snapshot` | open opportunity | Unweighted and probability-weighted open pipeline |
+| `fct_crm_bookings` | closed-won opportunity | Clean bookings view — ACV, TCV, term, provisioned flag |
+| `fct_crm_arr_reconciliation` | period × bridge line | The CRM-to-ARR walk — New Logo (customer-matched) and Expansion (aggregate) |
+| `fct_unit_economics` | segment × quarter | CAC, new-logo ARPA, CAC per $1 ARR, gross-margin-adjusted payback |
+| `fct_sales_efficiency` | quarter | Net ARR Sales Efficiency and the classic Magic Number, kept separate |
+
+Full methodology — the ramp schedule, the blended quota-crediting convention, the
+customer-matched New Logo bridge and the coarser Expansion bridge, the cost-allocation deviation
+from a literal reading of PHASE1_SPEC 8.5, and known limitations — is in
+[`docs/gtm_finance.md`](docs/gtm_finance.md).
+
+`ctl_gtm_controls` enforces capacity and ramp bounds, an attainment-denominator guard, pipeline
+non-negativity, win-rate bounds, CRM-to-ARR bridge arithmetic, the FY2025 New Logo residual
+tolerance (0.5% of period New ARR, PHASE1_SPEC 8.8), cost-allocation reconciliation, a CAC
+divide-by-zero guard and a sales-efficiency denominator guard. As built, zero violations. The
+capacity, pipeline, win-rate, CRM-to-ARR bridge, unit-economics and sales-efficiency figures are
+all in [reports/gtm_validation_report.md](reports/gtm_validation_report.md).
+
 ## Validation
 
 The build runs 108 checks against the written CSVs and publishes the numbers behind each one
 in [the source validation report](reports/source_validation_report.md): primary and foreign keys,
 date ordering, the ARR and MRR identity, ARR and logo anchors, contract mechanics, renewal
 seasonality, product attach, CRM win rates and sales cycles, headcount and attrition, and the
-FY2025 profit and loss. It then builds the ARR and retention analytical layer and runs
-`ctl_arr_reconciliation` and `ctl_retention_bounds`, publishing
-[the ARR validation report](reports/arr_validation_report.md) and
-[the retention validation report](reports/retention_validation_report.md).
+FY2025 profit and loss. It then builds the ARR, retention and GTM analytical layer and runs
+`ctl_arr_reconciliation`, `ctl_retention_bounds` and `ctl_gtm_controls`, publishing
+[the ARR validation report](reports/arr_validation_report.md),
+[the retention validation report](reports/retention_validation_report.md) and
+[the GTM validation report](reports/gtm_validation_report.md).
 
-All three reports are regenerated on every build, so they always describe the committed data.
+All four reports are regenerated on every build, so they always describe the committed data.
 
 ## Repository structure
 
 ```text
 config/         assumptions.yml, chart_of_accounts.yml, name_lists.yml
 data/raw/       the 13 committed source CSVs
-data/marts/     curated ARR-engine and retention extracts, regenerated by the build
-sql/            01_staging -> 02_core -> 03_arr -> 04_retention_renewals -> 08_controls, manifest.yml
+data/marts/     curated ARR-engine, retention and GTM extracts, regenerated by the build
+sql/            01_staging -> 02_core -> 03_arr -> 04_retention_renewals -> 05_gtm -> 08_controls,
+                manifest.yml
 docs/           PHASE1_SPEC.md, data_dictionary.md, generation_methodology.md, arr_engine.md,
-                retention_renewals.md
+                retention_renewals.md, gtm_finance.md
 reports/        source_validation_report.md, arr_validation_report.md,
-                retention_validation_report.md, all regenerated
+                retention_validation_report.md, gtm_validation_report.md, all regenerated
 src/            generation, validation, the SQL runner and the build entry point
 tests/          pytest suite
 ```
@@ -202,6 +239,9 @@ tests/          pytest suite
 - [Retention, cohorts and renewals](docs/retention_renewals.md) — TTM cohort methodology, the
   NRR/GRR/logo-retention definitions, acquisition cohorts, the ATR/renewal-outcome distinction,
   uplift treatment and known limitations.
+- [GTM capacity, pipeline and unit economics](docs/gtm_finance.md) — ramp and quota-crediting
+  methodology, the CRM-to-ARR bridge, the cost-allocation deviation, CAC/payback, sales
+  efficiency and known limitations.
 - [Phase 1 specification](docs/PHASE1_SPEC.md) — the frozen design this build implements.
 
 ## Licence

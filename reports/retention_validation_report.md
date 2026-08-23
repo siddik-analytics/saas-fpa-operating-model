@@ -234,6 +234,7 @@ Price uplift (`fact_contract.uplift_pct_at_renewal` applied to pre-renewal ARR) 
 |---|---:|---|
 | `ctl_arr_reconciliation` | 0 | PASS |
 | `ctl_retention_bounds` | 0 | PASS |
+| `ctl_gtm_controls` | 0 | PASS |
 
 ## 12. Known differences from Phase 1 anchors
 
