@@ -1,0 +1,16 @@
+revenue_line,line_order,line_item,amount,running_balance,residual
+Services Revenue,1,Budget Services Revenue,926973.59,926973.59,0.0
+Services Revenue,2,Attach-rate mechanic effect (ratio formula vs. Budget stated),-35328.62879396137,891644.9612060386,0.0
+Services Revenue,3,New Logo ARR effect,-415162.74646994367,476482.21473609493,0.0
+Services Revenue,4,H1 actual-vs-mechanical residual,33850.438164457504,510332.65290055244,0.0
+Services Revenue,5,Base Services Revenue,510332.65290055244,510332.65290055244,0.0
+Subscription Revenue,1,Budget Subscription Revenue,32705653.67,32705653.67,0.0
+Subscription Revenue,2,Recognition-mechanic effect (lag formula vs. Budget stated),-0.0011666715145111084,32705653.66883333,0.0
+Subscription Revenue,3,ARR / recurring-base effect,-425016.07908251137,32280637.58975082,0.0
+Subscription Revenue,4,H1 actual-vs-mechanical residual,0.009000003337860107,32280637.598750822,0.0
+Subscription Revenue,5,Base Subscription Revenue,32280637.598750822,32280637.598750822,0.0
+Total Revenue,1,Budget Total Revenue,33632627.260000005,33632627.260000005,0.0
+Total Revenue,2,Recognition-mechanic + attach-rate effect (combined),-35328.62996063288,33597298.63003937,0.0
+Total Revenue,3,ARR / New Logo effect (combined),-840178.825552455,32757119.804486915,0.0
+Total Revenue,4,H1 actual-vs-mechanical residual (combined),33850.44716446084,32790970.251651376,0.0
+Total Revenue,5,Base Total Revenue,32790970.251651376,32790970.251651376,0.0

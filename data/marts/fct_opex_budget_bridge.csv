@@ -1,0 +1,19 @@
+category,line_order,line_item,amount,running_balance,residual
+General & Administrative,1,Budget General & Administrative,5913831.47,5913831.47,9.313225746154785e-10
+General & Administrative,2,Payroll impact,471621.68375822203,6385453.153758222,9.313225746154785e-10
+General & Administrative,4,Non-payroll run-rate impact,-420793.3700000001,5964659.783758222,9.313225746154785e-10
+General & Administrative,5,Base General & Administrative,5964659.783758221,5964659.783758221,9.313225746154785e-10
+Research & Development,1,Budget Research & Development,10140310.44,10140310.44,0.0
+Research & Development,2,Payroll impact,103856.02212621458,10244166.462126214,0.0
+Research & Development,4,Non-payroll run-rate impact,-184285.15999999992,10059881.302126214,0.0
+Research & Development,5,Base Research & Development,10059881.302126214,10059881.302126214,0.0
+Sales & Marketing,1,Budget Sales & Marketing,14482767.92,14482767.92,-1.862645149230957e-09
+Sales & Marketing,2,Payroll impact,1834464.2471533269,16317232.167153327,-1.862645149230957e-09
+Sales & Marketing,3,Sales commissions impact,-98267.10579086628,16218965.06136246,-1.862645149230957e-09
+Sales & Marketing,4,Non-payroll run-rate impact,-835045.0000000009,15383920.06136246,-1.862645149230957e-09
+Sales & Marketing,5,Base Sales & Marketing,15383920.061362462,15383920.061362462,-1.862645149230957e-09
+Total OpEx,1,Budget Total OpEx,30536909.83,30536909.83,0.0
+Total OpEx,2,Payroll impact (all categories),2409941.9530377635,32946851.783037763,0.0
+Total OpEx,3,Sales commissions impact,-98267.10579086628,32848584.6772469,0.0
+Total OpEx,4,Non-payroll run-rate impact (all categories),-1440123.530000001,31408461.147246897,0.0
+Total OpEx,5,Base Total OpEx,31408461.147246897,31408461.147246897,0.0

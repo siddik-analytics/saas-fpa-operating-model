@@ -3,6 +3,100 @@
 All notable changes to this project are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [v0.6] — Board Budget → Q2 Base reforecast bridges and deterministic commentary
+
+Phase 7 of the build described in `docs/PHASE1_SPEC.md`. Turns the approved Phase 3–6
+analytical layer plus `fact_budget` into a full set of Budget-to-Base variance bridges (ARR,
+Revenue, Gross Profit, OpEx, Operating Income, Headcount) and a deterministic, SQL-templated
+management commentary engine — no LLM anywhere in the pipeline. The independent Base reforecast
+(Phase 6) remains the forecast explained; `fact_forecast` appears only as a small secondary
+comparison. No Phase 3–6 model, control or output is altered.
+
+### Added
+
+**DuckDB analytical layer**
+- `sql/07_bridge/` — `int_metric_polarity`, `int_materiality_thresholds`, `int_commentary_params`
+  (centralised favorable/unfavorable, materiality and wording-rule config, read from
+  `config/commentary_rules.yml`); `int_budget_reforecast_comparison` (the central Budget-vs-Base
+  metric × segment comparison table every bridge reads); `fct_arr_budget_bridge` (Dec-2026 Exit
+  ARR, company and by segment); `fct_new_logo_diagnosis` (capacity-vs-pipeline diagnostic,
+  separate from the dollar bridge because Phase 6's `New Logo ARR = LEAST(capacity, pipeline)`
+  cannot be split additively); `fct_revenue_budget_bridge` (Subscription / Services / Total,
+  decomposed into a recognition-mechanic effect and an ARR / New-Logo effect using the exact
+  formulas `fct_pnl_reforecast` already uses); `fct_gross_profit_bridge` (with gross-margin bps);
+  `fct_opex_budget_bridge` (payroll / commissions / non-payroll, by category); `int_commentary_
+  candidates` (driver-level ranking and share-of-variance, the data behind "primarily" and
+  "offset"); `fct_headcount_budget_bridge`; `fct_operating_income_bridge`; `fct_management_
+  variance` (the normalized, ranked variance mart); `fct_commentary_output` (the deterministic
+  commentary itself).
+- `ctl_bridge_commentary` — the build gate. Fourteen checks: every bridge reconciles Budget +
+  components = Base exactly (ARR, Revenue, Gross Profit, OpEx, Operating Income), segment ARR
+  bridges sum to the company bridge, the headcount comparison is internally consistent, no plug
+  or balancing line exists anywhere, every commentary driver amount traces to a real stored value
+  in its declared source model, materiality is enforced, priority values are valid, commentary
+  IDs are unique, favorable/unfavorable polarity is independently re-derivable, and top-driver
+  ranking is independently re-derivable. `python -m src.build` and `python -m src.run_sql` both
+  exit non-zero on a violation.
+- `src/bridge_report.py` — generates `reports/executive_variance_report.md`: a data-selected
+  Executive Summary, the FY2026 scorecard, every bridge in full, the New Logo operating
+  diagnosis, headcount, Board-policy runway context, the hiring decision (affordability and
+  attractiveness kept separate), the full deterministic commentary set, controls and known
+  limitations.
+- `config/commentary_rules.yml` + `src/commentary_rules.py` — materiality thresholds, metric
+  polarity, and commentary-wording/priority parameters, loaded into DuckDB the same way
+  `config/assumptions.yml: forecast` already is. Reporting rules, never business results.
+- `data/marts/` — eleven more curated CSV exports.
+
+**Methodology**
+- Budget's ARR movement components (New Logo / Expansion / Reactivation / Contraction / Churn)
+  carry no segment grain in the source data (`fact_budget`'s memo accounts post company-level
+  only). Segment bridges therefore ALLOCATE Budget's company figures — New Logo by the FY2025
+  New Logo ARR mix (`int_gtm_new_logo_mix`, reusing Phase 5's own precedent for exactly this
+  problem), the other four movements by each segment's share of actual 31-Dec-2025 ARR — while
+  Base's segment figures stay real and segment-native throughout. Beginning ARR needs no
+  allocation at all: it is real, shared history, identical on both sides.
+- Revenue bridge effects are calculated by running the identical recognition mechanic
+  (`fct_pnl_reforecast`'s ARR-lag weights and New-Logo-attach ratio) over Budget's own ARR/New
+  Logo path, never a fabricated price-volume split.
+- Headcount is bridged only at the grain Budget supports (`fact_budget` account 9200 is a single
+  company-level statistical figure); Base's own by-function detail is reported separately rather
+  than reverse-engineering a Budget functional plan that doesn't exist in the source.
+- Commentary "primarily" and "offset" language is gated by calculated driver-share-of-variance
+  thresholds, never asserted; priority is assigned from centralised dollar/percentage thresholds,
+  never because a number is merely negative; materiality suppresses immaterial rows except two
+  mandatory governance items (Board-policy runway, the hiring decision).
+
+**Tests**
+- `tests/test_bridge_commentary.py` — 25 pytest tests covering every bridge's reconciliation
+  independently re-derived in pandas, segment bridges summing to the company total, opening ARR
+  parity, no plug lines, gross-margin bps arithmetic, favorable/unfavorable polarity (including
+  headcount's deliberate non-polarity), materiality suppression, top-driver ranking, the
+  "primarily" and "offset" gating rules, commentary traceability to real stored values, runway
+  and hiring commentary reading the Board-policy view rather than the operating-cash proxy, and a
+  cross-tie confirming Phase 6's own `fct_arr_forecast` is unchanged by this phase.
+
+**Documentation**
+- `README.md` updated: Phase 7 marked complete, "What Phase 7 produces" section, repository
+  structure extended.
+
+### Notes
+
+- FY2026 Board Budget → Base: Exit ARR $37.59M → $34.82M (-$2.77M, primarily New Logo ARR
+  -$2.79M, partly offset by Expansion +$1.54M); Revenue $33.63M → $32.79M (-$0.84M); Gross Profit
+  $24.91M → $25.69M (+$0.78M, +429 bps margin, driven by lower Subscription COGS payroll cost
+  relative to Budget); Total OpEx $30.54M → $31.41M (+$0.87M, primarily payroll); Operating Loss
+  $5.63M → $5.71M (-$0.09M, immaterial — correctly suppressed from standalone commentary);
+  Headcount 214 → 217.7 FTE.
+- Pipeline, not capacity, binds New Logo ARR in 15 of 18 H2 2026 segment-months — the primary,
+  data-derived reason New Logo ARR misses Budget.
+- Base policy runway 25.6 months (1.6 months of headroom); Bear breaches the 24-month floor at
+  23.5 months; Full Capacity-Close hiring is affordable (24.7 months) but adds only $467 of
+  incremental Dec-2026 ARR because pipeline remains the binding constraint; Targeted hiring
+  computes to zero incremental hires.
+- `ctl_bridge_commentary`, alongside `ctl_arr_reconciliation`, `ctl_retention_bounds`, `ctl_gtm_
+  controls` and `ctl_forecast_controls`, all pass with zero violations; the full pytest suite
+  (181 tests across all phases) is green.
+
 ## [v0.4] — GTM capacity, pipeline, CRM-to-ARR reconciliation, unit economics
 
 Phase 5 of the build described in `docs/PHASE1_SPEC.md`. Loads six more raw tables into the

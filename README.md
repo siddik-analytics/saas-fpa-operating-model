@@ -1,6 +1,6 @@
 # Helio Systems — SaaS FP&A Operating Model
 
-### Work in progress — Driver-Based Q2 Reforecast, Scenarios and Runway-Constrained Hiring
+### Work in progress — Budget-to-Reforecast Bridges and Deterministic Management Commentary
 
 **Disclaimer.** Helio Systems, Inc. is a fictional company. All data in this repository is
 synthetically generated for portfolio demonstration purposes. No confidential, proprietary or
@@ -22,19 +22,18 @@ of truth for the build.
 
 ## Current status
 
-**Phase 6 of 9 is complete: driver-based Q2 reforecast, Bear / Base / Bull scenarios, cash
-runway and a runway-constrained hiring decision — the minimum shippable build.**
+**Phase 7 of 9 is complete: Board Budget-to-Base-Reforecast bridges (ARR, revenue, gross profit,
+OpEx, operating income, headcount) and a deterministic, source-traceable management commentary
+engine.**
 
 The raw source dataset (Phase 2), the customer-grain ARR engine (Phase 3), the retention /
-renewal layer (Phase 4) and the GTM capacity and pipeline layer (Phase 5) are now frozen as the
-analytical source of truth. Phase 6 loads the two remaining raw tables — `fact_requisition` and
-`fact_forecast` (the latter loaded strictly as a benchmark, never as a forecasting input) — and
-builds an independent, bottom-up FY2026 Q2 reforecast: a forward ARR waterfall constrained
-jointly by sales capacity and CRM pipeline, headcount and payroll, a monthly P&L, three operating
-scenarios, a cash runway model, and a runway-constrained hiring decision with hire counts computed
-from the capacity gap rather than picked by hand. The polished budget-to-reforecast bridge,
-deterministic commentary engine, deferred revenue, commissions and presentation artifacts do not
-exist yet.
+renewal layer (Phase 4), the GTM capacity and pipeline layer (Phase 5) and the driver-based Q2
+reforecast, scenarios, runway and hiring decision (Phase 6) are now frozen as the analytical
+source of truth. Phase 7 reads the FY2026 Board-Approved budget (`fact_budget`) at its own GL
+grain and builds a full set of Budget-to-Base variance bridges that each reconcile exactly, plus
+a SQL-templated commentary engine with no LLM anywhere in the pipeline. Deferred revenue,
+commissions, ASC 340-40 capitalisation, the Excel model, Power BI and the executive presentation
+pack do not exist yet.
 
 | Phase | Scope | Status |
 |---|---|---|
@@ -43,8 +42,9 @@ exist yet.
 | 3 | ARR engine, customer-grain movement classification, waterfall | Complete |
 | 4 | Retention cohorts, NRR / GRR, renewal base and outcomes | Complete |
 | 5 | GTM capacity, pipeline, CRM-to-ARR reconciliation, unit economics | Complete |
-| **6** | **Driver-based reforecast, Bear / Base / Bull, cash runway, hiring scenario** | **Complete** |
-| 7–9 | Bridge and commentary, accounting depth, presentation | Not started |
+| 6 | Driver-based reforecast, Bear / Base / Bull, cash runway, hiring scenario | Complete |
+| **7** | **Budget-to-reforecast bridges and deterministic management commentary** | **Complete** |
+| 8–9 | Accounting depth, presentation | Not started |
 
 ## Build
 
@@ -232,33 +232,75 @@ Phase 3–5 controls. As built, zero violations. The reforecast, the GTM constra
 scenario comparison, the cash runway and the hiring decision are all in
 [reports/forecast_runway_validation_report.md](reports/forecast_runway_validation_report.md).
 
+## What Phase 7 produces
+
+A set of FY2026 Board Budget-to-Base-Reforecast variance bridges, built from two raw tables
+loaded together for the first time at full GL grain — `fact_budget` at its own account × cost
+centre × month detail (not just the memo rows Phase 5 already reads) — plus every approved Phase
+3-6 mart. The independent Base reforecast (Phase 6) remains the forecast explained;
+`fact_forecast` is used only for a small secondary comparison. Built with DuckDB from
+`sql/manifest.yml`; run with `python -m src.run_sql`, or as part of `python -m src.build`, which
+treats a `ctl_bridge_commentary` violation as a build failure.
+
+| Model | Grain | Purpose |
+|---|---|---|
+| `int_budget_reforecast_comparison` | metric × segment | The central Budget-vs-Base comparison every bridge reads |
+| `fct_arr_budget_bridge` | segment × bridge line | Dec-2026 Exit ARR, Budget → Base, company and by segment |
+| `fct_new_logo_diagnosis` | segment | Capacity-vs-pipeline diagnostic, separate from the dollar bridge |
+| `fct_revenue_budget_bridge` | revenue line × bridge line | Subscription / Services / Total Revenue, Budget → Base |
+| `fct_gross_profit_bridge` | bridge line | Gross Profit and Gross Margin (bps), Budget → Base |
+| `fct_opex_budget_bridge` | category × bridge line | OpEx by category, split payroll / commissions / non-payroll |
+| `fct_operating_income_bridge` | bridge line | Operating Income / Loss, Budget → Base, fully reconciling |
+| `fct_headcount_budget_bridge` | company + by function | Headcount at the grain Budget actually supports |
+| `fct_management_variance` | metric | Normalized, ranked variance mart driving the scorecard and commentary |
+| `fct_commentary_output` | commentary item | Deterministic, source-traceable management commentary |
+
+Full methodology — the segment-allocation approach where Budget carries no segment grain, the
+revenue-bridge recognition-mechanic decomposition, the materiality and polarity rules, and the
+"primarily" / "offset" commentary gating — is in
+[`docs/bridge_commentary.md`](docs/bridge_commentary.md).
+
+`ctl_bridge_commentary` enforces that every bridge reconciles Budget + components = Base exactly,
+segment ARR bridges sum to the company bridge, the headcount comparison is internally consistent,
+no plug or balancing line exists anywhere, every commentary driver amount traces to a real stored
+value, materiality is enforced, priority values are valid, commentary IDs are unique, and
+favorable/unfavorable polarity and top-driver ranking are both independently re-derivable. As
+built, zero violations, alongside every frozen Phase 3-6 control. The full set of bridges, the
+New Logo operating diagnosis, headcount, Board-policy runway context, the hiring decision and the
+generated commentary are all in
+[reports/executive_variance_report.md](reports/executive_variance_report.md).
+
 ## Validation
 
 The build runs 108 checks against the written CSVs and publishes the numbers behind each one
 in [the source validation report](reports/source_validation_report.md): primary and foreign keys,
 date ordering, the ARR and MRR identity, ARR and logo anchors, contract mechanics, renewal
 seasonality, product attach, CRM win rates and sales cycles, headcount and attrition, and the
-FY2025 profit and loss. It then builds the ARR, retention and GTM analytical layer and runs
-`ctl_arr_reconciliation`, `ctl_retention_bounds` and `ctl_gtm_controls`, publishing
+FY2025 profit and loss. It then builds the ARR, retention, GTM, forecast and bridge/commentary analytical layer and runs
+`ctl_arr_reconciliation`, `ctl_retention_bounds`, `ctl_gtm_controls`, `ctl_forecast_controls` and
+`ctl_bridge_commentary`, publishing
 [the ARR validation report](reports/arr_validation_report.md),
-[the retention validation report](reports/retention_validation_report.md) and
-[the GTM validation report](reports/gtm_validation_report.md).
+[the retention validation report](reports/retention_validation_report.md),
+[the GTM validation report](reports/gtm_validation_report.md),
+[the forecast & runway validation report](reports/forecast_runway_validation_report.md) and
+[the executive variance report](reports/executive_variance_report.md).
 
-All five reports are regenerated on every build, so they always describe the committed data.
+All six reports are regenerated on every build, so they always describe the committed data.
 
 ## Repository structure
 
 ```text
-config/         assumptions.yml, chart_of_accounts.yml, name_lists.yml
+config/         assumptions.yml, chart_of_accounts.yml, name_lists.yml, commentary_rules.yml
 data/raw/       the 13 committed source CSVs
-data/marts/     curated ARR-engine, retention, GTM and forecast extracts, regenerated by the build
+data/marts/     curated ARR-engine, retention, GTM, forecast and bridge/commentary extracts,
+                regenerated by the build
 sql/            01_staging -> 02_core -> 03_arr -> 04_retention_renewals -> 05_gtm -> 06_forecast
-                -> 08_controls, manifest.yml
+                -> 07_bridge -> 08_controls, manifest.yml
 docs/           PHASE1_SPEC.md, data_dictionary.md, generation_methodology.md, arr_engine.md,
                 retention_renewals.md, gtm_finance.md, forecast_runway.md
 reports/        source_validation_report.md, arr_validation_report.md,
                 retention_validation_report.md, gtm_validation_report.md,
-                forecast_runway_validation_report.md, all regenerated
+                forecast_runway_validation_report.md, executive_variance_report.md, all regenerated
 src/            generation, validation, the SQL runner and the build entry point
 tests/          pytest suite
 ```
@@ -279,6 +321,9 @@ tests/          pytest suite
 - [Driver-based reforecast, scenarios and runway](docs/forecast_runway.md) — the capacity-and-
   pipeline constraint, the attrition hierarchy, the ARR/P&L/cash build, the Bear/Base/Bull and
   hiring-decision design, the `fact_forecast` benchmark treatment and known limitations.
+- [Budget-to-reforecast bridges and commentary](docs/bridge_commentary.md) — the segment
+  allocation methodology, the revenue-bridge recognition-mechanic decomposition, materiality and
+  polarity rules, the deterministic commentary engine and known limitations.
 - [Phase 1 specification](docs/PHASE1_SPEC.md) — the frozen design this build implements.
 
 ## Licence

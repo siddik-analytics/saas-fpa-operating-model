@@ -39,6 +39,8 @@ models:
     path: 01_staging/stg_fact_forecast.sql
   - name: stg_forecast_assumptions
     path: 01_staging/stg_forecast_assumptions.sql
+  - name: stg_commentary_rules
+    path: 01_staging/stg_commentary_rules.sql
 
   # 02_core -- conformed dimensions and the mandatory customer-month aggregation
   - name: dim_customer
@@ -136,6 +138,39 @@ models:
   - name: fct_hiring_scenario
     path: 06_forecast/fct_hiring_scenario.sql
 
+  # 07_bridge -- Board Budget -> Q2 Base reforecast bridges and deterministic management
+  # commentary (Phase 7)
+  - name: int_metric_polarity
+    path: 07_bridge/int_metric_polarity.sql
+  - name: int_materiality_thresholds
+    path: 07_bridge/int_materiality_thresholds.sql
+  - name: int_commentary_params
+    path: 07_bridge/int_commentary_params.sql
+  - name: int_budget_reforecast_comparison
+    path: 07_bridge/int_budget_reforecast_comparison.sql
+  - name: fct_arr_budget_bridge
+    path: 07_bridge/fct_arr_budget_bridge.sql
+  - name: fct_new_logo_diagnosis
+    path: 07_bridge/fct_new_logo_diagnosis.sql
+  - name: fct_revenue_budget_bridge
+    path: 07_bridge/fct_revenue_budget_bridge.sql
+  - name: fct_gross_profit_bridge
+    path: 07_bridge/fct_gross_profit_bridge.sql
+  - name: fct_opex_budget_bridge
+    path: 07_bridge/fct_opex_budget_bridge.sql
+  - name: fct_headcount_budget_bridge
+    path: 07_bridge/fct_headcount_budget_bridge.sql
+  - name: fct_operating_income_bridge
+    path: 07_bridge/fct_operating_income_bridge.sql
+  - name: fct_management_variance
+    path: 07_bridge/fct_management_variance.sql
+  - name: int_commentary_candidates
+    path: 07_bridge/int_commentary_candidates.sql
+  - name: fct_commentary_output
+    path: 07_bridge/fct_commentary_output.sql
+  - name: fct_commentary_evidence
+    path: 07_bridge/fct_commentary_evidence.sql
+
 controls:
   - name: ctl_arr_reconciliation
     path: 08_controls/ctl_arr_reconciliation.sql
@@ -145,6 +180,8 @@ controls:
     path: 08_controls/ctl_gtm_controls.sql
   - name: ctl_forecast_controls
     path: 08_controls/ctl_forecast_controls.sql
+  - name: ctl_bridge_commentary
+    path: 08_controls/ctl_bridge_commentary.sql
 
 # Models exported to data/marts/<name>.csv for the "readable without running" convention.
 marts:
@@ -180,3 +217,15 @@ marts:
   - fct_cash_runway_policy
   - fct_scenario_monthly
   - fct_hiring_scenario
+  - int_budget_reforecast_comparison
+  - fct_arr_budget_bridge
+  - fct_new_logo_diagnosis
+  - fct_revenue_budget_bridge
+  - fct_gross_profit_bridge
+  - fct_opex_budget_bridge
+  - fct_headcount_budget_bridge
+  - fct_operating_income_bridge
+  - fct_management_variance
+  - int_commentary_candidates
+  - fct_commentary_output
+  - fct_commentary_evidence

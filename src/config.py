@@ -31,6 +31,7 @@ class Config:
     accounts: dict[str, Any]
     names: dict[str, Any]
     seed: int
+    commentary_rules: dict[str, Any]
 
     def __getitem__(self, key: str) -> Any:
         return self.assumptions[key]
@@ -45,13 +46,17 @@ def load_config(seed_override: int | None = None) -> Config:
     assumptions = _read_yaml(CONFIG_DIR / "assumptions.yml")
     accounts = _read_yaml(CONFIG_DIR / "chart_of_accounts.yml")
     names = _read_yaml(CONFIG_DIR / "name_lists.yml")
+    commentary_rules = _read_yaml(CONFIG_DIR / "commentary_rules.yml")
 
     meta = assumptions["meta"]
     seed = seed_override
     if seed is None:
         env_value = os.environ.get(meta.get("seed_env_var", "HELIO_SEED"))
         seed = int(env_value) if env_value else int(meta["seed"])
-    return Config(assumptions=assumptions, accounts=accounts, names=names, seed=int(seed))
+    return Config(
+        assumptions=assumptions, accounts=accounts, names=names, seed=int(seed),
+        commentary_rules=commentary_rules,
+    )
 
 
 def _read_yaml(path: Path) -> dict[str, Any]:

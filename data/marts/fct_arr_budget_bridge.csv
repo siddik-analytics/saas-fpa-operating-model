@@ -1,0 +1,33 @@
+segment,line_order,line_item,driver_category,amount,running_balance,budget_grain,residual
+Enterprise,1,Budget Exit ARR,anchor,13784213.881438091,13784213.881438091,allocated,-1.862645149230957e-09
+Enterprise,2,"Opening ARR variance (31-Dec-2025 actual, identical both sides)",opening_arr,0.0,13784213.881438091,source,-1.862645149230957e-09
+Enterprise,3,New Logo ARR variance,new_logo,-626704.1962848626,13157509.68515323,allocated,-1.862645149230957e-09
+Enterprise,4,Expansion ARR variance,expansion,-130768.41487904615,13026741.270274183,allocated,-1.862645149230957e-09
+Enterprise,5,Reactivation ARR variance,reactivation,-76860.28064688995,12949880.989627292,allocated,-1.862645149230957e-09
+Enterprise,6,Contraction ARR variance,contraction,-241017.16817454743,12708863.821452744,allocated,-1.862645149230957e-09
+Enterprise,7,Churn ARR variance,churn,302706.07376153406,13011569.895214278,allocated,-1.862645149230957e-09
+Enterprise,8,Base Reforecast Exit ARR,anchor,13011569.89521428,13011569.89521428,allocated,-1.862645149230957e-09
+Mid-Market,1,Budget Exit ARR,anchor,16972446.17881376,16972446.17881376,allocated,3.725290298461914e-09
+Mid-Market,2,"Opening ARR variance (31-Dec-2025 actual, identical both sides)",opening_arr,0.0,16972446.17881376,source,3.725290298461914e-09
+Mid-Market,3,New Logo ARR variance,new_logo,-1190580.5519306436,15781865.626883116,allocated,3.725290298461914e-09
+Mid-Market,4,Expansion ARR variance,expansion,1862782.6858167793,17644648.312699895,allocated,3.725290298461914e-09
+Mid-Market,5,Reactivation ARR variance,reactivation,-76244.93474888007,17568403.377951015,allocated,3.725290298461914e-09
+Mid-Market,6,Contraction ARR variance,contraction,-932760.2868816537,16635643.091069361,allocated,3.725290298461914e-09
+Mid-Market,7,Churn ARR variance,churn,336324.2451862927,16971967.336255655,allocated,3.725290298461914e-09
+Mid-Market,8,Base Reforecast Exit ARR,anchor,16971967.33625565,16971967.33625565,allocated,3.725290298461914e-09
+SMB,1,Budget Exit ARR,anchor,6832655.779748149,6832655.779748149,allocated,0.0
+SMB,2,"Opening ARR variance (31-Dec-2025 actual, identical both sides)",opening_arr,0.0,6832655.779748149,source,0.0
+SMB,3,New Logo ARR variance,new_logo,-976401.7382200463,5856254.041528103,allocated,0.0
+SMB,4,Expansion ARR variance,expansion,-193911.71798628476,5662342.323541818,allocated,0.0
+SMB,5,Reactivation ARR variance,reactivation,64154.895395769956,5726497.218937588,allocated,0.0
+SMB,6,Contraction ARR variance,contraction,-45617.8593429903,5680879.3595945975,allocated,0.0
+SMB,7,Churn ARR variance,churn,-848000.0262668706,4832879.333327727,allocated,0.0
+SMB,8,Base Reforecast Exit ARR,anchor,4832879.333327727,4832879.333327727,allocated,0.0
+Total,1,Budget Exit ARR,anchor,37589315.84,37589315.84,source,0.0
+Total,2,"Opening ARR variance (31-Dec-2025 actual, identical both sides)",opening_arr,0.0,37589315.84,source,0.0
+Total,3,New Logo ARR variance,new_logo,-2793686.486435552,34795629.35356445,source,0.0
+Total,4,Expansion ARR variance,expansion,1538102.5529514458,36333731.9065159,source,0.0
+Total,5,Reactivation ARR variance,reactivation,-88950.32000000004,36244781.586515896,source,0.0
+Total,6,Contraction ARR variance,contraction,-1219395.3143991916,35025386.272116706,source,0.0
+Total,7,Churn ARR variance,churn,-208969.70731904404,34816416.56479766,source,0.0
+Total,8,Base Reforecast Exit ARR,anchor,34816416.56479766,34816416.56479766,source,0.0

@@ -1,0 +1,13 @@
+section,grain_key,line_order,line_item,amount,beginning_headcount_jun2026,h2_hires,h2_departures,ending_headcount_dec2026
+base_by_function,Customer Success,,,,26.0,2.0,0.6389888374775232,27.361011162522477
+base_by_function,Engineering,,,,52.0,3.0,0.7778712260754261,54.222128773924574
+base_by_function,G&A,,,,21.0,1.0,0.2637888195828815,21.73621118041712
+base_by_function,Marketing,,,,18.0,1.0,0.41534174676987945,18.58465825323012
+base_by_function,Product & Design,,,,22.0,1.0,0.35182363792836213,22.648176362071638
+base_by_function,Professional Services,,,,8.0,0.0,0.15102554469693974,7.84897445530306
+base_by_function,Sales,,,,44.0,6.0,1.3935822497799393,48.60641775022006
+base_by_function,Support & Cloud Ops,,,,15.0,2.0,0.3451106058495501,16.65488939415045
+base_by_function,Total,,,,206.0,16.0,4.3375326681605015,217.66246733183948
+company_bridge,Company,1,Budget Ending Headcount,214.0,,,,
+company_bridge,Company,2,Net headcount variance (driver detail not supported at Budget's grain -- fact_budget account 9200 carries no functional breakdown),3.66246733183948,,,,
+company_bridge,Company,3,Base Ending Headcount,217.66246733183948,,,,

@@ -1,0 +1,42 @@
+headline_metric,driver,driver_category,amount,headline_variance,share_of_total_abs_variance,rank_abs_amount,opposite_sign_to_headline,same_sign_as_headline,rank_same_sign_abs_amount,is_material_offset,is_primary_driver,is_material_secondary_same_direction
+exit_arr,Churn ARR variance,churn,-208969.70731904404,-2772899.2752023414,0.0357267871631926,4,false,true,3,false,false,false
+exit_arr,Contraction ARR variance,contraction,-1219395.3143991916,-2772899.2752023414,0.20847556052141739,3,false,true,2,false,false,true
+exit_arr,Expansion ARR variance,expansion,1538102.5529514458,-2772899.2752023414,0.2629637723546335,2,true,false,,true,false,false
+exit_arr,New Logo ARR variance,new_logo,-2793686.486435552,-2772899.2752023414,0.47762636882668585,1,false,true,1,false,false,false
+exit_arr,Reactivation ARR variance,reactivation,-88950.32000000004,-2772899.2752023414,0.015207511134070784,5,false,true,4,false,false,false
+gross_profit,Revenue impact,margin,-841657.0083486214,783329.0261156633,0.3294403618066677,2,true,false,,true,false,false
+gross_profit,Services COGS - non-payroll impact,margin,8292.090000000011,783329.0261156633,0.0032456797752962348,5,false,true,3,false,false,false
+gross_profit,Services COGS - payroll impact,margin,-44082.68573582219,783329.0261156633,0.017254791196609987,4,true,false,,false,false,false
+gross_profit,Subscription COGS - non-payroll impact,margin,345292.4900000002,783329.0261156633,0.13515396617193934,3,false,true,2,false,false,true
+gross_profit,Subscription COGS - payroll impact,margin,1315484.1402001074,783329.0261156633,0.5149052010494868,1,false,true,1,false,true,false
+operating_income,General & Administrative OpEx impact,operating_income,-50828.313758221455,-88222.29113124311,0.014235095564799146,6,false,true,4,false,false,false
+operating_income,Research & Development OpEx impact,operating_income,80429.13787378557,-88222.29113124311,0.022525171094084435,5,true,false,,false,false,false
+operating_income,Revenue variance - Services,operating_income,-416640.93709944753,-88222.29113124311,0.11668542820503822,4,false,true,3,false,false,false
+operating_income,Revenue variance - Subscription,operating_income,-425016.07124917954,-88222.29113124311,0.11903098772047983,3,false,true,2,false,false,true
+operating_income,Sales & Marketing OpEx impact,operating_income,-901152.1413624622,-88222.29113124311,0.25237876101374934,2,false,true,1,false,false,false
+operating_income,Services COGS impact,operating_income,-35790.59573582222,-88222.29113124311,0.010023597340726527,7,false,true,5,false,false,false
+operating_income,Subscription COGS impact,operating_income,1660776.6302001067,-88222.29113124311,0.4651209590611225,1,true,false,,true,false,false
+segment_arr_Enterprise,Churn ARR variance,churn,302706.07376153406,-772643.9862238113,0.2196616424749609,2,true,false,,true,false,false
+segment_arr_Enterprise,Contraction ARR variance,contraction,-241017.16817454743,-772643.9862238113,0.17489648082711354,3,false,true,2,false,false,false
+segment_arr_Enterprise,Expansion ARR variance,expansion,-130768.41487904615,-772643.9862238113,0.09489338763254294,4,false,true,3,false,false,false
+segment_arr_Enterprise,New Logo ARR variance,new_logo,-626704.1962848626,-772643.9862238113,0.4547740697477095,1,false,true,1,false,false,false
+segment_arr_Enterprise,Reactivation ARR variance,reactivation,-76860.28064688995,-772643.9862238113,0.05577441931767314,5,false,true,4,false,false,false
+segment_arr_Mid-Market,Churn ARR variance,churn,336324.2451862927,-478.84255810827017,0.07646004569432868,4,true,false,,false,false,false
+segment_arr_Mid-Market,Contraction ARR variance,contraction,-932760.2868816537,-478.84255810827017,0.21205397819988345,3,false,true,2,false,false,false
+segment_arr_Mid-Market,Expansion ARR variance,expansion,1862782.6858167793,-478.84255810827017,0.42348552420674573,1,true,false,,true,false,false
+segment_arr_Mid-Market,New Logo ARR variance,new_logo,-1190580.5519306436,-478.84255810827017,0.2706669076235429,2,false,true,1,false,false,false
+segment_arr_Mid-Market,Reactivation ARR variance,reactivation,-76244.93474888007,-478.84255810827017,0.017333544275499276,5,false,true,3,false,false,false
+segment_arr_SMB,Churn ARR variance,churn,-848000.0262668706,-1999776.4464204218,0.3984801045364817,2,false,true,2,false,false,false
+segment_arr_SMB,Contraction ARR variance,contraction,-45617.8593429903,-1999776.4464204218,0.021436095279087446,5,false,true,4,false,false,false
+segment_arr_SMB,Expansion ARR variance,expansion,-193911.71798628476,-1999776.4464204218,0.09112023497709917,3,false,true,3,false,false,false
+segment_arr_SMB,New Logo ARR variance,new_logo,-976401.7382200463,-1999776.4464204218,0.4588168097450999,1,false,true,1,false,false,false
+segment_arr_SMB,Reactivation ARR variance,reactivation,64154.895395769956,-1999776.4464204218,0.030146755462231768,4,true,false,,false,false,false
+total_opex,Non-payroll run-rate impact (all categories),opex,-1440123.530000001,871551.317246899,0.3647422038545261,2,true,false,,true,false,false
+total_opex,Payroll impact (all categories),opex,2409941.9530377635,871551.317246899,0.6103695417798458,1,false,true,1,false,true,false
+total_opex,Sales commissions impact,opex,-98267.10579086628,871551.317246899,0.024888254365628207,3,true,false,,false,false,false
+total_revenue,Services: Attach-rate mechanic effect (ratio formula vs. Budget stated),revenue,-35328.62879396137,-841657.0083486214,0.03885008167844407,3,false,true,3,false,false,false
+total_revenue,Services: H1 actual-vs-mechanical residual,revenue,33850.438164457504,-841657.0083486214,0.03722454939335432,4,true,false,,false,false,false
+total_revenue,Services: New Logo ARR effect,revenue,-415162.74646994367,-841657.0083486214,0.4565449370897007,2,false,true,2,false,false,true
+total_revenue,Subscription: ARR / recurring-base effect,revenue,-425016.07908251137,-841657.0083486214,0.46738042065844204,1,false,true,1,false,false,false
+total_revenue,Subscription: H1 actual-vs-mechanical residual,revenue,0.009000003337860107,-841657.0083486214,9.897096964088778e-09,5,true,false,,false,false,false
+total_revenue,Subscription: Recognition-mechanic effect (lag formula vs. Budget stated),revenue,-0.0011666715145111084,-841657.0083486214,1.2829618691121673e-09,6,false,true,4,false,false,false

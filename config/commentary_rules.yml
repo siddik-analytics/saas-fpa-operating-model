@@ -1,0 +1,92 @@
+# Phase 7 -- Board Budget -> Q2 Base reforecast bridges and deterministic management
+# commentary. These are REPORTING rules (materiality, polarity, wording thresholds), never
+# business results -- no ARR, revenue, cost or headcount figure lives here. Same convention as
+# config/assumptions.yml: nothing a reviewer would want to challenge is buried in Python or SQL.
+#
+# PHASE1_SPEC does not define bridge-commentary materiality thresholds (it stops at the FY2026
+# Q2 reforecast, Phase 6). The values below are therefore a small, documented set of
+# management-reporting conventions, centralised here rather than sprinkled across CASE
+# statements in SQL or Python.
+
+# ---------------------------------------------------------------------------
+# METRIC POLARITY -- centralised so favorable/unfavorable is never re-derived ad hoc.
+#   higher_favorable  more is better (Revenue, ARR, Gross Profit, Operating Income)
+#   lower_favorable   less is better (COGS, OpEx)
+#   less_negative_favorable   a loss that shrinks is favorable (Operating Loss framing)
+#   contextual        no automatic direction (Headcount -- see PHASE1_SPEC-analogous
+#                     instruction: headcount variance is not automatically good or bad)
+# ---------------------------------------------------------------------------
+metric_polarity:
+  exit_arr: higher_favorable
+  new_logo_arr: higher_favorable
+  expansion_arr: higher_favorable
+  reactivation_arr: higher_favorable
+  contraction_arr: lower_favorable          # more negative contraction = worse
+  churn_arr: lower_favorable                # more negative churn = worse
+  subscription_revenue: higher_favorable
+  services_revenue: higher_favorable
+  total_revenue: higher_favorable
+  subscription_cogs: lower_favorable
+  services_cogs: lower_favorable
+  total_cogs: lower_favorable
+  gross_profit: higher_favorable
+  gross_margin_bps: higher_favorable
+  sales_marketing: lower_favorable
+  research_development: lower_favorable
+  general_administrative: lower_favorable
+  total_opex: lower_favorable
+  operating_income: higher_favorable
+  ending_headcount: contextual
+  policy_runway_months: higher_favorable    # more headroom above the Board floor is favorable
+
+# ---------------------------------------------------------------------------
+# MATERIALITY -- a metric is material if it clears the ABSOLUTE threshold OR the PERCENTAGE
+# threshold (where a percentage is meaningful; see docs/PHASE1_SPEC-analogous note on
+# operating-loss percentages). bps_threshold applies to gross_margin_bps only.
+# fte_threshold applies to ending_headcount only.
+# ---------------------------------------------------------------------------
+materiality:
+  exit_arr:                 {abs_usd: 250000, pct: null}
+  new_logo_arr:              {abs_usd: 250000, pct: null}
+  expansion_arr:              {abs_usd: 250000, pct: null}
+  reactivation_arr:           {abs_usd: 100000, pct: null}
+  contraction_arr:            {abs_usd: 250000, pct: null}
+  churn_arr:                  {abs_usd: 250000, pct: null}
+  total_revenue:              {abs_usd: 250000, pct: 0.03}
+  subscription_revenue:       {abs_usd: 250000, pct: 0.03}
+  services_revenue:           {abs_usd: 100000, pct: 0.05}
+  gross_profit:                {abs_usd: 250000, pct: 0.03}
+  sales_marketing:            {abs_usd: 250000, pct: 0.03}
+  research_development:       {abs_usd: 250000, pct: 0.03}
+  general_administrative:     {abs_usd: 250000, pct: 0.03}
+  total_opex:                  {abs_usd: 250000, pct: 0.03}
+  operating_income:           {abs_usd: 250000, pct: null}   # never a % of a near-zero base
+  gross_margin_bps:            {abs_usd: null, pct: null, bps: 100}
+  ending_headcount:            {abs_usd: null, pct: null, fte: 3}
+  policy_runway_months:       {abs_usd: null, pct: null, months: 0.5}
+
+# ---------------------------------------------------------------------------
+# COMMENTARY WORDING RULES
+#   primary_driver_share_threshold  a driver may be called "primarily" responsible only if its
+#                                   own absolute amount is at least this share of the sum of all
+#                                   drivers' absolute amounts for that metric's bridge
+#   offsetting_driver_share_threshold  a driver may be called an "offset" only if it is both
+#                                   opposite in sign to the net variance AND at least this share
+#                                   of the sum of absolute driver amounts
+#   max_executive_summary_items    hard cap on rows shown in the report's Executive Summary
+# ---------------------------------------------------------------------------
+commentary:
+  primary_driver_share_threshold: 0.50
+  offsetting_driver_share_threshold: 0.15
+  max_executive_summary_items: 5
+
+# ---------------------------------------------------------------------------
+# PRIORITY THRESHOLDS -- deterministic assignment, never "negative therefore Critical."
+#   critical_runway_breach            any path's policy runway is below the Board floor
+#   high_abs_usd / high_pct           material variance clearing either bar is at least High
+#   medium_offset_share               a material offsetting driver is Medium
+# ---------------------------------------------------------------------------
+priority:
+  high_abs_usd: 1000000
+  high_pct: 0.05
+  medium_min_abs_usd: 250000
