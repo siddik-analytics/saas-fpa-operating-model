@@ -246,7 +246,7 @@ Three cases, all evaluated under Base operating conditions (`fct_hiring_scenario
 | case_label | cumulative_hires | h2_new_logo_capacity | dec27_incremental_arr | dec27_incremental_operating_income | dec27_incremental_cash | policy_avg_monthly_burn | policy_runway_months | policy_headroom_months | breaches_24mo_floor |
 |---|---|---|---|---|---|---|---|---|---|
 | No Incremental GTM Hiring | 0.00 | 2,920,858.78 | 0.00 | 0.00 | 0.00 | 850,000.00 | 25.65 | 1.65 | no |
-| Targeted / Runway-Constrained Hiring | 0.00 | 2,920,858.78 | 0.00 | 0.00 | 0.00 | 850,000.00 | 25.65 | 1.65 | no |
+| Targeted / Runway-Constrained Hiring | 0.00 | 2,920,858.78 | 0.00 | 0.00 | -0.00 | 850,000.00 | 25.65 | 1.65 | no |
 | Full Capacity-Close Hiring | 4.00 | 2,996,583.27 | 147,322.04 | -31,366.64 | -637,083.11 | 883,984.71 | 24.66 | 0.66 | no |
 
 **Targeted / Runway-Constrained hires 0; Full Capacity-Close hires 4.** Targeted hires only in a segment where the model's own 12-month forward capacity would fall short of pipeline (i.e., where an added rep could actually sell into unconstrained demand); Full Capacity-Close hires the entire computed gap regardless. See section 4: pipeline, not capacity, is the constraint that actually binds in this data over the next 12 months in every segment, which is why the two cases land where they do -- not a forced or hand-picked result. Hire counts were not adjusted to reach any particular runway outcome.

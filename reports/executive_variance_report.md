@@ -294,7 +294,7 @@ Affordability (Board-policy runway) and attractiveness (incremental ARR / cash /
 | Case | Hires | Incremental ARR (Dec-2026) | Incremental Revenue (Dec-2026) | Incremental Operating Income (Dec-2026) | Incremental Cash Impact (Dec-2026) | Ending Headcount |
 |---|---|---|---|---|---|---|
 | No Incremental GTM Hiring | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 217.66 |
-| Targeted / Runway-Constrained Hiring | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 217.66 |
+| Targeted / Runway-Constrained Hiring | 0.00 | -0.00 | 0.00 | 0.00 | -0.00 | 217.66 |
 | Full Capacity-Close Hiring | 4.00 | 466.87 | 21.40 | -46,116.62 | -139,065.22 | 221.62 |
 
 ## 13. Deterministic Management Commentary

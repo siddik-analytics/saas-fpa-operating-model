@@ -278,6 +278,8 @@ The figures above are also illustrative, not a hiring plan: they price the compa
 | `ctl_retention_bounds` | 0 | PASS |
 | `ctl_gtm_controls` | 0 | PASS |
 | `ctl_forecast_controls` | 0 | PASS |
+| `ctl_bridge_commentary` | 0 | PASS |
+| `ctl_accounting_enhancements` | 0 | PASS |
 
 ## 11. Known limitations
 

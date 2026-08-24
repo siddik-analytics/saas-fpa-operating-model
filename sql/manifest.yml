@@ -6,8 +6,9 @@
 # so a model may only reference tables defined earlier in this file. Controls run after every
 # model has been built; any row returned by a control query is a violation and fails the build.
 #
-# Phase 3 + Phase 4 + Phase 5 scope. Loads eleven of the thirteen raw tables -- everything
-# except fact_requisition and fact_forecast, which belong to Phase 6.
+# Phase 3 through Phase 8 scope. Every raw table is loaded. The 09_accounting layer is an
+# enhancement / reconciliation layer: it reads the frozen Phase 3-7 commercial models and the
+# source ledger, and writes nothing back into them.
 
 models:
   # 01_staging -- typed pass-throughs, no business logic
@@ -171,6 +172,30 @@ models:
   - name: fct_commentary_evidence
     path: 07_bridge/fct_commentary_evidence.sql
 
+  # 09_accounting -- SaaS accounting enhancements (Phase 8): contract billing mechanics,
+  # deferred-revenue rollforward, and ASC 340-40 sales commission capitalisation. This layer
+  # READS the frozen Phase 3-7 commercial output and never writes it.
+  - name: int_contract_billing_schedule
+    path: 09_accounting/int_contract_billing_schedule.sql
+  - name: fct_billings
+    path: 09_accounting/fct_billings.sql
+  - name: fct_deferred_revenue
+    path: 09_accounting/fct_deferred_revenue.sql
+  - name: fct_revenue_accounting_reconciliation
+    path: 09_accounting/fct_revenue_accounting_reconciliation.sql
+  - name: int_commission_earned
+    path: 09_accounting/int_commission_earned.sql
+  - name: fct_commission_amortization
+    path: 09_accounting/fct_commission_amortization.sql
+  - name: fct_commission_asset
+    path: 09_accounting/fct_commission_asset.sql
+  - name: fct_commission_accounting_reconciliation
+    path: 09_accounting/fct_commission_accounting_reconciliation.sql
+  - name: fct_accounting_enhanced_pnl
+    path: 09_accounting/fct_accounting_enhanced_pnl.sql
+  - name: fct_commission_sensitivity
+    path: 09_accounting/fct_commission_sensitivity.sql
+
 controls:
   - name: ctl_arr_reconciliation
     path: 08_controls/ctl_arr_reconciliation.sql
@@ -182,6 +207,8 @@ controls:
     path: 08_controls/ctl_forecast_controls.sql
   - name: ctl_bridge_commentary
     path: 08_controls/ctl_bridge_commentary.sql
+  - name: ctl_accounting_enhancements
+    path: 08_controls/ctl_accounting_enhancements.sql
 
 # Models exported to data/marts/<name>.csv for the "readable without running" convention.
 marts:
@@ -229,3 +256,13 @@ marts:
   - int_commentary_candidates
   - fct_commentary_output
   - fct_commentary_evidence
+  - int_contract_billing_schedule
+  - fct_billings
+  - fct_deferred_revenue
+  - fct_revenue_accounting_reconciliation
+  - int_commission_earned
+  - fct_commission_amortization
+  - fct_commission_asset
+  - fct_commission_accounting_reconciliation
+  - fct_accounting_enhanced_pnl
+  - fct_commission_sensitivity

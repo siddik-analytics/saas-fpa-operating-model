@@ -3,6 +3,123 @@
 All notable changes to this project are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [v0.7] - SaaS accounting enhancements: deferred revenue and ASC 340-40 commission capitalisation
+
+Phase 8 of the build described in `docs/PHASE1_SPEC.md`. Adds the accounting mechanics that sit
+between bookings, ARR, billings, recognised revenue, commission cash and commission expense: a
+contract-level billing and deferred-revenue schedule, and an ASC 340-40 sales commission
+capitalisation schedule with a full asset rollforward and a GAAP-versus-cash view.
+
+This is an **enhancement and reconciliation layer**. It reads the frozen Phase 3-7 commercial
+output and the source ledger and writes back into neither. No Phase 3-7 model, control or output
+is altered, and `ctl_accounting_enhancements` fails the build if any of them moves.
+
+### Added
+
+**DuckDB analytical layer** - `sql/09_accounting/`
+- `int_contract_billing_schedule` (contract x month) - the engine. Billing cadence read from
+  `fact_contract.billing_frequency`, never inferred from segment; in-force monthly rate taken from
+  `fact_subscription_monthly`; scheduled invoices at each period anchor, prorated co-terminous
+  invoices for mid-term expansion (PHASE1_SPEC 2.5), and true in-arrears invoicing for
+  month-to-month agreements. Billings and revenue are computed off one rate series per contract,
+  so every one of the 2,213 in-scope contracts self-liquidates to a net position of exactly zero
+  and the deferred-revenue rollforward closes with no plug.
+- `fct_billings` (month x segment) - billings split into scheduled / prorated / arrears
+  components, recognised revenue, the deferral build, TTM billings and revenue, and the TTM
+  billings-to-revenue multiple. Billings growth is deliberately not headlined: 88% of in-force MRR
+  bills in advance, so monthly and quarterly billings are driven by the renewal calendar.
+- `fct_deferred_revenue` (month x segment) - the rollforward in both gross and net form. The
+  unbilled receivable arising on arrears-billed contracts is reported as its own non-negative
+  column and is never netted into deferred revenue; whether it is technically an ASC 606 contract
+  asset or a receivable pending invoicing is not asserted, because the source records no invoicing
+  or legal-right detail. Long-term deferred revenue is shown to be structurally zero from the
+  contract population rather than assumed.
+- `fct_revenue_accounting_reconciliation` (month) - contract analytical revenue vs source GL
+  (accounts 4000 + 4010) vs Phase 6 management revenue, with the difference quantified and
+  explained rather than closed. The contract schedule is a contract-level monthly ratable
+  analytical schedule - more granular than the ledger's company-level lagged-ARR convention, but
+  not a full ASC 606 subledger.
+- `int_commission_earned` (path x month x deal type) - commission earned at the approved rates
+  (New Logo 9%, Expansion 6%, Renewal Uplift 3%), split into the 41% expensed as incurred and the
+  59% capitalised per `config: gl.commission_expensed_share`. History reads closed-won CRM
+  opportunity ACV; Jul-2026 onward reads the frozen `fct_arr_forecast` movement unchanged.
+- `fct_commission_amortization` (path x cohort x month) - 36-month straight-line runoff by
+  capitalisation cohort, beginning in the month of capitalisation.
+- `fct_commission_asset` (path x month) - the asset rollforward, the accrued commission liability
+  rollforward, and the cash view (50% on booking, 50% on collection per the source collections
+  curve).
+- `fct_commission_accounting_reconciliation` (path x month) - ASC 340-40 vs source GL accounts
+  6030 / 6040 vs the Phase 6 simplified treatment, with the accounting adjustment isolated.
+- `fct_accounting_enhanced_pnl` (path x month) - the accounting-enhanced analytical S&M and
+  operating-income view, explicitly labelled as an analytical view rather than a new Base
+  forecast. Nothing downstream reads it.
+- `fct_commission_sensitivity` (variant x path x month) - 24 / 36 / 60-month useful lives and a
+  deal-type eligibility split (New Logo and Expansion capitalised, Renewal Uplift expensed under
+  the stated practical-expedient interpretation), published as labelled sensitivities per
+  PHASE1_SPEC 8.7. No variant is presented as the authoritative GAAP outcome.
+
+**Controls**
+- `ctl_accounting_enhancements` - the build gate, thirteen check families (A-M). Every rollforward
+  is recomputed from stored component columns rather than read from a model's own residual column,
+  and every opening balance is re-derived as the prior month's closing balance. Deferred revenue
+  is independently re-aggregated from the contract schedule; the commission asset is independently
+  rebuilt as the sum of every cohort's unamortised balance; commission earned is independently
+  recomputed from `stg_fact_crm_opportunity`, bypassing every 05_gtm and 09_accounting model. The
+  control was mutation-tested against 23 deliberate corruptions, all of which it catches.
+  `python -m src.build` and `python -m src.run_sql` both exit non-zero on a violation.
+
+**Reporting and documentation**
+- `src/accounting_report.py` - generates `reports/accounting_enhancements_validation_report.md`:
+  the executive accounting scorecard, the bookings / billings / ARR / revenue separation, the
+  deferred-revenue rollforward with an independent size check, the historical revenue
+  reconciliation, commission earned by deal type, the commission asset rollforward, GAAP versus
+  cash commission, the Base forecast accounting effect, Bear / Base / Bull consequences, the
+  accounting-enhanced P&L view, the judgement sensitivity, controls and known limitations.
+- `docs/accounting_enhancements.md` - the source capability assessment, the billing convention and
+  its telescoping-sum proof, the two window conventions, the deferred-revenue methodology, the
+  revenue-recognition residual against the GL, the ASC 340-40 interpretation, commission
+  eligibility, capitalisation policy, useful life, renewal-commission treatment, the GAAP versus
+  management/cash view, and fourteen stated limitations.
+- `tests/test_accounting_enhancements.py` - 35 tests. They rebuild balances from the raw source
+  (`fact_contract` cadence, `fact_subscription_monthly` MRR, `fact_crm_opportunity` ACV,
+  `fact_gl_actuals` accounts 6030 / 6040) rather than reading a model's own residual columns.
+
+### Findings
+
+- **The source ledger's commission mechanic reproduces exactly.** Immediate expense ties to
+  account 6030 to the cent in all 30 actual months, and amortisation ties to account 6040 within
+  $0.01 a month. The accounting adjustment to every historical month is therefore exactly zero:
+  Phase 8 reproduces history rather than restating it.
+- **Contract analytical revenue runs +2.64% above the source GL in FY2025.** A difference in
+  recognition convention, not an accounting error in either series: the ledger recognises a 55/45
+  weighted lag of prior month-end ARR, the contract schedule recognises the current month's
+  in-force rate. Reported, bounded by control D, and left in place. Jan-2024 is a ledger boundary
+  artifact, flagged and excluded from the tolerance test rather than hidden.
+- **Deferred revenue of $10.56M at 30 Jun 2026** against a $33.02M ARR base, with an independent
+  reasonableness benchmark computed from the billing mix alone predicting $10.53M.
+- **The 36-month amortisation period follows from the rate card, not from preference.** Renewal
+  commission (3% on uplift only) is not commensurate with the initial commission (9% of ACV), so
+  under ASC 340-40-35-1 the expected benefit period extends beyond the 12-month initial term.
+- **The accounting adjustment is immaterial** - $22.8k in H2 2026 and $85.8k in FY2027, roughly
+  0.1-0.2% of revenue. Reported as a finding rather than dressed up as a swing factor.
+- **The frozen 41/59 policy is more conservative than a deal-type eligibility split**, which would
+  capitalise more because Renewal Uplift is only ~1.3% of earned commission.
+
+### Known limitations
+
+The revenue schedule is a contract-level monthly ratable analytical schedule, not a full ASC 606
+subledger: no daily service-period proration for mid-month commencement or termination, invoice
+months but no invoice dates, and contract grain rather than performance-obligation grain. The
+unbilled receivable's balance-sheet classification - contract asset versus receivable pending
+invoicing - is not asserted, because the source records no invoicing or legal-right detail. The
+commission asset is analytically derived, not GL-reconciled - the source carries no balance sheet.
+It opens at zero on 1 Jan 2024, matching the ledger's own cohort window and understating the true
+balance by the pre-2024 tail. Deferred revenue is subscription only; the source records services
+revenue but no services billing event. 42 of 2,255 contracts (1.9%), all with service starting on
+or after 2 Jun 2026, are outside the schedule. No commission impairment line, no accelerators, and
+no standalone-selling-price allocation. All fourteen are stated in
+`docs/accounting_enhancements.md` section 10 and in the validation report.
+
 ## [v0.6] — Board Budget → Q2 Base reforecast bridges and deterministic commentary
 
 Phase 7 of the build described in `docs/PHASE1_SPEC.md`. Turns the approved Phase 3–6

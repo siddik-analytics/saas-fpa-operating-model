@@ -1,6 +1,6 @@
 # Helio Systems — SaaS FP&A Operating Model
 
-### Work in progress — Budget-to-Reforecast Bridges and Deterministic Management Commentary
+### Work in progress — SaaS Accounting Enhancements: Deferred Revenue and ASC 340-40 Commission Capitalisation
 
 **Disclaimer.** Helio Systems, Inc. is a fictional company. All data in this repository is
 synthetically generated for portfolio demonstration purposes. No confidential, proprietary or
@@ -22,18 +22,18 @@ of truth for the build.
 
 ## Current status
 
-**Phase 7 of 9 is complete: Board Budget-to-Base-Reforecast bridges (ARR, revenue, gross profit,
-OpEx, operating income, headcount) and a deterministic, source-traceable management commentary
-engine.**
+**Phase 8 of 9 is complete: contract-level billing mechanics and a deferred-revenue rollforward,
+plus ASC 340-40 sales commission capitalisation with a full asset rollforward and a GAAP-versus-
+cash view.**
 
-The raw source dataset (Phase 2), the customer-grain ARR engine (Phase 3), the retention /
-renewal layer (Phase 4), the GTM capacity and pipeline layer (Phase 5) and the driver-based Q2
-reforecast, scenarios, runway and hiring decision (Phase 6) are now frozen as the analytical
-source of truth. Phase 7 reads the FY2026 Board-Approved budget (`fact_budget`) at its own GL
-grain and builds a full set of Budget-to-Base variance bridges that each reconcile exactly, plus
-a SQL-templated commentary engine with no LLM anywhere in the pipeline. Deferred revenue,
-commissions, ASC 340-40 capitalisation, the Excel model, Power BI and the executive presentation
-pack do not exist yet.
+Phases 2-7 are frozen as the analytical source of truth: the raw source dataset, the
+customer-grain ARR engine, the retention / renewal layer, the GTM capacity and pipeline layer,
+the driver-based Q2 reforecast with scenarios, runway and the hiring decision, and the
+Budget-to-Base bridges with deterministic commentary. Phase 8 is an **enhancement and
+reconciliation layer** on top of them: it reads the frozen commercial output and the source
+ledger, and writes back into neither. Where the contract-level accounting method differs from the
+frozen Phase 6 management view, the difference is quantified and explained rather than closed.
+The Excel model, Power BI and the executive presentation pack do not exist yet.
 
 | Phase | Scope | Status |
 |---|---|---|
@@ -43,8 +43,9 @@ pack do not exist yet.
 | 4 | Retention cohorts, NRR / GRR, renewal base and outcomes | Complete |
 | 5 | GTM capacity, pipeline, CRM-to-ARR reconciliation, unit economics | Complete |
 | 6 | Driver-based reforecast, Bear / Base / Bull, cash runway, hiring scenario | Complete |
-| **7** | **Budget-to-reforecast bridges and deterministic management commentary** | **Complete** |
-| 8–9 | Accounting depth, presentation | Not started |
+| 7 | Budget-to-reforecast bridges and deterministic management commentary | Complete |
+| **8** | **Deferred revenue, billing mechanics and ASC 340-40 commission capitalisation** | **Complete** |
+| 9 | Excel model, Power BI, executive presentation pack | Not started |
 
 ## Build
 
@@ -270,37 +271,98 @@ New Logo operating diagnosis, headcount, Board-policy runway context, the hiring
 generated commentary are all in
 [reports/executive_variance_report.md](reports/executive_variance_report.md).
 
+## What Phase 8 produces
+
+Two reconciled accounting schedules that sit between the commercial metrics and the P&L: a
+contract-level billing and deferred-revenue schedule, and an ASC 340-40 sales commission
+capitalisation schedule. Both read the frozen Phase 3-7 output and the source ledger; neither
+writes back. Built with DuckDB from `sql/manifest.yml`; run with `python -m src.run_sql`, or as
+part of `python -m src.build`, which treats a `ctl_accounting_enhancements` violation as a build
+failure.
+
+| Model | Grain | Purpose |
+|---|---|---|
+| `int_contract_billing_schedule` | contract x month | The engine: billing cadence, in-force rate, scheduled / prorated / arrears invoices, recognised revenue, net contract position |
+| `fct_billings` | month x segment | Billings, revenue, TTM series and the deferral build |
+| `fct_deferred_revenue` | month x segment | The rollforward, with the arrears unbilled receivable reported separately and never netted |
+| `fct_revenue_accounting_reconciliation` | month | Contract schedule vs source GL vs Phase 6 management revenue |
+| `int_commission_earned` | path x month x deal type | Earned, expensed and capitalised commission, from CRM actuals and the frozen forecast ARR movement |
+| `fct_commission_amortization` | path x cohort x month | 36-month straight-line runoff by capitalisation cohort |
+| `fct_commission_asset` | path x month | Asset rollforward, accrued-liability rollforward, GAAP vs cash commission |
+| `fct_commission_accounting_reconciliation` | path x month | ASC 340-40 vs source GL vs the Phase 6 simplified treatment |
+| `fct_accounting_enhanced_pnl` | path x month | The clearly labelled analytical S&M and operating-income view |
+| `fct_commission_sensitivity` | variant x path x month | 24 / 36 / 60-month useful lives and a deal-type eligibility split |
+
+**Bookings, billings, ARR and revenue are kept apart.** Billing cadence is read from
+`fact_contract.billing_frequency`, never inferred from segment; mid-term expansion raises a
+prorated co-terminous invoice, per PHASE1_SPEC 2.5. Every one of the 2,213 in-scope contracts
+self-liquidates to a net position of exactly zero, so the deferred-revenue rollforward closes with
+no plug anywhere. Revenue is a **contract-level monthly ratable analytical schedule** — each
+contract's observed in-force MRR at month grain, tying to the Phase 3 ARR engine's own basis at
+zero difference in all 30 months. It is more contract-granular than the source ledger's
+company-level lagged-ARR management convention, but it is not a full ASC 606 subledger: no daily
+service-period proration, invoice months rather than invoice dates, and no
+standalone-selling-price allocation.
+
+**ASC 340-40 is applied to the frozen policy, not a chosen one.** Commission earned is closed-won
+ACV x the approved 9% / 6% / 3% rates; 41% is expensed as incurred and 59% capitalised
+(`config: gl.commission_expensed_share`), amortised straight-line over 36 months. Immediate
+expense ties to account 6030 and amortisation to account 6040 **to the cent in every actual
+month**, so the accounting adjustment to history is exactly zero. The amortisation period exceeds
+the 12-month initial contract term because renewal commission (3% on uplift only) is not
+commensurate with the initial commission (9% of ACV) - the ASC 340-40-35-1 expected-benefit test.
+
+Full methodology - the source capability assessment, the billing convention, the two window
+conventions, the revenue-recognition residual against the GL, the ASC 340-40 interpretation,
+useful life, renewal treatment, the GAAP-versus-cash view and every limitation - is in
+[`docs/accounting_enhancements.md`](docs/accounting_enhancements.md).
+
+`ctl_accounting_enhancements` enforces thirteen check families: the deferred-revenue rollforward
+in gross and net form, no negative deferred revenue or unbilled receivable, billing completeness and
+cadence, revenue reconciliation to the GL within a documented tolerance, an independent
+recomputation of commission earned straight from `fact_crm_opportunity`, the capitalisation
+identity, the commission-asset and accrued-liability rollforwards, no amortisation before
+capitalisation, useful life respected, no negative asset, the GAAP commission expense identity
+and its tie to accounts 6030 and 6040, that no frozen Phase 6 output has changed, and no
+duplicate records. Every rollforward is recomputed from stored components rather than read from a
+model's own residual column. As built, zero violations, alongside every frozen Phase 3-7 control.
+The full schedules are in
+[reports/accounting_enhancements_validation_report.md](reports/accounting_enhancements_validation_report.md).
+
 ## Validation
 
 The build runs 108 checks against the written CSVs and publishes the numbers behind each one
 in [the source validation report](reports/source_validation_report.md): primary and foreign keys,
 date ordering, the ARR and MRR identity, ARR and logo anchors, contract mechanics, renewal
 seasonality, product attach, CRM win rates and sales cycles, headcount and attrition, and the
-FY2025 profit and loss. It then builds the ARR, retention, GTM, forecast and bridge/commentary analytical layer and runs
-`ctl_arr_reconciliation`, `ctl_retention_bounds`, `ctl_gtm_controls`, `ctl_forecast_controls` and
-`ctl_bridge_commentary`, publishing
+FY2025 profit and loss. It then builds the ARR, retention, GTM, forecast, bridge/commentary and accounting analytical
+layer and runs `ctl_arr_reconciliation`, `ctl_retention_bounds`, `ctl_gtm_controls`,
+`ctl_forecast_controls`, `ctl_bridge_commentary` and `ctl_accounting_enhancements`, publishing
 [the ARR validation report](reports/arr_validation_report.md),
 [the retention validation report](reports/retention_validation_report.md),
 [the GTM validation report](reports/gtm_validation_report.md),
 [the forecast & runway validation report](reports/forecast_runway_validation_report.md) and
-[the executive variance report](reports/executive_variance_report.md).
+[the executive variance report](reports/executive_variance_report.md) and
+[the accounting enhancements validation report](reports/accounting_enhancements_validation_report.md).
 
-All six reports are regenerated on every build, so they always describe the committed data.
+All seven reports are regenerated on every build, so they always describe the committed data.
 
 ## Repository structure
 
 ```text
 config/         assumptions.yml, chart_of_accounts.yml, name_lists.yml, commentary_rules.yml
 data/raw/       the 13 committed source CSVs
-data/marts/     curated ARR-engine, retention, GTM, forecast and bridge/commentary extracts,
-                regenerated by the build
+data/marts/     curated ARR-engine, retention, GTM, forecast, bridge/commentary and accounting
+                extracts, regenerated by the build
 sql/            01_staging -> 02_core -> 03_arr -> 04_retention_renewals -> 05_gtm -> 06_forecast
-                -> 07_bridge -> 08_controls, manifest.yml
+                -> 07_bridge -> 09_accounting -> 08_controls, manifest.yml
 docs/           PHASE1_SPEC.md, data_dictionary.md, generation_methodology.md, arr_engine.md,
-                retention_renewals.md, gtm_finance.md, forecast_runway.md
+                retention_renewals.md, gtm_finance.md, forecast_runway.md, bridge_commentary.md,
+                accounting_enhancements.md
 reports/        source_validation_report.md, arr_validation_report.md,
                 retention_validation_report.md, gtm_validation_report.md,
-                forecast_runway_validation_report.md, executive_variance_report.md, all regenerated
+                forecast_runway_validation_report.md, executive_variance_report.md,
+                accounting_enhancements_validation_report.md, all regenerated
 src/            generation, validation, the SQL runner and the build entry point
 tests/          pytest suite
 ```
@@ -324,6 +386,10 @@ tests/          pytest suite
 - [Budget-to-reforecast bridges and commentary](docs/bridge_commentary.md) — the segment
   allocation methodology, the revenue-bridge recognition-mechanic decomposition, materiality and
   polarity rules, the deterministic commentary engine and known limitations.
+- [Accounting enhancements](docs/accounting_enhancements.md) - the source capability assessment,
+  the contract billing convention, the deferred-revenue methodology, the revenue reconciliation to
+  the source GL, the ASC 340-40 interpretation, useful life and the non-commensurate-renewal
+  judgement, the GAAP-versus-cash commission view and known limitations.
 - [Phase 1 specification](docs/PHASE1_SPEC.md) — the frozen design this build implements.
 
 ## Licence

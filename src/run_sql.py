@@ -17,7 +17,7 @@ from typing import Any
 import duckdb
 import yaml
 
-from . import bridge_report, forecast_report, gtm_report, retention_report
+from . import accounting_report, bridge_report, forecast_report, gtm_report, retention_report
 from .arr_report import write_report
 from .commentary_rules import load_commentary_rules
 from .config import REPO_ROOT, REPORTS_DIR, load_config
@@ -32,6 +32,7 @@ RETENTION_REPORT_PATH = REPORTS_DIR / "retention_validation_report.md"
 GTM_REPORT_PATH = REPORTS_DIR / "gtm_validation_report.md"
 FORECAST_REPORT_PATH = REPORTS_DIR / "forecast_runway_validation_report.md"
 EXECUTIVE_VARIANCE_REPORT_PATH = REPORTS_DIR / "executive_variance_report.md"
+ACCOUNTING_REPORT_PATH = REPORTS_DIR / "accounting_enhancements_validation_report.md"
 
 
 def load_manifest(path: Path = MANIFEST_PATH) -> dict[str, Any]:
@@ -124,6 +125,10 @@ def build_and_validate(*, verbose: bool = True) -> tuple[int, duckdb.DuckDBPyCon
     bridge_report.write_report(con, cfg, control_results, EXECUTIVE_VARIANCE_REPORT_PATH)
     if verbose:
         print(f"Report: {EXECUTIVE_VARIANCE_REPORT_PATH}")
+
+    accounting_report.write_report(con, cfg, control_results, ACCOUNTING_REPORT_PATH)
+    if verbose:
+        print(f"Report: {ACCOUNTING_REPORT_PATH}")
 
     return (1 if failed else 0), con
 
