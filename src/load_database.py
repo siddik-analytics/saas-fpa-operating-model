@@ -5,8 +5,9 @@ dim_date and fact_subscription_monthly. Phase 4 (retention and renewals) added a
 fact_contract. Phase 5 (GTM capacity, pipeline and CRM-to-ARR reconciliation) adds six more:
 dim_sales_rep, dim_employee, fact_crm_opportunity, fact_marketing_spend, fact_gl_actuals and the
 FY2026-Board-Approved rows of fact_budget (a static, already-approved planning input read as the
-New ARR target -- not driver-based forecasting; fact_forecast, the Q2 reforecast, is not loaded
-here and belongs to Phase 6).
+New ARR target -- not driver-based forecasting). Phase 6 adds the last two: fact_requisition
+(known hiring pipeline) and fact_forecast (the source Q2 reforecast, loaded ONLY as a benchmark --
+nothing in the Phase 6 driver-based forecast reads it; see docs/forecast_runway.md).
 
 Raw tables are loaded byte-for-byte as ``raw_<name>`` -- no typing, no filtering. Typing happens
 in 01_staging, per the layering convention (PHASE1_SPEC section 5).
@@ -34,6 +35,8 @@ RAW_TABLES = (
     "fact_marketing_spend",
     "fact_gl_actuals",
     "fact_budget",
+    "fact_requisition",
+    "fact_forecast",
 )
 
 

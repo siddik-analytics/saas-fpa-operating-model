@@ -1,6 +1,6 @@
 # Helio Systems — SaaS FP&A Operating Model
 
-### Work in progress — GTM Capacity, Pipeline and CRM-to-ARR Reconciliation
+### Work in progress — Driver-Based Q2 Reforecast, Scenarios and Runway-Constrained Hiring
 
 **Disclaimer.** Helio Systems, Inc. is a fictional company. All data in this repository is
 synthetically generated for portfolio demonstration purposes. No confidential, proprietary or
@@ -22,17 +22,19 @@ of truth for the build.
 
 ## Current status
 
-**Phase 5 of 9 is complete: GTM capacity, pipeline, CRM-to-ARR reconciliation, rep performance
-and unit economics.**
+**Phase 6 of 9 is complete: driver-based Q2 reforecast, Bear / Base / Bull scenarios, cash
+runway and a runway-constrained hiring decision — the minimum shippable build.**
 
-The raw source dataset (Phase 2), the customer-grain ARR engine (Phase 3) and the retention /
-renewal layer (Phase 4) are now frozen as the analytical source of truth. Phase 5 loads six more
-raw tables — `dim_sales_rep`, `dim_employee`, `fact_crm_opportunity`, `fact_marketing_spend`,
-`fact_gl_actuals` and the FY2026 board budget — into the DuckDB layer for the first time and
-turns them into sales rep capacity with ramp, pipeline coverage, a customer-matched CRM-to-ARR
-bridge, unit economics (CAC / ARPA / payback) with a documented allocation methodology, and two
-separately-defined sales-efficiency metrics. The financial forecast, scenarios and reporting
-artifacts do not exist yet. Nothing in this repository should be read as a finished analysis.
+The raw source dataset (Phase 2), the customer-grain ARR engine (Phase 3), the retention /
+renewal layer (Phase 4) and the GTM capacity and pipeline layer (Phase 5) are now frozen as the
+analytical source of truth. Phase 6 loads the two remaining raw tables — `fact_requisition` and
+`fact_forecast` (the latter loaded strictly as a benchmark, never as a forecasting input) — and
+builds an independent, bottom-up FY2026 Q2 reforecast: a forward ARR waterfall constrained
+jointly by sales capacity and CRM pipeline, headcount and payroll, a monthly P&L, three operating
+scenarios, a cash runway model, and a runway-constrained hiring decision with hire counts computed
+from the capacity gap rather than picked by hand. The polished budget-to-reforecast bridge,
+deterministic commentary engine, deferred revenue, commissions and presentation artifacts do not
+exist yet.
 
 | Phase | Scope | Status |
 |---|---|---|
@@ -40,8 +42,8 @@ artifacts do not exist yet. Nothing in this repository should be read as a finis
 | 2 | Synthetic source data, 13 tables, validation suite | Complete |
 | 3 | ARR engine, customer-grain movement classification, waterfall | Complete |
 | 4 | Retention cohorts, NRR / GRR, renewal base and outcomes | Complete |
-| **5** | **GTM capacity, pipeline, CRM-to-ARR reconciliation, unit economics** | **Complete** |
-| 6 | Financials, driver-based forecast, runway scenario | Not started |
+| 5 | GTM capacity, pipeline, CRM-to-ARR reconciliation, unit economics | Complete |
+| **6** | **Driver-based reforecast, Bear / Base / Bull, cash runway, hiring scenario** | **Complete** |
 | 7–9 | Bridge and commentary, accounting depth, presentation | Not started |
 
 ## Build
@@ -60,9 +62,10 @@ validates them, and writes
 builds the DuckDB analytical layer from [`sql/manifest.yml`](sql/manifest.yml), runs the
 reconciliation controls, exports `data/marts/*.csv`, and writes
 [reports/arr_validation_report.md](reports/arr_validation_report.md),
-[reports/retention_validation_report.md](reports/retention_validation_report.md) and
-[reports/gtm_validation_report.md](reports/gtm_validation_report.md). Then it runs the test
-suite. A critical source-data failure or a reconciliation violation names what broke and exits
+[reports/retention_validation_report.md](reports/retention_validation_report.md),
+[reports/gtm_validation_report.md](reports/gtm_validation_report.md) and
+[reports/forecast_runway_validation_report.md](reports/forecast_runway_validation_report.md).
+Then it runs the test suite. A critical source-data failure or a reconciliation violation names what broke and exits
 non-zero — nothing downstream runs over a broken dataset or a waterfall that doesn't tie.
 
 It takes roughly 80–95 seconds, most of which is the source-data calibration loop described
@@ -199,6 +202,36 @@ divide-by-zero guard and a sales-efficiency denominator guard. As built, zero vi
 capacity, pipeline, win-rate, CRM-to-ARR bridge, unit-economics and sales-efficiency figures are
 all in [reports/gtm_validation_report.md](reports/gtm_validation_report.md).
 
+## What Phase 6 produces
+
+A driver-based FY2026 Q2 reforecast, built from two raw tables loaded for the first time —
+`fact_requisition` (known hiring pipeline) and `fact_forecast` (the source Q2 reforecast, loaded
+strictly as a **benchmark** — no model here reads it) — plus every approved Phase 3–5 mart. The
+forecast is independently derived from actuals, CRM pipeline and sales capacity; it is not solved
+backward to match the benchmark or the Board budget.
+
+| Model | Grain | Purpose |
+|---|---|---|
+| `int_forecast_drivers` | driver × scenario × segment | The Bear/Base/Bull-resolved assumptions table — every forecast driver in one place |
+| `int_gtm_capacity_pipeline_forecast` | path × segment × month | The GTM constraint — New Logo capacity vs. pipeline-supported bookings, `LEAST()` of the two |
+| `fct_arr_forecast` | path × segment × month | The forward ARR waterfall, actual + forecast |
+| `fct_headcount_forecast` | path × function × month | Headcount rollforward, actual + forecast, net-of-backfill attrition |
+| `fct_pnl_reforecast` | path × month | Monthly P&L, built bottom-up from payroll and non-payroll drivers |
+| `fct_cash_runway` | path × month | Simplified operating cash / burn model from the single 30 Jun 2026 cash anchor |
+| `fct_scenario_monthly` | scenario × month | Consolidated Bear / Base / Bull output |
+| `fct_hiring_scenario` | case × month | No Incremental / Targeted / Full Capacity-Close hiring, hire counts computed from the capacity gap |
+
+Full methodology — the capacity-and-pipeline constraint, the attrition hierarchy, the ARR/P&L/cash
+build, the scenario and hiring-decision design, and known limitations — is in
+[`docs/forecast_runway.md`](docs/forecast_runway.md).
+
+`ctl_forecast_controls` enforces actual preservation, the forecast cutover, ARR waterfall and
+segment reconciliation, headcount and cash rollforwards, the capacity-vs-blended bound, P&L
+arithmetic, scenario-assumption completeness and hiring-impact timing, alongside the frozen
+Phase 3–5 controls. As built, zero violations. The reforecast, the GTM constraint, the P&L, the
+scenario comparison, the cash runway and the hiring decision are all in
+[reports/forecast_runway_validation_report.md](reports/forecast_runway_validation_report.md).
+
 ## Validation
 
 The build runs 108 checks against the written CSVs and publishes the numbers behind each one
@@ -211,20 +244,21 @@ FY2025 profit and loss. It then builds the ARR, retention and GTM analytical lay
 [the retention validation report](reports/retention_validation_report.md) and
 [the GTM validation report](reports/gtm_validation_report.md).
 
-All four reports are regenerated on every build, so they always describe the committed data.
+All five reports are regenerated on every build, so they always describe the committed data.
 
 ## Repository structure
 
 ```text
 config/         assumptions.yml, chart_of_accounts.yml, name_lists.yml
 data/raw/       the 13 committed source CSVs
-data/marts/     curated ARR-engine, retention and GTM extracts, regenerated by the build
-sql/            01_staging -> 02_core -> 03_arr -> 04_retention_renewals -> 05_gtm -> 08_controls,
-                manifest.yml
+data/marts/     curated ARR-engine, retention, GTM and forecast extracts, regenerated by the build
+sql/            01_staging -> 02_core -> 03_arr -> 04_retention_renewals -> 05_gtm -> 06_forecast
+                -> 08_controls, manifest.yml
 docs/           PHASE1_SPEC.md, data_dictionary.md, generation_methodology.md, arr_engine.md,
-                retention_renewals.md, gtm_finance.md
+                retention_renewals.md, gtm_finance.md, forecast_runway.md
 reports/        source_validation_report.md, arr_validation_report.md,
-                retention_validation_report.md, gtm_validation_report.md, all regenerated
+                retention_validation_report.md, gtm_validation_report.md,
+                forecast_runway_validation_report.md, all regenerated
 src/            generation, validation, the SQL runner and the build entry point
 tests/          pytest suite
 ```
@@ -242,6 +276,9 @@ tests/          pytest suite
 - [GTM capacity, pipeline and unit economics](docs/gtm_finance.md) — ramp and quota-crediting
   methodology, the CRM-to-ARR bridge, the cost-allocation deviation, CAC/payback, sales
   efficiency and known limitations.
+- [Driver-based reforecast, scenarios and runway](docs/forecast_runway.md) — the capacity-and-
+  pipeline constraint, the attrition hierarchy, the ARR/P&L/cash build, the Bear/Base/Bull and
+  hiring-decision design, the `fact_forecast` benchmark treatment and known limitations.
 - [Phase 1 specification](docs/PHASE1_SPEC.md) — the frozen design this build implements.
 
 ## Licence

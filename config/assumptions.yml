@@ -1026,3 +1026,109 @@ planning:
     revised_sales_hires: 6
     fy2027_growth_rate: 0.165
     fy2027_opex_growth: 0.095
+
+# ---------------------------------------------------------------------------
+# PHASE 6 - driver-based Q2 reforecast, Bear/Base/Bull scenarios, cash runway
+# and runway-constrained hiring. Every driver a reviewer would want to
+# challenge lives here, the same convention as every block above.
+#
+# fact_forecast (the source FY2026-Q2-Reforecast) is NOT read by anything in
+# this block or by anything downstream of it. It is loaded separately, purely
+# as a benchmark comparison after the independent driver-based forecast below
+# is fully built (docs/forecast_runway.md). Nothing here is solved backward
+# to match it.
+# ---------------------------------------------------------------------------
+forecast:
+  horizon:
+    reforecast_start: 2026-07-31       # first forecast month; Jan-Jun 2026 stays actual, unchanged
+    fy2026_end: 2026-12-31
+    runway_horizon_end: 2027-12-31     # dim_date's own calendar spine ends here
+    board_decision_month: 2026-09-30   # Board meets September 2026 (PHASE1_SPEC 2.2)
+    incremental_hire_start_month: 2026-10-31   # one month after Board approval, for both hiring cases
+
+  scenarios: [Bear, Base, Bull]
+
+  # Scenario multipliers - MANAGEMENT ASSUMPTIONS, not derived from history.
+  # Applied on top of Base-case, data-derived rates (docs/forecast_runway.md
+  # shows the derivation of every Base rate). Five levers, each tied to one
+  # specific, separately modelled mechanism - never a blanket revenue or
+  # EBITDA multiplier. Headcount / hiring timing is deliberately NOT one of
+  # these five: incremental GTM hiring is a separate management-action
+  # dimension (hiring_cases below), layered onto Base only, so operating
+  # performance and management response stay distinguishable rather than
+  # coupled (e.g. Bear does not automatically trigger a headcount response).
+  scenario_multipliers:
+    win_rate:          {Bear: 0.85, Base: 1.00, Bull: 1.15}   # pipeline -> booked conversion
+    attainment:        {Bear: 0.85, Base: 1.00, Bull: 1.15}   # rep productive attainment vs. expected
+    pipeline_creation:  {Bear: 0.80, Base: 1.00, Bull: 1.25}  # forward monthly pipeline volume, months beyond the current CRM snapshot
+    retention_severity: {Bear: 1.20, Base: 1.00, Bull: 0.85}  # contraction + non-renewal churn rate multiplier; >1 = worse retention
+    expansion:          {Bear: 0.85, Base: 1.00, Bull: 1.20}  # mid-term expansion rate multiplier
+
+  # Reactivation is deliberately NOT scenario-varied: it is a small,
+  # historically noisy line (docs/retention_renewals.md), and scenario-tuning
+  # it would manufacture false precision on a line nobody is managing to.
+  # Held at the trailing company monthly run rate in every scenario.
+  reactivation_scenario_invariant: true
+
+  # Sales-cycle lag applied when converting a forecasted month's pipeline
+  # CREATION into an expected CLOSE month, by segment - whole months, rounded
+  # from the GTM validation report's own median sales-cycle-days figures
+  # (SMB ~26, Mid-Market ~58, Enterprise ~113.5 days).
+  pipeline_creation_to_close_lag_months: {SMB: 1, Mid-Market: 2, Enterprise: 4}
+
+  # Non-payroll OpEx: held at the trailing-quarter actual monthly run rate per
+  # GL account_category, flat forward, scenario-invariant - management
+  # discretionary spend is not assumed to flex automatically with the
+  # operating scenario (PHASE1_SPEC-analogous instruction: don't make Bear
+  # automatically include a cost response unless the case design calls for
+  # it). Sales Commissions and Commission Amortisation are the one exception:
+  # they are computed from forecasted bookings x the existing commission
+  # rates (sales_reps.commission_rate_*), because a flat run rate on a line
+  # that is mechanically a function of ARR movement would understate Bull and
+  # overstate Bear.
+  non_payroll_opex_trailing_window_months: 3
+  non_payroll_opex_trailing_window_end: 2026-06-30
+
+  # Payroll: loaded monthly cost per FTE by function, derived from actual GL
+  # payroll (Salaries & Wages + Bonus + Payroll Taxes & Benefits, account
+  # group `payroll`) over the trailing window below, divided by that same
+  # window's average actual headcount by function - a transparent loaded-cost
+  # method built from the actual GL and the actual employee population, not
+  # an invented individual salary (chart_of_accounts.yml cost_center_groups.payroll).
+  payroll_derivation_window: {start: 2026-01-31, end: 2026-06-30}
+
+  # Attrition - binding Phase 1 policy assumption
+  # (employees.annual_attrition_by_function / sales_reps.annual_attrition),
+  # converted to a monthly hazard: 1 - (1 - annual)^(1/12). Deliberately NOT
+  # the historical generated attrition series: dim_employee carries zero
+  # known future terminations past the 30 Jun 2026 reporting date (checked),
+  # so tier 1 of the attrition hierarchy (known future departures) is empty,
+  # and docs/generation_methodology.md's own hazard_year_drift /
+  # smb_hazard_drift knobs confirm the generated series runs hot in Sales for
+  # source-calibration reasons unrelated to a forward planning rate -
+  # mechanically extrapolating it would inherit that artifact. The stated
+  # policy rate is tier 2 and is used instead; see docs/forecast_runway.md.
+
+  # Existing OPEN sales requisitions at 30 Jun 2026 (fact_requisition) are
+  # assumed to fill this many days after the reporting date - not a new
+  # driver, a single point estimate consistent with the source data's own
+  # 2026 requisition-slippage behaviour (requisitions.slippage_days /
+  # slippage_year_multiplier), which already shows planned starts running 30
+  # to 90+ days late in 2026. Every currently open req is assumed to fill
+  # exactly once, on this single date, in every scenario and hiring case
+  # (fill timing is not itself a scenario lever here - only the incremental
+  # hiring-case decision is).
+  open_req_assumed_fill_date: 2026-08-31
+
+  # Hiring scenario cases (management-action layer, evaluated under Base
+  # operating conditions only). Hire COUNTS and segment selection are
+  # computed in SQL from the capacity gap and pipeline headroom - never typed
+  # in here; only the qualitative case design and labels live in config.
+  hiring_cases:
+    no_incremental: {label: "No Incremental GTM Hiring"}    # = Base itself; zero hires beyond already-open reqs
+    targeted:       {label: "Targeted / Runway-Constrained Hiring"}
+    full_close:     {label: "Full Capacity-Close Hiring"}
+
+  # Cash / runway
+  capex_monthly: 0            # no capex driver exists in the source data; documented limitation
+  runway_burn_lookback_months: 3   # trailing-window average burn used for the "average recent monthly burn" runway figure

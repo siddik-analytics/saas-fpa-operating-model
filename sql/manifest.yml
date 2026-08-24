@@ -33,6 +33,12 @@ models:
     path: 01_staging/stg_fact_gl_actuals.sql
   - name: stg_fact_budget
     path: 01_staging/stg_fact_budget.sql
+  - name: stg_fact_requisition
+    path: 01_staging/stg_fact_requisition.sql
+  - name: stg_fact_forecast
+    path: 01_staging/stg_fact_forecast.sql
+  - name: stg_forecast_assumptions
+    path: 01_staging/stg_forecast_assumptions.sql
 
   # 02_core -- conformed dimensions and the mandatory customer-month aggregation
   - name: dim_customer
@@ -109,6 +115,27 @@ models:
   - name: fct_sales_efficiency
     path: 05_gtm/fct_sales_efficiency.sql
 
+  # 06_forecast -- driver-based Q2 reforecast, Bear/Base/Bull scenarios, cash runway and
+  # runway-constrained hiring (Phase 6)
+  - name: int_forecast_drivers
+    path: 06_forecast/int_forecast_drivers.sql
+  - name: int_gtm_capacity_pipeline_forecast
+    path: 06_forecast/int_gtm_capacity_pipeline_forecast.sql
+  - name: fct_arr_forecast
+    path: 06_forecast/fct_arr_forecast.sql
+  - name: fct_headcount_forecast
+    path: 06_forecast/fct_headcount_forecast.sql
+  - name: fct_pnl_reforecast
+    path: 06_forecast/fct_pnl_reforecast.sql
+  - name: fct_cash_runway
+    path: 06_forecast/fct_cash_runway.sql
+  - name: fct_cash_runway_policy
+    path: 06_forecast/fct_cash_runway_policy.sql
+  - name: fct_scenario_monthly
+    path: 06_forecast/fct_scenario_monthly.sql
+  - name: fct_hiring_scenario
+    path: 06_forecast/fct_hiring_scenario.sql
+
 controls:
   - name: ctl_arr_reconciliation
     path: 08_controls/ctl_arr_reconciliation.sql
@@ -116,6 +143,8 @@ controls:
     path: 08_controls/ctl_retention_bounds.sql
   - name: ctl_gtm_controls
     path: 08_controls/ctl_gtm_controls.sql
+  - name: ctl_forecast_controls
+    path: 08_controls/ctl_forecast_controls.sql
 
 # Models exported to data/marts/<name>.csv for the "readable without running" convention.
 marts:
@@ -142,3 +171,12 @@ marts:
   - int_gtm_cost_allocation
   - int_gtm_new_logo_mix
   - int_crm_opportunity_normalized
+  - int_forecast_drivers
+  - int_gtm_capacity_pipeline_forecast
+  - fct_arr_forecast
+  - fct_headcount_forecast
+  - fct_pnl_reforecast
+  - fct_cash_runway
+  - fct_cash_runway_policy
+  - fct_scenario_monthly
+  - fct_hiring_scenario

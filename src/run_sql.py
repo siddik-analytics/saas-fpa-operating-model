@@ -17,9 +17,10 @@ from typing import Any
 import duckdb
 import yaml
 
-from . import gtm_report, retention_report
+from . import forecast_report, gtm_report, retention_report
 from .arr_report import write_report
 from .config import REPO_ROOT, REPORTS_DIR, load_config
+from .forecast_assumptions import load_forecast_assumptions
 from .load_database import connect, load_raw_tables
 
 SQL_DIR = REPO_ROOT / "sql"
@@ -28,6 +29,7 @@ MARTS_DIR = REPO_ROOT / "data" / "marts"
 ARR_REPORT_PATH = REPORTS_DIR / "arr_validation_report.md"
 RETENTION_REPORT_PATH = REPORTS_DIR / "retention_validation_report.md"
 GTM_REPORT_PATH = REPORTS_DIR / "gtm_validation_report.md"
+FORECAST_REPORT_PATH = REPORTS_DIR / "forecast_runway_validation_report.md"
 
 
 def load_manifest(path: Path = MANIFEST_PATH) -> dict[str, Any]:
@@ -80,8 +82,10 @@ def build_and_validate(*, verbose: bool = True) -> tuple[int, duckdb.DuckDBPyCon
     """
     manifest = load_manifest()
     con = connect()
+    cfg = load_config()
 
     load_raw_tables(con)
+    load_forecast_assumptions(con, cfg)
     built = build_models(con, manifest)
     if verbose:
         print(f"Built {len(built)} SQL models")
@@ -98,7 +102,6 @@ def build_and_validate(*, verbose: bool = True) -> tuple[int, duckdb.DuckDBPyCon
     if verbose:
         print(f"Exported {len(written)} marts to {MARTS_DIR}")
 
-    cfg = load_config()
     write_report(con, cfg, control_results, ARR_REPORT_PATH)
     if verbose:
         print(f"Report: {ARR_REPORT_PATH}")
@@ -110,6 +113,10 @@ def build_and_validate(*, verbose: bool = True) -> tuple[int, duckdb.DuckDBPyCon
     gtm_report.write_report(con, cfg, control_results, GTM_REPORT_PATH)
     if verbose:
         print(f"Report: {GTM_REPORT_PATH}")
+
+    forecast_report.write_report(con, cfg, control_results, FORECAST_REPORT_PATH)
+    if verbose:
+        print(f"Report: {FORECAST_REPORT_PATH}")
 
     return (1 if failed else 0), con
 

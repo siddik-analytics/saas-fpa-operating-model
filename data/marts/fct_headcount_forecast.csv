@@ -1,0 +1,1921 @@
+path,function,month_end_date,beginning_headcount,hires,departures,ending_headcount,is_actual,period_label
+Base,Customer Success,2024-01-31,20.0,0.0,0.0,20.0,true,Actual
+Base,Customer Success,2024-02-29,20.0,1.0,0.0,21.0,true,Actual
+Base,Customer Success,2024-03-31,21.0,0.0,0.0,21.0,true,Actual
+Base,Customer Success,2024-04-30,21.0,0.0,0.0,21.0,true,Actual
+Base,Customer Success,2024-05-31,21.0,1.0,0.0,22.0,true,Actual
+Base,Customer Success,2024-06-30,22.0,0.0,0.0,22.0,true,Actual
+Base,Customer Success,2024-07-31,22.0,0.0,0.0,22.0,true,Actual
+Base,Customer Success,2024-08-31,22.0,1.0,1.0,22.0,true,Actual
+Base,Customer Success,2024-09-30,22.0,1.0,0.0,23.0,true,Actual
+Base,Customer Success,2024-10-31,23.0,1.0,1.0,23.0,true,Actual
+Base,Customer Success,2024-11-30,23.0,0.0,0.0,23.0,true,Actual
+Base,Customer Success,2024-12-31,23.0,0.0,0.0,23.0,true,Actual
+Base,Customer Success,2025-01-31,23.0,0.0,0.0,23.0,true,Actual
+Base,Customer Success,2025-02-28,23.0,0.0,0.0,23.0,true,Actual
+Base,Customer Success,2025-03-31,23.0,2.0,1.0,24.0,true,Actual
+Base,Customer Success,2025-04-30,24.0,1.0,1.0,24.0,true,Actual
+Base,Customer Success,2025-05-31,24.0,0.0,0.0,24.0,true,Actual
+Base,Customer Success,2025-06-30,24.0,1.0,1.0,24.0,true,Actual
+Base,Customer Success,2025-07-31,24.0,1.0,1.0,24.0,true,Actual
+Base,Customer Success,2025-08-31,24.0,0.0,0.0,24.0,true,Actual
+Base,Customer Success,2025-09-30,24.0,1.0,0.0,25.0,true,Actual
+Base,Customer Success,2025-10-31,25.0,0.0,0.0,25.0,true,Actual
+Base,Customer Success,2025-11-30,25.0,1.0,1.0,25.0,true,Actual
+Base,Customer Success,2025-12-31,25.0,0.0,0.0,25.0,true,Actual
+Base,Customer Success,2026-01-31,25.0,2.0,2.0,25.0,true,Actual
+Base,Customer Success,2026-02-28,25.0,1.0,1.0,25.0,true,Actual
+Base,Customer Success,2026-03-31,25.0,2.0,2.0,25.0,true,Actual
+Base,Customer Success,2026-04-30,25.0,2.0,1.0,26.0,true,Actual
+Base,Customer Success,2026-05-31,26.0,1.0,1.0,26.0,true,Actual
+Base,Customer Success,2026-06-30,26.0,0.0,0.0,26.0,true,Actual
+Base,Customer Success,2026-07-31,26.0,0.0,0.1022843684495065,25.897715631550493,false,FY2026 Reforecast
+Base,Customer Success,2026-08-31,25.897715631550493,2.0,0.10188198029454298,27.79583365125595,false,FY2026 Reforecast
+Base,Customer Success,2026-09-30,27.79583365125595,0.0,0.10934920348254806,27.686484447773402,false,FY2026 Reforecast
+Base,Customer Success,2026-10-31,27.686484447773402,0.0,0.10891902216645022,27.577565425606952,false,FY2026 Reforecast
+Base,Customer Success,2026-11-30,27.577565425606952,0.0,0.108490533189741,27.46907489241721,false,FY2026 Reforecast
+Base,Customer Success,2026-12-31,27.46907489241721,0.0,0.10806372989473445,27.361011162522477,false,FY2026 Reforecast
+Base,Customer Success,2027-01-31,27.361011162522477,0.0,0.10763860564994587,27.25337255687253,false,Forward Runway Projection
+Base,Customer Success,2027-02-28,27.25337255687253,0.0,0.10721515384994973,27.14615740302258,false,Forward Runway Projection
+Base,Customer Success,2027-03-31,27.14615740302258,0.0,0.10679336791535121,27.03936403510723,false,Forward Runway Projection
+Base,Customer Success,2027-04-30,27.03936403510723,0.0,0.1063732412925944,26.932990793814636,false,Forward Runway Projection
+Base,Customer Success,2027-05-31,26.932990793814636,0.0,0.10595476745390542,26.82703602636073,false,Forward Runway Projection
+Base,Customer Success,2027-06-30,26.82703602636073,0.0,0.10553793989725335,26.721498086463477,false,Forward Runway Projection
+Base,Customer Success,2027-07-31,26.721498086463477,0.0,0.10512275214610156,26.616375334317375,false,Forward Runway Projection
+Base,Customer Success,2027-08-31,26.616375334317375,0.0,0.10470919774945031,26.511666136567925,false,Forward Runway Projection
+Base,Customer Success,2027-09-30,26.511666136567925,0.0,0.10429727028165914,26.407368866286266,false,Forward Runway Projection
+Base,Customer Success,2027-10-31,26.407368866286266,0.0,0.10388696334235803,26.303481902943908,false,Forward Runway Projection
+Base,Customer Success,2027-11-30,26.303481902943908,0.0,0.10347827055636927,26.20000363238754,false,Forward Runway Projection
+Base,Customer Success,2027-12-31,26.20000363238754,0.0,0.10307118557360084,26.096932446813938,false,Forward Runway Projection
+Base,Engineering,2024-01-31,42.0,0.0,0.0,42.0,true,Actual
+Base,Engineering,2024-02-29,42.0,0.0,0.0,42.0,true,Actual
+Base,Engineering,2024-03-31,42.0,1.0,0.0,43.0,true,Actual
+Base,Engineering,2024-04-30,43.0,0.0,0.0,43.0,true,Actual
+Base,Engineering,2024-05-31,43.0,2.0,1.0,44.0,true,Actual
+Base,Engineering,2024-06-30,44.0,1.0,0.0,45.0,true,Actual
+Base,Engineering,2024-07-31,45.0,2.0,2.0,45.0,true,Actual
+Base,Engineering,2024-08-31,45.0,0.0,0.0,45.0,true,Actual
+Base,Engineering,2024-09-30,45.0,2.0,1.0,46.0,true,Actual
+Base,Engineering,2024-10-31,46.0,2.0,2.0,46.0,true,Actual
+Base,Engineering,2024-11-30,46.0,1.0,0.0,47.0,true,Actual
+Base,Engineering,2024-12-31,47.0,0.0,0.0,47.0,true,Actual
+Base,Engineering,2025-01-31,47.0,0.0,0.0,47.0,true,Actual
+Base,Engineering,2025-02-28,47.0,2.0,1.0,48.0,true,Actual
+Base,Engineering,2025-03-31,48.0,0.0,0.0,48.0,true,Actual
+Base,Engineering,2025-04-30,48.0,1.0,1.0,48.0,true,Actual
+Base,Engineering,2025-05-31,48.0,3.0,3.0,48.0,true,Actual
+Base,Engineering,2025-06-30,48.0,1.0,0.0,49.0,true,Actual
+Base,Engineering,2025-07-31,49.0,0.0,0.0,49.0,true,Actual
+Base,Engineering,2025-08-31,49.0,1.0,1.0,49.0,true,Actual
+Base,Engineering,2025-09-30,49.0,1.0,0.0,50.0,true,Actual
+Base,Engineering,2025-10-31,50.0,2.0,2.0,50.0,true,Actual
+Base,Engineering,2025-11-30,50.0,0.0,0.0,50.0,true,Actual
+Base,Engineering,2025-12-31,50.0,1.0,1.0,50.0,true,Actual
+Base,Engineering,2026-01-31,50.0,1.0,0.0,51.0,true,Actual
+Base,Engineering,2026-02-28,51.0,1.0,1.0,51.0,true,Actual
+Base,Engineering,2026-03-31,51.0,0.0,0.0,51.0,true,Actual
+Base,Engineering,2026-04-30,51.0,0.0,0.0,51.0,true,Actual
+Base,Engineering,2026-05-31,51.0,1.0,0.0,52.0,true,Actual
+Base,Engineering,2026-06-30,52.0,0.0,0.0,52.0,true,Actual
+Base,Engineering,2026-07-31,52.0,0.0,0.1255882103322108,51.87441178966779,false,FY2026 Reforecast
+Base,Engineering,2026-08-31,51.87441178966779,3.0,0.12528489497500317,54.749126894692786,false,FY2026 Reforecast
+Base,Engineering,2026-09-30,54.749126894692786,0.0,0.13222778584529493,54.61689910884749,false,FY2026 Reforecast
+Base,Engineering,2026-10-31,54.61689910884749,0.0,0.13190843486490422,54.48499067398259,false,FY2026 Reforecast
+Base,Engineering,2026-11-30,54.48499067398259,0.0,0.1315898551675474,54.35340081881504,false,FY2026 Reforecast
+Base,Engineering,2026-12-31,54.35340081881504,0.0,0.13127204489046562,54.222128773924574,false,FY2026 Reforecast
+Base,Engineering,2027-01-31,54.222128773924574,0.0,0.13095500217537648,54.0911737717492,false,Forward Runway Projection
+Base,Engineering,2027-02-28,54.0911737717492,0.0,0.1306387251685095,53.96053504658069,false,Forward Runway Projection
+Base,Engineering,2027-03-31,53.96053504658069,0.0,0.1303232120205493,53.83021183456014,false,Forward Runway Projection
+Base,Engineering,2027-04-30,53.83021183456014,0.0,0.13000846088664986,53.70020337367349,false,Forward Runway Projection
+Base,Engineering,2027-05-31,53.70020337367349,0.0,0.12969446992644862,53.57050890374704,false,Forward Runway Projection
+Base,Engineering,2027-06-30,53.57050890374704,0.0,0.12938123730398132,53.44112766644306,false,Forward Runway Projection
+Base,Engineering,2027-07-31,53.44112766644306,0.0,0.12906876118776722,53.31205890525529,false,Forward Runway Projection
+Base,Engineering,2027-08-31,53.31205890525529,0.0,0.1287570397506954,53.183301865504596,false,Forward Runway Projection
+Base,Engineering,2027-09-30,53.183301865504596,0.0,0.1284460711701172,53.05485579433448,false,Forward Runway Projection
+Base,Engineering,2027-10-31,53.05485579433448,0.0,0.12813585362776791,52.92671994070671,false,Forward Runway Projection
+Base,Engineering,2027-11-30,52.92671994070671,0.0,0.12782638530975277,52.79889355539696,false,Forward Runway Projection
+Base,Engineering,2027-12-31,52.79889355539696,0.0,0.12751766440660361,52.671375890990355,false,Forward Runway Projection
+Base,G&A,2024-01-31,12.0,0.0,0.0,12.0,true,Actual
+Base,G&A,2024-02-29,12.0,1.0,0.0,13.0,true,Actual
+Base,G&A,2024-03-31,13.0,0.0,0.0,13.0,true,Actual
+Base,G&A,2024-04-30,13.0,0.0,0.0,13.0,true,Actual
+Base,G&A,2024-05-31,13.0,1.0,0.0,14.0,true,Actual
+Base,G&A,2024-06-30,14.0,0.0,0.0,14.0,true,Actual
+Base,G&A,2024-07-31,14.0,0.0,0.0,14.0,true,Actual
+Base,G&A,2024-08-31,14.0,1.0,0.0,15.0,true,Actual
+Base,G&A,2024-09-30,15.0,0.0,0.0,15.0,true,Actual
+Base,G&A,2024-10-31,15.0,1.0,1.0,15.0,true,Actual
+Base,G&A,2024-11-30,15.0,2.0,1.0,16.0,true,Actual
+Base,G&A,2024-12-31,16.0,0.0,0.0,16.0,true,Actual
+Base,G&A,2025-01-31,16.0,0.0,0.0,16.0,true,Actual
+Base,G&A,2025-02-28,16.0,0.0,0.0,16.0,true,Actual
+Base,G&A,2025-03-31,16.0,2.0,1.0,17.0,true,Actual
+Base,G&A,2025-04-30,17.0,0.0,0.0,17.0,true,Actual
+Base,G&A,2025-05-31,17.0,0.0,0.0,17.0,true,Actual
+Base,G&A,2025-06-30,17.0,0.0,0.0,17.0,true,Actual
+Base,G&A,2025-07-31,17.0,1.0,0.0,18.0,true,Actual
+Base,G&A,2025-08-31,18.0,0.0,0.0,18.0,true,Actual
+Base,G&A,2025-09-30,18.0,0.0,0.0,18.0,true,Actual
+Base,G&A,2025-10-31,18.0,1.0,0.0,19.0,true,Actual
+Base,G&A,2025-11-30,19.0,0.0,0.0,19.0,true,Actual
+Base,G&A,2025-12-31,19.0,0.0,0.0,19.0,true,Actual
+Base,G&A,2026-01-31,19.0,0.0,0.0,19.0,true,Actual
+Base,G&A,2026-02-28,19.0,1.0,0.0,20.0,true,Actual
+Base,G&A,2026-03-31,20.0,1.0,1.0,20.0,true,Actual
+Base,G&A,2026-04-30,20.0,0.0,0.0,20.0,true,Actual
+Base,G&A,2026-05-31,20.0,1.0,0.0,21.0,true,Actual
+Base,G&A,2026-06-30,21.0,0.0,0.0,21.0,true,Actual
+Base,G&A,2026-07-31,21.0,0.0,0.042827125296099666,20.9571728747039,false,FY2026 Reforecast
+Base,G&A,2026-08-31,20.9571728747039,1.0,0.04273978421700164,21.9144330904869,false,FY2026 Reforecast
+Base,G&A,2026-09-30,21.9144330904869,0.0,0.044692008179016085,21.869741082307883,false,FY2026 Reforecast
+Base,G&A,2026-10-31,21.869741082307883,0.0,0.044600863882156006,21.825140218425727,false,FY2026 Reforecast
+Base,G&A,2026-11-30,21.825140218425727,0.0,0.04450990546378719,21.78063031296194,false,FY2026 Reforecast
+Base,G&A,2026-12-31,21.78063031296194,0.0,0.04441913254482088,21.73621118041712,false,FY2026 Reforecast
+Base,G&A,2027-01-31,21.73621118041712,0.0,0.04432854474696413,21.691882635670154,false,Forward Runway Projection
+Base,G&A,2027-02-28,21.691882635670154,0.0,0.04423814169267004,21.647644493977484,false,Forward Runway Projection
+Base,G&A,2027-03-31,21.647644493977484,0.0,0.044147923005194656,21.60349657097229,false,Forward Runway Projection
+Base,G&A,2027-04-30,21.60349657097229,0.0,0.04405788830852231,21.559438682663767,false,Forward Runway Projection
+Base,G&A,2027-05-31,21.559438682663767,0.0,0.04396803722742959,21.515470645436338,false,Forward Runway Projection
+Base,G&A,2027-06-30,21.515470645436338,0.0,0.04387836938746048,21.471592276048877,false,Forward Runway Projection
+Base,G&A,2027-07-31,21.471592276048877,0.0,0.04378888441491213,21.427803391633965,false,Forward Runway Projection
+Base,G&A,2027-08-31,21.427803391633965,0.0,0.04369958193684553,21.38410380969712,false,Forward Runway Projection
+Base,G&A,2027-09-30,21.38410380969712,0.0,0.04361046158108195,21.340493348116038,false,Forward Runway Projection
+Base,G&A,2027-10-31,21.340493348116038,0.0,0.043521522976206484,21.29697182513983,false,Forward Runway Projection
+Base,G&A,2027-11-30,21.29697182513983,0.0,0.04343276575156452,21.253539059388267,false,Forward Runway Projection
+Base,G&A,2027-12-31,21.253539059388267,0.0,0.043344189537236844,21.21019486985103,false,Forward Runway Projection
+Base,Marketing,2024-01-31,15.0,0.0,0.0,15.0,true,Actual
+Base,Marketing,2024-02-29,15.0,0.0,0.0,15.0,true,Actual
+Base,Marketing,2024-03-31,15.0,2.0,1.0,16.0,true,Actual
+Base,Marketing,2024-04-30,16.0,0.0,0.0,16.0,true,Actual
+Base,Marketing,2024-05-31,16.0,1.0,1.0,16.0,true,Actual
+Base,Marketing,2024-06-30,16.0,0.0,0.0,16.0,true,Actual
+Base,Marketing,2024-07-31,16.0,0.0,0.0,16.0,true,Actual
+Base,Marketing,2024-08-31,16.0,0.0,0.0,16.0,true,Actual
+Base,Marketing,2024-09-30,16.0,0.0,0.0,16.0,true,Actual
+Base,Marketing,2024-10-31,16.0,1.0,0.0,17.0,true,Actual
+Base,Marketing,2024-11-30,17.0,1.0,1.0,17.0,true,Actual
+Base,Marketing,2024-12-31,17.0,0.0,0.0,17.0,true,Actual
+Base,Marketing,2025-01-31,17.0,0.0,0.0,17.0,true,Actual
+Base,Marketing,2025-02-28,17.0,1.0,1.0,17.0,true,Actual
+Base,Marketing,2025-03-31,17.0,0.0,0.0,17.0,true,Actual
+Base,Marketing,2025-04-30,17.0,1.0,1.0,17.0,true,Actual
+Base,Marketing,2025-05-31,17.0,1.0,1.0,17.0,true,Actual
+Base,Marketing,2025-06-30,17.0,0.0,0.0,17.0,true,Actual
+Base,Marketing,2025-07-31,17.0,0.0,0.0,17.0,true,Actual
+Base,Marketing,2025-08-31,17.0,1.0,1.0,17.0,true,Actual
+Base,Marketing,2025-09-30,17.0,0.0,0.0,17.0,true,Actual
+Base,Marketing,2025-10-31,17.0,0.0,0.0,17.0,true,Actual
+Base,Marketing,2025-11-30,17.0,1.0,0.0,18.0,true,Actual
+Base,Marketing,2025-12-31,18.0,0.0,0.0,18.0,true,Actual
+Base,Marketing,2026-01-31,18.0,0.0,0.0,18.0,true,Actual
+Base,Marketing,2026-02-28,18.0,0.0,0.0,18.0,true,Actual
+Base,Marketing,2026-03-31,18.0,0.0,0.0,18.0,true,Actual
+Base,Marketing,2026-04-30,18.0,1.0,1.0,18.0,true,Actual
+Base,Marketing,2026-05-31,18.0,0.0,0.0,18.0,true,Actual
+Base,Marketing,2026-06-30,18.0,0.0,0.0,18.0,true,Actual
+Base,Marketing,2026-07-31,18.0,0.0,0.06736965923948546,17.932630340760515,false,FY2026 Reforecast
+Base,Marketing,2026-08-31,17.932630340760515,1.0,0.06711751085137152,18.865512829909143,false,FY2026 Reforecast
+Base,Marketing,2026-09-30,18.865512829909143,0.0,0.0706090650405109,18.794903764868632,false,FY2026 Reforecast
+Base,Marketing,2026-10-31,18.794903764868632,0.0,0.07034479233767144,18.72455897253096,false,FY2026 Reforecast
+Base,Marketing,2026-11-30,18.72455897253096,0.0,0.07008150874384,18.65447746378712,false,FY2026 Reforecast
+Base,Marketing,2026-12-31,18.65447746378712,0.0,0.06981921055700013,18.58465825323012,false,FY2026 Reforecast
+Base,Marketing,2027-01-31,18.58465825323012,0.0,0.06955789408901936,18.5151003591411,false,Forward Runway Projection
+Base,Marketing,2027-02-28,18.5151003591411,0.0,0.0692975556655675,18.445802803475534,false,Forward Runway Projection
+Base,Marketing,2027-03-31,18.445802803475534,0.0,0.06903819162605274,18.37676461184948,false,Forward Runway Projection
+Base,Marketing,2027-04-30,18.37676461184948,0.0,0.0687797983235825,18.3079848135259,false,Forward Runway Projection
+Base,Marketing,2027-05-31,18.3079848135259,0.0,0.06852237212494217,18.239462441400956,false,Forward Runway Projection
+Base,Marketing,2027-06-30,18.239462441400956,0.0,0.06826590941047783,18.17119653199048,false,Forward Runway Projection
+Base,Marketing,2027-07-31,18.17119653199048,0.0,0.06801040657410695,18.10318612541637,false,Forward Runway Projection
+Base,Marketing,2027-08-31,18.10318612541637,0.0,0.06775586002323664,18.035430265393135,false,Forward Runway Projection
+Base,Marketing,2027-09-30,18.035430265393135,0.0,0.06750226617872812,17.967927999214407,false,Forward Runway Projection
+Base,Marketing,2027-10-31,17.967927999214407,0.0,0.0672496214748115,17.900678377739595,false,Forward Runway Projection
+Base,Marketing,2027-11-30,17.900678377739595,0.0,0.06699792235911062,17.833680455380485,false,Forward Runway Projection
+Base,Marketing,2027-12-31,17.833680455380485,0.0,0.0667471652924938,17.76693329008799,false,Forward Runway Projection
+Base,Product & Design,2024-01-31,16.0,0.0,0.0,16.0,true,Actual
+Base,Product & Design,2024-02-29,16.0,1.0,0.0,17.0,true,Actual
+Base,Product & Design,2024-03-31,17.0,0.0,0.0,17.0,true,Actual
+Base,Product & Design,2024-04-30,17.0,0.0,0.0,17.0,true,Actual
+Base,Product & Design,2024-05-31,17.0,0.0,0.0,17.0,true,Actual
+Base,Product & Design,2024-06-30,17.0,1.0,0.0,18.0,true,Actual
+Base,Product & Design,2024-07-31,18.0,0.0,0.0,18.0,true,Actual
+Base,Product & Design,2024-08-31,18.0,0.0,0.0,18.0,true,Actual
+Base,Product & Design,2024-09-30,18.0,0.0,0.0,18.0,true,Actual
+Base,Product & Design,2024-10-31,18.0,1.0,0.0,19.0,true,Actual
+Base,Product & Design,2024-11-30,19.0,0.0,0.0,19.0,true,Actual
+Base,Product & Design,2024-12-31,19.0,0.0,0.0,19.0,true,Actual
+Base,Product & Design,2025-01-31,19.0,0.0,0.0,19.0,true,Actual
+Base,Product & Design,2025-02-28,19.0,1.0,1.0,19.0,true,Actual
+Base,Product & Design,2025-03-31,19.0,0.0,0.0,19.0,true,Actual
+Base,Product & Design,2025-04-30,19.0,1.0,0.0,20.0,true,Actual
+Base,Product & Design,2025-05-31,20.0,0.0,0.0,20.0,true,Actual
+Base,Product & Design,2025-06-30,20.0,0.0,0.0,20.0,true,Actual
+Base,Product & Design,2025-07-31,20.0,0.0,0.0,20.0,true,Actual
+Base,Product & Design,2025-08-31,20.0,1.0,1.0,20.0,true,Actual
+Base,Product & Design,2025-09-30,20.0,0.0,0.0,20.0,true,Actual
+Base,Product & Design,2025-10-31,20.0,2.0,1.0,21.0,true,Actual
+Base,Product & Design,2025-11-30,21.0,1.0,1.0,21.0,true,Actual
+Base,Product & Design,2025-12-31,21.0,0.0,0.0,21.0,true,Actual
+Base,Product & Design,2026-01-31,21.0,0.0,0.0,21.0,true,Actual
+Base,Product & Design,2026-02-28,21.0,0.0,0.0,21.0,true,Actual
+Base,Product & Design,2026-03-31,21.0,1.0,1.0,21.0,true,Actual
+Base,Product & Design,2026-04-30,21.0,1.0,0.0,22.0,true,Actual
+Base,Product & Design,2026-05-31,22.0,0.0,0.0,22.0,true,Actual
+Base,Product & Design,2026-06-30,22.0,0.0,0.0,22.0,true,Actual
+Base,Product & Design,2026-07-31,22.0,0.0,0.057279834341059654,21.94272016565894,false,FY2026 Reforecast
+Base,Product & Design,2026-08-31,21.94272016565894,1.0,0.05713069891278266,22.885589466746158,false,FY2026 Reforecast
+Base,Product & Design,2026-09-30,22.885589466746158,0.0,0.059585580611489775,22.826003886134668,false,FY2026 Reforecast
+Base,Product & Design,2026-10-31,22.826003886134668,0.0,0.05943044187573676,22.76657344425893,false,FY2026 Reforecast
+Base,Product & Design,2026-11-30,22.76657344425893,0.0,0.05927570706366936,22.707297737195262,false,FY2026 Reforecast
+Base,Product & Design,2026-12-31,22.707297737195262,0.0,0.05912137512362392,22.648176362071638,false,FY2026 Reforecast
+Base,Product & Design,2027-01-31,22.648176362071638,0.0,0.058967445006661734,22.589208917064976,false,Forward Runway Projection
+Base,Product & Design,2027-02-28,22.589208917064976,0.0,0.05881391566659744,22.53039500139838,false,Forward Runway Projection
+Base,Product & Design,2027-03-31,22.53039500139838,0.0,0.05866078605994218,22.471734215338437,false,Forward Runway Projection
+Base,Product & Design,2027-04-30,22.471734215338437,0.0,0.058508055145953364,22.413226160192483,false,Forward Runway Projection
+Base,Product & Design,2027-05-31,22.413226160192483,0.0,0.058355721886567125,22.354870438305916,false,Forward Runway Projection
+Base,Product & Design,2027-06-30,22.354870438305916,0.0,0.05820378524645875,22.296666653059457,false,Forward Runway Projection
+Base,Product & Design,2027-07-31,22.296666653059457,0.0,0.058052244192960956,22.238614408866496,false,Forward Runway Projection
+Base,Product & Design,2027-08-31,22.238614408866496,0.0,0.057901097696117176,22.18071331117038,false,Forward Runway Projection
+Base,Product & Design,2027-09-30,22.18071331117038,0.0,0.0577503447286567,22.122962966441722,false,Forward Runway Projection
+Base,Product & Design,2027-10-31,22.122962966441722,0.0,0.05759998426596269,22.06536298217576,false,Forward Runway Projection
+Base,Product & Design,2027-11-30,22.06536298217576,0.0,0.05745001528611127,22.00791296688965,false,Forward Runway Projection
+Base,Product & Design,2027-12-31,22.00791296688965,0.0,0.057300436769811114,21.950612530119837,false,Forward Runway Projection
+Base,Professional Services,2024-01-31,4.0,0.0,0.0,4.0,true,Actual
+Base,Professional Services,2024-02-29,4.0,0.0,0.0,4.0,true,Actual
+Base,Professional Services,2024-03-31,4.0,0.0,0.0,4.0,true,Actual
+Base,Professional Services,2024-04-30,4.0,1.0,0.0,5.0,true,Actual
+Base,Professional Services,2024-05-31,5.0,0.0,0.0,5.0,true,Actual
+Base,Professional Services,2024-06-30,5.0,0.0,0.0,5.0,true,Actual
+Base,Professional Services,2024-07-31,5.0,0.0,0.0,5.0,true,Actual
+Base,Professional Services,2024-08-31,5.0,0.0,0.0,5.0,true,Actual
+Base,Professional Services,2024-09-30,5.0,0.0,0.0,5.0,true,Actual
+Base,Professional Services,2024-10-31,5.0,0.0,0.0,5.0,true,Actual
+Base,Professional Services,2024-11-30,5.0,0.0,0.0,5.0,true,Actual
+Base,Professional Services,2024-12-31,5.0,1.0,0.0,6.0,true,Actual
+Base,Professional Services,2025-01-31,6.0,0.0,0.0,6.0,true,Actual
+Base,Professional Services,2025-02-28,6.0,0.0,0.0,6.0,true,Actual
+Base,Professional Services,2025-03-31,6.0,0.0,0.0,6.0,true,Actual
+Base,Professional Services,2025-04-30,6.0,0.0,0.0,6.0,true,Actual
+Base,Professional Services,2025-05-31,6.0,1.0,1.0,6.0,true,Actual
+Base,Professional Services,2025-06-30,6.0,1.0,1.0,6.0,true,Actual
+Base,Professional Services,2025-07-31,6.0,1.0,0.0,7.0,true,Actual
+Base,Professional Services,2025-08-31,7.0,0.0,0.0,7.0,true,Actual
+Base,Professional Services,2025-09-30,7.0,0.0,0.0,7.0,true,Actual
+Base,Professional Services,2025-10-31,7.0,0.0,0.0,7.0,true,Actual
+Base,Professional Services,2025-11-30,7.0,1.0,1.0,7.0,true,Actual
+Base,Professional Services,2025-12-31,7.0,0.0,0.0,7.0,true,Actual
+Base,Professional Services,2026-01-31,7.0,0.0,0.0,7.0,true,Actual
+Base,Professional Services,2026-02-28,7.0,0.0,0.0,7.0,true,Actual
+Base,Professional Services,2026-03-31,7.0,1.0,0.0,8.0,true,Actual
+Base,Professional Services,2026-04-30,8.0,0.0,0.0,8.0,true,Actual
+Base,Professional Services,2026-05-31,8.0,0.0,0.0,8.0,true,Actual
+Base,Professional Services,2026-06-30,8.0,0.0,0.0,8.0,true,Actual
+Base,Professional Services,2026-07-31,8.0,0.0,0.025371231600909816,7.97462876839909,false,FY2026 Reforecast
+Base,Professional Services,2026-08-31,7.97462876839909,0.0,0.025290769176791628,7.949337999222299,false,FY2026 Reforecast
+Base,Professional Services,2026-09-30,7.949337999222299,0.0,0.025210561931522157,7.924127437290776,false,FY2026 Reforecast
+Base,Professional Services,2026-10-31,7.924127437290776,0.0,0.025130609055828756,7.898996828234948,false,FY2026 Reforecast
+Base,Professional Services,2026-11-30,7.898996828234948,0.0,0.025050909743000283,7.873945918491947,false,FY2026 Reforecast
+Base,Professional Services,2026-12-31,7.873945918491947,0.0,0.0249714631888871,7.84897445530306,false,FY2026 Reforecast
+Base,Professional Services,2027-01-31,7.84897445530306,0.0,0.02489226859189042,7.82408218671117,false,Forward Runway Projection
+Base,Professional Services,2027-02-28,7.82408218671117,0.0,0.024813325152949872,7.79926886155822,false,Forward Runway Projection
+Base,Professional Services,2027-03-31,7.79926886155822,0.0,0.024734632075544383,7.774534229482676,false,Forward Runway Projection
+Base,Professional Services,2027-04-30,7.774534229482676,0.0,0.024656188565676196,7.749878040916999,false,Forward Runway Projection
+Base,Professional Services,2027-05-31,7.749878040916999,0.0,0.024577993831863765,7.725300047085136,false,Forward Runway Projection
+Base,Professional Services,2027-06-30,7.725300047085136,0.0,0.024500047085139087,7.7007999999999965,false,Forward Runway Projection
+Base,Professional Services,2027-07-31,7.7007999999999965,0.0,0.02442234753903616,7.67637765246096,false,Forward Runway Projection
+Base,Professional Services,2027-08-31,7.67637765246096,0.0,0.024344894409579432,7.652032758051381,false,Forward Runway Projection
+Base,Professional Services,2027-09-30,7.652032758051381,0.0,0.024267686915283804,7.627765071136097,false,Forward Runway Projection
+Base,Professional Services,2027-10-31,7.627765071136097,0.0,0.02419072427714042,7.603574346858957,false,Forward Runway Projection
+Base,Professional Services,2027-11-30,7.603574346858957,0.0,0.02411400571861222,7.5794603411403445,false,Forward Runway Projection
+Base,Professional Services,2027-12-31,7.5794603411403445,0.0,0.024037530465622403,7.555422810674722,false,Forward Runway Projection
+Base,Sales,2024-01-31,37.0,0.0,0.0,37.0,true,Actual
+Base,Sales,2024-02-29,37.0,2.0,1.0,38.0,true,Actual
+Base,Sales,2024-03-31,38.0,0.0,0.0,38.0,true,Actual
+Base,Sales,2024-04-30,38.0,3.0,2.0,39.0,true,Actual
+Base,Sales,2024-05-31,39.0,2.0,2.0,39.0,true,Actual
+Base,Sales,2024-06-30,39.0,2.0,1.0,40.0,true,Actual
+Base,Sales,2024-07-31,40.0,3.0,1.0,42.0,true,Actual
+Base,Sales,2024-08-31,42.0,0.0,0.0,42.0,true,Actual
+Base,Sales,2024-09-30,42.0,3.0,3.0,42.0,true,Actual
+Base,Sales,2024-10-31,42.0,0.0,0.0,42.0,true,Actual
+Base,Sales,2024-11-30,42.0,0.0,0.0,42.0,true,Actual
+Base,Sales,2024-12-31,42.0,0.0,0.0,42.0,true,Actual
+Base,Sales,2025-01-31,42.0,0.0,0.0,42.0,true,Actual
+Base,Sales,2025-02-28,42.0,3.0,3.0,42.0,true,Actual
+Base,Sales,2025-03-31,42.0,0.0,0.0,42.0,true,Actual
+Base,Sales,2025-04-30,42.0,4.0,4.0,42.0,true,Actual
+Base,Sales,2025-05-31,42.0,1.0,1.0,42.0,true,Actual
+Base,Sales,2025-06-30,42.0,0.0,0.0,42.0,true,Actual
+Base,Sales,2025-07-31,42.0,2.0,2.0,42.0,true,Actual
+Base,Sales,2025-08-31,42.0,2.0,1.0,43.0,true,Actual
+Base,Sales,2025-09-30,43.0,1.0,1.0,43.0,true,Actual
+Base,Sales,2025-10-31,43.0,2.0,2.0,43.0,true,Actual
+Base,Sales,2025-11-30,43.0,0.0,0.0,43.0,true,Actual
+Base,Sales,2025-12-31,43.0,0.0,0.0,43.0,true,Actual
+Base,Sales,2026-01-31,43.0,3.0,3.0,43.0,true,Actual
+Base,Sales,2026-02-28,43.0,3.0,3.0,43.0,true,Actual
+Base,Sales,2026-03-31,43.0,6.0,5.0,44.0,true,Actual
+Base,Sales,2026-04-30,44.0,3.0,3.0,44.0,true,Actual
+Base,Sales,2026-05-31,44.0,0.0,0.0,44.0,true,Actual
+Base,Sales,2026-06-30,44.0,1.0,1.0,44.0,true,Actual
+Base,Sales,2026-07-31,44.0,0.0,0.2154415570609416,43.78455844293906,false,FY2026 Reforecast
+Base,Sales,2026-08-31,43.78455844293906,6.0,0.21438666923119598,49.57017177370786,false,FY2026 Reforecast
+Base,Sales,2026-09-30,49.57017177370786,0.0,0.24271534069785616,49.327456433010006,false,FY2026 Reforecast
+Base,Sales,2026-10-31,49.327456433010006,0.0,0.24152690954054634,49.08592952346946,false,FY2026 Reforecast
+Base,Sales,2026-11-30,49.08592952346946,0.0,0.24034429741635677,48.8455852260531,false,FY2026 Reforecast
+Base,Sales,2026-12-31,48.8455852260531,0.0,0.23916747583304243,48.60641775022006,false,FY2026 Reforecast
+Base,Sales,2027-01-31,48.60641775022006,0.0,0.2379964164377668,48.368421333782294,false,Forward Runway Projection
+Base,Sales,2027-02-28,48.368421333782294,0.0,0.23683109101658317,48.13159024276571,false,Forward Runway Projection
+Base,Sales,2027-03-31,48.13159024276571,0.0,0.23567147149366008,47.89591877127205,false,Forward Runway Projection
+Base,Sales,2027-04-30,47.89591877127205,0.0,0.23451752993062058,47.66140124134143,false,Forward Runway Projection
+Base,Sales,2027-05-31,47.66140124134143,0.0,0.23336923852592406,47.428032002815506,false,Forward Runway Projection
+Base,Sales,2027-06-30,47.428032002815506,0.0,0.23222656961414856,47.19580543320136,false,Forward Runway Projection
+Base,Sales,2027-07-31,47.19580543320136,0.0,0.23108949566533,46.96471593753603,false,Forward Runway Projection
+Base,Sales,2027-08-31,46.96471593753603,0.0,0.2299579892842658,46.73475794825176,false,Forward Runway Projection
+Base,Sales,2027-09-30,46.73475794825176,0.0,0.22883202320994656,46.505925925041815,false,Forward Runway Projection
+Base,Sales,2027-10-31,46.505925925041815,0.0,0.22771157031480982,46.278214354727005,false,Forward Runway Projection
+Base,Sales,2027-11-30,46.278214354727005,0.0,0.22659660360415046,46.051617751122855,false,Forward Runway Projection
+Base,Sales,2027-12-31,46.051617751122855,0.0,0.22548709621538876,45.826130654907466,false,Forward Runway Projection
+Base,Support & Cloud Ops,2024-01-31,13.0,0.0,0.0,13.0,true,Actual
+Base,Support & Cloud Ops,2024-02-29,13.0,1.0,1.0,13.0,true,Actual
+Base,Support & Cloud Ops,2024-03-31,13.0,0.0,0.0,13.0,true,Actual
+Base,Support & Cloud Ops,2024-04-30,13.0,1.0,0.0,14.0,true,Actual
+Base,Support & Cloud Ops,2024-05-31,14.0,0.0,0.0,14.0,true,Actual
+Base,Support & Cloud Ops,2024-06-30,14.0,1.0,1.0,14.0,true,Actual
+Base,Support & Cloud Ops,2024-07-31,14.0,0.0,0.0,14.0,true,Actual
+Base,Support & Cloud Ops,2024-08-31,14.0,0.0,0.0,14.0,true,Actual
+Base,Support & Cloud Ops,2024-09-30,14.0,0.0,0.0,14.0,true,Actual
+Base,Support & Cloud Ops,2024-10-31,14.0,0.0,0.0,14.0,true,Actual
+Base,Support & Cloud Ops,2024-11-30,14.0,0.0,0.0,14.0,true,Actual
+Base,Support & Cloud Ops,2024-12-31,14.0,0.0,0.0,14.0,true,Actual
+Base,Support & Cloud Ops,2025-01-31,14.0,0.0,0.0,14.0,true,Actual
+Base,Support & Cloud Ops,2025-02-28,14.0,0.0,0.0,14.0,true,Actual
+Base,Support & Cloud Ops,2025-03-31,14.0,0.0,0.0,14.0,true,Actual
+Base,Support & Cloud Ops,2025-04-30,14.0,1.0,0.0,15.0,true,Actual
+Base,Support & Cloud Ops,2025-05-31,15.0,1.0,1.0,15.0,true,Actual
+Base,Support & Cloud Ops,2025-06-30,15.0,0.0,0.0,15.0,true,Actual
+Base,Support & Cloud Ops,2025-07-31,15.0,0.0,0.0,15.0,true,Actual
+Base,Support & Cloud Ops,2025-08-31,15.0,1.0,1.0,15.0,true,Actual
+Base,Support & Cloud Ops,2025-09-30,15.0,0.0,0.0,15.0,true,Actual
+Base,Support & Cloud Ops,2025-10-31,15.0,0.0,0.0,15.0,true,Actual
+Base,Support & Cloud Ops,2025-11-30,15.0,1.0,1.0,15.0,true,Actual
+Base,Support & Cloud Ops,2025-12-31,15.0,1.0,1.0,15.0,true,Actual
+Base,Support & Cloud Ops,2026-01-31,15.0,0.0,0.0,15.0,true,Actual
+Base,Support & Cloud Ops,2026-02-28,15.0,1.0,1.0,15.0,true,Actual
+Base,Support & Cloud Ops,2026-03-31,15.0,1.0,1.0,15.0,true,Actual
+Base,Support & Cloud Ops,2026-04-30,15.0,1.0,1.0,15.0,true,Actual
+Base,Support & Cloud Ops,2026-05-31,15.0,0.0,0.0,15.0,true,Actual
+Base,Support & Cloud Ops,2026-06-30,15.0,0.0,0.0,15.0,true,Actual
+Base,Support & Cloud Ops,2026-07-31,15.0,0.0,0.053278598211933925,14.946721401788066,false,FY2026 Reforecast
+Base,Support & Cloud Ops,2026-08-31,14.946721401788066,2.0,0.05308935761010858,16.89363204417796,false,FY2026 Reforecast
+Base,Support & Cloud Ops,2026-09-30,16.89363204417796,0.0,0.06000460226813331,16.833627441909826,false,FY2026 Reforecast
+Base,Support & Cloud Ops,2026-10-31,16.833627441909826,0.0,0.05979147152846309,16.773835970381363,false,FY2026 Reforecast
+Base,Support & Cloud Ops,2026-11-30,16.773835970381363,0.0,0.05957909780925519,16.714256872572108,false,FY2026 Reforecast
+Base,Support & Cloud Ops,2026-12-31,16.714256872572108,0.0,0.05936747842165602,16.65488939415045,false,FY2026 Reforecast
+Base,Support & Cloud Ops,2027-01-31,16.65488939415045,0.0,0.05915661068634037,16.59573278346411,false,Forward Runway Projection
+Base,Support & Cloud Ops,2027-02-28,16.59573278346411,0.0,0.05894649193352208,16.53678629153059,false,Forward Runway Projection
+Base,Support & Cloud Ops,2027-03-31,16.53678629153059,0.0,0.058737119502872304,16.478049172027717,false,Forward Runway Projection
+Base,Support & Cloud Ops,2027-04-30,16.478049172027717,0.0,0.05852849074353017,16.419520681284187,false,Forward Runway Projection
+Base,Support & Cloud Ops,2027-05-31,16.419520681284187,0.0,0.05832060301404596,16.36120007827014,false,Forward Runway Projection
+Base,Support & Cloud Ops,2027-06-30,16.36120007827014,0.0,0.0581134536823491,16.30308662458779,false,Forward Runway Projection
+Base,Support & Cloud Ops,2027-07-31,16.30308662458779,0.0,0.057907040125716236,16.245179584462075,false,Forward Runway Projection
+Base,Support & Cloud Ops,2027-08-31,16.245179584462075,0.0,0.05770135973075341,16.187478224731322,false,Forward Runway Projection
+Base,Support & Cloud Ops,2027-09-30,16.187478224731322,0.0,0.05749640989332505,16.129981814837997,false,Forward Runway Projection
+Base,Support & Cloud Ops,2027-10-31,16.129981814837997,0.0,0.05729218801857172,16.072689626819425,false,Forward Runway Projection
+Base,Support & Cloud Ops,2027-11-30,16.072689626819425,0.0,0.057088691520828405,16.015600935298597,false,Forward Runway Projection
+Base,Support & Cloud Ops,2027-12-31,16.015600935298597,0.0,0.056885917823631615,15.958715017474965,false,Forward Runway Projection
+Base_FullClose,Customer Success,2024-01-31,20.0,0.0,0.0,20.0,true,Actual
+Base_FullClose,Customer Success,2024-02-29,20.0,1.0,0.0,21.0,true,Actual
+Base_FullClose,Customer Success,2024-03-31,21.0,0.0,0.0,21.0,true,Actual
+Base_FullClose,Customer Success,2024-04-30,21.0,0.0,0.0,21.0,true,Actual
+Base_FullClose,Customer Success,2024-05-31,21.0,1.0,0.0,22.0,true,Actual
+Base_FullClose,Customer Success,2024-06-30,22.0,0.0,0.0,22.0,true,Actual
+Base_FullClose,Customer Success,2024-07-31,22.0,0.0,0.0,22.0,true,Actual
+Base_FullClose,Customer Success,2024-08-31,22.0,1.0,1.0,22.0,true,Actual
+Base_FullClose,Customer Success,2024-09-30,22.0,1.0,0.0,23.0,true,Actual
+Base_FullClose,Customer Success,2024-10-31,23.0,1.0,1.0,23.0,true,Actual
+Base_FullClose,Customer Success,2024-11-30,23.0,0.0,0.0,23.0,true,Actual
+Base_FullClose,Customer Success,2024-12-31,23.0,0.0,0.0,23.0,true,Actual
+Base_FullClose,Customer Success,2025-01-31,23.0,0.0,0.0,23.0,true,Actual
+Base_FullClose,Customer Success,2025-02-28,23.0,0.0,0.0,23.0,true,Actual
+Base_FullClose,Customer Success,2025-03-31,23.0,2.0,1.0,24.0,true,Actual
+Base_FullClose,Customer Success,2025-04-30,24.0,1.0,1.0,24.0,true,Actual
+Base_FullClose,Customer Success,2025-05-31,24.0,0.0,0.0,24.0,true,Actual
+Base_FullClose,Customer Success,2025-06-30,24.0,1.0,1.0,24.0,true,Actual
+Base_FullClose,Customer Success,2025-07-31,24.0,1.0,1.0,24.0,true,Actual
+Base_FullClose,Customer Success,2025-08-31,24.0,0.0,0.0,24.0,true,Actual
+Base_FullClose,Customer Success,2025-09-30,24.0,1.0,0.0,25.0,true,Actual
+Base_FullClose,Customer Success,2025-10-31,25.0,0.0,0.0,25.0,true,Actual
+Base_FullClose,Customer Success,2025-11-30,25.0,1.0,1.0,25.0,true,Actual
+Base_FullClose,Customer Success,2025-12-31,25.0,0.0,0.0,25.0,true,Actual
+Base_FullClose,Customer Success,2026-01-31,25.0,2.0,2.0,25.0,true,Actual
+Base_FullClose,Customer Success,2026-02-28,25.0,1.0,1.0,25.0,true,Actual
+Base_FullClose,Customer Success,2026-03-31,25.0,2.0,2.0,25.0,true,Actual
+Base_FullClose,Customer Success,2026-04-30,25.0,2.0,1.0,26.0,true,Actual
+Base_FullClose,Customer Success,2026-05-31,26.0,1.0,1.0,26.0,true,Actual
+Base_FullClose,Customer Success,2026-06-30,26.0,0.0,0.0,26.0,true,Actual
+Base_FullClose,Customer Success,2026-07-31,26.0,0.0,0.1022843684495065,25.897715631550493,false,FY2026 Reforecast
+Base_FullClose,Customer Success,2026-08-31,25.897715631550493,2.0,0.10188198029454298,27.79583365125595,false,FY2026 Reforecast
+Base_FullClose,Customer Success,2026-09-30,27.79583365125595,0.0,0.10934920348254806,27.686484447773402,false,FY2026 Reforecast
+Base_FullClose,Customer Success,2026-10-31,27.686484447773402,0.0,0.10891902216645022,27.577565425606952,false,FY2026 Reforecast
+Base_FullClose,Customer Success,2026-11-30,27.577565425606952,0.0,0.108490533189741,27.46907489241721,false,FY2026 Reforecast
+Base_FullClose,Customer Success,2026-12-31,27.46907489241721,0.0,0.10806372989473445,27.361011162522477,false,FY2026 Reforecast
+Base_FullClose,Customer Success,2027-01-31,27.361011162522477,0.0,0.10763860564994587,27.25337255687253,false,Forward Runway Projection
+Base_FullClose,Customer Success,2027-02-28,27.25337255687253,0.0,0.10721515384994973,27.14615740302258,false,Forward Runway Projection
+Base_FullClose,Customer Success,2027-03-31,27.14615740302258,0.0,0.10679336791535121,27.03936403510723,false,Forward Runway Projection
+Base_FullClose,Customer Success,2027-04-30,27.03936403510723,0.0,0.1063732412925944,26.932990793814636,false,Forward Runway Projection
+Base_FullClose,Customer Success,2027-05-31,26.932990793814636,0.0,0.10595476745390542,26.82703602636073,false,Forward Runway Projection
+Base_FullClose,Customer Success,2027-06-30,26.82703602636073,0.0,0.10553793989725335,26.721498086463477,false,Forward Runway Projection
+Base_FullClose,Customer Success,2027-07-31,26.721498086463477,0.0,0.10512275214610156,26.616375334317375,false,Forward Runway Projection
+Base_FullClose,Customer Success,2027-08-31,26.616375334317375,0.0,0.10470919774945031,26.511666136567925,false,Forward Runway Projection
+Base_FullClose,Customer Success,2027-09-30,26.511666136567925,0.0,0.10429727028165914,26.407368866286266,false,Forward Runway Projection
+Base_FullClose,Customer Success,2027-10-31,26.407368866286266,0.0,0.10388696334235803,26.303481902943908,false,Forward Runway Projection
+Base_FullClose,Customer Success,2027-11-30,26.303481902943908,0.0,0.10347827055636927,26.20000363238754,false,Forward Runway Projection
+Base_FullClose,Customer Success,2027-12-31,26.20000363238754,0.0,0.10307118557360084,26.096932446813938,false,Forward Runway Projection
+Base_FullClose,Engineering,2024-01-31,42.0,0.0,0.0,42.0,true,Actual
+Base_FullClose,Engineering,2024-02-29,42.0,0.0,0.0,42.0,true,Actual
+Base_FullClose,Engineering,2024-03-31,42.0,1.0,0.0,43.0,true,Actual
+Base_FullClose,Engineering,2024-04-30,43.0,0.0,0.0,43.0,true,Actual
+Base_FullClose,Engineering,2024-05-31,43.0,2.0,1.0,44.0,true,Actual
+Base_FullClose,Engineering,2024-06-30,44.0,1.0,0.0,45.0,true,Actual
+Base_FullClose,Engineering,2024-07-31,45.0,2.0,2.0,45.0,true,Actual
+Base_FullClose,Engineering,2024-08-31,45.0,0.0,0.0,45.0,true,Actual
+Base_FullClose,Engineering,2024-09-30,45.0,2.0,1.0,46.0,true,Actual
+Base_FullClose,Engineering,2024-10-31,46.0,2.0,2.0,46.0,true,Actual
+Base_FullClose,Engineering,2024-11-30,46.0,1.0,0.0,47.0,true,Actual
+Base_FullClose,Engineering,2024-12-31,47.0,0.0,0.0,47.0,true,Actual
+Base_FullClose,Engineering,2025-01-31,47.0,0.0,0.0,47.0,true,Actual
+Base_FullClose,Engineering,2025-02-28,47.0,2.0,1.0,48.0,true,Actual
+Base_FullClose,Engineering,2025-03-31,48.0,0.0,0.0,48.0,true,Actual
+Base_FullClose,Engineering,2025-04-30,48.0,1.0,1.0,48.0,true,Actual
+Base_FullClose,Engineering,2025-05-31,48.0,3.0,3.0,48.0,true,Actual
+Base_FullClose,Engineering,2025-06-30,48.0,1.0,0.0,49.0,true,Actual
+Base_FullClose,Engineering,2025-07-31,49.0,0.0,0.0,49.0,true,Actual
+Base_FullClose,Engineering,2025-08-31,49.0,1.0,1.0,49.0,true,Actual
+Base_FullClose,Engineering,2025-09-30,49.0,1.0,0.0,50.0,true,Actual
+Base_FullClose,Engineering,2025-10-31,50.0,2.0,2.0,50.0,true,Actual
+Base_FullClose,Engineering,2025-11-30,50.0,0.0,0.0,50.0,true,Actual
+Base_FullClose,Engineering,2025-12-31,50.0,1.0,1.0,50.0,true,Actual
+Base_FullClose,Engineering,2026-01-31,50.0,1.0,0.0,51.0,true,Actual
+Base_FullClose,Engineering,2026-02-28,51.0,1.0,1.0,51.0,true,Actual
+Base_FullClose,Engineering,2026-03-31,51.0,0.0,0.0,51.0,true,Actual
+Base_FullClose,Engineering,2026-04-30,51.0,0.0,0.0,51.0,true,Actual
+Base_FullClose,Engineering,2026-05-31,51.0,1.0,0.0,52.0,true,Actual
+Base_FullClose,Engineering,2026-06-30,52.0,0.0,0.0,52.0,true,Actual
+Base_FullClose,Engineering,2026-07-31,52.0,0.0,0.1255882103322108,51.87441178966779,false,FY2026 Reforecast
+Base_FullClose,Engineering,2026-08-31,51.87441178966779,3.0,0.12528489497500317,54.749126894692786,false,FY2026 Reforecast
+Base_FullClose,Engineering,2026-09-30,54.749126894692786,0.0,0.13222778584529493,54.61689910884749,false,FY2026 Reforecast
+Base_FullClose,Engineering,2026-10-31,54.61689910884749,0.0,0.13190843486490422,54.48499067398259,false,FY2026 Reforecast
+Base_FullClose,Engineering,2026-11-30,54.48499067398259,0.0,0.1315898551675474,54.35340081881504,false,FY2026 Reforecast
+Base_FullClose,Engineering,2026-12-31,54.35340081881504,0.0,0.13127204489046562,54.222128773924574,false,FY2026 Reforecast
+Base_FullClose,Engineering,2027-01-31,54.222128773924574,0.0,0.13095500217537648,54.0911737717492,false,Forward Runway Projection
+Base_FullClose,Engineering,2027-02-28,54.0911737717492,0.0,0.1306387251685095,53.96053504658069,false,Forward Runway Projection
+Base_FullClose,Engineering,2027-03-31,53.96053504658069,0.0,0.1303232120205493,53.83021183456014,false,Forward Runway Projection
+Base_FullClose,Engineering,2027-04-30,53.83021183456014,0.0,0.13000846088664986,53.70020337367349,false,Forward Runway Projection
+Base_FullClose,Engineering,2027-05-31,53.70020337367349,0.0,0.12969446992644862,53.57050890374704,false,Forward Runway Projection
+Base_FullClose,Engineering,2027-06-30,53.57050890374704,0.0,0.12938123730398132,53.44112766644306,false,Forward Runway Projection
+Base_FullClose,Engineering,2027-07-31,53.44112766644306,0.0,0.12906876118776722,53.31205890525529,false,Forward Runway Projection
+Base_FullClose,Engineering,2027-08-31,53.31205890525529,0.0,0.1287570397506954,53.183301865504596,false,Forward Runway Projection
+Base_FullClose,Engineering,2027-09-30,53.183301865504596,0.0,0.1284460711701172,53.05485579433448,false,Forward Runway Projection
+Base_FullClose,Engineering,2027-10-31,53.05485579433448,0.0,0.12813585362776791,52.92671994070671,false,Forward Runway Projection
+Base_FullClose,Engineering,2027-11-30,52.92671994070671,0.0,0.12782638530975277,52.79889355539696,false,Forward Runway Projection
+Base_FullClose,Engineering,2027-12-31,52.79889355539696,0.0,0.12751766440660361,52.671375890990355,false,Forward Runway Projection
+Base_FullClose,G&A,2024-01-31,12.0,0.0,0.0,12.0,true,Actual
+Base_FullClose,G&A,2024-02-29,12.0,1.0,0.0,13.0,true,Actual
+Base_FullClose,G&A,2024-03-31,13.0,0.0,0.0,13.0,true,Actual
+Base_FullClose,G&A,2024-04-30,13.0,0.0,0.0,13.0,true,Actual
+Base_FullClose,G&A,2024-05-31,13.0,1.0,0.0,14.0,true,Actual
+Base_FullClose,G&A,2024-06-30,14.0,0.0,0.0,14.0,true,Actual
+Base_FullClose,G&A,2024-07-31,14.0,0.0,0.0,14.0,true,Actual
+Base_FullClose,G&A,2024-08-31,14.0,1.0,0.0,15.0,true,Actual
+Base_FullClose,G&A,2024-09-30,15.0,0.0,0.0,15.0,true,Actual
+Base_FullClose,G&A,2024-10-31,15.0,1.0,1.0,15.0,true,Actual
+Base_FullClose,G&A,2024-11-30,15.0,2.0,1.0,16.0,true,Actual
+Base_FullClose,G&A,2024-12-31,16.0,0.0,0.0,16.0,true,Actual
+Base_FullClose,G&A,2025-01-31,16.0,0.0,0.0,16.0,true,Actual
+Base_FullClose,G&A,2025-02-28,16.0,0.0,0.0,16.0,true,Actual
+Base_FullClose,G&A,2025-03-31,16.0,2.0,1.0,17.0,true,Actual
+Base_FullClose,G&A,2025-04-30,17.0,0.0,0.0,17.0,true,Actual
+Base_FullClose,G&A,2025-05-31,17.0,0.0,0.0,17.0,true,Actual
+Base_FullClose,G&A,2025-06-30,17.0,0.0,0.0,17.0,true,Actual
+Base_FullClose,G&A,2025-07-31,17.0,1.0,0.0,18.0,true,Actual
+Base_FullClose,G&A,2025-08-31,18.0,0.0,0.0,18.0,true,Actual
+Base_FullClose,G&A,2025-09-30,18.0,0.0,0.0,18.0,true,Actual
+Base_FullClose,G&A,2025-10-31,18.0,1.0,0.0,19.0,true,Actual
+Base_FullClose,G&A,2025-11-30,19.0,0.0,0.0,19.0,true,Actual
+Base_FullClose,G&A,2025-12-31,19.0,0.0,0.0,19.0,true,Actual
+Base_FullClose,G&A,2026-01-31,19.0,0.0,0.0,19.0,true,Actual
+Base_FullClose,G&A,2026-02-28,19.0,1.0,0.0,20.0,true,Actual
+Base_FullClose,G&A,2026-03-31,20.0,1.0,1.0,20.0,true,Actual
+Base_FullClose,G&A,2026-04-30,20.0,0.0,0.0,20.0,true,Actual
+Base_FullClose,G&A,2026-05-31,20.0,1.0,0.0,21.0,true,Actual
+Base_FullClose,G&A,2026-06-30,21.0,0.0,0.0,21.0,true,Actual
+Base_FullClose,G&A,2026-07-31,21.0,0.0,0.042827125296099666,20.9571728747039,false,FY2026 Reforecast
+Base_FullClose,G&A,2026-08-31,20.9571728747039,1.0,0.04273978421700164,21.9144330904869,false,FY2026 Reforecast
+Base_FullClose,G&A,2026-09-30,21.9144330904869,0.0,0.044692008179016085,21.869741082307883,false,FY2026 Reforecast
+Base_FullClose,G&A,2026-10-31,21.869741082307883,0.0,0.044600863882156006,21.825140218425727,false,FY2026 Reforecast
+Base_FullClose,G&A,2026-11-30,21.825140218425727,0.0,0.04450990546378719,21.78063031296194,false,FY2026 Reforecast
+Base_FullClose,G&A,2026-12-31,21.78063031296194,0.0,0.04441913254482088,21.73621118041712,false,FY2026 Reforecast
+Base_FullClose,G&A,2027-01-31,21.73621118041712,0.0,0.04432854474696413,21.691882635670154,false,Forward Runway Projection
+Base_FullClose,G&A,2027-02-28,21.691882635670154,0.0,0.04423814169267004,21.647644493977484,false,Forward Runway Projection
+Base_FullClose,G&A,2027-03-31,21.647644493977484,0.0,0.044147923005194656,21.60349657097229,false,Forward Runway Projection
+Base_FullClose,G&A,2027-04-30,21.60349657097229,0.0,0.04405788830852231,21.559438682663767,false,Forward Runway Projection
+Base_FullClose,G&A,2027-05-31,21.559438682663767,0.0,0.04396803722742959,21.515470645436338,false,Forward Runway Projection
+Base_FullClose,G&A,2027-06-30,21.515470645436338,0.0,0.04387836938746048,21.471592276048877,false,Forward Runway Projection
+Base_FullClose,G&A,2027-07-31,21.471592276048877,0.0,0.04378888441491213,21.427803391633965,false,Forward Runway Projection
+Base_FullClose,G&A,2027-08-31,21.427803391633965,0.0,0.04369958193684553,21.38410380969712,false,Forward Runway Projection
+Base_FullClose,G&A,2027-09-30,21.38410380969712,0.0,0.04361046158108195,21.340493348116038,false,Forward Runway Projection
+Base_FullClose,G&A,2027-10-31,21.340493348116038,0.0,0.043521522976206484,21.29697182513983,false,Forward Runway Projection
+Base_FullClose,G&A,2027-11-30,21.29697182513983,0.0,0.04343276575156452,21.253539059388267,false,Forward Runway Projection
+Base_FullClose,G&A,2027-12-31,21.253539059388267,0.0,0.043344189537236844,21.21019486985103,false,Forward Runway Projection
+Base_FullClose,Marketing,2024-01-31,15.0,0.0,0.0,15.0,true,Actual
+Base_FullClose,Marketing,2024-02-29,15.0,0.0,0.0,15.0,true,Actual
+Base_FullClose,Marketing,2024-03-31,15.0,2.0,1.0,16.0,true,Actual
+Base_FullClose,Marketing,2024-04-30,16.0,0.0,0.0,16.0,true,Actual
+Base_FullClose,Marketing,2024-05-31,16.0,1.0,1.0,16.0,true,Actual
+Base_FullClose,Marketing,2024-06-30,16.0,0.0,0.0,16.0,true,Actual
+Base_FullClose,Marketing,2024-07-31,16.0,0.0,0.0,16.0,true,Actual
+Base_FullClose,Marketing,2024-08-31,16.0,0.0,0.0,16.0,true,Actual
+Base_FullClose,Marketing,2024-09-30,16.0,0.0,0.0,16.0,true,Actual
+Base_FullClose,Marketing,2024-10-31,16.0,1.0,0.0,17.0,true,Actual
+Base_FullClose,Marketing,2024-11-30,17.0,1.0,1.0,17.0,true,Actual
+Base_FullClose,Marketing,2024-12-31,17.0,0.0,0.0,17.0,true,Actual
+Base_FullClose,Marketing,2025-01-31,17.0,0.0,0.0,17.0,true,Actual
+Base_FullClose,Marketing,2025-02-28,17.0,1.0,1.0,17.0,true,Actual
+Base_FullClose,Marketing,2025-03-31,17.0,0.0,0.0,17.0,true,Actual
+Base_FullClose,Marketing,2025-04-30,17.0,1.0,1.0,17.0,true,Actual
+Base_FullClose,Marketing,2025-05-31,17.0,1.0,1.0,17.0,true,Actual
+Base_FullClose,Marketing,2025-06-30,17.0,0.0,0.0,17.0,true,Actual
+Base_FullClose,Marketing,2025-07-31,17.0,0.0,0.0,17.0,true,Actual
+Base_FullClose,Marketing,2025-08-31,17.0,1.0,1.0,17.0,true,Actual
+Base_FullClose,Marketing,2025-09-30,17.0,0.0,0.0,17.0,true,Actual
+Base_FullClose,Marketing,2025-10-31,17.0,0.0,0.0,17.0,true,Actual
+Base_FullClose,Marketing,2025-11-30,17.0,1.0,0.0,18.0,true,Actual
+Base_FullClose,Marketing,2025-12-31,18.0,0.0,0.0,18.0,true,Actual
+Base_FullClose,Marketing,2026-01-31,18.0,0.0,0.0,18.0,true,Actual
+Base_FullClose,Marketing,2026-02-28,18.0,0.0,0.0,18.0,true,Actual
+Base_FullClose,Marketing,2026-03-31,18.0,0.0,0.0,18.0,true,Actual
+Base_FullClose,Marketing,2026-04-30,18.0,1.0,1.0,18.0,true,Actual
+Base_FullClose,Marketing,2026-05-31,18.0,0.0,0.0,18.0,true,Actual
+Base_FullClose,Marketing,2026-06-30,18.0,0.0,0.0,18.0,true,Actual
+Base_FullClose,Marketing,2026-07-31,18.0,0.0,0.06736965923948546,17.932630340760515,false,FY2026 Reforecast
+Base_FullClose,Marketing,2026-08-31,17.932630340760515,1.0,0.06711751085137152,18.865512829909143,false,FY2026 Reforecast
+Base_FullClose,Marketing,2026-09-30,18.865512829909143,0.0,0.0706090650405109,18.794903764868632,false,FY2026 Reforecast
+Base_FullClose,Marketing,2026-10-31,18.794903764868632,0.0,0.07034479233767144,18.72455897253096,false,FY2026 Reforecast
+Base_FullClose,Marketing,2026-11-30,18.72455897253096,0.0,0.07008150874384,18.65447746378712,false,FY2026 Reforecast
+Base_FullClose,Marketing,2026-12-31,18.65447746378712,0.0,0.06981921055700013,18.58465825323012,false,FY2026 Reforecast
+Base_FullClose,Marketing,2027-01-31,18.58465825323012,0.0,0.06955789408901936,18.5151003591411,false,Forward Runway Projection
+Base_FullClose,Marketing,2027-02-28,18.5151003591411,0.0,0.0692975556655675,18.445802803475534,false,Forward Runway Projection
+Base_FullClose,Marketing,2027-03-31,18.445802803475534,0.0,0.06903819162605274,18.37676461184948,false,Forward Runway Projection
+Base_FullClose,Marketing,2027-04-30,18.37676461184948,0.0,0.0687797983235825,18.3079848135259,false,Forward Runway Projection
+Base_FullClose,Marketing,2027-05-31,18.3079848135259,0.0,0.06852237212494217,18.239462441400956,false,Forward Runway Projection
+Base_FullClose,Marketing,2027-06-30,18.239462441400956,0.0,0.06826590941047783,18.17119653199048,false,Forward Runway Projection
+Base_FullClose,Marketing,2027-07-31,18.17119653199048,0.0,0.06801040657410695,18.10318612541637,false,Forward Runway Projection
+Base_FullClose,Marketing,2027-08-31,18.10318612541637,0.0,0.06775586002323664,18.035430265393135,false,Forward Runway Projection
+Base_FullClose,Marketing,2027-09-30,18.035430265393135,0.0,0.06750226617872812,17.967927999214407,false,Forward Runway Projection
+Base_FullClose,Marketing,2027-10-31,17.967927999214407,0.0,0.0672496214748115,17.900678377739595,false,Forward Runway Projection
+Base_FullClose,Marketing,2027-11-30,17.900678377739595,0.0,0.06699792235911062,17.833680455380485,false,Forward Runway Projection
+Base_FullClose,Marketing,2027-12-31,17.833680455380485,0.0,0.0667471652924938,17.76693329008799,false,Forward Runway Projection
+Base_FullClose,Product & Design,2024-01-31,16.0,0.0,0.0,16.0,true,Actual
+Base_FullClose,Product & Design,2024-02-29,16.0,1.0,0.0,17.0,true,Actual
+Base_FullClose,Product & Design,2024-03-31,17.0,0.0,0.0,17.0,true,Actual
+Base_FullClose,Product & Design,2024-04-30,17.0,0.0,0.0,17.0,true,Actual
+Base_FullClose,Product & Design,2024-05-31,17.0,0.0,0.0,17.0,true,Actual
+Base_FullClose,Product & Design,2024-06-30,17.0,1.0,0.0,18.0,true,Actual
+Base_FullClose,Product & Design,2024-07-31,18.0,0.0,0.0,18.0,true,Actual
+Base_FullClose,Product & Design,2024-08-31,18.0,0.0,0.0,18.0,true,Actual
+Base_FullClose,Product & Design,2024-09-30,18.0,0.0,0.0,18.0,true,Actual
+Base_FullClose,Product & Design,2024-10-31,18.0,1.0,0.0,19.0,true,Actual
+Base_FullClose,Product & Design,2024-11-30,19.0,0.0,0.0,19.0,true,Actual
+Base_FullClose,Product & Design,2024-12-31,19.0,0.0,0.0,19.0,true,Actual
+Base_FullClose,Product & Design,2025-01-31,19.0,0.0,0.0,19.0,true,Actual
+Base_FullClose,Product & Design,2025-02-28,19.0,1.0,1.0,19.0,true,Actual
+Base_FullClose,Product & Design,2025-03-31,19.0,0.0,0.0,19.0,true,Actual
+Base_FullClose,Product & Design,2025-04-30,19.0,1.0,0.0,20.0,true,Actual
+Base_FullClose,Product & Design,2025-05-31,20.0,0.0,0.0,20.0,true,Actual
+Base_FullClose,Product & Design,2025-06-30,20.0,0.0,0.0,20.0,true,Actual
+Base_FullClose,Product & Design,2025-07-31,20.0,0.0,0.0,20.0,true,Actual
+Base_FullClose,Product & Design,2025-08-31,20.0,1.0,1.0,20.0,true,Actual
+Base_FullClose,Product & Design,2025-09-30,20.0,0.0,0.0,20.0,true,Actual
+Base_FullClose,Product & Design,2025-10-31,20.0,2.0,1.0,21.0,true,Actual
+Base_FullClose,Product & Design,2025-11-30,21.0,1.0,1.0,21.0,true,Actual
+Base_FullClose,Product & Design,2025-12-31,21.0,0.0,0.0,21.0,true,Actual
+Base_FullClose,Product & Design,2026-01-31,21.0,0.0,0.0,21.0,true,Actual
+Base_FullClose,Product & Design,2026-02-28,21.0,0.0,0.0,21.0,true,Actual
+Base_FullClose,Product & Design,2026-03-31,21.0,1.0,1.0,21.0,true,Actual
+Base_FullClose,Product & Design,2026-04-30,21.0,1.0,0.0,22.0,true,Actual
+Base_FullClose,Product & Design,2026-05-31,22.0,0.0,0.0,22.0,true,Actual
+Base_FullClose,Product & Design,2026-06-30,22.0,0.0,0.0,22.0,true,Actual
+Base_FullClose,Product & Design,2026-07-31,22.0,0.0,0.057279834341059654,21.94272016565894,false,FY2026 Reforecast
+Base_FullClose,Product & Design,2026-08-31,21.94272016565894,1.0,0.05713069891278266,22.885589466746158,false,FY2026 Reforecast
+Base_FullClose,Product & Design,2026-09-30,22.885589466746158,0.0,0.059585580611489775,22.826003886134668,false,FY2026 Reforecast
+Base_FullClose,Product & Design,2026-10-31,22.826003886134668,0.0,0.05943044187573676,22.76657344425893,false,FY2026 Reforecast
+Base_FullClose,Product & Design,2026-11-30,22.76657344425893,0.0,0.05927570706366936,22.707297737195262,false,FY2026 Reforecast
+Base_FullClose,Product & Design,2026-12-31,22.707297737195262,0.0,0.05912137512362392,22.648176362071638,false,FY2026 Reforecast
+Base_FullClose,Product & Design,2027-01-31,22.648176362071638,0.0,0.058967445006661734,22.589208917064976,false,Forward Runway Projection
+Base_FullClose,Product & Design,2027-02-28,22.589208917064976,0.0,0.05881391566659744,22.53039500139838,false,Forward Runway Projection
+Base_FullClose,Product & Design,2027-03-31,22.53039500139838,0.0,0.05866078605994218,22.471734215338437,false,Forward Runway Projection
+Base_FullClose,Product & Design,2027-04-30,22.471734215338437,0.0,0.058508055145953364,22.413226160192483,false,Forward Runway Projection
+Base_FullClose,Product & Design,2027-05-31,22.413226160192483,0.0,0.058355721886567125,22.354870438305916,false,Forward Runway Projection
+Base_FullClose,Product & Design,2027-06-30,22.354870438305916,0.0,0.05820378524645875,22.296666653059457,false,Forward Runway Projection
+Base_FullClose,Product & Design,2027-07-31,22.296666653059457,0.0,0.058052244192960956,22.238614408866496,false,Forward Runway Projection
+Base_FullClose,Product & Design,2027-08-31,22.238614408866496,0.0,0.057901097696117176,22.18071331117038,false,Forward Runway Projection
+Base_FullClose,Product & Design,2027-09-30,22.18071331117038,0.0,0.0577503447286567,22.122962966441722,false,Forward Runway Projection
+Base_FullClose,Product & Design,2027-10-31,22.122962966441722,0.0,0.05759998426596269,22.06536298217576,false,Forward Runway Projection
+Base_FullClose,Product & Design,2027-11-30,22.06536298217576,0.0,0.05745001528611127,22.00791296688965,false,Forward Runway Projection
+Base_FullClose,Product & Design,2027-12-31,22.00791296688965,0.0,0.057300436769811114,21.950612530119837,false,Forward Runway Projection
+Base_FullClose,Professional Services,2024-01-31,4.0,0.0,0.0,4.0,true,Actual
+Base_FullClose,Professional Services,2024-02-29,4.0,0.0,0.0,4.0,true,Actual
+Base_FullClose,Professional Services,2024-03-31,4.0,0.0,0.0,4.0,true,Actual
+Base_FullClose,Professional Services,2024-04-30,4.0,1.0,0.0,5.0,true,Actual
+Base_FullClose,Professional Services,2024-05-31,5.0,0.0,0.0,5.0,true,Actual
+Base_FullClose,Professional Services,2024-06-30,5.0,0.0,0.0,5.0,true,Actual
+Base_FullClose,Professional Services,2024-07-31,5.0,0.0,0.0,5.0,true,Actual
+Base_FullClose,Professional Services,2024-08-31,5.0,0.0,0.0,5.0,true,Actual
+Base_FullClose,Professional Services,2024-09-30,5.0,0.0,0.0,5.0,true,Actual
+Base_FullClose,Professional Services,2024-10-31,5.0,0.0,0.0,5.0,true,Actual
+Base_FullClose,Professional Services,2024-11-30,5.0,0.0,0.0,5.0,true,Actual
+Base_FullClose,Professional Services,2024-12-31,5.0,1.0,0.0,6.0,true,Actual
+Base_FullClose,Professional Services,2025-01-31,6.0,0.0,0.0,6.0,true,Actual
+Base_FullClose,Professional Services,2025-02-28,6.0,0.0,0.0,6.0,true,Actual
+Base_FullClose,Professional Services,2025-03-31,6.0,0.0,0.0,6.0,true,Actual
+Base_FullClose,Professional Services,2025-04-30,6.0,0.0,0.0,6.0,true,Actual
+Base_FullClose,Professional Services,2025-05-31,6.0,1.0,1.0,6.0,true,Actual
+Base_FullClose,Professional Services,2025-06-30,6.0,1.0,1.0,6.0,true,Actual
+Base_FullClose,Professional Services,2025-07-31,6.0,1.0,0.0,7.0,true,Actual
+Base_FullClose,Professional Services,2025-08-31,7.0,0.0,0.0,7.0,true,Actual
+Base_FullClose,Professional Services,2025-09-30,7.0,0.0,0.0,7.0,true,Actual
+Base_FullClose,Professional Services,2025-10-31,7.0,0.0,0.0,7.0,true,Actual
+Base_FullClose,Professional Services,2025-11-30,7.0,1.0,1.0,7.0,true,Actual
+Base_FullClose,Professional Services,2025-12-31,7.0,0.0,0.0,7.0,true,Actual
+Base_FullClose,Professional Services,2026-01-31,7.0,0.0,0.0,7.0,true,Actual
+Base_FullClose,Professional Services,2026-02-28,7.0,0.0,0.0,7.0,true,Actual
+Base_FullClose,Professional Services,2026-03-31,7.0,1.0,0.0,8.0,true,Actual
+Base_FullClose,Professional Services,2026-04-30,8.0,0.0,0.0,8.0,true,Actual
+Base_FullClose,Professional Services,2026-05-31,8.0,0.0,0.0,8.0,true,Actual
+Base_FullClose,Professional Services,2026-06-30,8.0,0.0,0.0,8.0,true,Actual
+Base_FullClose,Professional Services,2026-07-31,8.0,0.0,0.025371231600909816,7.97462876839909,false,FY2026 Reforecast
+Base_FullClose,Professional Services,2026-08-31,7.97462876839909,0.0,0.025290769176791628,7.949337999222299,false,FY2026 Reforecast
+Base_FullClose,Professional Services,2026-09-30,7.949337999222299,0.0,0.025210561931522157,7.924127437290776,false,FY2026 Reforecast
+Base_FullClose,Professional Services,2026-10-31,7.924127437290776,0.0,0.025130609055828756,7.898996828234948,false,FY2026 Reforecast
+Base_FullClose,Professional Services,2026-11-30,7.898996828234948,0.0,0.025050909743000283,7.873945918491947,false,FY2026 Reforecast
+Base_FullClose,Professional Services,2026-12-31,7.873945918491947,0.0,0.0249714631888871,7.84897445530306,false,FY2026 Reforecast
+Base_FullClose,Professional Services,2027-01-31,7.84897445530306,0.0,0.02489226859189042,7.82408218671117,false,Forward Runway Projection
+Base_FullClose,Professional Services,2027-02-28,7.82408218671117,0.0,0.024813325152949872,7.79926886155822,false,Forward Runway Projection
+Base_FullClose,Professional Services,2027-03-31,7.79926886155822,0.0,0.024734632075544383,7.774534229482676,false,Forward Runway Projection
+Base_FullClose,Professional Services,2027-04-30,7.774534229482676,0.0,0.024656188565676196,7.749878040916999,false,Forward Runway Projection
+Base_FullClose,Professional Services,2027-05-31,7.749878040916999,0.0,0.024577993831863765,7.725300047085136,false,Forward Runway Projection
+Base_FullClose,Professional Services,2027-06-30,7.725300047085136,0.0,0.024500047085139087,7.7007999999999965,false,Forward Runway Projection
+Base_FullClose,Professional Services,2027-07-31,7.7007999999999965,0.0,0.02442234753903616,7.67637765246096,false,Forward Runway Projection
+Base_FullClose,Professional Services,2027-08-31,7.67637765246096,0.0,0.024344894409579432,7.652032758051381,false,Forward Runway Projection
+Base_FullClose,Professional Services,2027-09-30,7.652032758051381,0.0,0.024267686915283804,7.627765071136097,false,Forward Runway Projection
+Base_FullClose,Professional Services,2027-10-31,7.627765071136097,0.0,0.02419072427714042,7.603574346858957,false,Forward Runway Projection
+Base_FullClose,Professional Services,2027-11-30,7.603574346858957,0.0,0.02411400571861222,7.5794603411403445,false,Forward Runway Projection
+Base_FullClose,Professional Services,2027-12-31,7.5794603411403445,0.0,0.024037530465622403,7.555422810674722,false,Forward Runway Projection
+Base_FullClose,Sales,2024-01-31,37.0,0.0,0.0,37.0,true,Actual
+Base_FullClose,Sales,2024-02-29,37.0,2.0,1.0,38.0,true,Actual
+Base_FullClose,Sales,2024-03-31,38.0,0.0,0.0,38.0,true,Actual
+Base_FullClose,Sales,2024-04-30,38.0,3.0,2.0,39.0,true,Actual
+Base_FullClose,Sales,2024-05-31,39.0,2.0,2.0,39.0,true,Actual
+Base_FullClose,Sales,2024-06-30,39.0,2.0,1.0,40.0,true,Actual
+Base_FullClose,Sales,2024-07-31,40.0,3.0,1.0,42.0,true,Actual
+Base_FullClose,Sales,2024-08-31,42.0,0.0,0.0,42.0,true,Actual
+Base_FullClose,Sales,2024-09-30,42.0,3.0,3.0,42.0,true,Actual
+Base_FullClose,Sales,2024-10-31,42.0,0.0,0.0,42.0,true,Actual
+Base_FullClose,Sales,2024-11-30,42.0,0.0,0.0,42.0,true,Actual
+Base_FullClose,Sales,2024-12-31,42.0,0.0,0.0,42.0,true,Actual
+Base_FullClose,Sales,2025-01-31,42.0,0.0,0.0,42.0,true,Actual
+Base_FullClose,Sales,2025-02-28,42.0,3.0,3.0,42.0,true,Actual
+Base_FullClose,Sales,2025-03-31,42.0,0.0,0.0,42.0,true,Actual
+Base_FullClose,Sales,2025-04-30,42.0,4.0,4.0,42.0,true,Actual
+Base_FullClose,Sales,2025-05-31,42.0,1.0,1.0,42.0,true,Actual
+Base_FullClose,Sales,2025-06-30,42.0,0.0,0.0,42.0,true,Actual
+Base_FullClose,Sales,2025-07-31,42.0,2.0,2.0,42.0,true,Actual
+Base_FullClose,Sales,2025-08-31,42.0,2.0,1.0,43.0,true,Actual
+Base_FullClose,Sales,2025-09-30,43.0,1.0,1.0,43.0,true,Actual
+Base_FullClose,Sales,2025-10-31,43.0,2.0,2.0,43.0,true,Actual
+Base_FullClose,Sales,2025-11-30,43.0,0.0,0.0,43.0,true,Actual
+Base_FullClose,Sales,2025-12-31,43.0,0.0,0.0,43.0,true,Actual
+Base_FullClose,Sales,2026-01-31,43.0,3.0,3.0,43.0,true,Actual
+Base_FullClose,Sales,2026-02-28,43.0,3.0,3.0,43.0,true,Actual
+Base_FullClose,Sales,2026-03-31,43.0,6.0,5.0,44.0,true,Actual
+Base_FullClose,Sales,2026-04-30,44.0,3.0,3.0,44.0,true,Actual
+Base_FullClose,Sales,2026-05-31,44.0,0.0,0.0,44.0,true,Actual
+Base_FullClose,Sales,2026-06-30,44.0,1.0,1.0,44.0,true,Actual
+Base_FullClose,Sales,2026-07-31,44.0,0.0,0.2154415570609416,43.78455844293906,false,FY2026 Reforecast
+Base_FullClose,Sales,2026-08-31,43.78455844293906,6.0,0.21438666923119598,49.57017177370786,false,FY2026 Reforecast
+Base_FullClose,Sales,2026-09-30,49.57017177370786,0.0,0.24271534069785616,49.327456433010006,false,FY2026 Reforecast
+Base_FullClose,Sales,2026-10-31,49.327456433010006,4.0,0.24152690954054634,53.08592952346946,false,FY2026 Reforecast
+Base_FullClose,Sales,2026-11-30,53.08592952346946,0.0,0.2599298935128047,52.825999629956655,false,FY2026 Reforecast
+Base_FullClose,Sales,2026-12-31,52.825999629956655,0.0,0.25865717303587843,52.56734245692078,false,FY2026 Reforecast
+Base_FullClose,Sales,2027-01-31,52.56734245692078,0.0,0.25739068430624457,52.30995177261453,false,Forward Runway Projection
+Base_FullClose,Sales,2027-02-28,52.30995177261453,0.0,0.2561303968107893,52.05382137580374,false,Forward Runway Projection
+Base_FullClose,Sales,2027-03-31,52.05382137580374,0.0,0.25487628018580466,51.79894509561794,false,Forward Runway Projection
+Base_FullClose,Sales,2027-04-30,51.79894509561794,0.0,0.2536283042162353,51.5453167914017,false,Forward Runway Projection
+Base_FullClose,Sales,2027-05-31,51.5453167914017,0.0,0.252386438834975,51.29293035256673,false,Forward Runway Projection
+Base_FullClose,Sales,2027-06-30,51.29293035256673,0.0,0.25115065412216353,51.041779698444564,false,Forward Runway Projection
+Base_FullClose,Sales,2027-07-31,51.041779698444564,0.0,0.24992092030442592,50.79185877814014,false,Forward Runway Projection
+Base_FullClose,Sales,2027-08-31,50.79185877814014,0.0,0.24869720775413384,50.543161570386005,false,Forward Runway Projection
+Base_FullClose,Sales,2027-09-30,50.543161570386005,0.0,0.2474794869887944,50.29568208339721,false,Forward Runway Projection
+Base_FullClose,Sales,2027-10-31,50.29568208339721,0.0,0.24626772867020463,50.049414354727006,false,Forward Runway Projection
+Base_FullClose,Sales,2027-11-30,50.049414354727006,0.0,0.24506190360388302,49.80435245112312,false,Forward Runway Projection
+Base_FullClose,Sales,2027-12-31,49.80435245112312,0.0,0.24386198273822401,49.5604904683849,false,Forward Runway Projection
+Base_FullClose,Support & Cloud Ops,2024-01-31,13.0,0.0,0.0,13.0,true,Actual
+Base_FullClose,Support & Cloud Ops,2024-02-29,13.0,1.0,1.0,13.0,true,Actual
+Base_FullClose,Support & Cloud Ops,2024-03-31,13.0,0.0,0.0,13.0,true,Actual
+Base_FullClose,Support & Cloud Ops,2024-04-30,13.0,1.0,0.0,14.0,true,Actual
+Base_FullClose,Support & Cloud Ops,2024-05-31,14.0,0.0,0.0,14.0,true,Actual
+Base_FullClose,Support & Cloud Ops,2024-06-30,14.0,1.0,1.0,14.0,true,Actual
+Base_FullClose,Support & Cloud Ops,2024-07-31,14.0,0.0,0.0,14.0,true,Actual
+Base_FullClose,Support & Cloud Ops,2024-08-31,14.0,0.0,0.0,14.0,true,Actual
+Base_FullClose,Support & Cloud Ops,2024-09-30,14.0,0.0,0.0,14.0,true,Actual
+Base_FullClose,Support & Cloud Ops,2024-10-31,14.0,0.0,0.0,14.0,true,Actual
+Base_FullClose,Support & Cloud Ops,2024-11-30,14.0,0.0,0.0,14.0,true,Actual
+Base_FullClose,Support & Cloud Ops,2024-12-31,14.0,0.0,0.0,14.0,true,Actual
+Base_FullClose,Support & Cloud Ops,2025-01-31,14.0,0.0,0.0,14.0,true,Actual
+Base_FullClose,Support & Cloud Ops,2025-02-28,14.0,0.0,0.0,14.0,true,Actual
+Base_FullClose,Support & Cloud Ops,2025-03-31,14.0,0.0,0.0,14.0,true,Actual
+Base_FullClose,Support & Cloud Ops,2025-04-30,14.0,1.0,0.0,15.0,true,Actual
+Base_FullClose,Support & Cloud Ops,2025-05-31,15.0,1.0,1.0,15.0,true,Actual
+Base_FullClose,Support & Cloud Ops,2025-06-30,15.0,0.0,0.0,15.0,true,Actual
+Base_FullClose,Support & Cloud Ops,2025-07-31,15.0,0.0,0.0,15.0,true,Actual
+Base_FullClose,Support & Cloud Ops,2025-08-31,15.0,1.0,1.0,15.0,true,Actual
+Base_FullClose,Support & Cloud Ops,2025-09-30,15.0,0.0,0.0,15.0,true,Actual
+Base_FullClose,Support & Cloud Ops,2025-10-31,15.0,0.0,0.0,15.0,true,Actual
+Base_FullClose,Support & Cloud Ops,2025-11-30,15.0,1.0,1.0,15.0,true,Actual
+Base_FullClose,Support & Cloud Ops,2025-12-31,15.0,1.0,1.0,15.0,true,Actual
+Base_FullClose,Support & Cloud Ops,2026-01-31,15.0,0.0,0.0,15.0,true,Actual
+Base_FullClose,Support & Cloud Ops,2026-02-28,15.0,1.0,1.0,15.0,true,Actual
+Base_FullClose,Support & Cloud Ops,2026-03-31,15.0,1.0,1.0,15.0,true,Actual
+Base_FullClose,Support & Cloud Ops,2026-04-30,15.0,1.0,1.0,15.0,true,Actual
+Base_FullClose,Support & Cloud Ops,2026-05-31,15.0,0.0,0.0,15.0,true,Actual
+Base_FullClose,Support & Cloud Ops,2026-06-30,15.0,0.0,0.0,15.0,true,Actual
+Base_FullClose,Support & Cloud Ops,2026-07-31,15.0,0.0,0.053278598211933925,14.946721401788066,false,FY2026 Reforecast
+Base_FullClose,Support & Cloud Ops,2026-08-31,14.946721401788066,2.0,0.05308935761010858,16.89363204417796,false,FY2026 Reforecast
+Base_FullClose,Support & Cloud Ops,2026-09-30,16.89363204417796,0.0,0.06000460226813331,16.833627441909826,false,FY2026 Reforecast
+Base_FullClose,Support & Cloud Ops,2026-10-31,16.833627441909826,0.0,0.05979147152846309,16.773835970381363,false,FY2026 Reforecast
+Base_FullClose,Support & Cloud Ops,2026-11-30,16.773835970381363,0.0,0.05957909780925519,16.714256872572108,false,FY2026 Reforecast
+Base_FullClose,Support & Cloud Ops,2026-12-31,16.714256872572108,0.0,0.05936747842165602,16.65488939415045,false,FY2026 Reforecast
+Base_FullClose,Support & Cloud Ops,2027-01-31,16.65488939415045,0.0,0.05915661068634037,16.59573278346411,false,Forward Runway Projection
+Base_FullClose,Support & Cloud Ops,2027-02-28,16.59573278346411,0.0,0.05894649193352208,16.53678629153059,false,Forward Runway Projection
+Base_FullClose,Support & Cloud Ops,2027-03-31,16.53678629153059,0.0,0.058737119502872304,16.478049172027717,false,Forward Runway Projection
+Base_FullClose,Support & Cloud Ops,2027-04-30,16.478049172027717,0.0,0.05852849074353017,16.419520681284187,false,Forward Runway Projection
+Base_FullClose,Support & Cloud Ops,2027-05-31,16.419520681284187,0.0,0.05832060301404596,16.36120007827014,false,Forward Runway Projection
+Base_FullClose,Support & Cloud Ops,2027-06-30,16.36120007827014,0.0,0.0581134536823491,16.30308662458779,false,Forward Runway Projection
+Base_FullClose,Support & Cloud Ops,2027-07-31,16.30308662458779,0.0,0.057907040125716236,16.245179584462075,false,Forward Runway Projection
+Base_FullClose,Support & Cloud Ops,2027-08-31,16.245179584462075,0.0,0.05770135973075341,16.187478224731322,false,Forward Runway Projection
+Base_FullClose,Support & Cloud Ops,2027-09-30,16.187478224731322,0.0,0.05749640989332505,16.129981814837997,false,Forward Runway Projection
+Base_FullClose,Support & Cloud Ops,2027-10-31,16.129981814837997,0.0,0.05729218801857172,16.072689626819425,false,Forward Runway Projection
+Base_FullClose,Support & Cloud Ops,2027-11-30,16.072689626819425,0.0,0.057088691520828405,16.015600935298597,false,Forward Runway Projection
+Base_FullClose,Support & Cloud Ops,2027-12-31,16.015600935298597,0.0,0.056885917823631615,15.958715017474965,false,Forward Runway Projection
+Base_Targeted,Customer Success,2024-01-31,20.0,0.0,0.0,20.0,true,Actual
+Base_Targeted,Customer Success,2024-02-29,20.0,1.0,0.0,21.0,true,Actual
+Base_Targeted,Customer Success,2024-03-31,21.0,0.0,0.0,21.0,true,Actual
+Base_Targeted,Customer Success,2024-04-30,21.0,0.0,0.0,21.0,true,Actual
+Base_Targeted,Customer Success,2024-05-31,21.0,1.0,0.0,22.0,true,Actual
+Base_Targeted,Customer Success,2024-06-30,22.0,0.0,0.0,22.0,true,Actual
+Base_Targeted,Customer Success,2024-07-31,22.0,0.0,0.0,22.0,true,Actual
+Base_Targeted,Customer Success,2024-08-31,22.0,1.0,1.0,22.0,true,Actual
+Base_Targeted,Customer Success,2024-09-30,22.0,1.0,0.0,23.0,true,Actual
+Base_Targeted,Customer Success,2024-10-31,23.0,1.0,1.0,23.0,true,Actual
+Base_Targeted,Customer Success,2024-11-30,23.0,0.0,0.0,23.0,true,Actual
+Base_Targeted,Customer Success,2024-12-31,23.0,0.0,0.0,23.0,true,Actual
+Base_Targeted,Customer Success,2025-01-31,23.0,0.0,0.0,23.0,true,Actual
+Base_Targeted,Customer Success,2025-02-28,23.0,0.0,0.0,23.0,true,Actual
+Base_Targeted,Customer Success,2025-03-31,23.0,2.0,1.0,24.0,true,Actual
+Base_Targeted,Customer Success,2025-04-30,24.0,1.0,1.0,24.0,true,Actual
+Base_Targeted,Customer Success,2025-05-31,24.0,0.0,0.0,24.0,true,Actual
+Base_Targeted,Customer Success,2025-06-30,24.0,1.0,1.0,24.0,true,Actual
+Base_Targeted,Customer Success,2025-07-31,24.0,1.0,1.0,24.0,true,Actual
+Base_Targeted,Customer Success,2025-08-31,24.0,0.0,0.0,24.0,true,Actual
+Base_Targeted,Customer Success,2025-09-30,24.0,1.0,0.0,25.0,true,Actual
+Base_Targeted,Customer Success,2025-10-31,25.0,0.0,0.0,25.0,true,Actual
+Base_Targeted,Customer Success,2025-11-30,25.0,1.0,1.0,25.0,true,Actual
+Base_Targeted,Customer Success,2025-12-31,25.0,0.0,0.0,25.0,true,Actual
+Base_Targeted,Customer Success,2026-01-31,25.0,2.0,2.0,25.0,true,Actual
+Base_Targeted,Customer Success,2026-02-28,25.0,1.0,1.0,25.0,true,Actual
+Base_Targeted,Customer Success,2026-03-31,25.0,2.0,2.0,25.0,true,Actual
+Base_Targeted,Customer Success,2026-04-30,25.0,2.0,1.0,26.0,true,Actual
+Base_Targeted,Customer Success,2026-05-31,26.0,1.0,1.0,26.0,true,Actual
+Base_Targeted,Customer Success,2026-06-30,26.0,0.0,0.0,26.0,true,Actual
+Base_Targeted,Customer Success,2026-07-31,26.0,0.0,0.1022843684495065,25.897715631550493,false,FY2026 Reforecast
+Base_Targeted,Customer Success,2026-08-31,25.897715631550493,2.0,0.10188198029454298,27.79583365125595,false,FY2026 Reforecast
+Base_Targeted,Customer Success,2026-09-30,27.79583365125595,0.0,0.10934920348254806,27.686484447773402,false,FY2026 Reforecast
+Base_Targeted,Customer Success,2026-10-31,27.686484447773402,0.0,0.10891902216645022,27.577565425606952,false,FY2026 Reforecast
+Base_Targeted,Customer Success,2026-11-30,27.577565425606952,0.0,0.108490533189741,27.46907489241721,false,FY2026 Reforecast
+Base_Targeted,Customer Success,2026-12-31,27.46907489241721,0.0,0.10806372989473445,27.361011162522477,false,FY2026 Reforecast
+Base_Targeted,Customer Success,2027-01-31,27.361011162522477,0.0,0.10763860564994587,27.25337255687253,false,Forward Runway Projection
+Base_Targeted,Customer Success,2027-02-28,27.25337255687253,0.0,0.10721515384994973,27.14615740302258,false,Forward Runway Projection
+Base_Targeted,Customer Success,2027-03-31,27.14615740302258,0.0,0.10679336791535121,27.03936403510723,false,Forward Runway Projection
+Base_Targeted,Customer Success,2027-04-30,27.03936403510723,0.0,0.1063732412925944,26.932990793814636,false,Forward Runway Projection
+Base_Targeted,Customer Success,2027-05-31,26.932990793814636,0.0,0.10595476745390542,26.82703602636073,false,Forward Runway Projection
+Base_Targeted,Customer Success,2027-06-30,26.82703602636073,0.0,0.10553793989725335,26.721498086463477,false,Forward Runway Projection
+Base_Targeted,Customer Success,2027-07-31,26.721498086463477,0.0,0.10512275214610156,26.616375334317375,false,Forward Runway Projection
+Base_Targeted,Customer Success,2027-08-31,26.616375334317375,0.0,0.10470919774945031,26.511666136567925,false,Forward Runway Projection
+Base_Targeted,Customer Success,2027-09-30,26.511666136567925,0.0,0.10429727028165914,26.407368866286266,false,Forward Runway Projection
+Base_Targeted,Customer Success,2027-10-31,26.407368866286266,0.0,0.10388696334235803,26.303481902943908,false,Forward Runway Projection
+Base_Targeted,Customer Success,2027-11-30,26.303481902943908,0.0,0.10347827055636927,26.20000363238754,false,Forward Runway Projection
+Base_Targeted,Customer Success,2027-12-31,26.20000363238754,0.0,0.10307118557360084,26.096932446813938,false,Forward Runway Projection
+Base_Targeted,Engineering,2024-01-31,42.0,0.0,0.0,42.0,true,Actual
+Base_Targeted,Engineering,2024-02-29,42.0,0.0,0.0,42.0,true,Actual
+Base_Targeted,Engineering,2024-03-31,42.0,1.0,0.0,43.0,true,Actual
+Base_Targeted,Engineering,2024-04-30,43.0,0.0,0.0,43.0,true,Actual
+Base_Targeted,Engineering,2024-05-31,43.0,2.0,1.0,44.0,true,Actual
+Base_Targeted,Engineering,2024-06-30,44.0,1.0,0.0,45.0,true,Actual
+Base_Targeted,Engineering,2024-07-31,45.0,2.0,2.0,45.0,true,Actual
+Base_Targeted,Engineering,2024-08-31,45.0,0.0,0.0,45.0,true,Actual
+Base_Targeted,Engineering,2024-09-30,45.0,2.0,1.0,46.0,true,Actual
+Base_Targeted,Engineering,2024-10-31,46.0,2.0,2.0,46.0,true,Actual
+Base_Targeted,Engineering,2024-11-30,46.0,1.0,0.0,47.0,true,Actual
+Base_Targeted,Engineering,2024-12-31,47.0,0.0,0.0,47.0,true,Actual
+Base_Targeted,Engineering,2025-01-31,47.0,0.0,0.0,47.0,true,Actual
+Base_Targeted,Engineering,2025-02-28,47.0,2.0,1.0,48.0,true,Actual
+Base_Targeted,Engineering,2025-03-31,48.0,0.0,0.0,48.0,true,Actual
+Base_Targeted,Engineering,2025-04-30,48.0,1.0,1.0,48.0,true,Actual
+Base_Targeted,Engineering,2025-05-31,48.0,3.0,3.0,48.0,true,Actual
+Base_Targeted,Engineering,2025-06-30,48.0,1.0,0.0,49.0,true,Actual
+Base_Targeted,Engineering,2025-07-31,49.0,0.0,0.0,49.0,true,Actual
+Base_Targeted,Engineering,2025-08-31,49.0,1.0,1.0,49.0,true,Actual
+Base_Targeted,Engineering,2025-09-30,49.0,1.0,0.0,50.0,true,Actual
+Base_Targeted,Engineering,2025-10-31,50.0,2.0,2.0,50.0,true,Actual
+Base_Targeted,Engineering,2025-11-30,50.0,0.0,0.0,50.0,true,Actual
+Base_Targeted,Engineering,2025-12-31,50.0,1.0,1.0,50.0,true,Actual
+Base_Targeted,Engineering,2026-01-31,50.0,1.0,0.0,51.0,true,Actual
+Base_Targeted,Engineering,2026-02-28,51.0,1.0,1.0,51.0,true,Actual
+Base_Targeted,Engineering,2026-03-31,51.0,0.0,0.0,51.0,true,Actual
+Base_Targeted,Engineering,2026-04-30,51.0,0.0,0.0,51.0,true,Actual
+Base_Targeted,Engineering,2026-05-31,51.0,1.0,0.0,52.0,true,Actual
+Base_Targeted,Engineering,2026-06-30,52.0,0.0,0.0,52.0,true,Actual
+Base_Targeted,Engineering,2026-07-31,52.0,0.0,0.1255882103322108,51.87441178966779,false,FY2026 Reforecast
+Base_Targeted,Engineering,2026-08-31,51.87441178966779,3.0,0.12528489497500317,54.749126894692786,false,FY2026 Reforecast
+Base_Targeted,Engineering,2026-09-30,54.749126894692786,0.0,0.13222778584529493,54.61689910884749,false,FY2026 Reforecast
+Base_Targeted,Engineering,2026-10-31,54.61689910884749,0.0,0.13190843486490422,54.48499067398259,false,FY2026 Reforecast
+Base_Targeted,Engineering,2026-11-30,54.48499067398259,0.0,0.1315898551675474,54.35340081881504,false,FY2026 Reforecast
+Base_Targeted,Engineering,2026-12-31,54.35340081881504,0.0,0.13127204489046562,54.222128773924574,false,FY2026 Reforecast
+Base_Targeted,Engineering,2027-01-31,54.222128773924574,0.0,0.13095500217537648,54.0911737717492,false,Forward Runway Projection
+Base_Targeted,Engineering,2027-02-28,54.0911737717492,0.0,0.1306387251685095,53.96053504658069,false,Forward Runway Projection
+Base_Targeted,Engineering,2027-03-31,53.96053504658069,0.0,0.1303232120205493,53.83021183456014,false,Forward Runway Projection
+Base_Targeted,Engineering,2027-04-30,53.83021183456014,0.0,0.13000846088664986,53.70020337367349,false,Forward Runway Projection
+Base_Targeted,Engineering,2027-05-31,53.70020337367349,0.0,0.12969446992644862,53.57050890374704,false,Forward Runway Projection
+Base_Targeted,Engineering,2027-06-30,53.57050890374704,0.0,0.12938123730398132,53.44112766644306,false,Forward Runway Projection
+Base_Targeted,Engineering,2027-07-31,53.44112766644306,0.0,0.12906876118776722,53.31205890525529,false,Forward Runway Projection
+Base_Targeted,Engineering,2027-08-31,53.31205890525529,0.0,0.1287570397506954,53.183301865504596,false,Forward Runway Projection
+Base_Targeted,Engineering,2027-09-30,53.183301865504596,0.0,0.1284460711701172,53.05485579433448,false,Forward Runway Projection
+Base_Targeted,Engineering,2027-10-31,53.05485579433448,0.0,0.12813585362776791,52.92671994070671,false,Forward Runway Projection
+Base_Targeted,Engineering,2027-11-30,52.92671994070671,0.0,0.12782638530975277,52.79889355539696,false,Forward Runway Projection
+Base_Targeted,Engineering,2027-12-31,52.79889355539696,0.0,0.12751766440660361,52.671375890990355,false,Forward Runway Projection
+Base_Targeted,G&A,2024-01-31,12.0,0.0,0.0,12.0,true,Actual
+Base_Targeted,G&A,2024-02-29,12.0,1.0,0.0,13.0,true,Actual
+Base_Targeted,G&A,2024-03-31,13.0,0.0,0.0,13.0,true,Actual
+Base_Targeted,G&A,2024-04-30,13.0,0.0,0.0,13.0,true,Actual
+Base_Targeted,G&A,2024-05-31,13.0,1.0,0.0,14.0,true,Actual
+Base_Targeted,G&A,2024-06-30,14.0,0.0,0.0,14.0,true,Actual
+Base_Targeted,G&A,2024-07-31,14.0,0.0,0.0,14.0,true,Actual
+Base_Targeted,G&A,2024-08-31,14.0,1.0,0.0,15.0,true,Actual
+Base_Targeted,G&A,2024-09-30,15.0,0.0,0.0,15.0,true,Actual
+Base_Targeted,G&A,2024-10-31,15.0,1.0,1.0,15.0,true,Actual
+Base_Targeted,G&A,2024-11-30,15.0,2.0,1.0,16.0,true,Actual
+Base_Targeted,G&A,2024-12-31,16.0,0.0,0.0,16.0,true,Actual
+Base_Targeted,G&A,2025-01-31,16.0,0.0,0.0,16.0,true,Actual
+Base_Targeted,G&A,2025-02-28,16.0,0.0,0.0,16.0,true,Actual
+Base_Targeted,G&A,2025-03-31,16.0,2.0,1.0,17.0,true,Actual
+Base_Targeted,G&A,2025-04-30,17.0,0.0,0.0,17.0,true,Actual
+Base_Targeted,G&A,2025-05-31,17.0,0.0,0.0,17.0,true,Actual
+Base_Targeted,G&A,2025-06-30,17.0,0.0,0.0,17.0,true,Actual
+Base_Targeted,G&A,2025-07-31,17.0,1.0,0.0,18.0,true,Actual
+Base_Targeted,G&A,2025-08-31,18.0,0.0,0.0,18.0,true,Actual
+Base_Targeted,G&A,2025-09-30,18.0,0.0,0.0,18.0,true,Actual
+Base_Targeted,G&A,2025-10-31,18.0,1.0,0.0,19.0,true,Actual
+Base_Targeted,G&A,2025-11-30,19.0,0.0,0.0,19.0,true,Actual
+Base_Targeted,G&A,2025-12-31,19.0,0.0,0.0,19.0,true,Actual
+Base_Targeted,G&A,2026-01-31,19.0,0.0,0.0,19.0,true,Actual
+Base_Targeted,G&A,2026-02-28,19.0,1.0,0.0,20.0,true,Actual
+Base_Targeted,G&A,2026-03-31,20.0,1.0,1.0,20.0,true,Actual
+Base_Targeted,G&A,2026-04-30,20.0,0.0,0.0,20.0,true,Actual
+Base_Targeted,G&A,2026-05-31,20.0,1.0,0.0,21.0,true,Actual
+Base_Targeted,G&A,2026-06-30,21.0,0.0,0.0,21.0,true,Actual
+Base_Targeted,G&A,2026-07-31,21.0,0.0,0.042827125296099666,20.9571728747039,false,FY2026 Reforecast
+Base_Targeted,G&A,2026-08-31,20.9571728747039,1.0,0.04273978421700164,21.9144330904869,false,FY2026 Reforecast
+Base_Targeted,G&A,2026-09-30,21.9144330904869,0.0,0.044692008179016085,21.869741082307883,false,FY2026 Reforecast
+Base_Targeted,G&A,2026-10-31,21.869741082307883,0.0,0.044600863882156006,21.825140218425727,false,FY2026 Reforecast
+Base_Targeted,G&A,2026-11-30,21.825140218425727,0.0,0.04450990546378719,21.78063031296194,false,FY2026 Reforecast
+Base_Targeted,G&A,2026-12-31,21.78063031296194,0.0,0.04441913254482088,21.73621118041712,false,FY2026 Reforecast
+Base_Targeted,G&A,2027-01-31,21.73621118041712,0.0,0.04432854474696413,21.691882635670154,false,Forward Runway Projection
+Base_Targeted,G&A,2027-02-28,21.691882635670154,0.0,0.04423814169267004,21.647644493977484,false,Forward Runway Projection
+Base_Targeted,G&A,2027-03-31,21.647644493977484,0.0,0.044147923005194656,21.60349657097229,false,Forward Runway Projection
+Base_Targeted,G&A,2027-04-30,21.60349657097229,0.0,0.04405788830852231,21.559438682663767,false,Forward Runway Projection
+Base_Targeted,G&A,2027-05-31,21.559438682663767,0.0,0.04396803722742959,21.515470645436338,false,Forward Runway Projection
+Base_Targeted,G&A,2027-06-30,21.515470645436338,0.0,0.04387836938746048,21.471592276048877,false,Forward Runway Projection
+Base_Targeted,G&A,2027-07-31,21.471592276048877,0.0,0.04378888441491213,21.427803391633965,false,Forward Runway Projection
+Base_Targeted,G&A,2027-08-31,21.427803391633965,0.0,0.04369958193684553,21.38410380969712,false,Forward Runway Projection
+Base_Targeted,G&A,2027-09-30,21.38410380969712,0.0,0.04361046158108195,21.340493348116038,false,Forward Runway Projection
+Base_Targeted,G&A,2027-10-31,21.340493348116038,0.0,0.043521522976206484,21.29697182513983,false,Forward Runway Projection
+Base_Targeted,G&A,2027-11-30,21.29697182513983,0.0,0.04343276575156452,21.253539059388267,false,Forward Runway Projection
+Base_Targeted,G&A,2027-12-31,21.253539059388267,0.0,0.043344189537236844,21.21019486985103,false,Forward Runway Projection
+Base_Targeted,Marketing,2024-01-31,15.0,0.0,0.0,15.0,true,Actual
+Base_Targeted,Marketing,2024-02-29,15.0,0.0,0.0,15.0,true,Actual
+Base_Targeted,Marketing,2024-03-31,15.0,2.0,1.0,16.0,true,Actual
+Base_Targeted,Marketing,2024-04-30,16.0,0.0,0.0,16.0,true,Actual
+Base_Targeted,Marketing,2024-05-31,16.0,1.0,1.0,16.0,true,Actual
+Base_Targeted,Marketing,2024-06-30,16.0,0.0,0.0,16.0,true,Actual
+Base_Targeted,Marketing,2024-07-31,16.0,0.0,0.0,16.0,true,Actual
+Base_Targeted,Marketing,2024-08-31,16.0,0.0,0.0,16.0,true,Actual
+Base_Targeted,Marketing,2024-09-30,16.0,0.0,0.0,16.0,true,Actual
+Base_Targeted,Marketing,2024-10-31,16.0,1.0,0.0,17.0,true,Actual
+Base_Targeted,Marketing,2024-11-30,17.0,1.0,1.0,17.0,true,Actual
+Base_Targeted,Marketing,2024-12-31,17.0,0.0,0.0,17.0,true,Actual
+Base_Targeted,Marketing,2025-01-31,17.0,0.0,0.0,17.0,true,Actual
+Base_Targeted,Marketing,2025-02-28,17.0,1.0,1.0,17.0,true,Actual
+Base_Targeted,Marketing,2025-03-31,17.0,0.0,0.0,17.0,true,Actual
+Base_Targeted,Marketing,2025-04-30,17.0,1.0,1.0,17.0,true,Actual
+Base_Targeted,Marketing,2025-05-31,17.0,1.0,1.0,17.0,true,Actual
+Base_Targeted,Marketing,2025-06-30,17.0,0.0,0.0,17.0,true,Actual
+Base_Targeted,Marketing,2025-07-31,17.0,0.0,0.0,17.0,true,Actual
+Base_Targeted,Marketing,2025-08-31,17.0,1.0,1.0,17.0,true,Actual
+Base_Targeted,Marketing,2025-09-30,17.0,0.0,0.0,17.0,true,Actual
+Base_Targeted,Marketing,2025-10-31,17.0,0.0,0.0,17.0,true,Actual
+Base_Targeted,Marketing,2025-11-30,17.0,1.0,0.0,18.0,true,Actual
+Base_Targeted,Marketing,2025-12-31,18.0,0.0,0.0,18.0,true,Actual
+Base_Targeted,Marketing,2026-01-31,18.0,0.0,0.0,18.0,true,Actual
+Base_Targeted,Marketing,2026-02-28,18.0,0.0,0.0,18.0,true,Actual
+Base_Targeted,Marketing,2026-03-31,18.0,0.0,0.0,18.0,true,Actual
+Base_Targeted,Marketing,2026-04-30,18.0,1.0,1.0,18.0,true,Actual
+Base_Targeted,Marketing,2026-05-31,18.0,0.0,0.0,18.0,true,Actual
+Base_Targeted,Marketing,2026-06-30,18.0,0.0,0.0,18.0,true,Actual
+Base_Targeted,Marketing,2026-07-31,18.0,0.0,0.06736965923948546,17.932630340760515,false,FY2026 Reforecast
+Base_Targeted,Marketing,2026-08-31,17.932630340760515,1.0,0.06711751085137152,18.865512829909143,false,FY2026 Reforecast
+Base_Targeted,Marketing,2026-09-30,18.865512829909143,0.0,0.0706090650405109,18.794903764868632,false,FY2026 Reforecast
+Base_Targeted,Marketing,2026-10-31,18.794903764868632,0.0,0.07034479233767144,18.72455897253096,false,FY2026 Reforecast
+Base_Targeted,Marketing,2026-11-30,18.72455897253096,0.0,0.07008150874384,18.65447746378712,false,FY2026 Reforecast
+Base_Targeted,Marketing,2026-12-31,18.65447746378712,0.0,0.06981921055700013,18.58465825323012,false,FY2026 Reforecast
+Base_Targeted,Marketing,2027-01-31,18.58465825323012,0.0,0.06955789408901936,18.5151003591411,false,Forward Runway Projection
+Base_Targeted,Marketing,2027-02-28,18.5151003591411,0.0,0.0692975556655675,18.445802803475534,false,Forward Runway Projection
+Base_Targeted,Marketing,2027-03-31,18.445802803475534,0.0,0.06903819162605274,18.37676461184948,false,Forward Runway Projection
+Base_Targeted,Marketing,2027-04-30,18.37676461184948,0.0,0.0687797983235825,18.3079848135259,false,Forward Runway Projection
+Base_Targeted,Marketing,2027-05-31,18.3079848135259,0.0,0.06852237212494217,18.239462441400956,false,Forward Runway Projection
+Base_Targeted,Marketing,2027-06-30,18.239462441400956,0.0,0.06826590941047783,18.17119653199048,false,Forward Runway Projection
+Base_Targeted,Marketing,2027-07-31,18.17119653199048,0.0,0.06801040657410695,18.10318612541637,false,Forward Runway Projection
+Base_Targeted,Marketing,2027-08-31,18.10318612541637,0.0,0.06775586002323664,18.035430265393135,false,Forward Runway Projection
+Base_Targeted,Marketing,2027-09-30,18.035430265393135,0.0,0.06750226617872812,17.967927999214407,false,Forward Runway Projection
+Base_Targeted,Marketing,2027-10-31,17.967927999214407,0.0,0.0672496214748115,17.900678377739595,false,Forward Runway Projection
+Base_Targeted,Marketing,2027-11-30,17.900678377739595,0.0,0.06699792235911062,17.833680455380485,false,Forward Runway Projection
+Base_Targeted,Marketing,2027-12-31,17.833680455380485,0.0,0.0667471652924938,17.76693329008799,false,Forward Runway Projection
+Base_Targeted,Product & Design,2024-01-31,16.0,0.0,0.0,16.0,true,Actual
+Base_Targeted,Product & Design,2024-02-29,16.0,1.0,0.0,17.0,true,Actual
+Base_Targeted,Product & Design,2024-03-31,17.0,0.0,0.0,17.0,true,Actual
+Base_Targeted,Product & Design,2024-04-30,17.0,0.0,0.0,17.0,true,Actual
+Base_Targeted,Product & Design,2024-05-31,17.0,0.0,0.0,17.0,true,Actual
+Base_Targeted,Product & Design,2024-06-30,17.0,1.0,0.0,18.0,true,Actual
+Base_Targeted,Product & Design,2024-07-31,18.0,0.0,0.0,18.0,true,Actual
+Base_Targeted,Product & Design,2024-08-31,18.0,0.0,0.0,18.0,true,Actual
+Base_Targeted,Product & Design,2024-09-30,18.0,0.0,0.0,18.0,true,Actual
+Base_Targeted,Product & Design,2024-10-31,18.0,1.0,0.0,19.0,true,Actual
+Base_Targeted,Product & Design,2024-11-30,19.0,0.0,0.0,19.0,true,Actual
+Base_Targeted,Product & Design,2024-12-31,19.0,0.0,0.0,19.0,true,Actual
+Base_Targeted,Product & Design,2025-01-31,19.0,0.0,0.0,19.0,true,Actual
+Base_Targeted,Product & Design,2025-02-28,19.0,1.0,1.0,19.0,true,Actual
+Base_Targeted,Product & Design,2025-03-31,19.0,0.0,0.0,19.0,true,Actual
+Base_Targeted,Product & Design,2025-04-30,19.0,1.0,0.0,20.0,true,Actual
+Base_Targeted,Product & Design,2025-05-31,20.0,0.0,0.0,20.0,true,Actual
+Base_Targeted,Product & Design,2025-06-30,20.0,0.0,0.0,20.0,true,Actual
+Base_Targeted,Product & Design,2025-07-31,20.0,0.0,0.0,20.0,true,Actual
+Base_Targeted,Product & Design,2025-08-31,20.0,1.0,1.0,20.0,true,Actual
+Base_Targeted,Product & Design,2025-09-30,20.0,0.0,0.0,20.0,true,Actual
+Base_Targeted,Product & Design,2025-10-31,20.0,2.0,1.0,21.0,true,Actual
+Base_Targeted,Product & Design,2025-11-30,21.0,1.0,1.0,21.0,true,Actual
+Base_Targeted,Product & Design,2025-12-31,21.0,0.0,0.0,21.0,true,Actual
+Base_Targeted,Product & Design,2026-01-31,21.0,0.0,0.0,21.0,true,Actual
+Base_Targeted,Product & Design,2026-02-28,21.0,0.0,0.0,21.0,true,Actual
+Base_Targeted,Product & Design,2026-03-31,21.0,1.0,1.0,21.0,true,Actual
+Base_Targeted,Product & Design,2026-04-30,21.0,1.0,0.0,22.0,true,Actual
+Base_Targeted,Product & Design,2026-05-31,22.0,0.0,0.0,22.0,true,Actual
+Base_Targeted,Product & Design,2026-06-30,22.0,0.0,0.0,22.0,true,Actual
+Base_Targeted,Product & Design,2026-07-31,22.0,0.0,0.057279834341059654,21.94272016565894,false,FY2026 Reforecast
+Base_Targeted,Product & Design,2026-08-31,21.94272016565894,1.0,0.05713069891278266,22.885589466746158,false,FY2026 Reforecast
+Base_Targeted,Product & Design,2026-09-30,22.885589466746158,0.0,0.059585580611489775,22.826003886134668,false,FY2026 Reforecast
+Base_Targeted,Product & Design,2026-10-31,22.826003886134668,0.0,0.05943044187573676,22.76657344425893,false,FY2026 Reforecast
+Base_Targeted,Product & Design,2026-11-30,22.76657344425893,0.0,0.05927570706366936,22.707297737195262,false,FY2026 Reforecast
+Base_Targeted,Product & Design,2026-12-31,22.707297737195262,0.0,0.05912137512362392,22.648176362071638,false,FY2026 Reforecast
+Base_Targeted,Product & Design,2027-01-31,22.648176362071638,0.0,0.058967445006661734,22.589208917064976,false,Forward Runway Projection
+Base_Targeted,Product & Design,2027-02-28,22.589208917064976,0.0,0.05881391566659744,22.53039500139838,false,Forward Runway Projection
+Base_Targeted,Product & Design,2027-03-31,22.53039500139838,0.0,0.05866078605994218,22.471734215338437,false,Forward Runway Projection
+Base_Targeted,Product & Design,2027-04-30,22.471734215338437,0.0,0.058508055145953364,22.413226160192483,false,Forward Runway Projection
+Base_Targeted,Product & Design,2027-05-31,22.413226160192483,0.0,0.058355721886567125,22.354870438305916,false,Forward Runway Projection
+Base_Targeted,Product & Design,2027-06-30,22.354870438305916,0.0,0.05820378524645875,22.296666653059457,false,Forward Runway Projection
+Base_Targeted,Product & Design,2027-07-31,22.296666653059457,0.0,0.058052244192960956,22.238614408866496,false,Forward Runway Projection
+Base_Targeted,Product & Design,2027-08-31,22.238614408866496,0.0,0.057901097696117176,22.18071331117038,false,Forward Runway Projection
+Base_Targeted,Product & Design,2027-09-30,22.18071331117038,0.0,0.0577503447286567,22.122962966441722,false,Forward Runway Projection
+Base_Targeted,Product & Design,2027-10-31,22.122962966441722,0.0,0.05759998426596269,22.06536298217576,false,Forward Runway Projection
+Base_Targeted,Product & Design,2027-11-30,22.06536298217576,0.0,0.05745001528611127,22.00791296688965,false,Forward Runway Projection
+Base_Targeted,Product & Design,2027-12-31,22.00791296688965,0.0,0.057300436769811114,21.950612530119837,false,Forward Runway Projection
+Base_Targeted,Professional Services,2024-01-31,4.0,0.0,0.0,4.0,true,Actual
+Base_Targeted,Professional Services,2024-02-29,4.0,0.0,0.0,4.0,true,Actual
+Base_Targeted,Professional Services,2024-03-31,4.0,0.0,0.0,4.0,true,Actual
+Base_Targeted,Professional Services,2024-04-30,4.0,1.0,0.0,5.0,true,Actual
+Base_Targeted,Professional Services,2024-05-31,5.0,0.0,0.0,5.0,true,Actual
+Base_Targeted,Professional Services,2024-06-30,5.0,0.0,0.0,5.0,true,Actual
+Base_Targeted,Professional Services,2024-07-31,5.0,0.0,0.0,5.0,true,Actual
+Base_Targeted,Professional Services,2024-08-31,5.0,0.0,0.0,5.0,true,Actual
+Base_Targeted,Professional Services,2024-09-30,5.0,0.0,0.0,5.0,true,Actual
+Base_Targeted,Professional Services,2024-10-31,5.0,0.0,0.0,5.0,true,Actual
+Base_Targeted,Professional Services,2024-11-30,5.0,0.0,0.0,5.0,true,Actual
+Base_Targeted,Professional Services,2024-12-31,5.0,1.0,0.0,6.0,true,Actual
+Base_Targeted,Professional Services,2025-01-31,6.0,0.0,0.0,6.0,true,Actual
+Base_Targeted,Professional Services,2025-02-28,6.0,0.0,0.0,6.0,true,Actual
+Base_Targeted,Professional Services,2025-03-31,6.0,0.0,0.0,6.0,true,Actual
+Base_Targeted,Professional Services,2025-04-30,6.0,0.0,0.0,6.0,true,Actual
+Base_Targeted,Professional Services,2025-05-31,6.0,1.0,1.0,6.0,true,Actual
+Base_Targeted,Professional Services,2025-06-30,6.0,1.0,1.0,6.0,true,Actual
+Base_Targeted,Professional Services,2025-07-31,6.0,1.0,0.0,7.0,true,Actual
+Base_Targeted,Professional Services,2025-08-31,7.0,0.0,0.0,7.0,true,Actual
+Base_Targeted,Professional Services,2025-09-30,7.0,0.0,0.0,7.0,true,Actual
+Base_Targeted,Professional Services,2025-10-31,7.0,0.0,0.0,7.0,true,Actual
+Base_Targeted,Professional Services,2025-11-30,7.0,1.0,1.0,7.0,true,Actual
+Base_Targeted,Professional Services,2025-12-31,7.0,0.0,0.0,7.0,true,Actual
+Base_Targeted,Professional Services,2026-01-31,7.0,0.0,0.0,7.0,true,Actual
+Base_Targeted,Professional Services,2026-02-28,7.0,0.0,0.0,7.0,true,Actual
+Base_Targeted,Professional Services,2026-03-31,7.0,1.0,0.0,8.0,true,Actual
+Base_Targeted,Professional Services,2026-04-30,8.0,0.0,0.0,8.0,true,Actual
+Base_Targeted,Professional Services,2026-05-31,8.0,0.0,0.0,8.0,true,Actual
+Base_Targeted,Professional Services,2026-06-30,8.0,0.0,0.0,8.0,true,Actual
+Base_Targeted,Professional Services,2026-07-31,8.0,0.0,0.025371231600909816,7.97462876839909,false,FY2026 Reforecast
+Base_Targeted,Professional Services,2026-08-31,7.97462876839909,0.0,0.025290769176791628,7.949337999222299,false,FY2026 Reforecast
+Base_Targeted,Professional Services,2026-09-30,7.949337999222299,0.0,0.025210561931522157,7.924127437290776,false,FY2026 Reforecast
+Base_Targeted,Professional Services,2026-10-31,7.924127437290776,0.0,0.025130609055828756,7.898996828234948,false,FY2026 Reforecast
+Base_Targeted,Professional Services,2026-11-30,7.898996828234948,0.0,0.025050909743000283,7.873945918491947,false,FY2026 Reforecast
+Base_Targeted,Professional Services,2026-12-31,7.873945918491947,0.0,0.0249714631888871,7.84897445530306,false,FY2026 Reforecast
+Base_Targeted,Professional Services,2027-01-31,7.84897445530306,0.0,0.02489226859189042,7.82408218671117,false,Forward Runway Projection
+Base_Targeted,Professional Services,2027-02-28,7.82408218671117,0.0,0.024813325152949872,7.79926886155822,false,Forward Runway Projection
+Base_Targeted,Professional Services,2027-03-31,7.79926886155822,0.0,0.024734632075544383,7.774534229482676,false,Forward Runway Projection
+Base_Targeted,Professional Services,2027-04-30,7.774534229482676,0.0,0.024656188565676196,7.749878040916999,false,Forward Runway Projection
+Base_Targeted,Professional Services,2027-05-31,7.749878040916999,0.0,0.024577993831863765,7.725300047085136,false,Forward Runway Projection
+Base_Targeted,Professional Services,2027-06-30,7.725300047085136,0.0,0.024500047085139087,7.7007999999999965,false,Forward Runway Projection
+Base_Targeted,Professional Services,2027-07-31,7.7007999999999965,0.0,0.02442234753903616,7.67637765246096,false,Forward Runway Projection
+Base_Targeted,Professional Services,2027-08-31,7.67637765246096,0.0,0.024344894409579432,7.652032758051381,false,Forward Runway Projection
+Base_Targeted,Professional Services,2027-09-30,7.652032758051381,0.0,0.024267686915283804,7.627765071136097,false,Forward Runway Projection
+Base_Targeted,Professional Services,2027-10-31,7.627765071136097,0.0,0.02419072427714042,7.603574346858957,false,Forward Runway Projection
+Base_Targeted,Professional Services,2027-11-30,7.603574346858957,0.0,0.02411400571861222,7.5794603411403445,false,Forward Runway Projection
+Base_Targeted,Professional Services,2027-12-31,7.5794603411403445,0.0,0.024037530465622403,7.555422810674722,false,Forward Runway Projection
+Base_Targeted,Sales,2024-01-31,37.0,0.0,0.0,37.0,true,Actual
+Base_Targeted,Sales,2024-02-29,37.0,2.0,1.0,38.0,true,Actual
+Base_Targeted,Sales,2024-03-31,38.0,0.0,0.0,38.0,true,Actual
+Base_Targeted,Sales,2024-04-30,38.0,3.0,2.0,39.0,true,Actual
+Base_Targeted,Sales,2024-05-31,39.0,2.0,2.0,39.0,true,Actual
+Base_Targeted,Sales,2024-06-30,39.0,2.0,1.0,40.0,true,Actual
+Base_Targeted,Sales,2024-07-31,40.0,3.0,1.0,42.0,true,Actual
+Base_Targeted,Sales,2024-08-31,42.0,0.0,0.0,42.0,true,Actual
+Base_Targeted,Sales,2024-09-30,42.0,3.0,3.0,42.0,true,Actual
+Base_Targeted,Sales,2024-10-31,42.0,0.0,0.0,42.0,true,Actual
+Base_Targeted,Sales,2024-11-30,42.0,0.0,0.0,42.0,true,Actual
+Base_Targeted,Sales,2024-12-31,42.0,0.0,0.0,42.0,true,Actual
+Base_Targeted,Sales,2025-01-31,42.0,0.0,0.0,42.0,true,Actual
+Base_Targeted,Sales,2025-02-28,42.0,3.0,3.0,42.0,true,Actual
+Base_Targeted,Sales,2025-03-31,42.0,0.0,0.0,42.0,true,Actual
+Base_Targeted,Sales,2025-04-30,42.0,4.0,4.0,42.0,true,Actual
+Base_Targeted,Sales,2025-05-31,42.0,1.0,1.0,42.0,true,Actual
+Base_Targeted,Sales,2025-06-30,42.0,0.0,0.0,42.0,true,Actual
+Base_Targeted,Sales,2025-07-31,42.0,2.0,2.0,42.0,true,Actual
+Base_Targeted,Sales,2025-08-31,42.0,2.0,1.0,43.0,true,Actual
+Base_Targeted,Sales,2025-09-30,43.0,1.0,1.0,43.0,true,Actual
+Base_Targeted,Sales,2025-10-31,43.0,2.0,2.0,43.0,true,Actual
+Base_Targeted,Sales,2025-11-30,43.0,0.0,0.0,43.0,true,Actual
+Base_Targeted,Sales,2025-12-31,43.0,0.0,0.0,43.0,true,Actual
+Base_Targeted,Sales,2026-01-31,43.0,3.0,3.0,43.0,true,Actual
+Base_Targeted,Sales,2026-02-28,43.0,3.0,3.0,43.0,true,Actual
+Base_Targeted,Sales,2026-03-31,43.0,6.0,5.0,44.0,true,Actual
+Base_Targeted,Sales,2026-04-30,44.0,3.0,3.0,44.0,true,Actual
+Base_Targeted,Sales,2026-05-31,44.0,0.0,0.0,44.0,true,Actual
+Base_Targeted,Sales,2026-06-30,44.0,1.0,1.0,44.0,true,Actual
+Base_Targeted,Sales,2026-07-31,44.0,0.0,0.2154415570609416,43.78455844293906,false,FY2026 Reforecast
+Base_Targeted,Sales,2026-08-31,43.78455844293906,6.0,0.21438666923119598,49.57017177370786,false,FY2026 Reforecast
+Base_Targeted,Sales,2026-09-30,49.57017177370786,0.0,0.24271534069785616,49.327456433010006,false,FY2026 Reforecast
+Base_Targeted,Sales,2026-10-31,49.327456433010006,0.0,0.24152690954054634,49.08592952346946,false,FY2026 Reforecast
+Base_Targeted,Sales,2026-11-30,49.08592952346946,0.0,0.24034429741635677,48.8455852260531,false,FY2026 Reforecast
+Base_Targeted,Sales,2026-12-31,48.8455852260531,0.0,0.23916747583304243,48.60641775022006,false,FY2026 Reforecast
+Base_Targeted,Sales,2027-01-31,48.60641775022006,0.0,0.2379964164377668,48.368421333782294,false,Forward Runway Projection
+Base_Targeted,Sales,2027-02-28,48.368421333782294,0.0,0.23683109101658317,48.13159024276571,false,Forward Runway Projection
+Base_Targeted,Sales,2027-03-31,48.13159024276571,0.0,0.23567147149366008,47.89591877127205,false,Forward Runway Projection
+Base_Targeted,Sales,2027-04-30,47.89591877127205,0.0,0.23451752993062058,47.66140124134143,false,Forward Runway Projection
+Base_Targeted,Sales,2027-05-31,47.66140124134143,0.0,0.23336923852592406,47.428032002815506,false,Forward Runway Projection
+Base_Targeted,Sales,2027-06-30,47.428032002815506,0.0,0.23222656961414856,47.19580543320136,false,Forward Runway Projection
+Base_Targeted,Sales,2027-07-31,47.19580543320136,0.0,0.23108949566533,46.96471593753603,false,Forward Runway Projection
+Base_Targeted,Sales,2027-08-31,46.96471593753603,0.0,0.2299579892842658,46.73475794825176,false,Forward Runway Projection
+Base_Targeted,Sales,2027-09-30,46.73475794825176,0.0,0.22883202320994656,46.505925925041815,false,Forward Runway Projection
+Base_Targeted,Sales,2027-10-31,46.505925925041815,0.0,0.22771157031480982,46.278214354727005,false,Forward Runway Projection
+Base_Targeted,Sales,2027-11-30,46.278214354727005,0.0,0.22659660360415046,46.051617751122855,false,Forward Runway Projection
+Base_Targeted,Sales,2027-12-31,46.051617751122855,0.0,0.22548709621538876,45.826130654907466,false,Forward Runway Projection
+Base_Targeted,Support & Cloud Ops,2024-01-31,13.0,0.0,0.0,13.0,true,Actual
+Base_Targeted,Support & Cloud Ops,2024-02-29,13.0,1.0,1.0,13.0,true,Actual
+Base_Targeted,Support & Cloud Ops,2024-03-31,13.0,0.0,0.0,13.0,true,Actual
+Base_Targeted,Support & Cloud Ops,2024-04-30,13.0,1.0,0.0,14.0,true,Actual
+Base_Targeted,Support & Cloud Ops,2024-05-31,14.0,0.0,0.0,14.0,true,Actual
+Base_Targeted,Support & Cloud Ops,2024-06-30,14.0,1.0,1.0,14.0,true,Actual
+Base_Targeted,Support & Cloud Ops,2024-07-31,14.0,0.0,0.0,14.0,true,Actual
+Base_Targeted,Support & Cloud Ops,2024-08-31,14.0,0.0,0.0,14.0,true,Actual
+Base_Targeted,Support & Cloud Ops,2024-09-30,14.0,0.0,0.0,14.0,true,Actual
+Base_Targeted,Support & Cloud Ops,2024-10-31,14.0,0.0,0.0,14.0,true,Actual
+Base_Targeted,Support & Cloud Ops,2024-11-30,14.0,0.0,0.0,14.0,true,Actual
+Base_Targeted,Support & Cloud Ops,2024-12-31,14.0,0.0,0.0,14.0,true,Actual
+Base_Targeted,Support & Cloud Ops,2025-01-31,14.0,0.0,0.0,14.0,true,Actual
+Base_Targeted,Support & Cloud Ops,2025-02-28,14.0,0.0,0.0,14.0,true,Actual
+Base_Targeted,Support & Cloud Ops,2025-03-31,14.0,0.0,0.0,14.0,true,Actual
+Base_Targeted,Support & Cloud Ops,2025-04-30,14.0,1.0,0.0,15.0,true,Actual
+Base_Targeted,Support & Cloud Ops,2025-05-31,15.0,1.0,1.0,15.0,true,Actual
+Base_Targeted,Support & Cloud Ops,2025-06-30,15.0,0.0,0.0,15.0,true,Actual
+Base_Targeted,Support & Cloud Ops,2025-07-31,15.0,0.0,0.0,15.0,true,Actual
+Base_Targeted,Support & Cloud Ops,2025-08-31,15.0,1.0,1.0,15.0,true,Actual
+Base_Targeted,Support & Cloud Ops,2025-09-30,15.0,0.0,0.0,15.0,true,Actual
+Base_Targeted,Support & Cloud Ops,2025-10-31,15.0,0.0,0.0,15.0,true,Actual
+Base_Targeted,Support & Cloud Ops,2025-11-30,15.0,1.0,1.0,15.0,true,Actual
+Base_Targeted,Support & Cloud Ops,2025-12-31,15.0,1.0,1.0,15.0,true,Actual
+Base_Targeted,Support & Cloud Ops,2026-01-31,15.0,0.0,0.0,15.0,true,Actual
+Base_Targeted,Support & Cloud Ops,2026-02-28,15.0,1.0,1.0,15.0,true,Actual
+Base_Targeted,Support & Cloud Ops,2026-03-31,15.0,1.0,1.0,15.0,true,Actual
+Base_Targeted,Support & Cloud Ops,2026-04-30,15.0,1.0,1.0,15.0,true,Actual
+Base_Targeted,Support & Cloud Ops,2026-05-31,15.0,0.0,0.0,15.0,true,Actual
+Base_Targeted,Support & Cloud Ops,2026-06-30,15.0,0.0,0.0,15.0,true,Actual
+Base_Targeted,Support & Cloud Ops,2026-07-31,15.0,0.0,0.053278598211933925,14.946721401788066,false,FY2026 Reforecast
+Base_Targeted,Support & Cloud Ops,2026-08-31,14.946721401788066,2.0,0.05308935761010858,16.89363204417796,false,FY2026 Reforecast
+Base_Targeted,Support & Cloud Ops,2026-09-30,16.89363204417796,0.0,0.06000460226813331,16.833627441909826,false,FY2026 Reforecast
+Base_Targeted,Support & Cloud Ops,2026-10-31,16.833627441909826,0.0,0.05979147152846309,16.773835970381363,false,FY2026 Reforecast
+Base_Targeted,Support & Cloud Ops,2026-11-30,16.773835970381363,0.0,0.05957909780925519,16.714256872572108,false,FY2026 Reforecast
+Base_Targeted,Support & Cloud Ops,2026-12-31,16.714256872572108,0.0,0.05936747842165602,16.65488939415045,false,FY2026 Reforecast
+Base_Targeted,Support & Cloud Ops,2027-01-31,16.65488939415045,0.0,0.05915661068634037,16.59573278346411,false,Forward Runway Projection
+Base_Targeted,Support & Cloud Ops,2027-02-28,16.59573278346411,0.0,0.05894649193352208,16.53678629153059,false,Forward Runway Projection
+Base_Targeted,Support & Cloud Ops,2027-03-31,16.53678629153059,0.0,0.058737119502872304,16.478049172027717,false,Forward Runway Projection
+Base_Targeted,Support & Cloud Ops,2027-04-30,16.478049172027717,0.0,0.05852849074353017,16.419520681284187,false,Forward Runway Projection
+Base_Targeted,Support & Cloud Ops,2027-05-31,16.419520681284187,0.0,0.05832060301404596,16.36120007827014,false,Forward Runway Projection
+Base_Targeted,Support & Cloud Ops,2027-06-30,16.36120007827014,0.0,0.0581134536823491,16.30308662458779,false,Forward Runway Projection
+Base_Targeted,Support & Cloud Ops,2027-07-31,16.30308662458779,0.0,0.057907040125716236,16.245179584462075,false,Forward Runway Projection
+Base_Targeted,Support & Cloud Ops,2027-08-31,16.245179584462075,0.0,0.05770135973075341,16.187478224731322,false,Forward Runway Projection
+Base_Targeted,Support & Cloud Ops,2027-09-30,16.187478224731322,0.0,0.05749640989332505,16.129981814837997,false,Forward Runway Projection
+Base_Targeted,Support & Cloud Ops,2027-10-31,16.129981814837997,0.0,0.05729218801857172,16.072689626819425,false,Forward Runway Projection
+Base_Targeted,Support & Cloud Ops,2027-11-30,16.072689626819425,0.0,0.057088691520828405,16.015600935298597,false,Forward Runway Projection
+Base_Targeted,Support & Cloud Ops,2027-12-31,16.015600935298597,0.0,0.056885917823631615,15.958715017474965,false,Forward Runway Projection
+Bear,Customer Success,2024-01-31,20.0,0.0,0.0,20.0,true,Actual
+Bear,Customer Success,2024-02-29,20.0,1.0,0.0,21.0,true,Actual
+Bear,Customer Success,2024-03-31,21.0,0.0,0.0,21.0,true,Actual
+Bear,Customer Success,2024-04-30,21.0,0.0,0.0,21.0,true,Actual
+Bear,Customer Success,2024-05-31,21.0,1.0,0.0,22.0,true,Actual
+Bear,Customer Success,2024-06-30,22.0,0.0,0.0,22.0,true,Actual
+Bear,Customer Success,2024-07-31,22.0,0.0,0.0,22.0,true,Actual
+Bear,Customer Success,2024-08-31,22.0,1.0,1.0,22.0,true,Actual
+Bear,Customer Success,2024-09-30,22.0,1.0,0.0,23.0,true,Actual
+Bear,Customer Success,2024-10-31,23.0,1.0,1.0,23.0,true,Actual
+Bear,Customer Success,2024-11-30,23.0,0.0,0.0,23.0,true,Actual
+Bear,Customer Success,2024-12-31,23.0,0.0,0.0,23.0,true,Actual
+Bear,Customer Success,2025-01-31,23.0,0.0,0.0,23.0,true,Actual
+Bear,Customer Success,2025-02-28,23.0,0.0,0.0,23.0,true,Actual
+Bear,Customer Success,2025-03-31,23.0,2.0,1.0,24.0,true,Actual
+Bear,Customer Success,2025-04-30,24.0,1.0,1.0,24.0,true,Actual
+Bear,Customer Success,2025-05-31,24.0,0.0,0.0,24.0,true,Actual
+Bear,Customer Success,2025-06-30,24.0,1.0,1.0,24.0,true,Actual
+Bear,Customer Success,2025-07-31,24.0,1.0,1.0,24.0,true,Actual
+Bear,Customer Success,2025-08-31,24.0,0.0,0.0,24.0,true,Actual
+Bear,Customer Success,2025-09-30,24.0,1.0,0.0,25.0,true,Actual
+Bear,Customer Success,2025-10-31,25.0,0.0,0.0,25.0,true,Actual
+Bear,Customer Success,2025-11-30,25.0,1.0,1.0,25.0,true,Actual
+Bear,Customer Success,2025-12-31,25.0,0.0,0.0,25.0,true,Actual
+Bear,Customer Success,2026-01-31,25.0,2.0,2.0,25.0,true,Actual
+Bear,Customer Success,2026-02-28,25.0,1.0,1.0,25.0,true,Actual
+Bear,Customer Success,2026-03-31,25.0,2.0,2.0,25.0,true,Actual
+Bear,Customer Success,2026-04-30,25.0,2.0,1.0,26.0,true,Actual
+Bear,Customer Success,2026-05-31,26.0,1.0,1.0,26.0,true,Actual
+Bear,Customer Success,2026-06-30,26.0,0.0,0.0,26.0,true,Actual
+Bear,Customer Success,2026-07-31,26.0,0.0,0.1022843684495065,25.897715631550493,false,FY2026 Reforecast
+Bear,Customer Success,2026-08-31,25.897715631550493,2.0,0.10188198029454298,27.79583365125595,false,FY2026 Reforecast
+Bear,Customer Success,2026-09-30,27.79583365125595,0.0,0.10934920348254806,27.686484447773402,false,FY2026 Reforecast
+Bear,Customer Success,2026-10-31,27.686484447773402,0.0,0.10891902216645022,27.577565425606952,false,FY2026 Reforecast
+Bear,Customer Success,2026-11-30,27.577565425606952,0.0,0.108490533189741,27.46907489241721,false,FY2026 Reforecast
+Bear,Customer Success,2026-12-31,27.46907489241721,0.0,0.10806372989473445,27.361011162522477,false,FY2026 Reforecast
+Bear,Customer Success,2027-01-31,27.361011162522477,0.0,0.10763860564994587,27.25337255687253,false,Forward Runway Projection
+Bear,Customer Success,2027-02-28,27.25337255687253,0.0,0.10721515384994973,27.14615740302258,false,Forward Runway Projection
+Bear,Customer Success,2027-03-31,27.14615740302258,0.0,0.10679336791535121,27.03936403510723,false,Forward Runway Projection
+Bear,Customer Success,2027-04-30,27.03936403510723,0.0,0.1063732412925944,26.932990793814636,false,Forward Runway Projection
+Bear,Customer Success,2027-05-31,26.932990793814636,0.0,0.10595476745390542,26.82703602636073,false,Forward Runway Projection
+Bear,Customer Success,2027-06-30,26.82703602636073,0.0,0.10553793989725335,26.721498086463477,false,Forward Runway Projection
+Bear,Customer Success,2027-07-31,26.721498086463477,0.0,0.10512275214610156,26.616375334317375,false,Forward Runway Projection
+Bear,Customer Success,2027-08-31,26.616375334317375,0.0,0.10470919774945031,26.511666136567925,false,Forward Runway Projection
+Bear,Customer Success,2027-09-30,26.511666136567925,0.0,0.10429727028165914,26.407368866286266,false,Forward Runway Projection
+Bear,Customer Success,2027-10-31,26.407368866286266,0.0,0.10388696334235803,26.303481902943908,false,Forward Runway Projection
+Bear,Customer Success,2027-11-30,26.303481902943908,0.0,0.10347827055636927,26.20000363238754,false,Forward Runway Projection
+Bear,Customer Success,2027-12-31,26.20000363238754,0.0,0.10307118557360084,26.096932446813938,false,Forward Runway Projection
+Bear,Engineering,2024-01-31,42.0,0.0,0.0,42.0,true,Actual
+Bear,Engineering,2024-02-29,42.0,0.0,0.0,42.0,true,Actual
+Bear,Engineering,2024-03-31,42.0,1.0,0.0,43.0,true,Actual
+Bear,Engineering,2024-04-30,43.0,0.0,0.0,43.0,true,Actual
+Bear,Engineering,2024-05-31,43.0,2.0,1.0,44.0,true,Actual
+Bear,Engineering,2024-06-30,44.0,1.0,0.0,45.0,true,Actual
+Bear,Engineering,2024-07-31,45.0,2.0,2.0,45.0,true,Actual
+Bear,Engineering,2024-08-31,45.0,0.0,0.0,45.0,true,Actual
+Bear,Engineering,2024-09-30,45.0,2.0,1.0,46.0,true,Actual
+Bear,Engineering,2024-10-31,46.0,2.0,2.0,46.0,true,Actual
+Bear,Engineering,2024-11-30,46.0,1.0,0.0,47.0,true,Actual
+Bear,Engineering,2024-12-31,47.0,0.0,0.0,47.0,true,Actual
+Bear,Engineering,2025-01-31,47.0,0.0,0.0,47.0,true,Actual
+Bear,Engineering,2025-02-28,47.0,2.0,1.0,48.0,true,Actual
+Bear,Engineering,2025-03-31,48.0,0.0,0.0,48.0,true,Actual
+Bear,Engineering,2025-04-30,48.0,1.0,1.0,48.0,true,Actual
+Bear,Engineering,2025-05-31,48.0,3.0,3.0,48.0,true,Actual
+Bear,Engineering,2025-06-30,48.0,1.0,0.0,49.0,true,Actual
+Bear,Engineering,2025-07-31,49.0,0.0,0.0,49.0,true,Actual
+Bear,Engineering,2025-08-31,49.0,1.0,1.0,49.0,true,Actual
+Bear,Engineering,2025-09-30,49.0,1.0,0.0,50.0,true,Actual
+Bear,Engineering,2025-10-31,50.0,2.0,2.0,50.0,true,Actual
+Bear,Engineering,2025-11-30,50.0,0.0,0.0,50.0,true,Actual
+Bear,Engineering,2025-12-31,50.0,1.0,1.0,50.0,true,Actual
+Bear,Engineering,2026-01-31,50.0,1.0,0.0,51.0,true,Actual
+Bear,Engineering,2026-02-28,51.0,1.0,1.0,51.0,true,Actual
+Bear,Engineering,2026-03-31,51.0,0.0,0.0,51.0,true,Actual
+Bear,Engineering,2026-04-30,51.0,0.0,0.0,51.0,true,Actual
+Bear,Engineering,2026-05-31,51.0,1.0,0.0,52.0,true,Actual
+Bear,Engineering,2026-06-30,52.0,0.0,0.0,52.0,true,Actual
+Bear,Engineering,2026-07-31,52.0,0.0,0.1255882103322108,51.87441178966779,false,FY2026 Reforecast
+Bear,Engineering,2026-08-31,51.87441178966779,3.0,0.12528489497500317,54.749126894692786,false,FY2026 Reforecast
+Bear,Engineering,2026-09-30,54.749126894692786,0.0,0.13222778584529493,54.61689910884749,false,FY2026 Reforecast
+Bear,Engineering,2026-10-31,54.61689910884749,0.0,0.13190843486490422,54.48499067398259,false,FY2026 Reforecast
+Bear,Engineering,2026-11-30,54.48499067398259,0.0,0.1315898551675474,54.35340081881504,false,FY2026 Reforecast
+Bear,Engineering,2026-12-31,54.35340081881504,0.0,0.13127204489046562,54.222128773924574,false,FY2026 Reforecast
+Bear,Engineering,2027-01-31,54.222128773924574,0.0,0.13095500217537648,54.0911737717492,false,Forward Runway Projection
+Bear,Engineering,2027-02-28,54.0911737717492,0.0,0.1306387251685095,53.96053504658069,false,Forward Runway Projection
+Bear,Engineering,2027-03-31,53.96053504658069,0.0,0.1303232120205493,53.83021183456014,false,Forward Runway Projection
+Bear,Engineering,2027-04-30,53.83021183456014,0.0,0.13000846088664986,53.70020337367349,false,Forward Runway Projection
+Bear,Engineering,2027-05-31,53.70020337367349,0.0,0.12969446992644862,53.57050890374704,false,Forward Runway Projection
+Bear,Engineering,2027-06-30,53.57050890374704,0.0,0.12938123730398132,53.44112766644306,false,Forward Runway Projection
+Bear,Engineering,2027-07-31,53.44112766644306,0.0,0.12906876118776722,53.31205890525529,false,Forward Runway Projection
+Bear,Engineering,2027-08-31,53.31205890525529,0.0,0.1287570397506954,53.183301865504596,false,Forward Runway Projection
+Bear,Engineering,2027-09-30,53.183301865504596,0.0,0.1284460711701172,53.05485579433448,false,Forward Runway Projection
+Bear,Engineering,2027-10-31,53.05485579433448,0.0,0.12813585362776791,52.92671994070671,false,Forward Runway Projection
+Bear,Engineering,2027-11-30,52.92671994070671,0.0,0.12782638530975277,52.79889355539696,false,Forward Runway Projection
+Bear,Engineering,2027-12-31,52.79889355539696,0.0,0.12751766440660361,52.671375890990355,false,Forward Runway Projection
+Bear,G&A,2024-01-31,12.0,0.0,0.0,12.0,true,Actual
+Bear,G&A,2024-02-29,12.0,1.0,0.0,13.0,true,Actual
+Bear,G&A,2024-03-31,13.0,0.0,0.0,13.0,true,Actual
+Bear,G&A,2024-04-30,13.0,0.0,0.0,13.0,true,Actual
+Bear,G&A,2024-05-31,13.0,1.0,0.0,14.0,true,Actual
+Bear,G&A,2024-06-30,14.0,0.0,0.0,14.0,true,Actual
+Bear,G&A,2024-07-31,14.0,0.0,0.0,14.0,true,Actual
+Bear,G&A,2024-08-31,14.0,1.0,0.0,15.0,true,Actual
+Bear,G&A,2024-09-30,15.0,0.0,0.0,15.0,true,Actual
+Bear,G&A,2024-10-31,15.0,1.0,1.0,15.0,true,Actual
+Bear,G&A,2024-11-30,15.0,2.0,1.0,16.0,true,Actual
+Bear,G&A,2024-12-31,16.0,0.0,0.0,16.0,true,Actual
+Bear,G&A,2025-01-31,16.0,0.0,0.0,16.0,true,Actual
+Bear,G&A,2025-02-28,16.0,0.0,0.0,16.0,true,Actual
+Bear,G&A,2025-03-31,16.0,2.0,1.0,17.0,true,Actual
+Bear,G&A,2025-04-30,17.0,0.0,0.0,17.0,true,Actual
+Bear,G&A,2025-05-31,17.0,0.0,0.0,17.0,true,Actual
+Bear,G&A,2025-06-30,17.0,0.0,0.0,17.0,true,Actual
+Bear,G&A,2025-07-31,17.0,1.0,0.0,18.0,true,Actual
+Bear,G&A,2025-08-31,18.0,0.0,0.0,18.0,true,Actual
+Bear,G&A,2025-09-30,18.0,0.0,0.0,18.0,true,Actual
+Bear,G&A,2025-10-31,18.0,1.0,0.0,19.0,true,Actual
+Bear,G&A,2025-11-30,19.0,0.0,0.0,19.0,true,Actual
+Bear,G&A,2025-12-31,19.0,0.0,0.0,19.0,true,Actual
+Bear,G&A,2026-01-31,19.0,0.0,0.0,19.0,true,Actual
+Bear,G&A,2026-02-28,19.0,1.0,0.0,20.0,true,Actual
+Bear,G&A,2026-03-31,20.0,1.0,1.0,20.0,true,Actual
+Bear,G&A,2026-04-30,20.0,0.0,0.0,20.0,true,Actual
+Bear,G&A,2026-05-31,20.0,1.0,0.0,21.0,true,Actual
+Bear,G&A,2026-06-30,21.0,0.0,0.0,21.0,true,Actual
+Bear,G&A,2026-07-31,21.0,0.0,0.042827125296099666,20.9571728747039,false,FY2026 Reforecast
+Bear,G&A,2026-08-31,20.9571728747039,1.0,0.04273978421700164,21.9144330904869,false,FY2026 Reforecast
+Bear,G&A,2026-09-30,21.9144330904869,0.0,0.044692008179016085,21.869741082307883,false,FY2026 Reforecast
+Bear,G&A,2026-10-31,21.869741082307883,0.0,0.044600863882156006,21.825140218425727,false,FY2026 Reforecast
+Bear,G&A,2026-11-30,21.825140218425727,0.0,0.04450990546378719,21.78063031296194,false,FY2026 Reforecast
+Bear,G&A,2026-12-31,21.78063031296194,0.0,0.04441913254482088,21.73621118041712,false,FY2026 Reforecast
+Bear,G&A,2027-01-31,21.73621118041712,0.0,0.04432854474696413,21.691882635670154,false,Forward Runway Projection
+Bear,G&A,2027-02-28,21.691882635670154,0.0,0.04423814169267004,21.647644493977484,false,Forward Runway Projection
+Bear,G&A,2027-03-31,21.647644493977484,0.0,0.044147923005194656,21.60349657097229,false,Forward Runway Projection
+Bear,G&A,2027-04-30,21.60349657097229,0.0,0.04405788830852231,21.559438682663767,false,Forward Runway Projection
+Bear,G&A,2027-05-31,21.559438682663767,0.0,0.04396803722742959,21.515470645436338,false,Forward Runway Projection
+Bear,G&A,2027-06-30,21.515470645436338,0.0,0.04387836938746048,21.471592276048877,false,Forward Runway Projection
+Bear,G&A,2027-07-31,21.471592276048877,0.0,0.04378888441491213,21.427803391633965,false,Forward Runway Projection
+Bear,G&A,2027-08-31,21.427803391633965,0.0,0.04369958193684553,21.38410380969712,false,Forward Runway Projection
+Bear,G&A,2027-09-30,21.38410380969712,0.0,0.04361046158108195,21.340493348116038,false,Forward Runway Projection
+Bear,G&A,2027-10-31,21.340493348116038,0.0,0.043521522976206484,21.29697182513983,false,Forward Runway Projection
+Bear,G&A,2027-11-30,21.29697182513983,0.0,0.04343276575156452,21.253539059388267,false,Forward Runway Projection
+Bear,G&A,2027-12-31,21.253539059388267,0.0,0.043344189537236844,21.21019486985103,false,Forward Runway Projection
+Bear,Marketing,2024-01-31,15.0,0.0,0.0,15.0,true,Actual
+Bear,Marketing,2024-02-29,15.0,0.0,0.0,15.0,true,Actual
+Bear,Marketing,2024-03-31,15.0,2.0,1.0,16.0,true,Actual
+Bear,Marketing,2024-04-30,16.0,0.0,0.0,16.0,true,Actual
+Bear,Marketing,2024-05-31,16.0,1.0,1.0,16.0,true,Actual
+Bear,Marketing,2024-06-30,16.0,0.0,0.0,16.0,true,Actual
+Bear,Marketing,2024-07-31,16.0,0.0,0.0,16.0,true,Actual
+Bear,Marketing,2024-08-31,16.0,0.0,0.0,16.0,true,Actual
+Bear,Marketing,2024-09-30,16.0,0.0,0.0,16.0,true,Actual
+Bear,Marketing,2024-10-31,16.0,1.0,0.0,17.0,true,Actual
+Bear,Marketing,2024-11-30,17.0,1.0,1.0,17.0,true,Actual
+Bear,Marketing,2024-12-31,17.0,0.0,0.0,17.0,true,Actual
+Bear,Marketing,2025-01-31,17.0,0.0,0.0,17.0,true,Actual
+Bear,Marketing,2025-02-28,17.0,1.0,1.0,17.0,true,Actual
+Bear,Marketing,2025-03-31,17.0,0.0,0.0,17.0,true,Actual
+Bear,Marketing,2025-04-30,17.0,1.0,1.0,17.0,true,Actual
+Bear,Marketing,2025-05-31,17.0,1.0,1.0,17.0,true,Actual
+Bear,Marketing,2025-06-30,17.0,0.0,0.0,17.0,true,Actual
+Bear,Marketing,2025-07-31,17.0,0.0,0.0,17.0,true,Actual
+Bear,Marketing,2025-08-31,17.0,1.0,1.0,17.0,true,Actual
+Bear,Marketing,2025-09-30,17.0,0.0,0.0,17.0,true,Actual
+Bear,Marketing,2025-10-31,17.0,0.0,0.0,17.0,true,Actual
+Bear,Marketing,2025-11-30,17.0,1.0,0.0,18.0,true,Actual
+Bear,Marketing,2025-12-31,18.0,0.0,0.0,18.0,true,Actual
+Bear,Marketing,2026-01-31,18.0,0.0,0.0,18.0,true,Actual
+Bear,Marketing,2026-02-28,18.0,0.0,0.0,18.0,true,Actual
+Bear,Marketing,2026-03-31,18.0,0.0,0.0,18.0,true,Actual
+Bear,Marketing,2026-04-30,18.0,1.0,1.0,18.0,true,Actual
+Bear,Marketing,2026-05-31,18.0,0.0,0.0,18.0,true,Actual
+Bear,Marketing,2026-06-30,18.0,0.0,0.0,18.0,true,Actual
+Bear,Marketing,2026-07-31,18.0,0.0,0.06736965923948546,17.932630340760515,false,FY2026 Reforecast
+Bear,Marketing,2026-08-31,17.932630340760515,1.0,0.06711751085137152,18.865512829909143,false,FY2026 Reforecast
+Bear,Marketing,2026-09-30,18.865512829909143,0.0,0.0706090650405109,18.794903764868632,false,FY2026 Reforecast
+Bear,Marketing,2026-10-31,18.794903764868632,0.0,0.07034479233767144,18.72455897253096,false,FY2026 Reforecast
+Bear,Marketing,2026-11-30,18.72455897253096,0.0,0.07008150874384,18.65447746378712,false,FY2026 Reforecast
+Bear,Marketing,2026-12-31,18.65447746378712,0.0,0.06981921055700013,18.58465825323012,false,FY2026 Reforecast
+Bear,Marketing,2027-01-31,18.58465825323012,0.0,0.06955789408901936,18.5151003591411,false,Forward Runway Projection
+Bear,Marketing,2027-02-28,18.5151003591411,0.0,0.0692975556655675,18.445802803475534,false,Forward Runway Projection
+Bear,Marketing,2027-03-31,18.445802803475534,0.0,0.06903819162605274,18.37676461184948,false,Forward Runway Projection
+Bear,Marketing,2027-04-30,18.37676461184948,0.0,0.0687797983235825,18.3079848135259,false,Forward Runway Projection
+Bear,Marketing,2027-05-31,18.3079848135259,0.0,0.06852237212494217,18.239462441400956,false,Forward Runway Projection
+Bear,Marketing,2027-06-30,18.239462441400956,0.0,0.06826590941047783,18.17119653199048,false,Forward Runway Projection
+Bear,Marketing,2027-07-31,18.17119653199048,0.0,0.06801040657410695,18.10318612541637,false,Forward Runway Projection
+Bear,Marketing,2027-08-31,18.10318612541637,0.0,0.06775586002323664,18.035430265393135,false,Forward Runway Projection
+Bear,Marketing,2027-09-30,18.035430265393135,0.0,0.06750226617872812,17.967927999214407,false,Forward Runway Projection
+Bear,Marketing,2027-10-31,17.967927999214407,0.0,0.0672496214748115,17.900678377739595,false,Forward Runway Projection
+Bear,Marketing,2027-11-30,17.900678377739595,0.0,0.06699792235911062,17.833680455380485,false,Forward Runway Projection
+Bear,Marketing,2027-12-31,17.833680455380485,0.0,0.0667471652924938,17.76693329008799,false,Forward Runway Projection
+Bear,Product & Design,2024-01-31,16.0,0.0,0.0,16.0,true,Actual
+Bear,Product & Design,2024-02-29,16.0,1.0,0.0,17.0,true,Actual
+Bear,Product & Design,2024-03-31,17.0,0.0,0.0,17.0,true,Actual
+Bear,Product & Design,2024-04-30,17.0,0.0,0.0,17.0,true,Actual
+Bear,Product & Design,2024-05-31,17.0,0.0,0.0,17.0,true,Actual
+Bear,Product & Design,2024-06-30,17.0,1.0,0.0,18.0,true,Actual
+Bear,Product & Design,2024-07-31,18.0,0.0,0.0,18.0,true,Actual
+Bear,Product & Design,2024-08-31,18.0,0.0,0.0,18.0,true,Actual
+Bear,Product & Design,2024-09-30,18.0,0.0,0.0,18.0,true,Actual
+Bear,Product & Design,2024-10-31,18.0,1.0,0.0,19.0,true,Actual
+Bear,Product & Design,2024-11-30,19.0,0.0,0.0,19.0,true,Actual
+Bear,Product & Design,2024-12-31,19.0,0.0,0.0,19.0,true,Actual
+Bear,Product & Design,2025-01-31,19.0,0.0,0.0,19.0,true,Actual
+Bear,Product & Design,2025-02-28,19.0,1.0,1.0,19.0,true,Actual
+Bear,Product & Design,2025-03-31,19.0,0.0,0.0,19.0,true,Actual
+Bear,Product & Design,2025-04-30,19.0,1.0,0.0,20.0,true,Actual
+Bear,Product & Design,2025-05-31,20.0,0.0,0.0,20.0,true,Actual
+Bear,Product & Design,2025-06-30,20.0,0.0,0.0,20.0,true,Actual
+Bear,Product & Design,2025-07-31,20.0,0.0,0.0,20.0,true,Actual
+Bear,Product & Design,2025-08-31,20.0,1.0,1.0,20.0,true,Actual
+Bear,Product & Design,2025-09-30,20.0,0.0,0.0,20.0,true,Actual
+Bear,Product & Design,2025-10-31,20.0,2.0,1.0,21.0,true,Actual
+Bear,Product & Design,2025-11-30,21.0,1.0,1.0,21.0,true,Actual
+Bear,Product & Design,2025-12-31,21.0,0.0,0.0,21.0,true,Actual
+Bear,Product & Design,2026-01-31,21.0,0.0,0.0,21.0,true,Actual
+Bear,Product & Design,2026-02-28,21.0,0.0,0.0,21.0,true,Actual
+Bear,Product & Design,2026-03-31,21.0,1.0,1.0,21.0,true,Actual
+Bear,Product & Design,2026-04-30,21.0,1.0,0.0,22.0,true,Actual
+Bear,Product & Design,2026-05-31,22.0,0.0,0.0,22.0,true,Actual
+Bear,Product & Design,2026-06-30,22.0,0.0,0.0,22.0,true,Actual
+Bear,Product & Design,2026-07-31,22.0,0.0,0.057279834341059654,21.94272016565894,false,FY2026 Reforecast
+Bear,Product & Design,2026-08-31,21.94272016565894,1.0,0.05713069891278266,22.885589466746158,false,FY2026 Reforecast
+Bear,Product & Design,2026-09-30,22.885589466746158,0.0,0.059585580611489775,22.826003886134668,false,FY2026 Reforecast
+Bear,Product & Design,2026-10-31,22.826003886134668,0.0,0.05943044187573676,22.76657344425893,false,FY2026 Reforecast
+Bear,Product & Design,2026-11-30,22.76657344425893,0.0,0.05927570706366936,22.707297737195262,false,FY2026 Reforecast
+Bear,Product & Design,2026-12-31,22.707297737195262,0.0,0.05912137512362392,22.648176362071638,false,FY2026 Reforecast
+Bear,Product & Design,2027-01-31,22.648176362071638,0.0,0.058967445006661734,22.589208917064976,false,Forward Runway Projection
+Bear,Product & Design,2027-02-28,22.589208917064976,0.0,0.05881391566659744,22.53039500139838,false,Forward Runway Projection
+Bear,Product & Design,2027-03-31,22.53039500139838,0.0,0.05866078605994218,22.471734215338437,false,Forward Runway Projection
+Bear,Product & Design,2027-04-30,22.471734215338437,0.0,0.058508055145953364,22.413226160192483,false,Forward Runway Projection
+Bear,Product & Design,2027-05-31,22.413226160192483,0.0,0.058355721886567125,22.354870438305916,false,Forward Runway Projection
+Bear,Product & Design,2027-06-30,22.354870438305916,0.0,0.05820378524645875,22.296666653059457,false,Forward Runway Projection
+Bear,Product & Design,2027-07-31,22.296666653059457,0.0,0.058052244192960956,22.238614408866496,false,Forward Runway Projection
+Bear,Product & Design,2027-08-31,22.238614408866496,0.0,0.057901097696117176,22.18071331117038,false,Forward Runway Projection
+Bear,Product & Design,2027-09-30,22.18071331117038,0.0,0.0577503447286567,22.122962966441722,false,Forward Runway Projection
+Bear,Product & Design,2027-10-31,22.122962966441722,0.0,0.05759998426596269,22.06536298217576,false,Forward Runway Projection
+Bear,Product & Design,2027-11-30,22.06536298217576,0.0,0.05745001528611127,22.00791296688965,false,Forward Runway Projection
+Bear,Product & Design,2027-12-31,22.00791296688965,0.0,0.057300436769811114,21.950612530119837,false,Forward Runway Projection
+Bear,Professional Services,2024-01-31,4.0,0.0,0.0,4.0,true,Actual
+Bear,Professional Services,2024-02-29,4.0,0.0,0.0,4.0,true,Actual
+Bear,Professional Services,2024-03-31,4.0,0.0,0.0,4.0,true,Actual
+Bear,Professional Services,2024-04-30,4.0,1.0,0.0,5.0,true,Actual
+Bear,Professional Services,2024-05-31,5.0,0.0,0.0,5.0,true,Actual
+Bear,Professional Services,2024-06-30,5.0,0.0,0.0,5.0,true,Actual
+Bear,Professional Services,2024-07-31,5.0,0.0,0.0,5.0,true,Actual
+Bear,Professional Services,2024-08-31,5.0,0.0,0.0,5.0,true,Actual
+Bear,Professional Services,2024-09-30,5.0,0.0,0.0,5.0,true,Actual
+Bear,Professional Services,2024-10-31,5.0,0.0,0.0,5.0,true,Actual
+Bear,Professional Services,2024-11-30,5.0,0.0,0.0,5.0,true,Actual
+Bear,Professional Services,2024-12-31,5.0,1.0,0.0,6.0,true,Actual
+Bear,Professional Services,2025-01-31,6.0,0.0,0.0,6.0,true,Actual
+Bear,Professional Services,2025-02-28,6.0,0.0,0.0,6.0,true,Actual
+Bear,Professional Services,2025-03-31,6.0,0.0,0.0,6.0,true,Actual
+Bear,Professional Services,2025-04-30,6.0,0.0,0.0,6.0,true,Actual
+Bear,Professional Services,2025-05-31,6.0,1.0,1.0,6.0,true,Actual
+Bear,Professional Services,2025-06-30,6.0,1.0,1.0,6.0,true,Actual
+Bear,Professional Services,2025-07-31,6.0,1.0,0.0,7.0,true,Actual
+Bear,Professional Services,2025-08-31,7.0,0.0,0.0,7.0,true,Actual
+Bear,Professional Services,2025-09-30,7.0,0.0,0.0,7.0,true,Actual
+Bear,Professional Services,2025-10-31,7.0,0.0,0.0,7.0,true,Actual
+Bear,Professional Services,2025-11-30,7.0,1.0,1.0,7.0,true,Actual
+Bear,Professional Services,2025-12-31,7.0,0.0,0.0,7.0,true,Actual
+Bear,Professional Services,2026-01-31,7.0,0.0,0.0,7.0,true,Actual
+Bear,Professional Services,2026-02-28,7.0,0.0,0.0,7.0,true,Actual
+Bear,Professional Services,2026-03-31,7.0,1.0,0.0,8.0,true,Actual
+Bear,Professional Services,2026-04-30,8.0,0.0,0.0,8.0,true,Actual
+Bear,Professional Services,2026-05-31,8.0,0.0,0.0,8.0,true,Actual
+Bear,Professional Services,2026-06-30,8.0,0.0,0.0,8.0,true,Actual
+Bear,Professional Services,2026-07-31,8.0,0.0,0.025371231600909816,7.97462876839909,false,FY2026 Reforecast
+Bear,Professional Services,2026-08-31,7.97462876839909,0.0,0.025290769176791628,7.949337999222299,false,FY2026 Reforecast
+Bear,Professional Services,2026-09-30,7.949337999222299,0.0,0.025210561931522157,7.924127437290776,false,FY2026 Reforecast
+Bear,Professional Services,2026-10-31,7.924127437290776,0.0,0.025130609055828756,7.898996828234948,false,FY2026 Reforecast
+Bear,Professional Services,2026-11-30,7.898996828234948,0.0,0.025050909743000283,7.873945918491947,false,FY2026 Reforecast
+Bear,Professional Services,2026-12-31,7.873945918491947,0.0,0.0249714631888871,7.84897445530306,false,FY2026 Reforecast
+Bear,Professional Services,2027-01-31,7.84897445530306,0.0,0.02489226859189042,7.82408218671117,false,Forward Runway Projection
+Bear,Professional Services,2027-02-28,7.82408218671117,0.0,0.024813325152949872,7.79926886155822,false,Forward Runway Projection
+Bear,Professional Services,2027-03-31,7.79926886155822,0.0,0.024734632075544383,7.774534229482676,false,Forward Runway Projection
+Bear,Professional Services,2027-04-30,7.774534229482676,0.0,0.024656188565676196,7.749878040916999,false,Forward Runway Projection
+Bear,Professional Services,2027-05-31,7.749878040916999,0.0,0.024577993831863765,7.725300047085136,false,Forward Runway Projection
+Bear,Professional Services,2027-06-30,7.725300047085136,0.0,0.024500047085139087,7.7007999999999965,false,Forward Runway Projection
+Bear,Professional Services,2027-07-31,7.7007999999999965,0.0,0.02442234753903616,7.67637765246096,false,Forward Runway Projection
+Bear,Professional Services,2027-08-31,7.67637765246096,0.0,0.024344894409579432,7.652032758051381,false,Forward Runway Projection
+Bear,Professional Services,2027-09-30,7.652032758051381,0.0,0.024267686915283804,7.627765071136097,false,Forward Runway Projection
+Bear,Professional Services,2027-10-31,7.627765071136097,0.0,0.02419072427714042,7.603574346858957,false,Forward Runway Projection
+Bear,Professional Services,2027-11-30,7.603574346858957,0.0,0.02411400571861222,7.5794603411403445,false,Forward Runway Projection
+Bear,Professional Services,2027-12-31,7.5794603411403445,0.0,0.024037530465622403,7.555422810674722,false,Forward Runway Projection
+Bear,Sales,2024-01-31,37.0,0.0,0.0,37.0,true,Actual
+Bear,Sales,2024-02-29,37.0,2.0,1.0,38.0,true,Actual
+Bear,Sales,2024-03-31,38.0,0.0,0.0,38.0,true,Actual
+Bear,Sales,2024-04-30,38.0,3.0,2.0,39.0,true,Actual
+Bear,Sales,2024-05-31,39.0,2.0,2.0,39.0,true,Actual
+Bear,Sales,2024-06-30,39.0,2.0,1.0,40.0,true,Actual
+Bear,Sales,2024-07-31,40.0,3.0,1.0,42.0,true,Actual
+Bear,Sales,2024-08-31,42.0,0.0,0.0,42.0,true,Actual
+Bear,Sales,2024-09-30,42.0,3.0,3.0,42.0,true,Actual
+Bear,Sales,2024-10-31,42.0,0.0,0.0,42.0,true,Actual
+Bear,Sales,2024-11-30,42.0,0.0,0.0,42.0,true,Actual
+Bear,Sales,2024-12-31,42.0,0.0,0.0,42.0,true,Actual
+Bear,Sales,2025-01-31,42.0,0.0,0.0,42.0,true,Actual
+Bear,Sales,2025-02-28,42.0,3.0,3.0,42.0,true,Actual
+Bear,Sales,2025-03-31,42.0,0.0,0.0,42.0,true,Actual
+Bear,Sales,2025-04-30,42.0,4.0,4.0,42.0,true,Actual
+Bear,Sales,2025-05-31,42.0,1.0,1.0,42.0,true,Actual
+Bear,Sales,2025-06-30,42.0,0.0,0.0,42.0,true,Actual
+Bear,Sales,2025-07-31,42.0,2.0,2.0,42.0,true,Actual
+Bear,Sales,2025-08-31,42.0,2.0,1.0,43.0,true,Actual
+Bear,Sales,2025-09-30,43.0,1.0,1.0,43.0,true,Actual
+Bear,Sales,2025-10-31,43.0,2.0,2.0,43.0,true,Actual
+Bear,Sales,2025-11-30,43.0,0.0,0.0,43.0,true,Actual
+Bear,Sales,2025-12-31,43.0,0.0,0.0,43.0,true,Actual
+Bear,Sales,2026-01-31,43.0,3.0,3.0,43.0,true,Actual
+Bear,Sales,2026-02-28,43.0,3.0,3.0,43.0,true,Actual
+Bear,Sales,2026-03-31,43.0,6.0,5.0,44.0,true,Actual
+Bear,Sales,2026-04-30,44.0,3.0,3.0,44.0,true,Actual
+Bear,Sales,2026-05-31,44.0,0.0,0.0,44.0,true,Actual
+Bear,Sales,2026-06-30,44.0,1.0,1.0,44.0,true,Actual
+Bear,Sales,2026-07-31,44.0,0.0,0.2154415570609416,43.78455844293906,false,FY2026 Reforecast
+Bear,Sales,2026-08-31,43.78455844293906,6.0,0.21438666923119598,49.57017177370786,false,FY2026 Reforecast
+Bear,Sales,2026-09-30,49.57017177370786,0.0,0.24271534069785616,49.327456433010006,false,FY2026 Reforecast
+Bear,Sales,2026-10-31,49.327456433010006,0.0,0.24152690954054634,49.08592952346946,false,FY2026 Reforecast
+Bear,Sales,2026-11-30,49.08592952346946,0.0,0.24034429741635677,48.8455852260531,false,FY2026 Reforecast
+Bear,Sales,2026-12-31,48.8455852260531,0.0,0.23916747583304243,48.60641775022006,false,FY2026 Reforecast
+Bear,Sales,2027-01-31,48.60641775022006,0.0,0.2379964164377668,48.368421333782294,false,Forward Runway Projection
+Bear,Sales,2027-02-28,48.368421333782294,0.0,0.23683109101658317,48.13159024276571,false,Forward Runway Projection
+Bear,Sales,2027-03-31,48.13159024276571,0.0,0.23567147149366008,47.89591877127205,false,Forward Runway Projection
+Bear,Sales,2027-04-30,47.89591877127205,0.0,0.23451752993062058,47.66140124134143,false,Forward Runway Projection
+Bear,Sales,2027-05-31,47.66140124134143,0.0,0.23336923852592406,47.428032002815506,false,Forward Runway Projection
+Bear,Sales,2027-06-30,47.428032002815506,0.0,0.23222656961414856,47.19580543320136,false,Forward Runway Projection
+Bear,Sales,2027-07-31,47.19580543320136,0.0,0.23108949566533,46.96471593753603,false,Forward Runway Projection
+Bear,Sales,2027-08-31,46.96471593753603,0.0,0.2299579892842658,46.73475794825176,false,Forward Runway Projection
+Bear,Sales,2027-09-30,46.73475794825176,0.0,0.22883202320994656,46.505925925041815,false,Forward Runway Projection
+Bear,Sales,2027-10-31,46.505925925041815,0.0,0.22771157031480982,46.278214354727005,false,Forward Runway Projection
+Bear,Sales,2027-11-30,46.278214354727005,0.0,0.22659660360415046,46.051617751122855,false,Forward Runway Projection
+Bear,Sales,2027-12-31,46.051617751122855,0.0,0.22548709621538876,45.826130654907466,false,Forward Runway Projection
+Bear,Support & Cloud Ops,2024-01-31,13.0,0.0,0.0,13.0,true,Actual
+Bear,Support & Cloud Ops,2024-02-29,13.0,1.0,1.0,13.0,true,Actual
+Bear,Support & Cloud Ops,2024-03-31,13.0,0.0,0.0,13.0,true,Actual
+Bear,Support & Cloud Ops,2024-04-30,13.0,1.0,0.0,14.0,true,Actual
+Bear,Support & Cloud Ops,2024-05-31,14.0,0.0,0.0,14.0,true,Actual
+Bear,Support & Cloud Ops,2024-06-30,14.0,1.0,1.0,14.0,true,Actual
+Bear,Support & Cloud Ops,2024-07-31,14.0,0.0,0.0,14.0,true,Actual
+Bear,Support & Cloud Ops,2024-08-31,14.0,0.0,0.0,14.0,true,Actual
+Bear,Support & Cloud Ops,2024-09-30,14.0,0.0,0.0,14.0,true,Actual
+Bear,Support & Cloud Ops,2024-10-31,14.0,0.0,0.0,14.0,true,Actual
+Bear,Support & Cloud Ops,2024-11-30,14.0,0.0,0.0,14.0,true,Actual
+Bear,Support & Cloud Ops,2024-12-31,14.0,0.0,0.0,14.0,true,Actual
+Bear,Support & Cloud Ops,2025-01-31,14.0,0.0,0.0,14.0,true,Actual
+Bear,Support & Cloud Ops,2025-02-28,14.0,0.0,0.0,14.0,true,Actual
+Bear,Support & Cloud Ops,2025-03-31,14.0,0.0,0.0,14.0,true,Actual
+Bear,Support & Cloud Ops,2025-04-30,14.0,1.0,0.0,15.0,true,Actual
+Bear,Support & Cloud Ops,2025-05-31,15.0,1.0,1.0,15.0,true,Actual
+Bear,Support & Cloud Ops,2025-06-30,15.0,0.0,0.0,15.0,true,Actual
+Bear,Support & Cloud Ops,2025-07-31,15.0,0.0,0.0,15.0,true,Actual
+Bear,Support & Cloud Ops,2025-08-31,15.0,1.0,1.0,15.0,true,Actual
+Bear,Support & Cloud Ops,2025-09-30,15.0,0.0,0.0,15.0,true,Actual
+Bear,Support & Cloud Ops,2025-10-31,15.0,0.0,0.0,15.0,true,Actual
+Bear,Support & Cloud Ops,2025-11-30,15.0,1.0,1.0,15.0,true,Actual
+Bear,Support & Cloud Ops,2025-12-31,15.0,1.0,1.0,15.0,true,Actual
+Bear,Support & Cloud Ops,2026-01-31,15.0,0.0,0.0,15.0,true,Actual
+Bear,Support & Cloud Ops,2026-02-28,15.0,1.0,1.0,15.0,true,Actual
+Bear,Support & Cloud Ops,2026-03-31,15.0,1.0,1.0,15.0,true,Actual
+Bear,Support & Cloud Ops,2026-04-30,15.0,1.0,1.0,15.0,true,Actual
+Bear,Support & Cloud Ops,2026-05-31,15.0,0.0,0.0,15.0,true,Actual
+Bear,Support & Cloud Ops,2026-06-30,15.0,0.0,0.0,15.0,true,Actual
+Bear,Support & Cloud Ops,2026-07-31,15.0,0.0,0.053278598211933925,14.946721401788066,false,FY2026 Reforecast
+Bear,Support & Cloud Ops,2026-08-31,14.946721401788066,2.0,0.05308935761010858,16.89363204417796,false,FY2026 Reforecast
+Bear,Support & Cloud Ops,2026-09-30,16.89363204417796,0.0,0.06000460226813331,16.833627441909826,false,FY2026 Reforecast
+Bear,Support & Cloud Ops,2026-10-31,16.833627441909826,0.0,0.05979147152846309,16.773835970381363,false,FY2026 Reforecast
+Bear,Support & Cloud Ops,2026-11-30,16.773835970381363,0.0,0.05957909780925519,16.714256872572108,false,FY2026 Reforecast
+Bear,Support & Cloud Ops,2026-12-31,16.714256872572108,0.0,0.05936747842165602,16.65488939415045,false,FY2026 Reforecast
+Bear,Support & Cloud Ops,2027-01-31,16.65488939415045,0.0,0.05915661068634037,16.59573278346411,false,Forward Runway Projection
+Bear,Support & Cloud Ops,2027-02-28,16.59573278346411,0.0,0.05894649193352208,16.53678629153059,false,Forward Runway Projection
+Bear,Support & Cloud Ops,2027-03-31,16.53678629153059,0.0,0.058737119502872304,16.478049172027717,false,Forward Runway Projection
+Bear,Support & Cloud Ops,2027-04-30,16.478049172027717,0.0,0.05852849074353017,16.419520681284187,false,Forward Runway Projection
+Bear,Support & Cloud Ops,2027-05-31,16.419520681284187,0.0,0.05832060301404596,16.36120007827014,false,Forward Runway Projection
+Bear,Support & Cloud Ops,2027-06-30,16.36120007827014,0.0,0.0581134536823491,16.30308662458779,false,Forward Runway Projection
+Bear,Support & Cloud Ops,2027-07-31,16.30308662458779,0.0,0.057907040125716236,16.245179584462075,false,Forward Runway Projection
+Bear,Support & Cloud Ops,2027-08-31,16.245179584462075,0.0,0.05770135973075341,16.187478224731322,false,Forward Runway Projection
+Bear,Support & Cloud Ops,2027-09-30,16.187478224731322,0.0,0.05749640989332505,16.129981814837997,false,Forward Runway Projection
+Bear,Support & Cloud Ops,2027-10-31,16.129981814837997,0.0,0.05729218801857172,16.072689626819425,false,Forward Runway Projection
+Bear,Support & Cloud Ops,2027-11-30,16.072689626819425,0.0,0.057088691520828405,16.015600935298597,false,Forward Runway Projection
+Bear,Support & Cloud Ops,2027-12-31,16.015600935298597,0.0,0.056885917823631615,15.958715017474965,false,Forward Runway Projection
+Bull,Customer Success,2024-01-31,20.0,0.0,0.0,20.0,true,Actual
+Bull,Customer Success,2024-02-29,20.0,1.0,0.0,21.0,true,Actual
+Bull,Customer Success,2024-03-31,21.0,0.0,0.0,21.0,true,Actual
+Bull,Customer Success,2024-04-30,21.0,0.0,0.0,21.0,true,Actual
+Bull,Customer Success,2024-05-31,21.0,1.0,0.0,22.0,true,Actual
+Bull,Customer Success,2024-06-30,22.0,0.0,0.0,22.0,true,Actual
+Bull,Customer Success,2024-07-31,22.0,0.0,0.0,22.0,true,Actual
+Bull,Customer Success,2024-08-31,22.0,1.0,1.0,22.0,true,Actual
+Bull,Customer Success,2024-09-30,22.0,1.0,0.0,23.0,true,Actual
+Bull,Customer Success,2024-10-31,23.0,1.0,1.0,23.0,true,Actual
+Bull,Customer Success,2024-11-30,23.0,0.0,0.0,23.0,true,Actual
+Bull,Customer Success,2024-12-31,23.0,0.0,0.0,23.0,true,Actual
+Bull,Customer Success,2025-01-31,23.0,0.0,0.0,23.0,true,Actual
+Bull,Customer Success,2025-02-28,23.0,0.0,0.0,23.0,true,Actual
+Bull,Customer Success,2025-03-31,23.0,2.0,1.0,24.0,true,Actual
+Bull,Customer Success,2025-04-30,24.0,1.0,1.0,24.0,true,Actual
+Bull,Customer Success,2025-05-31,24.0,0.0,0.0,24.0,true,Actual
+Bull,Customer Success,2025-06-30,24.0,1.0,1.0,24.0,true,Actual
+Bull,Customer Success,2025-07-31,24.0,1.0,1.0,24.0,true,Actual
+Bull,Customer Success,2025-08-31,24.0,0.0,0.0,24.0,true,Actual
+Bull,Customer Success,2025-09-30,24.0,1.0,0.0,25.0,true,Actual
+Bull,Customer Success,2025-10-31,25.0,0.0,0.0,25.0,true,Actual
+Bull,Customer Success,2025-11-30,25.0,1.0,1.0,25.0,true,Actual
+Bull,Customer Success,2025-12-31,25.0,0.0,0.0,25.0,true,Actual
+Bull,Customer Success,2026-01-31,25.0,2.0,2.0,25.0,true,Actual
+Bull,Customer Success,2026-02-28,25.0,1.0,1.0,25.0,true,Actual
+Bull,Customer Success,2026-03-31,25.0,2.0,2.0,25.0,true,Actual
+Bull,Customer Success,2026-04-30,25.0,2.0,1.0,26.0,true,Actual
+Bull,Customer Success,2026-05-31,26.0,1.0,1.0,26.0,true,Actual
+Bull,Customer Success,2026-06-30,26.0,0.0,0.0,26.0,true,Actual
+Bull,Customer Success,2026-07-31,26.0,0.0,0.1022843684495065,25.897715631550493,false,FY2026 Reforecast
+Bull,Customer Success,2026-08-31,25.897715631550493,2.0,0.10188198029454298,27.79583365125595,false,FY2026 Reforecast
+Bull,Customer Success,2026-09-30,27.79583365125595,0.0,0.10934920348254806,27.686484447773402,false,FY2026 Reforecast
+Bull,Customer Success,2026-10-31,27.686484447773402,0.0,0.10891902216645022,27.577565425606952,false,FY2026 Reforecast
+Bull,Customer Success,2026-11-30,27.577565425606952,0.0,0.108490533189741,27.46907489241721,false,FY2026 Reforecast
+Bull,Customer Success,2026-12-31,27.46907489241721,0.0,0.10806372989473445,27.361011162522477,false,FY2026 Reforecast
+Bull,Customer Success,2027-01-31,27.361011162522477,0.0,0.10763860564994587,27.25337255687253,false,Forward Runway Projection
+Bull,Customer Success,2027-02-28,27.25337255687253,0.0,0.10721515384994973,27.14615740302258,false,Forward Runway Projection
+Bull,Customer Success,2027-03-31,27.14615740302258,0.0,0.10679336791535121,27.03936403510723,false,Forward Runway Projection
+Bull,Customer Success,2027-04-30,27.03936403510723,0.0,0.1063732412925944,26.932990793814636,false,Forward Runway Projection
+Bull,Customer Success,2027-05-31,26.932990793814636,0.0,0.10595476745390542,26.82703602636073,false,Forward Runway Projection
+Bull,Customer Success,2027-06-30,26.82703602636073,0.0,0.10553793989725335,26.721498086463477,false,Forward Runway Projection
+Bull,Customer Success,2027-07-31,26.721498086463477,0.0,0.10512275214610156,26.616375334317375,false,Forward Runway Projection
+Bull,Customer Success,2027-08-31,26.616375334317375,0.0,0.10470919774945031,26.511666136567925,false,Forward Runway Projection
+Bull,Customer Success,2027-09-30,26.511666136567925,0.0,0.10429727028165914,26.407368866286266,false,Forward Runway Projection
+Bull,Customer Success,2027-10-31,26.407368866286266,0.0,0.10388696334235803,26.303481902943908,false,Forward Runway Projection
+Bull,Customer Success,2027-11-30,26.303481902943908,0.0,0.10347827055636927,26.20000363238754,false,Forward Runway Projection
+Bull,Customer Success,2027-12-31,26.20000363238754,0.0,0.10307118557360084,26.096932446813938,false,Forward Runway Projection
+Bull,Engineering,2024-01-31,42.0,0.0,0.0,42.0,true,Actual
+Bull,Engineering,2024-02-29,42.0,0.0,0.0,42.0,true,Actual
+Bull,Engineering,2024-03-31,42.0,1.0,0.0,43.0,true,Actual
+Bull,Engineering,2024-04-30,43.0,0.0,0.0,43.0,true,Actual
+Bull,Engineering,2024-05-31,43.0,2.0,1.0,44.0,true,Actual
+Bull,Engineering,2024-06-30,44.0,1.0,0.0,45.0,true,Actual
+Bull,Engineering,2024-07-31,45.0,2.0,2.0,45.0,true,Actual
+Bull,Engineering,2024-08-31,45.0,0.0,0.0,45.0,true,Actual
+Bull,Engineering,2024-09-30,45.0,2.0,1.0,46.0,true,Actual
+Bull,Engineering,2024-10-31,46.0,2.0,2.0,46.0,true,Actual
+Bull,Engineering,2024-11-30,46.0,1.0,0.0,47.0,true,Actual
+Bull,Engineering,2024-12-31,47.0,0.0,0.0,47.0,true,Actual
+Bull,Engineering,2025-01-31,47.0,0.0,0.0,47.0,true,Actual
+Bull,Engineering,2025-02-28,47.0,2.0,1.0,48.0,true,Actual
+Bull,Engineering,2025-03-31,48.0,0.0,0.0,48.0,true,Actual
+Bull,Engineering,2025-04-30,48.0,1.0,1.0,48.0,true,Actual
+Bull,Engineering,2025-05-31,48.0,3.0,3.0,48.0,true,Actual
+Bull,Engineering,2025-06-30,48.0,1.0,0.0,49.0,true,Actual
+Bull,Engineering,2025-07-31,49.0,0.0,0.0,49.0,true,Actual
+Bull,Engineering,2025-08-31,49.0,1.0,1.0,49.0,true,Actual
+Bull,Engineering,2025-09-30,49.0,1.0,0.0,50.0,true,Actual
+Bull,Engineering,2025-10-31,50.0,2.0,2.0,50.0,true,Actual
+Bull,Engineering,2025-11-30,50.0,0.0,0.0,50.0,true,Actual
+Bull,Engineering,2025-12-31,50.0,1.0,1.0,50.0,true,Actual
+Bull,Engineering,2026-01-31,50.0,1.0,0.0,51.0,true,Actual
+Bull,Engineering,2026-02-28,51.0,1.0,1.0,51.0,true,Actual
+Bull,Engineering,2026-03-31,51.0,0.0,0.0,51.0,true,Actual
+Bull,Engineering,2026-04-30,51.0,0.0,0.0,51.0,true,Actual
+Bull,Engineering,2026-05-31,51.0,1.0,0.0,52.0,true,Actual
+Bull,Engineering,2026-06-30,52.0,0.0,0.0,52.0,true,Actual
+Bull,Engineering,2026-07-31,52.0,0.0,0.1255882103322108,51.87441178966779,false,FY2026 Reforecast
+Bull,Engineering,2026-08-31,51.87441178966779,3.0,0.12528489497500317,54.749126894692786,false,FY2026 Reforecast
+Bull,Engineering,2026-09-30,54.749126894692786,0.0,0.13222778584529493,54.61689910884749,false,FY2026 Reforecast
+Bull,Engineering,2026-10-31,54.61689910884749,0.0,0.13190843486490422,54.48499067398259,false,FY2026 Reforecast
+Bull,Engineering,2026-11-30,54.48499067398259,0.0,0.1315898551675474,54.35340081881504,false,FY2026 Reforecast
+Bull,Engineering,2026-12-31,54.35340081881504,0.0,0.13127204489046562,54.222128773924574,false,FY2026 Reforecast
+Bull,Engineering,2027-01-31,54.222128773924574,0.0,0.13095500217537648,54.0911737717492,false,Forward Runway Projection
+Bull,Engineering,2027-02-28,54.0911737717492,0.0,0.1306387251685095,53.96053504658069,false,Forward Runway Projection
+Bull,Engineering,2027-03-31,53.96053504658069,0.0,0.1303232120205493,53.83021183456014,false,Forward Runway Projection
+Bull,Engineering,2027-04-30,53.83021183456014,0.0,0.13000846088664986,53.70020337367349,false,Forward Runway Projection
+Bull,Engineering,2027-05-31,53.70020337367349,0.0,0.12969446992644862,53.57050890374704,false,Forward Runway Projection
+Bull,Engineering,2027-06-30,53.57050890374704,0.0,0.12938123730398132,53.44112766644306,false,Forward Runway Projection
+Bull,Engineering,2027-07-31,53.44112766644306,0.0,0.12906876118776722,53.31205890525529,false,Forward Runway Projection
+Bull,Engineering,2027-08-31,53.31205890525529,0.0,0.1287570397506954,53.183301865504596,false,Forward Runway Projection
+Bull,Engineering,2027-09-30,53.183301865504596,0.0,0.1284460711701172,53.05485579433448,false,Forward Runway Projection
+Bull,Engineering,2027-10-31,53.05485579433448,0.0,0.12813585362776791,52.92671994070671,false,Forward Runway Projection
+Bull,Engineering,2027-11-30,52.92671994070671,0.0,0.12782638530975277,52.79889355539696,false,Forward Runway Projection
+Bull,Engineering,2027-12-31,52.79889355539696,0.0,0.12751766440660361,52.671375890990355,false,Forward Runway Projection
+Bull,G&A,2024-01-31,12.0,0.0,0.0,12.0,true,Actual
+Bull,G&A,2024-02-29,12.0,1.0,0.0,13.0,true,Actual
+Bull,G&A,2024-03-31,13.0,0.0,0.0,13.0,true,Actual
+Bull,G&A,2024-04-30,13.0,0.0,0.0,13.0,true,Actual
+Bull,G&A,2024-05-31,13.0,1.0,0.0,14.0,true,Actual
+Bull,G&A,2024-06-30,14.0,0.0,0.0,14.0,true,Actual
+Bull,G&A,2024-07-31,14.0,0.0,0.0,14.0,true,Actual
+Bull,G&A,2024-08-31,14.0,1.0,0.0,15.0,true,Actual
+Bull,G&A,2024-09-30,15.0,0.0,0.0,15.0,true,Actual
+Bull,G&A,2024-10-31,15.0,1.0,1.0,15.0,true,Actual
+Bull,G&A,2024-11-30,15.0,2.0,1.0,16.0,true,Actual
+Bull,G&A,2024-12-31,16.0,0.0,0.0,16.0,true,Actual
+Bull,G&A,2025-01-31,16.0,0.0,0.0,16.0,true,Actual
+Bull,G&A,2025-02-28,16.0,0.0,0.0,16.0,true,Actual
+Bull,G&A,2025-03-31,16.0,2.0,1.0,17.0,true,Actual
+Bull,G&A,2025-04-30,17.0,0.0,0.0,17.0,true,Actual
+Bull,G&A,2025-05-31,17.0,0.0,0.0,17.0,true,Actual
+Bull,G&A,2025-06-30,17.0,0.0,0.0,17.0,true,Actual
+Bull,G&A,2025-07-31,17.0,1.0,0.0,18.0,true,Actual
+Bull,G&A,2025-08-31,18.0,0.0,0.0,18.0,true,Actual
+Bull,G&A,2025-09-30,18.0,0.0,0.0,18.0,true,Actual
+Bull,G&A,2025-10-31,18.0,1.0,0.0,19.0,true,Actual
+Bull,G&A,2025-11-30,19.0,0.0,0.0,19.0,true,Actual
+Bull,G&A,2025-12-31,19.0,0.0,0.0,19.0,true,Actual
+Bull,G&A,2026-01-31,19.0,0.0,0.0,19.0,true,Actual
+Bull,G&A,2026-02-28,19.0,1.0,0.0,20.0,true,Actual
+Bull,G&A,2026-03-31,20.0,1.0,1.0,20.0,true,Actual
+Bull,G&A,2026-04-30,20.0,0.0,0.0,20.0,true,Actual
+Bull,G&A,2026-05-31,20.0,1.0,0.0,21.0,true,Actual
+Bull,G&A,2026-06-30,21.0,0.0,0.0,21.0,true,Actual
+Bull,G&A,2026-07-31,21.0,0.0,0.042827125296099666,20.9571728747039,false,FY2026 Reforecast
+Bull,G&A,2026-08-31,20.9571728747039,1.0,0.04273978421700164,21.9144330904869,false,FY2026 Reforecast
+Bull,G&A,2026-09-30,21.9144330904869,0.0,0.044692008179016085,21.869741082307883,false,FY2026 Reforecast
+Bull,G&A,2026-10-31,21.869741082307883,0.0,0.044600863882156006,21.825140218425727,false,FY2026 Reforecast
+Bull,G&A,2026-11-30,21.825140218425727,0.0,0.04450990546378719,21.78063031296194,false,FY2026 Reforecast
+Bull,G&A,2026-12-31,21.78063031296194,0.0,0.04441913254482088,21.73621118041712,false,FY2026 Reforecast
+Bull,G&A,2027-01-31,21.73621118041712,0.0,0.04432854474696413,21.691882635670154,false,Forward Runway Projection
+Bull,G&A,2027-02-28,21.691882635670154,0.0,0.04423814169267004,21.647644493977484,false,Forward Runway Projection
+Bull,G&A,2027-03-31,21.647644493977484,0.0,0.044147923005194656,21.60349657097229,false,Forward Runway Projection
+Bull,G&A,2027-04-30,21.60349657097229,0.0,0.04405788830852231,21.559438682663767,false,Forward Runway Projection
+Bull,G&A,2027-05-31,21.559438682663767,0.0,0.04396803722742959,21.515470645436338,false,Forward Runway Projection
+Bull,G&A,2027-06-30,21.515470645436338,0.0,0.04387836938746048,21.471592276048877,false,Forward Runway Projection
+Bull,G&A,2027-07-31,21.471592276048877,0.0,0.04378888441491213,21.427803391633965,false,Forward Runway Projection
+Bull,G&A,2027-08-31,21.427803391633965,0.0,0.04369958193684553,21.38410380969712,false,Forward Runway Projection
+Bull,G&A,2027-09-30,21.38410380969712,0.0,0.04361046158108195,21.340493348116038,false,Forward Runway Projection
+Bull,G&A,2027-10-31,21.340493348116038,0.0,0.043521522976206484,21.29697182513983,false,Forward Runway Projection
+Bull,G&A,2027-11-30,21.29697182513983,0.0,0.04343276575156452,21.253539059388267,false,Forward Runway Projection
+Bull,G&A,2027-12-31,21.253539059388267,0.0,0.043344189537236844,21.21019486985103,false,Forward Runway Projection
+Bull,Marketing,2024-01-31,15.0,0.0,0.0,15.0,true,Actual
+Bull,Marketing,2024-02-29,15.0,0.0,0.0,15.0,true,Actual
+Bull,Marketing,2024-03-31,15.0,2.0,1.0,16.0,true,Actual
+Bull,Marketing,2024-04-30,16.0,0.0,0.0,16.0,true,Actual
+Bull,Marketing,2024-05-31,16.0,1.0,1.0,16.0,true,Actual
+Bull,Marketing,2024-06-30,16.0,0.0,0.0,16.0,true,Actual
+Bull,Marketing,2024-07-31,16.0,0.0,0.0,16.0,true,Actual
+Bull,Marketing,2024-08-31,16.0,0.0,0.0,16.0,true,Actual
+Bull,Marketing,2024-09-30,16.0,0.0,0.0,16.0,true,Actual
+Bull,Marketing,2024-10-31,16.0,1.0,0.0,17.0,true,Actual
+Bull,Marketing,2024-11-30,17.0,1.0,1.0,17.0,true,Actual
+Bull,Marketing,2024-12-31,17.0,0.0,0.0,17.0,true,Actual
+Bull,Marketing,2025-01-31,17.0,0.0,0.0,17.0,true,Actual
+Bull,Marketing,2025-02-28,17.0,1.0,1.0,17.0,true,Actual
+Bull,Marketing,2025-03-31,17.0,0.0,0.0,17.0,true,Actual
+Bull,Marketing,2025-04-30,17.0,1.0,1.0,17.0,true,Actual
+Bull,Marketing,2025-05-31,17.0,1.0,1.0,17.0,true,Actual
+Bull,Marketing,2025-06-30,17.0,0.0,0.0,17.0,true,Actual
+Bull,Marketing,2025-07-31,17.0,0.0,0.0,17.0,true,Actual
+Bull,Marketing,2025-08-31,17.0,1.0,1.0,17.0,true,Actual
+Bull,Marketing,2025-09-30,17.0,0.0,0.0,17.0,true,Actual
+Bull,Marketing,2025-10-31,17.0,0.0,0.0,17.0,true,Actual
+Bull,Marketing,2025-11-30,17.0,1.0,0.0,18.0,true,Actual
+Bull,Marketing,2025-12-31,18.0,0.0,0.0,18.0,true,Actual
+Bull,Marketing,2026-01-31,18.0,0.0,0.0,18.0,true,Actual
+Bull,Marketing,2026-02-28,18.0,0.0,0.0,18.0,true,Actual
+Bull,Marketing,2026-03-31,18.0,0.0,0.0,18.0,true,Actual
+Bull,Marketing,2026-04-30,18.0,1.0,1.0,18.0,true,Actual
+Bull,Marketing,2026-05-31,18.0,0.0,0.0,18.0,true,Actual
+Bull,Marketing,2026-06-30,18.0,0.0,0.0,18.0,true,Actual
+Bull,Marketing,2026-07-31,18.0,0.0,0.06736965923948546,17.932630340760515,false,FY2026 Reforecast
+Bull,Marketing,2026-08-31,17.932630340760515,1.0,0.06711751085137152,18.865512829909143,false,FY2026 Reforecast
+Bull,Marketing,2026-09-30,18.865512829909143,0.0,0.0706090650405109,18.794903764868632,false,FY2026 Reforecast
+Bull,Marketing,2026-10-31,18.794903764868632,0.0,0.07034479233767144,18.72455897253096,false,FY2026 Reforecast
+Bull,Marketing,2026-11-30,18.72455897253096,0.0,0.07008150874384,18.65447746378712,false,FY2026 Reforecast
+Bull,Marketing,2026-12-31,18.65447746378712,0.0,0.06981921055700013,18.58465825323012,false,FY2026 Reforecast
+Bull,Marketing,2027-01-31,18.58465825323012,0.0,0.06955789408901936,18.5151003591411,false,Forward Runway Projection
+Bull,Marketing,2027-02-28,18.5151003591411,0.0,0.0692975556655675,18.445802803475534,false,Forward Runway Projection
+Bull,Marketing,2027-03-31,18.445802803475534,0.0,0.06903819162605274,18.37676461184948,false,Forward Runway Projection
+Bull,Marketing,2027-04-30,18.37676461184948,0.0,0.0687797983235825,18.3079848135259,false,Forward Runway Projection
+Bull,Marketing,2027-05-31,18.3079848135259,0.0,0.06852237212494217,18.239462441400956,false,Forward Runway Projection
+Bull,Marketing,2027-06-30,18.239462441400956,0.0,0.06826590941047783,18.17119653199048,false,Forward Runway Projection
+Bull,Marketing,2027-07-31,18.17119653199048,0.0,0.06801040657410695,18.10318612541637,false,Forward Runway Projection
+Bull,Marketing,2027-08-31,18.10318612541637,0.0,0.06775586002323664,18.035430265393135,false,Forward Runway Projection
+Bull,Marketing,2027-09-30,18.035430265393135,0.0,0.06750226617872812,17.967927999214407,false,Forward Runway Projection
+Bull,Marketing,2027-10-31,17.967927999214407,0.0,0.0672496214748115,17.900678377739595,false,Forward Runway Projection
+Bull,Marketing,2027-11-30,17.900678377739595,0.0,0.06699792235911062,17.833680455380485,false,Forward Runway Projection
+Bull,Marketing,2027-12-31,17.833680455380485,0.0,0.0667471652924938,17.76693329008799,false,Forward Runway Projection
+Bull,Product & Design,2024-01-31,16.0,0.0,0.0,16.0,true,Actual
+Bull,Product & Design,2024-02-29,16.0,1.0,0.0,17.0,true,Actual
+Bull,Product & Design,2024-03-31,17.0,0.0,0.0,17.0,true,Actual
+Bull,Product & Design,2024-04-30,17.0,0.0,0.0,17.0,true,Actual
+Bull,Product & Design,2024-05-31,17.0,0.0,0.0,17.0,true,Actual
+Bull,Product & Design,2024-06-30,17.0,1.0,0.0,18.0,true,Actual
+Bull,Product & Design,2024-07-31,18.0,0.0,0.0,18.0,true,Actual
+Bull,Product & Design,2024-08-31,18.0,0.0,0.0,18.0,true,Actual
+Bull,Product & Design,2024-09-30,18.0,0.0,0.0,18.0,true,Actual
+Bull,Product & Design,2024-10-31,18.0,1.0,0.0,19.0,true,Actual
+Bull,Product & Design,2024-11-30,19.0,0.0,0.0,19.0,true,Actual
+Bull,Product & Design,2024-12-31,19.0,0.0,0.0,19.0,true,Actual
+Bull,Product & Design,2025-01-31,19.0,0.0,0.0,19.0,true,Actual
+Bull,Product & Design,2025-02-28,19.0,1.0,1.0,19.0,true,Actual
+Bull,Product & Design,2025-03-31,19.0,0.0,0.0,19.0,true,Actual
+Bull,Product & Design,2025-04-30,19.0,1.0,0.0,20.0,true,Actual
+Bull,Product & Design,2025-05-31,20.0,0.0,0.0,20.0,true,Actual
+Bull,Product & Design,2025-06-30,20.0,0.0,0.0,20.0,true,Actual
+Bull,Product & Design,2025-07-31,20.0,0.0,0.0,20.0,true,Actual
+Bull,Product & Design,2025-08-31,20.0,1.0,1.0,20.0,true,Actual
+Bull,Product & Design,2025-09-30,20.0,0.0,0.0,20.0,true,Actual
+Bull,Product & Design,2025-10-31,20.0,2.0,1.0,21.0,true,Actual
+Bull,Product & Design,2025-11-30,21.0,1.0,1.0,21.0,true,Actual
+Bull,Product & Design,2025-12-31,21.0,0.0,0.0,21.0,true,Actual
+Bull,Product & Design,2026-01-31,21.0,0.0,0.0,21.0,true,Actual
+Bull,Product & Design,2026-02-28,21.0,0.0,0.0,21.0,true,Actual
+Bull,Product & Design,2026-03-31,21.0,1.0,1.0,21.0,true,Actual
+Bull,Product & Design,2026-04-30,21.0,1.0,0.0,22.0,true,Actual
+Bull,Product & Design,2026-05-31,22.0,0.0,0.0,22.0,true,Actual
+Bull,Product & Design,2026-06-30,22.0,0.0,0.0,22.0,true,Actual
+Bull,Product & Design,2026-07-31,22.0,0.0,0.057279834341059654,21.94272016565894,false,FY2026 Reforecast
+Bull,Product & Design,2026-08-31,21.94272016565894,1.0,0.05713069891278266,22.885589466746158,false,FY2026 Reforecast
+Bull,Product & Design,2026-09-30,22.885589466746158,0.0,0.059585580611489775,22.826003886134668,false,FY2026 Reforecast
+Bull,Product & Design,2026-10-31,22.826003886134668,0.0,0.05943044187573676,22.76657344425893,false,FY2026 Reforecast
+Bull,Product & Design,2026-11-30,22.76657344425893,0.0,0.05927570706366936,22.707297737195262,false,FY2026 Reforecast
+Bull,Product & Design,2026-12-31,22.707297737195262,0.0,0.05912137512362392,22.648176362071638,false,FY2026 Reforecast
+Bull,Product & Design,2027-01-31,22.648176362071638,0.0,0.058967445006661734,22.589208917064976,false,Forward Runway Projection
+Bull,Product & Design,2027-02-28,22.589208917064976,0.0,0.05881391566659744,22.53039500139838,false,Forward Runway Projection
+Bull,Product & Design,2027-03-31,22.53039500139838,0.0,0.05866078605994218,22.471734215338437,false,Forward Runway Projection
+Bull,Product & Design,2027-04-30,22.471734215338437,0.0,0.058508055145953364,22.413226160192483,false,Forward Runway Projection
+Bull,Product & Design,2027-05-31,22.413226160192483,0.0,0.058355721886567125,22.354870438305916,false,Forward Runway Projection
+Bull,Product & Design,2027-06-30,22.354870438305916,0.0,0.05820378524645875,22.296666653059457,false,Forward Runway Projection
+Bull,Product & Design,2027-07-31,22.296666653059457,0.0,0.058052244192960956,22.238614408866496,false,Forward Runway Projection
+Bull,Product & Design,2027-08-31,22.238614408866496,0.0,0.057901097696117176,22.18071331117038,false,Forward Runway Projection
+Bull,Product & Design,2027-09-30,22.18071331117038,0.0,0.0577503447286567,22.122962966441722,false,Forward Runway Projection
+Bull,Product & Design,2027-10-31,22.122962966441722,0.0,0.05759998426596269,22.06536298217576,false,Forward Runway Projection
+Bull,Product & Design,2027-11-30,22.06536298217576,0.0,0.05745001528611127,22.00791296688965,false,Forward Runway Projection
+Bull,Product & Design,2027-12-31,22.00791296688965,0.0,0.057300436769811114,21.950612530119837,false,Forward Runway Projection
+Bull,Professional Services,2024-01-31,4.0,0.0,0.0,4.0,true,Actual
+Bull,Professional Services,2024-02-29,4.0,0.0,0.0,4.0,true,Actual
+Bull,Professional Services,2024-03-31,4.0,0.0,0.0,4.0,true,Actual
+Bull,Professional Services,2024-04-30,4.0,1.0,0.0,5.0,true,Actual
+Bull,Professional Services,2024-05-31,5.0,0.0,0.0,5.0,true,Actual
+Bull,Professional Services,2024-06-30,5.0,0.0,0.0,5.0,true,Actual
+Bull,Professional Services,2024-07-31,5.0,0.0,0.0,5.0,true,Actual
+Bull,Professional Services,2024-08-31,5.0,0.0,0.0,5.0,true,Actual
+Bull,Professional Services,2024-09-30,5.0,0.0,0.0,5.0,true,Actual
+Bull,Professional Services,2024-10-31,5.0,0.0,0.0,5.0,true,Actual
+Bull,Professional Services,2024-11-30,5.0,0.0,0.0,5.0,true,Actual
+Bull,Professional Services,2024-12-31,5.0,1.0,0.0,6.0,true,Actual
+Bull,Professional Services,2025-01-31,6.0,0.0,0.0,6.0,true,Actual
+Bull,Professional Services,2025-02-28,6.0,0.0,0.0,6.0,true,Actual
+Bull,Professional Services,2025-03-31,6.0,0.0,0.0,6.0,true,Actual
+Bull,Professional Services,2025-04-30,6.0,0.0,0.0,6.0,true,Actual
+Bull,Professional Services,2025-05-31,6.0,1.0,1.0,6.0,true,Actual
+Bull,Professional Services,2025-06-30,6.0,1.0,1.0,6.0,true,Actual
+Bull,Professional Services,2025-07-31,6.0,1.0,0.0,7.0,true,Actual
+Bull,Professional Services,2025-08-31,7.0,0.0,0.0,7.0,true,Actual
+Bull,Professional Services,2025-09-30,7.0,0.0,0.0,7.0,true,Actual
+Bull,Professional Services,2025-10-31,7.0,0.0,0.0,7.0,true,Actual
+Bull,Professional Services,2025-11-30,7.0,1.0,1.0,7.0,true,Actual
+Bull,Professional Services,2025-12-31,7.0,0.0,0.0,7.0,true,Actual
+Bull,Professional Services,2026-01-31,7.0,0.0,0.0,7.0,true,Actual
+Bull,Professional Services,2026-02-28,7.0,0.0,0.0,7.0,true,Actual
+Bull,Professional Services,2026-03-31,7.0,1.0,0.0,8.0,true,Actual
+Bull,Professional Services,2026-04-30,8.0,0.0,0.0,8.0,true,Actual
+Bull,Professional Services,2026-05-31,8.0,0.0,0.0,8.0,true,Actual
+Bull,Professional Services,2026-06-30,8.0,0.0,0.0,8.0,true,Actual
+Bull,Professional Services,2026-07-31,8.0,0.0,0.025371231600909816,7.97462876839909,false,FY2026 Reforecast
+Bull,Professional Services,2026-08-31,7.97462876839909,0.0,0.025290769176791628,7.949337999222299,false,FY2026 Reforecast
+Bull,Professional Services,2026-09-30,7.949337999222299,0.0,0.025210561931522157,7.924127437290776,false,FY2026 Reforecast
+Bull,Professional Services,2026-10-31,7.924127437290776,0.0,0.025130609055828756,7.898996828234948,false,FY2026 Reforecast
+Bull,Professional Services,2026-11-30,7.898996828234948,0.0,0.025050909743000283,7.873945918491947,false,FY2026 Reforecast
+Bull,Professional Services,2026-12-31,7.873945918491947,0.0,0.0249714631888871,7.84897445530306,false,FY2026 Reforecast
+Bull,Professional Services,2027-01-31,7.84897445530306,0.0,0.02489226859189042,7.82408218671117,false,Forward Runway Projection
+Bull,Professional Services,2027-02-28,7.82408218671117,0.0,0.024813325152949872,7.79926886155822,false,Forward Runway Projection
+Bull,Professional Services,2027-03-31,7.79926886155822,0.0,0.024734632075544383,7.774534229482676,false,Forward Runway Projection
+Bull,Professional Services,2027-04-30,7.774534229482676,0.0,0.024656188565676196,7.749878040916999,false,Forward Runway Projection
+Bull,Professional Services,2027-05-31,7.749878040916999,0.0,0.024577993831863765,7.725300047085136,false,Forward Runway Projection
+Bull,Professional Services,2027-06-30,7.725300047085136,0.0,0.024500047085139087,7.7007999999999965,false,Forward Runway Projection
+Bull,Professional Services,2027-07-31,7.7007999999999965,0.0,0.02442234753903616,7.67637765246096,false,Forward Runway Projection
+Bull,Professional Services,2027-08-31,7.67637765246096,0.0,0.024344894409579432,7.652032758051381,false,Forward Runway Projection
+Bull,Professional Services,2027-09-30,7.652032758051381,0.0,0.024267686915283804,7.627765071136097,false,Forward Runway Projection
+Bull,Professional Services,2027-10-31,7.627765071136097,0.0,0.02419072427714042,7.603574346858957,false,Forward Runway Projection
+Bull,Professional Services,2027-11-30,7.603574346858957,0.0,0.02411400571861222,7.5794603411403445,false,Forward Runway Projection
+Bull,Professional Services,2027-12-31,7.5794603411403445,0.0,0.024037530465622403,7.555422810674722,false,Forward Runway Projection
+Bull,Sales,2024-01-31,37.0,0.0,0.0,37.0,true,Actual
+Bull,Sales,2024-02-29,37.0,2.0,1.0,38.0,true,Actual
+Bull,Sales,2024-03-31,38.0,0.0,0.0,38.0,true,Actual
+Bull,Sales,2024-04-30,38.0,3.0,2.0,39.0,true,Actual
+Bull,Sales,2024-05-31,39.0,2.0,2.0,39.0,true,Actual
+Bull,Sales,2024-06-30,39.0,2.0,1.0,40.0,true,Actual
+Bull,Sales,2024-07-31,40.0,3.0,1.0,42.0,true,Actual
+Bull,Sales,2024-08-31,42.0,0.0,0.0,42.0,true,Actual
+Bull,Sales,2024-09-30,42.0,3.0,3.0,42.0,true,Actual
+Bull,Sales,2024-10-31,42.0,0.0,0.0,42.0,true,Actual
+Bull,Sales,2024-11-30,42.0,0.0,0.0,42.0,true,Actual
+Bull,Sales,2024-12-31,42.0,0.0,0.0,42.0,true,Actual
+Bull,Sales,2025-01-31,42.0,0.0,0.0,42.0,true,Actual
+Bull,Sales,2025-02-28,42.0,3.0,3.0,42.0,true,Actual
+Bull,Sales,2025-03-31,42.0,0.0,0.0,42.0,true,Actual
+Bull,Sales,2025-04-30,42.0,4.0,4.0,42.0,true,Actual
+Bull,Sales,2025-05-31,42.0,1.0,1.0,42.0,true,Actual
+Bull,Sales,2025-06-30,42.0,0.0,0.0,42.0,true,Actual
+Bull,Sales,2025-07-31,42.0,2.0,2.0,42.0,true,Actual
+Bull,Sales,2025-08-31,42.0,2.0,1.0,43.0,true,Actual
+Bull,Sales,2025-09-30,43.0,1.0,1.0,43.0,true,Actual
+Bull,Sales,2025-10-31,43.0,2.0,2.0,43.0,true,Actual
+Bull,Sales,2025-11-30,43.0,0.0,0.0,43.0,true,Actual
+Bull,Sales,2025-12-31,43.0,0.0,0.0,43.0,true,Actual
+Bull,Sales,2026-01-31,43.0,3.0,3.0,43.0,true,Actual
+Bull,Sales,2026-02-28,43.0,3.0,3.0,43.0,true,Actual
+Bull,Sales,2026-03-31,43.0,6.0,5.0,44.0,true,Actual
+Bull,Sales,2026-04-30,44.0,3.0,3.0,44.0,true,Actual
+Bull,Sales,2026-05-31,44.0,0.0,0.0,44.0,true,Actual
+Bull,Sales,2026-06-30,44.0,1.0,1.0,44.0,true,Actual
+Bull,Sales,2026-07-31,44.0,0.0,0.2154415570609416,43.78455844293906,false,FY2026 Reforecast
+Bull,Sales,2026-08-31,43.78455844293906,6.0,0.21438666923119598,49.57017177370786,false,FY2026 Reforecast
+Bull,Sales,2026-09-30,49.57017177370786,0.0,0.24271534069785616,49.327456433010006,false,FY2026 Reforecast
+Bull,Sales,2026-10-31,49.327456433010006,0.0,0.24152690954054634,49.08592952346946,false,FY2026 Reforecast
+Bull,Sales,2026-11-30,49.08592952346946,0.0,0.24034429741635677,48.8455852260531,false,FY2026 Reforecast
+Bull,Sales,2026-12-31,48.8455852260531,0.0,0.23916747583304243,48.60641775022006,false,FY2026 Reforecast
+Bull,Sales,2027-01-31,48.60641775022006,0.0,0.2379964164377668,48.368421333782294,false,Forward Runway Projection
+Bull,Sales,2027-02-28,48.368421333782294,0.0,0.23683109101658317,48.13159024276571,false,Forward Runway Projection
+Bull,Sales,2027-03-31,48.13159024276571,0.0,0.23567147149366008,47.89591877127205,false,Forward Runway Projection
+Bull,Sales,2027-04-30,47.89591877127205,0.0,0.23451752993062058,47.66140124134143,false,Forward Runway Projection
+Bull,Sales,2027-05-31,47.66140124134143,0.0,0.23336923852592406,47.428032002815506,false,Forward Runway Projection
+Bull,Sales,2027-06-30,47.428032002815506,0.0,0.23222656961414856,47.19580543320136,false,Forward Runway Projection
+Bull,Sales,2027-07-31,47.19580543320136,0.0,0.23108949566533,46.96471593753603,false,Forward Runway Projection
+Bull,Sales,2027-08-31,46.96471593753603,0.0,0.2299579892842658,46.73475794825176,false,Forward Runway Projection
+Bull,Sales,2027-09-30,46.73475794825176,0.0,0.22883202320994656,46.505925925041815,false,Forward Runway Projection
+Bull,Sales,2027-10-31,46.505925925041815,0.0,0.22771157031480982,46.278214354727005,false,Forward Runway Projection
+Bull,Sales,2027-11-30,46.278214354727005,0.0,0.22659660360415046,46.051617751122855,false,Forward Runway Projection
+Bull,Sales,2027-12-31,46.051617751122855,0.0,0.22548709621538876,45.826130654907466,false,Forward Runway Projection
+Bull,Support & Cloud Ops,2024-01-31,13.0,0.0,0.0,13.0,true,Actual
+Bull,Support & Cloud Ops,2024-02-29,13.0,1.0,1.0,13.0,true,Actual
+Bull,Support & Cloud Ops,2024-03-31,13.0,0.0,0.0,13.0,true,Actual
+Bull,Support & Cloud Ops,2024-04-30,13.0,1.0,0.0,14.0,true,Actual
+Bull,Support & Cloud Ops,2024-05-31,14.0,0.0,0.0,14.0,true,Actual
+Bull,Support & Cloud Ops,2024-06-30,14.0,1.0,1.0,14.0,true,Actual
+Bull,Support & Cloud Ops,2024-07-31,14.0,0.0,0.0,14.0,true,Actual
+Bull,Support & Cloud Ops,2024-08-31,14.0,0.0,0.0,14.0,true,Actual
+Bull,Support & Cloud Ops,2024-09-30,14.0,0.0,0.0,14.0,true,Actual
+Bull,Support & Cloud Ops,2024-10-31,14.0,0.0,0.0,14.0,true,Actual
+Bull,Support & Cloud Ops,2024-11-30,14.0,0.0,0.0,14.0,true,Actual
+Bull,Support & Cloud Ops,2024-12-31,14.0,0.0,0.0,14.0,true,Actual
+Bull,Support & Cloud Ops,2025-01-31,14.0,0.0,0.0,14.0,true,Actual
+Bull,Support & Cloud Ops,2025-02-28,14.0,0.0,0.0,14.0,true,Actual
+Bull,Support & Cloud Ops,2025-03-31,14.0,0.0,0.0,14.0,true,Actual
+Bull,Support & Cloud Ops,2025-04-30,14.0,1.0,0.0,15.0,true,Actual
+Bull,Support & Cloud Ops,2025-05-31,15.0,1.0,1.0,15.0,true,Actual
+Bull,Support & Cloud Ops,2025-06-30,15.0,0.0,0.0,15.0,true,Actual
+Bull,Support & Cloud Ops,2025-07-31,15.0,0.0,0.0,15.0,true,Actual
+Bull,Support & Cloud Ops,2025-08-31,15.0,1.0,1.0,15.0,true,Actual
+Bull,Support & Cloud Ops,2025-09-30,15.0,0.0,0.0,15.0,true,Actual
+Bull,Support & Cloud Ops,2025-10-31,15.0,0.0,0.0,15.0,true,Actual
+Bull,Support & Cloud Ops,2025-11-30,15.0,1.0,1.0,15.0,true,Actual
+Bull,Support & Cloud Ops,2025-12-31,15.0,1.0,1.0,15.0,true,Actual
+Bull,Support & Cloud Ops,2026-01-31,15.0,0.0,0.0,15.0,true,Actual
+Bull,Support & Cloud Ops,2026-02-28,15.0,1.0,1.0,15.0,true,Actual
+Bull,Support & Cloud Ops,2026-03-31,15.0,1.0,1.0,15.0,true,Actual
+Bull,Support & Cloud Ops,2026-04-30,15.0,1.0,1.0,15.0,true,Actual
+Bull,Support & Cloud Ops,2026-05-31,15.0,0.0,0.0,15.0,true,Actual
+Bull,Support & Cloud Ops,2026-06-30,15.0,0.0,0.0,15.0,true,Actual
+Bull,Support & Cloud Ops,2026-07-31,15.0,0.0,0.053278598211933925,14.946721401788066,false,FY2026 Reforecast
+Bull,Support & Cloud Ops,2026-08-31,14.946721401788066,2.0,0.05308935761010858,16.89363204417796,false,FY2026 Reforecast
+Bull,Support & Cloud Ops,2026-09-30,16.89363204417796,0.0,0.06000460226813331,16.833627441909826,false,FY2026 Reforecast
+Bull,Support & Cloud Ops,2026-10-31,16.833627441909826,0.0,0.05979147152846309,16.773835970381363,false,FY2026 Reforecast
+Bull,Support & Cloud Ops,2026-11-30,16.773835970381363,0.0,0.05957909780925519,16.714256872572108,false,FY2026 Reforecast
+Bull,Support & Cloud Ops,2026-12-31,16.714256872572108,0.0,0.05936747842165602,16.65488939415045,false,FY2026 Reforecast
+Bull,Support & Cloud Ops,2027-01-31,16.65488939415045,0.0,0.05915661068634037,16.59573278346411,false,Forward Runway Projection
+Bull,Support & Cloud Ops,2027-02-28,16.59573278346411,0.0,0.05894649193352208,16.53678629153059,false,Forward Runway Projection
+Bull,Support & Cloud Ops,2027-03-31,16.53678629153059,0.0,0.058737119502872304,16.478049172027717,false,Forward Runway Projection
+Bull,Support & Cloud Ops,2027-04-30,16.478049172027717,0.0,0.05852849074353017,16.419520681284187,false,Forward Runway Projection
+Bull,Support & Cloud Ops,2027-05-31,16.419520681284187,0.0,0.05832060301404596,16.36120007827014,false,Forward Runway Projection
+Bull,Support & Cloud Ops,2027-06-30,16.36120007827014,0.0,0.0581134536823491,16.30308662458779,false,Forward Runway Projection
+Bull,Support & Cloud Ops,2027-07-31,16.30308662458779,0.0,0.057907040125716236,16.245179584462075,false,Forward Runway Projection
+Bull,Support & Cloud Ops,2027-08-31,16.245179584462075,0.0,0.05770135973075341,16.187478224731322,false,Forward Runway Projection
+Bull,Support & Cloud Ops,2027-09-30,16.187478224731322,0.0,0.05749640989332505,16.129981814837997,false,Forward Runway Projection
+Bull,Support & Cloud Ops,2027-10-31,16.129981814837997,0.0,0.05729218801857172,16.072689626819425,false,Forward Runway Projection
+Bull,Support & Cloud Ops,2027-11-30,16.072689626819425,0.0,0.057088691520828405,16.015600935298597,false,Forward Runway Projection
+Bull,Support & Cloud Ops,2027-12-31,16.015600935298597,0.0,0.056885917823631615,15.958715017474965,false,Forward Runway Projection
