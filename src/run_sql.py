@@ -10,6 +10,7 @@ returns is a violation, and a violation fails the build.
 
 from __future__ import annotations
 
+import csv
 import sys
 from pathlib import Path
 from typing import Any
@@ -33,6 +34,7 @@ GTM_REPORT_PATH = REPORTS_DIR / "gtm_validation_report.md"
 FORECAST_REPORT_PATH = REPORTS_DIR / "forecast_runway_validation_report.md"
 EXECUTIVE_VARIANCE_REPORT_PATH = REPORTS_DIR / "executive_variance_report.md"
 ACCOUNTING_REPORT_PATH = REPORTS_DIR / "accounting_enhancements_validation_report.md"
+CONTROL_RESULTS_PATH = MARTS_DIR / "ctl_control_results.csv"
 
 
 def load_manifest(path: Path = MANIFEST_PATH) -> dict[str, Any]:
@@ -76,6 +78,43 @@ def export_marts(con: duckdb.DuckDBPyConnection, manifest: dict[str, Any], marts
     return written
 
 
+def export_control_results(
+    manifest: dict[str, Any],
+    control_results: dict[str, Any],
+    path: Path = CONTROL_RESULTS_PATH,
+) -> Path:
+    """Write the control roster and its violation counts to a committed CSV.
+
+    The generated markdown reports already publish this table, but they are prose. The Phase 9
+    Excel workbook needs the same roster as data, and `data/helio.duckdb` is not committed, so
+    the result is written alongside the marts. This is presentation metadata only: it records
+    what the controls returned, and changes nothing about whether they pass. A control passes if
+    and only if its query returned zero rows, which is decided in `build_and_validate` exactly
+    as before.
+    """
+    path.parent.mkdir(parents=True, exist_ok=True)
+    rows = []
+    for control in manifest.get("controls", []):
+        name = control["name"]
+        violations = len(control_results[name])
+        rows.append(
+            {
+                "control": name,
+                "phase": control.get("phase", ""),
+                "label": control.get("label", ""),
+                "violation_rows": violations,
+                "status": "PASS" if violations == 0 else "FAIL",
+            }
+        )
+    with path.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(
+            handle, fieldnames=["control", "phase", "label", "violation_rows", "status"]
+        )
+        writer.writeheader()
+        writer.writerows(rows)
+    return path
+
+
 def build_and_validate(*, verbose: bool = True) -> tuple[int, duckdb.DuckDBPyConnection]:
     """Build the analytical layer, run controls, export marts.
 
@@ -103,8 +142,10 @@ def build_and_validate(*, verbose: bool = True) -> tuple[int, duckdb.DuckDBPyCon
             print(f"  {status}  {name}  ({len(df)} violation rows)")
 
     written = export_marts(con, manifest)
+    export_control_results(manifest, control_results)
     if verbose:
         print(f"Exported {len(written)} marts to {MARTS_DIR}")
+        print(f"Control results: {CONTROL_RESULTS_PATH}")
 
     write_report(con, cfg, control_results, ARR_REPORT_PATH)
     if verbose:

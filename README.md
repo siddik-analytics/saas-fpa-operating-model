@@ -1,6 +1,6 @@
 # Helio Systems — SaaS FP&A Operating Model
 
-### Work in progress — SaaS Accounting Enhancements: Deferred Revenue and ASC 340-40 Commission Capitalisation
+### Work in progress — the recruiter-facing Excel FP&A operating model
 
 **Disclaimer.** Helio Systems, Inc. is a fictional company. All data in this repository is
 synthetically generated for portfolio demonstration purposes. No confidential, proprietary or
@@ -22,18 +22,17 @@ of truth for the build.
 
 ## Current status
 
-**Phase 8 of 9 is complete: contract-level billing mechanics and a deferred-revenue rollforward,
-plus ASC 340-40 sales commission capitalisation with a full asset rollforward and a GAAP-versus-
-cash view.**
+**The Excel FP&A operating model is complete: eleven presentation tabs over the frozen Phase 3-8
+analytical stack, generated reproducibly from the committed marts, with no VBA, no macros and no
+external links.**
 
-Phases 2-7 are frozen as the analytical source of truth: the raw source dataset, the
+Phases 2-8 are frozen as the analytical source of truth: the raw source dataset, the
 customer-grain ARR engine, the retention / renewal layer, the GTM capacity and pipeline layer,
-the driver-based Q2 reforecast with scenarios, runway and the hiring decision, and the
-Budget-to-Base bridges with deterministic commentary. Phase 8 is an **enhancement and
-reconciliation layer** on top of them: it reads the frozen commercial output and the source
-ledger, and writes back into neither. Where the contract-level accounting method differs from the
-frozen Phase 6 management view, the difference is quantified and explained rather than closed.
-The Excel model, Power BI and the executive presentation pack do not exist yet.
+the driver-based Q2 reforecast with scenarios, runway and the hiring decision, the
+Budget-to-Base bridges with deterministic commentary, and the deferred-revenue and ASC 340-40
+accounting schedules. The workbook is a **read and present layer** over all of it: every business
+calculation stays in SQL, and Excel does variance, subtotals, bridge running balances, lookups
+and control aggregation. Power BI and the executive presentation pack do not exist yet.
 
 | Phase | Scope | Status |
 |---|---|---|
@@ -44,8 +43,9 @@ The Excel model, Power BI and the executive presentation pack do not exist yet.
 | 5 | GTM capacity, pipeline, CRM-to-ARR reconciliation, unit economics | Complete |
 | 6 | Driver-based reforecast, Bear / Base / Bull, cash runway, hiring scenario | Complete |
 | 7 | Budget-to-reforecast bridges and deterministic management commentary | Complete |
-| **8** | **Deferred revenue, billing mechanics and ASC 340-40 commission capitalisation** | **Complete** |
-| 9 | Excel model, Power BI, executive presentation pack | Not started |
+| 8 | Deferred revenue, billing mechanics and ASC 340-40 commission capitalisation | Complete |
+| **9a** | **Excel FP&A operating model — 11 presentation tabs, generated from the marts** | **Complete** |
+| 9b | Power BI report, executive presentation pack | Not started |
 
 ## Build
 
@@ -66,8 +66,11 @@ reconciliation controls, exports `data/marts/*.csv`, and writes
 [reports/retention_validation_report.md](reports/retention_validation_report.md),
 [reports/gtm_validation_report.md](reports/gtm_validation_report.md) and
 [reports/forecast_runway_validation_report.md](reports/forecast_runway_validation_report.md).
-Then it runs the test suite. A critical source-data failure or a reconciliation violation names what broke and exits
-non-zero — nothing downstream runs over a broken dataset or a waterfall that doesn't tie.
+It then regenerates the Excel operating model in [`excel/`](excel/) from those marts and runs the
+workbook's own 127 validation checks, and finally runs the test suite. A critical source-data
+failure, a reconciliation violation or a failed workbook check names what broke and exits
+non-zero — nothing downstream runs over a broken dataset, a waterfall that doesn't tie, or a
+workbook whose numbers have drifted from the marts.
 
 It takes roughly 80–95 seconds, most of which is the source-data calibration loop described
 below.
@@ -80,12 +83,18 @@ python -m src.build --seed 4471
 ```
 
 `HELIO_SEED=4471 python -m src.build` does the same thing. `--no-calibrate` skips the search and
-uses the stored parameters; `--skip-sql` stops after the source validation report; `--skip-tests`
-stops before the pytest run. To rebuild just the analytical layer against the committed source
-data, without regenerating it:
+uses the stored parameters; `--skip-sql` stops after the source validation report;
+`--skip-excel` leaves the workbook alone; `--skip-tests` stops before the pytest run. To rebuild
+just the analytical layer against the committed source data, without regenerating it:
 
 ```bash
 python -m src.run_sql
+```
+
+To rebuild just the Excel workbook against the committed marts:
+
+```bash
+python -m src.build_excel_model
 ```
 
 ## What Phase 2 produces
@@ -329,6 +338,65 @@ model's own residual column. As built, zero violations, alongside every frozen P
 The full schedules are in
 [reports/accounting_enhancements_validation_report.md](reports/accounting_enhancements_validation_report.md).
 
+## What Phase 9 produces
+
+`excel/Helio_SaaS_FP&A_Operating_Model.xlsx` — the financial-management interface over everything
+above. Eleven presentation tabs a recruiter, hiring manager, FP&A leader or CFO can read without
+opening a SQL file, plus nine hidden supporting data sheets holding the 36 Excel Tables every
+presentation formula reads. Generated by `python -m src.build_excel_model` from the committed
+marts; no VBA, no macros, no external links, no Power Query, no manual step after the build, and
+no password, so every formula and every supporting table is inspectable.
+
+| Tab | What it answers |
+|---|---|
+| Executive Summary | The management problem in under a minute: 10 KPIs, Budget vs Base, a decision panel and the top five deterministic commentary items |
+| ARR & Retention | Monthly ARR waterfall with a visible actual/forecast split, TTM NRR / GRR / logo retention by segment, forward ATR by quarter |
+| GTM | Capacity vs pipeline vs achievable New Logo ARR, win rate, sales cycle, CAC, payback, sales efficiency |
+| Forecast | The FY2026 monthly reforecast grid — ARR, P&L and headcount, Jan-26 through Dec-26 |
+| P&L | Management P&L across five period columns, with variance and centrally-derived Fav / Unfav |
+| Budget Bridge | Four Excel-native waterfalls, each with a running balance and a visible zero residual |
+| Scenarios | Bear / Base / Bull, the five management levers, and a scenario-selector summary panel |
+| Runway & Hiring | Affordability against the 24-month Board floor, and attractiveness on the FY2027 horizon — answered separately |
+| Accounting | Bookings / billings / ARR / revenue kept apart, the deferred-revenue rollforward, the ASC 340-40 schedule |
+| Assumptions | The decision-driving assumptions only, with value, unit, source and type |
+| Controls | Overall status, the six upstream controls, and eleven workbook-level checks |
+
+**The workbook does not re-implement the SQL engine.** Every business calculation stays in
+`sql/`; Excel does variance, variance %, favourable / unfavourable from the Phase 7 centralised
+metric polarity, subtotals, bridge running balances, `XLOOKUP` retrieval and the control
+roll-up — 668 formula cells, no `OFFSET`, no `INDIRECT`, no volatile functions. The Controls
+tab's overall status is a formula over the violation counts, so it is structurally incapable of
+reading `READY / PASS` while an upstream control carries a violation.
+
+Modern Excel functions are written in the representation the file format requires —
+`_xlfn.XLOOKUP` for function names, and `_xlpm.` for any name declared by `LET` or `LAMBDA`.
+openpyxl writes formula strings verbatim, so a bare `XLOOKUP(` reaches Excel as an unrecognised
+name and renders `#NAME?`, and a bare `LET` parameter costs the whole formula record. Both
+namespaces are applied at the single point every cell is written; the workbook stores 481
+namespaced calls, zero bare occurrences and zero declared names.
+
+`src/validate_excel_model.py` runs 127 checks in five families: structural (valid XLSX, sheet
+inventory and visibility, no external links, no `#REF!`, no banned functions, every chart series
+resolves); OOXML serialization, read out of the saved ZIP rather than through openpyxl, which
+rejects a missing namespace, a wrong namespace, a namespace on a legacy function, an
+unclassified function name, and a `LET` / `LAMBDA` parameter without `_xlpm.`; formatting
+(gridlines, frozen panes, print areas, one font family, every type size on the scale, KPI card
+alignment, no merged cells); chart specification, read from the saved package, where every
+reference must resolve to a populated numeric range and four charts are tied to their marts by
+value; and value (the Executive Summary, P&L, forecast grid, all four
+bridges, scenarios, policy runway, hiring, accounting, commentary and controls each recomputed
+in Python from the marts and compared against what the workbook stores). `openpyxl` does not
+calculate formulas, so no formula carries a cached result and nothing here pretends Python
+recalculated the workbook: formula *strings* are checked structurally, and the values they
+should produce are verified independently against the marts. Excel COM automation is not
+required.
+
+Full methodology — the tab architecture, which calculations live in SQL versus Excel, the
+scenario selector, formula philosophy, traceability, the formatting standard, the validation
+approach and every limitation — is in
+[`docs/excel_operating_model.md`](docs/excel_operating_model.md), which also carries a
+**"How to review this workbook in 5 minutes"** route for reviewers.
+
 ## Validation
 
 The build runs 108 checks against the written CSVs and publishes the numbers behind each one
@@ -346,6 +414,8 @@ layer and runs `ctl_arr_reconciliation`, `ctl_retention_bounds`, `ctl_gtm_contro
 [the accounting enhancements validation report](reports/accounting_enhancements_validation_report.md).
 
 All seven reports are regenerated on every build, so they always describe the committed data.
+The Excel workbook is regenerated from those same marts and put through its own 127 checks in
+the same run.
 
 ## Repository structure
 
@@ -356,14 +426,16 @@ data/marts/     curated ARR-engine, retention, GTM, forecast, bridge/commentary 
                 extracts, regenerated by the build
 sql/            01_staging -> 02_core -> 03_arr -> 04_retention_renewals -> 05_gtm -> 06_forecast
                 -> 07_bridge -> 09_accounting -> 08_controls, manifest.yml
+excel/          Helio_SaaS_FP&A_Operating_Model.xlsx, regenerated by the build
 docs/           PHASE1_SPEC.md, data_dictionary.md, generation_methodology.md, arr_engine.md,
                 retention_renewals.md, gtm_finance.md, forecast_runway.md, bridge_commentary.md,
-                accounting_enhancements.md
+                accounting_enhancements.md, excel_operating_model.md
 reports/        source_validation_report.md, arr_validation_report.md,
                 retention_validation_report.md, gtm_validation_report.md,
                 forecast_runway_validation_report.md, executive_variance_report.md,
                 accounting_enhancements_validation_report.md, all regenerated
-src/            generation, validation, the SQL runner and the build entry point
+src/            generation, validation, the SQL runner, the Excel workbook builder and the
+                build entry point
 tests/          pytest suite
 ```
 
@@ -390,6 +462,10 @@ tests/          pytest suite
   the contract billing convention, the deferred-revenue methodology, the revenue reconciliation to
   the source GL, the ASC 340-40 interpretation, useful life and the non-commensurate-renewal
   judgement, the GAAP-versus-cash commission view and known limitations.
+- [The Excel FP&A operating model](docs/excel_operating_model.md) — the workbook's purpose and
+  audience, its tab architecture, source marts, build and refresh process, which calculations
+  live in SQL versus Excel, the scenario selector, formula philosophy, traceability, controls,
+  the validation approach and its limitations. Includes a five-minute review route.
 - [Phase 1 specification](docs/PHASE1_SPEC.md) — the frozen design this build implements.
 
 ## Licence

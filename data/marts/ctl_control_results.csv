@@ -1,0 +1,7 @@
+control,phase,label,violation_rows,status
+ctl_arr_reconciliation,Phase 3,"ARR waterfall reconciliation, customer / segment / company grain, product-grain tie",0,PASS
+ctl_retention_bounds,Phase 4,"Retention bounds, GRR cap, cohort integrity, ATR and renewal-outcome ties",0,PASS
+ctl_gtm_controls,Phase 5,"Capacity, ramp, pipeline, win-rate, CRM-to-ARR bridge and cost-allocation checks",0,PASS
+ctl_forecast_controls,Phase 6,"Actual preservation, forecast cutover, ARR / headcount / cash rollforwards, scenarios",0,PASS
+ctl_bridge_commentary,Phase 7,"Every bridge reconciles with no plug; commentary evidence, materiality and polarity",0,PASS
+ctl_accounting_enhancements,Phase 8,"Deferred-revenue and commission-asset rollforwards, GL ties, frozen Phase 6 unchanged",0,PASS

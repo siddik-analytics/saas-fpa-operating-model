@@ -4,9 +4,11 @@
 
 Loads configuration, generates every source table, writes the raw CSVs, re-reads them,
 validates them and writes the source validation report (Phase 2). If that passes, builds the
-DuckDB analytical layer from sql/manifest.yml, runs the reconciliation control, and writes the
-ARR validation report (Phase 3). A critical source-data failure or a control violation exits
-non-zero; the build never reports success over a broken dataset or a waterfall that doesn't tie.
+DuckDB analytical layer from sql/manifest.yml, runs the reconciliation controls, writes every
+validation report, regenerates the Phase 9 Excel operating model from the exported marts and
+validates it, then runs the test suite. A critical source-data failure, a control violation or a
+failed workbook check exits non-zero; the build never reports success over a broken dataset, a
+waterfall that doesn't tie, or a workbook whose numbers have drifted from the marts.
 """
 
 from __future__ import annotations
@@ -16,10 +18,13 @@ import sys
 import time
 from pathlib import Path
 
+from .build_excel_model import build as build_excel_workbook
 from .config import DATA_RAW_DIR, REPORTS_DIR, load_config
 from .generate_data import generate, write_tables
+from .excel_data import MartError
 from .report import write_report
 from .run_sql import build_and_validate as build_arr_engine
+from .validate_excel_model import validate as validate_workbook
 from .validate_sources import load_tables, validate
 
 REPORT_PATH = REPORTS_DIR / "source_validation_report.md"
@@ -53,6 +58,10 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         "--skip-sql", action="store_true",
         help="Do not build the DuckDB analytical layer (sql/manifest.yml) after source "
              "validation. The ARR engine and its controls are skipped along with it.",
+    )
+    parser.add_argument(
+        "--skip-excel", action="store_true",
+        help="Do not regenerate excel/Helio_SaaS_FP&A_Operating_Model.xlsx from the marts.",
     )
     return parser.parse_args(argv)
 
@@ -109,6 +118,27 @@ def main(argv: list[str] | None = None) -> int:
             print()
             print("BUILD FAILED - ctl_arr_reconciliation returned violation rows. See above.")
             return sql_code
+
+    if not args.skip_excel:
+        print()
+        print("Building the Excel operating model")
+        try:
+            workbook = build_excel_workbook()
+        except MartError as error:
+            print(f"  FAIL  {error}")
+            print()
+            print("BUILD FAILED - the Excel operating model could not be built.")
+            return 1
+        excel_result = validate_workbook(workbook)
+        for name, ok, detail in excel_result.checks:
+            if not ok:
+                print(f"  FAIL  {name}" + (f": {detail}" if detail else ""))
+        passed_checks = len(excel_result.checks) - len(excel_result.failures)
+        print(f"  {passed_checks} of {len(excel_result.checks)} workbook checks passed")
+        if not excel_result.passed:
+            print()
+            print("BUILD FAILED - the Excel workbook did not pass validation.")
+            return 1
 
     if not args.skip_tests:
         print()

@@ -196,19 +196,36 @@ models:
   - name: fct_commission_sensitivity
     path: 09_accounting/fct_commission_sensitivity.sql
 
+# `phase` and `label` are presentation metadata only. They name the phase a control gates and
+# give it a human-readable description, so the control roster can be published outside the
+# generated markdown reports (data/marts/ctl_control_results.csv, read by the Phase 9 Excel
+# workbook's Controls tab). Neither field is read by any SQL model or by the pass/fail gate:
+# a control still passes if and only if its query returns zero rows.
 controls:
   - name: ctl_arr_reconciliation
     path: 08_controls/ctl_arr_reconciliation.sql
+    phase: "Phase 3"
+    label: ARR waterfall reconciliation, customer / segment / company grain, product-grain tie
   - name: ctl_retention_bounds
     path: 08_controls/ctl_retention_bounds.sql
+    phase: "Phase 4"
+    label: Retention bounds, GRR cap, cohort integrity, ATR and renewal-outcome ties
   - name: ctl_gtm_controls
     path: 08_controls/ctl_gtm_controls.sql
+    phase: "Phase 5"
+    label: Capacity, ramp, pipeline, win-rate, CRM-to-ARR bridge and cost-allocation checks
   - name: ctl_forecast_controls
     path: 08_controls/ctl_forecast_controls.sql
+    phase: "Phase 6"
+    label: Actual preservation, forecast cutover, ARR / headcount / cash rollforwards, scenarios
   - name: ctl_bridge_commentary
     path: 08_controls/ctl_bridge_commentary.sql
+    phase: "Phase 7"
+    label: Every bridge reconciles with no plug; commentary evidence, materiality and polarity
   - name: ctl_accounting_enhancements
     path: 08_controls/ctl_accounting_enhancements.sql
+    phase: "Phase 8"
+    label: Deferred-revenue and commission-asset rollforwards, GL ties, frozen Phase 6 unchanged
 
 # Models exported to data/marts/<name>.csv for the "readable without running" convention.
 marts:

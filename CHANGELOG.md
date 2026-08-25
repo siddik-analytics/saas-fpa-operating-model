@@ -3,6 +3,401 @@
 All notable changes to this project are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [v0.8] - Excel FP&A operating model
+
+Phase 9a of the build described in `docs/PHASE1_SPEC.md`. Adds
+`excel/Helio_SaaS_FP&A_Operating_Model.xlsx` - the financial-management interface over the frozen
+Phase 3-8 analytical stack, generated reproducibly from the committed marts.
+
+The workbook is a **read and present layer**. Every business calculation stays in `sql/`; Excel
+does variance, variance %, favourable / unfavourable from the Phase 7 centralised metric
+polarity, subtotals, bridge running balances, `XLOOKUP` retrieval and the control roll-up. No
+Phase 2-8 model, control, mart or output is altered, and a test asserts that generating the
+workbook modifies no upstream mart.
+
+No VBA. No macros. No external links. No Power Query. No cloud dependency. No manual step after
+the build. No workbook or worksheet protection, so a reviewer can inspect every formula and
+every supporting table.
+
+### Added
+
+**The workbook** - `excel/Helio_SaaS_FP&A_Operating_Model.xlsx` (139 KB)
+- Eleven visible presentation tabs: Executive Summary, ARR & Retention, GTM, Forecast, P&L,
+  Budget Bridge, Scenarios, Runway & Hiring, Accounting, Assumptions, Controls.
+- Nine hidden supporting data sheets (`Data_ARR`, `Data_Retention`, `Data_GTM`, `Data_PnL`,
+  `Data_Bridge`, `Data_Scenario`, `Data_Runway`, `Data_Accounting`, `Data_Commentary`) holding
+  36 real Excel Tables. Hidden, never `veryHidden`, never protected - right-click any tab and
+  choose Unhide to inspect every table the presentation formulas read.
+- 668 formula cells, 16 charts, 32 source marts. Deliberately no visible tab per SQL mart.
+- **Executive Summary** - dated header, ten KPI tiles (Jun-26 ARR actual, Dec-26 Budget ARR,
+  Dec-26 Base reforecast ARR, ARR variance, FY2026 revenue, gross margin, operating loss, ending
+  headcount, Base Board-policy runway, Board floor), a Budget / Base / Variance table, a
+  management decision panel in which every value and every verdict is a formula over an approved
+  mart, the top five deterministic commentary items in Phase 7's own priority-then-materiality
+  order, and four charts (the Exit ARR waterfall, Budget vs Base headline metrics, Bear / Base /
+  Bull Dec-26 Exit ARR, and Board-policy runway against the 24-month floor).
+- **Budget Bridge** - four Excel-native waterfalls (Exit ARR, Gross Profit, Total OpEx,
+  Operating Income), each with an Excel-computed running balance and a visible residual line
+  that reads zero against the $1.00 Phase 7 tolerance, plus the gross-margin basis-point walk
+  and the revenue recognition-mechanic decomposition.
+- **GTM** - New Logo productive capacity against pipeline-supported bookings against the
+  constrained New Logo ARR that is the lesser of the two, with the binding constraint and the
+  pipeline-bound segment-month count. The misleading blended-capacity-versus-New-Logo-target
+  comparison that Phase 5 corrected is not reintroduced; blended capacity is shown for context
+  only and never compared to that target.
+- **Runway & Hiring** - affordability against the Board's 24-month floor and economic
+  attractiveness on the Dec-2027 fuller-ramp horizon presented as two separate sections. The
+  Dec-2026 figures are carried below, explicitly labelled a near-term ramp snapshot, because
+  hires start 31 Oct 2026. Affordability uses the Board-policy runway only; the model-derived
+  operating cash proxy is not quoted as a governance conclusion anywhere.
+- **Controls** - the six upstream controls with their phase, what each enforces, violation count
+  and status; eleven workbook-level checks; and an overall status that is a formula over the
+  violation counts (`=IF(SUM(tbl_controls[Violations])=0,"READY / PASS","FAIL")`), structurally
+  incapable of reading PASS while any upstream control carries a violation.
+- Interactivity is limited to two native data-validation dropdowns: a Bear / Base / Bull scenario
+  selector driving one clearly-labelled panel on the Scenarios tab, and a segment selector
+  driving one panel on ARR & Retention. Base remains the Board reforecast everywhere else. No
+  form controls, no buttons, no VBA.
+
+**Workbook builder** - `src/build_excel_model.py`, `src/excel_data.py`, `src/excel_style.py`
+- `excel_data.py` reads and reshapes the committed marts and derives nothing the analytical layer
+  has not already decided. Two aggregations reproduce a published Phase 5 convention rather than
+  inventing one - FY2025 unit economics (period-summed, then divided once) and the New Logo win
+  rate and median sales cycle - and both are asserted against the published figures.
+- `excel_style.py` holds the presentation vocabulary: one font, one restrained finance palette,
+  one set of number formats, and the helpers that write a cell, a section, a KPI tile, an Excel
+  Table or a chart. `resolve_format` rejects an unknown format token rather than writing it to
+  the cell verbatim, where a token containing `d`, `m`, `y`, `h` or `s` would be read by Excel as
+  a date pattern.
+- The build fails loudly. A missing mart file, an empty mart or a missing column raises
+  `MartError` and no file is written; it never produces a blank tab.
+
+**Workbook validation** - `src/validate_excel_model.py`, 100 checks
+- Structural: valid XLSX package, sheet inventory / order / visibility, no duplicate worksheet
+  name, all 36 required Excel Tables present, no `xl/externalLinks/` part, no VBA part, no
+  external-workbook formula reference, no `#REF!`, no banned or volatile function
+  (`OFFSET`, `INDIRECT`, `NOW`, `TODAY`, `RAND`), no stored Excel error value, every chart series
+  resolves to a sheet that exists, no 3D chart, no pie chart, file under 8 MB.
+- OOXML serialization, read out of the saved ZIP package rather than through openpyxl: every
+  modern function carries its required `_xlfn.` / `_xlfn._xlws.` namespace, no legacy function
+  carries one it does not take, every function used is classified, and every name declared by
+  `LET` or `LAMBDA` carries `_xlpm.`. See **Fixed**.
+- Value: the Executive Summary KPIs and scorecard, the P&L, the forecast grid, all four bridges
+  and their residuals, the scenario table and its five levers, the policy runway, the hiring
+  decision on the Dec-2027 horizon, the deferred-revenue and commission-asset rollforwards, the
+  commentary text, the control roster, the ARR and retention tables, the GTM `LEAST()`
+  relationship and the FY2025 unit economics, each recomputed in Python from the committed marts
+  and compared against what the workbook stores.
+- **The formula limitation is handled explicitly rather than implied away.** `openpyxl` does not
+  calculate, so no formula cell carries a cached result and nothing claims Python recalculated
+  the workbook. Formula *strings* are validated structurally and the values they should produce
+  are validated independently against the marts. Excel COM automation is not required for the
+  normal build; the workbook is saved with full-calculation-on-load so Excel computes on open.
+
+**Tests** - `tests/test_excel_model.py`, 31 tests
+- The workbook is rebuilt from the committed marts into a temporary directory and put through
+  the full validation suite, and the committed artifact in `excel/` is put through the same
+  suite - so a mart change not followed by a workbook rebuild fails here rather than being found
+  by a reviewer.
+- Ten tests cover Excel interoperability, all reading the ZIP package directly rather than
+  asking openpyxl what the formula says, including two mutation tests: one strips every `_xlfn.`
+  prefix from the saved package, the other reconstructs the bare-parameter `LET` that Excel
+  rejected, and validation must reject both.
+
+**Documentation** - `docs/excel_operating_model.md`
+- Purpose and audience, tab architecture, source marts per tab, the build and refresh process,
+  which calculations live in SQL versus Excel, the scenario selector, formula philosophy,
+  the formatting standard, traceability, controls, the validation approach and eleven stated
+  limitations. Opens with a **"How to review this workbook in 5 minutes"** route.
+
+### Changed -- visual design remediation
+
+The workbook was analytically correct but visually weak. This pass makes it look like an
+internal FP&A model rather than a generated spreadsheet. **No calculation, formula, mart,
+business rule, control or architectural decision changed**; the 668 formulas and every displayed
+value are the same, and all six upstream controls still pass.
+
+**A design system, centralised in `src/excel_style.py`** (brief item 16). Twenty text tokens
+covering title, subtitle, section, subsection, table header, body, KPI label, KPI value, note
+and source; a `Rows` class of explicit row heights; the page grid (margin, content start,
+gutter, chart band); and one chart size. `cell(..., style="...")` resolves a token, so
+`build_excel_model.py` no longer carries a single font size or ad-hoc colour -- the six remaining
+palette references are semantic (actual / forecast band ink, operating-income emphasis, input-cell
+ink, PASS / FAIL) and each is paired with a token. A test asserts no cell uses a size outside the
+scale.
+
+**Executive Summary** rebuilt on a ten-column grid. Ten KPI cards, all identical in height and
+column position, one per column with a gutter between so text overflows into its own empty
+space rather than being clipped. Scorecard compacted to one line per metric with the period on
+the label. Decision panel and commentary given real table structure instead of text dropped into
+cells. Four charts stacked on a fixed 18-row rhythm in a dedicated band.
+
+**P&L** given four blocks -- revenue, gross profit, operating expense, operating income -- with a
+thin rule and a half-height spacer between each. Subtotals bold with a top rule, totals on a
+light band, operating income emphasised in navy, one-level indentation for detail lines. The
+variance group is set off by a left rule so Budget / Base reads as one block and the comparison
+as another. Figures now in `$000` with the unit in the column header.
+
+**Forecast** actual / reforecast distinction moved to a banner row plus a faint tint on the
+reforecast columns only -- previously every data cell in both halves was filled, which turned the
+grid into wallpaper. Detail in `$000`.
+
+**Runway & Hiring** sections A and B given deliberately different heading accents so
+affordability and attractiveness read as two questions. **Controls** overall status widened into
+a band whose fill and type colour both come from its own formula -- green on READY / PASS, red on
+FAIL. **Accounting** section headings lightened so the schedules read as supporting rather than
+headline. **Charts** standardised: 17.4 x 8.6 cm, 10pt bold navy titles, 8pt grey axis and legend
+text, faint horizontal gridlines only, no border, no fill, no built-in Excel chart style, angled
+category labels on the bridge waterfalls.
+
+**Every presentation tab** now shares the page grid: a 1.8-wide margin in column A that is never
+written to, content from column B, gridlines off, frozen panes, a print area, and explicit row
+heights on every used row via a `finalise_sheet` pass.
+
+### Added -- formatting validation
+
+Fourteen checks (100 -> 114) and six tests (31 -> 37), all structural: gridlines off, frozen
+panes, print areas, margin column untouched and uniform, consistent title-block style, no merged
+cells, one font family, every type size on the scale, KPI cards identical in height and column
+position, no chart anchored outside the grid, no built-in Excel chart style, no row at Excel's
+default height, and chart size read from the drawing XML.
+
+That last one caught a weak check of my own: the previous chart-size assertion read
+`chart.width` from a reloaded workbook, but openpyxl does not restore it and hands back its own
+default, so the check passed regardless of what was written. It now reads `<ext cx cy>` from the
+saved drawing XML.
+
+**These checks do not judge whether the workbook looks good.** They catch the mechanical
+regressions that make it look wrong. **Final acceptance requires manual visual review in
+Microsoft Excel.**
+
+### Fixed -- charts were empty or unreadable in Microsoft Excel
+
+Reported after visual inspection: some charts completely empty, others with unreadable labels.
+Two independent root causes, neither visible from Python -- openpyxl created sixteen valid chart
+objects, and Excel could render almost none of them.
+
+**Cause 1 -- every waterfall referenced the wrong worksheet.** `waterfall_chart()` built its
+`Reference` objects against the *presentation* worksheet it was drawing on, while the row and
+column coordinates it was given belonged to `Data_Bridge`. The five bridge charts therefore
+pointed at empty cells on `Executive Summary` and `Budget Bridge`. Confirmed in the saved
+package: `<cat><numRef><f>'Executive Summary'!$B$2:$B$9</f></numRef></cat>` on a chart whose
+data lives on `Data_Bridge`. Completely empty in Excel.
+
+**Cause 2 -- `plotVisOnly val="1"` on all sixteen charts, every source on a hidden sheet.** That
+setting tells Excel to plot visible cells only; every chart in this workbook reads a hidden
+`Data_*` sheet. Now `0` on every chart, which is what allows a chart to render from a hidden
+source. The hidden sheets stay hidden.
+
+**Cause 3 -- categories emitted as `numRef`.** openpyxl's `set_categories` always writes a
+number reference, so text category labels came back to Excel as numbers and the axis rendered
+1, 2, 3. Categories are now written as `strRef`.
+
+**A dedicated chart-data layer.** A new hidden `Chart_Data` sheet holds one purpose-built block
+per chart: a text category column, contiguous numeric series columns, stored values only, no
+formula for Excel to calculate and no blank rows in the middle. `write_chart_block` returns a
+`ChartBlock` recording the sheet and the exact columns it wrote, and the chart helpers take the
+block rather than loose coordinates -- so a chart can no longer point at the right rows on the
+wrong sheet. This adds no calculation; every figure already existed in a mart.
+
+**Sixteen charts cut to twelve.** Removed: the TTM retention line chart (three metrics across
+four segments is unreadable at any size, and the compact table above it communicates better);
+the forward-ATR bar chart (six rows of quarters already show the seasonality); the scenario
+runway bar (the same four bars as the Executive Summary chart); and the deferred-revenue bar
+(the Accounting tab is meant to stay visually secondary). The Exit ARR bridge appears on both
+the Executive Summary and the Budget Bridge tab -- the one deliberate repeat, because it is the
+lead executive visual and also belongs with its three siblings.
+
+**Readability.** Three named sizes replace the single 17.4 x 8.6 cm: `CHART_WIDE` (24 x 11),
+`CHART_STANDARD` (19 x 10), `CHART_COMPACT` (19 x 8). Titles 12pt, axis and legend text 9.5pt,
+data labels 9pt -- up from 10pt and 8pt. Monthly series use quarter-spaced tick labels
+(`tickLblSkip`) while keeping every data point. Waterfall movements of zero are written as
+blanks rather than 0.0, so no bar and no data label is drawn for them. Bridge category labels
+are shortened ("New Logo ARR variance" to "New Logo") and angled. The Budget vs Base chart now
+carries only monetary metrics -- Gross Margin (bps), Ending Headcount (FTE) and runway (months)
+were sharing a dollar axis and have been removed from it.
+
+### Added -- chart-spec validation
+
+Thirteen checks (114 -> 127) and five tests (37 -> 41). Every chart: title present, at least one
+series, categories are a text reference, every reference resolves to a real sheet and a
+populated numeric range, category and value lengths agree, no `#REF!`, supported chart type only,
+one of the three standard sizes, above the minimum readable size, and `plotVisOnly` compatible
+with the source's visibility. Plus value ties: the Exit ARR bridge must open at Budget and close
+at Base Exit ARR from Phase 7; the scenario chart must tie `fct_scenario_monthly`; the runway
+chart must tie `fct_cash_runway_policy` and carry the 24-month floor; the GTM chart must tie
+`fct_new_logo_diagnosis` on all three series.
+
+**Mutation-tested, eight ways:** plotVisOnly reverted to 1, a series repointed at a presentation
+sheet, a series repointed at a non-existent sheet, categories reverted to numRef, category and
+value lengths made to disagree, `#REF!` injected, a title emptied, and a chart shrunk below the
+readable minimum. All eight are caught. One of these found a defect in the validator itself --
+an unresolvable reference made a tie check raise instead of fail, which would have reported
+nothing at all on a broken workbook; it now degrades to a recorded failure.
+
+**Manual Microsoft Excel visual inspection required.**
+
+### Fixed
+
+**Microsoft Excel removed the P&L formula records on open: "Removed Records: Formula from
+/xl/worksheets/sheet5.xml part".**
+
+*Which cells.* `P&L!J10:J23` - the fourteen favourable / unfavourable cells, one per P&L line.
+Every other formula on that worksheet, and on the other ten, was accepted; sheet5 was the only
+worksheet carrying a `LET`.
+
+*As generated by the builder:*
+
+```
+=LET(v,H10,p,XLOOKUP($B$10,tbl_pnl_summary[line_item],tbl_pnl_summary[polarity]),
+     IF(p="contextual","n/a",IF(v=0,"-",
+     IF((p="higher_favorable")=(v>0),"Favorable","Unfavorable"))))
+```
+
+*As serialized in sheet5.xml, after the first namespacing fix:*
+
+```
+_xlfn.LET(v,H10,p,_xlfn.XLOOKUP($B$10,tbl_pnl_summary[line_item],tbl_pnl_summary[polarity]),
+          IF(p="contextual","n/a",IF(v=0,"-",
+          IF((p="higher_favorable")=(v>0),"Favorable","Unfavorable"))))
+```
+
+*Root cause - a second, different namespace.* `_xlfn.` namespaces the name of a FUNCTION. A name
+DECLARED by `LET` or `LAMBDA` is stored under `_xlpm.` (Excel parameter), and so is every
+reference to it inside that call. The first fix namespaced the function names correctly and left
+the declared names `v` and `p` bare. Excel could not resolve them, rejected the formula, and
+dropped the entire record - which is reported as a removed record rather than as a `#NAME?`,
+because the formula never survives parsing to be evaluated. Getting `_xlfn.` right and `_xlpm.`
+wrong is worse than getting both wrong, because it looks fixed.
+
+*Correct OOXML for that formula* (what the serializer now produces):
+
+```
+_xlfn.LET(_xlpm.v,H10,_xlpm.p,_xlfn.XLOOKUP($B$10,tbl_pnl_summary[line_item],
+          tbl_pnl_summary[polarity]),IF(_xlpm.p="contextual","n/a",IF(_xlpm.v=0,"-",
+          IF((_xlpm.p="higher_favorable")=(_xlpm.v>0),"Favorable","Unfavorable"))))
+```
+
+*Shipped fix - `LET` removed rather than namespaced.* `LET` bought one thing here: naming the
+polarity lookup instead of repeating it. That is not worth carrying a second namespace
+obligation for a formula whose only job is to print one of four words, and repeating an
+`XLOOKUP` against a fourteen-row table costs nothing. The P&L formula is now plain nested `IF`
+over `XLOOKUP`:
+
+```
+=IF(XLOOKUP($B$10,tbl_pnl_summary[line_item],tbl_pnl_summary[polarity])="contextual","n/a",
+ IF(H10=0,"-",
+ IF((XLOOKUP($B$10,tbl_pnl_summary[line_item],tbl_pnl_summary[polarity])="higher_favorable")
+    =(H10>0),"Favorable","Unfavorable")))
+```
+
+Polarity behaviour is byte-identical: verified line by line across all fourteen P&L rows -
+contextual to "n/a", zero variance to "-", polarity matching the sign to "Favorable", otherwise
+"Unfavorable". No value is hardcoded; the cells remain formula-driven and still read the
+centralised Phase 7 polarity.
+
+*Serializer fixed anyway.* `excel_style.qualify_formula` now namespaces declared names as well as
+function names, handling nested `LET`, `LAMBDA`, parameter names that also appear inside string
+literals, and idempotent re-application. The workbook ships zero `LET`, so this path is covered
+by direct unit tests rather than by the workbook itself.
+
+*Counts, from the saved package:* 668 formulas total; 481 `XLOOKUP`, all `_xlfn.`-namespaced;
+**0 `LET`**; 14 formulas corrected (`P&L!J10:J23`); 1 worksheet affected (sheet5 / P&L); 0 bare
+modern functions and 0 bare declared names anywhere. `fullCalcOnLoad="1"` preserved in
+`xl/workbook.xml`, calculation mode automatic.
+
+*Regression guards added.* A fifth namespacing check rejects any `LET` / `LAMBDA` parameter
+lacking `_xlpm.`, anywhere in the package. Five new tests read the ZIP directly: sheet5 is
+confirmed to be P&L from the workbook's own sheet order; all fourteen Fav / Unfav formulas are
+confirmed present, namespaced and `LET`-free; no declared name anywhere lacks `_xlpm.`; the
+guard is **mutation-tested** by reconstructing the exact broken formula and requiring the
+validator to catch it; and the serializer has unit coverage for nesting, `LAMBDA` and literals.
+Workbook validation goes from 99 checks to 100, tests from 26 to 31.
+
+**Manual Microsoft Excel reopen is still required** to confirm no recovery dialog and no
+`#NAME?` errors. Neither openpyxl nor pytest runs Excel's own parser, and this defect is the
+reason that distinction is now stated in the documentation rather than assumed.
+
+**Modern Excel functions were emitted without the OOXML `_xlfn.` namespace, so Microsoft 365
+Excel rendered `#NAME?` in every cell using them.**
+
+*Root cause.* Worksheet functions introduced after Excel 2007 are stored in the file format
+under the `_xlfn.` future-function namespace - `_xlfn.XLOOKUP`, `_xlfn.LET` - and a few
+dynamic-array functions under `_xlfn._xlws.` as well. Excel writes the prefix itself and hides
+it in the formula bar, which is why a workbook saved by Excel shows `XLOOKUP(...)` on screen
+while its XML holds `_xlfn.XLOOKUP(...)`. openpyxl performs no such translation: it writes the
+formula string it is handed, verbatim, into the `<f>` element. The builder handed it bare
+`XLOOKUP(` and `LET(`, so Excel resolved them as unrecognised defined names. Inspection of the
+saved package confirmed 668 `<f>` elements containing 467 bare `XLOOKUP` and 14 bare `LET`
+occurrences, and **zero** `_xlfn.` prefixes anywhere.
+
+*Fix.* `excel_style.qualify_formula` rewrites modern function names into their required OOXML
+representation at the single point every cell is written, so no formula can bypass it.
+Substitution happens only outside string literals, so a lookup key or a commentary headline
+containing a function name is never touched, and the transform is idempotent.
+`excel_style.MODERN_FUNCTIONS` is the roster and carries the correct namespace per function
+rather than blanket-prefixing - `_xlfn.SUM` is as broken as a bare `XLOOKUP`.
+`excel_style.display_formula` gives the readable form back, so a structural check can be written
+against `XLOOKUP("Exit ARR"` while the stored form keeps its namespace.
+
+*Confirmed in the saved XLSX XML*, not through openpyxl: 668 formula elements, **481 namespaced
+calls (467 `_xlfn.XLOOKUP`, 14 `_xlfn.LET`), zero bare occurrences**, across the eight
+presentation sheets that use them. `fullCalcOnLoad="1"` is preserved in `xl/workbook.xml`, so
+Excel recalculates the whole workbook on open.
+
+*Regression guard.* `check_ooxml_function_prefixes` opens the ZIP, parses every `<f>` element in
+every worksheet part, blanks string literals so a lookup key cannot be read as a function call,
+and rejects four failure modes: a modern function with no namespace, a modern function with the
+wrong namespace, a namespace applied to a legacy function that does not take one, and a function
+call in neither the modern nor the legacy roster - an unclassified name is failed rather than
+assumed safe. `XLOOKUP` and `LET` are additionally asserted by name. Workbook validation goes
+from 92 checks to 99.
+
+*The guard is mutation-tested.* Six deliberate corruptions of the saved package - every prefix
+stripped (the reported defect), the prefix stripped from `XLOOKUP` alone, from `LET` alone, a
+wrong namespace applied, a namespace applied to a legacy function, and an unclassified function
+name introduced - and every one is caught. A check that never fails proves nothing.
+
+No business calculation, mart, Phase 2-8 analytical result or presentation value changed. No
+formula-driven cell was replaced with a hardcoded result. The workbook's 668 formulas are the
+same 668 formulas, written in the representation Excel requires.
+
+### Changed
+
+- `src/run_sql.py` now writes `data/marts/ctl_control_results.csv` - the control roster, its
+  phase label and its violation count - so the Controls tab has a committed source. The control
+  results previously existed only inside `data/helio.duckdb`, which is not committed.
+- `sql/manifest.yml` carries a `phase` and a `label` on each control entry. Both are presentation
+  metadata: no SQL model reads them, and a control still passes if and only if its query returns
+  zero rows.
+- `src/build.py` regenerates the workbook from the exported marts and runs its 100 validation
+  checks between the analytical layer and the test suite. A failed workbook check exits non-zero,
+  exactly like a failed control. `--skip-excel` opts out.
+- `requirements.txt` adds `openpyxl>=3.1`.
+
+### Known limitations
+
+- No cached formula results; formula values are verified against the marts in Python rather than
+  read back out of the file.
+- **Automated checks do not substitute for opening the file.** Neither openpyxl nor pytest runs
+  Excel's own parser. A manual Microsoft Excel reopen is required to confirm no recovery dialog
+  and no `#NAME?` errors.
+- The workbook is a read layer: it cannot change a driver and re-forecast. Assumptions live in
+  `config/assumptions.yml` under version control, not in a spreadsheet cell.
+- The scenario selector drives one clearly-identified panel, by design; charts and tables
+  elsewhere on the Scenarios tab always show all three scenarios.
+- Segment-level Budget ARR figures are allocations - `fact_budget` carries no segment grain for
+  ARR movements - and are labelled `budget_grain = 'allocated'`. Budget carries no functional
+  headcount grain either, so the by-function headcount table has no Budget column rather than a
+  fabricated departmental split.
+- The commission asset is analytically derived, not GL-reconciled; the Accounting tab says so on
+  the sheet. Accounting billings and deferred revenue are shown for actual periods only.
+- Mart CSV exports are not byte-stable across rebuilds (row order within ties, and floating-point
+  dust from parallel aggregation). This predates Phase 9 and affects the CSVs, not the workbook.
+- PHASE1_SPEC section 10 names a five-tab workbook at `models/Helio_FPA_Operating_Model.xlsx`;
+  this phase builds eleven visible tabs at `excel/Helio_SaaS_FP&A_Operating_Model.xlsx` per the
+  Phase 9 brief. Recorded as a deviation from the frozen specification rather than left silent.
+
 ## [v0.7] - SaaS accounting enhancements: deferred revenue and ASC 340-40 commission capitalisation
 
 Phase 8 of the build described in `docs/PHASE1_SPEC.md`. Adds the accounting mechanics that sit
