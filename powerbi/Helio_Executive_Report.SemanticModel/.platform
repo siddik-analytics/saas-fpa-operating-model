@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Helio_Executive_Report"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e2eb4be5-bc57-5b51-85ab-0f1254a8c5f4"
+  }
+}

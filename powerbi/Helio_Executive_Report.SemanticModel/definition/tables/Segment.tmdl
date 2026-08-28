@@ -1,0 +1,42 @@
+/// Conformed customer segment with a display order. Total is the aggregate of the three
+/// members, never a stored row.
+table Segment
+	lineageTag: 10ab6346-9763-5bb2-8601-6e28bf95bdee
+
+	column Segment
+		dataType: string
+		lineageTag: a56d16b4-2750-549c-8f65-bf3872d109a1
+		summarizeBy: none
+		sourceColumn: Segment
+		sortByColumn: 'Segment Sort'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Segment Sort'
+		dataType: int64
+		isHidden
+		formatString: #,##0
+		lineageTag: e3b3346e-b9db-57e2-a977-9b2b2eb1af2d
+		summarizeBy: none
+		sourceColumn: Segment Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Segment = m
+		mode: import
+		source =
+				let
+				    // Conformed segment list. The marts carry a pre-aggregated segment = 'Total' row; those
+				    // rows are filtered out on the way in, so Total is always the sum of the three segments
+				    // and no double count is possible. Sort order is SMB, Mid-Market, Enterprise.
+				    Source = #table(
+				        type table [Segment = text, #"Segment Sort" = Int64.Type],
+				        {
+				            {"SMB", 1},
+				            {"Mid-Market", 2},
+				            {"Enterprise", 3}
+				        })
+				in
+				    Source
+
+	annotation PBI_ResultType = Table

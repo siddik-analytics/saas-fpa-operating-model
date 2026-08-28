@@ -1,6 +1,6 @@
 # Helio Systems — SaaS FP&A Operating Model
 
-### Work in progress — the recruiter-facing Excel FP&A operating model
+### Work in progress — the Power BI executive report
 
 **Disclaimer.** Helio Systems, Inc. is a fictional company. All data in this repository is
 synthetically generated for portfolio demonstration purposes. No confidential, proprietary or
@@ -22,17 +22,32 @@ of truth for the build.
 
 ## Current status
 
-**The Excel FP&A operating model is complete: eleven presentation tabs over the frozen Phase 3-8
-analytical stack, generated reproducibly from the committed marts, with no VBA, no macros and no
-external links.**
+**The Power BI executive report is built: five pages over a 27-table semantic model, committed as
+plain-text TMDL and PBIR rather than a binary `.pbix`, so every measure, relationship and visual
+is reviewable in a diff. Its 519 static checks pass, and so does Microsoft's own PBIR validator
+(0 errors, 0 warnings).**
+
+**The project now opens, refreshes and renders in Power BI Desktop, and the layout reads as
+designed. Acceptance is still outstanding**, after four packaging failures and one formatting
+pass, each getting further than the last and each a packaging defect rather than an
+analytical one: PBIR loading (a missing `version.json` and superseded schemas), measure format
+metadata (four measures declared both a static and a dynamic format string), the model's object
+namespace (23 measures shared a name with their own stored column), and finally
+`definition.pbir` declaring the wrong report-definition version — at which Desktop never looked
+in `definition/pages/` at all, showed no pages, and replaced the report with a blank one. All four
+are fixed, and the validation gaps that let them through are closed with mutation tests proving
+each new guard fails. No reported number moved in any round.
+[`docs/powerbi_executive_report.md`](docs/powerbi_executive_report.md) sections 12 to 15 record
+the failures in full; section 11 is the acceptance route.
 
 Phases 2-8 are frozen as the analytical source of truth: the raw source dataset, the
 customer-grain ARR engine, the retention / renewal layer, the GTM capacity and pipeline layer,
 the driver-based Q2 reforecast with scenarios, runway and the hiring decision, the
 Budget-to-Base bridges with deterministic commentary, and the deferred-revenue and ASC 340-40
-accounting schedules. The workbook is a **read and present layer** over all of it: every business
-calculation stays in SQL, and Excel does variance, subtotals, bridge running balances, lookups
-and control aggregation. Power BI and the executive presentation pack do not exist yet.
+accounting schedules. Both presentation layers — the Excel workbook and the Power BI report — are
+**read and present layers** over all of it: every business calculation stays in SQL. Excel does
+variance, subtotals, bridge running balances, lookups and control aggregation; DAX does
+semi-additive balances and ratios of aggregates. Neither re-implements a business rule.
 
 | Phase | Scope | Status |
 |---|---|---|
@@ -44,8 +59,9 @@ and control aggregation. Power BI and the executive presentation pack do not exi
 | 6 | Driver-based reforecast, Bear / Base / Bull, cash runway, hiring scenario | Complete |
 | 7 | Budget-to-reforecast bridges and deterministic management commentary | Complete |
 | 8 | Deferred revenue, billing mechanics and ASC 340-40 commission capitalisation | Complete |
-| **9a** | **Excel FP&A operating model — 11 presentation tabs, generated from the marts** | **Complete** |
-| 9b | Power BI report, executive presentation pack | Not started |
+| 9 | Excel FP&A operating model — 11 presentation tabs, generated from the marts | Complete |
+| **10** | **Power BI executive report — 5 pages over a 27-table semantic model** | **Built; passes 519 static checks and Microsoft's PBIR validator. Opens, refreshes and renders in Desktop; final acceptance PENDING after a number-formatting pass** |
+| 11 | Case study, executive pack, benchmarks | Not started |
 
 ## Build
 
@@ -67,12 +83,14 @@ reconciliation controls, exports `data/marts/*.csv`, and writes
 [reports/gtm_validation_report.md](reports/gtm_validation_report.md) and
 [reports/forecast_runway_validation_report.md](reports/forecast_runway_validation_report.md).
 It then regenerates the Excel operating model in [`excel/`](excel/) from those marts and runs the
-workbook's own 127 validation checks, and finally runs the test suite. A critical source-data
-failure, a reconciliation violation or a failed workbook check names what broke and exits
-non-zero — nothing downstream runs over a broken dataset, a waterfall that doesn't tie, or a
-workbook whose numbers have drifted from the marts.
+workbook's own 127 validation checks; regenerates the Power BI project in [`powerbi/`](powerbi/)
+together with its measure library and SQL expected-results pack, and runs its 519 static checks;
+and finally runs the test suite. A critical source-data failure, a reconciliation violation, a
+failed workbook check or a failed Power BI check names what broke and exits non-zero — nothing
+downstream runs over a broken dataset, a waterfall that doesn't tie, or a presentation layer whose
+numbers have drifted from the marts.
 
-It takes roughly 80–95 seconds, most of which is the source-data calibration loop described
+It takes roughly 120–140 seconds, most of which is the source-data calibration loop described
 below.
 
 Generation is deterministic. Deleting `data/raw/` and rebuilding reproduces the committed CSVs
@@ -84,8 +102,9 @@ python -m src.build --seed 4471
 
 `HELIO_SEED=4471 python -m src.build` does the same thing. `--no-calibrate` skips the search and
 uses the stored parameters; `--skip-sql` stops after the source validation report;
-`--skip-excel` leaves the workbook alone; `--skip-tests` stops before the pytest run. To rebuild
-just the analytical layer against the committed source data, without regenerating it:
+`--skip-excel` leaves the workbook alone; `--skip-powerbi` leaves the Power BI project alone;
+`--skip-tests` stops before the pytest run. To rebuild just the analytical layer against the
+committed source data, without regenerating it:
 
 ```bash
 python -m src.run_sql
@@ -96,6 +115,19 @@ To rebuild just the Excel workbook against the committed marts:
 ```bash
 python -m src.build_excel_model
 ```
+
+To rebuild just the Power BI project, its measure library and its expected-results pack:
+
+```bash
+python -m src.build_powerbi
+python -m src.powerbi_docs
+python -m src.powerbi_expected
+python -m src.validate_powerbi
+```
+
+The project is regenerated deterministically — lineage tags are derived rather than random — so a
+no-op rebuild leaves an empty diff, and the build fails if the committed files have drifted from
+what the generator emits.
 
 ## What Phase 2 produces
 
@@ -397,6 +429,114 @@ approach and every limitation — is in
 [`docs/excel_operating_model.md`](docs/excel_operating_model.md), which also carries a
 **"How to review this workbook in 5 minutes"** route for reviewers.
 
+## What Phase 10 produces
+
+`powerbi/Helio_Executive_Report.pbip` — the executive reporting interface over the same marts.
+Five pages, six analytical visuals each, every visual title a conclusion rather than a noun.
+Generated by `python -m src.build_powerbi`.
+
+**It is committed as a Power BI Project, not a `.pbix`.** A `.pbix` in a public repository is an
+opaque binary whose diff reads "binary files differ". A PBIP stores the same content as text —
+TMDL for the semantic model, PBIR JSON for the report — so every measure, every Power Query step,
+every relationship and every visual is reviewable in a pull request. That is the whole reason for
+the format choice.
+
+| Page | What it answers |
+|---|---|
+| Executive Q2 Reforecast | Where FY2026 lands, how far from plan, and whether the Board runway floor holds — with the Exit ARR bridge and the Phase 7 commentary |
+| ARR, Retention & Renewals | Is the recurring base healthy, and what renews in the next four quarters |
+| GTM Capacity & Pipeline | Why capacity does not equal achievable bookings — and Net ARR Sales Efficiency and the Magic Number as a labelled pair, never one number |
+| Financial Performance & Headcount | The P&L, the operating-income bridge, gross margin, headcount, and the deferred-revenue and commission balances |
+| Plan & Scenarios | Affordability against the 24-month floor and attractiveness of the hiring case, answered as two separate questions |
+
+**The semantic model.** 27 tables — three Power Query dimensions (`Date`, `Segment`, `Scenario`)
+and 24 fact tables, one per committed mart. 108 measures, 104 visible. 27 relationships, every one
+single-direction and many-to-one onto a dimension: no bi-directional filter and no many-to-many
+anywhere. Where a star join would be wrong, the table is left **disconnected with the reason
+recorded** — eight of them, each asserted by a test so a later edit cannot quietly connect one.
+`Runway Policy` is the clearest case: its five paths span three operating scenarios *and* two
+hiring cases, which a three-member Scenario dimension cannot represent, so joining it would strand
+the hiring rows on a blank member.
+
+**Measures are presentation calculations, never business logic.** Movement classification, the TTM
+cohort and its per-customer GRR cap, `LEAST(capacity, pipeline)`, the drivers, the bottom-up P&L,
+the Board-policy runway, the bridges, materiality and polarity are all produced and controlled in
+`sql/`. DAX reads those values and forms ratios over them. Every ratio is a ratio of aggregates —
+`AVERAGE` appears nowhere in the model and the validator fails the build if it ever does, because
+averaging the three segment NRRs at Jun-2026 gives 98.1% where the correct ARR-weighted figure is
+101.8%. A measure with no defined value returns BLANK rather than a plausible-looking number:
+`Magic Number` across more than one quarter, TTM retention across more than one month, policy
+runway across more than one path.
+
+The model reads the committed CSV marts through a single **`RepoRoot`** parameter, committed
+deliberately **empty** — a parameter default is stored in the file, and an absolute path from the
+author's machine has no business in a public repository. Set it after cloning, or stamp it with
+`python -m src.build_powerbi --repo-root auto`.
+
+[`powerbi/measures.md`](powerbi/measures.md) documents all 108 measures — DAX, format, source mart
+and fields, the SQL that produces the same number, filter-context behaviour, and which visuals
+read it. It is **generated**, and the test suite regenerates it on every run and fails if the
+committed copy has drifted, so documented DAX and shipped DAX cannot diverge.
+
+`src/validate_powerbi.py` runs 519 static checks: every file Power BI Desktop needs exists and
+carries the exact PBIR `$schema` pinned against the installed Desktop scaffold; every value
+Desktop reads matches the value Desktop itself writes; `pageOrder`, the page folders and each
+page's declared name form one bijection; no measure declares both a static and a dynamic format
+string; no column, measure or hierarchy shares a name within a table; every declared
+table, column, format and measure is present in TMDL; the Date table is marked as one, contiguous,
+and flips Period Type at the 2026-06-30 cutover; every relationship is single-direction and
+many-to-one; every mart a Power Query references is committed; no measure averages a ratio; no
+drive letter, home directory or internet reference appears anywhere; the report has exactly the
+five pages the spec names; every measure a visual references exists and no visual uses an implicit
+measure; and regenerating the project reproduces every committed file byte for byte.
+
+The project also passes **Microsoft's own PBIR validator** — `powerbi-report-author validate`,
+from `@microsoft/powerbi-report-authoring-cli` — with 0 errors and 0 warnings, checked against the
+live published schemas rather than against this repository's understanding of them.
+
+**What that does not prove — and this is not hypothetical.** Python does not open Power BI
+Desktop. Three acceptance attempts have **failed**, each caught by Desktop and by nothing else,
+and each one invisible to the checks that existed at the time:
+
+1. Desktop could not read the project at all, while 409 checks reported it healthy, because
+   nothing asserted the PBIR scaffold was complete.
+2. Desktop read the report, began building the model, and rejected it because four measures
+   declared both a static and a dynamic format string.
+3. Desktop began creating model objects and rejected `Ending ARR`, because a measure cannot share
+   a name with a column in the same table — 23 did.
+4. Desktop opened and refreshed the model, then showed **no pages** and replaced the report with a
+   blank one. `definition.pbir` declared report-definition version `1.0`; Desktop writes `4.0`,
+   and at `1.0` it never reads `definition/pages/`. The field is typed as a free-form string, so
+   the schema accepted it and Microsoft's validator passed it. **This one produced no error at
+   all.**
+5. Everything opened and rendered — and some labels read `$0.0M` for figures that were not zero.
+   A dollar flow with an $8.5K monthly median carried a millions format. The numbers were right;
+   the display unit was not.
+6. The mixed-metric scorecard rendered `$6,000,000.0,M`, showed gross margin as `7,407 bps` where
+   a level should read `74.1%`, and carried a total row summing dollars, basis points and
+   headcount.
+
+All six were fixed in the generator, all six gaps are now closed by check families with mutation
+tests behind them, and the report side also passes Microsoft's own validator. Static checking
+still cannot show that a page appears, that a visual renders, or that DAX executes. The validator
+never prints "Power BI passed" — it prints
+`POWER BI STATIC VALIDATION OK - Power BI Desktop acceptance still required`.
+For the DAX side, [`powerbi/validation/`](powerbi/validation/) ships the queries a reviewer runs
+in Desktop or DAX Studio alongside **157 expected values generated from the marts by Python**, on
+stated tolerances. Until those are run, DAX execution validation is PENDING.
+
+**No benchmark appears anywhere in the report.** PHASE1_SPEC section 12 lists benchmarks for
+several metrics, and section 9 of the same spec permits one only where the source's own formula
+has been read and confirmed to match Helio's definition. This repository carries no benchmarks
+document and no confirmed source formula, and the spec is explicit that an omitted row with a
+stated reason beats a fabricated comparison.
+
+Full methodology — the page-by-page contents, the semantic model and its disconnected tables,
+measure design, the formatting standard, the traceability chain, what the static checks prove,
+the manual acceptance route, the deviations from the frozen spec and every limitation — is in
+[`docs/powerbi_executive_report.md`](docs/powerbi_executive_report.md), which also carries a
+**"How to review this project in 5 minutes"** route that needs no Power BI install.
+
 ## Validation
 
 The build runs 108 checks against the written CSVs and publishes the numbers behind each one
@@ -414,8 +554,12 @@ layer and runs `ctl_arr_reconciliation`, `ctl_retention_bounds`, `ctl_gtm_contro
 [the accounting enhancements validation report](reports/accounting_enhancements_validation_report.md).
 
 All seven reports are regenerated on every build, so they always describe the committed data.
-The Excel workbook is regenerated from those same marts and put through its own 127 checks in
-the same run.
+Both presentation layers are regenerated from those same marts in the same run and put through
+their own checks: 127 for the Excel workbook, 519 static checks for the Power BI project. The
+Power BI figure is deliberately labelled *static* — it covers the project's files, model and
+report definition, not the rendering and DAX execution that only Power BI Desktop can exercise.
+Microsoft's PBIR validator is run separately and also passes clean; neither is a substitute for
+Desktop, which is why the failed first acceptance attempt is recorded rather than smoothed over.
 
 ## Repository structure
 
@@ -427,15 +571,18 @@ data/marts/     curated ARR-engine, retention, GTM, forecast, bridge/commentary 
 sql/            01_staging -> 02_core -> 03_arr -> 04_retention_renewals -> 05_gtm -> 06_forecast
                 -> 07_bridge -> 09_accounting -> 08_controls, manifest.yml
 excel/          Helio_SaaS_FP&A_Operating_Model.xlsx, regenerated by the build
+powerbi/        Helio_Executive_Report.pbip and its two text definition folders (TMDL semantic
+                model, PBIR report), measures.md, validation/, all regenerated by the build
 docs/           PHASE1_SPEC.md, data_dictionary.md, generation_methodology.md, arr_engine.md,
                 retention_renewals.md, gtm_finance.md, forecast_runway.md, bridge_commentary.md,
-                accounting_enhancements.md, excel_operating_model.md
+                accounting_enhancements.md, excel_operating_model.md,
+                powerbi_executive_report.md
 reports/        source_validation_report.md, arr_validation_report.md,
                 retention_validation_report.md, gtm_validation_report.md,
                 forecast_runway_validation_report.md, executive_variance_report.md,
                 accounting_enhancements_validation_report.md, all regenerated
-src/            generation, validation, the SQL runner, the Excel workbook builder and the
-                build entry point
+src/            generation, validation, the SQL runner, the Excel workbook builder, the Power BI
+                project builder and the build entry point
 tests/          pytest suite
 ```
 
@@ -466,6 +613,14 @@ tests/          pytest suite
   audience, its tab architecture, source marts, build and refresh process, which calculations
   live in SQL versus Excel, the scenario selector, formula philosophy, traceability, controls,
   the validation approach and its limitations. Includes a five-minute review route.
+- [The Power BI executive report](docs/powerbi_executive_report.md) — why a PBIP project rather
+  than a `.pbix`, the five pages, the semantic model and the eight tables deliberately left
+  disconnected, measure design, the `RepoRoot` parameter, traceability, what the 433 static checks
+  prove and what they cannot, the outstanding Power BI Desktop acceptance route, **the four failed
+  acceptance attempts and the PBIR and TMDL defects they exposed**, the deviations from the frozen
+  spec and known limitations. Includes a five-minute review route that needs no Power BI install.
+- [DAX measure library](powerbi/measures.md) — generated; all 108 measures with their DAX, source
+  mart, equivalent SQL and filter-context behaviour.
 - [Phase 1 specification](docs/PHASE1_SPEC.md) — the frozen design this build implements.
 
 ## Licence

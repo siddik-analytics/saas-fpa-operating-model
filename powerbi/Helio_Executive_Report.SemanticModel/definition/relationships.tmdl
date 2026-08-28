@@ -1,0 +1,134 @@
+relationship Date_to_ARR_Forecast
+	fromColumn: 'ARR Forecast'.'Month End Date'
+	toColumn: Date.Date
+	crossFilteringBehavior: oneDirection
+
+relationship Date_to_Retention
+	fromColumn: Retention.'Month End Date'
+	toColumn: Date.Date
+	crossFilteringBehavior: oneDirection
+
+relationship Date_to_Renewal_Base
+	fromColumn: 'Renewal Base'.'Renewal Month'
+	toColumn: Date.Date
+	crossFilteringBehavior: oneDirection
+
+relationship Date_to_ARR_Concentration
+	fromColumn: 'ARR Concentration'.'Month End Date'
+	toColumn: Date.Date
+	crossFilteringBehavior: oneDirection
+
+relationship Date_to_GTM_Constraint
+	fromColumn: 'GTM Constraint'.'Month End Date'
+	toColumn: Date.Date
+	crossFilteringBehavior: oneDirection
+
+relationship Date_to_Sales_Capacity
+	fromColumn: 'Sales Capacity'.'Month End Date'
+	toColumn: Date.Date
+	crossFilteringBehavior: oneDirection
+
+relationship Date_to_Pipeline
+	fromColumn: Pipeline.'Expected Close Month'
+	toColumn: Date.Date
+	crossFilteringBehavior: oneDirection
+
+relationship Date_to_Sales_Efficiency
+	fromColumn: 'Sales Efficiency'.'Quarter End'
+	toColumn: Date.Date
+	crossFilteringBehavior: oneDirection
+
+relationship Date_to_Scenario_Monthly
+	fromColumn: 'Scenario Monthly'.'Month End Date'
+	toColumn: Date.Date
+	crossFilteringBehavior: oneDirection
+
+relationship 'Date_to_P&L'
+	fromColumn: 'P&L'.'Month End Date'
+	toColumn: Date.Date
+	crossFilteringBehavior: oneDirection
+
+relationship Date_to_Headcount
+	fromColumn: Headcount.'Month End Date'
+	toColumn: Date.Date
+	crossFilteringBehavior: oneDirection
+
+relationship Date_to_Hiring_Scenario
+	fromColumn: 'Hiring Scenario'.'Month End Date'
+	toColumn: Date.Date
+	crossFilteringBehavior: oneDirection
+
+relationship Date_to_Deferred_Revenue
+	fromColumn: 'Deferred Revenue'.'Month End Date'
+	toColumn: Date.Date
+	crossFilteringBehavior: oneDirection
+
+relationship Date_to_Commission_Asset
+	fromColumn: 'Commission Asset'.'Month End Date'
+	toColumn: Date.Date
+	crossFilteringBehavior: oneDirection
+
+relationship Segment_to_ARR_Forecast
+	fromColumn: 'ARR Forecast'.Segment
+	toColumn: Segment.Segment
+	crossFilteringBehavior: oneDirection
+
+relationship Segment_to_Retention
+	fromColumn: Retention.Segment
+	toColumn: Segment.Segment
+	crossFilteringBehavior: oneDirection
+
+relationship Segment_to_Renewal_Base
+	fromColumn: 'Renewal Base'.Segment
+	toColumn: Segment.Segment
+	crossFilteringBehavior: oneDirection
+
+relationship Segment_to_Cohort_ARR
+	fromColumn: 'Cohort ARR'.Segment
+	toColumn: Segment.Segment
+	crossFilteringBehavior: oneDirection
+
+relationship Segment_to_GTM_Constraint
+	fromColumn: 'GTM Constraint'.Segment
+	toColumn: Segment.Segment
+	crossFilteringBehavior: oneDirection
+
+relationship Segment_to_Sales_Capacity
+	fromColumn: 'Sales Capacity'.Segment
+	toColumn: Segment.Segment
+	crossFilteringBehavior: oneDirection
+
+relationship Segment_to_Pipeline
+	fromColumn: Pipeline.Segment
+	toColumn: Segment.Segment
+	crossFilteringBehavior: oneDirection
+
+relationship Segment_to_CRM_Opportunities
+	fromColumn: 'CRM Opportunities'.Segment
+	toColumn: Segment.Segment
+	crossFilteringBehavior: oneDirection
+
+relationship Segment_to_Unit_Economics
+	fromColumn: 'Unit Economics'.Segment
+	toColumn: Segment.Segment
+	crossFilteringBehavior: oneDirection
+
+relationship Segment_to_New_Logo_Diagnosis
+	fromColumn: 'New Logo Diagnosis'.Segment
+	toColumn: Segment.Segment
+	crossFilteringBehavior: oneDirection
+
+relationship Segment_to_ARR_Bridge
+	fromColumn: 'ARR Bridge'.Segment
+	toColumn: Segment.Segment
+	crossFilteringBehavior: oneDirection
+
+relationship Scenario_to_Scenario_Monthly
+	fromColumn: 'Scenario Monthly'.Scenario
+	toColumn: Scenario.Scenario
+	crossFilteringBehavior: oneDirection
+
+relationship Scenario_to_Forecast_Drivers
+	fromColumn: 'Forecast Drivers'.Scenario
+	toColumn: Scenario.Scenario
+	crossFilteringBehavior: oneDirection

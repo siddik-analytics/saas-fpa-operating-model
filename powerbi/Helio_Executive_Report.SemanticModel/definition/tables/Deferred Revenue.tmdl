@@ -1,0 +1,73 @@
+/// The subscription deferred-revenue balance and the arrears unbilled receivable, company
+/// level. Half of the small accounting panel PHASE1_SPEC 12 places on the financial performance
+/// page.
+table 'Deferred Revenue'
+	lineageTag: b7c6d22f-ac48-540e-9a3b-74b13c4877d3
+
+	/// Closing subscription deferred revenue - billed but unrecognised. Actual periods only; no
+	/// forecast billings series is invented.
+	measure 'Deferred Revenue' =
+			CALCULATE(
+			    SUM('Deferred Revenue'[Ending Deferred Revenue]),
+			    LASTNONBLANK('Date'[Date], CALCULATE(COUNTROWS('Deferred Revenue')))
+			)
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 10 Accounting
+		lineageTag: 14a9b5d8-50a8-5a55-94dd-0cdd5ab78618
+
+	/// Service delivered ahead of invoicing on arrears-billed contracts. Carried separately and
+	/// never combined with deferred revenue.
+	measure 'Unbilled Receivable' =
+			CALCULATE(
+			    SUM('Deferred Revenue'[Ending Unbilled Receivable]),
+			    LASTNONBLANK('Date'[Date], CALCULATE(COUNTROWS('Deferred Revenue')))
+			)
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 10 Accounting
+		lineageTag: 4d82209d-a9d2-57d5-9b4d-abd70f0a5eb3
+
+	column 'Month End Date'
+		dataType: dateTime
+		isHidden
+		formatString: yyyy-mm-dd
+		lineageTag: 88a28e7c-d303-5ad5-8f68-cc2b272569ec
+		summarizeBy: none
+		sourceColumn: Month End Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ending Deferred Revenue'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: b33a32ab-221d-5d64-a92d-fa0d52115209
+		summarizeBy: none
+		sourceColumn: Ending Deferred Revenue
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ending Unbilled Receivable'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: 96c0f9df-cc80-5a7a-af03-8163786f4ac6
+		summarizeBy: none
+		sourceColumn: Ending Unbilled Receivable
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Deferred Revenue' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(RepoRoot & "/data/marts/fct_deferred_revenue.csv"),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Filtered = Table.SelectRows(Headers, each [segment] = "Total"),
+				    Kept = Table.SelectColumns(Filtered, {"month_end_date", "ending_deferred_revenue", "ending_unbilled_receivable"}),
+				    Typed = Table.TransformColumnTypes(Kept, {{"month_end_date", type date}, {"ending_deferred_revenue", type number}, {"ending_unbilled_receivable", type number}}),
+				    Renamed = Table.RenameColumns(Typed, {{"month_end_date", "Month End Date"}, {"ending_deferred_revenue", "Ending Deferred Revenue"}, {"ending_unbilled_receivable", "Ending Unbilled Receivable"}})
+				in
+				    Renamed
+
+	annotation PBI_ResultType = Table

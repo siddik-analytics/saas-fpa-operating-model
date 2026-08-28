@@ -1,0 +1,39 @@
+/// Bear / Base / Bull operating scenarios with the Board's reading order.
+table Scenario
+	lineageTag: ffe0dfcb-742f-58df-931f-df047ca88066
+
+	column Scenario
+		dataType: string
+		lineageTag: 2e9d6e43-76c7-5b7b-945e-a9062f82e7d9
+		summarizeBy: none
+		sourceColumn: Scenario
+		sortByColumn: 'Scenario Sort'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Scenario Sort'
+		dataType: int64
+		isHidden
+		formatString: #,##0
+		lineageTag: 0b2cffce-2966-533c-82c5-060329b4250b
+		summarizeBy: none
+		sourceColumn: Scenario Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Scenario = m
+		mode: import
+		source =
+				let
+				    // Bear / Base / Bull in the order management reads them. Base is the Board reforecast.
+				    Source = #table(
+				        type table [Scenario = text, #"Scenario Sort" = Int64.Type],
+				        {
+				            {"Bear", 1},
+				            {"Base", 2},
+				            {"Bull", 3}
+				        })
+				in
+				    Source
+
+	annotation PBI_ResultType = Table

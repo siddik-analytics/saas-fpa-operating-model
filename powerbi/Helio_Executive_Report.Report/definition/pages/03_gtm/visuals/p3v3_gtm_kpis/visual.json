@@ -1,0 +1,225 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "p3v3_gtm_kpis",
+  "position": {
+    "x": 24,
+    "y": 384,
+    "z": 6,
+    "width": 608,
+    "height": 152,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Segment"
+                    }
+                  },
+                  "Property": "Segment"
+                }
+              },
+              "queryRef": "Segment.Segment",
+              "nativeQueryRef": "Segment"
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Sales Capacity"
+                    }
+                  },
+                  "Property": "Quota-Carrying Reps"
+                }
+              },
+              "queryRef": "Sales Capacity.Quota-Carrying Reps",
+              "nativeQueryRef": "Quota-Carrying Reps"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Sales Capacity"
+                    }
+                  },
+                  "Property": "Fully Ramped Reps"
+                }
+              },
+              "queryRef": "Sales Capacity.Fully Ramped Reps",
+              "nativeQueryRef": "Fully Ramped Reps"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Sales Capacity"
+                    }
+                  },
+                  "Property": "New Logo Productive Capacity (Actual)"
+                }
+              },
+              "queryRef": "Sales Capacity.New Logo Productive Capacity (Actual)",
+              "nativeQueryRef": "New Logo Productive Capacity (Actual)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Sales Capacity"
+                    }
+                  },
+                  "Property": "Actual Attainment"
+                }
+              },
+              "queryRef": "Sales Capacity.Actual Attainment",
+              "nativeQueryRef": "Actual Attainment"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CRM Opportunities"
+                    }
+                  },
+                  "Property": "Win Rate"
+                }
+              },
+              "queryRef": "CRM Opportunities.Win Rate",
+              "nativeQueryRef": "Win Rate"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Sales capacity and conversion by segment'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#1F3864'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11.0D"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'left'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "p3v3_gtm_kpis_jun26",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Date"
+              }
+            },
+            "Property": "Month Sort"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "f",
+              "Entity": "Date",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "f"
+                          }
+                        },
+                        "Property": "Month Sort"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "202606L"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "Auto",
+        "displayName": "Month Sort"
+      }
+    ]
+  }
+}

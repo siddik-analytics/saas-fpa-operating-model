@@ -1,0 +1,174 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "p5v5_scenario_summary",
+  "position": {
+    "x": 440,
+    "y": 506,
+    "z": 10,
+    "width": 406,
+    "height": 196,
+    "tabOrder": 10000
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Scenario"
+                    }
+                  },
+                  "Property": "Scenario"
+                }
+              },
+              "queryRef": "Scenario.Scenario",
+              "nativeQueryRef": "Scenario"
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Scenario Monthly"
+                    }
+                  },
+                  "Property": "Scenario Dec-26 Exit ARR"
+                }
+              },
+              "queryRef": "Scenario Monthly.Scenario Dec-26 Exit ARR",
+              "nativeQueryRef": "Scenario Dec-26 Exit ARR"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Scenario Monthly"
+                    }
+                  },
+                  "Property": "Scenario FY2026 Revenue"
+                }
+              },
+              "queryRef": "Scenario Monthly.Scenario FY2026 Revenue",
+              "nativeQueryRef": "Scenario FY2026 Revenue"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Scenario Monthly"
+                    }
+                  },
+                  "Property": "Scenario FY2026 Operating Income"
+                }
+              },
+              "queryRef": "Scenario Monthly.Scenario FY2026 Operating Income",
+              "nativeQueryRef": "Scenario FY2026 Operating Income"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Scenario Monthly"
+                    }
+                  },
+                  "Property": "Scenario Dec-27 Cash"
+                }
+              },
+              "queryRef": "Scenario Monthly.Scenario Dec-27 Cash",
+              "nativeQueryRef": "Scenario Dec-27 Cash"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "subTotals": [
+        {
+          "properties": {
+            "rowSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "columnSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'What each scenario means for ARR, revenue, profit and cash'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#1F3864'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11.0D"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'left'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

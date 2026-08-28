@@ -13,3 +13,12 @@ Thumbs.db
 .idea/
 *.duckdb
 *.duckdb.wal
+
+# Power BI Desktop writes these into a .pbip when it opens one. They are per-machine
+# and per-user, never part of the project definition:
+#   .pbi/localSettings.json   machine-bound security-binding signature
+#   .pbi/cache.abf            a local cache of the loaded model data
+#   .pbi/editorSettings.json  editor state
+#   diagramLayout.json        where the tables sit in the model diagram
+powerbi/**/.pbi/
+powerbi/**/diagramLayout.json

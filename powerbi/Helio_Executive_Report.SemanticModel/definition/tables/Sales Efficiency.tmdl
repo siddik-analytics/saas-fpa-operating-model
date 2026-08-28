@@ -1,0 +1,118 @@
+/// Net ARR Sales Efficiency and the classic Magic Number, shown as a labelled pair and never
+/// blended (PHASE1_SPEC 8.4). Page 3.
+table 'Sales Efficiency'
+	lineageTag: 1eb4fc40-cc6a-5469-93f2-a3992508eefa
+
+	/// Guard for the two efficiency metrics, both of which are defined only for a single quarter.
+	measure 'Efficiency Quarters in Context' =
+			DISTINCTCOUNT('Sales Efficiency'[Fiscal Quarter])
+		formatString: #,##0
+		isHidden
+		displayFolder: 99 Supporting
+		lineageTag: dd6ec9c3-9962-5f3c-988f-43ee785110f5
+
+	/// Net New ARR in quarter Q over total S&M in Q-1. ARR-based and forward-leaning.
+	measure 'Net ARR Sales Efficiency' =
+			IF(
+			    [Efficiency Quarters in Context] > 1,
+			    BLANK(),
+			    DIVIDE(
+			        SUM('Sales Efficiency'[Net New ARR (Quarter)]),
+			        SUM('Sales Efficiency'[Prior Quarter S&M])
+			    )
+			)
+		formatString: 0.00"x"
+		displayFolder: 03 GTM
+		lineageTag: 3d13c8a2-efc3-5762-9283-5797f4437170
+
+	/// Annualised sequential subscription revenue growth over total S&M in Q-1. Revenue-based and
+	/// lagging. Never blended with Net ARR Sales Efficiency into one 'efficiency' number.
+	measure 'Magic Number' =
+			IF(
+			    [Efficiency Quarters in Context] > 1,
+			    BLANK(),
+			    DIVIDE(
+			        (
+			            SUM('Sales Efficiency'[Subscription Revenue (Quarter)])
+			                - SUM('Sales Efficiency'[Subscription Revenue (Prior Quarter)])
+			        ) * 4,
+			        SUM('Sales Efficiency'[Prior Quarter S&M])
+			    )
+			)
+		formatString: 0.00"x"
+		displayFolder: 03 GTM
+		lineageTag: b9557b1f-4c0e-5ab6-9168-bf4a98e83bf2
+
+	column 'Fiscal Quarter'
+		dataType: string
+		isHidden
+		lineageTag: dce99de8-6c9b-5ddd-b664-54657e45a87b
+		summarizeBy: none
+		sourceColumn: Fiscal Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quarter End'
+		dataType: dateTime
+		isHidden
+		formatString: yyyy-mm-dd
+		lineageTag: 8a909148-0315-5021-bf9b-71bdfb8a3fbc
+		summarizeBy: none
+		sourceColumn: Quarter End
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Net New ARR (Quarter)'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: 3ea13d18-36b4-5378-ae22-3aad70a621cd
+		summarizeBy: none
+		sourceColumn: Net New ARR (Quarter)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Prior Quarter S&M'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: fbf99c3f-5c09-5238-bf6e-fd971a8a0791
+		summarizeBy: none
+		sourceColumn: Prior Quarter S&M
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Subscription Revenue (Quarter)'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: 6cab1f24-c1fc-529b-9749-c7d9298bff81
+		summarizeBy: none
+		sourceColumn: Subscription Revenue (Quarter)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Subscription Revenue (Prior Quarter)'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: 962e431c-11a8-545b-b82b-809551c62b0c
+		summarizeBy: none
+		sourceColumn: Subscription Revenue (Prior Quarter)
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Sales Efficiency' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(RepoRoot & "/data/marts/fct_sales_efficiency.csv"),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Kept = Table.SelectColumns(Headers, {"fiscal_quarter", "quarter_end", "net_new_arr", "prior_quarter_sm", "subscription_revenue", "subscription_revenue_prior_quarter"}),
+				    Typed = Table.TransformColumnTypes(Kept, {{"fiscal_quarter", type text}, {"quarter_end", type date}, {"net_new_arr", type number}, {"prior_quarter_sm", type number}, {"subscription_revenue", type number}, {"subscription_revenue_prior_quarter", type number}}),
+				    Renamed = Table.RenameColumns(Typed, {{"fiscal_quarter", "Fiscal Quarter"}, {"quarter_end", "Quarter End"}, {"net_new_arr", "Net New ARR (Quarter)"}, {"prior_quarter_sm", "Prior Quarter S&M"}, {"subscription_revenue", "Subscription Revenue (Quarter)"}, {"subscription_revenue_prior_quarter", "Subscription Revenue (Prior Quarter)"}})
+				in
+				    Renamed
+
+	annotation PBI_ResultType = Table

@@ -1,0 +1,132 @@
+/// New Logo productive capacity, pipeline-supported bookings and the LEAST() of the two, by
+/// segment and month. The core of page 3.
+table 'GTM Constraint'
+	lineageTag: 2786108c-a2ff-557e-bf27-d8f032281e15
+
+	/// New Logo productive capacity: blended expected productive capacity times the segment's
+	/// FY2025 New Logo share of credited bookings. Not blended capacity, which credits expansion
+	/// and renewal uplift too.
+	measure 'New Logo Capacity' =
+			SUM('GTM Constraint'[New Logo Capacity Source])
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 03 GTM
+		lineageTag: c817c844-841d-5933-8105-64b7c8c530c7
+
+	/// Bookings the pipeline can support: the CRM snapshot plus the forward pipeline-creation
+	/// driver, converted at the trailing segment win rate.
+	measure 'Pipeline Supported ARR' =
+			SUM('GTM Constraint'[Pipeline Supported Bookings])
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 03 GTM
+		lineageTag: dafaf5fe-deb3-5985-b8f9-a59297a321e9
+
+	/// LEAST(capacity, pipeline) - the New Logo ARR the model actually forecasts. Computed in SQL,
+	/// never re-derived here.
+	measure 'Constrained New Logo ARR' =
+			SUM('GTM Constraint'[Constrained New Logo ARR Source])
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 03 GTM
+		lineageTag: 5caa2ae3-e753-5353-b414-43bd18b2ddad
+
+	/// How much more New Logo capacity exists than the pipeline can feed. Above 1.0x means capacity
+	/// is not the binding constraint.
+	measure 'Capacity to Pipeline Ratio' =
+			DIVIDE([New Logo Capacity], [Pipeline Supported ARR])
+		formatString: 0.00"x"
+		displayFolder: 03 GTM
+		lineageTag: dd7f505a-9182-58e3-922c-0891bf969749
+
+	/// New Logo productive capacity over Jul-Dec 2026.
+	measure 'H2 2026 New Logo Capacity' =
+			CALCULATE([New Logo Capacity], REMOVEFILTERS('Date'), 'Date'[Date] >= DATE(2026, 7, 1) && 'Date'[Date] <= DATE(2026, 12, 31))
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 03 GTM
+		lineageTag: 67d5950a-2173-5198-b3b1-50c521e6f10e
+
+	/// Pipeline-supported bookings over Jul-Dec 2026.
+	measure 'H2 2026 Pipeline Supported ARR' =
+			CALCULATE([Pipeline Supported ARR], REMOVEFILTERS('Date'), 'Date'[Date] >= DATE(2026, 7, 1) && 'Date'[Date] <= DATE(2026, 12, 31))
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 03 GTM
+		lineageTag: 850b9147-6f32-5023-9d8b-b0c1d6ef203a
+
+	/// Forecast New Logo ARR over Jul-Dec 2026 after the LEAST() constraint.
+	measure 'H2 2026 Constrained New Logo ARR' =
+			CALCULATE([Constrained New Logo ARR], REMOVEFILTERS('Date'), 'Date'[Date] >= DATE(2026, 7, 1) && 'Date'[Date] <= DATE(2026, 12, 31))
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 03 GTM
+		lineageTag: 514a4b75-207d-55a8-ad35-898201d8d4c1
+
+	column 'Month End Date'
+		dataType: dateTime
+		isHidden
+		formatString: yyyy-mm-dd
+		lineageTag: 34cf6403-8444-5304-a900-be75b50d2652
+		summarizeBy: none
+		sourceColumn: Month End Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Segment
+		dataType: string
+		isHidden
+		lineageTag: 520e4835-a284-59b2-bef3-c639bde25fcf
+		summarizeBy: none
+		sourceColumn: Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'New Logo Capacity Source'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: 14116e5f-e120-5d46-9b3c-d2145f0afb27
+		summarizeBy: none
+		sourceColumn: New Logo Capacity
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pipeline Supported Bookings'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: f1a81808-c1e9-547b-aa6b-64865e8741bb
+		summarizeBy: none
+		sourceColumn: Pipeline Supported Bookings
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Constrained New Logo ARR Source'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: cd22aff4-fadb-56d9-a81f-21d643480174
+		summarizeBy: none
+		sourceColumn: Constrained New Logo ARR
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Which side of the LEAST() bound that segment-month.
+	column 'Binding Constraint'
+		dataType: string
+		lineageTag: fc2cab5f-fd2c-5a93-90b5-2f8bf189a433
+		summarizeBy: none
+		sourceColumn: Binding Constraint
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'GTM Constraint' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(RepoRoot & "/data/marts/int_gtm_capacity_pipeline_forecast.csv"),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Filtered = Table.SelectRows(Headers, each [path] = "Base"),
+				    Kept = Table.SelectColumns(Filtered, {"month_end_date", "segment", "new_logo_capacity", "pipeline_supported_bookings", "constrained_new_logo_arr", "binding_constraint"}),
+				    Typed = Table.TransformColumnTypes(Kept, {{"month_end_date", type date}, {"segment", type text}, {"new_logo_capacity", type number}, {"pipeline_supported_bookings", type number}, {"constrained_new_logo_arr", type number}, {"binding_constraint", type text}}),
+				    Renamed = Table.RenameColumns(Typed, {{"month_end_date", "Month End Date"}, {"segment", "Segment"}, {"new_logo_capacity", "New Logo Capacity"}, {"pipeline_supported_bookings", "Pipeline Supported Bookings"}, {"constrained_new_logo_arr", "Constrained New Logo ARR"}, {"binding_constraint", "Binding Constraint"}})
+				in
+				    Renamed
+
+	annotation PBI_ResultType = Table

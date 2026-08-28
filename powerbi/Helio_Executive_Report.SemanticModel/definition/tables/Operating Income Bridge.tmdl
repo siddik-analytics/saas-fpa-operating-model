@@ -1,0 +1,79 @@
+/// The Budget-to-Base operating income walk. Page 4 waterfall. As with the ARR bridge, the
+/// stored closing anchor row is not imported.
+table 'Operating Income Bridge'
+	lineageTag: aefb5fbb-278c-532c-8807-fe362ce039c4
+
+	/// The operating income bridge line amount, each signed by its actual effect on profit.
+	measure 'Operating Income Bridge Amount' =
+			SUM('Operating Income Bridge'[Amount])
+		formatString: \$#,##0;(\$#,##0);
+		displayFolder: 08 Budget & Bridge
+		lineageTag: 16b9f904-dd92-55ed-b037-a90464c7d6c7
+
+	column 'Line Order'
+		dataType: int64
+		isHidden
+		formatString: #,##0
+		lineageTag: b27e0a34-966e-512b-aaa3-de9429b8975e
+		summarizeBy: none
+		sourceColumn: Line Order
+
+		annotation SummarizationSetBy = Automatic
+
+	/// The full stored wording. Hidden: the axis shows Bridge Step.
+	column 'Bridge Line'
+		dataType: string
+		isHidden
+		lineageTag: 1c89b9c5-e029-5f5a-8e63-353d07f45629
+		summarizeBy: none
+		sourceColumn: Bridge Line
+		sortByColumn: 'Line Order'
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Short label for the waterfall category axis.
+	column 'Bridge Step'
+		dataType: string
+		lineageTag: afc62f7b-b3a6-59ef-81b4-023a6e36d6e3
+		summarizeBy: none
+		sourceColumn: Bridge Step
+		sortByColumn: 'Line Order'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Amount
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: 978c37a3-d3d7-5183-87de-176d8ad51610
+		summarizeBy: none
+		sourceColumn: Amount
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Operating Income Bridge' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(RepoRoot & "/data/marts/fct_operating_income_bridge.csv"),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Filtered = Table.SelectRows(Headers, each [line_order] <> "9"),
+				    Kept = Table.SelectColumns(Filtered, {"line_order", "line_item", "amount"}),
+				    Typed = Table.TransformColumnTypes(Kept, {{"line_order", Int64.Type}, {"line_item", type text}, {"amount", type number}}),
+				    Renamed = Table.RenameColumns(Typed, {{"line_order", "Line Order"}, {"line_item", "Bridge Line"}, {"amount", "Amount"}}),
+				    WithStep = Table.AddColumn(Renamed, "Bridge Step", each
+				        if Text.StartsWith([Bridge Line], "Budget") then "Budget"
+				        else if Text.StartsWith([Bridge Line], "Base") then "Base"
+				        else if Text.Contains([Bridge Line], "Subscription COGS") then "Subs COGS"
+				        else if Text.Contains([Bridge Line], "Services COGS") then "Services COGS"
+				        else if Text.Contains([Bridge Line], "Subscription") then "Subs revenue"
+				        else if Text.Contains([Bridge Line], "Services") then "Services revenue"
+				        else if Text.Contains([Bridge Line], "Sales & Marketing") then "S&M"
+				        else if Text.Contains([Bridge Line], "Research") then "R&D"
+				        else if Text.Contains([Bridge Line], "General") then "G&A"
+				        else [Bridge Line], type text)
+				in
+				    WithStep
+
+	annotation PBI_ResultType = Table

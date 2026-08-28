@@ -1,0 +1,8 @@
+/// Absolute path to the root of your clone of this repository, with no trailing slash. Every
+/// mart query builds its own file path from this one parameter, so a reviewer changes exactly
+/// one value after cloning. Committed empty on purpose: an absolute path from one machine does
+/// not belong in a public repository.
+expression RepoRoot = "" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: fa226854-e83e-5751-b392-0fbb395ba0fa
+
+	annotation PBI_ResultType = Text

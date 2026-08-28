@@ -1,0 +1,177 @@
+/// CAC, new-logo ARPA and gross-margin-adjusted payback by segment and quarter. Deliberately
+/// not related to Date: CAC uses a one-quarter spend lag, so its grain is its own fiscal
+/// quarter, not a calendar month.
+table 'Unit Economics'
+	lineageTag: a92055b5-de8c-5dbc-bbbc-cc8b0c733ae8
+
+	/// New logos acquired, counted from the ARR engine's own New Logo movement type, never from a
+	/// CRM opportunity count.
+	measure 'New Logos Acquired' =
+			SUM('Unit Economics'[New Logos])
+		formatString: #,##0
+		displayFolder: 03 GTM
+		lineageTag: d43daab0-24c9-5c46-b41f-11ff92d9b9f7
+
+	/// Average landed ARR per new logo.
+	measure 'New Logo ARPA' =
+			DIVIDE(
+			    SUM('Unit Economics'[New Logo ARR (UE)]),
+			    SUM('Unit Economics'[New Logos])
+			)
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 03 GTM
+		lineageTag: f9da5a84-e765-5599-a50c-69318a3e15b5
+
+	/// New-customer CAC: new-logo acquisition S&M in Q-1 over new logos acquired in Q. The
+	/// one-quarter lag is deliberate and stated.
+	measure CAC =
+			-- Period-summed, then divided once - the Phase 5 convention. Summing a quarter's
+			-- cost and logos before dividing is what makes the blend equal the published figure.
+			DIVIDE(
+			    SUM('Unit Economics'[Acquisition S&M (Prior Q)]),
+			    SUM('Unit Economics'[New Logos])
+			)
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 03 GTM
+		lineageTag: 068cc89c-f1bf-5648-9c84-61f098a8f454
+
+	/// Acquisition spend per dollar of New Logo ARR landed, same quarter.
+	measure 'CAC per $1 New Logo ARR' =
+			DIVIDE(
+			    SUM('Unit Economics'[Acquisition S&M (Current Q)]),
+			    SUM('Unit Economics'[New Logo ARR (UE)])
+			)
+		formatString: 0.00
+		displayFolder: 03 GTM
+		lineageTag: 289199dd-2c60-5fc3-bccd-e6600579b532
+
+	/// The blended (subscription plus services) gross margin used to adjust CAC payback.
+	/// Company-level, not segment-level, by source limitation.
+	measure 'CAC Gross Margin %' =
+			-- One company-level blended FY2025 margin, stored identically on every row of the
+			-- mart because fact_gl_actuals carries no customer-segment dimension.
+			MAX('Unit Economics'[Gross Margin Pct])
+		formatString: 0.0%
+		displayFolder: 03 GTM
+		lineageTag: 54274fad-eab8-5f0a-a077-e754c1c90b63
+
+	/// Gross-margin-adjusted CAC payback in months. The unadjusted convention understates payback
+	/// by roughly 23% at Helio's margin.
+	measure 'CAC Payback Months' =
+			-- CAC / (ARPA x GM% / 12) reduces to acquisition spend x 12 / (ARR x GM%), which
+			-- lets the whole calculation be a ratio of aggregates and stay correct at any grain.
+			DIVIDE(
+			    SUM('Unit Economics'[Acquisition S&M (Prior Q)]) * 12,
+			    SUM('Unit Economics'[New Logo ARR (UE)]) * [CAC Gross Margin %]
+			)
+		formatString: #,##0.0" mo"
+		displayFolder: 03 GTM
+		lineageTag: aed8900f-844c-5a9d-a233-9504d97306d5
+
+	/// CAC for FY2025, the fully closed reconciling year.
+	measure 'CAC (FY2025)' =
+			CALCULATE([CAC], 'Unit Economics'[Fiscal Year Number] = 2025)
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 03 GTM
+		lineageTag: 030a2759-0913-55fd-83d8-0e77c6479479
+
+	/// Gross-margin-adjusted CAC payback for FY2025.
+	measure 'CAC Payback Months (FY2025)' =
+			CALCULATE([CAC Payback Months], 'Unit Economics'[Fiscal Year Number] = 2025)
+		formatString: #,##0.0" mo"
+		displayFolder: 03 GTM
+		lineageTag: 37b1247e-fb99-534c-a41f-9dc7d4667c2e
+
+	column 'Fiscal Quarter'
+		dataType: string
+		lineageTag: 5fa874af-17b3-59be-b029-763524161679
+		summarizeBy: none
+		sourceColumn: Fiscal Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year Number'
+		dataType: int64
+		isHidden
+		formatString: #,##0
+		lineageTag: 8555195d-3f86-5aad-97cf-c1a1bdccabf2
+		summarizeBy: none
+		sourceColumn: Fiscal Year Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column Segment
+		dataType: string
+		isHidden
+		lineageTag: c8912ab6-259d-5419-bec6-f7af677e6e62
+		summarizeBy: none
+		sourceColumn: Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'New Logos'
+		dataType: int64
+		isHidden
+		formatString: #,##0
+		lineageTag: fbbef5f9-b176-5e8c-8dab-14873cfe4d35
+		summarizeBy: none
+		sourceColumn: New Logos
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'New Logo ARR (UE)'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: 42caf8ab-7185-5996-89f5-a0db8249fe08
+		summarizeBy: none
+		sourceColumn: New Logo ARR (UE)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Acquisition S&M (Current Q)'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: b4f44455-caf7-58b5-a0e3-a63e67726f0b
+		summarizeBy: none
+		sourceColumn: Acquisition S&M (Current Q)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Acquisition S&M (Prior Q)'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: a8be4ec9-2cbf-5c9a-bd9c-2305f04d0c70
+		summarizeBy: none
+		sourceColumn: Acquisition S&M (Prior Q)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gross Margin Pct'
+		dataType: double
+		isHidden
+		formatString: 0.0%
+		lineageTag: 71a40932-8e1e-534c-9c30-9ebe34c2009b
+		summarizeBy: none
+		sourceColumn: Gross Margin Pct
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Unit Economics' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(RepoRoot & "/data/marts/fct_unit_economics.csv"),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Filtered = Table.SelectRows(Headers, each [segment] <> "Blended"),
+				    Kept = Table.SelectColumns(Filtered, {"fiscal_quarter", "segment", "new_logos_count", "new_logo_arr", "new_logo_acquisition_sm_current_quarter", "new_logo_acquisition_sm_prior_quarter", "gross_margin_pct"}),
+				    Typed = Table.TransformColumnTypes(Kept, {{"fiscal_quarter", type text}, {"segment", type text}, {"new_logos_count", Int64.Type}, {"new_logo_arr", type number}, {"new_logo_acquisition_sm_current_quarter", type number}, {"new_logo_acquisition_sm_prior_quarter", type number}, {"gross_margin_pct", type number}}),
+				    Renamed = Table.RenameColumns(Typed, {{"fiscal_quarter", "Fiscal Quarter"}, {"segment", "Segment"}, {"new_logos_count", "New Logos"}, {"new_logo_arr", "New Logo ARR (UE)"}, {"new_logo_acquisition_sm_current_quarter", "Acquisition S&M (Current Q)"}, {"new_logo_acquisition_sm_prior_quarter", "Acquisition S&M (Prior Q)"}, {"gross_margin_pct", "Gross Margin Pct"}}),
+				    FiscalYear = Table.AddColumn(Renamed, "Fiscal Year Number", each Number.FromText(Text.Start([Fiscal Quarter], 4)), Int64.Type)
+				in
+				    FiscalYear
+
+	annotation PBI_ResultType = Table

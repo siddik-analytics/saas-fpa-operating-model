@@ -1,0 +1,176 @@
+/// The monthly management P&L on the Base reforecast path, actual through Jun-2026 and
+/// reforecast after it. Pages 1 and 4.
+table 'P&L'
+	lineageTag: 2a3292a7-aab8-5503-b0f9-ca4b83a5669c
+
+	/// The P&L amount for whatever line item is in filter context. Used by the management P&L
+	/// matrix.
+	measure 'P&L Amount' =
+			SUM('P&L'[Amount])
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 04 P&L
+		lineageTag: fc310637-7124-5df0-8fc7-1f4317181d25
+
+	/// Recognised subscription revenue.
+	measure 'Subscription Revenue' =
+			CALCULATE(
+			    SUM('P&L'[Amount]),
+			    'P&L'[Line Item] = "Subscription Revenue"
+			)
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 04 P&L
+		lineageTag: efd59f28-3f32-5e6b-a248-9f6c846a6606
+
+	/// Recognised professional services revenue.
+	measure 'Services Revenue' =
+			CALCULATE(
+			    SUM('P&L'[Amount]),
+			    'P&L'[Line Item] = "Services Revenue"
+			)
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 04 P&L
+		lineageTag: 0b761b87-69e7-589a-bf1c-d19a4eb4ee0e
+
+	/// Total revenue.
+	measure Revenue =
+			CALCULATE(
+			    SUM('P&L'[Amount]),
+			    'P&L'[Line Item] = "Total Revenue"
+			)
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 04 P&L
+		lineageTag: 1c8d29de-ec5c-5a41-adf2-c888637ded52
+
+	/// Revenue less cost of revenue.
+	measure 'Gross Profit' =
+			CALCULATE(
+			    SUM('P&L'[Amount]),
+			    'P&L'[Line Item] = "Gross Profit"
+			)
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 04 P&L
+		lineageTag: 7159421b-55f9-5a63-ae9a-f434dfe5c17c
+
+	/// Gross profit over total revenue.
+	measure 'Gross Margin %' =
+			-- Ratio of aggregates. Averaging a monthly margin series would weight a small
+			-- month the same as a large one.
+			DIVIDE([Gross Profit], [Revenue])
+		formatString: 0.0%
+		displayFolder: 04 P&L
+		lineageTag: 0ec9b425-8d35-5475-9368-0f1302fe9f5f
+
+	/// Operating income, negative at Helio's stage.
+	measure 'Operating Income' =
+			CALCULATE(
+			    SUM('P&L'[Amount]),
+			    'P&L'[Line Item] = "Operating Income / (Loss)"
+			)
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 04 P&L
+		lineageTag: 76fbc565-6dfa-506b-8991-a7339866cf9d
+
+	/// FY2026 total revenue: Jan-Jun actual plus Jul-Dec Base reforecast.
+	measure 'FY2026 Revenue' =
+			CALCULATE([Revenue], REMOVEFILTERS('Date'), 'Date'[Year] = 2026)
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 04 P&L
+		lineageTag: 6fe76db6-54a8-51ea-b0a7-d690d8ad6317
+
+	/// FY2026 gross margin.
+	measure 'FY2026 Gross Margin %' =
+			CALCULATE([Gross Margin %], REMOVEFILTERS('Date'), 'Date'[Year] = 2026)
+		formatString: 0.0%
+		displayFolder: 04 P&L
+		lineageTag: 038e0c5a-b6fe-5ef6-ad23-c8c6d637dd78
+
+	/// FY2026 operating income / (loss).
+	measure 'FY2026 Operating Income' =
+			CALCULATE([Operating Income], REMOVEFILTERS('Date'), 'Date'[Year] = 2026)
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 04 P&L
+		lineageTag: 130166a7-15eb-5352-9f20-b18f18b88ec4
+
+	column 'Month End Date'
+		dataType: dateTime
+		isHidden
+		formatString: yyyy-mm-dd
+		lineageTag: d3a5b9ae-dfc6-5f06-805d-5127d922d952
+		summarizeBy: none
+		sourceColumn: Month End Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Line Item'
+		dataType: string
+		lineageTag: 1fd33acc-5879-5e66-9cf2-cda20497e96e
+		summarizeBy: none
+		sourceColumn: Line Item
+		sortByColumn: 'Line Order'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Line Order'
+		dataType: int64
+		isHidden
+		formatString: #,##0
+		lineageTag: 3dc8ec02-b754-5938-9414-c29b7d0aae16
+		summarizeBy: none
+		sourceColumn: Line Order
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Line Group'
+		dataType: string
+		lineageTag: 5a57dc01-0c46-5c21-98db-d1687967addf
+		summarizeBy: none
+		sourceColumn: Line Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column Amount
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: dc1d68b3-c708-5661-bc2c-4dba624c6927
+		summarizeBy: none
+		sourceColumn: Amount
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'P&L' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(RepoRoot & "/data/marts/fct_pnl_reforecast.csv"),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Filtered = Table.SelectRows(Headers, each [path] = "Base"),
+				    Kept = Table.SelectColumns(Filtered, {"month_end_date", "subscription_revenue", "services_revenue", "total_revenue", "subscription_cogs", "services_cogs", "total_cogs", "gross_profit", "sales_marketing", "research_development", "general_administrative", "total_opex", "operating_income"}),
+				    Typed = Table.TransformColumnTypes(Kept, {{"month_end_date", type date}, {"subscription_revenue", type number}, {"services_revenue", type number}, {"total_revenue", type number}, {"subscription_cogs", type number}, {"services_cogs", type number}, {"total_cogs", type number}, {"gross_profit", type number}, {"sales_marketing", type number}, {"research_development", type number}, {"general_administrative", type number}, {"total_opex", type number}, {"operating_income", type number}}),
+				    Unpivoted = Table.UnpivotOtherColumns(Typed, {"month_end_date"}, "Source Column", "Amount"),
+				    // Static presentation labels and reading order. No amount is created here.
+				    LineLookup = #table(
+				        type table [#"Source Column" = text, #"Line Item" = text, #"Line Order" = Int64.Type, #"Line Group" = text],
+				        {
+				            {"subscription_revenue", "Subscription Revenue", 1, "Revenue"},
+				            {"services_revenue", "Services Revenue", 2, "Revenue"},
+				            {"total_revenue", "Total Revenue", 3, "Revenue"},
+				            {"subscription_cogs", "Subscription COGS", 4, "Cost of Revenue"},
+				            {"services_cogs", "Services COGS", 5, "Cost of Revenue"},
+				            {"total_cogs", "Total Cost of Revenue", 6, "Cost of Revenue"},
+				            {"gross_profit", "Gross Profit", 7, "Gross Profit"},
+				            {"sales_marketing", "Sales & Marketing", 8, "Operating Expense"},
+				            {"research_development", "Research & Development", 9, "Operating Expense"},
+				            {"general_administrative", "General & Administrative", 10, "Operating Expense"},
+				            {"total_opex", "Total Operating Expense", 11, "Operating Expense"},
+				            {"operating_income", "Operating Income / (Loss)", 12, "Operating Income"}
+				        }),
+				    Joined = Table.NestedJoin(Unpivoted, {"Source Column"}, LineLookup, {"Source Column"}, "Line", JoinKind.Inner),
+				    Expanded = Table.ExpandTableColumn(Joined, "Line", {"Line Item", "Line Order", "Line Group"}),
+				    Renamed = Table.RenameColumns(Expanded, {{"month_end_date", "Month End Date"}}),
+				    Final = Table.SelectColumns(Renamed, {"Month End Date", "Line Item", "Line Order", "Line Group", "Amount"})
+				in
+				    Final
+
+	annotation PBI_ResultType = Table

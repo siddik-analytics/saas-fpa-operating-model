@@ -1,0 +1,181 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "p5v4_affordability_detail",
+  "position": {
+    "x": 24,
+    "y": 506,
+    "z": 9,
+    "width": 406,
+    "height": 196,
+    "tabOrder": 9000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Runway Policy"
+                    }
+                  },
+                  "Property": "Path"
+                }
+              },
+              "queryRef": "Runway Policy.Path",
+              "nativeQueryRef": "Path"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Runway Policy"
+                    }
+                  },
+                  "Property": "Policy Runway Months"
+                }
+              },
+              "queryRef": "Runway Policy.Policy Runway Months",
+              "nativeQueryRef": "Policy runway"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Runway Policy"
+                    }
+                  },
+                  "Property": "Runway Headroom"
+                }
+              },
+              "queryRef": "Runway Policy.Runway Headroom",
+              "nativeQueryRef": "Headroom"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Runway Policy"
+                    }
+                  },
+                  "Property": "Policy Avg Monthly Burn"
+                }
+              },
+              "queryRef": "Runway Policy.Policy Avg Monthly Burn",
+              "nativeQueryRef": "Policy burn / month"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Runway Policy"
+                    }
+                  },
+                  "Property": "Board Floor Status"
+                }
+              },
+              "queryRef": "Runway Policy.Board Floor Status",
+              "nativeQueryRef": "Status"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Runway Policy"
+                  }
+                },
+                "Property": "Path"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Runway, floor, headroom and the burn behind each'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#1F3864'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11.0D"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'left'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

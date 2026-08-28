@@ -1,0 +1,104 @@
+/// The approved Dec-2026 Exit ARR bridge from Board Budget to Base reforecast. Page 1
+/// waterfall. The mart's own closing anchor row is not imported: the waterfall's total bar is
+/// the sum of the seven controlled lines, which is what the mart itself reconciles to
+/// (ctl_bridge_commentary check A).
+table 'ARR Bridge'
+	lineageTag: 3e3db787-46de-5f32-a897-19faa860f3fe
+
+	/// The bridge line amount. The opening line carries Budget Exit ARR in full and the remaining
+	/// lines are the five movement variances, so the running total closes on Base Exit ARR with no
+	/// plug.
+	measure 'Exit ARR Bridge Amount' =
+			SUM('ARR Bridge'[Amount])
+		formatString: \$#,##0;(\$#,##0);
+		displayFolder: 08 Budget & Bridge
+		lineageTag: f33c368a-9381-5870-9bcb-1493402f5c29
+
+	column Segment
+		dataType: string
+		isHidden
+		lineageTag: 22f216d4-3e11-5ee4-8aa2-52518d07fa8a
+		summarizeBy: none
+		sourceColumn: Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Line Order'
+		dataType: int64
+		isHidden
+		formatString: #,##0
+		lineageTag: 13751d60-71c3-5386-863d-28389ab5b95d
+		summarizeBy: none
+		sourceColumn: Line Order
+
+		annotation SummarizationSetBy = Automatic
+
+	/// The full stored wording. Hidden: the axis shows Bridge Step.
+	column 'Bridge Line'
+		dataType: string
+		isHidden
+		lineageTag: a1a0f39c-9227-54b1-bb6f-e7795856e2dc
+		summarizeBy: none
+		sourceColumn: Bridge Line
+		sortByColumn: 'Line Order'
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Short label for the waterfall category axis.
+	column 'Bridge Step'
+		dataType: string
+		lineageTag: 225960d5-daf2-5f23-81e7-a78c54af0618
+		summarizeBy: none
+		sourceColumn: Bridge Step
+		sortByColumn: 'Line Order'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Driver Category'
+		dataType: string
+		isHidden
+		lineageTag: dfe9075f-14f7-5b3a-a414-e29f8f819c53
+		summarizeBy: none
+		sourceColumn: Driver Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column Amount
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: fe4bfd98-8898-51ef-b0b3-4db0ac154498
+		summarizeBy: none
+		sourceColumn: Amount
+
+		annotation SummarizationSetBy = Automatic
+
+	/// source where Budget carries the grain natively, allocated where the company Budget figure
+	/// has been apportioned to segments.
+	column 'Budget Grain'
+		dataType: string
+		lineageTag: 7dc5c2fc-2cd6-5426-bba7-e25fdb9a89f9
+		summarizeBy: none
+		sourceColumn: Budget Grain
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'ARR Bridge' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(RepoRoot & "/data/marts/fct_arr_budget_bridge.csv"),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Filtered = Table.SelectRows(Headers, each [segment] <> "Total" and [line_order] <> "8"),
+				    Kept = Table.SelectColumns(Filtered, {"segment", "line_order", "line_item", "driver_category", "amount", "budget_grain"}),
+				    Typed = Table.TransformColumnTypes(Kept, {{"segment", type text}, {"line_order", Int64.Type}, {"line_item", type text}, {"driver_category", type text}, {"amount", type number}, {"budget_grain", type text}}),
+				    Renamed = Table.RenameColumns(Typed, {{"segment", "Segment"}, {"line_order", "Line Order"}, {"line_item", "Bridge Line"}, {"driver_category", "Driver Category"}, {"amount", "Amount"}, {"budget_grain", "Budget Grain"}}),
+				    WithStep = Table.AddColumn(Renamed, "Bridge Step", each
+				        if Text.StartsWith([Bridge Line], "Budget") then "Budget"
+				        else if Text.StartsWith([Bridge Line], "Base") then "Base"
+				        else Text.BeforeDelimiter([Bridge Line], " ARR variance"), type text)
+				in
+				    WithStep
+
+	annotation PBI_ResultType = Table

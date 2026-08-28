@@ -1,0 +1,40 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	discourageImplicitMeasures
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["RepoRoot", "Date", "Segment", "Scenario", "ARR Forecast", "Retention", "Renewal Base", "Cohort ARR", "ARR Concentration", "GTM Constraint", "Sales Capacity", "CRM Opportunities", "Pipeline", "Unit Economics", "Sales Efficiency", "New Logo Diagnosis", "P&L", "Headcount", "Scenario Monthly", "Runway Policy", "Hiring Scenario", "ARR Bridge", "Operating Income Bridge", "Management Variance", "Forecast Drivers", "Commentary", "Deferred Revenue", "Commission Asset"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Date
+ref table Segment
+ref table Scenario
+ref table 'ARR Forecast'
+ref table Retention
+ref table 'Renewal Base'
+ref table 'Cohort ARR'
+ref table 'ARR Concentration'
+ref table 'GTM Constraint'
+ref table 'Sales Capacity'
+ref table 'CRM Opportunities'
+ref table Pipeline
+ref table 'Unit Economics'
+ref table 'Sales Efficiency'
+ref table 'New Logo Diagnosis'
+ref table 'P&L'
+ref table Headcount
+ref table 'Scenario Monthly'
+ref table 'Runway Policy'
+ref table 'Hiring Scenario'
+ref table 'ARR Bridge'
+ref table 'Operating Income Bridge'
+ref table 'Management Variance'
+ref table 'Forecast Drivers'
+ref table Commentary
+ref table 'Deferred Revenue'
+ref table 'Commission Asset'

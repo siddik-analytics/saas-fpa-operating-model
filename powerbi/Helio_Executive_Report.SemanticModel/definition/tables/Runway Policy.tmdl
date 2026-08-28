@@ -1,0 +1,221 @@
+/// The Board-policy runway view - the affordability half of page 5. Deliberately disconnected
+/// from Date and from Scenario: it is one forward-looking figure per path, covering the three
+/// operating scenarios AND the two hiring cases, which the three-member Scenario dimension
+/// cannot represent.
+table 'Runway Policy'
+	lineageTag: fabbfbf0-a315-50e9-b7d3-f709188f110f
+
+	/// 30 June 2026 cash divided by the path's policy average monthly burn. Built on
+	/// fct_cash_runway_policy - the approved-anchor level plus the model-derived delta - never the
+	/// operating cash proxy fct_cash_runway.
+	measure 'Policy Runway Months' =
+			-- One stored figure per path. HASONEVALUE keeps a meaningless cross-path total
+			-- from rendering.
+			IF(
+			    HASONEVALUE('Runway Policy'[Path]),
+			    MAX('Runway Policy'[Policy Runway Months Source])
+			)
+		formatString: #,##0.0" mo"
+		displayFolder: 06 Runway
+		lineageTag: 2a6063f8-4321-5840-b4bf-549ba9b38a4c
+
+	/// The Board's 24-month runway floor. Constant across paths; drawn as a reference line so the
+	/// floor is visually obvious.
+	measure 'Board Floor Months' =
+			CALCULATE(
+			    MAX('Runway Policy'[Board Floor Months Source]),
+			    REMOVEFILTERS('Runway Policy')
+			)
+		formatString: #,##0.0" mo"
+		displayFolder: 06 Runway
+		lineageTag: cbff9464-dde5-51c0-99de-8d8a2278ac28
+
+	/// Policy runway less the 24-month floor. Negative means the path breaches the floor.
+	measure 'Runway Headroom' =
+			IF(
+			    HASONEVALUE('Runway Policy'[Path]),
+			    MAX('Runway Policy'[Headroom Months])
+			)
+		formatString: +#,##0.0" mo";-#,##0.0" mo";0.0" mo"
+		displayFolder: 06 Runway
+		lineageTag: 502b22d3-ce02-5806-a83d-f2e02d27bcd9
+
+	/// The path's policy burn: the approved FY2027 average monthly burn plus that path's
+	/// model-derived delta against Base.
+	measure 'Policy Avg Monthly Burn' =
+			IF(
+			    HASONEVALUE('Runway Policy'[Path]),
+			    MAX('Runway Policy'[Policy Avg Monthly Burn Source])
+			)
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 06 Runway
+		lineageTag: 77a2353c-579f-5e91-80c3-8ab0f580b28c
+
+	/// Pass / fail against the Board's 24-month floor, read from the mart's own flag rather than
+	/// re-derived from the months.
+	measure 'Board Floor Status' =
+			IF(
+			    HASONEVALUE('Runway Policy'[Path]),
+			    IF(
+			        SELECTEDVALUE('Runway Policy'[Breaches Floor]),
+			        "Breaches floor",
+			        "Within floor"
+			    )
+			)
+		displayFolder: 06 Runway
+		lineageTag: a7fefecc-88ab-59d8-8b56-33cf0cedd42b
+
+	/// Base-case Board-policy runway, for the executive headline.
+	measure 'Base Policy Runway Months' =
+			CALCULATE(
+			    MAX('Runway Policy'[Policy Runway Months Source]),
+			    REMOVEFILTERS('Runway Policy'),
+			    'Runway Policy'[Path] = "Base"
+			)
+		formatString: #,##0.0" mo"
+		displayFolder: 06 Runway
+		lineageTag: 30669791-7191-55a0-a009-d7775b084d6d
+
+	/// Base-case headroom above the 24-month floor, for the executive headline.
+	measure 'Base Runway Headroom' =
+			CALCULATE(
+			    MAX('Runway Policy'[Headroom Months]),
+			    REMOVEFILTERS('Runway Policy'),
+			    'Runway Policy'[Path] = "Base"
+			)
+		formatString: +#,##0.0" mo";-#,##0.0" mo";0.0" mo"
+		displayFolder: 06 Runway
+		lineageTag: 5a37b1d4-686c-5855-91df-49f055b136ba
+
+	column Path
+		dataType: string
+		lineageTag: 3414ddd6-c0fc-54ee-b502-1dfb81fc514f
+		summarizeBy: none
+		sourceColumn: Path
+		sortByColumn: 'Path Sort'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Path Sort'
+		dataType: int64
+		isHidden
+		formatString: #,##0
+		lineageTag: aea3e4d2-15a1-5325-83e1-26c9e0d0a9f5
+		summarizeBy: none
+		sourceColumn: Path Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Policy Avg Monthly Burn Source'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: 6e0fc561-e8f1-5a91-80b3-8240a8cdcf77
+		summarizeBy: none
+		sourceColumn: Policy Avg Monthly Burn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Opening Cash'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: 176e5644-c11e-5445-b015-5f8776d29eae
+		summarizeBy: none
+		sourceColumn: Opening Cash
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Policy Runway Months Source'
+		dataType: double
+		isHidden
+		formatString: #,##0.0" mo"
+		lineageTag: 6965458f-e97c-5798-b545-fdc48d2a7e46
+		summarizeBy: none
+		sourceColumn: Policy Runway Months
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Headroom Months'
+		dataType: double
+		isHidden
+		formatString: +#,##0.0" mo";-#,##0.0" mo";0.0" mo"
+		lineageTag: 760b87e4-3281-51cb-8c4c-3c1ce6ce6abe
+		summarizeBy: none
+		sourceColumn: Headroom Months
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Board Floor Months Source'
+		dataType: double
+		isHidden
+		formatString: #,##0.0" mo"
+		lineageTag: 4b53173e-7644-5d41-b137-2d980798c466
+		summarizeBy: none
+		sourceColumn: Board Floor Months
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Max Supportable Burn'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: 89df2a65-352a-51c9-a74f-f40dab8f085f
+		summarizeBy: none
+		sourceColumn: Max Supportable Burn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Breaches Floor'
+		dataType: boolean
+		isHidden
+		lineageTag: 9e81a519-2706-5079-a278-a7461dc44849
+		summarizeBy: none
+		sourceColumn: Breaches Floor
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Runway Policy' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(RepoRoot & "/data/marts/fct_cash_runway_policy.csv"),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Kept = Table.SelectColumns(Headers, {"path", "policy_avg_monthly_burn", "opening_cash",
+				        "policy_runway_months", "headroom_months", "board_runway_floor_months",
+				        "max_supportable_avg_monthly_burn_at_floor", "breaches_floor"}),
+				    Typed = Table.TransformColumnTypes(Kept, {
+				        {"policy_avg_monthly_burn", type number}, {"opening_cash", type number},
+				        {"policy_runway_months", type number}, {"headroom_months", type number},
+				        {"board_runway_floor_months", type number},
+				        {"max_supportable_avg_monthly_burn_at_floor", type number},
+				        {"breaches_floor", type logical}}),
+				    // Presentation labels for the two hiring-case paths. Values are untouched.
+				    PathLookup = #table(
+				        type table [path = text, #"Path Label" = text, #"Path Sort" = Int64.Type],
+				        {
+				            {"Bear", "Bear", 1},
+				            {"Base", "Base", 2},
+				            {"Bull", "Bull", 3},
+				            {"Base_Targeted", "Targeted hiring", 4},
+				            {"Base_FullClose", "Full Capacity-Close hiring", 5}
+				        }),
+				    Joined = Table.NestedJoin(Typed, {"path"}, PathLookup, {"path"}, "P", JoinKind.Inner),
+				    Expanded = Table.ExpandTableColumn(Joined, "P", {"Path Label", "Path Sort"}),
+				    Renamed = Table.RenameColumns(Expanded, {
+				        {"Path Label", "Path"},
+				        {"policy_avg_monthly_burn", "Policy Avg Monthly Burn"},
+				        {"opening_cash", "Opening Cash"},
+				        {"policy_runway_months", "Policy Runway Months"},
+				        {"headroom_months", "Headroom Months"},
+				        {"board_runway_floor_months", "Board Floor Months"},
+				        {"max_supportable_avg_monthly_burn_at_floor", "Max Supportable Burn"},
+				        {"breaches_floor", "Breaches Floor"}}),
+				    Final = Table.SelectColumns(Renamed, {"Path", "Path Sort", "Policy Avg Monthly Burn",
+				        "Opening Cash", "Policy Runway Months", "Headroom Months", "Board Floor Months",
+				        "Max Supportable Burn", "Breaches Floor"})
+				in
+				    Final
+
+	annotation PBI_ResultType = Table

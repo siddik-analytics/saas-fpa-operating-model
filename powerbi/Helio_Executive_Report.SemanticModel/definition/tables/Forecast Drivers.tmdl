@@ -1,0 +1,135 @@
+/// The scenario assumption table on page 5. Management assumptions and the trailing-history
+/// rates they are applied to, kept labelled as such.
+table 'Forecast Drivers'
+	lineageTag: 0b0dc16b-8006-5a49-a534-9a426379195b
+
+	/// The value of the driver in context. Formatted dynamically by unit: rates as percentages,
+	/// multipliers as a factor, monthly pipeline creation in dollars.
+	measure 'Driver Value' =
+			-- One stored value per driver / segment / scenario. The guard keeps a cross-driver
+			-- total, which would mix rates, multipliers and dollars, from rendering.
+			IF(
+			    COUNTROWS('Forecast Drivers') = 1,
+			    MAX('Forecast Drivers'[Value])
+			)
+		displayFolder: 09 Scenarios
+		lineageTag: c7fb19ce-c0f9-55a3-b5f9-4c8e2709de6b
+
+		formatStringDefinition =
+				SWITCH(
+				    SELECTEDVALUE('Forecast Drivers'[Unit]),
+				    "rate", "0.0%",
+				    "multiplier", "0.00\x",
+				    "usd_per_month", "$#,##0",
+				    "months", "#,##0.0 \m\o",
+				    "0.00"
+				)
+
+	column 'Driver Category'
+		dataType: string
+		lineageTag: 8e0bd0e9-8783-58af-aad0-2e75196cb02c
+		summarizeBy: none
+		sourceColumn: Driver Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column Driver
+		dataType: string
+		lineageTag: 3599f2e2-d434-5d0d-8cb9-ef26cf00de6e
+		summarizeBy: none
+		sourceColumn: Driver
+		sortByColumn: 'Driver Sort'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Driver Sort'
+		dataType: int64
+		isHidden
+		formatString: #,##0
+		lineageTag: 0df83f28-9d37-5185-b503-a3f57f4e5be1
+		summarizeBy: none
+		sourceColumn: Driver Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column Scenario
+		dataType: string
+		isHidden
+		lineageTag: e9a37009-e6c6-5712-9391-6fc1fe6a7825
+		summarizeBy: none
+		sourceColumn: Scenario
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Driver Segment'
+		dataType: string
+		lineageTag: 5d3e31c5-0912-5907-9144-8815c461ea33
+		summarizeBy: none
+		sourceColumn: Driver Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		dataType: double
+		isHidden
+		formatString: 0.00
+		lineageTag: e9754457-21c0-5222-835b-128df4278448
+		summarizeBy: none
+		sourceColumn: Value
+
+		annotation SummarizationSetBy = Automatic
+
+	column Unit
+		dataType: string
+		lineageTag: 69bd3fd1-b1e5-5977-8ed6-a8f390c65cd4
+		summarizeBy: none
+		sourceColumn: Unit
+
+		annotation SummarizationSetBy = Automatic
+
+	/// management_assumption for the Bear/Base/Bull levers themselves; historical for the trailing
+	/// rates they are applied to.
+	column Basis
+		dataType: string
+		lineageTag: 77608d17-7c94-5782-8cf9-519f4568432a
+		summarizeBy: none
+		sourceColumn: Basis
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Forecast Drivers' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(RepoRoot & "/data/marts/int_forecast_drivers.csv"),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Filtered = Table.SelectRows(Headers, each [scenario] <> "All"),
+				    Kept = Table.SelectColumns(Filtered, {"driver_category", "driver_name", "scenario",
+				        "segment", "value", "unit", "source_type"}),
+				    Typed = Table.TransformColumnTypes(Kept, {{"value", type number}}),
+				    // Readable driver names and the order a management assumptions table reads in.
+				    DriverLookup = #table(
+				        type table [driver_name = text, #"Driver Label" = text, #"Driver Sort" = Int64.Type],
+				        {
+				            {"attainment_multiplier", "Rep attainment multiplier", 1},
+				            {"win_rate", "New Logo win rate", 2},
+				            {"creation_monthly_acv", "Monthly pipeline creation", 3},
+				            {"monthly_rate_of_beginning_arr", "Expansion rate on opening ARR", 4},
+				            {"churn_share_of_atr", "Churn share of ATR", 5},
+				            {"contraction_share_of_atr", "Contraction share of ATR", 6},
+				            {"baseline_nonatr_churn_monthly", "Baseline non-ATR churn", 7},
+				            {"baseline_nonatr_contraction_monthly", "Baseline non-ATR contraction", 8}
+				        }),
+				    Joined = Table.NestedJoin(Typed, {"driver_name"}, DriverLookup, {"driver_name"}, "D", JoinKind.Inner),
+				    Expanded = Table.ExpandTableColumn(Joined, "D", {"Driver Label", "Driver Sort"}),
+				    Renamed = Table.RenameColumns(Expanded, {
+				        {"driver_category", "Driver Category"}, {"Driver Label", "Driver"},
+				        {"scenario", "Scenario"}, {"segment", "Driver Segment"}, {"value", "Value"},
+				        {"unit", "Unit"}, {"source_type", "Basis"}}),
+				    Final = Table.SelectColumns(Renamed, {"Driver Category", "Driver", "Driver Sort",
+				        "Scenario", "Driver Segment", "Value", "Unit", "Basis"})
+				in
+				    Final
+
+	annotation PBI_ResultType = Table

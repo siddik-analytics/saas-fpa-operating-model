@@ -3,6 +3,1041 @@
 All notable changes to this project are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [v0.9.8] - Visual QA against the rendered report
+
+With the project opening, refreshing and rendering in Desktop, the five pages were reviewed as a
+reader sees them, against screenshots. The palette, header system, conclusion-led titles and page
+flow held up. Density did not.
+
+**No layout was redesigned, no page architecture changed and no calculation moved.** Every change
+is density, formatting or a totals setting. All six upstream controls pass and the
+expected-results pack still holds its 157 rows unchanged.
+
+### Root causes
+
+**Power BI writes its own subtitle** from the field names - "Deferred Revenue, Unbilled Receivable
+and Capitali...", "Policy Runway Months and Board Floor...". It appeared on every visual, repeated
+the title, truncated, and took a line of plot area. Never authored by us; now off in the theme.
+
+**The deferred-revenue panel rendered as a placeholder icon.** Not a binding or schema fault: at
+152px, after a two-line title and that auto-subtitle, no plot area was left, and Desktop
+substitutes an icon rather than draw nothing.
+
+**Totals summed alternatives.** The hiring-case table showed "Total 4.0 / $147,322" across three
+mutually exclusive cases; the runway table totalled months across paths.
+
+### Fixed
+
+- **Columns cut in nine tables** to clear the horizontal scrollbars: KPI band 10 -> 8, both
+  Budget-vs-Base scorecards 6 -> 5, GTM KPIs 8 -> 6, pipeline band 10 -> 4, ARR movement by
+  segment 7 -> 5, retention by segment 5 -> 4, headcount 5 -> 4, hiring case 7 -> 5, runway detail
+  6 -> 5, scenario summary 6 -> 5. Every table now has at least 81px per column.
+- **The auto-generated subtitle is off**, fixing every truncated subtitle in the pack at once.
+- **The accounting panel** has 186px and renders.
+- **Totals off** on the hiring-case table and both runway tables.
+- **The Board floor is a dashed amber reference line at 24 months**, labelled, on both runway
+  charts, instead of a second series that read as another bar.
+- **Zero labels suppressed** where zero is not the message: an empty third format section renders
+  zero as blank, so the bridge's "$0.00M" step and the ATR chart's rows of "$0.0M" are gone.
+- **The ARR movement axis** moved Thousands -> Millions: "$2,000K" beside a "$40.0M" secondary
+  axis read as two different reports.
+- **Sales efficiency and the Magic Number** read "0.43x" rather than "0.43".
+- **Short bridge labels.** A `Bridge Step` column shortens "Opening ARR variance (31-Dec-2025
+  actual, identical both sides)" to "Opening ARR" for the category axis. Presentation only - the
+  full wording stays on the stored `Bridge Line`, now hidden, and no amount is touched.
+- **The assumptions matrix renders flat** - stepped layout and the [+] toggles off.
+- **Geometry rebalanced** on pages 1, 4 and 5 for the taller KPI band and the two charts that had
+  been squeezed into 170px.
+
+### Added
+
+- `MODEL_ONLY_MEASURES` - the nineteen measures the trimmed tables no longer display. They are
+  kept rather than deleted: each is documented in `measures.md`, several are exercised by the
+  SQL-to-DAX pack, and a reader opening the model should find the obvious companion metric. Two
+  checks keep the list honest - nothing on a page may claim the exemption, and anything new that
+  stops being read still fails.
+- `check_visual_density` - 16 checks, taking the validator from 503 to **519**: columns against
+  width, charts against a minimum height, no overlap, nothing off canvas, the auto-subtitle off,
+  no over-long title, no total on a table of alternatives, the Board floor as a reference line,
+  and the exemption list honest.
+- Tests 121 to **141**, including three mutation tests: an overcrowded table, a chart too small to
+  render, and a restored scenario total.
+
+### Caught by Microsoft's validator during the pass
+
+- `y1AxisReferenceLine.dataLabelText` is an enum (Value / Name / ValueAndName), not free text. The
+  wording belongs in `displayName`; the label now reads "Board floor 24".
+- Two panel labels were dropped to 30px, below the 34px floor for a 10pt font. Restored.
+
+### Still outstanding
+
+- **Power BI Desktop acceptance remains PENDING.** This pass is a response to screenshots and
+  needs another look on screen.
+- Executive tables still read full dollars rather than millions (v0.9.7): a table column's display
+  unit needs a per-column selector whose shape is not documented in the published schema package.
+
+## [v0.9.7] - Display units: format strings state the unit, visuals state the scale
+
+Desktop rendered the report and the numbers were unreadable. Axes read `$0MM`, table cells read
+`$4,781,152.1,,M` and `$853,381K`, chart labels read `$2.1,,MM`. Every underlying value was
+correct; two scaling mechanisms were fighting each other.
+
+**This is a presentation fix only.** No DAX arithmetic, no business logic, no mart, no SQL model,
+no page layout and no visual position changed. All six upstream controls pass and the
+expected-results pack still holds its 157 rows unchanged.
+
+### Root cause
+
+**A scaling comma is only honoured at the end of a format section.** Followed by a suffix -
+`#,##0.0,,"M"` - the tabular engine behind Power BI stops reading it as a scaler and prints it.
+Excel is lenient here; Power BI is not. Every format *without* a scaler had always rendered
+correctly (`23.5 mo`, `74.1%`, `534`, `0.43`), which is what identified the pattern.
+
+On charts a second fault compounded it: a visual's display units default to **Auto**, so Power BI
+scaled by a million and appended `M`, and the format string then scaled again - `$34.8M` became
+`$0MM`. Setting `labelDisplayUnits: 0` on data labels in v0.9.5 had not helped, because `0` means
+Auto, not "use the measure's format" as it had been read.
+
+### Fixed
+
+**Format strings no longer scale or carry a currency suffix.** `FMT_USD_M`, `FMT_USD_M2` and
+`FMT_USD_K` are gone; currency is `\$#,##0;(\$#,##0);\$0` and signed currency
+`+\$#,##0;(\$#,##0);\$0`. Percentages, months, ratios, basis points and counts are unchanged -
+they never scaled and always worked. 60 measures now share the plain currency format.
+
+**Every chart states its display unit explicitly** - `valueAxis.labelDisplayUnits` and
+`labelPrecision`, plus `secLabelDisplayUnits` for a combo chart's second axis. 14 charts, nothing
+left on Auto:
+
+| Visual | Axis | Renders |
+|---|---|---|
+| Exit ARR bridge, scenario ARR, forward ATR, H2 capacity, revenue, accounting panel | Millions, 1 dp | `$37.6M`, `$3.7M`, `$15.2M` |
+| Operating income bridge | Millions, 1 dp axis / 2 dp labels | `$0.09M` on a $5.7M walk |
+| ARR movement (primary), GTM constraint | Thousands, 0 dp | `$346K`, `$519K` |
+| ARR movement / revenue margin (secondary) | Millions / None | `$34.8M`, `78.4%` |
+| Retention trend, efficiency pair | None | `101.8%`, `0.43` |
+| Policy runway, affordability | None, 1 dp | `24.0 mo` |
+
+**Data labels state the same unit as the axis they sit against**, so a label and its axis cannot
+disagree. The `DATA_LABELS` constant from v0.9.5, which set Auto, is replaced by `data_labels()`.
+
+**The scorecard's dynamic format no longer scales either**, so `$6,000,000.0,,M` becomes
+`$6,000,000`.
+
+### Known cost
+
+A table column has no display-unit setting in a generated PBIR file: the per-column selector shape
+is not documented in the published schema package, and this project no longer guesses at PBIR
+shapes. **Table cells therefore show full dollars** - `$37,589,316`, `($2,793,686)` - which is
+unambiguous but less compact than `$37.6M`. Charts, where scale matters most for reading a trend,
+carry proper units. Getting `$37.6M` into the executive tables means setting per-column display
+units in Desktop and saving back; that is the one open presentation item.
+
+### Added
+
+- `value_axis()` and `data_labels()` in `src/powerbi_report.py`, with the Power BI display-unit
+  enum named (`AUTO_UNITS`, `NO_UNITS`, `THOUSANDS`, `MILLIONS`) so `0` can never again be read as
+  "use the measure's format".
+- Three checks, taking the validator from 501 to **503**: no format string scales; every chart
+  states its axis display unit and none is on Auto; every data label states the same unit as its
+  axis. The scorecard scaling check from v0.9.6 is inverted - it asserted the suffix *was* a
+  scaled quoted literal, which is exactly what does not work.
+
+### Changed
+
+- `THOUSANDS_SCALE_MEASURES` and `MILLIONS_LEGIBILITY_FLOOR`, added in v0.9.5, are removed. They
+  encoded the idea that a measure's *format* carries its scale; scale is a property of the visual.
+- The v0.9.5 and v0.9.6 tests built on that idea are replaced. Scorecard row expectations now read
+  full dollars.
+
+### Repaired
+
+While removing the superseded tests, a regex-driven deletion cut roughly half of
+`tests/test_powerbi_report.py`, including the scaffold, namespace and report-pages blocks from
+v0.9.1 to v0.9.4. The file was rebuilt from the saved blocks and every recovered test re-run; the
+suite is back to 121 tests in that file and 392 overall, all passing.
+
+### Still outstanding
+
+- **Power BI Desktop acceptance remains PENDING.** This pass needs a confirming look at the axes,
+  labels and tables on screen.
+- Executive tables read full dollars rather than millions - see Known cost above.
+
+## [v0.9.6] - Management Variance scorecard formatting
+
+Three defects in the mixed-metric Budget-vs-Base scorecard, seen in Power BI Desktop.
+
+**This is a formatting fix only.** No mart, no SQL model, no page layout and no visual position
+changed, and no Budget, Base or Variance quantity changed. All six upstream controls pass and the
+expected-results pack still holds its 157 rows unchanged.
+
+### Root causes
+
+**1. The millions suffix was an escape, not a quoted literal.** The currency branch read
+`"$#,##0.0,,\M;($#,##0.0,,\M)"`. Written that way the trailing `,,` stops being read as a
+thousands scaler and prints as a literal comma, so six million dollars rendered
+`$6,000,000.0,M` and the Exit ARR budget rendered `$37,589,315.8,M`. Inside a DAX string a quote
+is doubled, so the branch is now `""M""`, emitting the same `"M"` the static `FMT_USD_M` has always
+used successfully.
+
+**2. Gross margin was shown in basis points as a level.** The mart stores gross margin in bps -
+7,406.9 budget, 7,835.9 base, 429.0 variance - because bps is the unit its *variance* is quoted
+in. A level, though, reads as a percentage. No format string can bridge that: a scaling comma
+divides by 1,000 and `%` multiplies by 100, and there is no divide-by-100 token.
+
+**3. A Total row summed mixed units.** The scorecard's rows are different metrics, so the total
+added dollars to basis points to headcount.
+
+### Fixed
+
+**Currency** - `$6.0M`, `$37.6M`, `($5.6M)` for levels; `($2.79M)`, `+$0.90M` for variances.
+Variances carry **two** decimals because at one the $88K operating-income variance and the $50K
+G&A variance both collapse to `$0.1M`. Levels keep one decimal, where the smallest figure is
+$5.9M. Negatives take accounting parentheses.
+
+**Gross margin** - the two level measures express the basis-point rows as a ratio and format them
+`0.0%`, so Budget reads `74.1%` and Base `78.4%`. The variance is untouched and stays `+429 bps`.
+This is a change of unit, not of quantity: 7,406.9 bps and 0.74069 are the same margin, and the
+mart is not modified. The conversion is driven off the existing `Unit` metadata, never off value
+magnitude.
+
+**Headcount** - `214.0`, `217.7`, `+3.7`. No currency, no percent, no bps.
+
+**Variance %** - one decimal throughout: `-46.6%`, `-7.4%`, `+6.2%`.
+
+Both measures remain numeric. `FORMAT()` is not used anywhere, so sorting, aggregation and chart
+behaviour are intact, and a test asserts it stays absent.
+
+Every row now reads:
+
+| Metric | Budget | Base | Variance |
+|---|---|---|---|
+| Ending Headcount | 214.0 | 217.7 | +3.7 |
+| Gross Margin | 74.1% | 78.4% | +429 bps |
+| New Logo ARR | $6.0M | $3.2M | ($2.79M) |
+| Exit ARR | $37.6M | $34.8M | ($2.77M) |
+| Sales & Marketing | $14.5M | $15.4M | +$0.90M |
+| Total OpEx | $30.5M | $31.4M | +$0.87M |
+| Revenue | $33.6M | $32.8M | ($0.84M) |
+| Gross Profit | $24.9M | $25.7M | +$0.78M |
+| Operating Income / (Loss) | ($5.6M) | ($5.7M) | ($0.09M) |
+| Research & Development | $10.1M | $10.1M | ($0.08M) |
+| General & Administrative | $5.9M | $6.0M | +$0.05M |
+
+### The total row
+
+Removed from four tables whose rows are incommensurable metrics: both Budget-vs-Base scorecards
+(pages 1 and 4), the executive KPI band (a single row, where a total is pure duplication) and the
+scenario assumptions matrix (drivers in rates, dollars, multiples and months).
+
+Totals stay **on** everywhere else, deliberately. Power BI recomputes a measure in the total row's
+filter context rather than summing what is on screen, so a total over segments gives a correctly
+blended NRR and a total over P&L line items gives the company figure. Turning totals off
+everywhere would have destroyed that.
+
+A flat table and a matrix use different objects for this - `total.totals` and
+`subTotals.rowSubtotals` - and they are not interchangeable.
+
+### Section 9 - the same measures elsewhere
+
+The generic scorecard measures are read by exactly two visuals, `p1v3_budget_vs_base` on page 1
+and `p4v2_scorecard` on page 4. The fix is central, in the measures themselves, so both are
+corrected by the same change; a test asserts the consumer set and that both have totals disabled,
+so a third consumer cannot be added without being covered.
+
+### Added
+
+- `MIXED_METRIC_TABLES` in `src/powerbi_model.py` - the four tables whose rows do not aggregate,
+  with the reason recorded against each.
+- Seven checks added to `check_measure_presentation`, taking the validator from 494 to **501**:
+  the scorecard's dollars scale by millions (the escaped-suffix defect), and each mixed-metric
+  table shows no total row.
+- Tests 126 to **147**, including a row-by-row assertion of all eleven scorecard rows against the
+  mart's own values, and two new mutation tests: escaping the millions suffix, and restoring the
+  total row.
+- A small format renderer in the test suite pins what each format string means - the millions
+  scaler, the percent scaling, the sign sections, the accounting parentheses - so a format edit
+  that changes what a reader sees fails a test rather than reaching Desktop.
+
+### Changed
+
+- `test_scorecard_levels_are_unsigned_and_the_variance_is_signed`, added in v0.9.5, asserted the
+  basis-point level format was `#,##0 bps`. That convention is superseded: a level is a
+  percentage. The test now asserts the corrected convention rather than the old one.
+
+### Still outstanding
+
+- **Power BI Desktop acceptance remains PENDING.** The project opens, refreshes and renders; this
+  pass needs a confirming look at the scorecard on screen.
+- No static check proves how Power BI renders a format string. The renderer in the test suite is
+  a faithful model of the format rules these formats use, not a Power BI emulator.
+
+## [v0.9.5] - Number, label and axis formatting
+
+The project opens, refreshes and renders in Power BI Desktop, and the layout reads as designed.
+What remained was presentation: some labels showed `$0.0M` for figures that were not zero, some
+axes had lost their resolution, and the scorecard's dynamic format put a `+` on a level.
+
+**This is a formatting pass only.** No DAX, no arithmetic, no business logic, no mart, no SQL
+model, no page layout and no visual position changed. All six upstream controls pass, the
+expected-results pack still holds its 157 rows unchanged, and every number in the report is the
+number it was before - it is now legible.
+
+### Root cause
+
+Display scale had been chosen per measure by convention rather than from the values each measure
+actually carries. A millions format with one decimal renders anything under $500K as `$0.xM` and
+anything under $50K as `$0.0M`, and several dollar *flows* live well below that floor while the
+*balances* beside them are in tens of millions.
+
+Reactivation ARR has a monthly median of **$8.5K** and was formatted at millions, so it displayed
+`$0.0M`. It was not the only one.
+
+### Fixed - 17 measures reformatted
+
+Scale is now taken from the magnitude each measure carries at the grain its visual reads it, never
+from its name. The magnitudes come from the committed marts:
+
+| Measure | Magnitude | Was | Now |
+|---|---|---|---|
+| Reactivation ARR | $8.5K monthly | `$0.0M` | `$9K` |
+| Contraction ARR | $96.5K | `$0.1M` | `$97K` |
+| Churn ARR | $188.7K | `$0.2M` | `$189K` |
+| New Logo ARR | $345.7K | `$0.3M` | `$346K` |
+| Expansion ARR | $472.3K | `$0.5M` | `$472K` |
+| Services Revenue | $56.7K monthly | `$0.1M` | `$57K` |
+| New Logo Capacity | $181.7K per segment-month | `$0.2M` | `$182K` |
+| Pipeline Supported ARR | $123.4K | `$0.1M` | `$123K` |
+| Constrained New Logo ARR | $108.7K | `$0.1M` | `$109K` |
+| New Logo Productive Capacity (Actual) | $128.3K by segment | `$0.1M` | `$128K` |
+| Policy Avg Monthly Burn | $771K-$926K | `$850,000` | `$850K` |
+| Incremental ARR / Operating Income / Cash Impact (4 hiring measures) | $18.6K-$637.1K | `$147,322` | `$147K` |
+| Operating Income Bridge Amount | $35.8K-$5.7M | `$0.0M` | `$0.04M` (two decimals) |
+
+Two distinct failures, either sufficient on its own: the figure **rounds away** (smallest value
+under $500K), or it **never reaches a million** (policy burn spans $771K-$926K, which millions
+squeezes into `$0.8M`-`$0.9M`, losing the difference between the paths).
+
+Millions was not removed, only removed from the measures it was wrong for. Ending ARR ($30.2M),
+Revenue ($2.5M monthly), Deferred Revenue ($15.2M), ATR by quarter ($3.7M), the H2 GTM totals
+($5.3M-$9.3M), the Exit ARR bridge and every scorecard headline keep it.
+
+The operating-income bridge is the one place a decimal was added rather than a unit changed: its
+steps run $35.8K to $5.7M, too wide for thousands, and at one decimal the smallest step read
+`$0.0M`.
+
+`FMT_USD_K` also now renders an uppercase `K` (`$842K`, not `$842k`).
+
+### Fixed - the dynamic scorecard format
+
+- The **level** measures (Budget, Base Reforecast) were printing a leading `+` on the basis-point
+  row, so a 7,836 bps gross margin read `+7,836 bps`. A level carries no sign convention; only a
+  variance does. Budget and Base are now unsigned in every unit, and Variance vs Budget stays
+  signed in every unit.
+- A `pct` branch was added so a future percentage metric cannot fall through to the count
+  fallback.
+- A dollar sign may now appear only on the `usd` branch, checked line by line - a leaked `$` would
+  print `$7,836` on the gross-margin row and `$218` on headcount.
+
+Both dynamic measures still use `formatStringDefinition` only; the v0.9.2 conflict is not
+reintroduced, and a check asserts it.
+
+### Fixed - data labels
+
+The theme turned data labels off everywhere, which is right for a 24-to-48 month line chart but
+wrong for a handful of discrete columns where the reader wants the figure rather than a position
+against an axis.
+
+Labels are now on for six visuals and no others: the two Budget-to-Base waterfalls, H2 capacity
+versus pipeline, forward ATR by quarter, and the two runway charts. No line chart labels its
+points. Each label is set to `labelDisplayUnits: 0` and `labelPrecision: -1` - "use the measure's
+own format string" - so a label and a table cell can never disagree about the same figure.
+
+**No axis or label carries a hardcoded display unit or precision anywhere in the report.** The
+model format string remains the single source of truth for every measure, and a check enforces it.
+
+### Added
+
+**Presentation constants** in `src/powerbi_model.py`
+- `KNOWN_FORMATS` - the fifteen formats the report may present, so an ad-hoc format cannot creep
+  in.
+- `THOUSANDS_SCALE_MEASURES` - the sixteen dollar measures whose values are thousands-scale, with
+  the magnitudes that justified each one recorded alongside.
+- `MILLIONS_LEGIBILITY_FLOOR` ($500,000) and `DATA_LABELLED_VISUALS`.
+
+**A presentation check family** - `check_measure_presentation`, 10 checks, taking the validator
+from 484 to 494
+- Every visible measure uses a declared format.
+- Every thousands-scale dollar measure is formatted in thousands - the zero-label regression.
+- No format mixes a percent sign with a currency scale.
+- No chart axis mixes unit kinds; dollars and percentages belong on separate axes.
+- Data labels are on the intended visuals only, and no line chart labels every point.
+- No data label overrides the measure's own display unit or precision.
+- The scorecard's dynamic format covers every unit its mart carries, with dollars confined to the
+  dollar branch.
+
+**Regression and mutation tests** - 102 tests to 126
+- The magnitudes behind every scale decision are **re-derived from the marts at test time**, so
+  the declared list cannot drift away from the data that justified it.
+- The converse guard: measures kept at millions are asserted to be millions-scale.
+- Percentage measures return ratios and never multiply by 100 themselves - a measure that did
+  would render NRR as 10,180%. Multiples (`0.43`, `2.87x`) are checked separately from
+  percentages, because the expected pack labels both "ratio".
+- Months and multiples carry no currency symbol.
+- Levels are unsigned and the variance is signed, per unit.
+- Three mutation tests: Reactivation ARR put back to millions, a percentage added to a dollar
+  axis, and a data label forced to millions with zero decimals.
+
+### Still outstanding
+
+- **Power BI Desktop acceptance remains PENDING.** The project opens, refreshes and renders; this
+  pass needs a confirming look at the numbers on screen.
+- No static check can prove how Power BI renders a label. These checks catch semantic-unit
+  mismatches - a dollar flow at a scale that rounds it away, a percentage without a percent sign,
+  a month count with a currency symbol - not the rendering itself.
+
+## [v0.9.4] - Report-definition version fix after the fourth Desktop acceptance failure
+
+Power BI Desktop opened the project and **refreshed the semantic model successfully** - 27 tables,
+all loading. It then displayed **no report pages at all**, replaced the report with a blank
+single-page report of its own, and saved over it. Five pages and 45 visuals were discarded without
+one error message.
+
+**This is a report-packaging fix only.** No DAX, no measure, no business logic, no expected result,
+no mart, no SQL model and no part of the Phase 9 Excel workbook was touched. All six upstream
+controls pass and the expected-results pack still holds its 157 rows unchanged.
+
+### Root cause
+
+`definition.pbir` carries a `version` that tells Desktop **which report-definition format to
+read**. It said `"1.0"`; Desktop writes `"4.0"`. At `"1.0"` Desktop does not look in
+`definition/pages/` at all - so the five pages were not rejected, they were never read. Finding a
+report definition it considered empty, Desktop created `Page 1` and wrote the project back.
+
+**Nothing could have caught it.** `definitionProperties` types `version` as a free-form string, so
+the published schema accepts any value; Microsoft's own PBIR validator passed the project; and
+every check here confirmed the five page folders, their `page.json` files and all 45 `visual.json`
+files existed exactly where they should - because they did.
+
+The defect was also self-inflicted and recent: the generator originally emitted `"4.0"`, and it
+was changed to `"1.0"` during the v0.9.1 work, reasoning from a schema that types the field as a
+string and therefore constrains nothing, rather than from evidence.
+
+### The Desktop scaffold, at last
+
+Desktop overwriting the report left behind a complete **Desktop-authored PBIP** - the ground truth
+v0.9.1 to v0.9.3 worked without, having only a `.pbix` to go on. Comparing it against the
+generator settled several open questions at once:
+
+| File | Desktop | Ours | Outcome |
+|---|---|---|---|
+| `definition.pbir` `version` | `4.0` | `1.0` | **the defect** |
+| `definition.pbir` `$schema` | absent | present | kept - `definitionProperties` marks it required |
+| `definition/version.json` | `2.0.0` | `2.0.0` | confirmed |
+| `page.json` schema and shape | `page/2.1.0` | `page/2.1.0` | confirmed |
+| `.platform`, `.pbism`, `.pbip` | - | - | byte-identical, `logicalId` included |
+| `report.json` `themeCollection` | `baseTheme` | `customTheme` only | **fixed** |
+| `database.tmdl` `compatibilityLevel` | `1606` | `1601` | adopted Desktop's |
+| All 27 table TMDL files | Desktop's own | ours | **accepted verbatim** |
+
+The last row is worth stating plainly: Desktop rewrote every table file and changed only its own
+normalisations - it dropped `crossFilteringBehavior: oneDirection` (a default), unquoted
+identifiers it considers bare-safe, and added a trailing newline. **No measure, column, format
+string, relationship or partition was altered.** The TMDL this project generates is the TMDL
+Desktop writes, which v0.9.2 could not establish at the time.
+
+### Fixed
+
+- **`definition.pbir` `version` is now `4.0`**, read off Desktop's own file. The constant carries
+  a comment saying what it decides and that it must not be "simplified".
+- **The report declares a base theme.** Desktop packages one with every report, and the schema
+  describes a custom theme as one "applied on top of the base theme", with undefined properties
+  falling back to it. Ours declared a custom theme and no base at all. The report now declares
+  both, in Desktop's shape: `Fluent2-CY26SU08` as a `SharedResources` package with
+  `HelioExecutive.json` layered over it. The base theme file in `src/powerbi_assets/` is
+  Desktop's own, copied verbatim. This did not cause the missing pages, but it was a real defect
+  in the same file found by the same comparison.
+- `report.json` also adopts Desktop's `objects.section` vertical alignment and the three further
+  `settings` keys it writes.
+- `compatibilityLevel` raised 1601 -> 1606, Desktop's own value, so a Desktop round-trip leaves
+  `database.tmdl` unchanged.
+
+### Added
+
+**A Desktop contract** - `DESKTOP_PBIR_CONTRACT` in `src/build_powerbi.py`
+- The values Desktop reads, recorded as Desktop itself writes them. Checked against Desktop's
+  behaviour rather than against what a schema permits, because the schema permitted the defect.
+
+**A report-pages check family** - `check_report_pages`, 40 checks, taking the validator from 444
+to 484
+- Every contract value matches Desktop's own, `definition.pbir` `version` first among them.
+- `pageOrder`, the page folders and each `page.json` `name` form one bijection, in declared order;
+  `activePageName` names a real page; no page folder is orphaned out of `pageOrder`.
+- Every page has a non-empty `displayName`, is not `HiddenInViewMode`, and is not typed `Tooltip`
+  or `Drillthrough` - three further ways to produce the same "no pages" symptom.
+- Every `visual.json` sits in its own folder under the page's `visuals/`, names itself after that
+  folder, parses, and carries `name` and `position`; no stray files or undeclared folders.
+- The base theme is declared and packaged.
+- No Power BI Desktop local state is committed.
+
+**Regression and mutation tests** - 86 tests to 102
+- Five mutation tests: `version` set back to `"1.0"`, a page dropped from `pageOrder`, a page
+  marked hidden, a `visual.json` renamed, and `.pbi/localSettings.json` planted. The first
+  reproduces the exact failure - on a project Microsoft's validator still passes.
+- A test asserting the committed `RepoRoot` parameter is still empty and carries no machine path.
+
+**`.gitignore` for what Desktop writes into an opened project**
+- `.pbi/localSettings.json` (a machine-bound security-binding signature), `.pbi/cache.abf` (a
+  local cache of the loaded model data), `.pbi/editorSettings.json`, and `diagramLayout.json`.
+  Desktop had also stamped `RepoRoot` in `expressions.tmdl` with this clone's absolute path -
+  exactly what the committed-empty-parameter rule exists to prevent. Regenerating restores it, and
+  two checks fail the build if any of it reaches the repository.
+
+### Still outstanding
+
+- **Power BI Desktop acceptance remains PENDING**, now after four failed attempts. The semantic
+  model opens and refreshes; the report pages have never been seen to render.
+- **`visual.json`'s schema version is still inferred.** The Desktop-authored scaffold is a blank
+  report, so it contains no visuals and still cannot settle the visual container version. A
+  Desktop `.pbip` with at least one visual on a page would.
+- **Desktop normalises the TMDL it saves**, so a Desktop session leaves a diff against the
+  generated project even when nothing meaningful changed. Regenerate with
+  `python -m src.build_powerbi` before committing; Desktop's save is not the source of truth.
+
+## [v0.9.3] - Semantic-model namespace fix after the third Desktop acceptance failure
+
+The v0.9.2 format fixes worked: Power BI Desktop began creating model objects. It then refused
+one:
+
+```text
+The 'Ending ARR' measure cannot be created because a column with the same name already exists.
+PFE_XL_MEASURE_COLUMN_ALREADY_EXIST
+```
+
+**This is a semantic-model naming fix only.** No mart, no CSV, no SQL model, no Power Query step
+and no part of the Phase 9 Excel workbook was renamed or altered. All six upstream controls still
+pass, the expected-results pack still holds its 157 rows unchanged, and no reported number moved.
+
+### Root cause
+
+Columns, measures and hierarchies in one table share a single **case-insensitive** namespace. A
+measure cannot take a name a column in the same table already holds. `ARR Forecast` carried both
+a stored column `Ending ARR` and a measure `Ending ARR` reading it.
+
+Desktop stops at the first invalid object, so it named one of **23 collisions across 8 tables**:
+
+| Table | Colliding names | Count |
+|---|---|---:|
+| ARR Forecast | Beginning ARR, New Logo ARR, Expansion ARR, Reactivation ARR, Contraction ARR, Churn ARR, Ending ARR | 7 |
+| Headcount | Beginning Headcount, Hires, Departures, Ending Headcount | 4 |
+| Runway Policy | Policy Avg Monthly Burn, Policy Runway Months, Board Floor Months | 3 |
+| Retention | Cohort Customers, Cohort Beginning ARR | 2 |
+| GTM Constraint | New Logo Capacity, Constrained New Logo ARR | 2 |
+| Sales Capacity | Expected Attainment, Actual Bookings | 2 |
+| Scenario Monthly | Scenario Operating Income, Scenario Ending Cash | 2 |
+| New Logo Diagnosis | Budget New Logo ARR | 1 |
+
+All 23 were column-to-measure. The model has no hierarchies, so column-to-hierarchy collisions
+were structurally impossible; no table declared a measure name twice; and no measure name was
+reused across the model.
+
+### Fixed - the ` Source` convention
+
+**The measure keeps the business name. The stored column takes a ` Source` suffix and stays
+hidden.**
+
+```text
+measure      Ending ARR                    <- what the field list shows
+column       Ending ARR Source             <- hidden, exists only to be summed
+sourceColumn Ending ARR                    <- unchanged: the Power Query output name
+mart column  fct_arr_forecast.ending_arr   <- unchanged
+```
+
+TMDL allows the semantic-model column name to differ from `sourceColumn`, so the rename is
+confined to the semantic model. `Ending ARR`, `New Logo ARR`, `Revenue`, `Gross Profit`,
+`Operating Income`, `Ending Headcount`, `Policy Runway Months` and the rest keep the names a
+reader looks for. Renaming the measures instead, or moving them to a disconnected Measures table,
+would have cost exactly the clarity the report exists to provide - a Measures table was considered
+and rejected as an architecture change to a naming defect.
+
+**Blast radius: 23 column declarations and 31 DAX column references.** All 23 colliding columns
+were already hidden, none was used as a sort-by column, a relationship key, or a field on any
+visual, and no measure in another table referenced one - so nothing outside those files needed to
+move. Three ratio-discipline checks in `src/validate_powerbi.py` that assert stored-column names
+by string were updated to match.
+
+### One latent defect the fix revealed
+
+`unused_measures()` - the check enforcing PHASE1_SPEC's restraint rule, that every measure is read
+by a visual or by a measure that is - had been passing on a false positive. It matches
+`[Measure Name]` in DAX text, and a fully-qualified **column** reference such as
+`'Sales Capacity'[Actual Bookings]` matched too. Once the columns were renamed, two measures stood
+exposed as genuinely unread: `Sales Capacity[Actual Bookings]` and
+`Scenario Monthly[Scenario Ending Cash]`.
+
+Both were resolved by having the measures that duplicated their aggregation call them instead:
+
+- `Actual Attainment` summed `'Sales Capacity'[Actual Bookings Source]`, which is literally the
+  definition of `[Actual Bookings]`. A textually identical substitution.
+- `Scenario Dec-27 Cash` summed `'Scenario Monthly'[Scenario Ending Cash Source]` under a
+  Dec-2027 filter; `[Scenario Ending Cash]` is that sum under `LASTNONBLANK`. The mart holds
+  exactly one row per scenario at 2027-12-31 and it is each scenario's last month, so the two
+  return the same value - verified against the mart, not reasoned about.
+
+No arithmetic changed. An aggregation is now defined once rather than twice, which is the state
+the collision had been hiding.
+
+### Added
+
+**The invariant, enforced at two levels**
+- `Table.__post_init__` in `src/powerbi_model.py` refuses a colliding declaration
+  case-insensitively, so the specification fails to import rather than emitting a model Desktop
+  will reject.
+- `check_table_namespace` in `src/validate_powerbi.py` rebuilds the namespace from the **emitted
+  TMDL** - columns, measures and hierarchies - independently of the specification.
+
+**A table-namespace check family** - 6 checks, taking the validator from 438 to 444
+- No column, measure or hierarchy shares a name within a table, case-insensitively.
+- No table declares the same measure name twice.
+- Every measure name is unique across the whole model.
+- The namespace scan actually read the model (a scan that finds nothing because it parsed nothing
+  is not a check).
+- Every ` Source` column is hidden from report view.
+- The ` Source` suffix appears only where a measure claims the name, so the convention cannot
+  spread into columns that never needed it.
+
+**Regression and mutation tests** - 75 tests to 86
+- The emitted TMDL carries no same-table collision; measure names are unique model-wide; the
+  recruiter-facing measure names survived the rename; ` Source` columns are hidden and
+  non-gratuitous; `sourceColumn` still names the Power Query output and the marts still carry
+  their physical column names.
+- Every DAX column reference resolves to a real column, so a rename cannot silently leave a
+  measure pointing at a name that no longer exists.
+- Four mutation tests: a colliding declaration, a collision differing only in case, a ` Source`
+  column renamed back in the emitted TMDL, and a duplicated measure name.
+
+### Still outstanding
+
+- **Power BI Desktop acceptance remains PENDING**, now after three failed attempts. Each got
+  further than the last: PBIR loading, then measure metadata, then object creation. Desktop may
+  still object later in model creation, at first refresh, or when rendering a visual.
+- The limitations recorded in v0.9.1 and v0.9.2 are unchanged: `visual.json`'s schema version is
+  still inferred rather than read off a Desktop-authored file, and no offline TMDL validator is
+  available on this machine.
+
+## [v0.9.2] - TMDL measure-format fix after the second Desktop acceptance failure
+
+The section 12 scaffold fixes worked: Power BI Desktop read the PBIR report and moved on to
+building the semantic model. It then rejected the model:
+
+```text
+The Measure 'Management Variance'['Budget'] has both FormatString property and
+FormatStringDefinition property defined which is not supported scenario.
+PFE_TM_MEASURE_FORMAT_STRING_DEFINITION_CONFLICT
+```
+
+**This is a TMDL serialization fix only.** No DAX arithmetic, no business logic, no expected
+result, no mart, no SQL model and no part of the Phase 9 Excel workbook was touched. All six
+upstream controls still pass and the expected-results pack still ties to the frozen marts. Every
+measure returns exactly the number it returned before; what changed is how its display format is
+declared.
+
+### Root cause
+
+A measure may declare a static `formatString` **or** a dynamic `formatStringDefinition`, never
+both - and Power BI rejects the whole model rather than the offending measure. Four measures
+declared both. Desktop stops at the first, so its message named only one of them.
+
+Format-mechanism inventory across all 108 measures:
+
+| | Before | After |
+|---|---:|---:|
+| Static `formatString` only | 103 | 103 |
+| Dynamic `formatStringDefinition` only | 0 | 4 |
+| **Both (invalid)** | **4** | **0** |
+| Neither (text measure) | 1 | 1 |
+
+### Fixed
+
+The four conflicting measures now carry the **dynamic** property only. Dynamic is the correct
+mechanism for each - the static property was the one that had to go, because these measures are
+deliberately generic over a mixed-unit metric set:
+
+- `Management Variance[Budget]`, `[Base Reforecast]`, `[Variance vs Budget]` - one measure reads
+  whatever metric is in context, and the set mixes nine USD rows, one basis-point row (the
+  gross-margin walk) and one FTE row (headcount). The static format they carried printed a dollar
+  sign in millions on the basis-point and headcount rows.
+- `Forecast Drivers[Driver Value]` - one stored value across rates, dollars per month,
+  multipliers and months. No single static format serves four units.
+
+Everything with one stable unit keeps a static format string. No dynamic format was introduced
+where a static one suffices, and no measure was stripped of formatting to dodge the conflict.
+
+Two presentation details that dropping the static property would otherwise have cost:
+- `Variance vs Budget` is a variance, and its static format carried a leading `+` the shared
+  `SWITCH` did not. It now has its own signed variant, so a positive variance still reads `+$1.2M`.
+- `Forecast Drivers` carries a `months` unit the `SWITCH` never named, so those rows fell to the
+  numeric fallback and rendered unlabelled. A `months` branch was added.
+
+The measures stay numeric. `FORMAT()` was deliberately not used inside any expression to sidestep
+the model metadata - that returns text and breaks sorting, aggregation and chart behaviour.
+
+- `src/powerbi_docs.py` - a measure with no static format printed `Format | None` into
+  `powerbi/measures.md`, a Python `None` leaking into the generated documentation. It now reports
+  whichever mechanism the measure actually uses.
+
+### Added
+
+**The invariant, enforced at three levels**
+- `Measure.__post_init__` in `src/powerbi_model.py` raises on the combination, so a conflicting
+  measure cannot be declared at all - the specification fails to import rather than emitting TMDL
+  Desktop will reject.
+- `measure_tmdl` in `src/build_powerbi.py` refuses to serialise the pair.
+- `check_measure_formats` in `src/validate_powerbi.py` parses the **written TMDL** back and
+  checks it independently of both, because the emitted file is what Desktop opens.
+
+**A measure-format check family** - 5 checks, taking the validator from 433 to 438
+- No measure carries both properties, read out of the emitted TMDL.
+- Every measure the specification declares was found in the emitted TMDL.
+- The dynamic-format measures are exactly the ones the specification names.
+- Dynamic format strings are confined to the mixed-unit measures.
+- The only unformatted measure is the one that returns text.
+
+**Regression and mutation tests** - 66 tests to 75
+- The `SWITCH` in each dynamic format covers every unit value actually present in its mart, so a
+  unit cannot render unlabelled through the fallback.
+- `Variance vs Budget` keeps a signed format distinct from the level measures.
+- Three mutation tests: declaring both properties is refused by the specification; the serialiser
+  refuses to emit the pair even when the guard is bypassed; and a `formatString` planted back
+  into a dynamic measure's TMDL fails validation.
+
+### Swept, no further conflicts found
+
+Since Desktop had advanced into TOM model creation, the rest of the model metadata was checked
+rather than assumed clean: duplicate property lines within any member block, `sortByColumn`
+targets, `formatString` on non-numeric columns, aggregating `summarizeBy` on string columns,
+hidden key columns, table `dataCategory`, partitions per table, relationship names and lineage
+tags (302, all unique). `compatibilityLevel` is 1601, well above the level dynamic format strings
+require. Nothing further was found - which is a sweep, not a proof.
+
+### Still outstanding
+
+- **Power BI Desktop acceptance remains PENDING**, now after two failed attempts. Each got
+  further than the last; Desktop may still object at a later stage of model creation or at first
+  refresh.
+- **No offline TMDL validator was available.** The Desktop reference from v0.9.1 is a `.pbix`,
+  whose model is a binary Analysis Services backup rather than TMDL, and being a blank report it
+  contains no measures at all - so it could not settle measure syntax either way. Neither the
+  .NET SDK nor `pbi-tools` is installed, and Microsoft's PBIR CLI validates the report, not the
+  semantic model. What the failure does establish is that Desktop parsed `formatStringDefinition`
+  correctly and objected only to the pairing, so the property syntax is confirmed by Desktop
+  itself.
+
+## [v0.9.1] - PBIR packaging fix after the first Desktop acceptance failure
+
+Power BI Desktop (August 2026, 2.157.879.0) refused to open
+`powerbi/Helio_Executive_Report.pbip`:
+
+```text
+Cannot find file 'version.json'
+Error Reading StorageSection: ReportDocument
+```
+
+**This is a serialization and packaging fix only.** No measure, no DAX, no expected result, no
+mart, no SQL model and no part of the Phase 9 Excel workbook was touched. All six upstream
+controls still pass and the expected-results pack still ties to the frozen marts.
+
+The report definition was never written to `Report/definition/version.json`, and Desktop reads
+that file before anything else - so the load aborted at the first missing file and reported
+nothing about the rest. Validating the project against Microsoft's PBIR validator found **65
+errors and 6 warnings**; the missing file was one of them.
+
+### Root cause
+
+`src/validate_powerbi.py` tested the project thoroughly against **its own specification** and not
+at all against **Power BI's requirements**. There was no check that the Desktop scaffold was
+complete, so a required file the generator never wrote was invisible to it: 409 of 409 checks
+passed on a project Desktop could not read.
+
+### Fixed
+
+**The missing scaffold file**
+- `Report/definition/version.json` is now generated on every build, with the `$schema` and the
+  `version` value `2.0.0` taken verbatim from a project written by the installed Desktop build.
+
+**PBIR schema versions**, migrated to the versions the August 2026 Desktop scaffold emits. Not a
+version-string replacement - the shapes changed, and the files were rewritten accordingly.
+
+| File | Was | Now |
+|---|---|---|
+| `definition/version.json` | absent | `versionMetadata/1.0.0`, `version: "2.0.0"` |
+| `definition/report.json` | `report/1.0.0` | `report/3.3.0` |
+| `definition/pages/pages.json` | `pagesMetadata/1.0.0` | `pagesMetadata/1.1.0` |
+| `definition/pages/*/page.json` | `page/1.0.0` | `page/2.1.0` |
+| `definition.pbir` | no `$schema`, `version: "4.0"` | `definitionProperties/1.0.0`, `version: "1.0"` |
+| `visuals/*/visual.json` | `visualContainer/1.0.0` | `visualContainer/2.9.0` |
+
+**Formatting objects in the wrong place** - 54 of the 65 errors
+- `title`, `background` and `border` were written into `visual.objects`. They are **container**
+  objects and now go to `visual.visualContainerObjects`. `general` deliberately stays where it
+  is: the textbox's `general.paragraphs` and the slicer's `general.orientation` are visual-level.
+
+**Theme registration** - the theme would have silently failed to apply
+- `customTheme.name` now carries the required `.json` extension and matches both the
+  `RegisteredResources` item and the `name` inside the theme file itself. All three must agree.
+- `customTheme.type` is now `"RegisteredResources"`; the legacy `reportThemeType` property, which
+  `report/3.3.0` forbids, is gone.
+- `customTheme.reportVersionAtImport` is now written; `report/3.3.0` requires it.
+- `layoutOptimization` removed - `report/3.3.0` sets `additionalProperties: false` and no longer
+  carries it.
+- The slicer theme block used `items.fontSize`; that object sizes text with `textSize`.
+
+**Enum and uniqueness defects**
+- Slicer `general.orientation` was `2`; the enum admits `0` and `1` only. Now `1` (horizontal),
+  which is what the 456x44 slicer geometry was always drawn for.
+- Filter names are now qualified with the visual that carries them. A filter name must be unique
+  across the whole report, and the page declarations share filter constants.
+- The two page-5 panel labels were 24px tall, below the 34px floor for a 10pt font, and would
+  have rendered with a scrollbar. Now 34px, moved to y=292 so they still sit exactly between the
+  chart above and the visuals below.
+
+### Added
+
+**A declared scaffold contract** - `REPORT_SCAFFOLD` and `MODEL_SCAFFOLD` in
+`src/build_powerbi.py`
+- Every file Desktop needs, and the `$schema` each must carry, declared once. The generator writes
+  from it and `src/validate_powerbi.py` asserts against it, so the two cannot drift and a file
+  that stops being written fails the build instead of reaching Desktop.
+
+**A scaffold check family** - `check_scaffold`, 30 checks, taking the validator from 409 to 433
+- Every scaffold file exists, parses and carries the pinned `$schema`.
+- `version.json` carries the approved version value and no properties beyond the schema's two.
+- Every page.json and visual.json carries its pinned schema.
+- Every PBIR definition file declares a `$schema` at all.
+- No container formatting object sits in `visual.objects`.
+- Every filter name is unique across the report.
+- Four further theme checks: type, `reportVersionAtImport`, absence of `reportThemeType`, and the
+  theme file's own `name` matching the registration.
+
+**Regression and mutation tests** - `tests/test_powerbi_report.py`, 37 tests to 66
+- Presence, parse and pinned-schema tests for every scaffold file, parametrised off the contract.
+- Six mutation tests that prove the new guards actually fail: deleting `version.json`, downgrading
+  its version value, reverting `report.json` to the 1.0.0 schema, stripping the `$schema` from
+  `definition.pbir`, misfiling a container formatting object, and colliding two filter names.
+  A guard that has never been made to fail is not a guard.
+
+**Microsoft's PBIR validator as an independent check**
+- `npm install -g @microsoft/powerbi-report-authoring-cli@latest` then
+  `powerbi-report-author validate powerbi/Helio_Executive_Report.pbip`, which now reports
+  **0 errors, 0 warnings**. It validates against the live published schemas rather than against
+  this repository's understanding of them, and `powerbi-report-author doctor` confirms schema
+  reachability so the check is not silently skipped.
+
+### Changed
+
+- `docs/powerbi_executive_report.md` - new section 12 recording the failure in full: the Desktop
+  error, the root cause, the full diagnostic table, where each corrected value came from, the
+  before/after schema table, and why the automated checks missed it. The project tree now shows
+  `version.json`, the check count is 433, and the status line at the top states plainly that the
+  first acceptance attempt failed and that Desktop acceptance remains PENDING.
+- `README.md` and the phase table updated to the same effect.
+
+### Still outstanding
+
+- **Power BI Desktop acceptance remains PENDING.** The project has not yet been successfully
+  opened in Desktop. Passing Microsoft's validator is a much stronger signal than passing our own
+  checks, but it is not Desktop, and the whole point of this entry is that the difference matters.
+- **`visual.json`'s schema version is inferred, not confirmed.** A blank Desktop report contains
+  no visuals, so the scaffold gave no sample. `visualContainer/2.9.0` is the highest published
+  version in the family, is consistent with the `2.0.0` report definition version, and validates -
+  but it is the one part of the contract not read off a Desktop-authored file. A `.pbip` saved
+  from Desktop with at least one visual on the page would settle it, and would also supply a
+  Desktop-authored `definition.pbir`, `.pbism` and `.platform` to check the project wrapper
+  against; the reference available here was a `.pbix`, which contains none of those.
+
+## [v0.9] - Power BI executive report
+
+Phase 10 of the build described in `docs/PHASE1_SPEC.md`. Adds
+`powerbi/Helio_Executive_Report.pbip` - the executive reporting interface over the frozen Phase
+3-8 analytical stack, generated reproducibly from the committed marts.
+
+Committed as a **Power BI Project (PBIP), not a `.pbix`**: a TMDL semantic model and a PBIR report
+definition, both plain text. A `.pbix` in a public repository is an opaque binary whose diff reads
+"binary files differ"; a PBIP puts every measure, every Power Query step, every relationship and
+every visual into the pull request. That is the whole reason for the format choice, and it is why
+the project is generated rather than hand-authored - the generator is the specification, and the
+build fails if the committed files have drifted from what it emits.
+
+The report is a **read and present layer**. Every business calculation stays in `sql/`; DAX reads
+stored values and forms presentation ratios over them. No Phase 2-8 model, control, mart or output
+is altered, and generating the project reads nothing from `data/marts` at all - the marts are the
+report's runtime source, not a build input.
+
+No `.pbix` binary. No embedded data. No machine-specific path. No cloud dependency, no gateway and
+no workspace. No benchmark value anywhere - see Known limitations.
+
+### Added
+
+**The project** - `powerbi/Helio_Executive_Report.pbip` (629 KB across 31 TMDL files and 45 visual
+definitions)
+- **Five pages**, six analytical visuals each per the PHASE1_SPEC section 12 ceiling, with slicers
+  and text blocks treated as chrome rather than analysis. Every visual title is a conclusion or a
+  question, never a noun.
+- **Executive Q2 Reforecast** - the scorecard band, the Exit ARR bridge ($2.8M below Budget, New
+  Logo ARR most of the gap), Budget versus Base ranked by variance, Bear / Base / Bull ARR to
+  Dec-2027, Board-policy runway against the 24-month floor, and the Phase 7 rules engine's
+  Critical and High commentary items.
+- **ARR, Retention & Renewals** - ARR movement with Ending ARR on a combo axis where the forecast
+  line starts exactly where the actual line stops, the NRR / GRR / logo-retention trend, FY2026
+  movement by segment, TTM retention at 30 June 2026 by segment, acquisition-cohort retention by
+  cohort age, and forward ATR by quarter.
+- **GTM Capacity & Pipeline** - H2 2026 capacity against pipeline-supported bookings against the
+  constrained figure that is the lesser of the two, the same three series monthly, capacity and
+  conversion by segment, FY2025 unit economics, and Net ARR Sales Efficiency and the Magic Number
+  plotted as a labelled pair, never combined into one number.
+- **Financial Performance & Headcount** - the management P&L pivoted on fiscal year, the FY2026
+  Budget-versus-Base scorecard carrying the Phase 7 centralised favourability rather than
+  re-deriving it, the operating-income bridge, revenue with gross margin on a second axis, the
+  deferred-revenue and capitalised-commission panel, and the headcount rollforward.
+- **Plan & Scenarios** - split into two labelled halves because they are two different questions:
+  (A) affordability, policy runway against the 24-month floor and the burn behind each path;
+  (B) attractiveness, what the incremental hiring case buys on the FY2027 horizon.
+
+**The semantic model** - 27 tables, 108 measures, 27 relationships
+- Three dimensions built in Power Query from literal lists: `Date` (daily and contiguous
+  2023-12-01 to 2027-12-31, marked as the model's date table, carrying the `Period Type` column
+  that flips Actual to Forecast at the 2026-06-30 cutover and drives every actual/forecast split
+  in the report), `Segment` and `Scenario`, both with explicit sort columns.
+- 24 fact tables, one per committed mart, each reading its CSV through a single `RepoRoot`
+  parameter. Power Query filters `segment <> 'Total'` and `path = 'Base'` on the way in, so the
+  marts' own pre-aggregated rows cannot double count.
+- Every relationship single-direction and many-to-one onto a dimension. **No bi-directional
+  filter and no many-to-many relationship anywhere in the model.**
+- **Eight tables deliberately left disconnected**, each with its reason recorded in
+  `DISCONNECTED_NOTES` and asserted by a test so a later edit cannot quietly connect one.
+  `Runway Policy` is the clearest: its five paths span three operating scenarios *and* two hiring
+  cases, which a three-member Scenario dimension cannot represent, so a join would strand the
+  hiring rows on a blank member. `Management Variance`, `Commentary`, `Operating Income Bridge`,
+  `Cohort ARR`, `Unit Economics`, `CRM Opportunities` and `New Logo Diagnosis` follow for their
+  own stated grain reasons.
+- 108 measures (104 visible, 4 hidden supporting) across eleven display folders - ten business
+  folders numbered in reading order plus `99 Supporting` - each carrying its number format in the
+  model so a figure reads identically wherever it appears.
+
+**Measure discipline**, enforced by the validator rather than by convention
+- **SQL owns the business logic.** Movement classification, the TTM cohort and its per-customer
+  GRR cap, available-to-renew, ramp and capacity, `LEAST(capacity, pipeline)`, every driver, the
+  bottom-up P&L, the Board-policy runway, the computed hire counts, every bridge, materiality,
+  polarity and the commentary text are produced upstream. A measure either reads a stored value or
+  forms a presentation ratio over stored values.
+- **Every ratio is a ratio of aggregates, never an average of ratios.** `AVERAGE` appears nowhere
+  in the model and the build fails if it ever does. Averaging the three segment NRRs at Jun-2026
+  gives 98.1%; the correct ARR-weighted ratio of aggregates gives 101.8%. One of those would have
+  been wrong on a board page.
+- **A measure with no defined value returns BLANK.** `Magic Number` and `Net ARR Sales Efficiency`
+  across more than one quarter, TTM retention across more than one month, and
+  `Policy Runway Months` across more than one path all return blank rather than a
+  plausible-looking number. `Ending ARR` is semi-additive: a year returns its final month, never a
+  sum of twelve.
+
+**Generated documentation and the SQL-to-DAX pack**
+- `powerbi/measures.md` (2,400 lines) - every measure with its DAX, format, display folder, source
+  mart and fields, the SQL that produces the same number, its filter-context behaviour, and which
+  visuals read it. Generated by `python -m src.powerbi_docs`; the test suite regenerates it on
+  every run and fails if the committed copy has drifted, so **documented DAX and shipped DAX
+  cannot diverge**.
+- `powerbi/validation/dax_validation_queries.dax` - the queries a reviewer runs in Power BI
+  Desktop or DAX Studio, with the run instructions and the tolerances stated in the file.
+- `powerbi/validation/expected_measure_results.csv` - **157 expected values generated from the
+  committed marts by Python** (`python -m src.powerbi_expected`), each with its filter context,
+  unit, source mart and the SQL behind it. Tolerances: ratios to 4 decimal places, dollars to $1,
+  months to 0.01.
+
+**Validation** - `src/validate_powerbi.py`, 409 static checks, plus 37 tests in
+`tests/test_powerbi_report.py`
+- Files and JSON parse (42 + 2); the report references the semantic model beside it by relative
+  path (3).
+- Model (40): every declared table, column, data type and format present in TMDL; the Date table
+  marked as one, contiguous across the calendar, with Period Type flipping at the right cutover.
+- Relationships (35): all 27 present, every one single-direction and many-to-one onto a dimension,
+  and the eight disconnected tables still disconnected.
+- Measures (155): all 108 present with their declared format and home table, plus the
+  ratio-discipline checks on the named measures and model-wide.
+- Sources (9): every mart a Power Query references is committed under `data/marts/`.
+- No machine paths (3): no drive letter, no home directory, no absolute path, nothing reaching the
+  internet, anywhere in the project.
+- Pages and visual fields (78 + 3): exactly the five pages PHASE1_SPEC section 12 names, every
+  measure and column a visual references exists, and no visual uses an implicit measure.
+- Theme (5) and generated artifacts (6): the theme is registered, referenced and packaged with the
+  declared palette; `measures.md` and the expected-results CSV regenerate identically.
+- Project regenerates (27): every committed table TMDL is byte-identical to what the specification
+  emits. Lineage tags are `uuid5` over a fixed namespace rather than random, so a no-op rebuild
+  leaves an empty diff and drift detection means something.
+
+**Build integration** - `src/build.py`
+- The Power BI project, its measure library and its expected-results pack are regenerated after
+  the Excel workbook and put through the 409 static checks in the same run; a failure names what
+  broke and exits non-zero. `--skip-powerbi` leaves the project alone.
+- The build prints `Power BI Desktop acceptance is a separate, manual step` rather than implying
+  the checks are complete.
+
+**Documentation** - `docs/powerbi_executive_report.md`
+- Why a PBIP project rather than a `.pbix`, the five pages, the semantic model and every
+  disconnected table's reason, measure design, opening the project and the `RepoRoot` parameter,
+  the formatting standard, the traceability chain from `visual.json` back to the controls, what
+  the 409 checks prove and what they cannot, the manual Power BI Desktop acceptance route, the
+  deviations from the frozen spec and the known limitations. Includes a **"How to review this
+  project in 5 minutes"** route that needs no Power BI install.
+
+### Known limitations
+
+- **Power BI Desktop acceptance is outstanding.** Python does not open Power BI Desktop. The 409
+  checks prove the static assets are internally consistent and agree with the marts; they cannot
+  prove that Desktop's parser accepts a hand-authored PBIR file, that a visual renders, that DAX
+  executes, that a slicer cross-filters, or that a label is legible at 1280x720. The validator
+  never reports that Power BI passed - it reports
+  `POWER BI STATIC VALIDATION OK - Power BI Desktop acceptance still required`, and DAX execution
+  validation is stated as PENDING in the queries file itself. `docs/powerbi_executive_report.md`
+  section 11 is the acceptance route. **This is the largest open item in the phase.**
+- **No benchmark appears anywhere in the report.** PHASE1_SPEC section 12 lists benchmarks for
+  several metrics; section 9 of the same spec permits one only where the source's own formula has
+  been read and confirmed to match Helio's definition. This repository carries no benchmarks
+  document and no confirmed source formula, and the spec is explicit that an omitted row with a
+  stated reason beats a fabricated comparison.
+- **The Budget-versus-Base scorecards carry no prior-year column.** The spec asks for actual /
+  budget / reforecast / prior year on pages 1 and 4. The page 4 P&L does show prior year, pivoted
+  on fiscal year; the scorecards do not, because `fct_management_variance` carries only the Budget
+  and Base amounts the Phase 7 layer computes and controls. Assembling a prior-year column from a
+  different mart at a different grain would put an uncontrolled number on a board page.
+- **Rep attainment distribution, top churn and expansion accounts, and open reqs / slippage are
+  not shown**, and customer concentration appears as a measure rather than a visual. Six
+  analytical visuals per page is a hard ceiling in the same spec section; these lost to the
+  visuals that answer the eight management questions directly. The underlying marts exist.
+- The report is a read layer: it cannot change a driver and re-forecast. Assumptions live in
+  `config/assumptions.yml` under version control, not in a report.
+- Import mode over local CSVs - no gateway, no workspace, no scheduled refresh. Refresh means
+  re-reading the committed marts on this machine. Publishing to the Power BI Service would need a
+  data source those services can reach, which is out of scope.
+- **The `RepoRoot` parameter is committed empty and must be set after cloning.** A parameter
+  default is stored in the file, and an absolute path from the author's machine has no business in
+  a public repository; the validator fails the build if one appears. The first refresh on a fresh
+  clone fails until it is set, either in Desktop or with
+  `python -m src.build_powerbi --repo-root auto`.
+- Eight tables are disconnected from the calendar by design, so a date filter does not change
+  those visuals. Correct, but surprising until the reason is read.
+- The GTM constraint mart carries forecast months only, so actual months show blank capacity by
+  design rather than a plotted zero. Deferred revenue and billings are actual periods only; no
+  forecast billings series is invented. The commission asset is analytically derived, not
+  GL-reconciled - `fact_gl_actuals` is a P&L extract with no balance sheet, the same limitation
+  Phase 8 records.
+- Segment-level Budget ARR figures are allocations, as in Phase 9 - `fact_budget` carries no
+  segment grain for ARR movements. Base's segment figures are always segment-native.
+- Mart CSV exports are not byte-stable across rebuilds (row order within ties, and floating-point
+  dust from parallel aggregation). This predates Phase 10 and affects the CSVs, not the project:
+  the expected-results pack is regenerated from the marts in the same build, and the stated
+  tolerances are far wider than that dust.
+- No mobile layout. The pages are authored at 1280x720 for a board screen.
+
 ## [v0.8] - Excel FP&A operating model
 
 Phase 9a of the build described in `docs/PHASE1_SPEC.md`. Adds

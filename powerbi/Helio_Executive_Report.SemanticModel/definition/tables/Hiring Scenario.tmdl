@@ -1,0 +1,189 @@
+/// The economic-attractiveness half of page 5: incremental hires, ARR, operating income and
+/// cash for each hiring case, on the FY2027 decision horizon.
+table 'Hiring Scenario'
+	lineageTag: 75c4f9ac-5395-5978-938c-898ffc9a2294
+
+	/// Incremental GTM hires under the case, computed upstream from the H2 2026 New Logo capacity
+	/// gap by segment, never picked by hand.
+	measure 'Incremental Hires' =
+			CALCULATE(
+			    SUM('Hiring Scenario'[Cumulative Hires]),
+			    REMOVEFILTERS('Date'),
+			    'Date'[Date] = DATE(2027, 12, 31)
+			)
+		formatString: #,##0.0
+		displayFolder: 07 Hiring
+		lineageTag: 3d04fe95-9a73-516b-b049-793b885e08b2
+
+	/// Incremental Ending ARR at Dec-2027 versus the No Incremental (Base) case. This is the
+	/// decision-relevant horizon: hires start Oct-2026, so a Dec-2026 read is only weeks into ramp.
+	measure 'Incremental ARR (Dec-2027)' =
+			CALCULATE(
+			    SUM('Hiring Scenario'[Incremental Ending ARR]),
+			    REMOVEFILTERS('Date'),
+			    'Date'[Date] = DATE(2027, 12, 31)
+			)
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 07 Hiring
+		lineageTag: 8ae00082-7572-5186-90b0-3c11dc8b5ecb
+
+	/// Incremental operating income in Dec-2027 versus the No Incremental case.
+	measure 'Incremental Operating Income (Dec-2027)' =
+			CALCULATE(
+			    SUM('Hiring Scenario'[Incremental Operating Income]),
+			    REMOVEFILTERS('Date'),
+			    'Date'[Date] = DATE(2027, 12, 31)
+			)
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 07 Hiring
+		lineageTag: 2c879472-ccd1-5e1e-8806-04da767460af
+
+	/// Cumulative incremental cash consumed by Dec-2027 versus the No Incremental case.
+	measure 'Incremental Cash Impact (Dec-2027)' =
+			CALCULATE(
+			    SUM('Hiring Scenario'[Incremental Cash Impact]),
+			    REMOVEFILTERS('Date'),
+			    'Date'[Date] = DATE(2027, 12, 31)
+			)
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 07 Hiring
+		lineageTag: 7b0e6033-3b2e-59c0-9e01-82de218b0981
+
+	/// Near-term ramp-period snapshot only. Deliberately never headlined as the economic result.
+	measure 'Incremental ARR (Dec-2026, ramp period)' =
+			CALCULATE(
+			    SUM('Hiring Scenario'[Incremental Ending ARR]),
+			    REMOVEFILTERS('Date'),
+			    'Date'[Date] = DATE(2026, 12, 31)
+			)
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 07 Hiring
+		lineageTag: f6d83c95-2615-5550-8f44-7f0957559e09
+
+	/// Cumulative incremental cash consumed by Dec-2026. Shown beside the tiny ramp-period ARR so
+	/// the mismatch is visible.
+	measure 'Incremental Cash Impact (Dec-2026, ramp period)' =
+			CALCULATE(
+			    SUM('Hiring Scenario'[Incremental Cash Impact]),
+			    REMOVEFILTERS('Date'),
+			    'Date'[Date] = DATE(2026, 12, 31)
+			)
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 07 Hiring
+		lineageTag: 784567af-e3a5-5b8d-973e-4172623a5c7d
+
+	column 'Hiring Case'
+		dataType: string
+		lineageTag: bdc33959-1190-5ac5-980b-d8b6684c234b
+		summarizeBy: none
+		sourceColumn: Hiring Case
+		sortByColumn: 'Case Sort'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Case Sort'
+		dataType: int64
+		isHidden
+		formatString: #,##0
+		lineageTag: 10c6b6c5-eff2-5c16-ab86-2830d36520ae
+		summarizeBy: none
+		sourceColumn: Case Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month End Date'
+		dataType: dateTime
+		isHidden
+		formatString: yyyy-mm-dd
+		lineageTag: ec012736-39c2-52da-a1ff-ab5bdc8cf162
+		summarizeBy: none
+		sourceColumn: Month End Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cumulative Hires'
+		dataType: double
+		isHidden
+		formatString: #,##0.0
+		lineageTag: ac0d5e5c-8c66-5923-ac81-36e05480223c
+		summarizeBy: none
+		sourceColumn: Cumulative Hires
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Incremental Ending ARR'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: a8c3b029-4940-5ebc-9671-139df98895aa
+		summarizeBy: none
+		sourceColumn: Incremental Ending ARR
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Incremental Revenue'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: c5a78c3f-3836-56da-9edd-90deec4a847c
+		summarizeBy: none
+		sourceColumn: Incremental Revenue
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Incremental Operating Income'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: f85cf635-d6ff-5e82-8c30-8109e7f3b486
+		summarizeBy: none
+		sourceColumn: Incremental Operating Income
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Incremental Cash Impact'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: c430e997-71ed-59fd-a272-3833ff29748c
+		summarizeBy: none
+		sourceColumn: Incremental Cash Impact
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Hiring Scenario' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(RepoRoot & "/data/marts/fct_hiring_scenario.csv"),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Kept = Table.SelectColumns(Headers, {"case_label", "month_end_date", "cumulative_hires",
+				        "incremental_ending_arr", "incremental_revenue", "incremental_operating_income",
+				        "incremental_cash_impact"}),
+				    Typed = Table.TransformColumnTypes(Kept, {
+				        {"month_end_date", type date}, {"cumulative_hires", type number},
+				        {"incremental_ending_arr", type number}, {"incremental_revenue", type number},
+				        {"incremental_operating_income", type number},
+				        {"incremental_cash_impact", type number}}),
+				    // Reading order for the three cases. No value is changed.
+				    CaseLookup = #table(
+				        type table [case_label = text, #"Case Sort" = Int64.Type],
+				        {
+				            {"No Incremental GTM Hiring", 1},
+				            {"Targeted / Runway-Constrained Hiring", 2},
+				            {"Full Capacity-Close Hiring", 3}
+				        }),
+				    Joined = Table.NestedJoin(Typed, {"case_label"}, CaseLookup, {"case_label"}, "C", JoinKind.Inner),
+				    Expanded = Table.ExpandTableColumn(Joined, "C", {"Case Sort"}),
+				    Renamed = Table.RenameColumns(Expanded, {
+				        {"case_label", "Hiring Case"}, {"month_end_date", "Month End Date"},
+				        {"cumulative_hires", "Cumulative Hires"},
+				        {"incremental_ending_arr", "Incremental Ending ARR"},
+				        {"incremental_revenue", "Incremental Revenue"},
+				        {"incremental_operating_income", "Incremental Operating Income"},
+				        {"incremental_cash_impact", "Incremental Cash Impact"}})
+				in
+				    Renamed
+
+	annotation PBI_ResultType = Table

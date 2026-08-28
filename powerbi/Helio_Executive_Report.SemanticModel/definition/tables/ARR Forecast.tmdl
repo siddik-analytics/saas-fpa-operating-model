@@ -1,0 +1,234 @@
+/// Monthly ARR movement and Ending ARR by segment, actual and Base reforecast. Pages 1, 2 and
+/// 4.
+table 'ARR Forecast'
+	lineageTag: a72b087b-a8ee-55ba-8ff1-3eb36b617deb
+
+	/// Ending ARR at the last month in filter context.
+	measure 'Ending ARR' =
+			-- ARR is a balance, not a flow: report the last month in filter context,
+			-- never a sum across months.
+			CALCULATE(
+			    SUM('ARR Forecast'[Ending ARR Source]),
+			    LASTNONBLANK('Date'[Date], CALCULATE(COUNTROWS('ARR Forecast')))
+			)
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 01 ARR
+		lineageTag: 2d70f3ad-709a-5664-89c2-e44e5937781e
+
+	/// Ending ARR restricted to actual months, so the actual series plots as a visually distinct
+	/// line from the forecast series.
+	measure 'Ending ARR (Actual)' =
+			CALCULATE([Ending ARR], 'Date'[Period Type] = "Actual")
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 01 ARR
+		lineageTag: 1e8a5030-b0ff-555e-8d77-b34826a4f341
+
+	/// Ending ARR restricted to forecast months.
+	measure 'Ending ARR (Forecast)' =
+			CALCULATE([Ending ARR], 'Date'[Period Type] = "Forecast")
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 01 ARR
+		lineageTag: f88c24ee-13f4-54ac-a3c2-01fe71dbc128
+
+	/// Opening ARR of the first month in filter context.
+	measure 'Beginning ARR' =
+			CALCULATE(
+			    SUM('ARR Forecast'[Beginning ARR Source]),
+			    FIRSTNONBLANK('Date'[Date], CALCULATE(COUNTROWS('ARR Forecast')))
+			)
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 01 ARR
+		lineageTag: 497f9708-2058-52c0-960e-f65e223898bc
+
+	/// New Logo ARR landed in the period.
+	measure 'New Logo ARR' =
+			SUM('ARR Forecast'[New Logo ARR Source])
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 01 ARR
+		lineageTag: 86f02c84-ae8f-57f5-8520-436c170578cb
+
+	/// Expansion ARR in the period.
+	measure 'Expansion ARR' =
+			SUM('ARR Forecast'[Expansion ARR Source])
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 01 ARR
+		lineageTag: 632ca6b4-a0e0-5036-8d3c-b7bb2e3a522b
+
+	/// Reactivation ARR in the period.
+	measure 'Reactivation ARR' =
+			SUM('ARR Forecast'[Reactivation ARR Source])
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 01 ARR
+		lineageTag: 0f21834c-6e4c-59bc-8b4d-15975a24a570
+
+	/// Contraction ARR, carried negative by the mart.
+	measure 'Contraction ARR' =
+			SUM('ARR Forecast'[Contraction ARR Source])
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 01 ARR
+		lineageTag: 663f9109-1c1f-5401-9d8a-c9678586e1ee
+
+	/// Churn ARR, carried negative by the mart.
+	measure 'Churn ARR' =
+			SUM('ARR Forecast'[Churn ARR Source])
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 01 ARR
+		lineageTag: ecbe268d-d5cd-5842-98bf-e68ddb61055e
+
+	/// The five movement components summed. Contraction and churn are already signed negative
+	/// upstream, so this is a plain sum, not a subtraction.
+	measure 'Net New ARR' =
+			[New Logo ARR] + [Expansion ARR] + [Reactivation ARR]
+			    + [Contraction ARR] + [Churn ARR]
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 01 ARR
+		lineageTag: 7eca3a0e-7ba3-5c0c-b0c1-376d5e93634e
+
+	/// Actual ARR at the 30 June 2026 reporting date.
+	measure 'Jun-26 ARR (Actual)' =
+			CALCULATE(
+			    SUM('ARR Forecast'[Ending ARR Source]),
+			    REMOVEFILTERS('Date'),
+			    'Date'[Date] = DATE(2026, 6, 30)
+			)
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 01 ARR
+		lineageTag: b79ba0de-c606-599f-babd-bfbd6373a228
+
+	/// FY2026 exit ARR on the independent Base reforecast.
+	measure 'Dec-26 Exit ARR (Base)' =
+			CALCULATE(
+			    SUM('ARR Forecast'[Ending ARR Source]),
+			    REMOVEFILTERS('Date'),
+			    'Date'[Date] = DATE(2026, 12, 31)
+			)
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 01 ARR
+		lineageTag: 5d6da894-52d9-5296-9eee-1aac4b5de6ba
+
+	/// New Logo ARR already realised in Jan-Jun 2026. Feeds the remaining FY2026 New Logo target
+	/// behind pipeline coverage.
+	measure 'H1 2026 New Logo ARR (Actual)' =
+			CALCULATE(
+			    [New Logo ARR],
+			    REMOVEFILTERS('Date'),
+			    'Date'[Year] = 2026,
+			    'Date'[Period Type] = "Actual"
+			)
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 01 ARR
+		lineageTag: 8a27b93e-84ae-5fe9-9e67-d117c86594b6
+
+	column 'Month End Date'
+		dataType: dateTime
+		isHidden
+		formatString: yyyy-mm-dd
+		lineageTag: a585ce8a-f105-58fa-901f-f631f7fb19e6
+		summarizeBy: none
+		sourceColumn: Month End Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Segment
+		dataType: string
+		isHidden
+		lineageTag: dc6855d9-edc6-5a8f-a05b-110490bff01d
+		summarizeBy: none
+		sourceColumn: Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Beginning ARR Source'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: 26ad8d00-c2ef-54f4-9382-ac9961e76d1e
+		summarizeBy: none
+		sourceColumn: Beginning ARR
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'New Logo ARR Source'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: d72a437d-5c99-555b-a3b5-2613ac96a942
+		summarizeBy: none
+		sourceColumn: New Logo ARR
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Expansion ARR Source'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: 597f9abd-47e9-5b08-a8a8-d3669d2619ce
+		summarizeBy: none
+		sourceColumn: Expansion ARR
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Reactivation ARR Source'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: 79d032f1-0c78-5964-bc36-4bde4188e4c5
+		summarizeBy: none
+		sourceColumn: Reactivation ARR
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Contraction ARR Source'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: 47ccca0c-728f-5d74-ba16-40f8a7c7465f
+		summarizeBy: none
+		sourceColumn: Contraction ARR
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Churn ARR Source'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: 559beb71-0b81-58eb-8517-e249692f45dd
+		summarizeBy: none
+		sourceColumn: Churn ARR
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ending ARR Source'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: d79b09c0-b1c4-5845-925f-e21b2eeb1b53
+		summarizeBy: none
+		sourceColumn: Ending ARR
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Actual, FY2026 Reforecast or Forward Runway Projection.
+	column 'Period Label'
+		dataType: string
+		lineageTag: 927a7234-51bf-5a52-b5c8-ab74df3d88ba
+		summarizeBy: none
+		sourceColumn: Period Label
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'ARR Forecast' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(RepoRoot & "/data/marts/fct_arr_forecast.csv"),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Filtered = Table.SelectRows(Headers, each [path] = "Base" and [segment] <> "Total"),
+				    Kept = Table.SelectColumns(Filtered, {"month_end_date", "segment", "beginning_arr", "new_logo_arr", "expansion_arr", "reactivation_arr", "contraction_arr", "churn_arr", "ending_arr", "period_label"}),
+				    Typed = Table.TransformColumnTypes(Kept, {{"month_end_date", type date}, {"segment", type text}, {"beginning_arr", type number}, {"new_logo_arr", type number}, {"expansion_arr", type number}, {"reactivation_arr", type number}, {"contraction_arr", type number}, {"churn_arr", type number}, {"ending_arr", type number}, {"period_label", type text}}),
+				    Renamed = Table.RenameColumns(Typed, {{"month_end_date", "Month End Date"}, {"segment", "Segment"}, {"beginning_arr", "Beginning ARR"}, {"new_logo_arr", "New Logo ARR"}, {"expansion_arr", "Expansion ARR"}, {"reactivation_arr", "Reactivation ARR"}, {"contraction_arr", "Contraction ARR"}, {"churn_arr", "Churn ARR"}, {"ending_arr", "Ending ARR"}, {"period_label", "Period Label"}})
+				in
+				    Renamed
+
+	annotation PBI_ResultType = Table

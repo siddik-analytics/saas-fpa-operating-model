@@ -1,0 +1,51 @@
+/// The ASC 340-40 capitalised commission balance and its GAAP-versus-cash pair. The other half
+/// of the page 4 accounting panel.
+table 'Commission Asset'
+	lineageTag: da0a1b5f-696b-5c21-b0d2-2d4908de2186
+
+	/// Unamortised capitalised commission under ASC 340-40, amortised straight line over 36 months.
+	/// Analytically derived: the source ledger carries no balance sheet.
+	measure 'Capitalised Commission Asset' =
+			CALCULATE(
+			    SUM('Commission Asset'[Ending Commission Asset]),
+			    LASTNONBLANK('Date'[Date], CALCULATE(COUNTROWS('Commission Asset')))
+			)
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 10 Accounting
+		lineageTag: bdf0707b-0f95-590e-bccf-27081d4df248
+
+	column 'Month End Date'
+		dataType: dateTime
+		isHidden
+		formatString: yyyy-mm-dd
+		lineageTag: 368c767e-db3c-5308-9f41-06541f2bd331
+		summarizeBy: none
+		sourceColumn: Month End Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ending Commission Asset'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: 82b9f75b-9408-56b0-8d13-ab2e12109eda
+		summarizeBy: none
+		sourceColumn: Ending Commission Asset
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Commission Asset' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(RepoRoot & "/data/marts/fct_commission_asset.csv"),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Filtered = Table.SelectRows(Headers, each [path] = "Base"),
+				    Kept = Table.SelectColumns(Filtered, {"month_end_date", "ending_commission_asset"}),
+				    Typed = Table.TransformColumnTypes(Kept, {{"month_end_date", type date}, {"ending_commission_asset", type number}}),
+				    Renamed = Table.RenameColumns(Typed, {{"month_end_date", "Month End Date"}, {"ending_commission_asset", "Ending Commission Asset"}})
+				in
+				    Renamed
+
+	annotation PBI_ResultType = Table

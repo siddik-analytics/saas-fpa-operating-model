@@ -1,0 +1,113 @@
+/// Win rate and sales cycle. Imported at opportunity grain because a win rate needs the
+/// closed-lost population, which no aggregated mart carries; only five columns are loaded and
+/// no identifier is imported.
+table 'CRM Opportunities'
+	lineageTag: 70d83bc8-b684-591e-a24f-18d99d87d0b9
+
+	/// Closed-won New Logo opportunities.
+	measure 'New Logo Wins' =
+			CALCULATE(
+			    COUNTROWS('CRM Opportunities'),
+			    'CRM Opportunities'[Deal Type] = "New Logo",
+			    'CRM Opportunities'[Is Won] = TRUE()
+			)
+		formatString: #,##0
+		isHidden
+		displayFolder: 99 Supporting
+		lineageTag: ef7a40a3-b8e6-527e-80ae-ffdf831e13e4
+
+	/// Closed-lost New Logo opportunities.
+	measure 'New Logo Losses' =
+			CALCULATE(
+			    COUNTROWS('CRM Opportunities'),
+			    'CRM Opportunities'[Deal Type] = "New Logo",
+			    'CRM Opportunities'[Is Lost] = TRUE()
+			)
+		formatString: #,##0
+		isHidden
+		displayFolder: 99 Supporting
+		lineageTag: a3de2e48-b15f-50c4-8b4e-8596488e0ccf
+
+	/// Historical New Logo win rate: closed won over closed won plus closed lost.
+	measure 'Win Rate' =
+			-- New Logo only. Open pipeline is excluded from the denominator (PHASE1_SPEC 9);
+			-- expansion and renewal uplift close at very different rates and are not blended in.
+			DIVIDE(
+			    [New Logo Wins],
+			    [New Logo Wins] + [New Logo Losses]
+			)
+		formatString: 0.0%
+		displayFolder: 03 GTM
+		lineageTag: 3f1c4af1-2212-5efb-9190-1a44f87ac332
+
+	/// Median days from opportunity creation to close, closed-won New Logo only. Median because the
+	/// distribution is right-skewed.
+	measure 'Median Sales Cycle (Days)' =
+			CALCULATE(
+			    MEDIAN('CRM Opportunities'[Sales Cycle Days]),
+			    'CRM Opportunities'[Deal Type] = "New Logo",
+			    'CRM Opportunities'[Is Won] = TRUE()
+			)
+		formatString: #,##0
+		displayFolder: 03 GTM
+		lineageTag: d7828cbe-975d-575d-b5f1-28647c2f1feb
+
+	column Segment
+		dataType: string
+		isHidden
+		lineageTag: 35c3b4a8-ce80-5ff1-9cd1-2ee108532258
+		summarizeBy: none
+		sourceColumn: Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Deal Type'
+		dataType: string
+		lineageTag: b546a241-b092-5644-8821-cd6a03b4f996
+		summarizeBy: none
+		sourceColumn: Deal Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Won'
+		dataType: boolean
+		isHidden
+		lineageTag: b2025068-1cab-5708-a896-41470e9600e4
+		summarizeBy: none
+		sourceColumn: Is Won
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Lost'
+		dataType: boolean
+		isHidden
+		lineageTag: 0a83e3ff-218d-567a-8239-14f205ded075
+		summarizeBy: none
+		sourceColumn: Is Lost
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Cycle Days'
+		dataType: double
+		isHidden
+		formatString: #,##0
+		lineageTag: bcb122a8-a0c4-56a2-b654-1a406f1c5847
+		summarizeBy: none
+		sourceColumn: Sales Cycle Days
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'CRM Opportunities' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(RepoRoot & "/data/marts/int_crm_opportunity_normalized.csv"),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Kept = Table.SelectColumns(Headers, {"segment", "deal_type", "is_won", "is_lost", "sales_cycle_days"}),
+				    Typed = Table.TransformColumnTypes(Kept, {{"segment", type text}, {"deal_type", type text}, {"is_won", type logical}, {"is_lost", type logical}, {"sales_cycle_days", type number}}),
+				    Renamed = Table.RenameColumns(Typed, {{"segment", "Segment"}, {"deal_type", "Deal Type"}, {"is_won", "Is Won"}, {"is_lost", "Is Lost"}, {"sales_cycle_days", "Sales Cycle Days"}})
+				in
+				    Renamed
+
+	annotation PBI_ResultType = Table

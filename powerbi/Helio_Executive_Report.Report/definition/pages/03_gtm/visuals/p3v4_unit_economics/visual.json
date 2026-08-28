@@ -1,0 +1,225 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "p3v4_unit_economics",
+  "position": {
+    "x": 656,
+    "y": 384,
+    "z": 7,
+    "width": 600,
+    "height": 152,
+    "tabOrder": 7000
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Segment"
+                    }
+                  },
+                  "Property": "Segment"
+                }
+              },
+              "queryRef": "Segment.Segment",
+              "nativeQueryRef": "Segment"
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Unit Economics"
+                    }
+                  },
+                  "Property": "New Logos Acquired"
+                }
+              },
+              "queryRef": "Unit Economics.New Logos Acquired",
+              "nativeQueryRef": "New Logos Acquired"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Unit Economics"
+                    }
+                  },
+                  "Property": "New Logo ARPA"
+                }
+              },
+              "queryRef": "Unit Economics.New Logo ARPA",
+              "nativeQueryRef": "New Logo ARPA"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Unit Economics"
+                    }
+                  },
+                  "Property": "CAC (FY2025)"
+                }
+              },
+              "queryRef": "Unit Economics.CAC (FY2025)",
+              "nativeQueryRef": "CAC (FY2025)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Unit Economics"
+                    }
+                  },
+                  "Property": "CAC per $1 New Logo ARR"
+                }
+              },
+              "queryRef": "Unit Economics.CAC per $1 New Logo ARR",
+              "nativeQueryRef": "CAC per $1 New Logo ARR"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Unit Economics"
+                    }
+                  },
+                  "Property": "CAC Payback Months (FY2025)"
+                }
+              },
+              "queryRef": "Unit Economics.CAC Payback Months (FY2025)",
+              "nativeQueryRef": "CAC Payback Months (FY2025)"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'FY2025 unit economics - payback is past 21 months in every segment'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#1F3864'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11.0D"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'left'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "p3v4_unit_economics_ue2025",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Unit Economics"
+              }
+            },
+            "Property": "Fiscal Year Number"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "f",
+              "Entity": "Unit Economics",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "f"
+                          }
+                        },
+                        "Property": "Fiscal Year Number"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "2025L"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "Auto",
+        "displayName": "Fiscal Year Number"
+      }
+    ]
+  }
+}

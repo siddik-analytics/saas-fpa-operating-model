@@ -1,0 +1,135 @@
+/// The non-additive capacity-versus-pipeline diagnostic behind the New Logo ARR variance. Pages
+/// 1 and 3. Not related to Date; it is an H2 2026 summary.
+table 'New Logo Diagnosis'
+	lineageTag: 927c106e-f2ce-5ade-b113-7b727b79f787
+
+	/// FY2026 Board-Approved New Logo ARR. Segment figures are an allocation of a company-level
+	/// Budget row.
+	measure 'Budget New Logo ARR' =
+			SUM('New Logo Diagnosis'[Budget New Logo ARR Source])
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 03 GTM
+		lineageTag: 40799f99-c849-5fce-b1b1-cca2739db599
+
+	/// FY2026 New Logo ARR variance to Budget.
+	measure 'New Logo ARR vs Budget' =
+			SUM('New Logo Diagnosis'[New Logo ARR Variance])
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 03 GTM
+		lineageTag: 54c058af-2279-5408-a74b-1142dd249c76
+
+	/// Segment-months in the H2 2026 diagnostic window.
+	measure 'H2 Segment-Months' =
+			SUM('New Logo Diagnosis'[H2 Segment Months])
+		formatString: #,##0
+		displayFolder: 03 GTM
+		lineageTag: 8ca74e35-85e2-5d87-ae1c-703e950a9622
+
+	/// Of those, the ones where pipeline bound New Logo ARR.
+	measure 'H2 Pipeline-Bound Segment-Months' =
+			SUM('New Logo Diagnosis'[H2 Pipeline Bound Months])
+		formatString: #,##0
+		displayFolder: 03 GTM
+		lineageTag: 79921c8b-1449-51b4-9fd7-74340d0025a6
+
+	/// The New Logo ARR still to be won in FY2026 at the reporting date. Denominator of Pipeline
+	/// Coverage.
+	measure 'Remaining FY2026 New Logo Target' =
+			-- Budget New Logo ARR for the year less what Jan-Jun 2026 already landed. Both
+			-- sides come from committed marts; nothing is apportioned or assumed.
+			[Budget New Logo ARR] - [H1 2026 New Logo ARR (Actual)]
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 03 GTM
+		lineageTag: e8a1ab27-66b7-5e07-9437-2d90283806ca
+
+	/// Open unweighted New Logo pipeline at 30 June 2026 against the New Logo ARR still required to
+	/// reach the FY2026 Budget. Both sides cover the same remainder of FY2026.
+	measure 'Pipeline Coverage' =
+			DIVIDE(
+			    [Open New Logo Pipeline ACV],
+			    [Remaining FY2026 New Logo Target]
+			)
+		formatString: 0.00"x"
+		displayFolder: 03 GTM
+		lineageTag: 0a11536d-4091-5215-95fb-e46ac0a6ec5d
+
+	/// Pipeline dollars needed per dollar of New Logo target at the historical segment win rate.
+	/// Independent of any target allocation.
+	measure 'Required Pipeline per $1 of Target' =
+			DIVIDE(1, [Win Rate])
+		formatString: 0.00"x"
+		displayFolder: 03 GTM
+		lineageTag: 5f594c6e-1a2f-52fe-8698-b9c55b046393
+
+	column Segment
+		dataType: string
+		isHidden
+		lineageTag: 69f71831-6d2a-5f76-a2e8-92a66a7ddc32
+		summarizeBy: none
+		sourceColumn: Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Budget New Logo ARR Source'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: 057fea34-e82f-5ed9-9ed2-2939080c6bfa
+		summarizeBy: none
+		sourceColumn: Budget New Logo ARR
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'New Logo ARR Variance'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: 597dc69f-14bc-5afd-9520-295c44afd3f3
+		summarizeBy: none
+		sourceColumn: New Logo ARR Variance
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'H2 Segment Months'
+		dataType: int64
+		isHidden
+		formatString: #,##0
+		lineageTag: 7435c4a5-71db-5cc1-9b66-7e03089fdc97
+		summarizeBy: none
+		sourceColumn: H2 Segment Months
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'H2 Pipeline Bound Months'
+		dataType: int64
+		isHidden
+		formatString: #,##0
+		lineageTag: e0d97db7-787d-5105-a4e5-27ed358ca546
+		summarizeBy: none
+		sourceColumn: H2 Pipeline Bound Months
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Primary Binding Constraint'
+		dataType: string
+		lineageTag: 44e6494e-9ed1-5276-9369-7511cd4321d8
+		summarizeBy: none
+		sourceColumn: Primary Binding Constraint
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'New Logo Diagnosis' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(RepoRoot & "/data/marts/fct_new_logo_diagnosis.csv"),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Filtered = Table.SelectRows(Headers, each [segment] <> "Total"),
+				    Kept = Table.SelectColumns(Filtered, {"segment", "budget_new_logo_arr", "new_logo_arr_variance", "h2_segment_months", "h2_pipeline_bound_months", "primary_binding_constraint"}),
+				    Typed = Table.TransformColumnTypes(Kept, {{"segment", type text}, {"budget_new_logo_arr", type number}, {"new_logo_arr_variance", type number}, {"h2_segment_months", Int64.Type}, {"h2_pipeline_bound_months", Int64.Type}, {"primary_binding_constraint", type text}}),
+				    Renamed = Table.RenameColumns(Typed, {{"segment", "Segment"}, {"budget_new_logo_arr", "Budget New Logo ARR"}, {"new_logo_arr_variance", "New Logo ARR Variance"}, {"h2_segment_months", "H2 Segment Months"}, {"h2_pipeline_bound_months", "H2 Pipeline Bound Months"}, {"primary_binding_constraint", "Primary Binding Constraint"}})
+				in
+				    Renamed
+
+	annotation PBI_ResultType = Table

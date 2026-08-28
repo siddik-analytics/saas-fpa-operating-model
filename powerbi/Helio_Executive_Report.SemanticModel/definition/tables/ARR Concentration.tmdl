@@ -1,0 +1,73 @@
+/// Top-10 and largest-customer share of ARR. One headline figure on page 1 (PHASE1_SPEC 12
+/// lists customer concentration on the executive page).
+table 'ARR Concentration'
+	lineageTag: 619b1ed7-f5a0-5fdc-b51b-d652c998c1a1
+
+	/// Share of company ARR held by the ten largest customers at the reporting date.
+	measure 'Top 10 ARR Concentration (Jun-26)' =
+			CALCULATE(
+			    DIVIDE(
+			        SUM('ARR Concentration'[Top 10 ARR]),
+			        SUM('ARR Concentration'[Total ARR])
+			    ),
+			    REMOVEFILTERS('Date'),
+			    'Date'[Date] = DATE(2026, 6, 30)
+			)
+		formatString: 0.0%
+		displayFolder: 01 ARR
+		lineageTag: 05b583f1-624d-5185-8b66-737a233bf13b
+
+	column 'Month End Date'
+		dataType: dateTime
+		isHidden
+		formatString: yyyy-mm-dd
+		lineageTag: 561dd87d-33eb-59b1-a39d-ae92476c13f8
+		summarizeBy: none
+		sourceColumn: Month End Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total ARR'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: 9bd2c0d3-ba3d-5282-be6b-72e7a12254c2
+		summarizeBy: none
+		sourceColumn: Total ARR
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Top 10 ARR'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: fbef44b9-8b34-5813-850d-ebdb5b7883b6
+		summarizeBy: none
+		sourceColumn: Top 10 ARR
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Largest Customer ARR'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: b4288c60-df05-5471-8526-e2ae70568536
+		summarizeBy: none
+		sourceColumn: Largest Customer ARR
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'ARR Concentration' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(RepoRoot & "/data/marts/fct_arr_concentration.csv"),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Kept = Table.SelectColumns(Headers, {"month_end_date", "total_arr", "top10_arr", "largest_customer_arr"}),
+				    Typed = Table.TransformColumnTypes(Kept, {{"month_end_date", type date}, {"total_arr", type number}, {"top10_arr", type number}, {"largest_customer_arr", type number}}),
+				    Renamed = Table.RenameColumns(Typed, {{"month_end_date", "Month End Date"}, {"total_arr", "Total ARR"}, {"top10_arr", "Top 10 ARR"}, {"largest_customer_arr", "Largest Customer ARR"}})
+				in
+				    Renamed
+
+	annotation PBI_ResultType = Table

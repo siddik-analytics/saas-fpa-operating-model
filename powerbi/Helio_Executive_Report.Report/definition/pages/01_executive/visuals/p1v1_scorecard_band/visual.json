@@ -1,0 +1,205 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "p1v1_scorecard_band",
+  "position": {
+    "x": 24,
+    "y": 76,
+    "z": 3,
+    "width": 1232,
+    "height": 128,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ARR Forecast"
+                    }
+                  },
+                  "Property": "Jun-26 ARR (Actual)"
+                }
+              },
+              "queryRef": "ARR Forecast.Jun-26 ARR (Actual)",
+              "nativeQueryRef": "Jun-26 ARR"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ARR Forecast"
+                    }
+                  },
+                  "Property": "Dec-26 Exit ARR (Base)"
+                }
+              },
+              "queryRef": "ARR Forecast.Dec-26 Exit ARR (Base)",
+              "nativeQueryRef": "Dec-26 Exit ARR"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Management Variance"
+                    }
+                  },
+                  "Property": "Exit ARR vs Budget"
+                }
+              },
+              "queryRef": "Management Variance.Exit ARR vs Budget",
+              "nativeQueryRef": "Exit ARR vs Budget"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "P&L"
+                    }
+                  },
+                  "Property": "FY2026 Revenue"
+                }
+              },
+              "queryRef": "P&L.FY2026 Revenue",
+              "nativeQueryRef": "FY2026 Revenue"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "P&L"
+                    }
+                  },
+                  "Property": "FY2026 Gross Margin %"
+                }
+              },
+              "queryRef": "P&L.FY2026 Gross Margin %",
+              "nativeQueryRef": "Gross Margin"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "P&L"
+                    }
+                  },
+                  "Property": "FY2026 Operating Income"
+                }
+              },
+              "queryRef": "P&L.FY2026 Operating Income",
+              "nativeQueryRef": "FY2026 Op Income"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Runway Policy"
+                    }
+                  },
+                  "Property": "Base Policy Runway Months"
+                }
+              },
+              "queryRef": "Runway Policy.Base Policy Runway Months",
+              "nativeQueryRef": "Base policy runway"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Runway Policy"
+                    }
+                  },
+                  "Property": "Base Runway Headroom"
+                }
+              },
+              "queryRef": "Runway Policy.Base Runway Headroom",
+              "nativeQueryRef": "Headroom vs 24-mo floor"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Where FY2026 lands, and whether the Board floor holds'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#1F3864'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11.0D"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'left'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "p5v3_attractiveness",
+  "position": {
+    "x": 648,
+    "y": 350,
+    "z": 8,
+    "width": 608,
+    "height": 146,
+    "tabOrder": 8000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Hiring Scenario"
+                    }
+                  },
+                  "Property": "Hiring Case"
+                }
+              },
+              "queryRef": "Hiring Scenario.Hiring Case",
+              "nativeQueryRef": "Hiring case"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Hiring Scenario"
+                    }
+                  },
+                  "Property": "Incremental Hires"
+                }
+              },
+              "queryRef": "Hiring Scenario.Incremental Hires",
+              "nativeQueryRef": "Hires"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Hiring Scenario"
+                    }
+                  },
+                  "Property": "Incremental ARR (Dec-2027)"
+                }
+              },
+              "queryRef": "Hiring Scenario.Incremental ARR (Dec-2027)",
+              "nativeQueryRef": "Incr. ARR Dec-27"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Hiring Scenario"
+                    }
+                  },
+                  "Property": "Incremental Operating Income (Dec-2027)"
+                }
+              },
+              "queryRef": "Hiring Scenario.Incremental Operating Income (Dec-2027)",
+              "nativeQueryRef": "Incr. Op Income Dec-27"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Hiring Scenario"
+                    }
+                  },
+                  "Property": "Incremental Cash Impact (Dec-2027)"
+                }
+              },
+              "queryRef": "Hiring Scenario.Incremental Cash Impact (Dec-2027)",
+              "nativeQueryRef": "Incr. cash Dec-27"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Hiring Scenario"
+                  }
+                },
+                "Property": "Hiring Case"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Full Capacity-Close buys $147k of Dec-2027 ARR for $637k of cash'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#1F3864'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11.0D"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'left'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

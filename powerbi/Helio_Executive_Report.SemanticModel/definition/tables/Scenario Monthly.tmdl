@@ -1,0 +1,161 @@
+/// Consolidated Bear / Base / Bull monthly output at company grain. Pages 1 and 5.
+table 'Scenario Monthly'
+	lineageTag: 6733e7c4-1e3f-5838-b78d-9f1b58f7b674
+
+	/// Ending ARR under the scenario in context. Actual months are identical across Bear, Base and
+	/// Bull, so a scenario selection can never change history.
+	measure 'Scenario ARR' =
+			CALCULATE(
+			    SUM('Scenario Monthly'[Scenario Ending ARR]),
+			    LASTNONBLANK('Date'[Date], CALCULATE(COUNTROWS('Scenario Monthly')))
+			)
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 09 Scenarios
+		lineageTag: 4a321506-ce50-5d37-9d3a-2ba12bd03e47
+
+	/// Total revenue under the scenario in context.
+	measure 'Scenario Revenue' =
+			SUM('Scenario Monthly'[Scenario Total Revenue])
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 09 Scenarios
+		lineageTag: 47a60d4f-2603-5c6a-ab12-4cbc0512bb6c
+
+	/// Operating income under the scenario in context.
+	measure 'Scenario Operating Income' =
+			SUM('Scenario Monthly'[Scenario Operating Income Source])
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 09 Scenarios
+		lineageTag: cf15321a-a9be-5749-ae18-60433b0ff6ad
+
+	/// Modelled ending cash under the scenario in context. This is the operating cash proxy and is
+	/// used for relative comparison only; the Board floor question is answered by the policy runway
+	/// measures.
+	measure 'Scenario Ending Cash' =
+			CALCULATE(
+			    SUM('Scenario Monthly'[Scenario Ending Cash Source]),
+			    LASTNONBLANK('Date'[Date], CALCULATE(COUNTROWS('Scenario Monthly')))
+			)
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 09 Scenarios
+		lineageTag: 6b0008bf-30f6-52fa-a53a-d1e565758bc6
+
+	/// FY2026 exit ARR under the scenario in context.
+	measure 'Scenario Dec-26 Exit ARR' =
+			CALCULATE(
+			    SUM('Scenario Monthly'[Scenario Ending ARR]),
+			    REMOVEFILTERS('Date'),
+			    'Date'[Date] = DATE(2026, 12, 31)
+			)
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 09 Scenarios
+		lineageTag: c3f78250-5570-5d04-91bb-e1970504ab91
+
+	/// Dec-2027 exit ARR under the scenario in context.
+	measure 'Scenario Dec-27 Exit ARR' =
+			CALCULATE(
+			    SUM('Scenario Monthly'[Scenario Ending ARR]),
+			    REMOVEFILTERS('Date'),
+			    'Date'[Date] = DATE(2027, 12, 31)
+			)
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 09 Scenarios
+		lineageTag: 11768e24-9247-5da2-ac28-3c2ff4c22623
+
+	/// FY2026 revenue under the scenario in context.
+	measure 'Scenario FY2026 Revenue' =
+			CALCULATE([Scenario Revenue], REMOVEFILTERS('Date'), 'Date'[Year] = 2026)
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 09 Scenarios
+		lineageTag: f95851c9-ed10-5c17-ab3e-11733deec6fd
+
+	/// FY2026 operating income under the scenario in context.
+	measure 'Scenario FY2026 Operating Income' =
+			CALCULATE([Scenario Operating Income], REMOVEFILTERS('Date'), 'Date'[Year] = 2026)
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 09 Scenarios
+		lineageTag: 5b76ff0c-6147-500f-a780-f66ea76672d7
+
+	/// Modelled ending cash at Dec-2027 under the scenario in context.
+	measure 'Scenario Dec-27 Cash' =
+			CALCULATE(
+			    [Scenario Ending Cash],
+			    REMOVEFILTERS('Date'),
+			    'Date'[Date] = DATE(2027, 12, 31)
+			)
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 09 Scenarios
+		lineageTag: 68797049-c95c-5459-83c2-5b5b1037fbe5
+
+	column Scenario
+		dataType: string
+		isHidden
+		lineageTag: 33365362-de2b-502b-9caa-1e7a8541c81c
+		summarizeBy: none
+		sourceColumn: Scenario
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month End Date'
+		dataType: dateTime
+		isHidden
+		formatString: yyyy-mm-dd
+		lineageTag: 7051b846-00d1-5632-a4ba-93e27af15f16
+		summarizeBy: none
+		sourceColumn: Month End Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Scenario Ending ARR'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: fbf1dce8-327e-5132-aa79-8ac4d52e2f3a
+		summarizeBy: none
+		sourceColumn: Scenario Ending ARR
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Scenario Total Revenue'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: 1b6a4d48-8cb7-55f1-81c1-b4d782bf4968
+		summarizeBy: none
+		sourceColumn: Scenario Total Revenue
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Scenario Operating Income Source'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: a7d59318-7ee4-582c-b971-ce382b3f2141
+		summarizeBy: none
+		sourceColumn: Scenario Operating Income
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Scenario Ending Cash Source'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: ec4f524f-490c-5d07-b91e-b6b88c6e24f5
+		summarizeBy: none
+		sourceColumn: Scenario Ending Cash
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Scenario Monthly' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(RepoRoot & "/data/marts/fct_scenario_monthly.csv"),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Kept = Table.SelectColumns(Headers, {"scenario", "month_end_date", "ending_arr", "total_revenue", "operating_income", "ending_cash"}),
+				    Typed = Table.TransformColumnTypes(Kept, {{"scenario", type text}, {"month_end_date", type date}, {"ending_arr", type number}, {"total_revenue", type number}, {"operating_income", type number}, {"ending_cash", type number}}),
+				    Renamed = Table.RenameColumns(Typed, {{"scenario", "Scenario"}, {"month_end_date", "Month End Date"}, {"ending_arr", "Scenario Ending ARR"}, {"total_revenue", "Scenario Total Revenue"}, {"operating_income", "Scenario Operating Income"}, {"ending_cash", "Scenario Ending Cash"}})
+				in
+				    Renamed
+
+	annotation PBI_ResultType = Table

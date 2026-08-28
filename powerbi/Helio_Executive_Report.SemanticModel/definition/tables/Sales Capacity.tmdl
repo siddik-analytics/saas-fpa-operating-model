@@ -1,0 +1,154 @@
+/// Rep-month quota, ramp, expected and actual attainment through the reporting date. Supplies
+/// the actual-period GTM KPIs on page 3.
+table 'Sales Capacity'
+	lineageTag: 50925423-7efc-5891-9540-8162b00ccb90
+
+	/// Distinct quota-carrying AEs active in the months in context.
+	measure 'Quota-Carrying Reps' =
+			DISTINCTCOUNT('Sales Capacity'[Rep Id])
+		formatString: #,##0
+		displayFolder: 03 GTM
+		lineageTag: 7063830b-be86-57ab-a722-9ec712c26355
+
+	/// Reps at 100% of the binding ramp schedule (PHASE1_SPEC 8.9).
+	measure 'Fully Ramped Reps' =
+			CALCULATE(
+			    DISTINCTCOUNT('Sales Capacity'[Rep Id]),
+			    'Sales Capacity'[Ramp Pct] = 1
+			)
+		formatString: #,##0
+		displayFolder: 03 GTM
+		lineageTag: 916f281b-b5d2-56f9-93cd-a007f91852ce
+
+	/// Credited bookings against ramped quota. Blended across New Logo, Expansion and Renewal
+	/// Uplift, matching the source quota model.
+	measure 'Actual Attainment' =
+			-- Ratio of aggregates: credited bookings over ramped quota, never an average of
+			-- per-rep attainment percentages.
+			DIVIDE(
+			    [Actual Bookings],
+			    SUM('Sales Capacity'[Theoretical Quota Capacity])
+			)
+		formatString: 0.0%
+		displayFolder: 03 GTM
+		lineageTag: caabe6e6-b43e-52ce-93fb-1d55b4109374
+
+	/// The trailing realised attainment of fully-ramped reps that Phase 5 derived and the forecast
+	/// applies forward.
+	measure 'Expected Attainment' =
+			-- Constant within a segment-month by construction (Phase 5 derives one trailing
+			-- fully-ramped figure per segment), so MAX reads it rather than averaging it.
+			IF(
+			    HASONEVALUE('Segment'[Segment]),
+			    MAX('Sales Capacity'[Expected Attainment Source])
+			)
+		formatString: 0.0%
+		displayFolder: 03 GTM
+		lineageTag: d7b19e55-fb82-59f5-8e46-3dace7cd23cd
+
+	/// Credited closed-won ACV, all three deal types.
+	measure 'Actual Bookings' =
+			SUM('Sales Capacity'[Actual Bookings Source])
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 03 GTM
+		lineageTag: 87d4825a-1fbe-5aae-8a98-af8f0ead74ef
+
+	/// New Logo productive capacity in actual months, at the reporting-date rep roster.
+	measure 'New Logo Productive Capacity (Actual)' =
+			SUM('Sales Capacity'[New Logo Productive Capacity])
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 03 GTM
+		lineageTag: 2246e6b5-3bea-5d76-89c5-352dbdeab52e
+
+	column 'Rep Id'
+		dataType: string
+		isHidden
+		lineageTag: 8efa8df9-cf7a-5ae3-9302-4e230f6fb5f7
+		summarizeBy: none
+		sourceColumn: Rep Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Segment
+		dataType: string
+		isHidden
+		lineageTag: 56a369ca-bada-5a08-a242-403e052130cd
+		summarizeBy: none
+		sourceColumn: Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month End Date'
+		dataType: dateTime
+		isHidden
+		formatString: yyyy-mm-dd
+		lineageTag: c060ef08-96ac-5d8a-a99b-e905b1746eb0
+		summarizeBy: none
+		sourceColumn: Month End Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ramp Pct'
+		dataType: double
+		isHidden
+		formatString: 0.0%
+		lineageTag: 2ce1b60a-59db-5372-a487-7fa8e14b31b7
+		summarizeBy: none
+		sourceColumn: Ramp Pct
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Expected Attainment Source'
+		dataType: double
+		isHidden
+		formatString: 0.0%
+		lineageTag: 8ad5b59f-e3b9-5816-9241-ea211d1293e0
+		summarizeBy: none
+		sourceColumn: Expected Attainment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Theoretical Quota Capacity'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: 8c9bf6fa-e99e-5343-ae72-03ea32677d41
+		summarizeBy: none
+		sourceColumn: Theoretical Quota Capacity
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'New Logo Productive Capacity'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: 12f03ed1-07da-56c3-8e24-15b229b6635d
+		summarizeBy: none
+		sourceColumn: New Logo Productive Capacity
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Actual Bookings Source'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: 25cbf8e9-0ed4-587a-ba65-406267bb325a
+		summarizeBy: none
+		sourceColumn: Actual Bookings
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Sales Capacity' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(RepoRoot & "/data/marts/fct_sales_capacity.csv"),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Kept = Table.SelectColumns(Headers, {"rep_id", "segment", "month_end_date", "ramp_pct", "expected_attainment", "theoretical_quota_capacity", "new_logo_productive_capacity", "actual_bookings"}),
+				    Typed = Table.TransformColumnTypes(Kept, {{"rep_id", type text}, {"segment", type text}, {"month_end_date", type date}, {"ramp_pct", type number}, {"expected_attainment", type number}, {"theoretical_quota_capacity", type number}, {"new_logo_productive_capacity", type number}, {"actual_bookings", type number}}),
+				    Renamed = Table.RenameColumns(Typed, {{"rep_id", "Rep Id"}, {"segment", "Segment"}, {"month_end_date", "Month End Date"}, {"ramp_pct", "Ramp Pct"}, {"expected_attainment", "Expected Attainment"}, {"theoretical_quota_capacity", "Theoretical Quota Capacity"}, {"new_logo_productive_capacity", "New Logo Productive Capacity"}, {"actual_bookings", "Actual Bookings"}})
+				in
+				    Renamed
+
+	annotation PBI_ResultType = Table

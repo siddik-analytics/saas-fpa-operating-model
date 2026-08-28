@@ -1,0 +1,64 @@
+/// Forward available-to-renew exposure by renewal month and segment. Page 2. Contract and
+/// customer identifiers are deliberately not imported.
+table 'Renewal Base'
+	lineageTag: 74919e7a-6081-5199-adc5-1e6f4c8e8267
+
+	/// Available-to-renew: ARR of contracts whose renewal date falls in the period, measured at the
+	/// ARR actually in force at 30 June 2026 rather than stale contract book value.
+	measure ATR =
+			SUM('Renewal Base'[ATR ARR])
+		formatString: \$#,##0;(\$#,##0);
+		displayFolder: 02 Retention
+		lineageTag: a4e9dd75-f2d7-5a8d-a585-5a3a5e8d96a3
+
+	column 'Renewal Month'
+		dataType: dateTime
+		isHidden
+		formatString: yyyy-mm-dd
+		lineageTag: b228de6b-5ac6-5673-9478-ca13bcfcb4f6
+		summarizeBy: none
+		sourceColumn: Renewal Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column Segment
+		dataType: string
+		isHidden
+		lineageTag: d1d77c8b-803f-528f-9e18-b7fe893e8437
+		summarizeBy: none
+		sourceColumn: Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Contract Type'
+		dataType: string
+		lineageTag: f5a1b8eb-14bd-5e10-ad7f-fe7b84d9c9de
+		summarizeBy: none
+		sourceColumn: Contract Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ATR ARR'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: a5595baf-892b-5407-9d65-e53c1fc9abdc
+		summarizeBy: none
+		sourceColumn: ATR ARR
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Renewal Base' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(RepoRoot & "/data/marts/fct_renewal_base.csv"),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Kept = Table.SelectColumns(Headers, {"renewal_month", "segment", "contract_type", "atr_arr"}),
+				    Typed = Table.TransformColumnTypes(Kept, {{"renewal_month", type date}, {"segment", type text}, {"contract_type", type text}, {"atr_arr", type number}}),
+				    Renamed = Table.RenameColumns(Typed, {{"renewal_month", "Renewal Month"}, {"segment", "Segment"}, {"contract_type", "Contract Type"}, {"atr_arr", "ATR ARR"}})
+				in
+				    Renamed
+
+	annotation PBI_ResultType = Table

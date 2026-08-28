@@ -1,0 +1,181 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "p4v2_scorecard",
+  "position": {
+    "x": 692,
+    "y": 76,
+    "z": 4,
+    "width": 564,
+    "height": 300,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Management Variance"
+                    }
+                  },
+                  "Property": "Metric Label"
+                }
+              },
+              "queryRef": "Management Variance.Metric Label",
+              "nativeQueryRef": "Metric"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Management Variance"
+                    }
+                  },
+                  "Property": "Budget"
+                }
+              },
+              "queryRef": "Management Variance.Budget",
+              "nativeQueryRef": "Budget"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Management Variance"
+                    }
+                  },
+                  "Property": "Base Reforecast"
+                }
+              },
+              "queryRef": "Management Variance.Base Reforecast",
+              "nativeQueryRef": "Base"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Management Variance"
+                    }
+                  },
+                  "Property": "Variance vs Budget"
+                }
+              },
+              "queryRef": "Management Variance.Variance vs Budget",
+              "nativeQueryRef": "Variance"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Management Variance"
+                    }
+                  },
+                  "Property": "Favourable / Unfavourable"
+                }
+              },
+              "queryRef": "Management Variance.Favourable / Unfavourable",
+              "nativeQueryRef": "Fav / Unfav"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Management Variance"
+                  }
+                },
+                "Property": "Metric Label"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'FY2026 Budget versus Base, with the centrally derived favourability'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#1F3864'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11.0D"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'left'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

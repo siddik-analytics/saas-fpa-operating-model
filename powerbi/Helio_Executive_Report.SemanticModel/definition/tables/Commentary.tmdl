@@ -1,0 +1,103 @@
+/// The deterministic Phase 7 management commentary, surfaced on page 1. Power BI presents
+/// controlled Finance commentary; it never generates narrative.
+table Commentary
+	lineageTag: 77ae5b34-e4dd-5761-b906-4747bf787c19
+
+	column 'Commentary Id'
+		dataType: int64
+		isHidden
+		formatString: #,##0
+		lineageTag: 28d12c93-9e91-585a-934f-29f3cb667917
+		summarizeBy: none
+		sourceColumn: Commentary Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Priority
+		dataType: string
+		lineageTag: 360ef96c-5f69-5009-938e-58be99188de4
+		summarizeBy: none
+		sourceColumn: Priority
+		sortByColumn: 'Priority Order'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Priority Order'
+		dataType: int64
+		isHidden
+		formatString: #,##0
+		lineageTag: e729688d-460b-5907-a89b-801aa0f6cff5
+		summarizeBy: none
+		sourceColumn: Priority Order
+
+		annotation SummarizationSetBy = Automatic
+
+	column Section
+		dataType: string
+		lineageTag: 216daf97-cefc-5c7f-b3bd-094818a23571
+		summarizeBy: none
+		sourceColumn: Section
+
+		annotation SummarizationSetBy = Automatic
+
+	column Headline
+		dataType: string
+		lineageTag: 74467f1a-918f-5894-b624-12eb62dcd6e6
+		summarizeBy: none
+		sourceColumn: Headline
+
+		annotation SummarizationSetBy = Automatic
+
+	column Detail
+		dataType: string
+		lineageTag: d7fce7d6-92cf-552e-8913-74274f207304
+		summarizeBy: none
+		sourceColumn: Detail
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Management Implication'
+		dataType: string
+		lineageTag: 2184ff1b-4ed6-515e-b295-ba1ebffb86d3
+		summarizeBy: none
+		sourceColumn: Management Implication
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Source Model'
+		dataType: string
+		lineageTag: f7331652-c683-5b92-a33d-0a5c6c8a9f51
+		summarizeBy: none
+		sourceColumn: Source Model
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Commentary = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(RepoRoot & "/data/marts/fct_commentary_output.csv"),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Kept = Table.SelectColumns(Headers, {"commentary_id", "priority", "section", "headline",
+				        "detail", "management_implication", "source_model"}),
+				    Typed = Table.TransformColumnTypes(Kept, {{"commentary_id", Int64.Type}}),
+				    // Priority reading order only. The priorities themselves are assigned deterministically
+				    // upstream from config/commentary_rules.yml and are not re-derived here.
+				    PriorityLookup = #table(
+				        type table [priority = text, #"Priority Order" = Int64.Type],
+				        {
+				            {"Critical", 1},
+				            {"High", 2},
+				            {"Medium", 3}
+				        }),
+				    Joined = Table.NestedJoin(Typed, {"priority"}, PriorityLookup, {"priority"}, "P", JoinKind.Inner),
+				    Expanded = Table.ExpandTableColumn(Joined, "P", {"Priority Order"}),
+				    Renamed = Table.RenameColumns(Expanded, {
+				        {"commentary_id", "Commentary Id"}, {"priority", "Priority"}, {"section", "Section"},
+				        {"headline", "Headline"}, {"detail", "Detail"},
+				        {"management_implication", "Management Implication"}, {"source_model", "Source Model"}})
+				in
+				    Renamed
+
+	annotation PBI_ResultType = Table

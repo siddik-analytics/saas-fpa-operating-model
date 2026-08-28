@@ -1,0 +1,113 @@
+/// Headcount rollforward by function on the Base path. Page 4.
+table Headcount
+	lineageTag: 2b4c6e78-a2a6-5811-a954-c8d63d27266d
+
+	/// Ending headcount at the last month in filter context. Fractional because the forecast uses
+	/// expected survival, the same convention the source reforecast itself uses.
+	measure 'Ending Headcount' =
+			-- Headcount is a balance: the last month in context, summed across functions.
+			CALCULATE(
+			    SUM('Headcount'[Ending Headcount Source]),
+			    LASTNONBLANK('Date'[Date], CALCULATE(COUNTROWS('Headcount')))
+			)
+		formatString: #,##0.0
+		displayFolder: 05 Workforce
+		lineageTag: 385f1c69-8eec-5c69-ad74-09c30625ae11
+
+	/// Opening headcount of the first month in filter context.
+	measure 'Beginning Headcount' =
+			CALCULATE(
+			    SUM('Headcount'[Beginning Headcount Source]),
+			    FIRSTNONBLANK('Date'[Date], CALCULATE(COUNTROWS('Headcount')))
+			)
+		formatString: #,##0.0
+		displayFolder: 05 Workforce
+		lineageTag: eef37534-e439-519a-8790-c8c364193bc3
+
+	/// Hires landing in the period.
+	measure Hires =
+			SUM('Headcount'[Hires Source])
+		formatString: #,##0.0
+		displayFolder: 05 Workforce
+		lineageTag: 7edbf9f6-ddb8-5f55-acd1-667cdd24aaa6
+
+	/// Departures in the period, net of ordinary-course backfill for forecast months.
+	measure Departures =
+			SUM('Headcount'[Departures Source])
+		formatString: #,##0.0
+		displayFolder: 05 Workforce
+		lineageTag: 6e625fd2-9e0e-505e-b5a4-c277a58edddc
+
+	column 'Month End Date'
+		dataType: dateTime
+		isHidden
+		formatString: yyyy-mm-dd
+		lineageTag: 3995ba94-bef1-5494-9e2f-dff74d2d82f2
+		summarizeBy: none
+		sourceColumn: Month End Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Function
+		dataType: string
+		lineageTag: 5ca30d1d-b6c6-5588-b901-48f9a7dff570
+		summarizeBy: none
+		sourceColumn: Function
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Beginning Headcount Source'
+		dataType: double
+		isHidden
+		formatString: #,##0.0
+		lineageTag: ac8239c2-73e8-5b8e-b2ed-7fb6ceac0c4c
+		summarizeBy: none
+		sourceColumn: Beginning Headcount
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hires Source'
+		dataType: double
+		isHidden
+		formatString: #,##0.0
+		lineageTag: fbbd031a-af55-5a7f-b054-9aa115c6e824
+		summarizeBy: none
+		sourceColumn: Hires
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Departures Source'
+		dataType: double
+		isHidden
+		formatString: #,##0.0
+		lineageTag: 746efbb4-9094-5261-a4f0-85985a5183e1
+		summarizeBy: none
+		sourceColumn: Departures
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ending Headcount Source'
+		dataType: double
+		isHidden
+		formatString: #,##0.0
+		lineageTag: 0c6435fa-609e-5150-85f0-38c59761c13b
+		summarizeBy: none
+		sourceColumn: Ending Headcount
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Headcount = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(RepoRoot & "/data/marts/fct_headcount_forecast.csv"),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Filtered = Table.SelectRows(Headers, each [path] = "Base"),
+				    Kept = Table.SelectColumns(Filtered, {"month_end_date", "function", "beginning_headcount", "hires", "departures", "ending_headcount"}),
+				    Typed = Table.TransformColumnTypes(Kept, {{"month_end_date", type date}, {"function", type text}, {"beginning_headcount", type number}, {"hires", type number}, {"departures", type number}, {"ending_headcount", type number}}),
+				    Renamed = Table.RenameColumns(Typed, {{"month_end_date", "Month End Date"}, {"function", "Function"}, {"beginning_headcount", "Beginning Headcount"}, {"hires", "Hires"}, {"departures", "Departures"}, {"ending_headcount", "Ending Headcount"}})
+				in
+				    Renamed
+
+	annotation PBI_ResultType = Table

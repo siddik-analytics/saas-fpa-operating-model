@@ -1,0 +1,212 @@
+/// The normalised, ranked FY2026 Budget-vs-Base scorecard. Pages 1 and 4. Disconnected from
+/// Date: every row is already a stated FY2026 or Dec-2026 figure.
+table 'Management Variance'
+	lineageTag: 40fe65ac-1a38-57e2-89d1-b1a11644e455
+
+	/// FY2026 Board-Approved Budget for the metric in context.
+	measure Budget =
+			VAR Amount = SUM('Management Variance'[Budget Amount])
+			RETURN
+			    -- Basis points to a ratio, so a level reads 74.1% rather than 7,407 bps.
+			    IF(
+			        SELECTEDVALUE('Management Variance'[Unit]) = "bps",
+			        DIVIDE(Amount, 10000),
+			        Amount
+			    )
+		displayFolder: 08 Budget & Bridge
+		lineageTag: c486cf18-1110-51f7-9f08-92574e4f57a9
+
+		formatStringDefinition =
+				SWITCH(
+				    SELECTEDVALUE('Management Variance'[Unit]),
+				    "usd", "$#,##0;($#,##0);$0",
+				    "bps", "0.0%",
+				    "pct", "0.0%",
+				    "fte", "#,##0.0",
+				    "#,##0"
+				)
+
+	/// Independent Base reforecast for the metric in context.
+	measure 'Base Reforecast' =
+			VAR Amount = SUM('Management Variance'[Base Amount])
+			RETURN
+			    -- Basis points to a ratio, so a level reads 74.1% rather than 7,407 bps.
+			    IF(
+			        SELECTEDVALUE('Management Variance'[Unit]) = "bps",
+			        DIVIDE(Amount, 10000),
+			        Amount
+			    )
+		displayFolder: 08 Budget & Bridge
+		lineageTag: b4474355-c281-5406-885a-56526f032e47
+
+		formatStringDefinition =
+				SWITCH(
+				    SELECTEDVALUE('Management Variance'[Unit]),
+				    "usd", "$#,##0;($#,##0);$0",
+				    "bps", "0.0%",
+				    "pct", "0.0%",
+				    "fte", "#,##0.0",
+				    "#,##0"
+				)
+
+	/// Base less Budget, signed. Favourability is not implied by the sign: it comes from the
+	/// centralised Phase 7 metric polarity.
+	measure 'Variance vs Budget' =
+			SUM('Management Variance'[Variance])
+		displayFolder: 08 Budget & Bridge
+		lineageTag: 45f7c1a4-5b2b-5229-94af-77bf6f8b024c
+
+		formatStringDefinition =
+				SWITCH(
+				    SELECTEDVALUE('Management Variance'[Unit]),
+				    "usd", "+$#,##0;($#,##0);$0",
+				    "bps", "+#,##0 ""bps"";-#,##0 ""bps"";0 ""bps""",
+				    "pct", "+0.0%;-0.0%;0.0%",
+				    "fte", "+#,##0.0;-#,##0.0;0.0",
+				    "+#,##0;-#,##0;0"
+				)
+
+	/// Variance as a percentage of Budget, for USD rows only.
+	measure 'Variance vs Budget %' =
+			-- Only defined where the row is a dollar metric. Basis points and FTE rows have
+			-- no meaningful percentage against their own base.
+			IF(
+			    SELECTEDVALUE('Management Variance'[Unit]) = "usd",
+			    DIVIDE([Variance vs Budget], [Budget])
+			)
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: 08 Budget & Bridge
+		lineageTag: cf5dca15-1857-57ec-912e-3f60d83bc8a3
+
+	/// Dec-2026 Exit ARR variance to Budget - the headline management number of the whole
+	/// reforecast.
+	measure 'Exit ARR vs Budget' =
+			CALCULATE(
+			    SUM('Management Variance'[Variance]),
+			    REMOVEFILTERS('Management Variance'),
+			    'Management Variance'[Metric] = "exit_arr"
+			)
+		formatString: +\$#,##0;(\$#,##0);\$0
+		displayFolder: 08 Budget & Bridge
+		lineageTag: 959a5f7e-d51f-5196-b2bb-254a9e0c8840
+
+	/// Exit ARR variance as a percentage of the Board Budget exit position.
+	measure 'Exit ARR vs Budget %' =
+			DIVIDE(
+			    [Exit ARR vs Budget],
+			    CALCULATE(
+			        SUM('Management Variance'[Budget Amount]),
+			        REMOVEFILTERS('Management Variance'),
+			        'Management Variance'[Metric] = "exit_arr"
+			    )
+			)
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: 08 Budget & Bridge
+		lineageTag: 9ac33301-957e-5a79-a5e2-30e14b524571
+
+	column Metric
+		dataType: string
+		isHidden
+		lineageTag: 9ee18717-7de0-53b0-8263-9cc581bfb478
+		summarizeBy: none
+		sourceColumn: Metric
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Metric Label'
+		dataType: string
+		lineageTag: bc24f9bd-bb6c-531b-b9b8-f7f03a964572
+		summarizeBy: none
+		sourceColumn: Metric Label
+		sortByColumn: 'Variance Rank'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Period
+		dataType: string
+		lineageTag: 04882a2f-d9c2-5515-87d4-55b54cfdb828
+		summarizeBy: none
+		sourceColumn: Period
+
+		annotation SummarizationSetBy = Automatic
+
+	column Unit
+		dataType: string
+		isHidden
+		lineageTag: b2a41ed2-5c7b-5b63-8af5-a3bf246f89fa
+		summarizeBy: none
+		sourceColumn: Unit
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Budget Amount'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: c0de4a6e-cc84-502e-9e85-710520c78fd8
+		summarizeBy: none
+		sourceColumn: Budget Amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Base Amount'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: 15754e9d-9c95-5d19-9aca-c011e2ec1b8f
+		summarizeBy: none
+		sourceColumn: Base Amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column Variance
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: 7eaad34b-9791-542e-9a7a-9f05c939202c
+		summarizeBy: none
+		sourceColumn: Variance
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Favourable / Unfavourable'
+		dataType: string
+		lineageTag: e713e978-53ed-533f-b5d4-711ae92f758d
+		summarizeBy: none
+		sourceColumn: Favourable / Unfavourable
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Variance Rank'
+		dataType: int64
+		isHidden
+		formatString: #,##0
+		lineageTag: 1d254a4d-dd57-55d8-9daa-1ac5f2e74c6b
+		summarizeBy: none
+		sourceColumn: Variance Rank
+
+		annotation SummarizationSetBy = Automatic
+
+	column Material
+		dataType: boolean
+		isHidden
+		lineageTag: 73ae085c-5879-5656-8f4d-59174b82cebb
+		summarizeBy: none
+		sourceColumn: Material
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Management Variance' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(RepoRoot & "/data/marts/fct_management_variance.csv"),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Kept = Table.SelectColumns(Headers, {"metric", "metric_label", "period", "unit", "budget_amount", "base_amount", "variance", "favorable_unfavorable", "rank_abs_variance", "materiality_flag"}),
+				    Typed = Table.TransformColumnTypes(Kept, {{"metric", type text}, {"metric_label", type text}, {"period", type text}, {"unit", type text}, {"budget_amount", type number}, {"base_amount", type number}, {"variance", type number}, {"favorable_unfavorable", type text}, {"rank_abs_variance", Int64.Type}, {"materiality_flag", type logical}}),
+				    Renamed = Table.RenameColumns(Typed, {{"metric", "Metric"}, {"metric_label", "Metric Label"}, {"period", "Period"}, {"unit", "Unit"}, {"budget_amount", "Budget Amount"}, {"base_amount", "Base Amount"}, {"variance", "Variance"}, {"favorable_unfavorable", "Favourable / Unfavourable"}, {"rank_abs_variance", "Variance Rank"}, {"materiality_flag", "Material"}})
+				in
+				    Renamed
+
+	annotation PBI_ResultType = Table

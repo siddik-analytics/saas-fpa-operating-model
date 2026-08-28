@@ -1,0 +1,77 @@
+/// Acquisition-cohort ARR retention by quarters since acquisition. Page 2 cohort matrix.
+/// Deliberately not related to Date: its grain is cohort age, not calendar time.
+table 'Cohort ARR'
+	lineageTag: 9d187dba-c321-5e96-ab3a-f83ac742be63
+
+	/// Cohort ARR retention: the cohort's current ARR over its ARR at its own landing quarter-end.
+	/// Nets expansion, contraction, churn and reactivation within the cohort.
+	measure 'Cohort ARR Retention %' =
+			DIVIDE(
+			    SUM('Cohort ARR'[Retained ARR]),
+			    SUM('Cohort ARR'[Starting ARR])
+			)
+		formatString: 0.0%
+		displayFolder: 02 Retention
+		lineageTag: 31121c2b-660b-53f9-afa0-c40049b4f9d3
+
+	column 'Acquisition Quarter'
+		dataType: string
+		lineageTag: e71cd707-f2bb-5682-ab35-b79b2e2c71d7
+		summarizeBy: none
+		sourceColumn: Acquisition Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column Segment
+		dataType: string
+		isHidden
+		lineageTag: 2bdeb329-be2e-59c0-ad52-f55817c23128
+		summarizeBy: none
+		sourceColumn: Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quarters Since Acquisition'
+		dataType: int64
+		formatString: #,##0
+		lineageTag: c07c8ce8-6e39-5660-ac2d-8d7a338d5a35
+		summarizeBy: none
+		sourceColumn: Quarters Since Acquisition
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Starting ARR'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: 4bb7eb61-ca27-5692-acef-18918be0a11f
+		summarizeBy: none
+		sourceColumn: Starting ARR
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Retained ARR'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: 629aa72e-395e-5e66-be0e-10ac28cd18e3
+		summarizeBy: none
+		sourceColumn: Retained ARR
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Cohort ARR' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(RepoRoot & "/data/marts/fct_cohort_arr.csv"),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Filtered = Table.SelectRows(Headers, each [segment] <> "Total"),
+				    Kept = Table.SelectColumns(Filtered, {"acquisition_quarter", "segment", "quarters_since_acquisition", "starting_arr", "retained_arr"}),
+				    Typed = Table.TransformColumnTypes(Kept, {{"acquisition_quarter", type text}, {"segment", type text}, {"quarters_since_acquisition", Int64.Type}, {"starting_arr", type number}, {"retained_arr", type number}}),
+				    Renamed = Table.RenameColumns(Typed, {{"acquisition_quarter", "Acquisition Quarter"}, {"segment", "Segment"}, {"quarters_since_acquisition", "Quarters Since Acquisition"}, {"starting_arr", "Starting ARR"}, {"retained_arr", "Retained ARR"}})
+				in
+				    Renamed
+
+	annotation PBI_ResultType = Table

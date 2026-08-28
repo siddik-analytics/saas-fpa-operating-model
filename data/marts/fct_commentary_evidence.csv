@@ -5,8 +5,8 @@ commentary_id,metric,evidence_label,evidence_amount,source_model
 1,policy_runway_months,bear_runway,23.539775051483055,fct_cash_runway_policy
 1,policy_runway_months,bull_runway,28.263294394628264,fct_cash_runway_policy
 1,policy_runway_months,floor_months,24.0,fct_cash_runway_policy
-1,policy_runway_months,fullclose_headroom,0.6610599624325211,fct_cash_runway_policy
-1,policy_runway_months,fullclose_runway,24.66105996243252,fct_cash_runway_policy
+1,policy_runway_months,fullclose_headroom,0.6610599624325246,fct_cash_runway_policy
+1,policy_runway_months,fullclose_runway,24.661059962432525,fct_cash_runway_policy
 2,new_logo_arr,h2_capacity_bound_months,3.0,fct_new_logo_diagnosis
 2,new_logo_arr,h2_capacity_supported_arr,2920858.7822501613,fct_new_logo_diagnosis
 2,new_logo_arr,h2_constrained_new_logo_arr,1182768.0335644472,fct_new_logo_diagnosis
@@ -21,13 +21,13 @@ commentary_id,metric,evidence_label,evidence_amount,source_model
 3,exit_arr,secondary_unfavorable_driver_amount,-1219395.3143991916,fct_arr_budget_bridge
 3,exit_arr,top_driver_amount,-2793686.486435552,fct_arr_budget_bridge
 4,hiring_decision,fullclose_hires,4.0,fct_hiring_scenario
-4,hiring_decision,fullclose_headroom,0.6610599624325211,fct_cash_runway_policy
+4,hiring_decision,fullclose_headroom,0.6610599624325246,fct_cash_runway_policy
 4,hiring_decision,fullclose_incr_arr_2026,466.8747128918767,fct_hiring_scenario
 4,hiring_decision,fullclose_incr_arr_2027,147322.04056936502,fct_hiring_scenario
 4,hiring_decision,fullclose_incr_cash_2026,-139065.216370333,fct_hiring_scenario
-4,hiring_decision,fullclose_incr_cash_2027,-637083.11137514,fct_hiring_scenario
+4,hiring_decision,fullclose_incr_cash_2027,-637083.1113751382,fct_hiring_scenario
 4,hiring_decision,fullclose_incr_oi_2027,-31366.641829413362,fct_hiring_scenario
-4,hiring_decision,fullclose_runway,24.66105996243252,fct_cash_runway_policy
+4,hiring_decision,fullclose_runway,24.661059962432525,fct_cash_runway_policy
 4,hiring_decision,h2_pipeline_bound_months,15.0,fct_new_logo_diagnosis
 4,hiring_decision,h2_segment_months,18.0,fct_new_logo_diagnosis
 4,hiring_decision,targeted_hires,0.0,fct_hiring_scenario

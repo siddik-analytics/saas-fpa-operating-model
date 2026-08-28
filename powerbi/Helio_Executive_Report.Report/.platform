@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Helio_Executive_Report"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "a6208f97-5b25-56f6-ab01-a9ac8789dbd3"
+  }
+}

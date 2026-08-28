@@ -1,0 +1,159 @@
+/// TTM NRR, GRR and logo retention by segment, from the controlled cohort components rather
+/// than the stored rates. Page 2.
+table Retention
+	lineageTag: bcf59117-f6d0-55f4-b931-b8b15ad004a3
+
+	/// Guard used by NRR, GRR and Logo Retention. TTM retention is a point-in-time measurement, so
+	/// more than one reporting month in filter context has no single defined value.
+	measure 'Retention Months in Context' =
+			DISTINCTCOUNT('Retention'[Month End Date])
+		formatString: #,##0
+		isHidden
+		displayFolder: 99 Supporting
+		lineageTag: 7387b8ff-a025-54af-b561-ddcf915058d1
+
+	/// Net revenue retention: ARR at M from the M-12 cohort over that cohort's ARR at M-12.
+	/// Uncapped, so it may exceed 100%.
+	measure NRR =
+			-- Ratio of the controlled cohort components, never an average of stored rates.
+			-- Aggregates correctly across segments because every customer sits in exactly one.
+			IF(
+			    [Retention Months in Context] > 1,
+			    BLANK(),
+			    DIVIDE(
+			        SUM('Retention'[Cohort Current ARR]),
+			        SUM('Retention'[Cohort Beginning ARR Source])
+			    )
+			)
+		formatString: 0.0%
+		displayFolder: 02 Retention
+		lineageTag: 59005939-9b5e-5be0-8f16-0d8874d7d271
+
+	/// Gross revenue retention. The per-customer cap is applied upstream in
+	/// int_retention_cohort_customer_month, so the numerator is summable.
+	measure GRR =
+			IF(
+			    [Retention Months in Context] > 1,
+			    BLANK(),
+			    DIVIDE(
+			        SUM('Retention'[Cohort GRR ARR]),
+			        SUM('Retention'[Cohort Beginning ARR Source])
+			    )
+			)
+		formatString: 0.0%
+		displayFolder: 02 Retention
+		lineageTag: e8a50d60-05e8-5d1b-8007-a76b77aa2aee
+
+	/// Logo-weighted retention: M-12 cohort members still carrying ARR at M.
+	measure 'Logo Retention' =
+			IF(
+			    [Retention Months in Context] > 1,
+			    BLANK(),
+			    DIVIDE(
+			        SUM('Retention'[Retained Logos]),
+			        SUM('Retention'[Cohort Customers Source])
+			    )
+			)
+		formatString: 0.0%
+		displayFolder: 02 Retention
+		lineageTag: 5b11f452-32e8-5e58-a511-c3eb9067a6a6
+
+	/// Size of the M-12 retention cohort.
+	measure 'Cohort Customers' =
+			SUM('Retention'[Cohort Customers Source])
+		formatString: #,##0
+		displayFolder: 02 Retention
+		lineageTag: c3baaa39-fb68-5502-af47-d84e880cb018
+
+	/// ARR the M-12 cohort carried at M-12.
+	measure 'Cohort Beginning ARR' =
+			SUM('Retention'[Cohort Beginning ARR Source])
+		formatString: \$#,##0;(\$#,##0);\$0
+		displayFolder: 02 Retention
+		lineageTag: 962f1931-6ae3-5238-8da6-552c1f7ab741
+
+	column 'Month End Date'
+		dataType: dateTime
+		isHidden
+		formatString: yyyy-mm-dd
+		lineageTag: b7da84e6-0c23-5262-bda6-bcfcace14446
+		summarizeBy: none
+		sourceColumn: Month End Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Segment
+		dataType: string
+		isHidden
+		lineageTag: 08113b31-6939-5edb-996b-054b92949ebf
+		summarizeBy: none
+		sourceColumn: Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cohort Customers Source'
+		dataType: int64
+		isHidden
+		formatString: #,##0
+		lineageTag: f3fe3e82-0134-5781-8c99-2ab35526f693
+		summarizeBy: none
+		sourceColumn: Cohort Customers
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cohort Beginning ARR Source'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: d94a53ed-6351-5e0d-97db-6498ade1d95f
+		summarizeBy: none
+		sourceColumn: Cohort Beginning ARR
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cohort Current ARR'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: b3649852-3135-526f-ac42-630615d9979c
+		summarizeBy: none
+		sourceColumn: Cohort Current ARR
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Numerator with each customer capped at their own M-12 ARR.
+	column 'Cohort GRR ARR'
+		dataType: double
+		isHidden
+		formatString: \$#,##0;(\$#,##0);\$0
+		lineageTag: 27afe6d9-5763-5e6d-9f53-efb74a2d19e0
+		summarizeBy: none
+		sourceColumn: Cohort GRR ARR
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Retained Logos'
+		dataType: int64
+		isHidden
+		formatString: #,##0
+		lineageTag: c672037e-beac-5dc4-b120-c0045d315018
+		summarizeBy: none
+		sourceColumn: Retained Logos
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Retention = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(RepoRoot & "/data/marts/fct_retention_ttm.csv"),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Filtered = Table.SelectRows(Headers, each [segment] <> "Total"),
+				    Kept = Table.SelectColumns(Filtered, {"month_end_date", "segment", "cohort_customers", "cohort_beginning_arr", "cohort_current_arr", "cohort_grr_arr", "retained_logos"}),
+				    Typed = Table.TransformColumnTypes(Kept, {{"month_end_date", type date}, {"segment", type text}, {"cohort_customers", Int64.Type}, {"cohort_beginning_arr", type number}, {"cohort_current_arr", type number}, {"cohort_grr_arr", type number}, {"retained_logos", Int64.Type}}),
+				    Renamed = Table.RenameColumns(Typed, {{"month_end_date", "Month End Date"}, {"segment", "Segment"}, {"cohort_customers", "Cohort Customers"}, {"cohort_beginning_arr", "Cohort Beginning ARR"}, {"cohort_current_arr", "Cohort Current ARR"}, {"cohort_grr_arr", "Cohort GRR ARR"}, {"retained_logos", "Retained Logos"}})
+				in
+				    Renamed
+
+	annotation PBI_ResultType = Table

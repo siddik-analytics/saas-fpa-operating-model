@@ -1,0 +1,167 @@
+/// The model's Date table. Daily and contiguous 2023-12-01 to 2027-12-31 so it can be marked as
+/// the Date table; every fact joins on its month-end day.
+table Date
+	lineageTag: 67cf3fef-3011-58f0-9458-1a1392aca7ba
+	dataCategory: Time
+
+	/// Day grain key. Facts land on the month-end day.
+	column Date
+		dataType: dateTime
+		isKey
+		formatString: yyyy-mm-dd
+		lineageTag: c83e4bab-7599-516e-85ee-8acd69f7e247
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month End Date'
+		dataType: dateTime
+		isHidden
+		formatString: yyyy-mm-dd
+		lineageTag: 0d0073f1-4036-59e1-8fc6-25f9af11902c
+		summarizeBy: none
+		sourceColumn: Month End Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: #,##0
+		lineageTag: 37615bfb-8561-5663-8fdc-c5caf49699a1
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Helio's fiscal year is the calendar year (PHASE1_SPEC 2.1).
+	column 'Fiscal Year'
+		dataType: string
+		lineageTag: ef75a38b-d54a-5d4f-9f98-9ba197712a52
+		summarizeBy: none
+		sourceColumn: Fiscal Year
+		sortByColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Number'
+		dataType: int64
+		isHidden
+		formatString: #,##0
+		lineageTag: 3b01853f-8bb7-51b2-8f06-1e00be6a1e14
+		summarizeBy: none
+		sourceColumn: Month Number
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Concise management label, e.g. Jun-26.
+	column Month
+		dataType: string
+		lineageTag: d44fa662-bdc7-5915-9f1c-e1d0aecb879e
+		summarizeBy: none
+		sourceColumn: Month
+		sortByColumn: 'Month Sort'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Sort'
+		dataType: int64
+		isHidden
+		formatString: #,##0
+		lineageTag: 1c2cd5cf-60a2-5672-8163-f293e29f1b58
+		summarizeBy: none
+		sourceColumn: Month Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quarter Number'
+		dataType: int64
+		isHidden
+		formatString: #,##0
+		lineageTag: 9324c400-6086-5398-a850-763bf35cc003
+		summarizeBy: none
+		sourceColumn: Quarter Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		dataType: string
+		lineageTag: 60629684-a03a-5722-94e1-a1a11a899744
+		summarizeBy: none
+		sourceColumn: Quarter
+		sortByColumn: 'Quarter Number'
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Matches the marts' own 2026Q2 convention.
+	column 'Fiscal Quarter'
+		dataType: string
+		lineageTag: 08c2fdd5-a210-5dee-9fde-83f99c00ed16
+		summarizeBy: none
+		sourceColumn: Fiscal Quarter
+		sortByColumn: 'Quarter Sort'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quarter Sort'
+		dataType: int64
+		isHidden
+		formatString: #,##0
+		lineageTag: 26f25202-3c8d-5a1d-ad8b-9e8867511890
+		summarizeBy: none
+		sourceColumn: Quarter Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Actual through 30 June 2026, Forecast after it.
+	column 'Period Type'
+		dataType: string
+		lineageTag: 6b88d20b-cd8e-5685-8398-6df367037704
+		summarizeBy: none
+		sourceColumn: Period Type
+		sortByColumn: 'Period Type Sort'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Period Type Sort'
+		dataType: int64
+		isHidden
+		formatString: #,##0
+		lineageTag: 056f4d34-ba37-5e7b-9ec9-f1031fcc7bea
+		summarizeBy: none
+		sourceColumn: Period Type Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Date = m
+		mode: import
+		source =
+				let
+				    // Calendar spine for the reporting cycle. Daily and contiguous so the table can be
+				    // marked as the model's Date table; every fact lands on a month-end day.
+				    StartDate = #date(2023, 12, 1),
+				    EndDate = #date(2027, 12, 31),
+				    // 30 June 2026 is the FY2026 Q2 close this whole repository is dated to.
+				    CutoverDate = #date(2026, 6, 30),
+				    DayCount = Duration.Days(EndDate - StartDate) + 1,
+				    DateList = List.Dates(StartDate, DayCount, #duration(1, 0, 0, 0)),
+				    AsTable = Table.FromList(DateList, Splitter.SplitByNothing(), {"Date"}),
+				    Typed = Table.TransformColumnTypes(AsTable, {{"Date", type date}}),
+				    MonthEnd = Table.AddColumn(Typed, "Month End Date", each Date.EndOfMonth([Date]), type date),
+				    Yr = Table.AddColumn(MonthEnd, "Year", each Date.Year([Date]), Int64.Type),
+				    FiscalYr = Table.AddColumn(Yr, "Fiscal Year", each "FY" & Text.From(Date.Year([Date])), type text),
+				    MonthNo = Table.AddColumn(FiscalYr, "Month Number", each Date.Month([Date]), Int64.Type),
+				    MonthLabel = Table.AddColumn(MonthNo, "Month",
+				        each Text.Start(Date.MonthName([Date], "en-US"), 3) & "-" & Text.End(Text.From(Date.Year([Date])), 2), type text),
+				    MonthSort = Table.AddColumn(MonthLabel, "Month Sort", each Date.Year([Date]) * 100 + Date.Month([Date]), Int64.Type),
+				    QuarterNo = Table.AddColumn(MonthSort, "Quarter Number", each Date.QuarterOfYear([Date]), Int64.Type),
+				    QuarterLabel = Table.AddColumn(QuarterNo, "Quarter", each "Q" & Text.From(Date.QuarterOfYear([Date])), type text),
+				    FiscalQuarter = Table.AddColumn(QuarterLabel, "Fiscal Quarter",
+				        each Text.From(Date.Year([Date])) & "Q" & Text.From(Date.QuarterOfYear([Date])), type text),
+				    QuarterSort = Table.AddColumn(FiscalQuarter, "Quarter Sort", each Date.Year([Date]) * 10 + Date.QuarterOfYear([Date]), Int64.Type),
+				    PeriodType = Table.AddColumn(QuarterSort, "Period Type", each if [Date] <= CutoverDate then "Actual" else "Forecast", type text),
+				    PeriodSort = Table.AddColumn(PeriodType, "Period Type Sort", each if [Date] <= CutoverDate then 1 else 2, Int64.Type)
+				in
+				    PeriodSort
+
+	annotation PBI_ResultType = Table

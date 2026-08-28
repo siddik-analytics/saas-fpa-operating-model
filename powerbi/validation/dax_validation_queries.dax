@@ -1,0 +1,379 @@
+// ===========================================================================
+// Helio Systems, Inc. - SQL to DAX validation queries
+// Phase 10, Power BI executive reporting pack. Reporting date 30 June 2026.
+//
+// HOW TO RUN
+//   1. Open powerbi/Helio_Executive_Report.pbip in Power BI Desktop.
+//   2. Set the RepoRoot parameter to your clone path and Refresh.
+//   3. Open the DAX query view (the table icon on the left rail), paste one
+//      block below at a time and press Run. DAX Studio works equally well.
+//   4. Compare each returned value against the matching row of
+//      powerbi/validation/expected_measure_results.csv, which is generated
+//      from the committed marts by `python -m src.powerbi_expected`.
+//
+// WHAT THIS IS AND IS NOT
+//   The expected results are produced from SQL output by Python. These queries
+//   are how a reviewer makes the DAX side of the comparison. Nothing in the
+//   repository executes DAX: that needs a loaded model in Power BI Desktop or
+//   DAX Studio. Until these are run, DAX execution validation is PENDING.
+//
+// TOLERANCE
+//   Ratios to 4 decimal places, dollar figures to $1, months to 0.01.
+//   Wider tolerances would hide a real difference at Helio's scale.
+// ===========================================================================
+
+
+// ---------------------------------------------------------------------------
+// 1. NRR / GRR / Logo Retention - TTM at 30 June 2026, Total and by segment
+//    Expected: NRR 1.017911, GRR 0.895577, Logo Retention 0.834129 at Total.
+//    The measures are a ratio of the controlled cohort components, so the
+//    Total row is a ratio of aggregates and NOT an average of the segments.
+// ---------------------------------------------------------------------------
+EVALUATE
+UNION(
+    ROW(
+        "Context", "Total at Jun-2026",
+        "NRR", CALCULATE([NRR], 'Date'[Date] = DATE(2026, 6, 30)),
+        "GRR", CALCULATE([GRR], 'Date'[Date] = DATE(2026, 6, 30)),
+        "Logo Retention", CALCULATE([Logo Retention], 'Date'[Date] = DATE(2026, 6, 30)),
+        "Cohort Customers", CALCULATE([Cohort Customers], 'Date'[Date] = DATE(2026, 6, 30))
+    ),
+    SELECTCOLUMNS(
+        CALCULATETABLE(
+            SUMMARIZECOLUMNS(
+                'Segment'[Segment],
+                "NRR_", [NRR],
+                "GRR_", [GRR],
+                "Logo_", [Logo Retention],
+                "Cohort_", [Cohort Customers]
+            ),
+            'Date'[Date] = DATE(2026, 6, 30)
+        ),
+        "Context", 'Segment'[Segment] & " at Jun-2026",
+        "NRR", [NRR_],
+        "GRR", [GRR_],
+        "Logo Retention", [Logo_],
+        "Cohort Customers", [Cohort_]
+    )
+)
+
+
+// ---------------------------------------------------------------------------
+// 2. Retention at an earlier reporting month - 31 December 2025
+//    Confirms the measures are not hardcoded to the reporting date.
+// ---------------------------------------------------------------------------
+EVALUATE
+ROW(
+    "Context", "Total at Dec-2025",
+    "NRR", CALCULATE([NRR], 'Date'[Date] = DATE(2025, 12, 31)),
+    "GRR", CALCULATE([GRR], 'Date'[Date] = DATE(2025, 12, 31)),
+    "Logo Retention", CALCULATE([Logo Retention], 'Date'[Date] = DATE(2025, 12, 31))
+)
+
+
+// ---------------------------------------------------------------------------
+// 3. THE BANNED PATTERN - proof that averaging the ratio gives a different,
+//    wrong answer. Column 1 is the correct ratio of aggregates that the model
+//    ships; column 2 is the average of the three segment NRRs. They differ by
+//    roughly 4 points, which is why AVERAGE(NRR) appears nowhere in this model.
+// ---------------------------------------------------------------------------
+EVALUATE
+ROW(
+    "Context", "Total NRR at Jun-2026",
+    "Correct - ratio of aggregates", CALCULATE([NRR], 'Date'[Date] = DATE(2026, 6, 30)),
+    "Wrong - average of segment ratios",
+        CALCULATE(
+            AVERAGEX(VALUES('Segment'[Segment]), [NRR]),
+            'Date'[Date] = DATE(2026, 6, 30)
+        )
+)
+
+
+// ---------------------------------------------------------------------------
+// 4. Ending ARR - Total and by segment at the reporting date and at the two
+//    forecast horizons. Expected Total at Jun-2026: 33,016,720.32.
+// ---------------------------------------------------------------------------
+EVALUATE
+UNION(
+    ROW(
+        "Context", "Total",
+        "Jun-2026", [Jun-26 ARR (Actual)],
+        "Dec-2026", [Dec-26 Exit ARR (Base)]
+    ),
+    SELECTCOLUMNS(
+        SUMMARIZECOLUMNS(
+            'Segment'[Segment],
+            "Jun_", [Jun-26 ARR (Actual)],
+            "Dec26_", [Dec-26 Exit ARR (Base)]
+        ),
+        "Context", 'Segment'[Segment],
+        "Jun-2026", [Jun_],
+        "Dec-2026", [Dec26_]
+    )
+)
+
+
+// ---------------------------------------------------------------------------
+// 5. FY2026 ARR movement - Total and by segment.
+//    Net New ARR is the plain sum of the five components; contraction and
+//    churn arrive already signed negative from the ARR engine.
+// ---------------------------------------------------------------------------
+EVALUATE
+CALCULATETABLE(
+    SUMMARIZECOLUMNS(
+        'Segment'[Segment],
+        "New Logo ARR", [New Logo ARR],
+        "Expansion ARR", [Expansion ARR],
+        "Contraction ARR", [Contraction ARR],
+        "Churn ARR", [Churn ARR],
+        "Net New ARR", [Net New ARR],
+        "Ending ARR", [Ending ARR]
+    ),
+    'Date'[Year] = 2026
+)
+
+
+// ---------------------------------------------------------------------------
+// 6. P&L - FY2025 actual and FY2026 (H1 actual plus H2 Base reforecast).
+//    Gross Margin % must be SUM(gross profit) / SUM(revenue), never the
+//    average of a monthly margin series.
+// ---------------------------------------------------------------------------
+EVALUATE
+SUMMARIZECOLUMNS(
+    'Date'[Fiscal Year],
+    "Subscription Revenue", [Subscription Revenue],
+    "Services Revenue", [Services Revenue],
+    "Revenue", [Revenue],
+    "Gross Profit", [Gross Profit],
+    "Gross Margin %", [Gross Margin %],
+    "Operating Income", [Operating Income]
+)
+ORDER BY 'Date'[Fiscal Year]
+
+
+// ---------------------------------------------------------------------------
+// 7. Bear / Base / Bull - the scenario comparison on page 5.
+//    Expected Dec-2026 exit ARR: Bear 33,553,421.70, Base 34,816,416.56,
+//    Bull 36,123,036.63.
+// ---------------------------------------------------------------------------
+EVALUATE
+SUMMARIZECOLUMNS(
+    'Scenario'[Scenario],
+    "Dec-26 Exit ARR", [Scenario Dec-26 Exit ARR],
+    "FY2026 Revenue", [Scenario FY2026 Revenue],
+    "FY2026 Operating Income", [Scenario FY2026 Operating Income],
+    "Dec-27 Exit ARR", [Scenario Dec-27 Exit ARR],
+    "Dec-27 Cash", [Scenario Dec-27 Cash]
+)
+ORDER BY 'Scenario'[Scenario]
+
+
+// ---------------------------------------------------------------------------
+// 8. Board-policy runway - fct_cash_runway_policy, NOT the operating cash
+//    proxy fct_cash_runway. Expected: Bear 23.54 (breach), Base 25.65,
+//    Bull 28.26, Targeted 25.65, Full Capacity-Close 24.66.
+// ---------------------------------------------------------------------------
+EVALUATE
+SUMMARIZECOLUMNS(
+    'Runway Policy'[Path],
+    "Policy Runway Months", [Policy Runway Months],
+    "Board Floor Months", [Board Floor Months],
+    "Runway Headroom", [Runway Headroom],
+    "Policy Avg Monthly Burn", [Policy Avg Monthly Burn],
+    "Board Floor Status", [Board Floor Status]
+)
+ORDER BY 'Runway Policy'[Path]
+
+
+// ---------------------------------------------------------------------------
+// 9. Hiring decision on the FY2027 horizon. The Dec-2026 column is the
+//    ramp-period snapshot and is deliberately not the headline: hires start
+//    Oct-2026, so it is only weeks into ramp.
+// ---------------------------------------------------------------------------
+EVALUATE
+SUMMARIZECOLUMNS(
+    'Hiring Scenario'[Hiring Case],
+    "Incremental Hires", [Incremental Hires],
+    "Incremental ARR Dec-2027", [Incremental ARR (Dec-2027)],
+    "Incremental Op Income Dec-2027", [Incremental Operating Income (Dec-2027)],
+    "Incremental Cash Dec-2027", [Incremental Cash Impact (Dec-2027)],
+    "Incremental ARR Dec-2026 (ramp)", [Incremental ARR (Dec-2026, ramp period)]
+)
+ORDER BY 'Hiring Scenario'[Hiring Case]
+
+
+// ---------------------------------------------------------------------------
+// 10. GTM constraint - H2 2026 by segment. Constrained New Logo ARR is
+//     LEAST(capacity, pipeline) computed in SQL, never re-derived in DAX.
+// ---------------------------------------------------------------------------
+EVALUATE
+UNION(
+    ROW(
+        "Context", "Total",
+        "New Logo Capacity", [H2 2026 New Logo Capacity],
+        "Pipeline Supported ARR", [H2 2026 Pipeline Supported ARR],
+        "Constrained New Logo ARR", [H2 2026 Constrained New Logo ARR]
+    ),
+    SELECTCOLUMNS(
+        SUMMARIZECOLUMNS(
+            'Segment'[Segment],
+            "Cap_", [H2 2026 New Logo Capacity],
+            "Pipe_", [H2 2026 Pipeline Supported ARR],
+            "Con_", [H2 2026 Constrained New Logo ARR]
+        ),
+        "Context", 'Segment'[Segment],
+        "New Logo Capacity", [Cap_],
+        "Pipeline Supported ARR", [Pipe_],
+        "Constrained New Logo ARR", [Con_]
+    )
+)
+
+
+// ---------------------------------------------------------------------------
+// 11. Unit economics and win rate - FY2025, by segment plus the blend.
+//     CAC and payback are period-summed then divided once, which is what
+//     makes the blend equal the published Phase 5 figure ($36,337 / 25.0 mo).
+// ---------------------------------------------------------------------------
+EVALUATE
+UNION(
+    ROW(
+        "Context", "Total",
+        "CAC", [CAC (FY2025)],
+        "CAC Payback Months", [CAC Payback Months (FY2025)],
+        "New Logo ARPA", CALCULATE([New Logo ARPA], 'Unit Economics'[Fiscal Year Number] = 2025),
+        "Win Rate", [Win Rate]
+    ),
+    SELECTCOLUMNS(
+        SUMMARIZECOLUMNS(
+            'Segment'[Segment],
+            "CAC_", [CAC (FY2025)],
+            "Payback_", [CAC Payback Months (FY2025)],
+            "ARPA_", CALCULATE([New Logo ARPA], 'Unit Economics'[Fiscal Year Number] = 2025),
+            "Win_", [Win Rate]
+        ),
+        "Context", 'Segment'[Segment],
+        "CAC", [CAC_],
+        "CAC Payback Months", [Payback_],
+        "New Logo ARPA", [ARPA_],
+        "Win Rate", [Win_]
+    )
+)
+
+
+// ---------------------------------------------------------------------------
+// 12. Sales efficiency - the labelled pair, by quarter. Both measures return
+//     BLANK across more than one quarter on purpose; the FY2025 figure in the
+//     Phase 5 report is an average of quarterly values, a different statistic,
+//     and is deliberately not reproduced by these measures.
+// ---------------------------------------------------------------------------
+EVALUATE
+SUMMARIZECOLUMNS(
+    'Date'[Fiscal Quarter],
+    "Net ARR Sales Efficiency", [Net ARR Sales Efficiency],
+    "Magic Number", [Magic Number]
+)
+ORDER BY 'Date'[Fiscal Quarter]
+
+
+// ---------------------------------------------------------------------------
+// 13. Exit ARR bridge - the seven imported lines must total Base exit ARR.
+//     Expected: Budget 37,589,315.84 opening, total bar 34,816,416.56.
+// ---------------------------------------------------------------------------
+EVALUATE
+UNION(
+    SUMMARIZECOLUMNS(
+        'ARR Bridge'[Line Order],
+        'ARR Bridge'[Bridge Line],
+        "Amount", [Exit ARR Bridge Amount]
+    ),
+    ROW(
+        "Line Order", 99,
+        "Bridge Line", "TOTAL - must equal Base Reforecast Exit ARR",
+        "Amount", [Exit ARR Bridge Amount]
+    )
+)
+ORDER BY [Line Order]
+
+
+// ---------------------------------------------------------------------------
+// 14. Budget-to-Base scorecard, and the two headline variance measures.
+// ---------------------------------------------------------------------------
+EVALUATE
+UNION(
+    SUMMARIZECOLUMNS(
+        'Management Variance'[Metric Label],
+        'Management Variance'[Unit],
+        "Budget", [Budget],
+        "Base", [Base Reforecast],
+        "Variance", [Variance vs Budget]
+    ),
+    ROW(
+        "Metric Label", "-- Exit ARR variance (headline)",
+        "Unit", "usd",
+        "Budget", CALCULATE([Budget], 'Management Variance'[Metric] = "exit_arr"),
+        "Base", [Dec-26 Exit ARR (Base)],
+        "Variance", [Exit ARR vs Budget]
+    )
+)
+
+
+// ---------------------------------------------------------------------------
+// 15. Pipeline coverage - both sides cover the remainder of FY2026, and the
+//     required-pipeline multiple that puts the coverage figure in context.
+// ---------------------------------------------------------------------------
+EVALUATE
+ROW(
+    "Open New Logo Pipeline ACV", [Open New Logo Pipeline ACV],
+    "Remaining FY2026 New Logo Target", [Remaining FY2026 New Logo Target],
+    "Pipeline Coverage", [Pipeline Coverage],
+    "Required Pipeline per $1 of Target", [Required Pipeline per $1 of Target]
+)
+
+
+// ---------------------------------------------------------------------------
+// 16. Forward ATR by quarter - the renewal exposure page 2 charts.
+// ---------------------------------------------------------------------------
+EVALUATE
+SUMMARIZECOLUMNS(
+    'Date'[Fiscal Quarter],
+    "ATR", [ATR]
+)
+ORDER BY 'Date'[Fiscal Quarter]
+
+
+// ---------------------------------------------------------------------------
+// 17. Guard behaviour - the point-in-time measures must return BLANK rather
+//     than a mathematically undefined multi-period value. Every cell in the
+//     second row of this result should be blank.
+// ---------------------------------------------------------------------------
+EVALUATE
+UNION(
+    ROW(
+        "Context", "Single month - Jun-2026 (values expected)",
+        "NRR", CALCULATE([NRR], 'Date'[Date] = DATE(2026, 6, 30)),
+        "GRR", CALCULATE([GRR], 'Date'[Date] = DATE(2026, 6, 30)),
+        "Net ARR Sales Efficiency",
+            CALCULATE([Net ARR Sales Efficiency], 'Date'[Fiscal Quarter] = "2026Q2"),
+        "Magic Number", CALCULATE([Magic Number], 'Date'[Fiscal Quarter] = "2026Q2")
+    ),
+    ROW(
+        "Context", "Full year FY2026 (BLANK expected)",
+        "NRR", CALCULATE([NRR], 'Date'[Year] = 2026),
+        "GRR", CALCULATE([GRR], 'Date'[Year] = 2026),
+        "Net ARR Sales Efficiency", CALCULATE([Net ARR Sales Efficiency], 'Date'[Year] = 2026),
+        "Magic Number", CALCULATE([Magic Number], 'Date'[Year] = 2026)
+    )
+)
+
+
+// ---------------------------------------------------------------------------
+// 18. Headcount and concentration - the remaining page 1 headline figures.
+// ---------------------------------------------------------------------------
+EVALUATE
+ROW(
+    "Ending Headcount Dec-2026",
+        CALCULATE([Ending Headcount], 'Date'[Date] = DATE(2026, 12, 31)),
+    "Top 10 ARR Concentration Jun-2026", [Top 10 ARR Concentration (Jun-26)],
+    "Base Policy Runway Months", [Base Policy Runway Months],
+    "Base Runway Headroom", [Base Runway Headroom]
+)

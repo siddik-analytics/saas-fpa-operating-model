@@ -1,0 +1,158 @@
+measure,filter_context,expected_value,unit,source_mart,note
+NRR,Total at Jun-2026,1.017911,ratio,fct_retention_ttm,SUM(cohort_current_arr) / SUM(cohort_beginning_arr)
+GRR,Total at Jun-2026,0.895577,ratio,fct_retention_ttm,SUM(cohort_grr_arr) / SUM(cohort_beginning_arr); the per-customer cap is applied upstream
+Logo Retention,Total at Jun-2026,0.834129,ratio,fct_retention_ttm,"SUM(retained_logos) / SUM(cohort_customers); logo-weighted, not ARR-weighted"
+Cohort Customers,Total at Jun-2026,838.000000,count,fct_retention_ttm,
+NRR,SMB at Jun-2026,0.846607,ratio,fct_retention_ttm,SUM(cohort_current_arr) / SUM(cohort_beginning_arr)
+GRR,SMB at Jun-2026,0.767121,ratio,fct_retention_ttm,SUM(cohort_grr_arr) / SUM(cohort_beginning_arr); the per-customer cap is applied upstream
+Logo Retention,SMB at Jun-2026,0.786517,ratio,fct_retention_ttm,"SUM(retained_logos) / SUM(cohort_customers); logo-weighted, not ARR-weighted"
+Cohort Customers,SMB at Jun-2026,534.000000,count,fct_retention_ttm,
+NRR,Mid-Market at Jun-2026,1.093026,ratio,fct_retention_ttm,SUM(cohort_current_arr) / SUM(cohort_beginning_arr)
+GRR,Mid-Market at Jun-2026,0.905626,ratio,fct_retention_ttm,SUM(cohort_grr_arr) / SUM(cohort_beginning_arr); the per-customer cap is applied upstream
+Logo Retention,Mid-Market at Jun-2026,0.908367,ratio,fct_retention_ttm,"SUM(retained_logos) / SUM(cohort_customers); logo-weighted, not ARR-weighted"
+Cohort Customers,Mid-Market at Jun-2026,251.000000,count,fct_retention_ttm,
+NRR,Enterprise at Jun-2026,1.003392,ratio,fct_retention_ttm,SUM(cohort_current_arr) / SUM(cohort_beginning_arr)
+GRR,Enterprise at Jun-2026,0.935071,ratio,fct_retention_ttm,SUM(cohort_grr_arr) / SUM(cohort_beginning_arr); the per-customer cap is applied upstream
+Logo Retention,Enterprise at Jun-2026,0.962264,ratio,fct_retention_ttm,"SUM(retained_logos) / SUM(cohort_customers); logo-weighted, not ARR-weighted"
+Cohort Customers,Enterprise at Jun-2026,53.000000,count,fct_retention_ttm,
+NRR,Total at Dec-2025,1.002511,ratio,fct_retention_ttm,SUM(cohort_current_arr) / SUM(cohort_beginning_arr)
+GRR,Total at Dec-2025,0.899804,ratio,fct_retention_ttm,SUM(cohort_grr_arr) / SUM(cohort_beginning_arr); the per-customer cap is applied upstream
+Logo Retention,Total at Dec-2025,0.820950,ratio,fct_retention_ttm,"SUM(retained_logos) / SUM(cohort_customers); logo-weighted, not ARR-weighted"
+Cohort Customers,Total at Dec-2025,821.000000,count,fct_retention_ttm,
+NRR,SMB at Dec-2025,0.840907,ratio,fct_retention_ttm,SUM(cohort_current_arr) / SUM(cohort_beginning_arr)
+GRR,SMB at Dec-2025,0.762418,ratio,fct_retention_ttm,SUM(cohort_grr_arr) / SUM(cohort_beginning_arr); the per-customer cap is applied upstream
+Logo Retention,SMB at Dec-2025,0.776515,ratio,fct_retention_ttm,"SUM(retained_logos) / SUM(cohort_customers); logo-weighted, not ARR-weighted"
+Cohort Customers,SMB at Dec-2025,528.000000,count,fct_retention_ttm,
+NRR,Mid-Market at Dec-2025,1.064469,ratio,fct_retention_ttm,SUM(cohort_current_arr) / SUM(cohort_beginning_arr)
+GRR,Mid-Market at Dec-2025,0.894787,ratio,fct_retention_ttm,SUM(cohort_grr_arr) / SUM(cohort_beginning_arr); the per-customer cap is applied upstream
+Logo Retention,Mid-Market at Dec-2025,0.885246,ratio,fct_retention_ttm,"SUM(retained_logos) / SUM(cohort_customers); logo-weighted, not ARR-weighted"
+Cohort Customers,Mid-Market at Dec-2025,244.000000,count,fct_retention_ttm,
+NRR,Enterprise at Dec-2025,1.001605,ratio,fct_retention_ttm,SUM(cohort_current_arr) / SUM(cohort_beginning_arr)
+GRR,Enterprise at Dec-2025,0.958894,ratio,fct_retention_ttm,SUM(cohort_grr_arr) / SUM(cohort_beginning_arr); the per-customer cap is applied upstream
+Logo Retention,Enterprise at Dec-2025,0.979592,ratio,fct_retention_ttm,"SUM(retained_logos) / SUM(cohort_customers); logo-weighted, not ARR-weighted"
+Cohort Customers,Enterprise at Dec-2025,49.000000,count,fct_retention_ttm,
+Ending ARR,Total at Jun-2026,33016720.320000,usd,fct_arr_forecast,"path = Base; semi-additive, the month's own value"
+Ending ARR,SMB at Jun-2026,4824788.880000,usd,fct_arr_forecast,
+Ending ARR,Mid-Market at Jun-2026,15499827.360000,usd,fct_arr_forecast,
+Ending ARR,Enterprise at Jun-2026,12692104.080000,usd,fct_arr_forecast,
+Ending ARR,Total at Dec-2026,34816416.564798,usd,fct_arr_forecast,"path = Base; semi-additive, the month's own value"
+Ending ARR,SMB at Dec-2026,4832879.333328,usd,fct_arr_forecast,
+Ending ARR,Mid-Market at Dec-2026,16971967.336256,usd,fct_arr_forecast,
+Ending ARR,Enterprise at Dec-2026,13011569.895214,usd,fct_arr_forecast,
+Ending ARR,Total at Dec-2027,41566296.055865,usd,fct_arr_forecast,"path = Base; semi-additive, the month's own value"
+Ending ARR,SMB at Dec-2027,5586329.866494,usd,fct_arr_forecast,
+Ending ARR,Mid-Market at Dec-2027,21359113.608182,usd,fct_arr_forecast,
+Ending ARR,Enterprise at Dec-2027,14620852.581190,usd,fct_arr_forecast,
+New Logo ARR,"Total, FY2026",3206313.513564,usd,fct_arr_forecast,"path = Base, calendar 2026"
+Expansion ARR,"Total, FY2026",6438102.552951,usd,fct_arr_forecast,"path = Base, calendar 2026"
+Contraction ARR,"Total, FY2026",-2069395.314399,usd,fct_arr_forecast,"path = Base, calendar 2026"
+Churn ARR,"Total, FY2026",-3058969.707319,usd,fct_arr_forecast,"path = Base, calendar 2026"
+New Logo ARR,"SMB, FY2026",853380.709298,usd,fct_arr_forecast,
+New Logo ARR,"Mid-Market, FY2026",1335241.523641,usd,fct_arr_forecast,
+New Logo ARR,"Enterprise, FY2026",1017691.280625,usd,fct_arr_forecast,
+Net New ARR,"Total, FY2026",4627100.724798,usd,fct_arr_forecast,The five movement components summed; contraction and churn are already signed negative
+Top 10 ARR Concentration (Jun-26),Company at Jun-2026,0.155716,ratio,fct_arr_concentration,
+Revenue,FY2025,27399775.050000,usd,fct_pnl_reforecast,path = Base
+Gross Profit,FY2025,20935135.140000,usd,fct_pnl_reforecast,
+Gross Margin %,FY2025,0.764062,ratio,fct_pnl_reforecast,"SUM(gross_profit) / SUM(total_revenue), never an average of monthly margins"
+Operating Income,FY2025,-7530578.820000,usd,fct_pnl_reforecast,
+OpEx,FY2025,28465713.960000,usd,fct_pnl_reforecast,
+Subscription Revenue,FY2025,26597200.510000,usd,fct_pnl_reforecast,
+Revenue,FY2026,32790970.251651,usd,fct_pnl_reforecast,path = Base
+Gross Profit,FY2026,25694771.976116,usd,fct_pnl_reforecast,
+Gross Margin %,FY2026,0.783593,ratio,fct_pnl_reforecast,"SUM(gross_profit) / SUM(total_revenue), never an average of monthly margins"
+Operating Income,FY2026,-5713689.171131,usd,fct_pnl_reforecast,
+OpEx,FY2026,31408461.147247,usd,fct_pnl_reforecast,
+Subscription Revenue,FY2026,32280637.598751,usd,fct_pnl_reforecast,
+Ending Headcount (Dec-26),All functions at Dec-2026,217.662467,fte,fct_headcount_forecast,"Semi-additive: the last month in context, summed across functions"
+Scenario Dec-26 Exit ARR,Bear at Dec-2026,33553421.702944,usd,fct_scenario_monthly,
+Scenario Dec-27 Exit ARR,Bear at Dec-2027,37456821.811469,usd,fct_scenario_monthly,
+Scenario FY2026 Revenue,"Bear, FY2026",32571935.842324,usd,fct_scenario_monthly,
+Scenario FY2026 Operating Income,"Bear, FY2026",-5910400.124143,usd,fct_scenario_monthly,
+Scenario Dec-27 Cash,Bear at Dec-2027,14396514.012343,usd,fct_scenario_monthly,
+Scenario Dec-26 Exit ARR,Base at Dec-2026,34816416.564798,usd,fct_scenario_monthly,
+Scenario Dec-27 Exit ARR,Base at Dec-2027,41566296.055865,usd,fct_scenario_monthly,
+Scenario FY2026 Revenue,"Base, FY2026",32790970.251651,usd,fct_scenario_monthly,
+Scenario FY2026 Operating Income,"Base, FY2026",-5713689.171131,usd,fct_scenario_monthly,
+Scenario Dec-27 Cash,Base at Dec-2027,16895401.660563,usd,fct_scenario_monthly,
+Scenario Dec-26 Exit ARR,Bull at Dec-2026,36123036.630152,usd,fct_scenario_monthly,
+Scenario Dec-27 Exit ARR,Bull at Dec-2027,46032954.526919,usd,fct_scenario_monthly,
+Scenario FY2026 Revenue,"Bull, FY2026",33024317.950149,usd,fct_scenario_monthly,
+Scenario FY2026 Operating Income,"Bull, FY2026",-5507025.088940,usd,fct_scenario_monthly,
+Scenario Dec-27 Cash,Bull at Dec-2027,19513485.407075,usd,fct_scenario_monthly,
+Policy Runway Months,Base,25.647059,months,fct_cash_runway_policy,"Board-policy view, not the operating cash proxy fct_cash_runway"
+Runway Headroom,Base,1.647059,months,fct_cash_runway_policy,Policy runway less the 24-month Board floor
+Policy Avg Monthly Burn,Base,850000.000000,usd,fct_cash_runway_policy,
+Policy Runway Months,Full Capacity-Close hiring,24.661060,months,fct_cash_runway_policy,"Board-policy view, not the operating cash proxy fct_cash_runway"
+Runway Headroom,Full Capacity-Close hiring,0.661060,months,fct_cash_runway_policy,Policy runway less the 24-month Board floor
+Policy Avg Monthly Burn,Full Capacity-Close hiring,883984.712466,usd,fct_cash_runway_policy,
+Policy Runway Months,Targeted hiring,25.647059,months,fct_cash_runway_policy,"Board-policy view, not the operating cash proxy fct_cash_runway"
+Runway Headroom,Targeted hiring,1.647059,months,fct_cash_runway_policy,Policy runway less the 24-month Board floor
+Policy Avg Monthly Burn,Targeted hiring,850000.000000,usd,fct_cash_runway_policy,
+Policy Runway Months,Bear,23.539775,months,fct_cash_runway_policy,"Board-policy view, not the operating cash proxy fct_cash_runway"
+Runway Headroom,Bear,-0.460225,months,fct_cash_runway_policy,Policy runway less the 24-month Board floor
+Policy Avg Monthly Burn,Bear,926092.112279,usd,fct_cash_runway_policy,
+Policy Runway Months,Bull,28.263294,months,fct_cash_runway_policy,"Board-policy view, not the operating cash proxy fct_cash_runway"
+Runway Headroom,Bull,4.263294,months,fct_cash_runway_policy,Policy runway less the 24-month Board floor
+Policy Avg Monthly Burn,Bull,771318.434986,usd,fct_cash_runway_policy,
+Board Floor Months,All paths,24.000000,months,fct_cash_runway_policy,
+Incremental Hires,Full Capacity-Close Hiring at Dec-2027,4.000000,fte,fct_hiring_scenario,Hire counts are computed upstream from the H2 2026 capacity gap
+Incremental ARR (Dec-2027),Full Capacity-Close Hiring at Dec-2027,147322.040569,usd,fct_hiring_scenario,"FY2027 decision horizon, not the Dec-2026 ramp-period snapshot"
+Incremental Operating Income (Dec-2027),Full Capacity-Close Hiring at Dec-2027,-31366.641829,usd,fct_hiring_scenario,
+Incremental Cash Impact (Dec-2027),Full Capacity-Close Hiring at Dec-2027,-637083.111375,usd,fct_hiring_scenario,
+"Incremental ARR (Dec-2026, ramp period)",Full Capacity-Close Hiring at Dec-2026,466.874713,usd,fct_hiring_scenario,Ramp-period snapshot only; hires start Oct-2026
+Incremental Hires,No Incremental GTM Hiring at Dec-2027,0.000000,fte,fct_hiring_scenario,Hire counts are computed upstream from the H2 2026 capacity gap
+Incremental ARR (Dec-2027),No Incremental GTM Hiring at Dec-2027,0.000000,usd,fct_hiring_scenario,"FY2027 decision horizon, not the Dec-2026 ramp-period snapshot"
+Incremental Operating Income (Dec-2027),No Incremental GTM Hiring at Dec-2027,0.000000,usd,fct_hiring_scenario,
+Incremental Cash Impact (Dec-2027),No Incremental GTM Hiring at Dec-2027,0.000000,usd,fct_hiring_scenario,
+"Incremental ARR (Dec-2026, ramp period)",No Incremental GTM Hiring at Dec-2026,0.000000,usd,fct_hiring_scenario,Ramp-period snapshot only; hires start Oct-2026
+Incremental Hires,Targeted / Runway-Constrained Hiring at Dec-2027,0.000000,fte,fct_hiring_scenario,Hire counts are computed upstream from the H2 2026 capacity gap
+Incremental ARR (Dec-2027),Targeted / Runway-Constrained Hiring at Dec-2027,0.000000,usd,fct_hiring_scenario,"FY2027 decision horizon, not the Dec-2026 ramp-period snapshot"
+Incremental Operating Income (Dec-2027),Targeted / Runway-Constrained Hiring at Dec-2027,0.000000,usd,fct_hiring_scenario,
+Incremental Cash Impact (Dec-2027),Targeted / Runway-Constrained Hiring at Dec-2027,0.000000,usd,fct_hiring_scenario,
+"Incremental ARR (Dec-2026, ramp period)",Targeted / Runway-Constrained Hiring at Dec-2026,0.000000,usd,fct_hiring_scenario,Ramp-period snapshot only; hires start Oct-2026
+Budget Exit ARR,"Company, Dec-2026",37589315.840000,usd,fct_arr_budget_bridge,Segment rows sum exactly to the company bridge (ctl_bridge_commentary check B)
+Exit ARR vs Budget,"Company, Dec-2026",-2772899.275202,usd,fct_management_variance,
+Exit ARR vs Budget %,"Company, Dec-2026",-0.073768,ratio,fct_management_variance,
+Gross Margin vs Budget (bps),"Company, FY2026",429.001720,bps,fct_management_variance,
+Exit ARR Bridge Amount,"Company, sum of the seven imported bridge lines",34816416.564798,usd,fct_arr_budget_bridge,"Must equal the mart's own closing anchor of 34,816,416.56"
+H2 2026 New Logo Capacity,"Total, Jul-Dec 2026",2920858.782250,usd,int_gtm_capacity_pipeline_forecast,"New Logo productive capacity, never blended capacity"
+H2 2026 Pipeline Supported ARR,"Total, Jul-Dec 2026",1219294.648704,usd,int_gtm_capacity_pipeline_forecast,
+H2 2026 Constrained New Logo ARR,"Total, Jul-Dec 2026",1182768.033564,usd,int_gtm_capacity_pipeline_forecast,"LEAST(capacity, pipeline), from SQL"
+H2 2026 New Logo Capacity,"SMB, Jul-Dec 2026",714807.530453,usd,int_gtm_capacity_pipeline_forecast,"New Logo productive capacity, never blended capacity"
+H2 2026 Pipeline Supported ARR,"SMB, Jul-Dec 2026",386188.835591,usd,int_gtm_capacity_pipeline_forecast,
+H2 2026 Constrained New Logo ARR,"SMB, Jul-Dec 2026",366168.109298,usd,int_gtm_capacity_pipeline_forecast,"LEAST(capacity, pipeline), from SQL"
+H2 2026 New Logo Capacity,"Mid-Market, Jul-Dec 2026",1159750.851916,usd,int_gtm_capacity_pipeline_forecast,"New Logo productive capacity, never blended capacity"
+H2 2026 Pipeline Supported ARR,"Mid-Market, Jul-Dec 2026",534297.932488,usd,int_gtm_capacity_pipeline_forecast,
+H2 2026 Constrained New Logo ARR,"Mid-Market, Jul-Dec 2026",517792.043641,usd,int_gtm_capacity_pipeline_forecast,"LEAST(capacity, pipeline), from SQL"
+H2 2026 New Logo Capacity,"Enterprise, Jul-Dec 2026",1046300.399882,usd,int_gtm_capacity_pipeline_forecast,"New Logo productive capacity, never blended capacity"
+H2 2026 Pipeline Supported ARR,"Enterprise, Jul-Dec 2026",298807.880625,usd,int_gtm_capacity_pipeline_forecast,
+H2 2026 Constrained New Logo ARR,"Enterprise, Jul-Dec 2026",298807.880625,usd,int_gtm_capacity_pipeline_forecast,"LEAST(capacity, pipeline), from SQL"
+Pipeline-Bound Months,"Total, Jul-Dec 2026",15.000000,count,int_gtm_capacity_pipeline_forecast,
+CAC (FY2025),"Total, FY2025",36336.505625,usd,fct_unit_economics,Period-summed then divided once; Q-1 lagged acquisition S&M
+CAC Payback Months (FY2025),"Total, FY2025",25.021238,months,fct_unit_economics,Gross-margin adjusted on the company-level blended margin
+New Logo ARPA,"Total, FY2025",22807.980517,usd,fct_unit_economics,
+CAC (FY2025),"SMB, FY2025",16294.322027,usd,fct_unit_economics,Period-summed then divided once; Q-1 lagged acquisition S&M
+CAC Payback Months (FY2025),"SMB, FY2025",28.228366,months,fct_unit_economics,Gross-margin adjusted on the company-level blended margin
+New Logo ARPA,"SMB, FY2025",9065.735056,usd,fct_unit_economics,
+CAC (FY2025),"Mid-Market, FY2025",71385.392947,usd,fct_unit_economics,Period-summed then divided once; Q-1 lagged acquisition S&M
+CAC Payback Months (FY2025),"Mid-Market, FY2025",23.655567,months,fct_unit_economics,Gross-margin adjusted on the company-level blended margin
+New Logo ARPA,"Mid-Market, FY2025",47394.556596,usd,fct_unit_economics,
+CAC (FY2025),"Enterprise, FY2025",310652.359384,usd,fct_unit_economics,Period-summed then divided once; Q-1 lagged acquisition S&M
+CAC Payback Months (FY2025),"Enterprise, FY2025",23.550240,months,fct_unit_economics,Gross-margin adjusted on the company-level blended margin
+New Logo ARPA,"Enterprise, FY2025",207172.354286,usd,fct_unit_economics,
+Win Rate,"Total, all time",0.254674,ratio,int_crm_opportunity_normalized,New Logo only; open pipeline excluded from the denominator
+Win Rate,"SMB, all time",0.279911,ratio,int_crm_opportunity_normalized,New Logo only; open pipeline excluded from the denominator
+Win Rate,"Mid-Market, all time",0.210000,ratio,int_crm_opportunity_normalized,New Logo only; open pipeline excluded from the denominator
+Win Rate,"Enterprise, all time",0.160000,ratio,int_crm_opportunity_normalized,New Logo only; open pipeline excluded from the denominator
+Net ARR Sales Efficiency,2026Q2,0.639690,ratio,fct_sales_efficiency,Blank across more than one quarter by design
+Magic Number,2026Q2,0.342773,ratio,fct_sales_efficiency,Never averaged with Net ARR Sales Efficiency into one number
+Budget New Logo ARR,"Company, FY2026",6000000.000000,usd,fct_new_logo_diagnosis,
+Remaining FY2026 New Logo Target,Company at 30 Jun 2026,3976454.520000,usd,fct_new_logo_diagnosis + fct_arr_forecast,Budget New Logo ARR less New Logo ARR already landed in H1 2026
+Open New Logo Pipeline ACV,Company at 30 Jun 2026,3920386.250000,usd,fct_pipeline_snapshot,
+Pipeline Coverage,Company at 30 Jun 2026,0.985900,ratio,fct_pipeline_snapshot + fct_new_logo_diagnosis,"A Power BI presentation ratio, not the Phase 5 quarterly coverage figure"
+ATR,"Company, 2026Q4",7904332.800000,usd,fct_renewal_base,"Measured at ARR in force at 30 June 2026, not contract book value"
+ATR,"Company, 2027Q1",8379572.880000,usd,fct_renewal_base,"Measured at ARR in force at 30 June 2026, not contract book value"
+ATR,"SMB, next 12 months",1725199.920000,usd,fct_renewal_base,
+ATR,"Mid-Market, next 12 months",13202935.200000,usd,fct_renewal_base,
+ATR,"Enterprise, next 12 months",8822181.840000,usd,fct_renewal_base,

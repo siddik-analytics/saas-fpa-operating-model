@@ -19,12 +19,16 @@ import time
 from pathlib import Path
 
 from .build_excel_model import build as build_excel_workbook
+from .build_powerbi import build as build_powerbi_project
 from .config import DATA_RAW_DIR, REPORTS_DIR, load_config
 from .generate_data import generate, write_tables
 from .excel_data import MartError
 from .report import write_report
 from .run_sql import build_and_validate as build_arr_engine
+from .powerbi_docs import write_measures_md
+from .powerbi_expected import write_expected
 from .validate_excel_model import validate as validate_workbook
+from .validate_powerbi import validate as validate_powerbi_project
 from .validate_sources import load_tables, validate
 
 REPORT_PATH = REPORTS_DIR / "source_validation_report.md"
@@ -62,6 +66,11 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument(
         "--skip-excel", action="store_true",
         help="Do not regenerate excel/Helio_SaaS_FP&A_Operating_Model.xlsx from the marts.",
+    )
+    parser.add_argument(
+        "--skip-powerbi", action="store_true",
+        help="Do not regenerate the Power BI project, its measure documentation or the "
+             "SQL expected-results pack in powerbi/.",
     )
     return parser.parse_args(argv)
 
@@ -138,6 +147,31 @@ def main(argv: list[str] | None = None) -> int:
         if not excel_result.passed:
             print()
             print("BUILD FAILED - the Excel workbook did not pass validation.")
+            return 1
+
+    if not args.skip_powerbi:
+        print()
+        print("Building the Power BI executive reporting pack")
+        try:
+            build_powerbi_project()
+            write_measures_md()
+            write_expected()
+        except MartError as error:
+            print(f"  FAIL  {error}")
+            print()
+            print("BUILD FAILED - the Power BI project could not be built.")
+            return 1
+        powerbi_result = validate_powerbi_project()
+        for name, ok, detail in powerbi_result.checks:
+            if not ok:
+                print(f"  FAIL  {name}" + (f": {detail}" if detail else ""))
+        passed_pbi = len(powerbi_result.checks) - len(powerbi_result.failures)
+        print(f"  {passed_pbi} of {len(powerbi_result.checks)} Power BI static checks passed")
+        print("  Power BI Desktop acceptance is a separate, manual step - see "
+              "docs/powerbi_executive_report.md")
+        if not powerbi_result.passed:
+            print()
+            print("BUILD FAILED - the Power BI project did not pass static validation.")
             return 1
 
     if not args.skip_tests:

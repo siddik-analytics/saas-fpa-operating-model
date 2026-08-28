@@ -1,0 +1,134 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "p3v6_pipeline_band",
+  "position": {
+    "x": 656,
+    "y": 546,
+    "z": 9,
+    "width": 600,
+    "height": 156,
+    "tabOrder": 9000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Pipeline"
+                    }
+                  },
+                  "Property": "Open Pipeline ACV"
+                }
+              },
+              "queryRef": "Pipeline.Open Pipeline ACV",
+              "nativeQueryRef": "Open pipeline"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Pipeline"
+                    }
+                  },
+                  "Property": "Weighted Pipeline ACV"
+                }
+              },
+              "queryRef": "Pipeline.Weighted Pipeline ACV",
+              "nativeQueryRef": "Weighted"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Pipeline"
+                    }
+                  },
+                  "Property": "Open New Logo Pipeline ACV"
+                }
+              },
+              "queryRef": "Pipeline.Open New Logo Pipeline ACV",
+              "nativeQueryRef": "New Logo pipeline"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "New Logo Diagnosis"
+                    }
+                  },
+                  "Property": "Remaining FY2026 New Logo Target"
+                }
+              },
+              "queryRef": "New Logo Diagnosis.Remaining FY2026 New Logo Target",
+              "nativeQueryRef": "Remaining FY2026 target"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Open pipeline against the New Logo ARR still to win in FY2026'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#1F3864'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11.0D"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'left'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
