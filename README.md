@@ -243,9 +243,6 @@ clean story after the fact.
 [generation methodology](docs/generation_methodology.md) ·
 [frozen specification](docs/PHASE1_SPEC.md)
 
-For interviews and positioning: [interview guide](docs/interview_guide.md) ·
-[project positioning](docs/project_positioning.md)
-
 ---
 
 ## Tech stack
