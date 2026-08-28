@@ -8,9 +8,10 @@ statically by `src/validate_powerbi.py` and `tests/test_powerbi_report.py`.
 No `.pbix` binary. No embedded data. No machine-specific path. No cloud dependency, no gateway
 and no workspace: the model reads the committed CSV marts off disk through one parameter.
 
-**Status: Power BI Desktop acceptance remains PENDING.** The project opens, the model refreshes
-and the five pages render. Five rounds of defects have been found and fixed, none of them
-analytical, each further into Desktop than the last:
+**Status: accepted in Power BI Desktop.** The project opens, the semantic model refreshes across
+all 27 tables, and the five report pages render and have been inspected visually — the captures in
+[`docs/assets/powerbi/`](assets/powerbi/) come from that build. Getting there took five rounds of
+defects, none of them analytical, each found further into Desktop than the last:
 
 | # | Where Desktop stopped | Error | Fixed |
 |---|---|---|---|
@@ -33,8 +34,9 @@ was invisible to the checks that existed at the time — the fourth was invisibl
 validator too and produced no error at all, and the fifth produced correct numbers that simply
 could not be read. The count is now 503 and includes a scaffold family, a measure-format family, a
 table-namespace family, a report-pages family and a presentation family (section 10), each with
-mutation tests behind it. None of that is a substitute for opening the file — section 11 is the
-manual acceptance step, and it is genuinely outstanding.
+mutation tests behind it. None of that was a substitute for opening the file: every one of the
+five defects reached Desktop with the static checks passing. Section 11 records the manual
+acceptance, which is what actually established that the report works.
 
 ---
 
@@ -403,12 +405,23 @@ all three of these families are the direct consequence of guards that did not ex
 **What none of it proves:** that Power BI Desktop's parser accepts a hand-authored PBIR file, that
 a visual renders, that DAX executes, that a slicer cross-filters correctly, or that a label is
 readable at 1280×720. The validator never prints "Power BI passed" — it prints
-`POWER BI STATIC VALIDATION OK - Power BI Desktop acceptance still required`.
+`POWER BI STATIC VALIDATION OK - static checks only; Desktop acceptance is separate`.
 
-## 11. Manual acceptance — outstanding
+## 11. Manual Desktop acceptance — completed
 
-The first attempt failed (section 12). The defects it exposed are fixed and the project now
-passes **Microsoft's own PBIR validator** as well as the checks in this repository:
+**The project has been opened and accepted in Power BI Desktop.** The `.pbip` opens with no
+recovery dialog, the `RepoRoot` parameter was set to a local clone path, the semantic model
+refreshed successfully across all 27 tables, and all five report pages render. The pages were then
+inspected visually, page by page, and the captures in [`docs/assets/powerbi/`](assets/powerbi/) are
+taken from that rendered build.
+
+Getting there took five rounds of defects that only Desktop could find — sections 12 to 16 record
+each one. **Static validation did not prove any of this**, and the two remain separate: the checks
+in section 10 establish that the project's files and model are internally consistent; opening it in
+Desktop is what established that it works.
+
+The project also passes **Microsoft's own PBIR validator** as well as the checks in this
+repository:
 
 ```bash
 npm install -g @microsoft/powerbi-report-authoring-cli@latest
@@ -419,10 +432,10 @@ That reports `succeeded, 0 errors, 0 warnings`, against the live published schem
 fetches each `$schema` it encounters, and `powerbi-report-author doctor` confirms schema
 reachability, so the schema validation genuinely ran rather than being skipped. It is a much
 stronger signal than this repository's own checks, because it is Microsoft's understanding of the
-format rather than ours. **It is still not Power BI Desktop.**
+format rather than ours. **It is still not Power BI Desktop**, which is why the manual route below
+exists and was walked.
 
-**The status is therefore: the project has not yet been successfully opened in Power BI Desktop.**
-The following is the acceptance route, and until it is walked, every item below is PENDING.
+The acceptance route that was followed:
 
 **A. The project loads.**
 
@@ -1084,10 +1097,10 @@ Recorded rather than left silent, following the convention `docs/gtm_finance.md`
 
 ## 19. Limitations
 
-1. **Power BI Desktop acceptance is outstanding after four failed attempts.** Sections 11 to 15.
-   The semantic model now opens and refreshes; the report pages have never been seen to render.
-   This is the largest open item in the phase, and the four failures are the proof that no static
-   check substitutes for opening the file.
+1. **Desktop acceptance was reached only after five rounds of defects.** Sections 11 to 16. Every
+   one passed static validation and still reached Desktop broken, which is the proof that no static
+   check substitutes for opening the file. Any future change to the report or the model needs the
+   same manual pass before the captures can be trusted.
 2. **`visual.json`'s schema version is still inferred, not confirmed.** The Desktop-authored
    scaffold that section 15 finally provided is a *blank* report — Desktop wrote it after
    discarding ours — so it contains no visuals and still cannot settle the visual container

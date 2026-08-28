@@ -121,7 +121,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'FY2025 unit economics - payback is past 21 months in every segment'"
+                  "Value": "'FY2025 unit economics - CAC payback runs 21 to 35 months by segment'"
                 }
               }
             },

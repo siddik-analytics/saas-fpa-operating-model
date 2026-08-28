@@ -945,7 +945,7 @@ New Logos Acquired =
 | **Format** | `#,##0` |
 | **Display folder** | 03 GTM |
 | **Source mart / fields** | fct_unit_economics.new_logos_count |
-| **Read by** | GTM Capacity & Pipeline / FY2025 unit economics - payback is past 21 months in every segment |
+| **Read by** | GTM Capacity & Pipeline / FY2025 unit economics - CAC payback runs 21 to 35 months by segment |
 
 #### New Logo ARPA
 
@@ -965,7 +965,7 @@ New Logo ARPA =
 | **Format** | `\$#,##0;(\$#,##0);\$0` |
 | **Display folder** | 03 GTM |
 | **Source mart / fields** | fct_unit_economics.new_logo_arr / new_logos_count |
-| **Read by** | GTM Capacity & Pipeline / FY2025 unit economics - payback is past 21 months in every segment |
+| **Read by** | GTM Capacity & Pipeline / FY2025 unit economics - CAC payback runs 21 to 35 months by segment |
 
 #### CAC
 
@@ -1009,7 +1009,7 @@ CAC per $1 New Logo ARR =
 | **Format** | `0.00` |
 | **Display folder** | 03 GTM |
 | **Source mart / fields** | fct_unit_economics.new_logo_acquisition_sm_current_quarter / new_logo_arr |
-| **Read by** | GTM Capacity & Pipeline / FY2025 unit economics - payback is past 21 months in every segment |
+| **Read by** | GTM Capacity & Pipeline / FY2025 unit economics - CAC payback runs 21 to 35 months by segment |
 
 #### CAC Gross Margin %
 
@@ -1070,7 +1070,7 @@ CAC (FY2025) =
 | **Format** | `\$#,##0;(\$#,##0);\$0` |
 | **Display folder** | 03 GTM |
 | **Source mart / fields** | fct_unit_economics |
-| **Read by** | GTM Capacity & Pipeline / FY2025 unit economics - payback is past 21 months in every segment |
+| **Read by** | GTM Capacity & Pipeline / FY2025 unit economics - CAC payback runs 21 to 35 months by segment |
 
 #### CAC Payback Months (FY2025)
 
@@ -1087,7 +1087,7 @@ CAC Payback Months (FY2025) =
 | **Format** | `#,##0.0" mo"` |
 | **Display folder** | 03 GTM |
 | **Source mart / fields** | fct_unit_economics |
-| **Read by** | GTM Capacity & Pipeline / FY2025 unit economics - payback is past 21 months in every segment |
+| **Read by** | GTM Capacity & Pipeline / FY2025 unit economics - CAC payback runs 21 to 35 months by segment |
 
 ---
 

@@ -1,0 +1,17 @@
+# The generators write LF, and the byte-identical rebuild check compares what they write
+# against what is committed. With core.autocrlf=true Git wants CRLF in the working tree,
+# which marked all 94 Power BI project files as modified when their bytes were identical.
+# Keeping LF in the working tree makes the diff mean something again.
+* text=auto eol=lf
+
+# Generated, and diffed on every build.
+*.tmdl   text eol=lf
+*.pbir   text eol=lf
+*.pbism  text eol=lf
+*.pbip   text eol=lf
+*.dax    text eol=lf
+
+# Binary: never line-ending converted, never shown as a text diff.
+*.xlsx   binary
+*.png    binary
+*.duckdb binary

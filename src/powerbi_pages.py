@@ -369,7 +369,7 @@ PAGE_3 = Page(
             name="p3v4_unit_economics",
             visual_type="pivotTable",
             x=656, y=384, width=600, height=152,
-            title="FY2025 unit economics - payback is past 21 months in every segment",
+            title="FY2025 unit economics - CAC payback runs 21 to 35 months by segment",
             roles={
                 "Rows": (_f("Segment", "Segment", C),),
                 "Values": (

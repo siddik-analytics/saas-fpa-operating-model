@@ -148,7 +148,7 @@ class Result:
         for name, _ok, detail in self.failures:
             lines.append("  FAIL  " + name + (": " + detail if detail else ""))
         lines.append(
-            "POWER BI STATIC VALIDATION OK - Power BI Desktop acceptance still required"
+            "POWER BI STATIC VALIDATION OK - static checks only; Desktop acceptance is separate"
             if self.passed else "POWER BI STATIC VALIDATION FAILED"
         )
         return "\n".join(lines)
