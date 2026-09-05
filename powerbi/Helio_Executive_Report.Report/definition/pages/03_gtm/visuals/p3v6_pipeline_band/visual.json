@@ -3,11 +3,11 @@
   "name": "p3v6_pipeline_band",
   "position": {
     "x": 656,
-    "y": 546,
-    "z": 9,
+    "y": 512,
+    "z": 10,
     "width": 600,
-    "height": 156,
-    "tabOrder": 9000
+    "height": 190,
+    "tabOrder": 10000
   },
   "visual": {
     "visualType": "tableEx",
@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "Pipeline.Open Pipeline ACV",
-              "nativeQueryRef": "Open pipeline"
+              "nativeQueryRef": "Open pipeline",
+              "displayName": "Open pipeline"
             },
             {
               "field": {
@@ -41,7 +42,8 @@
                 }
               },
               "queryRef": "Pipeline.Weighted Pipeline ACV",
-              "nativeQueryRef": "Weighted"
+              "nativeQueryRef": "Weighted",
+              "displayName": "Weighted"
             },
             {
               "field": {
@@ -55,7 +57,8 @@
                 }
               },
               "queryRef": "Pipeline.Open New Logo Pipeline ACV",
-              "nativeQueryRef": "New Logo pipeline"
+              "nativeQueryRef": "New Logo pipeline",
+              "displayName": "New Logo pipeline"
             },
             {
               "field": {
@@ -69,11 +72,27 @@
                 }
               },
               "queryRef": "New Logo Diagnosis.Remaining FY2026 New Logo Target",
-              "nativeQueryRef": "Remaining FY2026 target"
+              "nativeQueryRef": "Still to win",
+              "displayName": "Still to win"
             }
           ]
         }
       }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "visualContainerObjects": {
       "title": [

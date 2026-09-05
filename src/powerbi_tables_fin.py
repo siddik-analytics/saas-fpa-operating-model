@@ -31,6 +31,10 @@ from .powerbi_model import (
     Table,
 )
 
+# DAX written as a list of lines joined by a newline: the alternative is a
+# triple-quoted block that has to stay indented inside a dataclass argument list.
+EOL = chr(10)
+
 # ---------------------------------------------------------------------------
 # P&L. fct_pnl_reforecast is wide (one column per line); the query below unpivots it to
 # month x line item so a real management P&L can be laid out as a matrix. That is a reshape
@@ -861,6 +865,27 @@ MANAGEMENT_VARIANCE = Table(
                            "WHERE metric = 'exit_arr'",
         ),
         Measure(
+            "Favourability Colour",
+            EOL.join((
+                "-- A colour, not a number. Rules-based conditional formatting compares",
+                "-- numbers, so colouring a text column means binding it to a measure that",
+                "-- returns the colour itself. The verdict is still the Phase 7 centralised",
+                "-- polarity: this reads the mart's own answer and never re-derives it from",
+                "-- the sign of a variance.",
+                "SWITCH(",
+                "    SELECTEDVALUE('Management Variance'[Favourable / Unfavourable]),",
+                '    "Favorable", "#1E7B4D",',
+                '    "Unfavorable", "#B23A2E",',
+                '    "#6B7280"',
+                ")",
+            )),
+            None, FOLDER_BRIDGE, True,
+            description="Hex colour for the favourability verdict, bound to the "
+                        "Fav / Unfav column's font colour. Hidden: it is presentation, "
+                        "not a figure.",
+            source_fields="fct_management_variance.favorable_unfavorable",
+        ),
+        Measure(
             "Exit ARR vs Budget %",
             "DIVIDE(\n"
             "    [Exit ARR vs Budget],\n"
@@ -876,6 +901,7 @@ MANAGEMENT_VARIANCE = Table(
         ),
     ),
 )
+
 
 
 DRIVER_LABELS = [
@@ -912,7 +938,33 @@ DRIVERS_QUERY = f"""let
         {{"driver_category", "Driver Category"}}, {{"Driver Label", "Driver"}},
         {{"scenario", "Scenario"}}, {{"segment", "Driver Segment"}}, {{"value", "Value"}},
         {{"unit", "Unit"}}, {{"source_type", "Basis"}}}}),
-    Final = Table.SelectColumns(Renamed, {{"Driver Category", "Driver", "Driver Sort",
+    // One flat row label per stored value. As two matrix row levels the assumptions table
+    // rendered a single row: a matrix collapses its child level by default, and with the
+    // expand buttons hidden there is no way to open it - so every driver that carries a
+    // per-segment value showed blank, because Driver Value guards against summing a rate
+    // across three segments. Flat, each row is exactly one stored value and the guard is
+    // satisfied on every one of them.
+    // Segment abbreviated in the row label only. Written out, "New Logo win rate -
+    // Mid-Market" pushed the Bull column off the right edge of a 400 px table.
+    // The row label is the Driver column shortened for a 430 px table: written out,
+    // "New Logo win rate - Mid-Market" pushed the Bull column off the right edge. The
+    // Driver column itself keeps the full wording for the tooltip and the field list.
+    ShortDriver = (d) => Text.Replace(Text.Replace(Text.Replace(
+        d, "Expansion rate on opening ARR", "Expansion rate"),
+        "Monthly pipeline creation", "Pipeline creation"),
+        "New Logo win rate", "Win rate"),
+    WithRow = Table.AddColumn(Renamed, "Driver and segment", each
+        if [Driver Segment] = "All" then ShortDriver([Driver])
+        else ShortDriver([Driver]) & " - " & (
+            if [Driver Segment] = "Mid-Market" then "MM"
+            else if [Driver Segment] = "Enterprise" then "ENT"
+            else [Driver Segment]), type text),
+    WithSort = Table.AddColumn(WithRow, "Driver Row Sort", each
+        [Driver Sort] * 10 + (if [Driver Segment] = "All" then 0
+            else if [Driver Segment] = "SMB" then 1
+            else if [Driver Segment] = "Mid-Market" then 2 else 3), Int64.Type),
+    Final = Table.SelectColumns(WithSort, {{"Driver Category", "Driver", "Driver Sort",
+        "Driver and segment", "Driver Row Sort",
         "Scenario", "Driver Segment", "Value", "Unit", "Basis"}})
 in
     Final"""
@@ -928,6 +980,11 @@ FORECAST_DRIVERS = Table(
         Column("Driver Category", "Driver Category", "string"),
         Column("Driver", "Driver", "string", sort_by="Driver Sort"),
         Column("Driver Sort", "Driver Sort", "int64", FMT_INT, hidden=True),
+        Column("Driver and segment", "Driver and segment", "string",
+               sort_by="Driver Row Sort",
+               description="One flat label per stored driver value, so the assumptions "
+                           "table needs no expandable row hierarchy."),
+        Column("Driver Row Sort", "Driver Row Sort", "int64", FMT_INT, hidden=True),
         Column("Scenario", "Scenario", "string", hidden=True),
         Column("Driver Segment", "Driver Segment", "string"),
         Column("Value", "Value", "double", FMT_DEC2, hidden=True),

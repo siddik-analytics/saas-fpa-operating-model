@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
-  "name": "p4_header_meta",
+  "name": "p6_title",
   "position": {
-    "x": 800,
-    "y": 14,
-    "z": 2,
-    "width": 456,
-    "height": 56,
-    "tabOrder": 2000
+    "x": 24,
+    "y": 6,
+    "z": 1,
+    "width": 600,
+    "height": 30,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "textbox",
@@ -19,29 +19,16 @@
               {
                 "textRuns": [
                   {
-                    "value": "Q2 FY2026 Reforecast",
+                    "value": "Helio Systems, Inc.",
                     "textStyle": {
-                      "fontSize": "11pt",
-                      "fontWeight": "bold",
+                      "fontSize": "16pt",
                       "color": "#1F3864",
-                      "fontFamily": "Segoe UI"
+                      "fontFamily": "Segoe UI",
+                      "fontWeight": "bold"
                     }
                   }
                 ],
-                "horizontalTextAlignment": "right"
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "FY2024-FY2027, actual to Jun-2026 then Base reforecast",
-                    "textStyle": {
-                      "fontSize": "9pt",
-                      "color": "#6B7280",
-                      "fontFamily": "Segoe UI"
-                    }
-                  }
-                ],
-                "horizontalTextAlignment": "right"
+                "horizontalTextAlignment": "left"
               }
             ]
           }

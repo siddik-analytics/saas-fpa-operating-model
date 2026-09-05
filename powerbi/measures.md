@@ -4,7 +4,7 @@
 
 This file is **generated** from `src/powerbi_model.py`, `src/powerbi_tables_*.py` and `src/powerbi_pages.py` by `python -m src.powerbi_docs`, and `tests/test_powerbi_report.py` regenerates it on every run and fails if the committed copy has drifted. Documented DAX and shipped DAX cannot diverge.
 
-**108 measures** (104 visible, 4 hidden supporting), across 27 tables.
+**109 measures** (104 visible, 5 hidden supporting), across 27 tables.
 
 ---
 
@@ -61,7 +61,7 @@ Ending ARR =
 | **Source mart / fields** | fct_arr_forecast.ending_arr (path = Base) |
 | **SQL equivalent** | `SELECT ending_arr FROM fct_arr_forecast WHERE path = 'Base' AND month_end_date = <month>` |
 | **Filter-context notes** | Semi-additive. A year or quarter returns its final month, not a sum. |
-| **Read by** | ARR, Retention & Renewals / FY2026 ARR movement by segment |
+| **Read by** | ARR & Retention / FY2026 ARR movement by segment; Segment detail / ARR movement and Ending ARR for this segment |
 
 #### Ending ARR (Actual)
 
@@ -79,7 +79,7 @@ Ending ARR (Actual) =
 | **Display folder** | 01 ARR |
 | **Source mart / fields** | fct_arr_forecast.ending_arr |
 | **Filter-context notes** | Blank after 30 June 2026 by design. |
-| **Read by** | ARR, Retention & Renewals / ARR movement and Ending ARR - the forecast line starts where the actual stops |
+| **Read by** | ARR & Retention / ARR movement and Ending ARR - the forecast line starts where the actual stops |
 
 #### Ending ARR (Forecast)
 
@@ -97,7 +97,7 @@ Ending ARR (Forecast) =
 | **Display folder** | 01 ARR |
 | **Source mart / fields** | fct_arr_forecast.ending_arr |
 | **Filter-context notes** | Blank on or before 30 June 2026 by design. |
-| **Read by** | ARR, Retention & Renewals / ARR movement and Ending ARR - the forecast line starts where the actual stops |
+| **Read by** | ARR & Retention / ARR movement and Ending ARR - the forecast line starts where the actual stops |
 
 #### Beginning ARR
 
@@ -135,7 +135,7 @@ New Logo ARR =
 | **Display folder** | 01 ARR |
 | **Source mart / fields** | fct_arr_forecast.new_logo_arr |
 | **SQL equivalent** | `SUM(new_logo_arr); movement is classified at customer grain in fct_arr_movement (PHASE1_SPEC 8.2)` |
-| **Read by** | ARR, Retention & Renewals / ARR movement and Ending ARR - the forecast line starts where the actual stops; ARR, Retention & Renewals / FY2026 ARR movement by segment |
+| **Read by** | ARR & Retention / ARR movement and Ending ARR - the forecast line starts where the actual stops; ARR & Retention / FY2026 ARR movement by segment; Segment detail / ARR movement and Ending ARR for this segment |
 
 #### Expansion ARR
 
@@ -152,7 +152,7 @@ Expansion ARR =
 | **Format** | `\$#,##0;(\$#,##0);\$0` |
 | **Display folder** | 01 ARR |
 | **Source mart / fields** | fct_arr_forecast.expansion_arr |
-| **Read by** | ARR, Retention & Renewals / ARR movement and Ending ARR - the forecast line starts where the actual stops; ARR, Retention & Renewals / FY2026 ARR movement by segment |
+| **Read by** | ARR & Retention / ARR movement and Ending ARR - the forecast line starts where the actual stops; ARR & Retention / FY2026 ARR movement by segment; Segment detail / ARR movement and Ending ARR for this segment |
 
 #### Reactivation ARR
 
@@ -169,7 +169,7 @@ Reactivation ARR =
 | **Format** | `\$#,##0;(\$#,##0);\$0` |
 | **Display folder** | 01 ARR |
 | **Source mart / fields** | fct_arr_forecast.reactivation_arr |
-| **Read by** | ARR, Retention & Renewals / ARR movement and Ending ARR - the forecast line starts where the actual stops |
+| **Read by** | ARR & Retention / ARR movement and Ending ARR - the forecast line starts where the actual stops; Segment detail / ARR movement and Ending ARR for this segment |
 
 #### Contraction ARR
 
@@ -186,7 +186,7 @@ Contraction ARR =
 | **Format** | `\$#,##0;(\$#,##0);\$0` |
 | **Display folder** | 01 ARR |
 | **Source mart / fields** | fct_arr_forecast.contraction_arr |
-| **Read by** | ARR, Retention & Renewals / ARR movement and Ending ARR - the forecast line starts where the actual stops; ARR, Retention & Renewals / FY2026 ARR movement by segment |
+| **Read by** | ARR & Retention / ARR movement and Ending ARR - the forecast line starts where the actual stops; ARR & Retention / FY2026 ARR movement by segment; Segment detail / ARR movement and Ending ARR for this segment |
 
 #### Churn ARR
 
@@ -203,7 +203,7 @@ Churn ARR =
 | **Format** | `\$#,##0;(\$#,##0);\$0` |
 | **Display folder** | 01 ARR |
 | **Source mart / fields** | fct_arr_forecast.churn_arr |
-| **Read by** | ARR, Retention & Renewals / ARR movement and Ending ARR - the forecast line starts where the actual stops; ARR, Retention & Renewals / FY2026 ARR movement by segment |
+| **Read by** | ARR & Retention / ARR movement and Ending ARR - the forecast line starts where the actual stops; ARR & Retention / FY2026 ARR movement by segment; Segment detail / ARR movement and Ending ARR for this segment |
 
 #### Net New ARR
 
@@ -244,7 +244,7 @@ Jun-26 ARR (Actual) =
 | **Display folder** | 01 ARR |
 | **Source mart / fields** | fct_arr_forecast.ending_arr |
 | **Filter-context notes** | Removes any Date filter so the headline cannot drift with a page or visual date filter. Segment context is respected. |
-| **Read by** | Executive Q2 Reforecast / Where FY2026 lands, and whether the Board floor holds |
+| **Read by** | Executive / p1v1_kpi_0 |
 
 #### Dec-26 Exit ARR (Base)
 
@@ -266,7 +266,7 @@ Dec-26 Exit ARR (Base) =
 | **Display folder** | 01 ARR |
 | **Source mart / fields** | fct_arr_forecast.ending_arr |
 | **Filter-context notes** | Removes any Date filter. |
-| **Read by** | Executive Q2 Reforecast / Where FY2026 lands, and whether the Board floor holds |
+| **Read by** | Executive / p1v1_kpi_1; Segment detail / p6v0_kpi_0 |
 
 #### H1 2026 New Logo ARR (Actual)
 
@@ -339,7 +339,7 @@ NRR =
 | **Source mart / fields** | fct_retention_ttm.cohort_current_arr / cohort_beginning_arr |
 | **SQL equivalent** | `SELECT nrr FROM fct_retention_ttm WHERE month_end_date = <month> AND segment = <segment>` |
 | **Filter-context notes** | Returns BLANK across more than one reporting month rather than a mathematically undefined multi-cohort ratio. |
-| **Read by** | ARR, Retention & Renewals / NRR holds near 102%; GRR and logo retention are the SMB story; ARR, Retention & Renewals / TTM retention at 30 June 2026 - SMB drags the blend down |
+| **Read by** | ARR & Retention / NRR holds near 102%; GRR and logo retention are the SMB story; ARR & Retention / TTM retention at 30 June 2026 - SMB drags the blend down; Segment detail / p6v0_kpi_1; Segment detail / Retention trend for this segment |
 
 #### GRR
 
@@ -365,7 +365,7 @@ GRR =
 | **Source mart / fields** | fct_retention_ttm.cohort_grr_arr / cohort_beginning_arr |
 | **SQL equivalent** | `SELECT grr FROM fct_retention_ttm WHERE month_end_date = <month> AND segment = <segment>` |
 | **Filter-context notes** | GRR <= NRR and GRR <= 100% are enforced by ctl_retention_bounds upstream, not by this measure. Same single-month guard as NRR. |
-| **Read by** | ARR, Retention & Renewals / NRR holds near 102%; GRR and logo retention are the SMB story; ARR, Retention & Renewals / TTM retention at 30 June 2026 - SMB drags the blend down |
+| **Read by** | ARR & Retention / NRR holds near 102%; GRR and logo retention are the SMB story; ARR & Retention / TTM retention at 30 June 2026 - SMB drags the blend down; Segment detail / p6v0_kpi_2; Segment detail / Retention trend for this segment |
 
 #### Logo Retention
 
@@ -391,7 +391,7 @@ Logo Retention =
 | **Source mart / fields** | fct_retention_ttm.retained_logos / cohort_customers |
 | **SQL equivalent** | `SELECT logo_retention FROM fct_retention_ttm WHERE month_end_date = <month> AND segment = <segment>` |
 | **Filter-context notes** | Logo-weighted, unlike NRR and GRR which are ARR-weighted. The three blended figures are therefore not the same kind of average. |
-| **Read by** | ARR, Retention & Renewals / NRR holds near 102%; GRR and logo retention are the SMB story; ARR, Retention & Renewals / TTM retention at 30 June 2026 - SMB drags the blend down |
+| **Read by** | ARR & Retention / NRR holds near 102%; GRR and logo retention are the SMB story; ARR & Retention / TTM retention at 30 June 2026 - SMB drags the blend down; Segment detail / p6v0_kpi_3; Segment detail / Retention trend for this segment |
 
 #### Cohort Customers
 
@@ -408,7 +408,7 @@ Cohort Customers =
 | **Format** | `#,##0` |
 | **Display folder** | 02 Retention |
 | **Source mart / fields** | fct_retention_ttm.cohort_customers |
-| **Read by** | ARR, Retention & Renewals / TTM retention at 30 June 2026 - SMB drags the blend down |
+| **Read by** | ARR & Retention / TTM retention at 30 June 2026 - SMB drags the blend down; Segment detail / p6v0_kpi_4 |
 
 #### Cohort Beginning ARR
 
@@ -450,7 +450,7 @@ ATR =
 | **Source mart / fields** | fct_renewal_base.atr_arr |
 | **SQL equivalent** | `SELECT SUM(atr_arr) FROM fct_renewal_base WHERE renewal_month BETWEEN ...` |
 | **Filter-context notes** | Month-to-month contracts never appear: they have no anniversary and no renewal date. |
-| **Read by** | ARR, Retention & Renewals / Renewal exposure concentrates in Q4 2026 and Q1 2027 |
+| **Read by** | ARR & Retention / Renewal exposure concentrates in Q4 2026 and Q1 2027; Segment detail / Renewal exposure by quarter for this segment |
 
 ---
 
@@ -480,7 +480,7 @@ Cohort ARR Retention % =
 | **Source mart / fields** | fct_cohort_arr.retained_arr / starting_arr |
 | **SQL equivalent** | `SELECT arr_retention_pct FROM fct_cohort_arr WHERE acquisition_quarter = ... AND quarters_since_acquisition = ...` |
 | **Filter-context notes** | Ratio of aggregates, so it stays correct when segments are combined. It is a cohort-level analogue of NRR, not the TTM NRR on page 2. |
-| **Read by** | ARR, Retention & Renewals / Acquisition cohorts hold ARR as they age |
+| **Read by** | ARR & Retention / Acquisition cohorts hold ARR as they age; Segment detail / Acquisition cohorts in this segment, as they age |
 
 ---
 
@@ -537,7 +537,7 @@ New Logo Capacity =
 | **Source mart / fields** | int_gtm_capacity_pipeline_forecast.new_logo_capacity |
 | **SQL equivalent** | `SUM(new_logo_capacity) FROM int_gtm_capacity_pipeline_forecast WHERE path = 'Base'` |
 | **Filter-context notes** | Forecast months only (Jul-2026 onward); the mart carries no actual-period rows. |
-| **Read by** | GTM Capacity & Pipeline / Capacity runs above pipeline in every forecast month |
+| **Read by** | GTM & Pipeline / Capacity runs above pipeline in every forecast month |
 
 #### Pipeline Supported ARR
 
@@ -554,7 +554,7 @@ Pipeline Supported ARR =
 | **Format** | `\$#,##0;(\$#,##0);\$0` |
 | **Display folder** | 03 GTM |
 | **Source mart / fields** | int_gtm_capacity_pipeline_forecast.pipeline_supported_bookings |
-| **Read by** | GTM Capacity & Pipeline / Capacity runs above pipeline in every forecast month |
+| **Read by** | GTM & Pipeline / Capacity runs above pipeline in every forecast month |
 
 #### Constrained New Logo ARR
 
@@ -572,7 +572,7 @@ Constrained New Logo ARR =
 | **Display folder** | 03 GTM |
 | **Source mart / fields** | int_gtm_capacity_pipeline_forecast.constrained_new_logo_arr |
 | **SQL equivalent** | `LEAST(new_logo_capacity, pipeline_supported_bookings)` |
-| **Read by** | GTM Capacity & Pipeline / Capacity runs above pipeline in every forecast month |
+| **Read by** | GTM & Pipeline / Capacity runs above pipeline in every forecast month |
 
 #### Capacity to Pipeline Ratio
 
@@ -608,7 +608,7 @@ H2 2026 New Logo Capacity =
 | **Display folder** | 03 GTM |
 | **Source mart / fields** | int_gtm_capacity_pipeline_forecast.new_logo_capacity |
 | **Filter-context notes** | Date-independent; respects segment context. |
-| **Read by** | GTM Capacity & Pipeline / H2 2026: pipeline, not capacity, is what New Logo ARR runs into |
+| **Read by** | GTM & Pipeline / H2 2026: pipeline, not capacity, is what New Logo ARR runs into |
 
 #### H2 2026 Pipeline Supported ARR
 
@@ -625,7 +625,7 @@ H2 2026 Pipeline Supported ARR =
 | **Format** | `\$#,##0;(\$#,##0);\$0` |
 | **Display folder** | 03 GTM |
 | **Source mart / fields** | int_gtm_capacity_pipeline_forecast.pipeline_supported_bookings |
-| **Read by** | GTM Capacity & Pipeline / H2 2026: pipeline, not capacity, is what New Logo ARR runs into |
+| **Read by** | GTM & Pipeline / H2 2026: pipeline, not capacity, is what New Logo ARR runs into |
 
 #### H2 2026 Constrained New Logo ARR
 
@@ -642,7 +642,7 @@ H2 2026 Constrained New Logo ARR =
 | **Format** | `\$#,##0;(\$#,##0);\$0` |
 | **Display folder** | 03 GTM |
 | **Source mart / fields** | int_gtm_capacity_pipeline_forecast.constrained_new_logo_arr |
-| **Read by** | GTM Capacity & Pipeline / H2 2026: pipeline, not capacity, is what New Logo ARR runs into |
+| **Read by** | GTM & Pipeline / H2 2026: pipeline, not capacity, is what New Logo ARR runs into |
 
 ---
 
@@ -666,7 +666,7 @@ Quota-Carrying Reps =
 | **Display folder** | 03 GTM |
 | **Source mart / fields** | fct_sales_capacity.rep_id |
 | **Filter-context notes** | Every row in dim_sales_rep is quota-carrying; there is no non-carrying rep population in the source. |
-| **Read by** | GTM Capacity & Pipeline / Sales capacity and conversion by segment |
+| **Read by** | GTM & Pipeline / Sales capacity and conversion by segment |
 
 #### Fully Ramped Reps
 
@@ -686,7 +686,7 @@ Fully Ramped Reps =
 | **Format** | `#,##0` |
 | **Display folder** | 03 GTM |
 | **Source mart / fields** | fct_sales_capacity.ramp_pct |
-| **Read by** | GTM Capacity & Pipeline / Sales capacity and conversion by segment |
+| **Read by** | GTM & Pipeline / Sales capacity and conversion by segment |
 
 #### Actual Attainment
 
@@ -710,7 +710,7 @@ Actual Attainment =
 | **Source mart / fields** | fct_sales_capacity.actual_bookings / theoretical_quota_capacity |
 | **SQL equivalent** | `SUM(actual_bookings) / SUM(theoretical_quota_capacity)` |
 | **Filter-context notes** | Never an average of the stored per-rep actual_attainment column. |
-| **Read by** | GTM Capacity & Pipeline / Sales capacity and conversion by segment |
+| **Read by** | GTM & Pipeline / Sales capacity and conversion by segment |
 
 #### Expected Attainment
 
@@ -767,7 +767,7 @@ New Logo Productive Capacity (Actual) =
 | **Format** | `\$#,##0;(\$#,##0);\$0` |
 | **Display folder** | 03 GTM |
 | **Source mart / fields** | fct_sales_capacity.new_logo_productive_capacity |
-| **Read by** | GTM Capacity & Pipeline / Sales capacity and conversion by segment |
+| **Read by** | GTM & Pipeline / Sales capacity and conversion by segment |
 
 ---
 
@@ -841,7 +841,7 @@ Win Rate =
 | **Source mart / fields** | int_crm_opportunity_normalized.is_won / is_lost |
 | **SQL equivalent** | `COUNT(is_won) / (COUNT(is_won) + COUNT(is_lost)) WHERE deal_type = 'New Logo'` |
 | **Filter-context notes** | All-time, matching the Phase 5 published figure. Not the trailing 12-month win rate the forecast applies, which is a different measure. |
-| **Read by** | GTM Capacity & Pipeline / Sales capacity and conversion by segment |
+| **Read by** | GTM & Pipeline / Sales capacity and conversion by segment |
 
 #### Median Sales Cycle (Days)
 
@@ -886,7 +886,7 @@ Open Pipeline ACV =
 | **Format** | `\$#,##0;(\$#,##0);\$0` |
 | **Display folder** | 03 GTM |
 | **Source mart / fields** | fct_pipeline_snapshot.acv |
-| **Read by** | GTM Capacity & Pipeline / Open pipeline against the New Logo ARR still to win in FY2026 |
+| **Read by** | GTM & Pipeline / Open pipeline against the New Logo ARR still to win in FY2026 |
 
 #### Weighted Pipeline ACV
 
@@ -903,7 +903,7 @@ Weighted Pipeline ACV =
 | **Format** | `\$#,##0;(\$#,##0);\$0` |
 | **Display folder** | 03 GTM |
 | **Source mart / fields** | fct_pipeline_snapshot.weighted_acv |
-| **Read by** | GTM Capacity & Pipeline / Open pipeline against the New Logo ARR still to win in FY2026 |
+| **Read by** | GTM & Pipeline / Open pipeline against the New Logo ARR still to win in FY2026 |
 
 #### Open New Logo Pipeline ACV
 
@@ -920,7 +920,7 @@ Open New Logo Pipeline ACV =
 | **Format** | `\$#,##0;(\$#,##0);\$0` |
 | **Display folder** | 03 GTM |
 | **Source mart / fields** | fct_pipeline_snapshot.acv |
-| **Read by** | GTM Capacity & Pipeline / Open pipeline against the New Logo ARR still to win in FY2026 |
+| **Read by** | GTM & Pipeline / Open pipeline against the New Logo ARR still to win in FY2026 |
 
 ---
 
@@ -945,7 +945,7 @@ New Logos Acquired =
 | **Format** | `#,##0` |
 | **Display folder** | 03 GTM |
 | **Source mart / fields** | fct_unit_economics.new_logos_count |
-| **Read by** | GTM Capacity & Pipeline / FY2025 unit economics - CAC payback runs 21 to 35 months by segment |
+| **Read by** | GTM & Pipeline / FY2025 unit economics - CAC payback runs 21 to 35 months by segment |
 
 #### New Logo ARPA
 
@@ -965,7 +965,7 @@ New Logo ARPA =
 | **Format** | `\$#,##0;(\$#,##0);\$0` |
 | **Display folder** | 03 GTM |
 | **Source mart / fields** | fct_unit_economics.new_logo_arr / new_logos_count |
-| **Read by** | GTM Capacity & Pipeline / FY2025 unit economics - CAC payback runs 21 to 35 months by segment |
+| **Read by** | GTM & Pipeline / FY2025 unit economics - CAC payback runs 21 to 35 months by segment |
 
 #### CAC
 
@@ -1009,7 +1009,7 @@ CAC per $1 New Logo ARR =
 | **Format** | `0.00` |
 | **Display folder** | 03 GTM |
 | **Source mart / fields** | fct_unit_economics.new_logo_acquisition_sm_current_quarter / new_logo_arr |
-| **Read by** | GTM Capacity & Pipeline / FY2025 unit economics - CAC payback runs 21 to 35 months by segment |
+| **Read by** | GTM & Pipeline / FY2025 unit economics - CAC payback runs 21 to 35 months by segment |
 
 #### CAC Gross Margin %
 
@@ -1070,7 +1070,7 @@ CAC (FY2025) =
 | **Format** | `\$#,##0;(\$#,##0);\$0` |
 | **Display folder** | 03 GTM |
 | **Source mart / fields** | fct_unit_economics |
-| **Read by** | GTM Capacity & Pipeline / FY2025 unit economics - CAC payback runs 21 to 35 months by segment |
+| **Read by** | GTM & Pipeline / FY2025 unit economics - CAC payback runs 21 to 35 months by segment |
 
 #### CAC Payback Months (FY2025)
 
@@ -1087,7 +1087,7 @@ CAC Payback Months (FY2025) =
 | **Format** | `#,##0.0" mo"` |
 | **Display folder** | 03 GTM |
 | **Source mart / fields** | fct_unit_economics |
-| **Read by** | GTM Capacity & Pipeline / FY2025 unit economics - CAC payback runs 21 to 35 months by segment |
+| **Read by** | GTM & Pipeline / FY2025 unit economics - CAC payback runs 21 to 35 months by segment |
 
 ---
 
@@ -1136,7 +1136,7 @@ Net ARR Sales Efficiency =
 | **Source mart / fields** | fct_sales_efficiency.net_new_arr / prior_quarter_sm |
 | **SQL equivalent** | `SELECT net_arr_sales_efficiency FROM fct_sales_efficiency WHERE fiscal_quarter = <quarter>` |
 | **Filter-context notes** | Blank across more than one quarter. The Phase 5 report's FY2025 figure is an average of the four quarterly values, a different statistic, and is deliberately not reproduced here. |
-| **Read by** | GTM Capacity & Pipeline / Net ARR Sales Efficiency and the Magic Number are two metrics, never one |
+| **Read by** | GTM & Pipeline / Net ARR Sales Efficiency and the Magic Number are two metrics, never one |
 
 #### Magic Number
 
@@ -1165,7 +1165,7 @@ Magic Number =
 | **Source mart / fields** | fct_sales_efficiency.subscription_revenue, subscription_revenue_prior_quarter, prior_quarter_sm |
 | **SQL equivalent** | `SELECT magic_number FROM fct_sales_efficiency WHERE fiscal_quarter = <quarter>` |
 | **Filter-context notes** | Blank across more than one quarter, because the sequential delta would telescope and the denominator would double count. |
-| **Read by** | GTM Capacity & Pipeline / Net ARR Sales Efficiency and the Magic Number are two metrics, never one |
+| **Read by** | GTM & Pipeline / Net ARR Sales Efficiency and the Magic Number are two metrics, never one |
 
 ---
 
@@ -1261,7 +1261,7 @@ Remaining FY2026 New Logo Target =
 | **Display folder** | 03 GTM |
 | **Source mart / fields** | fct_new_logo_diagnosis.budget_new_logo_arr, fct_arr_forecast.new_logo_arr |
 | **Filter-context notes** | A Power BI presentation figure, not a frozen Phase 5 metric: the monthly Budget New Logo row (fact_budget account 9010) is not carried in any committed mart, so the quarterly coverage ratio the Phase 5 report publishes cannot be reproduced here and is not imitated. |
-| **Read by** | GTM Capacity & Pipeline / Open pipeline against the New Logo ARR still to win in FY2026 |
+| **Read by** | GTM & Pipeline / Open pipeline against the New Logo ARR still to win in FY2026 |
 
 #### Pipeline Coverage
 
@@ -1324,7 +1324,7 @@ P&L Amount =
 | **Display folder** | 04 P&L |
 | **Source mart / fields** | fct_pnl_reforecast (unpivoted) |
 | **Filter-context notes** | Additive across months within a line item. Never sum across line items: subtotal lines are stored, so that would double count. |
-| **Read by** | Financial Performance & Headcount / Management P&L - FY2026 is H1 actual plus H2 Base reforecast |
+| **Read by** | Financials / Management P&L - FY2026 is H1 actual plus H2 Base reforecast |
 
 #### Subscription Revenue
 
@@ -1344,7 +1344,7 @@ Subscription Revenue =
 | **Format** | `\$#,##0;(\$#,##0);\$0` |
 | **Display folder** | 04 P&L |
 | **Source mart / fields** | fct_pnl_reforecast.subscription_revenue |
-| **Read by** | Financial Performance & Headcount / Revenue keeps growing while gross margin holds above 78% |
+| **Read by** | Financials / Revenue grows quarter on quarter; gross margin holds in a 1 pt band |
 
 #### Services Revenue
 
@@ -1364,7 +1364,7 @@ Services Revenue =
 | **Format** | `\$#,##0;(\$#,##0);\$0` |
 | **Display folder** | 04 P&L |
 | **Source mart / fields** | fct_pnl_reforecast.services_revenue |
-| **Read by** | Financial Performance & Headcount / Revenue keeps growing while gross margin holds above 78% |
+| **Read by** | Financials / Revenue grows quarter on quarter; gross margin holds in a 1 pt band |
 
 #### Revenue
 
@@ -1426,7 +1426,7 @@ Gross Margin % =
 | **Source mart / fields** | fct_pnl_reforecast.gross_profit / total_revenue |
 | **SQL equivalent** | `SUM(gross_profit) / SUM(total_revenue)` |
 | **Filter-context notes** | Never AVERAGE of a monthly margin. |
-| **Read by** | Financial Performance & Headcount / Revenue keeps growing while gross margin holds above 78% |
+| **Read by** | Financials / Revenue grows quarter on quarter; gross margin holds in a 1 pt band |
 
 #### Operating Income
 
@@ -1464,7 +1464,7 @@ FY2026 Revenue =
 | **Display folder** | 04 P&L |
 | **Source mart / fields** | fct_pnl_reforecast.total_revenue |
 | **Filter-context notes** | Removes any Date filter so the headline is stable. |
-| **Read by** | Executive Q2 Reforecast / Where FY2026 lands, and whether the Board floor holds |
+| **Read by** | Executive / p1v1_kpi_3 |
 
 #### FY2026 Gross Margin %
 
@@ -1481,7 +1481,7 @@ FY2026 Gross Margin % =
 | **Format** | `0.0%` |
 | **Display folder** | 04 P&L |
 | **Source mart / fields** | fct_pnl_reforecast |
-| **Read by** | Executive Q2 Reforecast / Where FY2026 lands, and whether the Board floor holds |
+| **Read by** | Executive / p1v1_kpi_4 |
 
 #### FY2026 Operating Income
 
@@ -1498,7 +1498,7 @@ FY2026 Operating Income =
 | **Format** | `\$#,##0;(\$#,##0);\$0` |
 | **Display folder** | 04 P&L |
 | **Source mart / fields** | fct_pnl_reforecast.operating_income |
-| **Read by** | Executive Q2 Reforecast / Where FY2026 lands, and whether the Board floor holds |
+| **Read by** | Executive / p1v1_kpi_5 |
 
 ---
 
@@ -1527,7 +1527,7 @@ Ending Headcount =
 | **Source mart / fields** | fct_headcount_forecast.ending_headcount (path = Base) |
 | **SQL equivalent** | `SUM(ending_headcount) FROM fct_headcount_forecast WHERE path = 'Base' AND month_end_date = <month>` |
 | **Filter-context notes** | Semi-additive over time, additive over functions. |
-| **Read by** | Financial Performance & Headcount / Headcount rollforward to Dec-2026 |
+| **Read by** | Financials / Dec-2026 ending headcount by function |
 
 #### Beginning Headcount
 
@@ -1564,7 +1564,7 @@ Hires =
 | **Format** | `#,##0.0` |
 | **Display folder** | 05 Workforce |
 | **Source mart / fields** | fct_headcount_forecast.hires |
-| **Read by** | Financial Performance & Headcount / Headcount rollforward to Dec-2026 |
+| **Read by** | Financials / Dec-2026 ending headcount by function |
 
 #### Departures
 
@@ -1581,7 +1581,7 @@ Departures =
 | **Format** | `#,##0.0` |
 | **Display folder** | 05 Workforce |
 | **Source mart / fields** | fct_headcount_forecast.departures |
-| **Read by** | Financial Performance & Headcount / Headcount rollforward to Dec-2026 |
+| **Read by** | Financials / Dec-2026 ending headcount by function |
 
 ---
 
@@ -1609,7 +1609,7 @@ Scenario ARR =
 | **Source mart / fields** | fct_scenario_monthly.ending_arr |
 | **SQL equivalent** | `SELECT ending_arr FROM fct_scenario_monthly WHERE scenario = <scenario> AND month_end_date = <month>` |
 | **Filter-context notes** | Semi-additive over time. |
-| **Read by** | Executive Q2 Reforecast / Bear, Base and Bull ARR to Dec-2027; Plan & Scenarios / Bear, Base and Bull separate only after the Jun-2026 cutover |
+| **Read by** | Executive / Bear, Base and Bull ARR to Dec-2027; Scenarios / Bear, Base and Bull separate only after the Jun-2026 cutover |
 
 #### Scenario Revenue
 
@@ -1685,7 +1685,7 @@ Scenario Dec-26 Exit ARR =
 | **Format** | `\$#,##0;(\$#,##0);\$0` |
 | **Display folder** | 09 Scenarios |
 | **Source mart / fields** | fct_scenario_monthly.ending_arr |
-| **Read by** | Plan & Scenarios / What each scenario means for ARR, revenue, profit and cash |
+| **Read by** | Scenarios / What each scenario means for ARR, revenue and cash |
 
 #### Scenario Dec-27 Exit ARR
 
@@ -1723,7 +1723,7 @@ Scenario FY2026 Revenue =
 | **Format** | `\$#,##0;(\$#,##0);\$0` |
 | **Display folder** | 09 Scenarios |
 | **Source mart / fields** | fct_scenario_monthly.total_revenue |
-| **Read by** | Plan & Scenarios / What each scenario means for ARR, revenue, profit and cash |
+| **Read by** | Scenarios / What each scenario means for ARR, revenue and cash |
 
 #### Scenario FY2026 Operating Income
 
@@ -1740,7 +1740,7 @@ Scenario FY2026 Operating Income =
 | **Format** | `\$#,##0;(\$#,##0);\$0` |
 | **Display folder** | 09 Scenarios |
 | **Source mart / fields** | fct_scenario_monthly.operating_income |
-| **Read by** | Plan & Scenarios / What each scenario means for ARR, revenue, profit and cash |
+| **Read by** | Scenarios / What each scenario means for ARR, revenue and cash |
 
 #### Scenario Dec-27 Cash
 
@@ -1761,7 +1761,7 @@ Scenario Dec-27 Cash =
 | **Format** | `\$#,##0;(\$#,##0);\$0` |
 | **Display folder** | 09 Scenarios |
 | **Source mart / fields** | fct_scenario_monthly.ending_cash |
-| **Read by** | Plan & Scenarios / What each scenario means for ARR, revenue, profit and cash |
+| **Read by** | Scenarios / What each scenario means for ARR, revenue and cash |
 
 ---
 
@@ -1793,7 +1793,7 @@ Policy Runway Months =
 | **Source mart / fields** | fct_cash_runway_policy.policy_runway_months |
 | **SQL equivalent** | `SELECT policy_runway_months FROM fct_cash_runway_policy WHERE path = <path>` |
 | **Filter-context notes** | Blank unless exactly one path is in context; runway does not sum. |
-| **Read by** | Executive Q2 Reforecast / Bear breaches the 24-month Board runway floor; Plan & Scenarios / Board-policy runway against the 24-month floor - Bear is the only breach; Plan & Scenarios / Runway, floor, headroom and the burn behind each |
+| **Read by** | Executive / Board-policy runway by path, against the 24-month floor; Scenarios / Board-policy runway against the 24-month floor - only Bear falls short; Scenarios / Policy runway and headroom, by path |
 
 #### Board Floor Months
 
@@ -1834,7 +1834,7 @@ Runway Headroom =
 | **Display folder** | 06 Runway |
 | **Source mart / fields** | fct_cash_runway_policy.headroom_months |
 | **SQL equivalent** | `SELECT headroom_months FROM fct_cash_runway_policy WHERE path = <path>` |
-| **Read by** | Plan & Scenarios / Runway, floor, headroom and the burn behind each |
+| **Read by** | Scenarios / Policy runway and headroom, by path |
 
 #### Policy Avg Monthly Burn
 
@@ -1854,7 +1854,7 @@ Policy Avg Monthly Burn =
 | **Format** | `\$#,##0;(\$#,##0);\$0` |
 | **Display folder** | 06 Runway |
 | **Source mart / fields** | fct_cash_runway_policy.policy_avg_monthly_burn |
-| **Read by** | Plan & Scenarios / Runway, floor, headroom and the burn behind each |
+| **Read by** | supporting measure only |
 
 #### Board Floor Status
 
@@ -1879,7 +1879,7 @@ Board Floor Status =
 | **Display folder** | 06 Runway |
 | **Source mart / fields** | fct_cash_runway_policy.breaches_floor |
 | **Filter-context notes** | Text measure; used only in the affordability table. |
-| **Read by** | Plan & Scenarios / Runway, floor, headroom and the burn behind each |
+| **Read by** | Scenarios / Policy runway and headroom, by path |
 
 #### Base Policy Runway Months
 
@@ -1900,7 +1900,7 @@ Base Policy Runway Months =
 | **Format** | `#,##0.0" mo"` |
 | **Display folder** | 06 Runway |
 | **Source mart / fields** | fct_cash_runway_policy.policy_runway_months |
-| **Read by** | Executive Q2 Reforecast / Where FY2026 lands, and whether the Board floor holds |
+| **Read by** | Executive / p1v1_kpi_6 |
 
 #### Base Runway Headroom
 
@@ -1921,7 +1921,7 @@ Base Runway Headroom =
 | **Format** | `+#,##0.0" mo";-#,##0.0" mo";0.0" mo"` |
 | **Display folder** | 06 Runway |
 | **Source mart / fields** | fct_cash_runway_policy.headroom_months |
-| **Read by** | Executive Q2 Reforecast / Where FY2026 lands, and whether the Board floor holds |
+| **Read by** | Executive / p1v1_kpi_7 |
 
 ---
 
@@ -1949,7 +1949,7 @@ Incremental Hires =
 | **Display folder** | 07 Hiring |
 | **Source mart / fields** | fct_hiring_scenario.cumulative_hires |
 | **SQL equivalent** | `SELECT cumulative_hires FROM fct_hiring_scenario WHERE case_label = <case> AND month_end_date = '2027-12-31'` |
-| **Read by** | Plan & Scenarios / Full Capacity-Close buys $147k of Dec-2027 ARR for $637k of cash |
+| **Read by** | Scenarios / Full Capacity-Close buys $147k of Dec-2027 ARR for $637k of cash |
 
 #### Incremental ARR (Dec-2027)
 
@@ -1971,7 +1971,7 @@ Incremental ARR (Dec-2027) =
 | **Display folder** | 07 Hiring |
 | **Source mart / fields** | fct_hiring_scenario.incremental_ending_arr |
 | **Filter-context notes** | Fixed to Dec-2027 regardless of any date context. |
-| **Read by** | Plan & Scenarios / Full Capacity-Close buys $147k of Dec-2027 ARR for $637k of cash |
+| **Read by** | Scenarios / Full Capacity-Close buys $147k of Dec-2027 ARR for $637k of cash |
 
 #### Incremental Operating Income (Dec-2027)
 
@@ -1992,7 +1992,7 @@ Incremental Operating Income (Dec-2027) =
 | **Format** | `\$#,##0;(\$#,##0);\$0` |
 | **Display folder** | 07 Hiring |
 | **Source mart / fields** | fct_hiring_scenario.incremental_operating_income |
-| **Read by** | Plan & Scenarios / Full Capacity-Close buys $147k of Dec-2027 ARR for $637k of cash |
+| **Read by** | supporting measure only |
 
 #### Incremental Cash Impact (Dec-2027)
 
@@ -2013,7 +2013,7 @@ Incremental Cash Impact (Dec-2027) =
 | **Format** | `\$#,##0;(\$#,##0);\$0` |
 | **Display folder** | 07 Hiring |
 | **Source mart / fields** | fct_hiring_scenario.incremental_cash_impact |
-| **Read by** | Plan & Scenarios / Full Capacity-Close buys $147k of Dec-2027 ARR for $637k of cash |
+| **Read by** | Scenarios / Full Capacity-Close buys $147k of Dec-2027 ARR for $637k of cash |
 
 #### Incremental ARR (Dec-2026, ramp period)
 
@@ -2080,7 +2080,7 @@ Exit ARR Bridge Amount =
 | **Source mart / fields** | fct_arr_budget_bridge.amount |
 | **SQL equivalent** | `SELECT amount FROM fct_arr_budget_bridge WHERE segment = <segment> AND line_order = <n>` |
 | **Filter-context notes** | No 'Other' or balancing line exists here or upstream. |
-| **Read by** | Executive Q2 Reforecast / Exit ARR is $2.8M below Budget - New Logo ARR is most of the gap |
+| **Read by** | Executive / Exit ARR is $2.8M below Budget - New Logo ARR is most of the gap |
 
 ---
 
@@ -2106,7 +2106,7 @@ Operating Income Bridge Amount =
 | **Display folder** | 08 Budget & Bridge |
 | **Source mart / fields** | fct_operating_income_bridge.amount |
 | **SQL equivalent** | `SELECT amount FROM fct_operating_income_bridge WHERE line_order = <n>` |
-| **Read by** | Financial Performance & Headcount / Operating income lands $0.09M below Budget - favourable COGS nearly offsets S&M |
+| **Read by** | Financials / Operating income lands $0.09M below Budget - favourable COGS nearly offsets S&M |
 
 ---
 
@@ -2140,7 +2140,7 @@ Budget =
 | **Display folder** | 08 Budget & Bridge |
 | **Source mart / fields** | fct_management_variance.budget_amount |
 | **Filter-context notes** | Formatted dynamically by the row's own unit, so the scorecard can show dollars, basis points and FTE together without a wrong symbol. Never total across metrics: the rows are not commensurable. |
-| **Read by** | Executive Q2 Reforecast / Budget versus Base reforecast, ranked by variance; Financial Performance & Headcount / FY2026 Budget versus Base, with the centrally derived favourability |
+| **Read by** | Executive / Budget versus Base reforecast, ranked by variance; Financials / FY2026 Budget versus Base, with the centrally derived favourability |
 
 #### Base Reforecast
 
@@ -2166,7 +2166,7 @@ Base Reforecast =
 | **Display folder** | 08 Budget & Bridge |
 | **Source mart / fields** | fct_management_variance.base_amount |
 | **Filter-context notes** | Dynamically formatted by unit, as Budget is. |
-| **Read by** | Executive Q2 Reforecast / Budget versus Base reforecast, ranked by variance; Financial Performance & Headcount / FY2026 Budget versus Base, with the centrally derived favourability |
+| **Read by** | Executive / Budget versus Base reforecast, ranked by variance; Financials / FY2026 Budget versus Base, with the centrally derived favourability |
 
 #### Variance vs Budget
 
@@ -2185,7 +2185,7 @@ Variance vs Budget =
 | **Display folder** | 08 Budget & Bridge |
 | **Source mart / fields** | fct_management_variance.variance |
 | **Filter-context notes** | Dynamically formatted by unit: dollars in millions, basis points for the gross-margin row, FTE for headcount. |
-| **Read by** | Executive Q2 Reforecast / Budget versus Base reforecast, ranked by variance; Financial Performance & Headcount / FY2026 Budget versus Base, with the centrally derived favourability |
+| **Read by** | Executive / Budget versus Base reforecast, ranked by variance; Financials / FY2026 Budget versus Base, with the centrally derived favourability |
 
 #### Variance vs Budget %
 
@@ -2230,7 +2230,34 @@ Exit ARR vs Budget =
 | **Display folder** | 08 Budget & Bridge |
 | **Source mart / fields** | fct_management_variance.variance (metric = exit_arr) |
 | **SQL equivalent** | `SELECT variance FROM fct_management_variance WHERE metric = 'exit_arr'` |
-| **Read by** | Executive Q2 Reforecast / Where FY2026 lands, and whether the Board floor holds |
+| **Read by** | Executive / p1v1_kpi_2 |
+
+#### Favourability Colour
+
+Hex colour for the favourability verdict, bound to the Fav / Unfav column's font colour. Hidden: it is presentation, not a figure.
+
+```dax
+Favourability Colour =
+    -- A colour, not a number. Rules-based conditional formatting compares
+    -- numbers, so colouring a text column means binding it to a measure that
+    -- returns the colour itself. The verdict is still the Phase 7 centralised
+    -- polarity: this reads the mart's own answer and never re-derives it from
+    -- the sign of a variance.
+    SWITCH(
+        SELECTEDVALUE('Management Variance'[Favourable / Unfavourable]),
+        "Favorable", "#1E7B4D",
+        "Unfavorable", "#B23A2E",
+        "#6B7280"
+    )
+```
+
+| | |
+|---|---|
+| **Home table** | `Management Variance` |
+| **Format** | *text measure* |
+| **Display folder** | 08 Budget & Bridge |
+| **Source mart / fields** | fct_management_variance.favorable_unfavorable |
+| **Read by** | Executive / Budget versus Base reforecast, ranked by variance; Financials / FY2026 Budget versus Base, with the centrally derived favourability |
 
 #### Exit ARR vs Budget %
 
@@ -2285,7 +2312,7 @@ Driver Value =
 | **Source mart / fields** | int_forecast_drivers.value |
 | **SQL equivalent** | `SELECT value FROM int_forecast_drivers WHERE driver_name = ... AND scenario = ... AND segment = ...` |
 | **Filter-context notes** | Blank at any grain coarser than one driver row, deliberately: the rows are not commensurable. |
-| **Read by** | Plan & Scenarios / Management assumptions - stated judgements, not statistical predictions |
+| **Read by** | Scenarios / Management assumptions - stated judgements, not statistical predictions |
 
 ---
 
@@ -2313,7 +2340,7 @@ Deferred Revenue =
 | **Source mart / fields** | fct_deferred_revenue.ending_deferred_revenue (segment = Total) |
 | **SQL equivalent** | `SELECT ending_deferred_revenue FROM fct_deferred_revenue WHERE segment = 'Total' AND month_end_date = <month>` |
 | **Filter-context notes** | Semi-additive. Never netted against the unbilled receivable. |
-| **Read by** | Financial Performance & Headcount / Deferred revenue builds as an advance-billed book grows |
+| **Read by** | Financials / Accounting balances at 30 June 2026 |
 
 #### Unbilled Receivable
 
@@ -2333,7 +2360,7 @@ Unbilled Receivable =
 | **Format** | `\$#,##0;(\$#,##0);\$0` |
 | **Display folder** | 10 Accounting |
 | **Source mart / fields** | fct_deferred_revenue.ending_unbilled_receivable |
-| **Read by** | Financial Performance & Headcount / Deferred revenue builds as an advance-billed book grows |
+| **Read by** | Financials / Accounting balances at 30 June 2026 |
 
 ---
 
@@ -2361,7 +2388,7 @@ Capitalised Commission Asset =
 | **Source mart / fields** | fct_commission_asset.ending_commission_asset (path = Base) |
 | **SQL equivalent** | `SELECT ending_commission_asset FROM fct_commission_asset WHERE path = 'Base' AND month_end_date = <month>` |
 | **Filter-context notes** | Semi-additive. |
-| **Read by** | Financial Performance & Headcount / Deferred revenue builds as an advance-billed book grows |
+| **Read by** | Financials / Accounting balances at 30 June 2026 |
 
 ---
 

@@ -3,11 +3,11 @@
   "name": "p3v5_efficiency_pair",
   "position": {
     "x": 24,
-    "y": 546,
-    "z": 8,
+    "y": 512,
+    "z": 9,
     "width": 608,
-    "height": 156,
-    "tabOrder": 8000
+    "height": 190,
+    "tabOrder": 9000
   },
   "visual": {
     "visualType": "lineChart",

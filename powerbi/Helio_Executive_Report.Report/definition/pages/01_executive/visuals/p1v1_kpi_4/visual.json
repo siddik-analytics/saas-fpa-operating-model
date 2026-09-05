@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "p1v1_kpi_4",
+  "position": {
+    "x": 640,
+    "y": 102,
+    "z": 8,
+    "width": 148,
+    "height": 96,
+    "tabOrder": 8000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "P&L"
+                    }
+                  },
+                  "Property": "FY2026 Gross Margin %"
+                }
+              },
+              "queryRef": "P&L.FY2026 Gross Margin %",
+              "nativeQueryRef": "Gross margin",
+              "displayName": "Gross margin",
+              "format": "0.0%"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

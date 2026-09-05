@@ -52,6 +52,27 @@ table 'Forecast Drivers'
 
 		annotation SummarizationSetBy = Automatic
 
+	/// One flat label per stored driver value, so the assumptions table needs no expandable row
+	/// hierarchy.
+	column 'Driver and segment'
+		dataType: string
+		lineageTag: 6969ff08-c9e7-511c-b0d7-62b252d1b0b3
+		summarizeBy: none
+		sourceColumn: Driver and segment
+		sortByColumn: 'Driver Row Sort'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Driver Row Sort'
+		dataType: int64
+		isHidden
+		formatString: #,##0
+		lineageTag: 661cedfc-9619-5f69-b310-f4c114006757
+		summarizeBy: none
+		sourceColumn: Driver Row Sort
+
+		annotation SummarizationSetBy = Automatic
+
 	column Scenario
 		dataType: string
 		isHidden
@@ -127,7 +148,33 @@ table 'Forecast Drivers'
 				        {"driver_category", "Driver Category"}, {"Driver Label", "Driver"},
 				        {"scenario", "Scenario"}, {"segment", "Driver Segment"}, {"value", "Value"},
 				        {"unit", "Unit"}, {"source_type", "Basis"}}),
-				    Final = Table.SelectColumns(Renamed, {"Driver Category", "Driver", "Driver Sort",
+				    // One flat row label per stored value. As two matrix row levels the assumptions table
+				    // rendered a single row: a matrix collapses its child level by default, and with the
+				    // expand buttons hidden there is no way to open it - so every driver that carries a
+				    // per-segment value showed blank, because Driver Value guards against summing a rate
+				    // across three segments. Flat, each row is exactly one stored value and the guard is
+				    // satisfied on every one of them.
+				    // Segment abbreviated in the row label only. Written out, "New Logo win rate -
+				    // Mid-Market" pushed the Bull column off the right edge of a 400 px table.
+				    // The row label is the Driver column shortened for a 430 px table: written out,
+				    // "New Logo win rate - Mid-Market" pushed the Bull column off the right edge. The
+				    // Driver column itself keeps the full wording for the tooltip and the field list.
+				    ShortDriver = (d) => Text.Replace(Text.Replace(Text.Replace(
+				        d, "Expansion rate on opening ARR", "Expansion rate"),
+				        "Monthly pipeline creation", "Pipeline creation"),
+				        "New Logo win rate", "Win rate"),
+				    WithRow = Table.AddColumn(Renamed, "Driver and segment", each
+				        if [Driver Segment] = "All" then ShortDriver([Driver])
+				        else ShortDriver([Driver]) & " - " & (
+				            if [Driver Segment] = "Mid-Market" then "MM"
+				            else if [Driver Segment] = "Enterprise" then "ENT"
+				            else [Driver Segment]), type text),
+				    WithSort = Table.AddColumn(WithRow, "Driver Row Sort", each
+				        [Driver Sort] * 10 + (if [Driver Segment] = "All" then 0
+				            else if [Driver Segment] = "SMB" then 1
+				            else if [Driver Segment] = "Mid-Market" then 2 else 3), Int64.Type),
+				    Final = Table.SelectColumns(WithSort, {"Driver Category", "Driver", "Driver Sort",
+				        "Driver and segment", "Driver Row Sort",
 				        "Scenario", "Driver Segment", "Value", "Unit", "Basis"})
 				in
 				    Final

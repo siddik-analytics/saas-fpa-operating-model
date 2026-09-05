@@ -102,13 +102,25 @@ def test_static_validation_is_not_trivially_small(validation: vp.Result) -> None
 
 
 def test_five_pages_match_the_frozen_specification() -> None:
-    assert [page.display_name for page in PAGES] == list(vp.REQUIRED_PAGES)
+    """The tab is a short form; the page still says its specified name on screen.
+
+    Five spec page names do not fit inside a page navigator, so Phase 7 shortened the tab
+    labels and moved the specified name into each page's own masthead, where it is stated in
+    11 pt on every screen. The check is that the name is still there, not where it sits.
+    """
+    for page, required in zip(PAGES, vp.REQUIRED_PAGES):
+        masthead = next(v for v in page.visuals if v.name.endswith("_header"))
+        assert required in [r["value"] for r in masthead.text_runs], required
+        assert len(page.display_name) <= len(required), page.display_name
 
 
 def test_report_has_exactly_five_pages_on_disk() -> None:
+    """Five browsable pages, plus the drill-through target that is hidden from the tabs."""
     pages = json.loads(
         (REPORT_DIR / "definition" / "pages" / "pages.json").read_text(encoding="utf-8"))
-    assert len(pages["pageOrder"]) == 5
+    browsable = [p for p in PAGES if p.drillthrough is None]
+    assert len(browsable) == 5
+    assert len(pages["pageOrder"]) == len(PAGES)
     folders = sorted(p.name for p in (REPORT_DIR / "definition" / "pages").iterdir()
                      if p.is_dir())
     assert folders == sorted(pages["pageOrder"])
@@ -726,7 +738,7 @@ def test_a_misplaced_container_object_fails_validation(
     validator raised against the shipped project."""
     report = _copied_project(tmp_path, monkeypatch)
     path = (report / "definition" / "pages" / "01_executive" / "visuals"
-            / "p1v1_scorecard_band" / "visual.json")
+            / "p1v3_budget_vs_base" / "visual.json")
     payload = json.loads(path.read_text(encoding="utf-8"))
     container = payload["visual"].pop("visualContainerObjects")
     payload["visual"].setdefault("objects", {}).update(container)
@@ -981,15 +993,35 @@ def test_page_order_folders_and_page_names_are_one_bijection() -> None:
         assert payload["displayName"].strip()
 
 
-def test_no_page_is_hidden_or_tooltip_only() -> None:
-    """A page marked HiddenInViewMode or typed as a Tooltip / Drillthrough page does not
-    appear in the page list - the same symptom as the failure, from a different cause."""
+def test_page_visibility_matches_its_role() -> None:
+    """A page missing from the tab strip is a defect - unless it is the drill-through target,
+    where being off the tabs is the whole point: it is reached by right-clicking a segment."""
     for page in PAGES:
         payload = json.loads(
             (REPORT_DIR / "definition" / "pages" / page.name / "page.json")
             .read_text(encoding="utf-8"))
-        assert payload.get("visibility") != "HiddenInViewMode", page.name
+        expected = "HiddenInViewMode" if page.drillthrough is not None else None
+        assert payload.get("visibility") == expected, page.name
         assert payload.get("type") is None, page.name
+
+
+def test_the_drillthrough_page_declares_both_halves_of_its_binding() -> None:
+    """Power BI silently ignores a page binding whose parameter names a filter that is not
+    on the page, and the page then never appears in any right-click menu."""
+    targets = [p for p in PAGES if p.drillthrough is not None]
+    assert targets, "the report has no drill-through target"
+    for page in targets:
+        payload = json.loads(
+            (REPORT_DIR / "definition" / "pages" / page.name / "page.json")
+            .read_text(encoding="utf-8"))
+        filters = [f for f in payload["filterConfig"]["filters"]
+                   if f["howCreated"] == "Drillthrough"]
+        assert filters, page.name
+        binding = payload["pageBinding"]
+        assert binding["type"] == "Drillthrough"
+        assert {p["boundFilter"] for p in binding["parameters"]} == {f["name"] for f in filters}
+        assert any(v.visual_type == "actionButton" and v.name.endswith("_back")
+                   for v in page.visuals), f"{page.name} has no way back"
 
 
 def test_every_visual_is_where_desktop_looks_for_it() -> None:
@@ -1097,7 +1129,7 @@ def test_a_hidden_page_fails_validation(
     result = vp.Result()
     vp.check_report_pages(result)
     failures = [name for name, ok, _ in result.checks if not ok]
-    assert any("not hidden in view mode" in name for name in failures), failures
+    assert any("visibility matches its role" in name for name in failures), failures
 
 
 def test_a_misplaced_visual_fails_validation(
@@ -1105,7 +1137,7 @@ def test_a_misplaced_visual_fails_validation(
 ) -> None:
     report = _copied_report(tmp_path, monkeypatch)
     visual = (report / "definition" / "pages" / "01_executive" / "visuals"
-              / "p1v1_scorecard_band" / "visual.json")
+              / "p1v3_budget_vs_base" / "visual.json")
     visual.rename(visual.parent / "layout.json")
 
     result = vp.Result()
@@ -1153,7 +1185,10 @@ DYNAMIC_FORMAT_MEASURES = {
 }
 
 # A measure with neither format is legitimate only when it returns text.
-UNFORMATTED_MEASURES = {"Runway Policy[Board Floor Status]"}
+# A measure with neither format mechanism is legitimate only when it does not return a
+# number: a breach flag, and the hex colour the Fav / Unfav column's font is bound to.
+UNFORMATTED_MEASURES = {"Runway Policy[Board Floor Status]",
+                        "Management Variance[Favourability Colour]"}
 
 
 def test_no_measure_declares_both_format_mechanisms() -> None:
@@ -1421,7 +1456,7 @@ def test_mixed_metric_tables_have_their_total_row_disabled() -> None:
     headcount. Power BI recomputes a measure in the total row's context rather than summing
     the screen, so a total over segments or line items stays on - it is correct there."""
     by_visual = {v.name: v for p in PAGES for v in p.visuals}
-    for name in ("p1v1_scorecard_band", "p1v3_budget_vs_base", "p4v2_scorecard"):
+    for name in ("p1v3_budget_vs_base", "p4v2_scorecard"):
         objects = by_visual[name].objects
         assert "total" in objects, name
         value = objects["total"][0]["properties"]["totals"]["expr"]["Literal"]["Value"]
@@ -1486,7 +1521,7 @@ def test_every_chart_has_room_to_render() -> None:
     and Power BI's auto-subtitle had taken their share."""
     short = [
         f"{v.name}: {v.height}px" for p in PAGES for v in p.visuals
-        if v.visual_type not in ("textbox", "slicer", "tableEx", "pivotTable")
+        if v.visual_type not in ("tableEx", "pivotTable") + vp.NON_PLOT_TYPES
         and v.height < MIN_VISUAL_HEIGHT
     ]
     assert not short, short
@@ -1539,8 +1574,13 @@ def test_the_board_floor_is_a_reference_line() -> None:
         v = by_visual[name]
         assert "y1AxisReferenceLine" in v.objects, name
         assert "Y2" not in v.roles, f"{name} still carries the floor as a series"
-        props = v.objects["y1AxisReferenceLine"][0]["properties"]
-        assert props["value"]["expr"]["Literal"]["Value"] == "'24.0'"
+        entry = v.objects["y1AxisReferenceLine"][0]
+        props = entry["properties"]
+        # Phase 4B: this asserted "'24.0'" - a TEXT literal - which is what stopped the line
+        # from ever rendering. A value-axis position must be numeric, and the object must
+        # carry a selector id because Power BI keys reference lines by instance.
+        assert props["value"]["expr"]["Literal"]["Value"] == "24D"
+        assert entry.get("selector", {}).get("id"), f"{name} reference line has no selector id"
 
 
 def test_zero_labels_are_suppressed_where_zero_is_not_the_message() -> None:
@@ -1607,10 +1647,15 @@ def test_an_overcrowded_table_fails_validation(monkeypatch: pytest.MonkeyPatch) 
 def test_a_chart_too_small_to_render_fails_validation(
     monkeypatch: pytest.MonkeyPatch
 ) -> None:
-    """The deferred-revenue defect, reproduced."""
+    """The deferred-revenue defect, reproduced.
+
+    Phase 4B turned that panel into a table - three balances at the reporting date read
+    better in 130 px than three time series did - so the check is exercised on the visual
+    that took its place in the same column.
+    """
     page = PAGES[3]
     patched = replace(page, visuals=tuple(
-        replace(v, height=100) if v.name == "p4v5_accounting_panel" else v
+        replace(v, height=100) if v.name == "p4v6_headcount" else v
         for v in page.visuals))
     monkeypatch.setattr(vp, "PAGES", tuple(
         patched if p.name == page.name else p for p in PAGES))

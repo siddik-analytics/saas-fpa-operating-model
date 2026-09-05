@@ -1,12 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
-  "name": "p3_header_meta",
+  "name": "p6_sub",
   "position": {
-    "x": 800,
-    "y": 14,
+    "x": 24,
+    "y": 38,
     "z": 2,
-    "width": 456,
-    "height": 56,
+    "width": 900,
+    "height": 30,
     "tabOrder": 2000
   },
   "visual": {
@@ -19,29 +19,15 @@
               {
                 "textRuns": [
                   {
-                    "value": "Q2 FY2026 Reforecast",
+                    "value": "Segment detail  |  every figure below is filtered to the segment you drilled from",
                     "textStyle": {
-                      "fontSize": "11pt",
-                      "fontWeight": "bold",
-                      "color": "#1F3864",
+                      "fontSize": "10pt",
+                      "color": "#2E5FA3",
                       "fontFamily": "Segoe UI"
                     }
                   }
                 ],
-                "horizontalTextAlignment": "right"
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "Capacity is not the same thing as achievable bookings",
-                    "textStyle": {
-                      "fontSize": "9pt",
-                      "color": "#6B7280",
-                      "fontFamily": "Segoe UI"
-                    }
-                  }
-                ],
-                "horizontalTextAlignment": "right"
+                "horizontalTextAlignment": "left"
               }
             ]
           }

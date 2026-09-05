@@ -3,11 +3,11 @@
   "name": "p5v2_affordability",
   "position": {
     "x": 24,
-    "y": 350,
-    "z": 7,
+    "y": 336,
+    "z": 8,
     "width": 608,
-    "height": 146,
-    "tabOrder": 7000
+    "height": 156,
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "lineClusteredColumnComboChart",
@@ -106,6 +106,20 @@
                   "Value": "1D"
                 }
               }
+            },
+            "start": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "end": {
+              "expr": {
+                "Literal": {
+                  "Value": "32D"
+                }
+              }
             }
           }
         }
@@ -157,6 +171,9 @@
       ],
       "y1AxisReferenceLine": [
         {
+          "selector": {
+            "id": "boardFloor"
+          },
           "properties": {
             "show": {
               "expr": {
@@ -168,7 +185,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "'24.0'"
+                  "Value": "24D"
                 }
               }
             },
@@ -177,7 +194,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#C98A1B'"
+                      "Value": "'#6B7280'"
                     }
                   }
                 }
@@ -221,46 +238,7 @@
             "dataLabelShow": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "dataLabelText": {
-              "expr": {
-                "Literal": {
-                  "Value": "'ValueAndName'"
-                }
-              }
-            },
-            "dataLabelColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#C98A1B'"
-                    }
-                  }
-                }
-              }
-            },
-            "dataLabelDecimalPoints": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            },
-            "dataLabelHorizontalPosition": {
-              "expr": {
-                "Literal": {
-                  "Value": "'left'"
-                }
-              }
-            },
-            "dataLabelVerticalPosition": {
-              "expr": {
-                "Literal": {
-                  "Value": "'above'"
+                  "Value": "false"
                 }
               }
             }
@@ -282,7 +260,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Board-policy runway against the 24-month floor - Bear is the only breach'"
+                  "Value": "'Board-policy runway against the 24-month floor - only Bear falls short'"
                 }
               }
             },

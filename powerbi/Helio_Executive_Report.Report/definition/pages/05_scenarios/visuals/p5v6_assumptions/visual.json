@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "p5v6_assumptions",
   "position": {
-    "x": 856,
-    "y": 506,
-    "z": 11,
-    "width": 400,
-    "height": 196,
-    "tabOrder": 11000
+    "x": 820,
+    "y": 496,
+    "z": 12,
+    "width": 436,
+    "height": 206,
+    "tabOrder": 12000
   },
   "visual": {
     "visualType": "pivotTable",
@@ -23,25 +23,12 @@
                       "Entity": "Forecast Drivers"
                     }
                   },
-                  "Property": "Driver"
+                  "Property": "Driver and segment"
                 }
               },
-              "queryRef": "Forecast Drivers.Driver",
-              "nativeQueryRef": "Driver"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Forecast Drivers"
-                    }
-                  },
-                  "Property": "Driver Segment"
-                }
-              },
-              "queryRef": "Forecast Drivers.Driver Segment",
-              "nativeQueryRef": "Driver Segment"
+              "queryRef": "Forecast Drivers.Driver and segment",
+              "nativeQueryRef": "Driver",
+              "displayName": "Driver"
             }
           ]
         },
@@ -118,6 +105,19 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
                 }
               }
             }

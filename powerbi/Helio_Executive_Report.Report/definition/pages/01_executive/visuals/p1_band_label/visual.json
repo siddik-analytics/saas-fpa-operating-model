@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
-  "name": "p2_header_meta",
+  "name": "p1_band_label",
   "position": {
-    "x": 800,
-    "y": 14,
-    "z": 2,
-    "width": 456,
-    "height": 56,
-    "tabOrder": 2000
+    "x": 24,
+    "y": 76,
+    "z": 3,
+    "width": 900,
+    "height": 22,
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "textbox",
@@ -19,29 +19,16 @@
               {
                 "textRuns": [
                   {
-                    "value": "Q2 FY2026 Reforecast",
+                    "value": "Where FY2026 lands, and whether the Board floor holds",
                     "textStyle": {
-                      "fontSize": "11pt",
-                      "fontWeight": "bold",
+                      "fontSize": "10pt",
                       "color": "#1F3864",
-                      "fontFamily": "Segoe UI"
+                      "fontFamily": "Segoe UI",
+                      "fontWeight": "bold"
                     }
                   }
                 ],
-                "horizontalTextAlignment": "right"
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "Actual to 30 June 2026, Base reforecast after",
-                    "textStyle": {
-                      "fontSize": "9pt",
-                      "color": "#6B7280",
-                      "fontFamily": "Segoe UI"
-                    }
-                  }
-                ],
-                "horizontalTextAlignment": "right"
+                "horizontalTextAlignment": "left"
               }
             ]
           }

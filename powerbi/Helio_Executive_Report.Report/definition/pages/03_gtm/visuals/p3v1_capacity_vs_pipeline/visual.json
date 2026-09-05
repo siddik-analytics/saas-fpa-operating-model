@@ -4,10 +4,10 @@
   "position": {
     "x": 24,
     "y": 122,
-    "z": 4,
+    "z": 5,
     "width": 608,
-    "height": 252,
-    "tabOrder": 4000
+    "height": 212,
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "clusteredColumnChart",
@@ -45,7 +45,8 @@
                 }
               },
               "queryRef": "GTM Constraint.H2 2026 New Logo Capacity",
-              "nativeQueryRef": "New Logo productive capacity"
+              "nativeQueryRef": "New Logo productive capacity",
+              "displayName": "New Logo productive capacity"
             },
             {
               "field": {
@@ -59,7 +60,8 @@
                 }
               },
               "queryRef": "GTM Constraint.H2 2026 Pipeline Supported ARR",
-              "nativeQueryRef": "Pipeline-supported ARR"
+              "nativeQueryRef": "Pipeline-supported ARR",
+              "displayName": "Pipeline-supported ARR"
             },
             {
               "field": {
@@ -73,7 +75,8 @@
                 }
               },
               "queryRef": "GTM Constraint.H2 2026 Constrained New Logo ARR",
-              "nativeQueryRef": "Constrained New Logo ARR"
+              "nativeQueryRef": "Constrained New Logo ARR",
+              "displayName": "Constrained New Logo ARR"
             }
           ]
         }

@@ -139,6 +139,20 @@
                 }
               }
             },
+            "start": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "end": {
+              "expr": {
+                "Literal": {
+                  "Value": "2e+07D"
+                }
+              }
+            },
             "secLabelDisplayUnits": {
               "expr": {
                 "Literal": {
@@ -150,6 +164,20 @@
               "expr": {
                 "Literal": {
                   "Value": "1D"
+                }
+              }
+            },
+            "secStart": {
+              "expr": {
+                "Literal": {
+                  "Value": "0.7D"
+                }
+              }
+            },
+            "secEnd": {
+              "expr": {
+                "Literal": {
+                  "Value": "0.85D"
                 }
               }
             }
@@ -171,7 +199,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Revenue keeps growing while gross margin holds above 78%'"
+                  "Value": "'Revenue grows quarter on quarter; gross margin holds in a 1 pt band'"
                 }
               }
             },

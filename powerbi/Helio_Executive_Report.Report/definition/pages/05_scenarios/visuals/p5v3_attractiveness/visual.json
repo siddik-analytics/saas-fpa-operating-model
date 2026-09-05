@@ -3,11 +3,11 @@
   "name": "p5v3_attractiveness",
   "position": {
     "x": 648,
-    "y": 350,
-    "z": 8,
+    "y": 336,
+    "z": 9,
     "width": 608,
-    "height": 146,
-    "tabOrder": 8000
+    "height": 156,
+    "tabOrder": 9000
   },
   "visual": {
     "visualType": "tableEx",
@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "Hiring Scenario.Hiring Case",
-              "nativeQueryRef": "Hiring case"
+              "nativeQueryRef": "Hiring case",
+              "displayName": "Hiring case"
             },
             {
               "field": {
@@ -41,7 +42,8 @@
                 }
               },
               "queryRef": "Hiring Scenario.Incremental Hires",
-              "nativeQueryRef": "Hires"
+              "nativeQueryRef": "Hires",
+              "displayName": "Hires"
             },
             {
               "field": {
@@ -55,21 +57,8 @@
                 }
               },
               "queryRef": "Hiring Scenario.Incremental ARR (Dec-2027)",
-              "nativeQueryRef": "Incr. ARR Dec-27"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Hiring Scenario"
-                    }
-                  },
-                  "Property": "Incremental Operating Income (Dec-2027)"
-                }
-              },
-              "queryRef": "Hiring Scenario.Incremental Operating Income (Dec-2027)",
-              "nativeQueryRef": "Incr. Op Income Dec-27"
+              "nativeQueryRef": "Incr. ARR Dec-27",
+              "displayName": "Incr. ARR Dec-27"
             },
             {
               "field": {
@@ -83,7 +72,8 @@
                 }
               },
               "queryRef": "Hiring Scenario.Incremental Cash Impact (Dec-2027)",
-              "nativeQueryRef": "Incr. cash Dec-27"
+              "nativeQueryRef": "Incr. cash Dec-27",
+              "displayName": "Incr. cash Dec-27"
             }
           ]
         }
@@ -115,6 +105,19 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
                 }
               }
             }

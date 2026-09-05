@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "p1v1_kpi_0",
+  "position": {
+    "x": 24,
+    "y": 102,
+    "z": 4,
+    "width": 148,
+    "height": 96,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ARR Forecast"
+                    }
+                  },
+                  "Property": "Jun-26 ARR (Actual)"
+                }
+              },
+              "queryRef": "ARR Forecast.Jun-26 ARR (Actual)",
+              "nativeQueryRef": "Jun-26 ARR",
+              "displayName": "Jun-26 ARR",
+              "format": "$#,##0.0;($#,##0.0)"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -3,11 +3,11 @@
   "name": "p5_label_b",
   "position": {
     "x": 648,
-    "y": 312,
-    "z": 6,
+    "y": 306,
+    "z": 7,
     "width": 608,
-    "height": 34,
-    "tabOrder": 6000
+    "height": 26,
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "textbox",

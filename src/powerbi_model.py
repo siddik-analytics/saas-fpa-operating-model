@@ -64,7 +64,6 @@ KNOWN_FORMATS = (
 # total row's filter context rather than summing what is on screen, so a total over a
 # segment or a P&L line item is correct and useful and stays on - these four are not.
 MIXED_METRIC_TABLES: tuple[str, ...] = (
-    "p1v1_scorecard_band",      # one row of KPIs; a total would duplicate it
     "p1v3_budget_vs_base",      # rows are Exit ARR, Gross Margin, Ending Headcount...
     "p4v2_scorecard",           # ...and the same generic measures on page 4
     "p5v6_assumptions",         # rows are drivers in rates, dollars, multiples and months
@@ -104,6 +103,11 @@ MODEL_ONLY_MEASURES: tuple[tuple[str, str], ...] = (
     ("Scenario Monthly", "Scenario Dec-27 Exit ARR"),
     ("Hiring Scenario", "Incremental ARR (Dec-2026, ramp period)"),
     ("Hiring Scenario", "Incremental Cash Impact (Dec-2026, ramp period)"),
+    # Phase 4B dropped one column from each of two Plan & Scenarios tables so the remaining
+    # columns stop clipping. Both measures stay in the model - the figures are unchanged and
+    # a reader can add either column back - but neither is on a visual now.
+    ("Hiring Scenario", "Incremental Operating Income (Dec-2027)"),
+    ("Runway Policy", "Policy Avg Monthly Burn"),
 )
 
 # Density thresholds, all taken from what the Desktop screenshots showed failing.
@@ -126,6 +130,8 @@ DATA_LABELLED_VISUALS: tuple[str, ...] = (
     "p2v6_forward_atr",
     "p3v1_capacity_vs_pipeline",
     "p4v3_operating_income_bridge",
+    "p4v6_headcount",               # nine discrete functions, one bar each
+    "p6v3_forward_atr",             # six discrete quarters for one segment
     "p5v2_affordability",
 )
 

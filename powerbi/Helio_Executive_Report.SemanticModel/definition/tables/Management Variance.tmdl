@@ -90,6 +90,24 @@ table 'Management Variance'
 		displayFolder: 08 Budget & Bridge
 		lineageTag: 959a5f7e-d51f-5196-b2bb-254a9e0c8840
 
+	/// Hex colour for the favourability verdict, bound to the Fav / Unfav column's font colour.
+	/// Hidden: it is presentation, not a figure.
+	measure 'Favourability Colour' =
+			-- A colour, not a number. Rules-based conditional formatting compares
+			-- numbers, so colouring a text column means binding it to a measure that
+			-- returns the colour itself. The verdict is still the Phase 7 centralised
+			-- polarity: this reads the mart's own answer and never re-derives it from
+			-- the sign of a variance.
+			SWITCH(
+			    SELECTEDVALUE('Management Variance'[Favourable / Unfavourable]),
+			    "Favorable", "#1E7B4D",
+			    "Unfavorable", "#B23A2E",
+			    "#6B7280"
+			)
+		isHidden
+		displayFolder: 08 Budget & Bridge
+		lineageTag: 5fb935cd-c60c-53e9-9842-201fb0684422
+
 	/// Exit ARR variance as a percentage of the Board Budget exit position.
 	measure 'Exit ARR vs Budget %' =
 			DIVIDE(

@@ -3,11 +3,11 @@
   "name": "p3v4_unit_economics",
   "position": {
     "x": 656,
-    "y": 384,
-    "z": 7,
+    "y": 344,
+    "z": 8,
     "width": 600,
-    "height": 152,
-    "tabOrder": 7000
+    "height": 160,
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "pivotTable",
@@ -45,7 +45,8 @@
                 }
               },
               "queryRef": "Unit Economics.New Logos Acquired",
-              "nativeQueryRef": "New Logos Acquired"
+              "nativeQueryRef": "New logos",
+              "displayName": "New logos"
             },
             {
               "field": {
@@ -59,7 +60,8 @@
                 }
               },
               "queryRef": "Unit Economics.New Logo ARPA",
-              "nativeQueryRef": "New Logo ARPA"
+              "nativeQueryRef": "ARPA",
+              "displayName": "ARPA"
             },
             {
               "field": {
@@ -73,7 +75,8 @@
                 }
               },
               "queryRef": "Unit Economics.CAC (FY2025)",
-              "nativeQueryRef": "CAC (FY2025)"
+              "nativeQueryRef": "CAC",
+              "displayName": "CAC"
             },
             {
               "field": {
@@ -87,7 +90,8 @@
                 }
               },
               "queryRef": "Unit Economics.CAC per $1 New Logo ARR",
-              "nativeQueryRef": "CAC per $1 New Logo ARR"
+              "nativeQueryRef": "CAC / $1 ARR",
+              "displayName": "CAC / $1 ARR"
             },
             {
               "field": {
@@ -101,11 +105,27 @@
                 }
               },
               "queryRef": "Unit Economics.CAC Payback Months (FY2025)",
-              "nativeQueryRef": "CAC Payback Months (FY2025)"
+              "nativeQueryRef": "Payback (mo)",
+              "displayName": "Payback (mo)"
             }
           ]
         }
       }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "visualContainerObjects": {
       "title": [

@@ -65,7 +65,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     )
     parser.add_argument(
         "--skip-excel", action="store_true",
-        help="Do not regenerate excel/Helio_SaaS_FP&A_Operating_Model.xlsx from the marts.",
+        help="Do not regenerate build/generated/...xlsx from the marts.",
     )
     parser.add_argument(
         "--skip-powerbi", action="store_true",

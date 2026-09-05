@@ -3,11 +3,11 @@
   "name": "p3v3_gtm_kpis",
   "position": {
     "x": 24,
-    "y": 384,
-    "z": 6,
+    "y": 344,
+    "z": 7,
     "width": 608,
-    "height": 152,
-    "tabOrder": 6000
+    "height": 160,
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "pivotTable",
@@ -45,7 +45,8 @@
                 }
               },
               "queryRef": "Sales Capacity.Quota-Carrying Reps",
-              "nativeQueryRef": "Quota-Carrying Reps"
+              "nativeQueryRef": "Quota reps",
+              "displayName": "Quota reps"
             },
             {
               "field": {
@@ -59,7 +60,8 @@
                 }
               },
               "queryRef": "Sales Capacity.Fully Ramped Reps",
-              "nativeQueryRef": "Fully Ramped Reps"
+              "nativeQueryRef": "Ramped",
+              "displayName": "Ramped"
             },
             {
               "field": {
@@ -73,7 +75,8 @@
                 }
               },
               "queryRef": "Sales Capacity.New Logo Productive Capacity (Actual)",
-              "nativeQueryRef": "New Logo Productive Capacity (Actual)"
+              "nativeQueryRef": "Productive capacity",
+              "displayName": "Productive capacity"
             },
             {
               "field": {
@@ -87,7 +90,8 @@
                 }
               },
               "queryRef": "Sales Capacity.Actual Attainment",
-              "nativeQueryRef": "Actual Attainment"
+              "nativeQueryRef": "Attainment",
+              "displayName": "Attainment"
             },
             {
               "field": {
@@ -101,11 +105,27 @@
                 }
               },
               "queryRef": "CRM Opportunities.Win Rate",
-              "nativeQueryRef": "Win Rate"
+              "nativeQueryRef": "Win rate",
+              "displayName": "Win rate"
             }
           ]
         }
       }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "visualContainerObjects": {
       "title": [

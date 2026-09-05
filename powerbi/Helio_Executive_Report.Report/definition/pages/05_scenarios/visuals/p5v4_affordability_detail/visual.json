@@ -3,11 +3,11 @@
   "name": "p5v4_affordability_detail",
   "position": {
     "x": 24,
-    "y": 506,
-    "z": 9,
-    "width": 406,
-    "height": 196,
-    "tabOrder": 9000
+    "y": 496,
+    "z": 10,
+    "width": 370,
+    "height": 206,
+    "tabOrder": 10000
   },
   "visual": {
     "visualType": "tableEx",
@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "Runway Policy.Path",
-              "nativeQueryRef": "Path"
+              "nativeQueryRef": "Path",
+              "displayName": "Path"
             },
             {
               "field": {
@@ -41,7 +42,8 @@
                 }
               },
               "queryRef": "Runway Policy.Policy Runway Months",
-              "nativeQueryRef": "Policy runway"
+              "nativeQueryRef": "Policy runway",
+              "displayName": "Policy runway"
             },
             {
               "field": {
@@ -55,22 +57,13 @@
                 }
               },
               "queryRef": "Runway Policy.Runway Headroom",
-              "nativeQueryRef": "Headroom"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Runway Policy"
-                    }
-                  },
-                  "Property": "Policy Avg Monthly Burn"
-                }
-              },
-              "queryRef": "Runway Policy.Policy Avg Monthly Burn",
-              "nativeQueryRef": "Policy burn / month"
-            },
+              "nativeQueryRef": "Headroom",
+              "displayName": "Headroom"
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
             {
               "field": {
                 "Measure": {
@@ -83,7 +76,7 @@
                 }
               },
               "queryRef": "Runway Policy.Board Floor Status",
-              "nativeQueryRef": "Status"
+              "nativeQueryRef": "Board Floor Status"
             }
           ]
         }
@@ -120,6 +113,19 @@
             }
           }
         }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -136,7 +142,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Runway, floor, headroom and the burn behind each'"
+                  "Value": "'Policy runway and headroom, by path'"
                 }
               }
             },

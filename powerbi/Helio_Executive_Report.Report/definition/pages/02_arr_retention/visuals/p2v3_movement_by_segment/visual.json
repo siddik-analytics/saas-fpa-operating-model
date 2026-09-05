@@ -3,11 +3,11 @@
   "name": "p2v3_movement_by_segment",
   "position": {
     "x": 24,
-    "y": 380,
-    "z": 6,
+    "y": 350,
+    "z": 7,
     "width": 608,
-    "height": 152,
-    "tabOrder": 6000
+    "height": 162,
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "pivotTable",
@@ -45,7 +45,8 @@
                 }
               },
               "queryRef": "ARR Forecast.New Logo ARR",
-              "nativeQueryRef": "New Logo ARR"
+              "nativeQueryRef": "New logo",
+              "displayName": "New logo"
             },
             {
               "field": {
@@ -59,7 +60,8 @@
                 }
               },
               "queryRef": "ARR Forecast.Expansion ARR",
-              "nativeQueryRef": "Expansion ARR"
+              "nativeQueryRef": "Expansion",
+              "displayName": "Expansion"
             },
             {
               "field": {
@@ -73,7 +75,8 @@
                 }
               },
               "queryRef": "ARR Forecast.Contraction ARR",
-              "nativeQueryRef": "Contraction ARR"
+              "nativeQueryRef": "Contraction",
+              "displayName": "Contraction"
             },
             {
               "field": {
@@ -87,7 +90,8 @@
                 }
               },
               "queryRef": "ARR Forecast.Churn ARR",
-              "nativeQueryRef": "Churn ARR"
+              "nativeQueryRef": "Churn",
+              "displayName": "Churn"
             },
             {
               "field": {
@@ -101,11 +105,92 @@
                 }
               },
               "queryRef": "ARR Forecast.Ending ARR",
-              "nativeQueryRef": "Ending ARR"
+              "nativeQueryRef": "Ending",
+              "displayName": "Ending"
             }
           ]
         }
       }
+    },
+    "objects": {
+      "columnFormatting": [
+        {
+          "selector": {
+            "metadata": "ARR Forecast.Ending ARR"
+          },
+          "properties": {
+            "dataBars": {
+              "positiveColor": {
+                "solid": {
+                  "color": {
+                    "expr": {
+                      "Literal": {
+                        "Value": "'#CFE0F1'"
+                      }
+                    }
+                  }
+                }
+              },
+              "negativeColor": {
+                "solid": {
+                  "color": {
+                    "expr": {
+                      "Literal": {
+                        "Value": "'#CFE0F1'"
+                      }
+                    }
+                  }
+                }
+              },
+              "axisColor": {
+                "solid": {
+                  "color": {
+                    "expr": {
+                      "Literal": {
+                        "Value": "'#6B7280'"
+                      }
+                    }
+                  }
+                }
+              },
+              "reverseDirection": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              },
+              "hideText": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              },
+              "totalMatchingOption": {
+                "expr": {
+                  "Literal": {
+                    "Value": "1L"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "visualContainerObjects": {
       "title": [

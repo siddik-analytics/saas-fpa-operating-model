@@ -3,10 +3,10 @@
   "name": "p5_header",
   "position": {
     "x": 24,
-    "y": 14,
+    "y": 4,
     "z": 1,
-    "width": 760,
-    "height": 56,
+    "width": 500,
+    "height": 68,
     "tabOrder": 1000
   },
   "visual": {
@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Helio Systems, Inc.   ",
+                    "value": "Helio Systems, Inc.",
                     "textStyle": {
                       "fontSize": "16pt",
                       "fontWeight": "bold",
@@ -36,6 +36,19 @@
                     "value": "Plan & Scenarios",
                     "textStyle": {
                       "fontSize": "11pt",
+                      "color": "#2E5FA3",
+                      "fontFamily": "Segoe UI"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Q2 FY2026 Reforecast  |  Affordable and attractive are two separate questions",
+                    "textStyle": {
+                      "fontSize": "8pt",
                       "color": "#6B7280",
                       "fontFamily": "Segoe UI"
                     }

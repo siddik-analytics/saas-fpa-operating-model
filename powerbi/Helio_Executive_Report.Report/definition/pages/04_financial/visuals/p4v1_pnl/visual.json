@@ -63,11 +63,27 @@
                 }
               },
               "queryRef": "P&L.P&L Amount",
-              "nativeQueryRef": "Amount"
+              "nativeQueryRef": "Amount",
+              "displayName": "Amount"
             }
           ]
         }
       }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "visualContainerObjects": {
       "title": [

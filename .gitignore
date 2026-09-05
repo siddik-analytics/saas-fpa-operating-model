@@ -14,6 +14,28 @@ Thumbs.db
 *.duckdb
 *.duckdb.wal
 
+# The workbook review workspace. Six phases of intermediate workbooks, ~90 one-shot COM
+# scripts, working copies and ~30 review renders - 64 MB and 333 files of how the public
+# workbook was arrived at, none of which is the product. The reviewed workbook itself ships
+# at excel/, and the review's own findings documents are curated into docs/ when they earn
+# a place. Keeping the tree locally is useful; committing it is not.
+portfolio_model_review/
+
+# Generated build output. The public Excel workbook at excel/ is the REVIEWED artefact and
+# is committed; the Python builder writes its own copy here so a build can never overwrite
+# it. See docs/excel_operating_model.md.
+build/
+
+# Excel and Word lock files. Excel writes ~$Name.xlsx beside a workbook while it is open,
+# and a COM session that is killed mid-run leaves one behind.
+~$*.xlsx
+~$*.xlsm
+~$*.docx
+
+*.tmp
+*.bak
+*.log
+
 # Power BI Desktop writes these into a .pbip when it opens one. They are per-machine
 # and per-user, never part of the project definition:
 #   .pbi/localSettings.json   machine-bound security-binding signature

@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "p5v5_scenario_summary",
   "position": {
-    "x": 440,
-    "y": 506,
-    "z": 10,
+    "x": 404,
+    "y": 496,
+    "z": 11,
     "width": 406,
-    "height": 196,
-    "tabOrder": 10000
+    "height": 206,
+    "tabOrder": 11000
   },
   "visual": {
     "visualType": "pivotTable",
@@ -45,7 +45,8 @@
                 }
               },
               "queryRef": "Scenario Monthly.Scenario Dec-26 Exit ARR",
-              "nativeQueryRef": "Scenario Dec-26 Exit ARR"
+              "nativeQueryRef": "Dec-26 ARR",
+              "displayName": "Dec-26 ARR"
             },
             {
               "field": {
@@ -59,21 +60,8 @@
                 }
               },
               "queryRef": "Scenario Monthly.Scenario FY2026 Revenue",
-              "nativeQueryRef": "Scenario FY2026 Revenue"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Scenario Monthly"
-                    }
-                  },
-                  "Property": "Scenario FY2026 Operating Income"
-                }
-              },
-              "queryRef": "Scenario Monthly.Scenario FY2026 Operating Income",
-              "nativeQueryRef": "Scenario FY2026 Operating Income"
+              "nativeQueryRef": "FY26 revenue",
+              "displayName": "FY26 revenue"
             },
             {
               "field": {
@@ -87,7 +75,26 @@
                 }
               },
               "queryRef": "Scenario Monthly.Scenario Dec-27 Cash",
-              "nativeQueryRef": "Scenario Dec-27 Cash"
+              "nativeQueryRef": "Dec-27 cash",
+              "displayName": "Dec-27 cash"
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Scenario Monthly"
+                    }
+                  },
+                  "Property": "Scenario FY2026 Operating Income"
+                }
+              },
+              "queryRef": "Scenario Monthly.Scenario FY2026 Operating Income",
+              "nativeQueryRef": "Scenario FY2026 Operating Income"
             }
           ]
         }
@@ -113,6 +120,19 @@
             }
           }
         }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -129,7 +149,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'What each scenario means for ARR, revenue, profit and cash'"
+                  "Value": "'What each scenario means for ARR, revenue and cash'"
                 }
               }
             },

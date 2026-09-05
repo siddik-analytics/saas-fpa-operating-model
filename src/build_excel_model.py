@@ -1,6 +1,16 @@
-"""Builds `excel/Helio_SaaS_FP&A_Operating_Model.xlsx` from the committed marts.
+"""Builds the generated Excel operating model from the committed marts.
 
     python -m src.build_excel_model
+
+Writes `build/generated/Helio_SaaS_FP&A_Operating_Model_generated.xlsx`.
+
+IT DOES NOT WRITE `excel/Helio_SaaS_FP&A_Operating_Model.xlsx`. That path holds the REVIEWED
+portfolio workbook - the same model after a presentation review carried out in native Excel
+through its COM object model: a rebuilt Executive Summary, charts moved into the content
+columns and re-typed, tables demoted where a chart already carries the message, and the
+per-sheet geometry brought inside a one-screen ceiling. None of that presentation work lives
+in this builder, so a build must not be allowed to overwrite it. The two are the same numbers
+in different clothes; `docs/excel_operating_model.md` sets out which is which.
 
 Phase 9. The workbook is the financial-management interface over the Phase 3-8 analytical
 stack: eleven presentation tabs a recruiter, hiring manager, FP&A leader or CFO can read
@@ -46,7 +56,12 @@ from .config import REPO_ROOT
 from .excel_style import P, Reference
 
 WORKBOOK_VERSION = "1.0"
-OUTPUT_PATH = REPO_ROOT / "excel" / "Helio_SaaS_FP&A_Operating_Model.xlsx"
+# Where the builder writes. Gitignored: it is a build artefact, not a deliverable.
+GENERATED_PATH = (REPO_ROOT / "build" / "generated"
+                  / "Helio_SaaS_FP&A_Operating_Model_generated.xlsx")
+# The reviewed workbook that ships. Written by hand through Excel COM, never by this module.
+PUBLISHED_PATH = REPO_ROOT / "excel" / "Helio_SaaS_FP&A_Operating_Model.xlsx"
+OUTPUT_PATH = GENERATED_PATH
 
 COL = st.CONTENT_COL            # every presentation sheet writes from column B
 

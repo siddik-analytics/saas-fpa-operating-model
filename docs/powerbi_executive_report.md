@@ -131,11 +131,40 @@ detection meaningful.
 Each page carries a dated header, its six analytical visuals, and where useful a slicer. Six is
 the ceiling PHASE1_SPEC section 12 sets; slicers and text blocks are chrome, not analysis.
 
+### Navigation and filtering
+
+Every page carries a **page navigator** in its masthead, generated from the page list, so the five
+pages read as one report rather than five screens. Pages 2, 3 and 5 carry a slicer with a **Clear
+filters** button beside it, which Power BI disables until something is actually filtered. Tab
+labels are short forms - *Executive*, *ARR & Retention*, *GTM & Pipeline*, *Financials*,
+*Scenarios* - because five PHASE1_SPEC page names do not fit inside a navigator; each page states
+its full specified name in its own masthead, and `validate_powerbi` checks that it does.
+
+Tables use **grow-to-fit** column sizing rather than Power BI's *fit to content* default, so a
+table occupies the container it was given instead of leaving up to half of it blank.
+
+**Drill-through.** Right-clicking any segment-grained row or bar - the movement and retention
+tables on page 2, the capacity and unit-economics tables on page 3, the ATR and capacity charts -
+offers *Segment detail*, a sixth page filtered to that one segment. It is hidden from the tab
+strip and from the navigator (`showHiddenPages` off) because it is reached through the data, not
+by browsing; a back button returns the reader to the page and the filter state they came from.
+
+**Conditional formatting** appears twice, both times where it replaces reading with seeing:
+
+- the **Fav / Unfav** column on both Budget-versus-Base scorecards is coloured from a measure,
+  `Favourability Colour`, that returns a hex string for the mart's own verdict. Power BI's
+  rules-based formatting compares numbers and cannot act on the word *Unfavorable*; binding the
+  colour to a measure is also the more honest mechanism, because a rule written in the report
+  would be a second opinion on a polarity the analytical layer has already decided.
+- a **data bar** behind segment ending ARR on page 2. It is not used on either variance column:
+  those mix dollars, basis points and headcount, and one bar scale across a $2.8M row and a
+  429 bps row renders most of the table invisible.
+
 ### Page 1 — Executive Q2 Reforecast
 
 | Visual | Type | Says |
 |---|---|---|
-| Scorecard band | Table | Where FY2026 lands, and whether the Board floor holds |
+| Scorecard band | Eight KPI cards | Where FY2026 lands, and whether the Board floor holds. Scaled to board precision - `$34.8M`, not `$34,816,417` - by a format string scoped to the card, off the same measures the P&L states in full |
 | Exit ARR bridge | Waterfall | Exit ARR is $2.8M below Budget — New Logo ARR is most of the gap |
 | Budget versus Base | Table | Every stated FY2026 comparison, ranked by variance |
 | Scenario ARR | Line | Bear, Base and Bull to Dec-2027 |
@@ -159,19 +188,35 @@ combined into one number**; open pipeline against the New Logo ARR still to win.
 ### Page 4 — Financial Performance & Headcount
 
 The management P&L (FY2026 = H1 actual plus H2 Base reforecast); the FY2026 Budget-versus-Base
-scorecard with favourability taken from the Phase 7 centralised metric polarity, not re-derived
-here; the operating-income bridge; revenue with gross margin on a second axis; the deferred-revenue
-and capitalised-commission supporting panel; the headcount rollforward.
+scorecard ranked by variance, with favourability taken from the Phase 7 centralised metric
+polarity, not re-derived here; the operating-income bridge; revenue with gross margin on a second
+axis, both axes on fixed bounds so the 1 pt margin band reads as a band; the deferred-revenue,
+unbilled-receivable and capitalised-commission balances at the reporting date; Dec-2026 ending
+headcount by function, with hires and departures in the tooltip.
+
+### Page 6 — Segment detail (drill-through target, hidden)
+
+Pages 2 and 3 answer their questions at company level and break out by segment in a row of three.
+The question they cannot answer on the page is *what does SMB actually look like?* - a reader who
+wants that has to hold three tables in their head. This page answers it end to end for whichever
+segment was right-clicked: exit ARR, TTM NRR / GRR / logo retention and the customer count it is
+measured over; the monthly ARR movement and ending ARR; the retention trend; the forward renewal
+book; and the acquisition cohorts as they age.
+
+Every figure agrees with the segment row it was opened from - SMB reads $4.8M, 84.7%, 76.7%,
+78.7% and 534 on both.
 
 ### Page 5 — Plan & Scenarios
 
 Split into two labelled halves, because they are two different questions:
 
-- **(A) Affordability** — policy runway against the 24-month floor, and the burn behind each path.
+- **(A) Affordability** — policy runway against the 24-month floor, drawn as a grey dashed
+  reference line rather than a fourth series, plus the runway and headroom behind each path.
 - **(B) Attractiveness** — what the incremental hiring case buys, on the FY2027 horizon.
 
-Plus the scenario ARR paths, the scenario summary, and the management assumptions with their
-sources. A scenario slicer filters the ARR chart.
+Plus the scenario ARR paths, the scenario summary, and the management assumptions, stated one row
+per driver and segment because a driver value is only defined at that grain. A scenario slicer
+filters the ARR chart.
 
 ### Benchmarks
 

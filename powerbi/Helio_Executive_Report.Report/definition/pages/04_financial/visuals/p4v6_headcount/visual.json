@@ -3,17 +3,17 @@
   "name": "p4v6_headcount",
   "position": {
     "x": 850,
-    "y": 580,
+    "y": 512,
     "z": 8,
     "width": 406,
-    "height": 122,
+    "height": 190,
     "tabOrder": 8000
   },
   "visual": {
-    "visualType": "pivotTable",
+    "visualType": "clusteredColumnChart",
     "query": {
       "queryState": {
-        "Rows": {
+        "Category": {
           "projections": [
             {
               "field": {
@@ -31,7 +31,26 @@
             }
           ]
         },
-        "Values": {
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Headcount"
+                    }
+                  },
+                  "Property": "Ending Headcount"
+                }
+              },
+              "queryRef": "Headcount.Ending Headcount",
+              "nativeQueryRef": "Ending headcount",
+              "displayName": "Ending headcount"
+            }
+          ]
+        },
+        "Tooltips": {
           "projections": [
             {
               "field": {
@@ -60,24 +79,95 @@
               },
               "queryRef": "Headcount.Departures",
               "nativeQueryRef": "Departures"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Headcount"
-                    }
-                  },
-                  "Property": "Ending Headcount"
-                }
-              },
-              "queryRef": "Headcount.Ending Headcount",
-              "nativeQueryRef": "Ending Headcount"
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Headcount"
+                  }
+                },
+                "Property": "Ending Headcount"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
       }
+    },
+    "objects": {
+      "valueAxis": [
+        {
+          "properties": {
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#1F2937'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "visualContainerObjects": {
       "title": [
@@ -93,7 +183,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Headcount rollforward to Dec-2026'"
+                  "Value": "'Dec-2026 ending headcount by function'"
                 }
               }
             },

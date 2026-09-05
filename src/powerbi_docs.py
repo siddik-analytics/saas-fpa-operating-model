@@ -19,7 +19,7 @@ from .powerbi_tables import DISCONNECTED_NOTES, RELATIONSHIPS, TABLES
 MEASURES_PATH = REPO_ROOT / "powerbi" / "measures.md"
 
 # Measures that carry no format string because they return text.
-TEXT_MEASURES = {"Board Floor Status"}
+TEXT_MEASURES = {"Board Floor Status", "Favourability Colour"}
 
 # The measures PHASE1_SPEC and the Phase 10 brief single out for special attention.
 SPOTLIGHT = (
@@ -30,13 +30,44 @@ SPOTLIGHT = (
 
 
 def _visual_index() -> dict[tuple[str, str], list[str]]:
-    """(table, measure) -> the visuals that read it."""
+    """(table, measure) -> the visuals that read it.
+
+    A measure is read by a visual whether it appears in a field well or in a formatting
+    object: the colour bound to the Fav / Unfav column is on the page as surely as the column
+    beside it. Scanning only the field wells reported it as dead code.
+    """
     index: dict[tuple[str, str], list[str]] = {}
     for page in PAGES:
         for visual in page.visuals:
+            where = f"{page.display_name} / {visual.title or visual.name}"
             for key in visual.measures():
-                index.setdefault(key, []).append(f"{page.display_name} / {visual.title or visual.name}")
+                index.setdefault(key, []).append(where)
+            for key in _measures_in_objects(visual):
+                index.setdefault(key, []).append(where)
     return index
+
+
+def _measures_in_objects(visual) -> set[tuple[str, str]]:
+    """Every measure reference buried in a visual's formatting objects."""
+    found: set[tuple[str, str]] = set()
+
+    def walk(node) -> None:
+        if isinstance(node, dict):
+            m = node.get("Measure")
+            if isinstance(m, dict):
+                entity = (((m.get("Expression") or {}).get("SourceRef") or {})
+                          .get("Entity"))
+                prop = m.get("Property")
+                if entity and prop:
+                    found.add((entity, prop))
+            for value in node.values():
+                walk(value)
+        elif isinstance(node, (list, tuple)):
+            for value in node:
+                walk(value)
+
+    walk(visual.objects)
+    return found
 
 
 def unused_measures() -> list[tuple[str, str]]:

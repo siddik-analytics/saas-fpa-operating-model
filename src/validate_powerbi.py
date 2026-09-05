@@ -158,6 +158,13 @@ class Result:
 # Files and structure
 # ---------------------------------------------------------------------------
 
+# Chrome, not analysis. A navigator, a reset button, a KPI card and a text box have no axis,
+# no title of their own and no minimum plot height, so the checks written for charts and
+# tables have to say so explicitly rather than treat every container the same.
+CHROME_TYPES = ("textbox", "slicer", "actionButton", "pageNavigator")
+NON_PLOT_TYPES = CHROME_TYPES + ("cardVisual",)
+
+
 def check_files(result: Result) -> None:
     required = {
         "pbip": PBIP_PATH,
@@ -552,9 +559,14 @@ def check_report_pages(result: Result) -> None:
         result.record(f"page has a display name: {page.name}",
                       bool((payload.get("displayName") or "").strip()),
                       "a page with no displayName has nothing to show in the page tab")
-        result.record(f"page is not hidden in view mode: {page.name}",
-                      payload.get("visibility") != "HiddenInViewMode",
-                      f"visibility={payload.get('visibility')!r}")
+        # A hidden page is a defect unless it is a drill-through target, where being off the
+        # tab strip is the point: it is reached by right-clicking a segment, not by browsing.
+        hidden_ok = (payload.get("visibility") == "HiddenInViewMode"
+                     if page.drillthrough is not None
+                     else payload.get("visibility") is None)
+        result.record(f"page visibility matches its role: {page.name}", hidden_ok,
+                      f"visibility={payload.get('visibility')!r}, "
+                      f"drillthrough={page.drillthrough is not None}")
         result.record(f"page is not a tooltip or drillthrough page: {page.name}",
                       payload.get("type") is None,
                       f"type={payload.get('type')!r} - such a page does not appear in the "
@@ -726,7 +738,7 @@ def check_measure_presentation(result: Result) -> None:
     mixed: list[str] = []
     for page in PAGES:
         for visual in page.visuals:
-            if visual.visual_type in ("tableEx", "pivotTable", "textbox", "slicer"):
+            if visual.visual_type in ("tableEx", "pivotTable") + NON_PLOT_TYPES:
                 continue  # every column of a table carries its own format, by design
             for role in ("Y", "Y2"):
                 classes = {
@@ -758,7 +770,7 @@ def check_measure_presentation(result: Result) -> None:
     #    string scaled by a million and Auto scaled the result again.
     charts = [
         (page, visual) for page in PAGES for visual in page.visuals
-        if visual.visual_type not in ("tableEx", "pivotTable", "textbox", "slicer")
+        if visual.visual_type not in ("tableEx", "pivotTable") + NON_PLOT_TYPES
     ]
     missing = sorted(v.name for _, v in charts if "valueAxis" not in v.objects)
     result.record("every chart states its axis display unit", not missing,
@@ -867,7 +879,7 @@ def check_visual_density(result: Result) -> None:
     short = sorted(
         f"{v.name}: {v.height}px"
         for page in PAGES for v in page.visuals
-        if v.visual_type not in ("textbox", "slicer", "tableEx", "pivotTable")
+        if v.visual_type not in ("tableEx", "pivotTable") + NON_PLOT_TYPES
         and v.height < MIN_VISUAL_HEIGHT
     )
     result.record("every chart has room to render below its title", not short,
@@ -1096,7 +1108,8 @@ def check_measure_formats(result: Result) -> None:
     # A measure with neither is legitimate only when it does not return a number.
     result.record(
         "every unformatted measure returns text rather than a number",
-        set(unformatted) <= {"Runway Policy[Board Floor Status]"},
+        set(unformatted) <= {"Runway Policy[Board Floor Status]",
+                             "Management Variance[Favourability Colour]"},
         ", ".join(sorted(unformatted)),
     )
 
@@ -1242,29 +1255,68 @@ def check_pages(result: Result) -> None:
     pages_json = json.loads(
         (REPORT_DIR / "definition" / "pages" / "pages.json").read_text(encoding="utf-8"))
     order = pages_json.get("pageOrder", [])
-    result.record("report has exactly five pages", len(order) == 5, f"{len(order)} pages")
+    # Five pages a reader can browse, plus any drill-through target, which is reached from
+    # the data rather than the tab strip and is hidden from both.
+    spec_pages = [p for p in PAGES if p.drillthrough is None]
+    result.record("report has exactly five browsable pages", len(spec_pages) == 5,
+                  f"{len(spec_pages)} browsable, {len(order)} in total")
     result.record("page order matches the specification",
                   order == [p.name for p in PAGES], ", ".join(order))
     result.record("the executive page opens first",
                   pages_json.get("activePageName") == PAGES[0].name)
 
-    for page, required_name in zip(PAGES, REQUIRED_PAGES):
+    for page in PAGES:
+        required_name = (REQUIRED_PAGES[spec_pages.index(page)]
+                         if page in spec_pages else None)
         payload = json.loads(
             (REPORT_DIR / "definition" / "pages" / page.name / "page.json")
             .read_text(encoding="utf-8"))
-        result.record(
-            f"page name matches PHASE1_SPEC 12: {required_name}",
-            payload.get("displayName") == required_name, str(payload.get("displayName")),
-        )
+        # PHASE1_SPEC names the page; the tab has to hold five of those names inside a
+        # navigator, which they do not fit. The spec name is therefore carried by the page's
+        # own masthead, in 11 pt on every screen, and the tab carries a short form of it.
+        # What must not happen is a page quietly ceasing to be the spec's page.
+        if required_name is not None:
+            masthead = next(v for v in page.visuals if v.name.endswith("_header"))
+            heading = next((r["value"] for r in masthead.text_runs
+                            if r["value"] == required_name), None)
+            result.record(
+                f"page states its PHASE1_SPEC 12 name: {required_name}",
+                heading == required_name, str(heading),
+            )
+            result.record(
+                f"page tab is a short form of it: {required_name}",
+                0 < len(str(payload.get("displayName"))) <= len(required_name),
+                str(payload.get("displayName")),
+            )
+        else:
+            # A drill-through target has to declare both halves of the binding, and they
+            # have to agree: Power BI silently ignores a parameter whose boundFilter names
+            # a filter that is not there.
+            filters = (payload.get("filterConfig") or {}).get("filters", [])
+            binding = payload.get("pageBinding") or {}
+            names = {f.get("name") for f in filters
+                     if f.get("howCreated") == "Drillthrough"}
+            bound = {pm.get("boundFilter") for pm in binding.get("parameters", [])}
+            result.record(
+                f"drill-through binding is complete: {page.name}",
+                binding.get("type") == "Drillthrough" and bool(names) and bound == names,
+                f"filters {sorted(names)}, bound {sorted(bound)}",
+            )
         result.record(
             f"page canvas is 1280x720: {page.name}",
             payload.get("width") == 1280 and payload.get("height") == 720,
         )
-        analytical = [v for v in page.visuals
-                      if v.visual_type not in ("textbox", "slicer")]
+        analytical = [v for v in page.visuals if v.visual_type not in NON_PLOT_TYPES]
+        cards = [v for v in page.visuals if v.visual_type == "cardVisual"]
         result.record(
             f"page holds at most six analytical visuals: {page.name}",
             len(analytical) <= 6, f"{len(analytical)} visuals",
+        )
+        # A scorecard band is one object to the reader however many containers draw it, but
+        # it still has to stop somewhere: eight is the width of the canvas at a legible size.
+        result.record(
+            f"page holds at most eight KPI cards: {page.name}",
+            len(cards) <= 8, f"{len(cards)} cards",
         )
         for visual in analytical:
             result.record(

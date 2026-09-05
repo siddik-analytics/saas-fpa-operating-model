@@ -3,11 +3,11 @@
   "name": "p2v4_retention_by_segment",
   "position": {
     "x": 656,
-    "y": 380,
-    "z": 7,
+    "y": 350,
+    "z": 8,
     "width": 600,
-    "height": 152,
-    "tabOrder": 7000
+    "height": 162,
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "pivotTable",
@@ -87,11 +87,27 @@
                 }
               },
               "queryRef": "Retention.Cohort Customers",
-              "nativeQueryRef": "Cohort Customers"
+              "nativeQueryRef": "Customers",
+              "displayName": "Customers"
             }
           ]
         }
       }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "visualContainerObjects": {
       "title": [

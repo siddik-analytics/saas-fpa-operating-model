@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "p1v3_budget_vs_base",
   "position": {
-    "x": 656,
+    "x": 596,
     "y": 214,
-    "z": 5,
-    "width": 600,
+    "z": 13,
+    "width": 660,
     "height": 236,
-    "tabOrder": 5000
+    "tabOrder": 13000
   },
   "visual": {
     "visualType": "tableEx",
@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "Management Variance.Metric Label",
-              "nativeQueryRef": "Metric"
+              "nativeQueryRef": "Metric",
+              "displayName": "Metric"
             },
             {
               "field": {
@@ -41,7 +42,8 @@
                 }
               },
               "queryRef": "Management Variance.Budget",
-              "nativeQueryRef": "Budget"
+              "nativeQueryRef": "Budget",
+              "displayName": "Budget"
             },
             {
               "field": {
@@ -55,7 +57,8 @@
                 }
               },
               "queryRef": "Management Variance.Base Reforecast",
-              "nativeQueryRef": "Base"
+              "nativeQueryRef": "Base",
+              "displayName": "Base"
             },
             {
               "field": {
@@ -69,7 +72,8 @@
                 }
               },
               "queryRef": "Management Variance.Variance vs Budget",
-              "nativeQueryRef": "Variance"
+              "nativeQueryRef": "Variance",
+              "displayName": "Variance"
             },
             {
               "field": {
@@ -83,7 +87,8 @@
                 }
               },
               "queryRef": "Management Variance.Favourable / Unfavourable",
-              "nativeQueryRef": "Fav / Unfav"
+              "nativeQueryRef": "Fav / Unfav",
+              "displayName": "Fav / Unfav"
             }
           ]
         }
@@ -92,13 +97,13 @@
         "sort": [
           {
             "field": {
-              "Column": {
+              "Measure": {
                 "Expression": {
                   "SourceRef": {
                     "Entity": "Management Variance"
                   }
                 },
-                "Property": "Metric Label"
+                "Property": "Variance vs Budget"
               }
             },
             "direction": "Ascending"
@@ -115,6 +120,51 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "Management Variance.Favourable / Unfavourable"
+          },
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Management Variance"
+                        }
+                      },
+                      "Property": "Favourability Colour"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
                 }
               }
             }

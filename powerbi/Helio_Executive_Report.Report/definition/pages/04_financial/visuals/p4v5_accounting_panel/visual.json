@@ -6,32 +6,14 @@
     "y": 386,
     "z": 7,
     "width": 406,
-    "height": 186,
+    "height": 114,
     "tabOrder": 7000
   },
   "visual": {
-    "visualType": "lineChart",
+    "visualType": "tableEx",
     "query": {
       "queryState": {
-        "Category": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Date"
-                    }
-                  },
-                  "Property": "Month"
-                }
-              },
-              "queryRef": "Date.Month",
-              "nativeQueryRef": "Month"
-            }
-          ]
-        },
-        "Y": {
+        "Values": {
           "projections": [
             {
               "field": {
@@ -45,7 +27,8 @@
                 }
               },
               "queryRef": "Deferred Revenue.Deferred Revenue",
-              "nativeQueryRef": "Deferred Revenue"
+              "nativeQueryRef": "Deferred revenue",
+              "displayName": "Deferred revenue"
             },
             {
               "field": {
@@ -59,7 +42,8 @@
                 }
               },
               "queryRef": "Deferred Revenue.Unbilled Receivable",
-              "nativeQueryRef": "Unbilled Receivable"
+              "nativeQueryRef": "Unbilled",
+              "displayName": "Unbilled"
             },
             {
               "field": {
@@ -73,65 +57,34 @@
                 }
               },
               "queryRef": "Commission Asset.Capitalised Commission Asset",
-              "nativeQueryRef": "Capitalised Commission Asset"
+              "nativeQueryRef": "Cap. commissions",
+              "displayName": "Cap. commissions"
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Date"
-                  }
-                },
-                "Property": "Month"
-              }
-            },
-            "direction": "Ascending"
-          }
-        ],
-        "isDefaultSort": true
       }
     },
     "objects": {
-      "legend": [
+      "total": [
         {
           "properties": {
-            "show": {
+            "totals": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "position": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Top'"
+                  "Value": "false"
                 }
               }
             }
           }
         }
       ],
-      "valueAxis": [
+      "columnHeaders": [
         {
           "properties": {
-            "labelDisplayUnits": {
+            "columnAdjustment": {
               "expr": {
                 "Literal": {
-                  "Value": "1000000D"
-                }
-              }
-            },
-            "labelPrecision": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
+                  "Value": "'growToFit'"
                 }
               }
             }
@@ -153,7 +106,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Deferred revenue builds as an advance-billed book grows'"
+                  "Value": "'Accounting balances at 30 June 2026'"
                 }
               }
             },
@@ -198,7 +151,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "p4v5_accounting_panel_yr2526",
+        "name": "p4v5_accounting_panel_jun26",
         "field": {
           "Column": {
             "Expression": {
@@ -206,7 +159,7 @@
                 "Entity": "Date"
               }
             },
-            "Property": "Year"
+            "Property": "Month Sort"
           }
         },
         "type": "Categorical",
@@ -231,7 +184,7 @@
                             "Source": "f"
                           }
                         },
-                        "Property": "Year"
+                        "Property": "Month Sort"
                       }
                     }
                   ],
@@ -239,14 +192,7 @@
                     [
                       {
                         "Literal": {
-                          "Value": "2025L"
-                        }
-                      }
-                    ],
-                    [
-                      {
-                        "Literal": {
-                          "Value": "2026L"
+                          "Value": "202606L"
                         }
                       }
                     ]
@@ -257,7 +203,7 @@
           ]
         },
         "howCreated": "Auto",
-        "displayName": "Year"
+        "displayName": "Month Sort"
       }
     ]
   }

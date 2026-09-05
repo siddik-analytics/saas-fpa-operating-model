@@ -7,9 +7,13 @@ Two things are tested here, and they are different questions.
    external links, formulas, charts, and an independent Python recomputation of every headline
    figure from the marts.
 
-2. **The committed artifact is current.** `excel/Helio_SaaS_FP&A_Operating_Model.xlsx` is put
-   through the same validation, so a mart change that has not been followed by a workbook
-   rebuild fails here rather than being discovered by a reviewer.
+2. **The two artifacts are the ones they claim to be.** The builder writes
+   `build/generated/...xlsx`; `excel/Helio_SaaS_FP&A_Operating_Model.xlsx` holds the REVIEWED
+   workbook, restructured in native Excel after the build. The generated one is put through
+   the full structural validation when it is present. The reviewed one deliberately does not
+   match that structure - its Executive Summary was rebuilt, tables were demoted and charts
+   re-placed - so it is checked for the things that must still hold: it exists, it opens, and
+   every control in it reads PASS.
 
 `openpyxl` does not calculate formulas, so no test in this file claims a formula's *result* was
 read back from the file. Formula strings are asserted structurally; the values they should
@@ -29,9 +33,14 @@ from openpyxl import load_workbook
 from src import excel_data as ed
 from src import excel_style as st
 from src import validate_excel_model as vx
-from src.build_excel_model import DATA_SHEETS, OUTPUT_PATH, VISIBLE_SHEETS, build
+from src.build_excel_model import (
+    DATA_SHEETS,
+    GENERATED_PATH,
+    PUBLISHED_PATH,
+    VISIBLE_SHEETS,
+    build,
+)
 
-COMMITTED = OUTPUT_PATH
 
 
 @pytest.fixture(scope="module")
@@ -70,13 +79,62 @@ def test_every_validation_check_passes_on_a_fresh_build(rebuilt_result: vx.Resul
     assert rebuilt_result.passed, rebuilt_result.summary()
 
 
-def test_committed_workbook_is_current_with_the_marts() -> None:
-    """The artifact in the repository must survive the same validation as a fresh build."""
-    assert COMMITTED.exists(), (
-        str(COMMITTED) + " is missing. Run `python -m src.build_excel_model`."
-    )
-    result = vx.validate(COMMITTED)
+def test_generated_workbook_is_current_with_the_marts() -> None:
+    """The builder's own output, when it is on disk, must survive the same validation."""
+    if not GENERATED_PATH.exists():
+        pytest.skip(
+            f"{GENERATED_PATH} not built. The reproducibility test above already builds and "
+            "validates a fresh workbook in a temporary directory; this one only re-checks a "
+            "build artefact left in the tree. Run `python -m src.build_excel_model`."
+        )
+    result = vx.validate(GENERATED_PATH)
     assert result.passed, result.summary()
+
+
+def test_the_published_workbook_is_the_reviewed_one_and_its_controls_pass() -> None:
+    """`excel/` holds the reviewed workbook, not the builder's output.
+
+    It is not put through `validate_excel_model`: that validator encodes the generated
+    layout, and the reviewed workbook deliberately departs from it. What must still be true
+    is that it is present, that it opens, and that nothing in it reports a failed control.
+    """
+    assert PUBLISHED_PATH.exists(), (
+        f"{PUBLISHED_PATH} is missing. It is the reviewed portfolio workbook and is copied "
+        "in by hand - `python -m src.build_excel_model` does not write it."
+    )
+    wb = load_workbook(PUBLISHED_PATH, data_only=True)
+    try:
+        # Anchored on the header label "Status", never on an address: a restructured sheet
+        # silently stops matching an address, and a bare PASS/FAIL scan picks up things that
+        # are not controls at all - the Model Guide's legend swatch, and the Executive
+        # Summary's decision band, where a Bear FAIL is the correct answer.
+        statuses: list[str] = []
+        for ws in wb.worksheets:
+            if ws.sheet_state != "visible":
+                continue
+            heads = [
+                c
+                for row in ws.iter_rows()
+                for c in row
+                if isinstance(c.value, str) and c.value.strip() == "Status"
+            ]
+            for head in heads:
+                for r in range(head.row + 1, min(head.row + 30, ws.max_row) + 1):
+                    value = ws.cell(row=r, column=head.column).value
+                    text = value.strip() if isinstance(value, str) else ""
+                    if text in ("PASS", "FAIL"):
+                        statuses.append(text)
+                    elif not str(ws.cell(row=r, column=2).value or "").strip():
+                        break
+        assert len(statuses) == 26, (
+            f"expected 26 controls in the reviewed workbook, found {len(statuses)}"
+        )
+        assert "FAIL" not in statuses, (
+            f"the reviewed workbook reports a failed control "
+            f"({statuses.count('FAIL')} of {len(statuses)})"
+        )
+    finally:
+        wb.close()
 
 
 def test_the_build_fails_loudly_when_a_required_mart_is_missing(tmp_path: Path) -> None:

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "p1v1_kpi_6",
+  "position": {
+    "x": 948,
+    "y": 102,
+    "z": 10,
+    "width": 148,
+    "height": 96,
+    "tabOrder": 10000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Runway Policy"
+                    }
+                  },
+                  "Property": "Base Policy Runway Months"
+                }
+              },
+              "queryRef": "Runway Policy.Base Policy Runway Months",
+              "nativeQueryRef": "Policy runway",
+              "displayName": "Policy runway",
+              "format": "#,##0.0\" mo\""
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

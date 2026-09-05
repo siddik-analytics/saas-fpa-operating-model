@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "p1v1_kpi_5",
+  "position": {
+    "x": 794,
+    "y": 102,
+    "z": 9,
+    "width": 148,
+    "height": 96,
+    "tabOrder": 9000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "P&L"
+                    }
+                  },
+                  "Property": "FY2026 Operating Income"
+                }
+              },
+              "queryRef": "P&L.FY2026 Operating Income",
+              "nativeQueryRef": "Op income",
+              "displayName": "Op income",
+              "format": "$#,##0.0;($#,##0.0)"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

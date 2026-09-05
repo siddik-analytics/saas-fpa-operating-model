@@ -161,6 +161,11 @@ def test_the_case_study_and_readme_agree() -> None:
 
 
 def test_the_packaging_documents_exist() -> None:
-    for name in ("portfolio_case_study.md", "interview_guide.md", "project_positioning.md",
-                 "assets/README.md"):
+    """The documents the public README routes a visitor through.
+
+    `interview_guide.md` and `project_positioning.md` were part of this set and were removed
+    from the public repository deliberately - they are notes to self about how to talk about
+    the work, not part of the work. The README no longer links to them.
+    """
+    for name in ("portfolio_case_study.md", "assets/README.md"):
         assert (REPO_ROOT / "docs" / name).is_file(), name

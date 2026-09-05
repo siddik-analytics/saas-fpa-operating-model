@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "p1v1_kpi_2",
+  "position": {
+    "x": 332,
+    "y": 102,
+    "z": 6,
+    "width": 148,
+    "height": 96,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Management Variance"
+                    }
+                  },
+                  "Property": "Exit ARR vs Budget"
+                }
+              },
+              "queryRef": "Management Variance.Exit ARR vs Budget",
+              "nativeQueryRef": "vs Budget",
+              "displayName": "vs Budget",
+              "format": "+$#,##0.0;-$#,##0.0;$0.0"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

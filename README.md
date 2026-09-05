@@ -1,6 +1,7 @@
 # SaaS FP&A Operating Model & Reporting Stack
 
-**Independent portfolio case study using a synthetic B2B SaaS company and synthetic data.**
+**Independent portfolio case study. Synthetic B2B SaaS company, synthetic data, no client or
+employer information.**
 
 An integrated FP&A environment for *Helio Systems, Inc.* — a $33M-ARR B2B SaaS business selling
 field-service software to commercial contractors. It connects customer-level ARR movements,
@@ -12,6 +13,13 @@ It is built around one reporting cycle — the **FY2026 Q2 Board reforecast**, p
 
 > **Can Helio fund additional sales capacity to re-accelerate growth without breaching its
 > 24-month minimum cash-runway policy?**
+
+![Excel Executive Summary — five KPI cards with variance bars, the 36-month Exit ARR hero chart
+against the Board Budget point, the Budget-to-Base ARR bridge, runway by path against the
+24-month floor, the rules-generated management read, and the decision band](docs/assets/excel/excel-executive-summary.png)
+
+*The whole management problem on one screen. Every verdict in the decision band is a formula over
+an approved mart — Bear reads **FAIL** because it is the one path that breaches the floor.*
 
 ---
 
@@ -29,99 +37,7 @@ consumes.**
 | The Base plan **holds the Board floor**; the Bear case **breaches it** | Base **25.6 months**, Bear **23.5**, floor **24.0** |
 | Closing the capacity gap is *affordable* but **not attractive** | Full Capacity-Close: 4 hires, **$637k** of cash for **$147k** of Dec-2027 ARR, runway down to 24.7 months |
 
-Affordability and attractiveness are answered separately and deliberately. A plan can clear the
-runway policy and still be a poor use of cash — here it does, and the report says so on its own
-page rather than burying it.
-
-![Executive Q2 Reforecast — the Board scorecard, the Exit ARR bridge from Budget to Base, scenario
-ARR, policy runway against the 24-month floor, and rules-generated commentary](docs/assets/powerbi/executive-q2-reforecast.png)
-
-*The whole management problem on one screen: where FY2026 lands, what moved it, and whether it is
-fundable.*
-
----
-
-## Reporting stack
-
-Two presentation layers sit over one controlled analytical core. Neither re-implements a business
-rule: every calculation lives in SQL and is reconciled before anything displays it.
-
-**Power BI executive report** — five pages over a 27-table semantic model, committed as a text
-**Power BI Project (PBIP)** rather than a binary `.pbix`, so every measure, relationship and visual
-is reviewable in a diff.
-→ [`powerbi/`](powerbi/) · [measure library](powerbi/measures.md) · [design notes](docs/powerbi_executive_report.md)
-
-The five pages are the Board conversation in order. Page 1 is above; three more are worth showing.
-
-### Why adding reps would not close the gap
-
-Sales believed they were capacity-constrained. Modelling capacity and pipeline as *separate*
-constraints — and forecasting the lesser of the two — shows the opposite: capacity runs above
-pipeline in every forecast month, so the shortfall is demand, not seats. This page is why the
-hiring recommendation is negative.
-
-![GTM Capacity & Pipeline — H2 capacity against pipeline-supported bookings by segment, the same
-three series monthly, unit economics and the sales-efficiency pair](docs/assets/powerbi/gtm-capacity-pipeline.png)
-
-### Is the recurring base healthy?
-
-Monthly ARR movement with the forecast line starting exactly where the actual stops, TTM retention
-by segment, and forward renewal exposure. It establishes that the problem is new business: NRR
-holds near 102%, and the SMB retention drag is visible rather than blended away.
-
-![ARR, Retention & Renewals — ARR movement and ending ARR, NRR/GRR/logo retention, movement and
-retention by segment, cohort retention and forward ATR](docs/assets/powerbi/arr-retention.png)
-
-### Affordable, or worth doing?
-
-The page is split deliberately: **A. financial affordability** against the Board floor, and
-**B. economic attractiveness** on the FY2027 horizon. Full Capacity-Close clears the floor at 24.7
-months and still buys $147k of ARR for $637k of cash — two different answers to two different
-questions.
-
-![Plan & Scenarios — Bear/Base/Bull ARR, policy runway against the floor, the hiring cases, the
-runway detail and the management assumptions](docs/assets/powerbi/plan-scenarios.png)
-
-### What the P&L and the cost base actually do
-
-The management P&L across four fiscal years, the Budget-versus-Base scorecard with centrally
-derived favourability, the operating-income bridge, and the accounting panel where deferred revenue
-and capitalised commissions sit beneath the commercial metrics.
-
-![Financial Performance & Headcount — management P&L, Budget vs Base, the operating income bridge,
-revenue and gross margin, the accounting panel and headcount](docs/assets/powerbi/financial-performance.png)
-
-**Excel FP&A operating model** — eleven presentation tabs generated from the same marts. No VBA,
-no macros, no external links, no manual step after the build, and no password, so every formula is
-inspectable. → [`excel/`](excel/) · [design notes](docs/excel_operating_model.md)
-
-Where Power BI is the executive interface, Excel is the working one: it shows the arithmetic a
-finance team would want to interrogate line by line.
-
-### The management view, with the working visible
-
-Ten KPI tiles, the Budget-versus-Base table with centrally derived favourability, a decision panel
-in which every verdict is a formula over an approved mart, and the rules-generated commentary —
-none of it typed in by hand.
-
-![Excel Executive Summary — KPI tiles, Budget vs Base, the management decision panel and
-commentary](docs/assets/excel/excel-executive-summary.png)
-
-### The bridge, reconciled end to end
-
-The Budget-to-Base operating income walk with a running balance and a residual that must read zero,
-gross margin reported in basis points rather than as a bare percentage-point difference, and the
-revenue decomposition beneath it.
-
-![Excel Budget Bridge — the operating income walk with running balance and zero residual, gross
-margin in bps, and the revenue bridge](docs/assets/excel/excel-budget-bridge.png)
-
----
-
-## Headline metrics
-
-Every figure traces to the committed marts in [`data/marts/`](data/marts/); sources are listed in
-the [case study](docs/portfolio_case_study.md).
+### Headline metrics
 
 | | | | |
 |---|---|---|---|
@@ -139,26 +55,34 @@ recommendation is negative.
 
 ---
 
-## Architecture
+## How it fits together
 
-```mermaid
-flowchart TD
-    A["Synthetic source data<br/>13 tables — contracts, CRM, GL, people"] --> B["SQL / DuckDB<br/>82 models"]
-    CFG["config/<br/>assumptions · chart of accounts<br/>commentary rules"] -.-> B
-    B --> CTL["Reconciliation controls<br/>6 gates — a violation fails the build"]
-    CTL --> C["Controlled marts<br/>55 committed extracts"]
-    C --> D["Excel FP&A model<br/>11 tabs"]
-    C --> E["Power BI report<br/>5 pages · 108 measures"]
-    PY["Python orchestration<br/>generate · build · validate"] -.-> B
-    PY -.-> D
-    PY -.-> E
-    D --> F["Management reporting<br/>and the hiring recommendation"]
-    E --> F
+```
+Synthetic operational and financial data
+        ↓
+SQL / DuckDB transformations            88 models, 6 reconciliation gates
+        ↓
+Python analytical marts                 55 committed, frozen extracts
+        ↓
+Excel forecasting & scenario model      the planning instrument
+        ↓
+Power BI executive analytics            the distribution layer
+        ↓
+Management decision support
 ```
 
-**The analytical layer owns every business calculation.** Excel does variance, subtotals, bridge
-running balances and lookups; DAX does semi-additive balances and ratios of aggregates. Neither
-invents a number.
+Three layers, three different jobs:
+
+| Layer | What owns it | What it is for |
+|---|---|---|
+| **Historical and reference** | SQL / DuckDB, orchestrated in Python | Every business calculation. ARR movements classified at customer grain, retention, capacity, pipeline, the bridges and the controls. Nothing downstream re-implements a rule. |
+| **Planning and scenarios** | **Excel, formula-driven** | The decision instrument. The reforecast, the driver engine, the scenario switch, the runway test and the hiring cases are live formulas — change one cell and ARR, revenue, cash, runway and the verdict all move. |
+| **Reporting and analytics** | Power BI | The distribution layer. A governed semantic model over the same marts, for people who will not open a workbook. |
+
+The Excel layer is not entirely formula-driven, and the distinction matters: **actuals and
+reference data are imported from the marts; the planning and scenario mechanics on top of them are
+formulas.** The two front ends tie to 2.8 × 10⁻⁷ — display rounding — which is the evidence that
+the analytical layer, not either presentation layer, is the source of truth.
 
 ### How the finance logic flows
 
@@ -173,23 +97,106 @@ chain is why the answer to the hiring question is not simply "runway allows it".
 
 ---
 
-## What it demonstrates
+## Featured outputs
 
-**SaaS metrics** — ARR waterfall at customer grain · NRR / GRR / logo retention as ratios of
-aggregates, never averages of ratios · acquisition cohorts · available-to-renew and renewal
-outcomes · expansion, contraction and churn kept apart · CAC, CAC payback, Magic Number and Net
-ARR Sales Efficiency, shown as a labelled pair and never combined into one number
+The Executive Summary is above. Five more views, each answering one management question.
 
-**FP&A** — Board budget against Q2 reforecast · driver-based forecasting · Bear / Base / Bull
-scenarios · management P&L · headcount rollforward · Budget-to-Base variance bridges with visible
-residuals · deterministic management commentary · policy cash runway and a runway-constrained
-hiring decision
+### The forecast engine — one switch drives everything
 
-**GTM finance** — rep ramp and quota-carrying capacity · pipeline coverage · pipeline-supported
-bookings · `LEAST(capacity, pipeline)` as the binding constraint · CRM-to-ARR reconciliation
+![Excel Forecast Drivers — the scenario selector, every driver it resolves with its ratio to Base,
+and the opening position the forecast builds from](docs/assets/excel/excel-forecast-engine.png)
 
-**Accounting and controls** — bookings, billings, ARR and revenue kept distinct · deferred-revenue
-rollforward · ASC 340-40 capitalised commissions · six reconciliation gates that fail the build
+Every forecast figure in the workbook reads from one scenario cell. The drivers are shown beside
+the Base values they are measured against, so the assumptions and the model can never disagree.
+*Supports: what exactly is this reforecast assuming, and where did each number come from?*
+
+### Scenarios — assumptions through to the policy decision
+
+![Excel Scenarios — the five management levers measured from Base, and the Bear / Base / Bull
+comparison down to runway and the Board-floor verdict](docs/assets/excel/excel-scenario-levers.png)
+
+Five levers, each tied to one separately modelled mechanism — never a blanket revenue multiplier.
+The comparison runs the whole chain: assumptions → ARR and revenue → operating income → cash →
+runway → whether the Board floor holds. Pipeline creation is the widest spread, so it is the lever
+the plan is most sensitive to. *Supports: what has to be true for the plan to work, and what
+breaks it?*
+
+### Cash and runway — the decision metric
+
+![Excel Cash Flow — the H2 cash path from $21.3M to $18.8M, with Board-policy runway, policy
+monthly burn and Dec-2026 ending cash](docs/assets/excel/excel-cash-runway-decision.png)
+
+Runway is computed on the Board's own approved policy basis, not on a convenient operating-cash
+proxy, and the two measures are kept deliberately apart. *Supports: how long does the cash last,
+and by whose definition?*
+
+### Power BI — why adding reps would not close the gap
+
+![Power BI GTM Capacity & Pipeline — H2 capacity against pipeline-supported bookings by segment,
+the same three series monthly, capacity and conversion by segment, FY2025 unit economics and the
+sales-efficiency pair](docs/assets/powerbi/gtm-capacity-pipeline.png)
+
+Sales believed they were capacity-constrained. Modelling capacity and pipeline as *separate*
+constraints — and forecasting the lesser of the two — shows the opposite: capacity runs above
+pipeline in every forecast month. *Supports: is the shortfall seats or demand?*
+
+### Power BI — the executive page
+
+![Power BI Executive Q2 Reforecast — eight KPI cards, the Exit ARR bridge from Budget to Base,
+Budget versus Base ranked by variance with favourability colouring, scenario ARR, policy runway
+against the 24-month floor, and rules-generated commentary](docs/assets/powerbi/executive-q2-reforecast.png)
+
+In-canvas page navigation, slicers with a one-click reset, cross-filtering throughout, and
+favourability coloured from the analytical layer's own centrally derived polarity rather than from
+the sign of a variance. *Supports: where did the plan break, and by how much?*
+
+### Power BI — drill-through to a single segment
+
+![Power BI Segment detail — the hidden drill-through page filtered to SMB: exit ARR, TTM
+retention and the customer count behind it, monthly ARR movement, the retention trend, the forward
+renewal book and acquisition cohorts](docs/assets/powerbi/segment-detail.png)
+
+Right-clicking any segment-grained row or bar opens this page filtered to that segment. Its
+figures agree with the row it was opened from — SMB reads $4.8M, 84.7%, 76.7%, 78.7% and 534 on
+both. *Supports: the company answer is fine, but what does SMB actually look like?*
+
+---
+
+## Key capabilities
+
+**Financial modelling** — driver-based forecasting · ARR waterfall at customer grain ·
+NRR / GRR / logo retention as ratios of aggregates, never averages of ratios · revenue recognition
+from ARR · GTM capacity and rep ramp · pipeline coverage and pipeline-supported bookings ·
+budget versus reforecast with variance bridges that carry a visible residual · Bear / Base / Bull
+scenario planning · policy cash runway and a runway-constrained hiring decision · management
+reporting and deterministic commentary
+
+**Data and analytics** — SQL · DuckDB · Python · Excel · Power BI · TMDL semantic model ·
+PBIR report definitions · automated reconciliation and QA
+
+**Accounting** — bookings, billings, ARR and revenue kept distinct · deferred-revenue rollforward ·
+ASC 340-40 capitalised commissions
+
+---
+
+## The scenario decision
+
+The whole point of the scenario layer is that it runs end to end — assumptions do not stop at ARR.
+
+| | **Bear** | **Base** | **Bull** |
+|---|---|---|---|
+| Dec-2026 Exit ARR | $33.6M | **$34.8M** | $36.1M |
+| FY2026 revenue | $32.6M | **$32.8M** | $33.0M |
+| FY2026 operating income | ($5.9M) | **($5.7M)** | ($5.5M) |
+| Dec-2027 Exit ARR | $37.5M | **$41.6M** | $46.0M |
+| Dec-2027 cash | $14.4M | **$16.9M** | $19.5M |
+| Board-policy runway | 23.5 mo | **25.6 mo** | 28.3 mo |
+| Headroom vs the 24-month floor | **−0.5 mo** | +1.6 mo | +4.3 mo |
+| Breaches the Board floor | **Yes** | No | No |
+
+This is a driver-based operating and cash model, not a full three-statement model: there is no
+balance sheet and no indirect cash flow statement. Cash is forecast from collections, because the
+contract book gives a real billing and collection profile.
 
 ---
 
@@ -201,20 +208,62 @@ This is a controlled model, not a dashboard over a spreadsheet.
   and accounting. A violation exits non-zero and nothing downstream runs.
 - **The ARR waterfall ties** at customer grain, and every Budget-to-Base bridge carries a visible
   residual that reads zero.
-- **The Excel workbook** is checked by 127 assertions, including every displayed value recomputed
-  from the marts in Python.
-- **The Power BI project** passes 519 static assertions and Microsoft's own PBIR validator with no
-  errors or warnings. Its DAX ships with **157 expected values generated from the marts**, so the
-  semantic model can be *verified* against SQL rather than trusted.
-- **412 tests** run on every build, including mutation tests that deliberately break each guard to
+- **The Excel workbook** is checked by **127 assertions**, including every displayed value
+  recomputed from the marts in Python, and carries **26 controls** that read PASS on the face of
+  the model.
+- **The Power BI project** passes **543 static assertions** and Microsoft's own PBIR validator with
+  no errors or warnings. Its DAX ships with **157 expected values generated from the marts**, so
+  the semantic model can be *verified* against SQL rather than trusted.
+- **429 tests** run on every build, including mutation tests that deliberately break each guard to
   prove it fails. A guard that has never been made to fail is not a guard.
 
 Static checks do not prove that a report renders, and they are kept separate from the thing that
 does. The Power BI project has been **opened and accepted in Power BI Desktop** — the model
-refreshes across all 27 tables, all five pages render, and the screenshots above are captured from
-that build. Reaching it took five rounds of defects that every static check had passed, and
-[the phase document](docs/powerbi_executive_report.md) records each one rather than presenting a
-clean story after the fact.
+refreshes across all 27 tables, every page renders, and the screenshots above are captured from
+that build.
+[The phase document](docs/powerbi_executive_report.md) records the defects that reaching it
+exposed rather than presenting a clean story after the fact.
+
+---
+
+## Power BI as source code
+
+The report is committed as a **Power BI Project (PBIP)** — text, not a binary `.pbix` — so every
+measure, relationship and visual is reviewable in a diff.
+
+- **TMDL semantic model** — 27 tables, 27 relationships, **109 measures**, each documented with its
+  source mart, its SQL equivalent and its filter-context behaviour in
+  [`powerbi/measures.md`](powerbi/measures.md).
+- **PBIR report definitions** — five browsable pages plus a hidden segment drill-through target,
+  every visual a JSON file.
+- **Generator-driven** — the whole project is written by `python -m src.build_powerbi`. Two
+  consecutive builds are byte-identical, so a change to a visual is a change to the code that
+  emits it, never a hand edit that cannot be reproduced.
+- **Validated** — `python -m src.validate_powerbi` runs 543 checks over the emitted project before
+  Desktop ever opens it.
+
+Deeper detail: [Power BI executive report](docs/powerbi_executive_report.md).
+
+---
+
+## The Excel artefact, precisely
+
+Two workbooks exist and the difference is worth stating plainly.
+
+- **`excel/Helio_SaaS_FP&A_Operating_Model.xlsx`** — the committed deliverable: **14 visible tabs**
+  over 11 hidden data sheets, no VBA, no macros, no external links, no password. Every figure in it
+  is generated from the marts, and its presentation layer was then reviewed and refined in native
+  Excel — the Executive Summary rebuilt, six charts added from tables the build left unreferenced,
+  tables demoted where a chart already carried the message, and every sheet brought inside a
+  one-screen width ceiling.
+- **`python -m src.build_excel_model`** writes `build/generated/…_generated.xlsx`, a gitignored
+  build artefact. **It does not reproduce the committed workbook pixel for pixel, and it can no
+  longer overwrite it.**
+
+What *is* reproducible is every number: the review changed presentation only, and each phase of it
+was gated on an exhaustive scenario × output comparison against the previous file with a largest
+absolute difference of exactly zero. See
+[the design notes](docs/excel_operating_model.md) for which is which.
 
 ---
 
@@ -245,18 +294,6 @@ clean story after the fact.
 
 ---
 
-## Tech stack
-
-**SQL / DuckDB** — 82 models, the single owner of business logic ·
-**Python** — data generation, orchestration, validation, and the generators that write the Excel
-workbook and the Power BI project ·
-**Excel** — a generated operating model, formulas only ·
-**Power BI** — a source-controlled semantic model in **TMDL** and a report in **PBIR**, committed
-as text ·
-**Git**
-
-Local-first throughout: no cloud warehouse, no gateway, no workspace, no external service.
-
 ## Reproduce it
 
 ```bash
@@ -265,9 +302,9 @@ python -m src.build
 ```
 
 The build generates the source data, validates it, builds the DuckDB layer, runs the controls,
-exports the marts, regenerates the Excel workbook and the Power BI project, runs their validation
-suites, and runs the tests. It takes roughly two minutes and is deterministic: deleting
-`data/raw/` and rebuilding reproduces the committed CSVs byte for byte.
+exports the marts, regenerates the **generated** Excel workbook and the Power BI project, runs
+their validation suites, and runs the tests. It takes roughly two minutes and is deterministic:
+deleting `data/raw/` and rebuilding reproduces the committed CSVs byte for byte.
 
 Individual layers: `python -m src.run_sql` · `python -m src.build_excel_model` ·
 `python -m src.build_powerbi` · `python -m src.validate_powerbi`
@@ -277,14 +314,18 @@ open `powerbi/Helio_Executive_Report.pbip`, set the `RepoRoot` parameter to your
 refresh. It is committed empty on purpose — an absolute path from one machine has no place in a
 public repository.
 
+Local-first throughout: no cloud warehouse, no gateway, no workspace, no external service.
+
 ---
 
 ## About the data
 
-Helio Systems, Inc. is fictional and every figure is synthetically generated for this case study.
-No confidential, proprietary or employer information was used, referenced or derived from. The
-financial structure, metric definitions and reporting conventions follow publicly documented SaaS
-practice, and the generator is calibrated so the business behaves like a real one: churn
+**Helio Systems, Inc. is fictional and every figure is synthetically generated for this case
+study.** No confidential, proprietary, client or employer information was used, referenced or
+derived from. This is an independent portfolio project.
+
+The financial structure, metric definitions and reporting conventions follow publicly documented
+SaaS practice, and the generator is calibrated so the business behaves like a real one: churn
 concentrates at contract anniversaries, renewals are seasonal, rep attainment disperses, and not
 every metric hits benchmark.
 

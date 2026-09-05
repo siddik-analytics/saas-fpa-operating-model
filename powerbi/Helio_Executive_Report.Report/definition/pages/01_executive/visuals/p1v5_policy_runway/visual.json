@@ -4,10 +4,10 @@
   "position": {
     "x": 416,
     "y": 460,
-    "z": 7,
+    "z": 15,
     "width": 320,
     "height": 242,
-    "tabOrder": 7000
+    "tabOrder": 15000
   },
   "visual": {
     "visualType": "lineClusteredColumnComboChart",
@@ -106,6 +106,20 @@
                   "Value": "1D"
                 }
               }
+            },
+            "start": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "end": {
+              "expr": {
+                "Literal": {
+                  "Value": "32D"
+                }
+              }
             }
           }
         }
@@ -157,6 +171,9 @@
       ],
       "y1AxisReferenceLine": [
         {
+          "selector": {
+            "id": "boardFloor"
+          },
           "properties": {
             "show": {
               "expr": {
@@ -168,7 +185,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "'24.0'"
+                  "Value": "24D"
                 }
               }
             },
@@ -177,7 +194,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#C98A1B'"
+                      "Value": "'#6B7280'"
                     }
                   }
                 }
@@ -221,46 +238,7 @@
             "dataLabelShow": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "dataLabelText": {
-              "expr": {
-                "Literal": {
-                  "Value": "'ValueAndName'"
-                }
-              }
-            },
-            "dataLabelColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#C98A1B'"
-                    }
-                  }
-                }
-              }
-            },
-            "dataLabelDecimalPoints": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            },
-            "dataLabelHorizontalPosition": {
-              "expr": {
-                "Literal": {
-                  "Value": "'left'"
-                }
-              }
-            },
-            "dataLabelVerticalPosition": {
-              "expr": {
-                "Literal": {
-                  "Value": "'above'"
+                  "Value": "false"
                 }
               }
             }
@@ -282,7 +260,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Bear breaches the 24-month Board runway floor'"
+                  "Value": "'Board-policy runway by path, against the 24-month floor'"
                 }
               }
             },
