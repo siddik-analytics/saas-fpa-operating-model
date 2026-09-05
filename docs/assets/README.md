@@ -39,6 +39,19 @@ than an arbitrary rectangle around it.
 | [`excel-pl-budget-vs-base.png`](excel/excel-pl-budget-vs-base.png) | P&L | Board Budget against Base reforecast by P&L line, with centrally derived favourability, and Dec-2026 headcount by function |
 | [`excel-budget-bridge.png`](excel/excel-budget-bridge.png) | Budget Bridge | The Budget-to-Base operating income walk with a running balance and a residual that must read zero, gross margin reported in basis points, and the revenue decomposition. Framed on those three sections: the sheet is 204 rows, and a full-page render of it is 1:3.6 |
 
+### Framed views for the landing page
+
+Three sheets are too tall to lead with whole — Forecast Drivers renders at 1:1.8, Cash Flow and
+Scenarios at about 1:1.7 — and three of those in a row is a scroll nobody finishes. The full-page
+captures above stay as the complete record; these are the same sheets, same render, same padding,
+framed on the sections the README caption actually describes.
+
+| File | Sheet | Framed on |
+|---|---|---|
+| [`excel-forecast-engine.png`](excel/excel-forecast-engine.png) | Forecast Drivers | A. the scenario selector · B. the active drivers with their ratio to Base · C. the opening position |
+| [`excel-scenario-levers.png`](excel/excel-scenario-levers.png) | Scenarios | The five levers measured from Base, and the Bear / Base / Bull comparison through to runway and the floor verdict |
+| [`excel-cash-runway-decision.png`](excel/excel-cash-runway-decision.png) | Cash Flow | The H2 cash path, with Board-policy runway, policy monthly burn and Dec-2026 ending cash |
+
 ## Recapturing
 
 Recapture whenever a change alters what a page displays — a format, a column, a layout or a visual.
